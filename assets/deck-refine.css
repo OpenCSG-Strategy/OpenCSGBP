@@ -2690,9 +2690,6 @@ body.overview-mode .mobile-reader{display:none!important}
     position:relative;
     display:block;
     width:100%;
-    height:auto!important;
-    min-height:0!important;
-    padding:58px 10px 24px!important;
     overflow:hidden;
     scroll-snap-align:none
   }
@@ -2700,7 +2697,6 @@ body.overview-mode .mobile-reader{display:none!important}
   .slide{
     position:absolute;
     left:50%;
-    top:58px;
     margin-left:-800px;
     transform-origin:top center;
     background:#fff

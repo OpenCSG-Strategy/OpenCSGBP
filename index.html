@@ -14,296 +14,106 @@
     *{box-sizing:border-box}
     html,body{margin:0;background:#DDE2E0;color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei"}
     body{overflow-y:auto;scroll-snap-type:y mandatory}
-    .slide-wrap{height:100vh;min-height:560px;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;position:relative}
-    .slide{width:1600px;height:900px;position:relative;overflow:hidden;background:var(--paper);transform:scale(var(--scale));transform-origin:center center;flex:none}
-    .grid-bg{position:absolute;inset:0;opacity:.3;background-image:url("assets/grid.svg");background-size:80px 80px}
-    .topline{position:absolute;left:78px;right:78px;top:76px;height:1px;background:var(--line)}
-    .brand{position:absolute;left:78px;top:34px;width:166px;height:auto}
-    .section{position:absolute;left:78px;top:104px;color:var(--teal);font-size:14px;font-weight:700;letter-spacing:.16em}
-    .title{position:absolute;left:78px;top:136px;right:78px;margin:0;font-size:42px;line-height:1.16;letter-spacing:-.035em;font-weight:700}
-    .subtitle{font-size:18px;line-height:1.55;color:var(--muted)}
-    .foot{position:absolute;left:78px;right:78px;bottom:26px;border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;color:#7C8785;font-size:12px;letter-spacing:.08em}
-    .accent-rule{height:3px;background:var(--teal)}
-    .thin-rule{height:1px;background:var(--line)}
-    .label{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:700}
-    .small{font-size:14px;line-height:1.5;color:var(--muted)}
-    .body{font-size:17px;line-height:1.55;color:#34403E}
-    .num{font-family:Arial;font-variant-numeric:tabular-nums}
-    .kpi{font-size:40px;line-height:1;color:var(--teal);font-weight:700;letter-spacing:-.04em}
-    .kpi small{font-size:15px;color:var(--muted);font-weight:400;letter-spacing:0}
-    .panel{border:1px solid var(--line);background:#fff}
-    .soft{background:var(--mint2)}
-    .teal-panel{background:var(--teal);color:#fff}
-    .tag{display:inline-block;border:1px solid #AFC8C4;color:var(--teal2);padding:5px 9px;font-size:12px;line-height:1}
-    .screen{border:1px solid #A9B6B3;background:#F1F4F3;position:relative;overflow:hidden}
-    .screen:before{content:"";position:absolute;left:0;right:0;top:0;height:18px;background:#DDE5E3;border-bottom:1px solid #C7D1CF}
-    .screen:after{content:"PRODUCT SCREENSHOT";position:absolute;inset:18px 0 0;display:flex;align-items:center;justify-content:center;color:#899491;font-size:11px;letter-spacing:.12em}
-    .screen.has-image:before,.screen.has-image:after{display:none}
-    .screen.has-image img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
-    .holder{border:1px dashed #9BA9A6;background:#F7F9F8;color:#7B8784;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:.08em}
-    .holder.has-image{border-style:solid;padding:0;overflow:hidden;background:#fff}
-    .holder.has-image img{width:100%;height:100%;object-fit:cover;object-position:left top}
-    .node{width:64px;height:64px;border:1px solid #8DB4AE;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--teal);font-weight:700}
-    .svg-line{fill:none;stroke:var(--teal);stroke-width:2}
-    .svg-muted{fill:none;stroke:#A8B9B6;stroke-width:1.5}
-    .nav{position:fixed;right:18px;bottom:14px;z-index:99;background:rgba(17,24,23,.76);color:#fff;padding:9px 12px;font-size:12px;letter-spacing:.08em}
-    .toolbar{position:fixed;right:18px;top:14px;z-index:110;display:flex;background:rgba(252,253,253,.94);border:1px solid #D8E0DE;backdrop-filter:blur(12px)}
-    .toolbar button{appearance:none;border:0;border-right:1px solid #D8E0DE;background:transparent;color:#53605D;padding:9px 12px;font:600 11px Arial;letter-spacing:.06em;cursor:pointer}
-    .toolbar button:last-child{border-right:0}
-    .toolbar button.active{background:var(--teal);color:#fff}
-    .cover-brand{position:absolute;left:84px;top:72px;width:208px}
-    .cover-title{position:absolute;left:84px;top:238px;width:650px}
-    .cover-title h1{font-size:72px;line-height:.98;margin:0 0 26px;letter-spacing:-.055em}
-    .cover-title h2{font-size:28px;line-height:1.45;margin:0;color:#26302E;font-weight:500}
-    .cover-meta{position:absolute;left:84px;bottom:74px;display:flex;gap:48px;color:var(--muted);font-size:14px}
-    .cover-visual{position:absolute;right:32px;top:24px;width:840px;height:820px}
-    .cover-visual svg{width:100%;height:100%}
-    .cover-visual .m{fill:none;stroke:#A6B8B5;stroke-width:1.4}
-    .cover-visual .a{fill:none;stroke:var(--teal);stroke-width:2}
-    .cover-visual .f{fill:#EEF5F3;stroke:#9CB7B2;stroke-width:1.2}
-    .thesis-grid{position:absolute;left:78px;top:242px;width:715px;height:530px;display:grid;grid-template-columns:1fr 1fr;gap:0}
-    .thesis-item{padding:26px 26px 20px 0;border-top:1px solid var(--line);position:relative}
-    .thesis-item:nth-child(odd){padding-right:34px;border-right:1px solid var(--line)}
-    .thesis-item:nth-child(even){padding-left:34px}
-    .thesis-item .n{font-size:14px;color:var(--teal);font-weight:700;margin-bottom:22px}
-    .thesis-item h3{font-size:23px;margin:0 0 10px;line-height:1.25}
-    .thesis-item p{font-size:15px;line-height:1.55;color:var(--muted);margin:0}
-    .flywheel{position:absolute;right:82px;top:214px;width:660px;height:565px}
-    .flywheel svg{width:100%;height:100%}
-    .fly-label{position:absolute;width:145px;text-align:center}
-    .fly-label b{display:block;color:var(--teal);font-size:18px;margin-bottom:6px}
-    .fly-label span{font-size:13px;color:var(--muted);line-height:1.4}
-    .pain-visual{position:absolute;left:78px;top:240px;width:650px;height:530px;border-top:3px solid var(--teal);background:var(--mint2)}
-    .pain-visual svg{width:100%;height:100%}
-    .pain-list{position:absolute;right:78px;top:236px;width:730px;height:550px;display:grid;grid-template-columns:1fr 1fr}
-    .pain-item{border-top:1px solid var(--line);padding:24px 22px 18px 68px;position:relative}
-    .pain-item:nth-child(odd){border-right:1px solid var(--line)}
-    .pain-item .pn{position:absolute;left:18px;top:24px;font-size:14px;color:var(--teal);font-weight:700}
-    .pain-item h3{font-size:21px;margin:0 0 9px}
-    .pain-item p{font-size:14px;color:var(--muted);line-height:1.5;margin:0}
-    .method-main{position:absolute;left:78px;right:78px;top:236px;height:480px}
-    .method-loop{position:absolute;left:0;right:0;top:0;height:215px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .method-steps{position:absolute;left:52px;right:52px;top:44px;display:flex;justify-content:space-between}
-    .method-step{width:135px;text-align:center;position:relative}
-    .method-step:after{content:"";position:absolute;right:-52px;top:31px;width:67px;height:1px;background:#88AFAA}
-    .method-step:last-child:after{display:none}
-    .method-step .hex{width:64px;height:64px;margin:0 auto 12px;border:1px solid var(--teal);transform:rotate(45deg);background:#fff}
-    .method-step .hex span{display:flex;width:100%;height:100%;align-items:center;justify-content:center;transform:rotate(-45deg);font-size:13px;color:var(--teal);font-weight:700}
-    .method-step b{font-size:16px}
-    .method-step small{display:block;color:var(--muted);font-size:12px;margin-top:6px}
-    .govern-core{position:absolute;left:475px;right:475px;top:252px;height:76px;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;letter-spacing:.02em}
-    .govern-rails{position:absolute;left:0;right:0;bottom:0;height:112px;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .rail{display:flex;align-items:center;justify-content:center;text-align:center;border-right:1px solid var(--line);font-size:14px;color:#33413E}
-    .rail:last-child{border-right:0}
-    .company-left{position:absolute;left:78px;top:232px;width:650px;height:560px}
-    .company-statement{border-top:3px solid var(--teal);padding:22px 0 18px}
-    .company-statement h3{font-size:27px;line-height:1.35;margin:0 0 12px}
-    .company-statement p{font-size:15px;line-height:1.6;color:var(--muted);margin:0}
-    .timeline{position:absolute;left:0;right:0;top:178px;height:250px}
-    .timeline-axis{position:absolute;left:43px;top:104px;bottom:14px;width:1px;background:#91B5B0}
-    .tl{height:58px;position:relative;padding-left:92px}
-    .tl:before{content:"";position:absolute;left:37px;top:7px;width:12px;height:12px;border:2px solid var(--teal);background:#fff}
-    .tl .year{position:absolute;left:0;top:4px;color:var(--teal);font-size:13px;font-weight:700}
-    .tl b{font-size:16px}
-    .tl span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
-    .company-footprint{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .company-footprint div{padding:18px 10px;border-right:1px solid var(--line)}
-    .company-footprint div:last-child{border-right:0}
-    .company-footprint b{display:block;color:var(--teal);font-size:28px}
-    .company-footprint span{font-size:12px;color:var(--muted)}
-    .company-right{position:absolute;right:78px;top:232px;width:760px;height:560px;display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:220px 160px 150px;gap:14px}
-    .company-right .box{border:1px solid var(--line);padding:16px;background:#fff}
-    .company-right h4{font-size:15px;color:var(--teal);margin:0 0 10px;letter-spacing:.08em}
-    .ecosystem{grid-row:span 2;position:relative;overflow:hidden}
-    .ecosystem svg{position:absolute;left:10px;right:10px;top:46px;width:calc(100% - 20px);height:300px}
-    .cap-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
-    .cap-list div{border-top:1px solid var(--line);padding-top:7px}
-    .cap-list b{font-size:13px}
-    .cap-list span{display:block;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.35}
-    .delivery{grid-column:1/3;display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center}
-    .delivery-flow{display:grid;grid-template-columns:repeat(5,1fr);height:62px}
-    .delivery-flow div{border-left:1px solid var(--line);padding:8px 12px}
-    .delivery-flow b{display:block;font-size:13px}
-    .delivery-flow span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
-    .honor-grid{position:absolute;left:78px;right:78px;top:226px;height:585px;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,1fr);gap:14px}
-    .honor{border:1px solid var(--line);background:#fff;position:relative;overflow:hidden}
-    .honor img{position:absolute;left:0;top:0;width:100%;height:205px;object-fit:cover;filter:saturate(.78) contrast(.98)}
-    .honor .hc{position:absolute;left:0;right:0;bottom:0;height:74px;background:rgba(252,253,253,.96);padding:13px 14px}
-    .honor .hc b{font-size:14px;display:block}
-    .honor .hc span{font-size:11px;color:var(--muted);display:block;margin-top:6px}
-    .case-grid{position:absolute;left:78px;right:78px;top:232px;height:556px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .case{border-top:3px solid var(--teal);border-bottom:1px solid var(--line);padding:22px 22px 0;position:relative;background:#fff}
-    .case .case-type{font-size:13px;color:var(--teal);font-weight:700;letter-spacing:.08em}
-    .case h3{font-size:25px;margin:14px 0 26px;line-height:1.25}
-    .case-stage{border-top:1px solid var(--line);padding:16px 0 16px 96px;position:relative;min-height:99px}
-    .case-stage .stage-name{position:absolute;left:0;top:18px;width:76px;font-size:12px;color:var(--teal);font-weight:700}
-    .case-stage b{font-size:15px;display:block;margin-bottom:6px}
-    .case-stage p{font-size:13px;color:var(--muted);line-height:1.45;margin:0}
-    .case-outcome{position:absolute;left:22px;right:22px;bottom:0;height:84px;background:var(--mint);padding:16px 18px}
-    .case-outcome b{font-size:15px;color:var(--teal2)}
-    .case-outcome p{margin:7px 0 0;font-size:13px;color:#3F4A48}
-    .product-shell{position:absolute;left:78px;right:78px;top:226px;height:590px;border:1px solid var(--line);background:#fff}
-    .shared-top{height:50px;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--teal2);font-size:15px;font-weight:700;letter-spacing:.05em}
-    .edition{height:236px;display:grid;grid-template-columns:180px 1fr 1fr;position:relative;border-top:1px solid var(--line)}
-    .edition-label{background:var(--warm);padding:30px 20px;border-right:1px solid var(--line)}
-    .edition-label b{font-size:19px;color:var(--teal)}
-    .edition-label span{font-size:13px;color:var(--muted);display:block;margin-top:10px;line-height:1.5}
-    .product{padding:22px;border-right:1px solid var(--line);display:grid;grid-template-columns:1fr 210px;gap:16px}
-    .product:last-child{border-right:0}
-    .product h3{font-size:22px;margin:0 0 7px;color:var(--teal2)}
-    .product .role{font-size:13px;color:var(--muted);margin-bottom:17px}
-    .product ul{margin:0;padding-left:18px;font-size:13px;line-height:1.7;color:#394542}
-    .product .screen{height:165px}
-    .shared-bottom{height:66px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(6,1fr)}
-    .shared-bottom div{display:flex;align-items:center;justify-content:center;border-right:1px solid var(--line);font-size:12px;color:#42504D}
-    .shared-bottom div:last-child{border-right:0}
-    .arch{position:absolute;left:78px;right:78px;top:225px;height:590px;display:grid;grid-template-rows:74px 88px 92px 124px 90px 82px;border:1px solid var(--line)}
-    .arch-row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--line)}
-    .arch-row:last-child{border-bottom:0}
-    .arch-label{background:var(--warm);border-right:1px solid var(--line);padding:20px;color:var(--teal2);font-size:13px;font-weight:700}
-    .arch-cells{display:flex;gap:10px;padding:12px}
-    .arch-cell{flex:1;border:1px solid #D6DEDC;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:12px;color:#34413E;background:#fff}
-    .arch-cell.key{border-color:#8DB7B1;background:var(--mint);color:var(--teal2);font-weight:700}
-    .market-grid{position:absolute;left:78px;right:78px;top:228px;height:575px;display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
-    .market-column{border-top:3px solid var(--teal);padding-top:18px}
-    .market-column h3{font-size:25px;margin:0 0 18px}
-    .facts{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-    .fact{height:112px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px}
-    .fact b{font-size:27px;color:var(--teal)}
-    .fact p{font-size:13px;color:var(--muted);line-height:1.45;margin:10px 0 0}
-    .tam{margin-top:18px;border:1px solid var(--line);height:184px;padding:18px;position:relative}
-    .tam h4{font-size:14px;color:var(--teal);margin:0 0 13px}
-    .tam-eq{font-size:23px;font-weight:700;margin:5px 0}
-    .tam p{font-size:13px;color:var(--muted);line-height:1.45;margin:10px 0}
-    .policy{border-left:1px solid var(--line);padding-left:30px}
-    .policy-item{position:relative;padding:0 0 20px 34px}
-    .policy-item:before{content:"";position:absolute;left:-5px;top:5px;width:10px;height:10px;background:#fff;border:2px solid var(--teal)}
-    .policy-item:after{content:"";position:absolute;left:0;top:17px;bottom:0;width:1px;background:#9FBDB8}
-    .policy-item:last-child:after{display:none}
-    .policy-item b{font-size:15px}
-    .policy-item span{display:block;color:var(--muted);font-size:12px;margin-top:5px;line-height:1.45}
-    .devops-proof{position:absolute;left:0;right:0;bottom:0;height:92px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px}
-    .devops-proof div{flex:1;height:52px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px}
-    .devops-proof i{width:25px;height:1px;background:var(--teal);position:relative}
-    .devops-proof i:after{content:"";position:absolute;right:-1px;top:-3px;border-left:6px solid var(--teal);border-top:3px solid transparent;border-bottom:3px solid transparent}
-    .opc-layout{position:absolute;left:78px;right:78px;top:228px;height:575px;display:grid;grid-template-columns:390px 1fr 380px;gap:28px}
-    .opc-left{border-top:3px solid var(--teal)}
-    .signal{padding:20px 0;border-bottom:1px solid var(--line)}
-    .signal b{font-size:28px;color:var(--teal)}
-    .signal span{display:block;font-size:13px;color:var(--muted);line-height:1.45;margin-top:7px}
-    .opc-flow{border:1px solid var(--line);position:relative;background:#fff}
-    .opc-flow h3{font-size:18px;color:var(--teal);margin:24px}
-    .opc-nodes{position:absolute;left:50px;right:50px;top:105px;bottom:60px;display:flex;flex-direction:column;justify-content:space-between}
-    .opc-node{height:60px;border:1px solid var(--line);display:grid;grid-template-columns:52px 1fr 120px;align-items:center;padding:0 16px}
-    .opc-node .on{font-size:12px;color:var(--teal);font-weight:700}
-    .opc-node b{font-size:16px}
-    .opc-node span{font-size:12px;color:var(--muted);text-align:right}
-    .opc-right{border-top:3px solid var(--teal);padding-top:18px}
-    .opc-right .formula{font-size:19px;line-height:1.45;font-weight:700;margin:16px 0 20px}
-    .funnel{height:240px;display:flex;flex-direction:column;align-items:center;gap:7px}
-    .funnel div{height:42px;background:var(--mint);border:1px solid #B7CDC9;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--teal2)}
-    .open-layout{position:absolute;left:78px;right:78px;top:226px;height:575px;display:grid;grid-template-columns:760px 1fr;gap:30px}
-    .open-fly{border:1px solid var(--line);position:relative}
-    .open-fly svg{position:absolute;left:45px;top:35px;width:670px;height:430px}
-    .open-center{position:absolute;left:282px;top:216px;width:196px;height:90px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-size:21px;font-weight:700}
-    .open-note{position:absolute;left:55px;right:55px;bottom:26px;text-align:center;font-size:13px;color:var(--muted)}
-    .open-right{display:grid;grid-template-rows:210px 210px 1fr;gap:16px}
-    .open-slot{border:1px solid var(--line);display:grid;grid-template-columns:1fr 230px;background:#fff}
-    .open-slot .copy{padding:22px}
-    .open-slot h3{font-size:20px;color:var(--teal);margin:0 0 10px}
-    .open-slot p{font-size:13px;color:var(--muted);line-height:1.5;margin:0}
-    .open-slot .holder{margin:18px;height:174px}
-    .precedents{border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between;color:#4A5754;font-size:14px}
-    .comp-layout{position:absolute;left:78px;right:78px;top:226px;height:575px;display:grid;grid-template-columns:600px 1fr;gap:30px}
-    .map{border:1px solid var(--line);position:relative;background:#fff}
-    .axis-x{position:absolute;left:65px;right:35px;bottom:52px;height:1px;background:#77827F}
-    .axis-y{position:absolute;left:65px;top:35px;bottom:52px;width:1px;background:#77827F}
-    .axis-x:after,.axis-y:after{content:"";position:absolute;border-style:solid}
-    .axis-x:after{right:-1px;top:-4px;border-width:4px 0 4px 7px;border-color:transparent transparent transparent #77827F}
-    .axis-y:after{left:-4px;top:-1px;border-width:0 4px 7px;border-color:transparent transparent #77827F}
-    .axis-label-x{position:absolute;right:35px;bottom:20px;font-size:11px;color:var(--muted)}
-    .axis-label-y{position:absolute;left:18px;top:26px;font-size:11px;color:var(--muted);writing-mode:vertical-rl}
-    .bubble{position:absolute;padding:8px 10px;background:#fff;border:1px solid #AEB9B7;font-size:12px}
-    .bubble.open{background:var(--teal);color:white;border-color:var(--teal);font-weight:700;padding:13px 16px}
-    .comp-right{display:grid;grid-template-rows:250px 1fr;gap:18px}
-    .layers{border:1px solid var(--line);padding:20px}
-    .layer-row{height:40px;display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--line);align-items:center}
-    .layer-row b{font-size:13px}
-    .layer-row div{display:flex;gap:8px}
-    .layer-row span{font-size:11px;border:1px solid #CAD3D1;padding:5px 8px;color:#47524F}
-    .boundary{border:1px solid var(--line);padding:18px}
-    .boundary h3{font-size:16px;margin:0 0 14px;color:var(--teal)}
-    .bar-row{height:35px;display:grid;grid-template-columns:120px 1fr 55px;gap:12px;align-items:center}
-    .bar-row b{font-size:12px}
-    .bar-track{height:8px;background:#E8ECEB}
-    .bar-fill{height:8px;background:var(--teal)}
-    .bar-row span{font-size:11px;color:var(--muted);text-align:right}
-    .team-layout{position:absolute;left:78px;right:78px;top:220px;height:590px;display:grid;grid-template-columns:560px 1fr;gap:38px}
-    .ceo-photo{border-top:3px solid var(--teal);position:relative;overflow:hidden;background:#DDE5E3}
-    .ceo-photo img{width:100%;height:100%;object-fit:cover;object-position:65% center;filter:saturate(.72) contrast(1.02)}
-    .ceo-photo:after{content:"";position:absolute;left:0;right:0;bottom:0;height:118px;background:rgba(17,24,23,.82)}
-    .ceo-photo .photo-label{position:absolute;left:78px;bottom:28px;color:#fff;z-index:2}
-    .ceo-photo .photo-label b{font-size:28px}
-    .ceo-photo .photo-label span{display:block;font-size:14px;margin-top:8px;color:#D8E4E1}
-    .ceo-story{border-top:3px solid var(--teal);padding-top:24px;position:relative}
-    .ceo-story .leadline{font-size:27px;line-height:1.38;margin:0 0 24px;font-weight:700}
-    .ceo-story .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-    .story-cell{height:128px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px}
-    .story-cell b{font-size:14px;color:var(--teal)}
-    .story-cell p{font-size:13px;color:var(--muted);line-height:1.5;margin:8px 0 0}
-    .support-strip{position:absolute;left:0;right:0;bottom:0;height:122px;border-top:1px solid var(--line);display:grid;grid-template-columns:150px repeat(4,1fr)}
-    .support-strip>div{border-right:1px solid var(--line);padding:18px}
-    .support-strip>div:last-child{border-right:0}
-    .support-strip .ss-title{background:var(--warm)}
-    .support-strip b{font-size:13px}
-    .support-strip span{display:block;font-size:11px;color:var(--muted);margin-top:8px}
-    .growth-layout{position:absolute;left:78px;right:78px;top:226px;height:575px;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:300px 1fr;gap:24px 30px}
-    .finance{border-top:3px solid var(--teal);padding-top:18px;position:relative}
-    .finance h3,.routes h3,.roadmap h3{font-size:18px;margin:0 0 14px}
-    .bars{position:absolute;left:55px;right:20px;bottom:42px;height:200px;border-left:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-around}
-    .bar{width:74px;background:var(--teal);position:relative}
-    .bar:nth-child(1){height:34px;opacity:.45}.bar:nth-child(2){height:92px;opacity:.7}.bar:nth-child(3){height:184px}
-    .bar b{position:absolute;left:50%;transform:translateX(-50%);top:-27px;color:var(--teal);font-size:14px;white-space:nowrap}
-    .bar span{position:absolute;left:50%;transform:translateX(-50%);bottom:-29px;font-size:12px;color:var(--muted)}
-    .routes{border-top:3px solid var(--teal);padding-top:18px}
-    .route{height:102px;border-top:1px solid var(--line);padding:16px 0;display:grid;grid-template-columns:150px 1fr;gap:15px}
-    .route b{font-size:14px;color:var(--teal)}
-    .route-flow{display:flex;align-items:center;gap:8px}
-    .route-flow span{flex:1;border:1px solid var(--line);height:38px;display:flex;align-items:center;justify-content:center;font-size:11px}
-    .route-flow i{width:18px;height:1px;background:var(--teal)}
-    .roadmap{grid-column:1/3;border-top:1px solid var(--line);padding-top:18px;display:grid;grid-template-columns:160px 1fr 330px;gap:20px}
-    .years{display:grid;grid-template-columns:repeat(3,1fr)}
-    .year-card{border-left:1px solid var(--line);padding:0 18px}
-    .year-card b{font-size:22px;color:var(--teal)}
-    .year-card span{display:block;font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
-    .use-funds{border-left:1px solid var(--line);padding-left:24px}
-    .use-funds h4{font-size:14px;margin:0 0 12px}
-    .use-row{height:29px;display:grid;grid-template-columns:1fr 55px;align-items:center;border-bottom:1px solid var(--line);font-size:12px}
-    .use-row b{color:var(--teal);text-align:right}
-    .source-note{position:absolute;left:78px;right:78px;bottom:28px;color:#7B8784;font-size:12px;line-height:1.25;letter-spacing:.01em}
-    .lang-en .section span:last-child{display:none}
-    .lang-en .title{font-size:27px;letter-spacing:-.02em}
-    .lang-en .body,.lang-en .subtitle{line-height:1.42}
-    .lang-en .thesis-item p,.lang-en .pain-item p,.lang-en .case-stage p,.lang-en .case-outcome p{font-size:12px;line-height:1.38}
-    .lang-en .case h3{font-size:20px}
-    .lang-en .product ul,.lang-en .policy-item span,.lang-en .story-cell p{font-size:11px;line-height:1.38}
-    .lang-en .company-statement h3{font-size:24px}
+    .slide-wrap {
+      width: 100% !important;
+      position: relative !important;
+      display: block !important;
+      overflow: hidden !important;
+    }
+    .slide {
+      width: 1600px !important;
+      height: 900px !important;
+      position: absolute !important;
+      top: 58px !important;
+      left: 50% !important;
+      margin-left: -800px !important; /* Center the 1600px width */
+      transform-origin: top center !important;
+      transform: scale(var(--scale)) !important;
+      background: var(--paper) !important;
+      overflow: hidden !important;
+    }
+  
+  @media (max-width: 1100px) {
+    .slide-wrap {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    .slide {
+      width: 1600px !important;
+      height: 900px !important;
+      position: absolute !important;
+      left: 50% !important;
+      margin-left: -800px !important;
+      transform-origin: top center !important;
+      transform: scale(var(--scale)) !important;
+      background: var(--paper) !important;
+      overflow: hidden !important;
+    }
+  }
 
-    @media(max-width:900px){
-      .nav{display:none}
-      .toolbar{left:10px;right:10px;top:8px;justify-content:center}
-      .toolbar button{flex:1;padding:8px 5px;font-size:12px}
-      body{scroll-snap-type:none}
-      .slide-wrap{align-items:flex-start;padding-top:48px}
-      .slide{transform-origin:top center}
-    }
-    body.overview-mode .slide-wrap{
-      width:100%;min-width:0;overflow:hidden;align-items:flex-start;justify-content:flex-start;padding:0
-    }
-    body.overview-mode .slide{transform-origin:top left}
   </style>
   <link rel="stylesheet" href="assets/deck-appendix.css?v=20260630j">
   <link rel="stylesheet" href="assets/deck-refine.css?v=20260701o">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="overlap-fixes-only">
+  /* Slide 01: Cover */
+  .cover-title { width: 540px !important; }
+  .cover-visual { width: 1000px !important; }
+
+  /* Title vs Brand overlap fix */
+  .brand { left: 48px !important; top: 32px !important; bottom: auto !important; }
+  .section { left: 48px !important; top: 32px !important; }
+  .title { left: 48px !important; right: 48px !important; top: 96px !important; }
+
+  /* Fix z-index layers on Slide 04 */
+  .official-phase-layer { z-index: 1 !important; }
+  .official-step-layer { z-index: 2 !important; }
+
+  /* Slide 05 overlaps */
+  .company-left { width: 620px !important; }
+  .company-right { width: 720px !important; }
+
+  /* Slide 08 */
+  .product-shell { height: 530px !important; }
+
+  /* Foot overlaps (Slide 17-30) */
+  .app-stage, .app-split, .telecom-case, .app-building, .app-flywheel, .app-product-layout, .app-architecture, .app-docs {
+    height: 600px !important;
+    overflow: hidden !important;
+  }
+  .app-feature-grid { height: auto !important; }
+  .foot { z-index: 100 !important; background: rgba(255,255,255,0.8); }
+</style>
+
 </head>
 <body>
   <div class="toolbar">
@@ -320,12 +130,12 @@
     <div class="cover-wordmark">OpenCSG</div>
     <div class="cover-bp"><b>BUSINESS PLAN</b><span>2026 · INVESTOR MATERIALS</span></div>
     <div class="cover-title">
-      <div class="label">OPEN SOURCE · AGENTICOPS · AI SOVEREIGNTY</div>
+      <div class="label">GLOBAL OPEN SOURCE · AGENTICOPS · AI SOVEREIGNTY</div>
       <h1>OpenCSG</h1>
       <h2 data-en="Open by design. Keep AI in your own hands.">开放，让 AI 掌握在自己手中</h2>
       <p>OPEN BY DESIGN. AI UNDER YOUR CONTROL.</p>
     </div>
-    <div class="cover-meta"><span>OPEN SOURCE</span><span>ENTERPRISE + SOVEREIGN</span><span>PERSONAL OPC</span></div>
+    <div class="cover-meta"><span>GLOBAL OPEN SOURCE</span><span>ENTERPRISE + SOVEREIGN</span><span>PERSONAL AI / OPC</span></div>
     <div class="cover-visual">
       <img src="assets/sovereign-ai-cover-v3.png" alt="AI 主权开放基础设施：连接城市、企业与个人智能节点">
     </div>
@@ -334,12 +144,12 @@
   <div class="slide-wrap"><section class="slide light" data-layout="L05" id="slide-02">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">投资论点　</span><span style="font-size:13px;color:#697472;font-weight:400">Investment Thesis</span></div>
-    <h2 class="title" data-en="From open assets to enterprise production, city nodes and personal OPC">从开源资产入口，到企业生产、城市节点与个人 OPC 的复合增长飞轮</h2>
+    <h2 class="title" data-en="Open-source distribution, enterprise monetization and global replication form one growth engine">开源建立全球分发，企业生产完成变现，区域节点推动全球复制</h2>
     <div class="thesis-grid">
       <div class="thesis-item"><div class="n">01</div><h3 data-en="Continuous iteration, private deployment and deep workflow integration are now essential">持续迭代、私有部署与业务深耦合成为刚需</h3><p data-en="Models improve daily. Enterprises need continuous upgrades inside their own data and compute boundaries while agents enter real workflows without interrupting production.">模型能力每天变化，企业既要在自身数据与算力边界内持续升级，也要让 Agent 真正进入业务流程而不中断生产。</p></div>
-      <div class="thesis-item"><div class="n">02</div><h3 data-en="A unique open-source, integrated AgenticOps position">唯一开源的一体化 AgenticOps 卡位</h3><p data-en="With 3M+ community users and 200K+ model assets, OpenCSG connects open assets, enterprise governance, agent production and continuous operations in one system.">以 300 万+社区用户和 20 万+模型资产为入口，把开放资产、企业治理、Agent 生产与持续运营连接成一套系统。</p></div>
+      <div class="thesis-item"><div class="n">02</div><h3 data-en="Open source creates global distribution; AgenticOps powers production">开源建立全球分发，AgenticOps 承接生产</h3><p data-en="AgenticOps is the system for building, releasing, monitoring and continuously improving AI. OpenCSG connects this lifecycle to 3M+ community users and 200K+ model assets.">AgenticOps 是 AI 的构建、发布、监控与持续改进体系；OpenCSG 以 300 万+社区用户和 20 万+模型资产建立全球入口。</p></div>
       <div class="thesis-item"><div class="n">03</div><h3 data-en="Repeated enterprise commercialization proof">企业商业化连续验证</h3><p data-en="Enterprise customers include miHoYo, Bilibili, CATL and CALB. Revenue has doubled for three consecutive years while maintaining positive net profit and operating cash flow.">终端客户覆盖米哈游、B 站、宁德时代、中航锂电等；三年连续翻倍增长，持续保持净利润与净现金流。</p></div>
-      <div class="thesis-item"><div class="n">04</div><h3 data-en="City nodes, personal OPC and foundations create network effects">城市节点 × OPC × 基金会形成网络效应</h3><p data-en="City nodes including Shanghai, Chongqing, Yancheng, Dongfang and Yichang can incubate personal OPC while foundations, industry funds and developers replicate the network nationwide.">上海、重庆、盐城、东方、宜昌等城市站点可持续孵化个人 OPC，并联动基金会、产业基金和开发者生态向全国复制。</p></div>
+      <div class="thesis-item"><div class="n">04</div><h3 data-en="Regional nodes turn local validation into global replication">区域节点把本地验证转化为全球复制</h3><p data-en="Validated city nodes connect organizations, developers, foundations and industry capital; personal AI work systems (OPC) extend the same open foundation to individuals.">已验证的城市节点连接组织、开发者、基金会与产业资本；个人 AI 工作系统（OPC）把同一开放底座延伸到个人。</p></div>
     </div>
     <div class="flywheel">
       <svg viewBox="0 0 660 565">
@@ -359,7 +169,7 @@
       </svg>
       <div class="fly-label top"><b data-en="Open asset entry">开放资产入口</b><span data-en="Models · data · developers">模型 · 数据 · 开发者</span></div>
       <div class="fly-label right"><b data-en="Enterprise production">企业生产系统</b><span data-en="Governance · operations · expansion">治理 · 运营 · 扩容</span></div>
-      <div class="fly-label bottom"><b data-en="City nodes & personal OPC">城市节点与个人 OPC</b><span data-en="Local runtime · collaboration · subscription">本地运行 · 协同 · 订阅</span></div>
+      <div class="fly-label bottom"><b data-en="Regional nodes & personal AI">区域节点与个人 AI（OPC）</b><span data-en="Local runtime · collaboration · subscription">本地运行 · 协同 · 订阅</span></div>
       <div class="fly-label left"><b data-en="Foundations & industry capital">基金会与产业资本</b><span data-en="Ecosystem · capital · global reach">生态 · 资本 · 国际连接</span></div>
     </div>
     <div class="foot"><span>OPENCSG · CONFIDENTIAL</span><span>02</span></div>
@@ -368,7 +178,7 @@
   <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-03">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Paradigm Evolution　">范式演进　</span><span style="font-size:13px;color:#697472;font-weight:400">From DevOps to AgenticOps</span></div>
-    <h2 class="title" data-en="The evolution of AI-native development: from DevOps to AgenticOps">大模型时代的进化：从 DevOps 到 AgenticOps</h2>
+    <h2 class="title" data-en="DevOps manages software delivery; AgenticOps manages AI production and continuous improvement">DevOps 管理软件交付，AgenticOps 管理 AI 生产与持续进化</h2>
     <div class="evolution-page">
       <div class="paradigm-compare">
         <article class="paradigm-panel devops-panel">
@@ -444,12 +254,12 @@
   <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-04">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
     <div class="section"><span class="section-zh" data-en="AgenticOps Methodology">AgenticOps 方法论</span></div>
-    <h2 class="title" data-en="One AgenticOps double loop for organizational production and personal OPC">同一套 AgenticOps 双环，贯通组织型生产与个人 OPC</h2>
+    <h2 class="title" data-en="AgenticOps connects AI build, release, operations, feedback and continuous improvement">AgenticOps 贯通 AI 的构建、发布、运行、反馈与持续改进</h2>
     <div class="roadmap-app official-roadmap" data-mode="enterprise" data-active="0">
       <div class="roadmap-head">
         <div>
           <b data-en="AgenticOps lifecycle">AgenticOps 生命周期</b>
-          <p data-en="One control plane shared by organizations and personal OPC">组织与个人 OPC 共享同一控制层</p>
+          <p data-en="One lifecycle for organizational production and personal AI work systems (OPC)">同一生命周期服务组织生产与个人 AI 工作系统（OPC）</p>
         </div>
         <div class="roadmap-tabs">
           <button type="button" data-road-mode="enterprise" class="active"><img src="assets/roadmap/enterprise.svg" alt=""><span data-en="ORGANIZATION">企业</span></button>
@@ -513,10 +323,10 @@
   <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-05">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">公司概览　</span><span style="font-size:13px;color:#697472;font-weight:400">Company Overview</span></div>
-    <h2 class="title" data-en="OpenCSG: building sovereign AI infrastructure">OpenCSG：专注 AI 主权基础设施建设的人工智能企业</h2>
+    <h2 class="title" data-en="OpenCSG: global open-source infrastructure for AI production and governance">OpenCSG：面向全球的开源 AI 生产与治理基础设施</h2>
     <div class="company-left">
       <div class="company-statement">
-        <p class="company-legal" data-en="Beijing OpenCSG Technology Co., Ltd. was founded in March 2023 and began formal operations in October. It builds sovereign AI infrastructure so organizations can own autonomous, controllable and continuously evolving AI across models, data, compute and agents.">北京开放传神科技有限公司成立于 2023 年 3 月，同年 10 月正式运营。公司聚焦 AI 主权基础设施，让组织在模型、数据、算力与智能体四个层面拥有自主、可控、可演进的 AI 能力。</p>
+        <p class="company-legal" data-en="Founded in 2023, OpenCSG serves organizations worldwide with open-source AgenticOps and sovereign AI infrastructure, enabling autonomous, controllable and continuously evolving AI across models, data, compute and agents.">OpenCSG 创立于 2023 年，面向全球组织提供开源 AgenticOps 与 AI 主权基础设施，让客户在模型、数据、算力与智能体四个层面拥有自主、可控、可演进的 AI 能力。</p>
         <div class="csg-expansion">
           <span><b>C</b><em>CONVERGE</em><small>汇聚开放资产</small></span>
           <span><b>S</b><em>SPREAD</em><small>扩散智能能力</small></span>
@@ -565,7 +375,7 @@
             <div><b>中矿</b><span>MINING</span></div>
           </div>
           <div class="regional-network">
-            <div class="regional-map" aria-label="城市级 AI 平台全国复制网络">
+            <div class="regional-map" aria-label="城市级 AI 平台全球复制网络">
               <img src="assets/china-blank-map.svg" alt="中国城市级 AI 平台节点地图">
               <span class="city-pin shanghai" data-en="Shanghai">上海</span>
               <span class="city-pin yancheng" data-en="Yancheng">盐城</span>
@@ -576,8 +386,8 @@
               <span class="city-pin hongkong" data-en="Hong Kong">香港</span>
               <span class="city-pin singapore" data-en="Singapore">新加坡</span>
             </div>
-            <b data-en="One city node can radiate into a nationwide and Southeast Asian AI network">一个城市节点，可发散为全国与东南亚 AI 网络</b>
-            <p data-en="Mainland city nodes · Hong Kong gateway · Singapore and Southeast Asia">内地城市节点 · 香港国际入口 · 新加坡与东南亚连接</p>
+            <b data-en="Validated regional nodes can expand into a global open AI network">以区域节点完成落地验证，向全球开放 AI 网络复制</b>
+            <p data-en="Proven delivery · Hong Kong gateway · Singapore and Southeast Asia · Global expansion">已落地场景验证 · 香港国际入口 · 新加坡与东南亚连接 · 面向全球拓展</p>
           </div>
         </div>
       </div>
@@ -666,7 +476,7 @@
   <div class="slide-wrap"><section class="slide light" data-layout="L08" id="slide-08">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">统一产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">Unified Product System</span></div>
-    <h2 class="title">一套 AgenticOps 平台，两种版本形态</h2>
+    <h2 class="title">同一技术底座，服务组织生产与个人 AI 工作系统</h2>
     <div class="product-shell">
       <div class="shared-top"><b data-en="One shared AgenticOps control plane">一套共享 AgenticOps 控制平面</b><span data-en="Open assets · Identity and security · Runtime · Evaluation · Observability">开放资产生态 · 身份与安全 · 运行时 · 评测 · 可观测性</span></div>
       <div class="edition organization-edition">
@@ -675,7 +485,7 @@
         <div class="product"><div><h3>AgenticHub</h3><div class="role">Agent 构建、发布与持续运营</div><ul><li>Agent / Workflow / Skill 的构建、编排与版本管理</li><li>测试、评测、沙箱、发布门禁与人工确认</li><li>生产监控、反馈回流、成本、SLA 与持续优化</li><li>多团队协作、企业工具接入与业务运行治理</li><li>开放 API、Webhook 与企业系统集成</li></ul><div class="product-meta"><span>Build → Run</span><span>Eval / Sandbox</span><span>Observe</span></div></div><div class="screen has-image"><img src="assets/product-agentichub.png" alt="AgenticHub 产品界面"></div></div>
       </div>
       <div class="edition personal-edition">
-        <div class="edition-label"><em data-en="PERSONAL OPC EDITION">PERSONAL OPC EDITION</em><b>个人 OPC<br>AgenticOps</b><span>开发者、Solo Founder 与个人知识工作者</span></div>
+        <div class="edition-label"><em data-en="PERSONAL AI / OPC">PERSONAL AI / OPC</em><b>个人 AI 工作系统<br>（OPC）</b><span>开发者、Solo Founder 与个人知识工作者</span></div>
         <div class="product"><div><h3>CSGHub-Lite</h3><div class="role">本地 AI 资产与运行底座</div><ul><li>一键启动本地模型，支持 GGUF 与 SafeTensors 转换</li><li>兼容 Ollama API 的 REST 服务与流式对话</li><li>模型下载、断点续传、持久化和跨平台运行</li><li>私有知识、长期记忆与本地开发工具接入</li><li>本地搜索、插件与快捷工作流</li></ul><div class="product-meta"><span>Local-first</span><span>Offline</span><span>Cross-platform</span></div></div><div class="screen has-image"><img src="assets/product-lite.png" alt="CSGHub-Lite 产品界面"></div></div>
         <div class="product"><div><h3>CSGClaw</h3><div class="role">个人多 Agent 协同执行系统</div><ul><li>Manager–Worker 角色分工与并行任务拆解</li><li>Agent / Skill 发现、组合、调用与执行网络</li><li>本地权限、沙箱、人机确认和可回放过程</li><li>从一次性对话升级为长期运行的个人生产系统</li><li>任务日志、回放与结果归档</li></ul><div class="product-meta"><span>Multi-Agent</span><span>Skill Network</span><span>Human-in-loop</span></div></div><div class="screen has-image"><img src="assets/product-claw.png" alt="CSGClaw 产品界面"></div></div>
       </div>
@@ -687,7 +497,7 @@
   <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-09">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">全栈技术架构　</span><span style="font-size:13px;color:#697472;font-weight:400">Full Technical Architecture</span></div>
-    <h2 class="title" data-en="One AgenticOps stack: from the platform foundation to AI-driven production">一体化 AgenticOps 技术栈：从平台底座到 AI 驱动生产</h2>
+    <h2 class="title" data-en="One platform manages AI assets, compute, agents and production operations">一套平台统一管理 AI 资产、算力、Agent 与生产运行</h2>
     <div class="arch9-tabs" role="tablist" aria-label="Architecture views">
       <button type="button" data-arch-view="production" data-en="INDUSTRY PRODUCTION LOOP">行业生产闭环</button>
       <button type="button" class="active" data-arch-view="platform" data-en="FULL PLATFORM STACK">平台全栈架构</button>
@@ -847,7 +657,7 @@
 
   <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-10">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
-    <div class="section"><span class="section-zh">企业与国家/区域市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Enterprise & Sovereign Market</span></div>
+    <div class="section"><span class="section-zh">全球企业与主权 AI 市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Global Enterprise & Sovereign AI Market</span></div>
     <h2 class="title" data-en="Enterprise AI is scaling; control, governance and operations become the next infrastructure layer">企业 AI 正进入规模化，控制、治理与持续运营成为下一层基础设施</h2>
     <div class="market10">
       <section class="m10-evidence">
@@ -888,8 +698,8 @@
 
   <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-11">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
-    <div class="section"><span class="section-zh">个人 OPC 市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Personal OPC Market</span></div>
-    <h2 class="title" data-en="Personal AI is gaining its own compute, open ecosystem and persistent operating layer">个人 AI 正同时获得算力、开源生态与持续运行层</h2>
+    <div class="section"><span class="section-zh">个人 AI / OPC 市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Personal AI / OPC Market</span></div>
+    <h2 class="title" data-en="Personal AI is evolving from a chat tool into a persistent work system (OPC)">个人 AI 正从对话工具升级为可长期运行的个人工作系统（OPC）</h2>
     <div class="opc11">
       <div class="opc11-signals">
         <article><small>OPEN ECOSYSTEM</small><b>180M+</b><p>GitHub 开发者，开源个人 AI 最直接的全球分发入口。</p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025: A New Developer Joins Every Second</a></article>
@@ -986,7 +796,7 @@
   <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-13">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Competitive Landscape　">竞争格局与能力矩阵　</span><span style="font-size:13px;color:#697472;font-weight:400">Competitive Landscape</span></div>
-    <h2 class="title" data-en="Public AI hubs solve model discovery; OpenCSG solves enterprise AI hosting, governance and production deployment">公开 AI Hub 解决模型发现，OpenCSG 解决企业 AI 的托管、治理与生产部署</h2>
+    <h2 class="title" data-en="OpenCSG is not another model hub; it is a production control layer across models and compute">OpenCSG 不是另一个模型社区，而是跨模型、跨算力的 AI 生产控制层</h2>
     <div class="comp13-v2">
       <section class="comp13-message">
         <div><small>PREFERRED COMPETITIVE MESSAGE</small><b data-en="From model discovery to enterprise control">从模型发现，走向企业控制</b></div>
@@ -1016,7 +826,7 @@
         <article><span>01</span><b data-en="Enterprise control">企业控制</b><p data-en="Not just model discovery.">不只是模型发现。</p></article>
         <article><span>02</span><b data-en="Private & sovereign">私有化与主权部署</b><p data-en="Not just public access.">不只是公共访问。</p></article>
         <article><span>03</span><b data-en="End-to-end AgenticOps">端到端 AgenticOps</b><p data-en="Assets, agents, deployment and operations.">贯通资产、Agent、部署与运营。</p></article>
-        <article class="hardware"><span>04</span><b data-en="Runs across heterogeneous hardware">跨芯片、跨架构运行</b><p data-en="Cloud, on-premise, edge and air-gapped; works across domestic accelerators, GPUs, CPUs and heterogeneous pools. Models, agents and governance stay portable, so compute vendors can be replaced.">云端、本地、边缘和隔离环境；兼容国产芯片、GPU、CPU 与异构算力池；模型、Agent 与治理层不绑定硬件，企业可替换算力供应商。</p></article>
+        <article class="hardware"><span>04</span><b data-en="Runs across heterogeneous hardware">跨芯片、跨架构运行</b><p data-en="Cloud, on-premise, edge and air-gapped; works across global mainstream GPUs, CPUs, regional accelerators and heterogeneous pools. Models, agents and governance stay portable, so compute vendors can be replaced.">云端、本地、边缘和隔离环境；兼容全球主流 GPU、CPU、国产及其他区域芯片与异构算力池；模型、Agent 与治理层不绑定硬件，企业可替换算力供应商。</p></article>
         <article><span>05</span><b data-en="Open and enterprise-ready">完全开源、企业就绪</b><p data-en="Model-neutral with access, audit and observability.">模型中立，具备权限、审计与可观测性。</p></article>
       </section>
     </div>
@@ -1120,9 +930,9 @@
     <div class="foot"><span data-en="One product foundation · Three revenue engines · Increasing recurring and ecosystem mix">同一产品底座 · 三类收入引擎 · 订阅与生态占比持续提升</span><span>15</span></div>
   </section></div>
 
-  <script src="assets/deck-appendix.js?v=20260701o"></script>
-  <script src="assets/deck-city-reframe.js?v=20260701o"></script>
-  <script src="assets/deck-slide03-replica.js?v=20260701o"></script>
+  <script src="assets/deck-appendix.js?v=20260701p"></script>
+  <script src="assets/deck-city-reframe.js?v=20260701p"></script>
+  <script src="assets/deck-slide03-replica.js?v=20260701p"></script>
   <script src="assets/deck-en-extra.js?v=20260701o"></script>
   <script>
     const EN={
@@ -1180,9 +990,9 @@
       "本页定义方法论，不拆分产品":"This page defines the methodology—not separate products",
       "组织与个人 OPC 共享同一控制层":"One control plane shared by organizations and personal OPC",
       "本页只讲 AgenticOps 方法论，不拆分产品线":"This page only explains the AgenticOps methodology, not separate product lines",
-      "公司概览":"Company Overview","OpenCSG：主权 AI 的开放基础设施公司":"OpenCSG: Open infrastructure for sovereign AI",
-      "2026 商业计划书 · AgenticOps 主权 AI 的开放基础设施":"2026 Business Plan · AgenticOps open infrastructure for sovereign AI",
-      "OpenCSG：开源 AgenticOps 基础设施公司":"OpenCSG: Open-source AgenticOps infrastructure company",
+      "公司概览":"Company Overview","OpenCSG：全球 AI 主权的开放基础设施公司":"OpenCSG: Global open infrastructure for sovereign AI",
+      "2026 商业计划书 · 面向全球的开源 AgenticOps 与 AI 主权基础设施":"2026 Business Plan · Global open-source AgenticOps and sovereign AI infrastructure",
+      "OpenCSG：面向全球的开源 AgenticOps 基础设施公司":"OpenCSG: Global open-source AgenticOps infrastructure company",
       "把开放的 AI 资产，变成组织与个人都能控制、运行和持续进化的生产系统。":"Turn open AI assets into production systems that organizations and individuals can control, operate and continuously evolve.",
       "公司以开源社区建立资产与开发者入口，以企业级治理和 AgenticOps 运行能力承接商业化，并向个人 OPC 延伸。":"OpenCSG uses open source to build asset and developer distribution, monetizes enterprise governance and AgenticOps, and extends the same foundation to personal OPC.",
       "把 AI 资产、Agent 生产与持续运营，统一在一套开放底座上。":"Unify AI assets, agent production and continuous operations on one open foundation.",
@@ -1262,7 +1072,7 @@
       "多租户目录 + 开发者门户 + 运营体系":"Multi-tenant catalog + developer portal + operating system","把资源供给、场景孵化、应用交付与生态增长连接成持续循环。":"Connected supply, scenario incubation, application delivery and ecosystem growth into a continuous loop.",
       "从“建一个平台”升级为“运营一个生态”，持续吸引资产、场景与开发者。":"Upgraded from building a platform to operating an ecosystem that continuously attracts assets, scenarios and developers.",
       "案例全部匿名；量化数据仅作为尽调附件，不抢占主叙事":"All cases are anonymous; quantitative evidence remains in diligence materials",
-      "统一产品体系":"Unified Product System","一套 AgenticOps 平台，两种版本形态":"One AgenticOps platform, two editions",
+      "统一产品体系":"Unified Product System","同一技术底座，服务组织生产与个人 AI 工作系统":"One technology foundation for organizational production and personal AI work systems",
       "共享方法论、开放资产生态、身份与安全、运行时、评测与可观测性":"Shared methodology, open asset ecosystem, identity, security, runtime, evaluation and observability",
       "组织型":"Organizational","企业、科研机构、运营商与区域平台":"Enterprises, research institutions, carriers and regional platforms",
       "AI 资产管理与治理":"AI asset management & governance","模型 / 数据集 / Agent 资产":"Model / dataset / agent assets",
@@ -1279,7 +1089,7 @@
       "产品版本":"Product editions","组织型 AgenticOps":"Organizational AgenticOps","个人 OPC AgenticOps":"Personal OPC AgenticOps","生命周期":"Lifecycle",
       "治理控制":"Governance controls","部署环境":"Deployment environments","个人设备":"Personal devices","边缘节点":"Edge nodes","私有数据中心":"Private data centers","混合云":"Hybrid cloud","公有云":"Public cloud","多芯片 / 多模型":"Multi-chip / multi-model",
       "三条主路径：资产沉淀、Agent 运行、反馈进化":"Three core paths: asset accumulation, agent runtime and feedback evolution",
-      "企业与国家/区域市场":"Enterprise & Sovereign Market","AI 主权首先是企业生产需求，政策与国家战略进一步加速市场":"AI sovereignty begins as an enterprise production need; policy and national strategy accelerate it",
+      "全球企业与主权 AI 市场":"Global Enterprise & Sovereign AI Market","AI 主权首先是企业生产需求，政策与国家战略进一步加速市场":"AI sovereignty begins as an enterprise production need; policy and national strategy accelerate it",
       "企业 AI 正进入规模化，控制、治理与持续运营成为下一层基础设施":"Enterprise AI is scaling; control, governance and operations become the next infrastructure layer",
       "企业共性需求已经形成":"Universal enterprise demand is established","组织已经使用混合云，AI 治理天然跨越公共云、私有云与数据中心。":"Organizations use hybrid cloud; AI governance naturally spans public cloud, private cloud and data centers.",
       "组织已在公共云服务中使用生成式 AI，生产化不再是未来时。":"Organizations already use GenAI in public-cloud services; production adoption is no longer future tense.",
@@ -1298,7 +1108,7 @@
       "中国 AI 生成合成内容标识办法":"China AI-Generated Content Labelling Measures","2025-09-01 起施行，显式/隐式标识、日志与平台责任成为生产要求。":"Effective 1 Sep 2025; explicit/implicit labels, logs and platform accountability become production requirements.",
       "行业数据与跨境规则":"Industry data & cross-border rules","金融、运营商、科研等行业需要更明确的数据边界、审计和可追溯。":"Finance, telecom and research require explicit data boundaries, audit and traceability.",
       "自由软件 / 开源":"Free software / open source","企业自托管":"Enterprise self-hosting","类比 DevOps：私有化部署从来不是“只属于政策”的需求":"The DevOps precedent: private deployment was never a policy-only need",
-      "个人 OPC 市场":"Personal OPC Market","个人 AI 正从聊天工具升级为可持续运行的生产力单元":"Personal AI is evolving from chat tools into continuously operating productivity units",
+      "个人 AI / OPC 市场":"Personal AI / OPC Market","个人 AI 正从聊天工具升级为可持续运行的生产力单元":"Personal AI is evolving from chat tools into continuously operating productivity units",
       "个人 AI 正同时获得算力、开源生态与持续运行层":"Personal AI is gaining its own compute, open ecosystem and persistent operating layer",
       "GitHub 开发者规模，为个人 AI 工具和开源分发提供全球入口。":"GitHub developers create a global distribution channel for personal AI tools and open source.",
       "AI 相关项目持续增长，Agent、Skill 与本地运行生态正在成形。":"AI-related repositories keep growing as agent, skill and local-runtime ecosystems emerge.",
@@ -1444,45 +1254,7 @@
     wraps.forEach(w=>walkText(w,n=>{n.__zh=n.nodeValue}));
     document.querySelectorAll('[data-en]').forEach(el=>{if(!el.dataset.zh)el.dataset.zh=el.textContent});
     function buildMobileReaders(){
-      wraps.forEach((wrap,index)=>{
-        const slide=wrap.querySelector('.slide');
-        if(!slide)return;
-        wrap.querySelector('.mobile-reader')?.remove();
-        const reader=document.createElement('article');
-        reader.className='mobile-reader';
-        const section=slide.querySelector('.section-zh,.section,.app-index')?.textContent.trim()||`OPENCSG · ${String(index+1).padStart(2,'0')}`;
-        const title=slide.querySelector('.title,.cover-title h1,.app-name,.closing-left h2')?.textContent.trim()||`OpenCSG ${String(index+1).padStart(2,'0')}`;
-        const excluded='.foot,.section,.title,.cover-title,.app-index,.app-big,.app-name,.brand,.toolbar,.nav,.official-phase-layer';
-        const selectors='h3,h4,p,li,b,small,a,.kpi,.tam-eq,.formula,.leadline,.tag,.signal,.fact,.app-lead,.app-kicker';
-        const seen=new Set([section,title]);
-        const points=[];
-        slide.querySelectorAll(selectors).forEach(el=>{
-          if(el.closest(excluded)||el.closest('svg'))return;
-          const style=getComputedStyle(el);
-          if(style.display==='none'||style.visibility==='hidden')return;
-          const text=el.textContent.replace(/\s+/g,' ').trim();
-          if(text.length<4||text.length>220||seen.has(text))return;
-          if(points.some(p=>p.text.includes(text)||text.includes(p.text)))return;
-          seen.add(text);
-          const strong=/^(H3|H4|B)$/.test(el.tagName)||el.classList.contains('kpi')||el.classList.contains('tam-eq')||el.classList.contains('leadline');
-          points.push({text,strong});
-        });
-        const media=[];
-        slide.querySelectorAll('img').forEach(img=>{
-          if(media.length>=3||img.classList.contains('brand')||img.closest('.official-step-card,.roadmap-product'))return;
-          const src=img.getAttribute('src');
-          if(!src||media.some(x=>x.src===src))return;
-          if(index===3&& !img.classList.contains('official-map-base'))return;
-          const r=img.getBoundingClientRect();
-          if(index!==3&&(r.width<180||r.height<100))return;
-          media.push({src,alt:img.alt||title});
-        });
-        reader.innerHTML=`<div class="mr-kicker">${section}</div><h2>${title}</h2><div class="mr-rule"></div>
-          ${media.length?`<div class="mr-media">${media.map(x=>`<img src="${x.src}" alt="${x.alt.replaceAll('"','&quot;')}">`).join('')}</div>`:''}
-          <div class="mr-points">${points.slice(0,18).map(p=>`<div class="mr-point">${p.strong?`<strong>${p.text}</strong>`:p.text}</div>`).join('')}</div>
-          <div class="mr-index">OPENCSG · ${String(index+1).padStart(2,'0')} / ${wraps.length}</div>`;
-        wrap.appendChild(reader);
-      });
+      // Mobile reader removed as per user request to keep original slide formatting
     }
     window.refreshMobileReaders=buildMobileReaders;
     function setLang(lang){
@@ -1522,23 +1294,19 @@
         const s=(innerWidth-20)/1600;
         document.documentElement.style.setProperty('--scale',s);
         wraps.forEach(w=>{
-          w.style.height='auto';w.style.minHeight='0';w.style.paddingTop='58px';
-          const r=w.querySelector('.mobile-reader');
-          if(r)r.style.marginTop=(900*s+16)+'px';
+          w.style.height=(900*s+64)+'px';w.style.minHeight='0';w.style.paddingTop='52px';
         });
       }else if(compactStage){
         const s=(innerWidth-20)/1600;
         document.documentElement.style.setProperty('--scale',s);
         wraps.forEach(w=>{
           w.style.height=(900*s+64)+'px';w.style.minHeight='0';w.style.paddingTop='52px';
-          const r=w.querySelector('.mobile-reader');if(r)r.style.marginTop='0';
         });
       }else{
         const s=Math.min(innerWidth/1600,innerHeight/900)*.975;
         document.documentElement.style.setProperty('--scale',s);
         wraps.forEach(w=>{
           w.style.height='100vh';w.style.minHeight=innerHeight<620?'0':'560px';w.style.paddingTop='0';
-          const r=w.querySelector('.mobile-reader');if(r)r.style.marginTop='0';
         });
       }
     }
