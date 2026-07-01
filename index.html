@@ -1,0 +1,1608 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpenCSG Investor Presentation 2026</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2323877B'/%3E%3Ccircle cx='16' cy='16' r='7' fill='white'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2323877B'/%3E%3C/svg%3E">
+  <style>
+    :root{
+      --teal:#23877B;--teal2:#0E675F;--mint:#EAF4F2;--mint2:#F4F8F7;
+      --ink:#111817;--muted:#66716F;--line:#D8E0DE;--paper:#FCFDFD;--warm:#F6F7F5;
+      --amber:#C88A2B;--scale:1;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#DDE2E0;color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei"}
+    body{overflow-y:auto;scroll-snap-type:y mandatory}
+    .slide-wrap{height:100vh;min-height:560px;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;position:relative}
+    .slide{width:1600px;height:900px;position:relative;overflow:hidden;background:var(--paper);transform:scale(var(--scale));transform-origin:center center;flex:none}
+    .grid-bg{position:absolute;inset:0;opacity:.3;background-image:url("assets/grid.svg");background-size:80px 80px}
+    .topline{position:absolute;left:78px;right:78px;top:76px;height:1px;background:var(--line)}
+    .brand{position:absolute;left:78px;top:34px;width:166px;height:auto}
+    .section{position:absolute;left:78px;top:104px;color:var(--teal);font-size:14px;font-weight:700;letter-spacing:.16em}
+    .title{position:absolute;left:78px;top:136px;right:78px;margin:0;font-size:42px;line-height:1.16;letter-spacing:-.035em;font-weight:700}
+    .subtitle{font-size:18px;line-height:1.55;color:var(--muted)}
+    .foot{position:absolute;left:78px;right:78px;bottom:26px;border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;color:#7C8785;font-size:12px;letter-spacing:.08em}
+    .accent-rule{height:3px;background:var(--teal)}
+    .thin-rule{height:1px;background:var(--line)}
+    .label{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:700}
+    .small{font-size:14px;line-height:1.5;color:var(--muted)}
+    .body{font-size:17px;line-height:1.55;color:#34403E}
+    .num{font-family:Arial;font-variant-numeric:tabular-nums}
+    .kpi{font-size:40px;line-height:1;color:var(--teal);font-weight:700;letter-spacing:-.04em}
+    .kpi small{font-size:15px;color:var(--muted);font-weight:400;letter-spacing:0}
+    .panel{border:1px solid var(--line);background:#fff}
+    .soft{background:var(--mint2)}
+    .teal-panel{background:var(--teal);color:#fff}
+    .tag{display:inline-block;border:1px solid #AFC8C4;color:var(--teal2);padding:5px 9px;font-size:12px;line-height:1}
+    .screen{border:1px solid #A9B6B3;background:#F1F4F3;position:relative;overflow:hidden}
+    .screen:before{content:"";position:absolute;left:0;right:0;top:0;height:18px;background:#DDE5E3;border-bottom:1px solid #C7D1CF}
+    .screen:after{content:"PRODUCT SCREENSHOT";position:absolute;inset:18px 0 0;display:flex;align-items:center;justify-content:center;color:#899491;font-size:11px;letter-spacing:.12em}
+    .screen.has-image:before,.screen.has-image:after{display:none}
+    .screen.has-image img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
+    .holder{border:1px dashed #9BA9A6;background:#F7F9F8;color:#7B8784;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:.08em}
+    .holder.has-image{border-style:solid;padding:0;overflow:hidden;background:#fff}
+    .holder.has-image img{width:100%;height:100%;object-fit:cover;object-position:left top}
+    .node{width:64px;height:64px;border:1px solid #8DB4AE;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--teal);font-weight:700}
+    .svg-line{fill:none;stroke:var(--teal);stroke-width:2}
+    .svg-muted{fill:none;stroke:#A8B9B6;stroke-width:1.5}
+    .nav{position:fixed;right:18px;bottom:14px;z-index:99;background:rgba(17,24,23,.76);color:#fff;padding:9px 12px;font-size:12px;letter-spacing:.08em}
+    .toolbar{position:fixed;right:18px;top:14px;z-index:110;display:flex;background:rgba(252,253,253,.94);border:1px solid #D8E0DE;backdrop-filter:blur(12px)}
+    .toolbar button{appearance:none;border:0;border-right:1px solid #D8E0DE;background:transparent;color:#53605D;padding:9px 12px;font:600 11px Arial;letter-spacing:.06em;cursor:pointer}
+    .toolbar button:last-child{border-right:0}
+    .toolbar button.active{background:var(--teal);color:#fff}
+    .cover-brand{position:absolute;left:84px;top:72px;width:208px}
+    .cover-title{position:absolute;left:84px;top:238px;width:650px}
+    .cover-title h1{font-size:72px;line-height:.98;margin:0 0 26px;letter-spacing:-.055em}
+    .cover-title h2{font-size:28px;line-height:1.45;margin:0;color:#26302E;font-weight:500}
+    .cover-meta{position:absolute;left:84px;bottom:74px;display:flex;gap:48px;color:var(--muted);font-size:14px}
+    .cover-visual{position:absolute;right:32px;top:24px;width:840px;height:820px}
+    .cover-visual svg{width:100%;height:100%}
+    .cover-visual .m{fill:none;stroke:#A6B8B5;stroke-width:1.4}
+    .cover-visual .a{fill:none;stroke:var(--teal);stroke-width:2}
+    .cover-visual .f{fill:#EEF5F3;stroke:#9CB7B2;stroke-width:1.2}
+    .thesis-grid{position:absolute;left:78px;top:242px;width:715px;height:530px;display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .thesis-item{padding:26px 26px 20px 0;border-top:1px solid var(--line);position:relative}
+    .thesis-item:nth-child(odd){padding-right:34px;border-right:1px solid var(--line)}
+    .thesis-item:nth-child(even){padding-left:34px}
+    .thesis-item .n{font-size:14px;color:var(--teal);font-weight:700;margin-bottom:22px}
+    .thesis-item h3{font-size:23px;margin:0 0 10px;line-height:1.25}
+    .thesis-item p{font-size:15px;line-height:1.55;color:var(--muted);margin:0}
+    .flywheel{position:absolute;right:82px;top:214px;width:660px;height:565px}
+    .flywheel svg{width:100%;height:100%}
+    .fly-label{position:absolute;width:145px;text-align:center}
+    .fly-label b{display:block;color:var(--teal);font-size:18px;margin-bottom:6px}
+    .fly-label span{font-size:13px;color:var(--muted);line-height:1.4}
+    .pain-visual{position:absolute;left:78px;top:240px;width:650px;height:530px;border-top:3px solid var(--teal);background:var(--mint2)}
+    .pain-visual svg{width:100%;height:100%}
+    .pain-list{position:absolute;right:78px;top:236px;width:730px;height:550px;display:grid;grid-template-columns:1fr 1fr}
+    .pain-item{border-top:1px solid var(--line);padding:24px 22px 18px 68px;position:relative}
+    .pain-item:nth-child(odd){border-right:1px solid var(--line)}
+    .pain-item .pn{position:absolute;left:18px;top:24px;font-size:14px;color:var(--teal);font-weight:700}
+    .pain-item h3{font-size:21px;margin:0 0 9px}
+    .pain-item p{font-size:14px;color:var(--muted);line-height:1.5;margin:0}
+    .method-main{position:absolute;left:78px;right:78px;top:236px;height:480px}
+    .method-loop{position:absolute;left:0;right:0;top:0;height:215px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .method-steps{position:absolute;left:52px;right:52px;top:44px;display:flex;justify-content:space-between}
+    .method-step{width:135px;text-align:center;position:relative}
+    .method-step:after{content:"";position:absolute;right:-52px;top:31px;width:67px;height:1px;background:#88AFAA}
+    .method-step:last-child:after{display:none}
+    .method-step .hex{width:64px;height:64px;margin:0 auto 12px;border:1px solid var(--teal);transform:rotate(45deg);background:#fff}
+    .method-step .hex span{display:flex;width:100%;height:100%;align-items:center;justify-content:center;transform:rotate(-45deg);font-size:13px;color:var(--teal);font-weight:700}
+    .method-step b{font-size:16px}
+    .method-step small{display:block;color:var(--muted);font-size:12px;margin-top:6px}
+    .govern-core{position:absolute;left:475px;right:475px;top:252px;height:76px;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;letter-spacing:.02em}
+    .govern-rails{position:absolute;left:0;right:0;bottom:0;height:112px;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .rail{display:flex;align-items:center;justify-content:center;text-align:center;border-right:1px solid var(--line);font-size:14px;color:#33413E}
+    .rail:last-child{border-right:0}
+    .company-left{position:absolute;left:78px;top:232px;width:650px;height:560px}
+    .company-statement{border-top:3px solid var(--teal);padding:22px 0 18px}
+    .company-statement h3{font-size:27px;line-height:1.35;margin:0 0 12px}
+    .company-statement p{font-size:15px;line-height:1.6;color:var(--muted);margin:0}
+    .timeline{position:absolute;left:0;right:0;top:178px;height:250px}
+    .timeline-axis{position:absolute;left:43px;top:104px;bottom:14px;width:1px;background:#91B5B0}
+    .tl{height:58px;position:relative;padding-left:92px}
+    .tl:before{content:"";position:absolute;left:37px;top:7px;width:12px;height:12px;border:2px solid var(--teal);background:#fff}
+    .tl .year{position:absolute;left:0;top:4px;color:var(--teal);font-size:13px;font-weight:700}
+    .tl b{font-size:16px}
+    .tl span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+    .company-footprint{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .company-footprint div{padding:18px 10px;border-right:1px solid var(--line)}
+    .company-footprint div:last-child{border-right:0}
+    .company-footprint b{display:block;color:var(--teal);font-size:28px}
+    .company-footprint span{font-size:12px;color:var(--muted)}
+    .company-right{position:absolute;right:78px;top:232px;width:760px;height:560px;display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:220px 160px 150px;gap:14px}
+    .company-right .box{border:1px solid var(--line);padding:16px;background:#fff}
+    .company-right h4{font-size:15px;color:var(--teal);margin:0 0 10px;letter-spacing:.08em}
+    .ecosystem{grid-row:span 2;position:relative;overflow:hidden}
+    .ecosystem svg{position:absolute;left:10px;right:10px;top:46px;width:calc(100% - 20px);height:300px}
+    .cap-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
+    .cap-list div{border-top:1px solid var(--line);padding-top:7px}
+    .cap-list b{font-size:13px}
+    .cap-list span{display:block;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.35}
+    .delivery{grid-column:1/3;display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center}
+    .delivery-flow{display:grid;grid-template-columns:repeat(5,1fr);height:62px}
+    .delivery-flow div{border-left:1px solid var(--line);padding:8px 12px}
+    .delivery-flow b{display:block;font-size:13px}
+    .delivery-flow span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+    .honor-grid{position:absolute;left:78px;right:78px;top:226px;height:585px;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,1fr);gap:14px}
+    .honor{border:1px solid var(--line);background:#fff;position:relative;overflow:hidden}
+    .honor img{position:absolute;left:0;top:0;width:100%;height:205px;object-fit:cover;filter:saturate(.78) contrast(.98)}
+    .honor .hc{position:absolute;left:0;right:0;bottom:0;height:74px;background:rgba(252,253,253,.96);padding:13px 14px}
+    .honor .hc b{font-size:14px;display:block}
+    .honor .hc span{font-size:11px;color:var(--muted);display:block;margin-top:6px}
+    .case-grid{position:absolute;left:78px;right:78px;top:232px;height:556px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .case{border-top:3px solid var(--teal);border-bottom:1px solid var(--line);padding:22px 22px 0;position:relative;background:#fff}
+    .case .case-type{font-size:13px;color:var(--teal);font-weight:700;letter-spacing:.08em}
+    .case h3{font-size:25px;margin:14px 0 26px;line-height:1.25}
+    .case-stage{border-top:1px solid var(--line);padding:16px 0 16px 96px;position:relative;min-height:99px}
+    .case-stage .stage-name{position:absolute;left:0;top:18px;width:76px;font-size:12px;color:var(--teal);font-weight:700}
+    .case-stage b{font-size:15px;display:block;margin-bottom:6px}
+    .case-stage p{font-size:13px;color:var(--muted);line-height:1.45;margin:0}
+    .case-outcome{position:absolute;left:22px;right:22px;bottom:0;height:84px;background:var(--mint);padding:16px 18px}
+    .case-outcome b{font-size:15px;color:var(--teal2)}
+    .case-outcome p{margin:7px 0 0;font-size:13px;color:#3F4A48}
+    .product-shell{position:absolute;left:78px;right:78px;top:226px;height:590px;border:1px solid var(--line);background:#fff}
+    .shared-top{height:50px;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--teal2);font-size:15px;font-weight:700;letter-spacing:.05em}
+    .edition{height:236px;display:grid;grid-template-columns:180px 1fr 1fr;position:relative;border-top:1px solid var(--line)}
+    .edition-label{background:var(--warm);padding:30px 20px;border-right:1px solid var(--line)}
+    .edition-label b{font-size:19px;color:var(--teal)}
+    .edition-label span{font-size:13px;color:var(--muted);display:block;margin-top:10px;line-height:1.5}
+    .product{padding:22px;border-right:1px solid var(--line);display:grid;grid-template-columns:1fr 210px;gap:16px}
+    .product:last-child{border-right:0}
+    .product h3{font-size:22px;margin:0 0 7px;color:var(--teal2)}
+    .product .role{font-size:13px;color:var(--muted);margin-bottom:17px}
+    .product ul{margin:0;padding-left:18px;font-size:13px;line-height:1.7;color:#394542}
+    .product .screen{height:165px}
+    .shared-bottom{height:66px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(6,1fr)}
+    .shared-bottom div{display:flex;align-items:center;justify-content:center;border-right:1px solid var(--line);font-size:12px;color:#42504D}
+    .shared-bottom div:last-child{border-right:0}
+    .arch{position:absolute;left:78px;right:78px;top:225px;height:590px;display:grid;grid-template-rows:74px 88px 92px 124px 90px 82px;border:1px solid var(--line)}
+    .arch-row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--line)}
+    .arch-row:last-child{border-bottom:0}
+    .arch-label{background:var(--warm);border-right:1px solid var(--line);padding:20px;color:var(--teal2);font-size:13px;font-weight:700}
+    .arch-cells{display:flex;gap:10px;padding:12px}
+    .arch-cell{flex:1;border:1px solid #D6DEDC;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:12px;color:#34413E;background:#fff}
+    .arch-cell.key{border-color:#8DB7B1;background:var(--mint);color:var(--teal2);font-weight:700}
+    .market-grid{position:absolute;left:78px;right:78px;top:228px;height:575px;display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
+    .market-column{border-top:3px solid var(--teal);padding-top:18px}
+    .market-column h3{font-size:25px;margin:0 0 18px}
+    .facts{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .fact{height:112px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px}
+    .fact b{font-size:27px;color:var(--teal)}
+    .fact p{font-size:13px;color:var(--muted);line-height:1.45;margin:10px 0 0}
+    .tam{margin-top:18px;border:1px solid var(--line);height:184px;padding:18px;position:relative}
+    .tam h4{font-size:14px;color:var(--teal);margin:0 0 13px}
+    .tam-eq{font-size:23px;font-weight:700;margin:5px 0}
+    .tam p{font-size:13px;color:var(--muted);line-height:1.45;margin:10px 0}
+    .policy{border-left:1px solid var(--line);padding-left:30px}
+    .policy-item{position:relative;padding:0 0 20px 34px}
+    .policy-item:before{content:"";position:absolute;left:-5px;top:5px;width:10px;height:10px;background:#fff;border:2px solid var(--teal)}
+    .policy-item:after{content:"";position:absolute;left:0;top:17px;bottom:0;width:1px;background:#9FBDB8}
+    .policy-item:last-child:after{display:none}
+    .policy-item b{font-size:15px}
+    .policy-item span{display:block;color:var(--muted);font-size:12px;margin-top:5px;line-height:1.45}
+    .devops-proof{position:absolute;left:0;right:0;bottom:0;height:92px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px}
+    .devops-proof div{flex:1;height:52px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px}
+    .devops-proof i{width:25px;height:1px;background:var(--teal);position:relative}
+    .devops-proof i:after{content:"";position:absolute;right:-1px;top:-3px;border-left:6px solid var(--teal);border-top:3px solid transparent;border-bottom:3px solid transparent}
+    .opc-layout{position:absolute;left:78px;right:78px;top:228px;height:575px;display:grid;grid-template-columns:390px 1fr 380px;gap:28px}
+    .opc-left{border-top:3px solid var(--teal)}
+    .signal{padding:20px 0;border-bottom:1px solid var(--line)}
+    .signal b{font-size:28px;color:var(--teal)}
+    .signal span{display:block;font-size:13px;color:var(--muted);line-height:1.45;margin-top:7px}
+    .opc-flow{border:1px solid var(--line);position:relative;background:#fff}
+    .opc-flow h3{font-size:18px;color:var(--teal);margin:24px}
+    .opc-nodes{position:absolute;left:50px;right:50px;top:105px;bottom:60px;display:flex;flex-direction:column;justify-content:space-between}
+    .opc-node{height:60px;border:1px solid var(--line);display:grid;grid-template-columns:52px 1fr 120px;align-items:center;padding:0 16px}
+    .opc-node .on{font-size:12px;color:var(--teal);font-weight:700}
+    .opc-node b{font-size:16px}
+    .opc-node span{font-size:12px;color:var(--muted);text-align:right}
+    .opc-right{border-top:3px solid var(--teal);padding-top:18px}
+    .opc-right .formula{font-size:19px;line-height:1.45;font-weight:700;margin:16px 0 20px}
+    .funnel{height:240px;display:flex;flex-direction:column;align-items:center;gap:7px}
+    .funnel div{height:42px;background:var(--mint);border:1px solid #B7CDC9;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--teal2)}
+    .open-layout{position:absolute;left:78px;right:78px;top:226px;height:575px;display:grid;grid-template-columns:760px 1fr;gap:30px}
+    .open-fly{border:1px solid var(--line);position:relative}
+    .open-fly svg{position:absolute;left:45px;top:35px;width:670px;height:430px}
+    .open-center{position:absolute;left:282px;top:216px;width:196px;height:90px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-size:21px;font-weight:700}
+    .open-note{position:absolute;left:55px;right:55px;bottom:26px;text-align:center;font-size:13px;color:var(--muted)}
+    .open-right{display:grid;grid-template-rows:210px 210px 1fr;gap:16px}
+    .open-slot{border:1px solid var(--line);display:grid;grid-template-columns:1fr 230px;background:#fff}
+    .open-slot .copy{padding:22px}
+    .open-slot h3{font-size:20px;color:var(--teal);margin:0 0 10px}
+    .open-slot p{font-size:13px;color:var(--muted);line-height:1.5;margin:0}
+    .open-slot .holder{margin:18px;height:174px}
+    .precedents{border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between;color:#4A5754;font-size:14px}
+    .comp-layout{position:absolute;left:78px;right:78px;top:226px;height:575px;display:grid;grid-template-columns:600px 1fr;gap:30px}
+    .map{border:1px solid var(--line);position:relative;background:#fff}
+    .axis-x{position:absolute;left:65px;right:35px;bottom:52px;height:1px;background:#77827F}
+    .axis-y{position:absolute;left:65px;top:35px;bottom:52px;width:1px;background:#77827F}
+    .axis-x:after,.axis-y:after{content:"";position:absolute;border-style:solid}
+    .axis-x:after{right:-1px;top:-4px;border-width:4px 0 4px 7px;border-color:transparent transparent transparent #77827F}
+    .axis-y:after{left:-4px;top:-1px;border-width:0 4px 7px;border-color:transparent transparent #77827F}
+    .axis-label-x{position:absolute;right:35px;bottom:20px;font-size:11px;color:var(--muted)}
+    .axis-label-y{position:absolute;left:18px;top:26px;font-size:11px;color:var(--muted);writing-mode:vertical-rl}
+    .bubble{position:absolute;padding:8px 10px;background:#fff;border:1px solid #AEB9B7;font-size:12px}
+    .bubble.open{background:var(--teal);color:white;border-color:var(--teal);font-weight:700;padding:13px 16px}
+    .comp-right{display:grid;grid-template-rows:250px 1fr;gap:18px}
+    .layers{border:1px solid var(--line);padding:20px}
+    .layer-row{height:40px;display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--line);align-items:center}
+    .layer-row b{font-size:13px}
+    .layer-row div{display:flex;gap:8px}
+    .layer-row span{font-size:11px;border:1px solid #CAD3D1;padding:5px 8px;color:#47524F}
+    .boundary{border:1px solid var(--line);padding:18px}
+    .boundary h3{font-size:16px;margin:0 0 14px;color:var(--teal)}
+    .bar-row{height:35px;display:grid;grid-template-columns:120px 1fr 55px;gap:12px;align-items:center}
+    .bar-row b{font-size:12px}
+    .bar-track{height:8px;background:#E8ECEB}
+    .bar-fill{height:8px;background:var(--teal)}
+    .bar-row span{font-size:11px;color:var(--muted);text-align:right}
+    .team-layout{position:absolute;left:78px;right:78px;top:220px;height:590px;display:grid;grid-template-columns:560px 1fr;gap:38px}
+    .ceo-photo{border-top:3px solid var(--teal);position:relative;overflow:hidden;background:#DDE5E3}
+    .ceo-photo img{width:100%;height:100%;object-fit:cover;object-position:65% center;filter:saturate(.72) contrast(1.02)}
+    .ceo-photo:after{content:"";position:absolute;left:0;right:0;bottom:0;height:118px;background:rgba(17,24,23,.82)}
+    .ceo-photo .photo-label{position:absolute;left:78px;bottom:28px;color:#fff;z-index:2}
+    .ceo-photo .photo-label b{font-size:28px}
+    .ceo-photo .photo-label span{display:block;font-size:14px;margin-top:8px;color:#D8E4E1}
+    .ceo-story{border-top:3px solid var(--teal);padding-top:24px;position:relative}
+    .ceo-story .leadline{font-size:27px;line-height:1.38;margin:0 0 24px;font-weight:700}
+    .ceo-story .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .story-cell{height:128px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px}
+    .story-cell b{font-size:14px;color:var(--teal)}
+    .story-cell p{font-size:13px;color:var(--muted);line-height:1.5;margin:8px 0 0}
+    .support-strip{position:absolute;left:0;right:0;bottom:0;height:122px;border-top:1px solid var(--line);display:grid;grid-template-columns:150px repeat(4,1fr)}
+    .support-strip>div{border-right:1px solid var(--line);padding:18px}
+    .support-strip>div:last-child{border-right:0}
+    .support-strip .ss-title{background:var(--warm)}
+    .support-strip b{font-size:13px}
+    .support-strip span{display:block;font-size:11px;color:var(--muted);margin-top:8px}
+    .growth-layout{position:absolute;left:78px;right:78px;top:226px;height:575px;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:300px 1fr;gap:24px 30px}
+    .finance{border-top:3px solid var(--teal);padding-top:18px;position:relative}
+    .finance h3,.routes h3,.roadmap h3{font-size:18px;margin:0 0 14px}
+    .bars{position:absolute;left:55px;right:20px;bottom:42px;height:200px;border-left:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-around}
+    .bar{width:74px;background:var(--teal);position:relative}
+    .bar:nth-child(1){height:34px;opacity:.45}.bar:nth-child(2){height:92px;opacity:.7}.bar:nth-child(3){height:184px}
+    .bar b{position:absolute;left:50%;transform:translateX(-50%);top:-27px;color:var(--teal);font-size:14px;white-space:nowrap}
+    .bar span{position:absolute;left:50%;transform:translateX(-50%);bottom:-29px;font-size:12px;color:var(--muted)}
+    .routes{border-top:3px solid var(--teal);padding-top:18px}
+    .route{height:102px;border-top:1px solid var(--line);padding:16px 0;display:grid;grid-template-columns:150px 1fr;gap:15px}
+    .route b{font-size:14px;color:var(--teal)}
+    .route-flow{display:flex;align-items:center;gap:8px}
+    .route-flow span{flex:1;border:1px solid var(--line);height:38px;display:flex;align-items:center;justify-content:center;font-size:11px}
+    .route-flow i{width:18px;height:1px;background:var(--teal)}
+    .roadmap{grid-column:1/3;border-top:1px solid var(--line);padding-top:18px;display:grid;grid-template-columns:160px 1fr 330px;gap:20px}
+    .years{display:grid;grid-template-columns:repeat(3,1fr)}
+    .year-card{border-left:1px solid var(--line);padding:0 18px}
+    .year-card b{font-size:22px;color:var(--teal)}
+    .year-card span{display:block;font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
+    .use-funds{border-left:1px solid var(--line);padding-left:24px}
+    .use-funds h4{font-size:14px;margin:0 0 12px}
+    .use-row{height:29px;display:grid;grid-template-columns:1fr 55px;align-items:center;border-bottom:1px solid var(--line);font-size:12px}
+    .use-row b{color:var(--teal);text-align:right}
+    .source-note{position:absolute;left:78px;right:78px;bottom:28px;color:#7B8784;font-size:12px;line-height:1.25;letter-spacing:.01em}
+    .lang-en .section span:last-child{display:none}
+    .lang-en .title{font-size:27px;letter-spacing:-.02em}
+    .lang-en .body,.lang-en .subtitle{line-height:1.42}
+    .lang-en .thesis-item p,.lang-en .pain-item p,.lang-en .case-stage p,.lang-en .case-outcome p{font-size:12px;line-height:1.38}
+    .lang-en .case h3{font-size:20px}
+    .lang-en .product ul,.lang-en .policy-item span,.lang-en .story-cell p{font-size:11px;line-height:1.38}
+    .lang-en .company-statement h3{font-size:24px}
+
+    @media(max-width:900px){
+      .nav{display:none}
+      .toolbar{left:10px;right:10px;top:8px;justify-content:center}
+      .toolbar button{flex:1;padding:8px 5px;font-size:12px}
+      body{scroll-snap-type:none}
+      .slide-wrap{align-items:flex-start;padding-top:48px}
+      .slide{transform-origin:top center}
+    }
+    body.overview-mode .slide-wrap{
+      width:100%;min-width:0;overflow:hidden;align-items:flex-start;justify-content:flex-start;padding:0
+    }
+    body.overview-mode .slide{transform-origin:top left}
+  </style>
+  <link rel="stylesheet" href="assets/deck-appendix.css?v=20260630j">
+  <link rel="stylesheet" href="assets/deck-refine.css?v=20260701o">
+</head>
+<body>
+  <div class="toolbar">
+    <button type="button" id="langZh" class="active">中文</button>
+    <button type="button" id="langEn">EN</button>
+    <button type="button" id="overviewBtn">OVERVIEW</button>
+    <button type="button" id="fullscreenBtn">FULLSCREEN</button>
+  </div>
+  <div class="nav"><span id="counter">01 / 38</span><span id="navHint" data-en="↑ ↓ Navigate · O Overview">　↑ ↓ 翻页　O 总览</span></div>
+
+  <div class="slide-wrap"><section class="slide hero light" data-layout="L01" id="slide-01">
+    <div class="grid-bg"></div>
+    <img class="cover-brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
+    <div class="cover-wordmark">OpenCSG</div>
+    <div class="cover-bp"><b>BUSINESS PLAN</b><span>2026 · INVESTOR MATERIALS</span></div>
+    <div class="cover-title">
+      <div class="label">OPEN SOURCE · AGENTICOPS · AI SOVEREIGNTY</div>
+      <h1>OpenCSG</h1>
+      <h2 data-en="Open by design. Keep AI in your own hands.">开放，让 AI 掌握在自己手中</h2>
+      <p>OPEN BY DESIGN. AI UNDER YOUR CONTROL.</p>
+    </div>
+    <div class="cover-meta"><span>OPEN SOURCE</span><span>ENTERPRISE + SOVEREIGN</span><span>PERSONAL OPC</span></div>
+    <div class="cover-visual">
+      <img src="assets/sovereign-ai-cover-v3.png" alt="AI 主权开放基础设施：连接城市、企业与个人智能节点">
+    </div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L05" id="slide-02">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">投资论点　</span><span style="font-size:13px;color:#697472;font-weight:400">Investment Thesis</span></div>
+    <h2 class="title" data-en="From open assets to enterprise production, city nodes and personal OPC">从开源资产入口，到企业生产、城市节点与个人 OPC 的复合增长飞轮</h2>
+    <div class="thesis-grid">
+      <div class="thesis-item"><div class="n">01</div><h3 data-en="Continuous iteration, private deployment and deep workflow integration are now essential">持续迭代、私有部署与业务深耦合成为刚需</h3><p data-en="Models improve daily. Enterprises need continuous upgrades inside their own data and compute boundaries while agents enter real workflows without interrupting production.">模型能力每天变化，企业既要在自身数据与算力边界内持续升级，也要让 Agent 真正进入业务流程而不中断生产。</p></div>
+      <div class="thesis-item"><div class="n">02</div><h3 data-en="A unique open-source, integrated AgenticOps position">唯一开源的一体化 AgenticOps 卡位</h3><p data-en="With 3M+ community users and 200K+ model assets, OpenCSG connects open assets, enterprise governance, agent production and continuous operations in one system.">以 300 万+社区用户和 20 万+模型资产为入口，把开放资产、企业治理、Agent 生产与持续运营连接成一套系统。</p></div>
+      <div class="thesis-item"><div class="n">03</div><h3 data-en="Repeated enterprise commercialization proof">企业商业化连续验证</h3><p data-en="Enterprise customers include miHoYo, Bilibili, CATL and CALB. Revenue has doubled for three consecutive years while maintaining positive net profit and operating cash flow.">终端客户覆盖米哈游、B 站、宁德时代、中航锂电等；三年连续翻倍增长，持续保持净利润与净现金流。</p></div>
+      <div class="thesis-item"><div class="n">04</div><h3 data-en="City nodes, personal OPC and foundations create network effects">城市节点 × OPC × 基金会形成网络效应</h3><p data-en="City nodes including Shanghai, Chongqing, Yancheng, Dongfang and Yichang can incubate personal OPC while foundations, industry funds and developers replicate the network nationwide.">上海、重庆、盐城、东方、宜昌等城市站点可持续孵化个人 OPC，并联动基金会、产业基金和开发者生态向全国复制。</p></div>
+    </div>
+    <div class="flywheel">
+      <svg viewBox="0 0 660 565">
+        <circle cx="330" cy="278" r="210" fill="#F5F8F7" stroke="#CAD7D4"/>
+        <circle cx="330" cy="278" r="124" fill="#E7F2F0" stroke="#8DB4AE"/>
+        <circle cx="330" cy="278" r="68" fill="#23877B"/>
+        <text x="330" y="268" text-anchor="middle" font-size="19" fill="#fff" font-weight="700">OpenCSG</text>
+        <text x="330" y="292" text-anchor="middle" font-size="14" fill="#DDF0ED">AgenticOps</text>
+        <path d="M330 68A210 210 0 0 1 530 210" fill="none" stroke="#23877B" stroke-width="4"/>
+        <path d="M540 278A210 210 0 0 1 400 476" fill="none" stroke="#23877B" stroke-width="4"/>
+        <path d="M260 476A210 210 0 0 1 120 278" fill="none" stroke="#23877B" stroke-width="4"/>
+        <path d="M130 210A210 210 0 0 1 330 68" fill="none" stroke="#23877B" stroke-width="4"/>
+        <circle cx="330" cy="68" r="10" fill="#fff" stroke="#23877B" stroke-width="3"/>
+        <circle cx="540" cy="278" r="10" fill="#fff" stroke="#23877B" stroke-width="3"/>
+        <circle cx="330" cy="488" r="10" fill="#fff" stroke="#23877B" stroke-width="3"/>
+        <circle cx="120" cy="278" r="10" fill="#fff" stroke="#23877B" stroke-width="3"/>
+      </svg>
+      <div class="fly-label top"><b data-en="Open asset entry">开放资产入口</b><span data-en="Models · data · developers">模型 · 数据 · 开发者</span></div>
+      <div class="fly-label right"><b data-en="Enterprise production">企业生产系统</b><span data-en="Governance · operations · expansion">治理 · 运营 · 扩容</span></div>
+      <div class="fly-label bottom"><b data-en="City nodes & personal OPC">城市节点与个人 OPC</b><span data-en="Local runtime · collaboration · subscription">本地运行 · 协同 · 订阅</span></div>
+      <div class="fly-label left"><b data-en="Foundations & industry capital">基金会与产业资本</b><span data-en="Ecosystem · capital · global reach">生态 · 资本 · 国际连接</span></div>
+    </div>
+    <div class="foot"><span>OPENCSG · CONFIDENTIAL</span><span>02</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-03">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh" data-en="Paradigm Evolution　">范式演进　</span><span style="font-size:13px;color:#697472;font-weight:400">From DevOps to AgenticOps</span></div>
+    <h2 class="title" data-en="The evolution of AI-native development: from DevOps to AgenticOps">大模型时代的进化：从 DevOps 到 AgenticOps</h2>
+    <div class="evolution-page">
+      <div class="paradigm-compare">
+        <article class="paradigm-panel devops-panel">
+          <header data-en="Traditional development paradigm · DevOps">传统开发范式 · DevOps</header>
+          <div class="paradigm-brand"><b>GitLab</b><span data-en="Code-centric software lifecycle">以代码为中心的软件生命周期</span></div>
+          <svg class="paradigm-loop" viewBox="0 0 650 235" aria-label="DevOps infinity lifecycle">
+            <path class="loop-left" d="M325 118C266 28 142 25 80 118C142 210 266 208 325 118"/>
+            <path class="loop-right" d="M325 118C384 28 508 25 570 118C508 210 384 208 325 118"/>
+            <path class="loop-cross" d="M80 118C142 25 266 28 325 118C384 208 508 210 570 118"/>
+            <text x="187" y="128">Dev</text><text x="455" y="128">Ops</text>
+            <text x="122" y="57">CODE</text><text x="247" y="62">PLAN</text><text x="91" y="187">BUILD</text><text x="241" y="194">TEST</text>
+            <text x="350" y="63">RELEASE</text><text x="478" y="60">DEPLOY</text><text x="506" y="190">OPERATE</text><text x="353" y="194">MONITOR</text>
+          </svg>
+        </article>
+        <div class="paradigm-arrow">
+          <span>DEVOPS</span><i>→</i><b>AGENTICOPS</b>
+          <small data-en="Code delivery → intelligent-system operations">代码交付 → 智能系统运营</small>
+        </div>
+        <article class="paradigm-panel agentic-panel">
+          <header data-en="AI-native development paradigm · AgenticOps">大模型时代开发范式 · AgenticOps</header>
+          <div class="paradigm-brand"><b>OpenCSG</b><span data-en="Assets, agents and continuous evolution">资产、Agent 与持续进化</span></div>
+          <svg class="paradigm-loop" viewBox="0 0 650 235" aria-label="AgenticOps infinity lifecycle">
+            <path class="loop-left" d="M325 118C266 28 142 25 80 118C142 210 266 208 325 118"/>
+            <path class="loop-right" d="M325 118C384 28 508 25 570 118C508 210 384 208 325 118"/>
+            <path class="loop-cross" d="M80 118C142 25 266 28 325 118C384 208 508 210 570 118"/>
+            <text x="160" y="128">Agentic</text><text x="455" y="128">Ops</text>
+            <text x="121" y="57">CODE</text><text x="247" y="62">PROMPT</text><text x="91" y="187">BUILD</text><text x="241" y="194">TEST</text>
+            <text x="350" y="63">RELEASE</text><text x="478" y="60">DEPLOY</text><text x="506" y="190">OPERATE</text><text x="353" y="194">RETRAIN</text>
+          </svg>
+        </article>
+      </div>
+      <div class="evolution-timeline">
+        <article>
+          <time>2008</time><b data-en="GitHub is founded">GitHub 成立</b>
+          <p data-en="Open collaboration turns code repositories into a global developer network.">开放协作让代码仓库成为全球开发者网络。</p>
+          <em>GITHUB</em>
+        </article>
+        <article>
+          <time>2012</time><b data-en="Open code collaboration becomes mainstream">开源代码协作成为主流</b>
+          <p data-en="GitHub grows beyond 2M users and 3M repositories, validating community distribution and developer network effects.">GitHub 用户超过 200 万、代码库超过 300 万，验证社区分发与开发者网络效应。</p>
+          <em>COMMUNITY</em>
+        </article>
+        <article>
+          <time>2016</time><b data-en="Enterprise DevOps and private deployment mature">企业 DevOps 与私有化成熟</b>
+          <p data-en="GitLab wins enterprise customers and validates OpenCore: open adoption plus private deployment and enterprise control.">GitLab 获得大量企业客户，验证“开放获客 + 私有部署 + 企业控制”的 OpenCore 路径。</p>
+          <em>GITLAB</em>
+        </article>
+        <article>
+          <time>2018</time><b data-en="AI assets move into open communities">AI 资产进入开源社区</b>
+          <p data-en="Hugging Face pivots toward an open AI community; Microsoft acquires GitHub for $7.5B.">Hugging Face 转向开源 AI 社区；微软以 75 亿美元收购 GitHub。</p>
+          <em>AI ASSETS</em>
+        </article>
+        <article>
+          <time>2021</time><b data-en="OpenCore proves enterprise-scale value">OpenCore 验证企业级价值</b>
+          <p data-en="GitLab lists at a market value of about $14.8B, proving that open-source distribution and enterprise software can scale together.">GitLab 上市市值约 148 亿美元，证明开源分发与企业软件可同时规模化。</p>
+          <em>OPENCORE</em>
+        </article>
+        <article>
+          <time>2023</time><b data-en="Model hubs become AI distribution infrastructure">模型 Hub 成为 AI 分发基础设施</b>
+          <p data-en="Hugging Face connects 1M+ repositories and 10K+ customers, and raises $235M at a $4.5B valuation.">Hugging Face 连接超 100 万个资源库和 1 万家客户，以 45 亿美元估值融资 2.35 亿美元。</p>
+          <em>MODEL HUB</em>
+        </article>
+        <article class="opencsg-node">
+          <time>2024</time><b data-en="OpenCSG introduces AgenticOps">OpenCSG 推出 AgenticOps</b>
+          <p data-en="With 3M+ users and 200K+ models, the lifecycle expands from code delivery to assets, agents, governance, operations and continuous evolution.">以 300 万+用户和 20 万+模型为入口，生命周期扩展到资产、Agent、治理、运营与持续进化。</p>
+          <em>3M+ USERS · 200K+ MODELS</em>
+        </article>
+      </div>
+    </div>
+    <div class="foot"><span data-en="DevOps industrialized software delivery; AgenticOps industrializes intelligent-system production and evolution">DevOps 让软件交付工业化，AgenticOps 让智能系统生产与进化工业化</span><span>03</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-04">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
+    <div class="section"><span class="section-zh" data-en="AgenticOps Methodology">AgenticOps 方法论</span></div>
+    <h2 class="title" data-en="One AgenticOps double loop for organizational production and personal OPC">同一套 AgenticOps 双环，贯通组织型生产与个人 OPC</h2>
+    <div class="roadmap-app official-roadmap" data-mode="enterprise" data-active="0">
+      <div class="roadmap-head">
+        <div>
+          <b data-en="AgenticOps lifecycle">AgenticOps 生命周期</b>
+          <p data-en="One control plane shared by organizations and personal OPC">组织与个人 OPC 共享同一控制层</p>
+        </div>
+        <div class="roadmap-tabs">
+          <button type="button" data-road-mode="enterprise" class="active"><img src="assets/roadmap/enterprise.svg" alt=""><span data-en="ORGANIZATION">企业</span></button>
+          <button type="button" data-road-mode="opc"><img src="assets/roadmap/user.svg" alt=""><span data-en="PERSONAL OPC">OPC</span></button>
+        </div>
+      </div>
+      <div class="method-contrast">
+        <article>
+          <small data-en="MODEL ITERATION">模型迭代</small>
+          <span data-en="Models change every day">模型天天变</span>
+          <i>→</i>
+          <b data-en="Lifecycle adapts continuously">全生命周期适配变化</b>
+        </article>
+        <article>
+          <small data-en="DATA QUALITY">数据质量</small>
+          <span data-en="Data is scarce and inconsistent">数据少、质量不稳</span>
+          <i>→</i>
+          <b data-en="Feedback creates quality datasets">反馈闭环形成高质量数据</b>
+        </article>
+        <article>
+          <small data-en="TIME TO RELEASE">发布时效</small>
+          <span data-en="Apps and agents update slowly">应用 / Agent 更新慢</span>
+          <i>→</i>
+          <b data-en="Fast updates and standardized release">快速更新与标准化发布</b>
+        </article>
+        <article>
+          <small data-en="TECH STACK">技术栈</small>
+          <span data-en="Fragmented and tightly coupled">碎片化、耦合度高</span>
+          <i>→</i>
+          <b data-en="One integrated control layer">平台化、一体化控制层</b>
+        </article>
+        <article>
+          <small data-en="ITERATION LOOP">迭代方式</small>
+          <span data-en="Manual retraining and long cycles">手动重训练、周期长</span>
+          <i>→</i>
+          <b data-en="Automated feedback and continuous evolution">自动反馈、持续进化</b>
+        </article>
+        <article>
+          <small data-en="COST STRUCTURE">成本结构</small>
+          <span data-en="High trial cost and labor intensity">试错成本高、人力密集</span>
+          <i>→</i>
+          <b data-en="Resource reuse and automated cost reduction">资源复用、自动化降本</b>
+        </article>
+        <article>
+          <small data-en="SECURITY & COMPLIANCE">合规安全</small>
+          <span data-en="After-the-fact audit is difficult">事后审计、难度大</span>
+          <i>→</i>
+          <b data-en="Security is built in and workflows are auditable">安全内建、流程可审计</b>
+        </article>
+      </div>
+      <div class="official-map-stage">
+        <img class="official-map-base" src="assets/roadmap/new_roadMap_bg.png" alt="OpenCSG AgenticOps infinity lifecycle">
+        <img class="official-map-mobile" src="assets/roadmap/roadMap_mobile_bg.png" alt="OpenCSG AgenticOps mobile lifecycle">
+        <div class="official-phase-layer"></div>
+        <div class="official-step-layer"></div>
+      </div>
+    </div>
+    <div class="foot"><span data-en="This page only explains the AgenticOps methodology, not separate product lines">本页只讲 AgenticOps 方法论，不拆分产品线</span><span>04</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-05">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">公司概览　</span><span style="font-size:13px;color:#697472;font-weight:400">Company Overview</span></div>
+    <h2 class="title" data-en="OpenCSG: building sovereign AI infrastructure">OpenCSG：专注 AI 主权基础设施建设的人工智能企业</h2>
+    <div class="company-left">
+      <div class="company-statement">
+        <p class="company-legal" data-en="Beijing OpenCSG Technology Co., Ltd. was founded in March 2023 and began formal operations in October. It builds sovereign AI infrastructure so organizations can own autonomous, controllable and continuously evolving AI across models, data, compute and agents.">北京开放传神科技有限公司成立于 2023 年 3 月，同年 10 月正式运营。公司聚焦 AI 主权基础设施，让组织在模型、数据、算力与智能体四个层面拥有自主、可控、可演进的 AI 能力。</p>
+        <div class="csg-expansion">
+          <span><b>C</b><em>CONVERGE</em><small>汇聚开放资产</small></span>
+          <span><b>S</b><em>SPREAD</em><small>扩散智能能力</small></span>
+          <span><b>G</b><em>GENERATIVE</em><small>生成持续价值</small></span>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-axis"></div>
+        <div class="tl"><span class="year">2023</span><b>公司成立，启动开源社区与 CSGHub 研发</b><span>完成天使轮融资，同年 10 月正式运营。</span></div>
+        <div class="tl"><span class="year">2024</span><b>入驻模速空间，成为首批企业</b><span>企业私有化、权限、评测与治理能力开始进入生产。</span></div>
+        <div class="tl"><span class="year">2025</span><b>城市级 AI 建设落地，完成天使+轮融资</b><span>在宜昌、香港数码港等场景验证区域平台与持续运营模式。</span></div>
+        <div class="tl"><span class="year">2026</span><b>完成超 1 亿元 Pre-A 轮，扩大 OPC 生态</b><span>与 WAIC、B.ai 联合举办 OPC / Agent 黑客松大会。</span></div>
+      </div>
+      <div class="company-footprint">
+        <div><b>300 万+</b><span>社区用户</span></div><div><b>20 万+</b><span>模型资产</span></div><div><b>30+</b><span>国家与地区</span></div>
+      </div>
+    </div>
+    <div class="company-right">
+      <div class="box investor-proof">
+        <div class="proof-heading">
+          <h4 data-en="Historical investors">历史投资人</h4>
+          <span data-en="Angel, Angel+ and Pre-A rounds backed by institutional and strategic capital">天使轮、天使+轮与 Pre-A，机构及产业资本持续支持</span>
+        </div>
+        <div class="investor-grid funding-history">
+          <div class="funding-record"><span>2023 · 天使轮</span><b>联想创投 · 国信中数</b><em>ANGEL</em></div>
+          <div class="funding-record"><span>2025 · 天使+轮</span><b>中科升哲（中科曙光）</b><em>ANGEL+</em></div>
+          <div class="funding-record highlight"><span>2026 · Pre-A</span><b>融资金额超过 1 亿元</b><em>投资方处于保密期</em></div>
+        </div>
+      </div>
+      <div class="box customer-proof historical-customers">
+        <div class="proof-heading customer-proof-head">
+          <h4 data-en="Customers and regional platforms">客户与城市级平台</h4>
+          <span data-en="Enterprise production validation plus a repeatable regional AI network">企业生产验证 + 可复制的区域 AI 网络</span>
+        </div>
+        <div class="customer-portfolio">
+          <div class="customer-wordmarks">
+            <div><b>米哈游</b><span>miHoYo</span></div>
+            <div><b>哔哩哔哩</b><span>bilibili</span></div>
+            <div><b>宁德时代</b><span>CATL</span></div>
+            <div><b>中航锂电</b><span>CALB</span></div>
+            <div><b>Shopee</b><span>SEA COMMERCE</span></div>
+            <div><img src="assets/customer-logos/china-mobile.svg" alt="中国移动"><span>中国移动</span></div>
+            <div><img src="assets/customer-logos/china-unicom.svg" alt="中国联通"><span>中国联通</span></div>
+            <div><b>中国信通院</b><span>CAICT</span></div>
+            <div><b>工业和信息化部</b><span>MIIT</span></div>
+            <div><b>中矿</b><span>MINING</span></div>
+          </div>
+          <div class="regional-network">
+            <div class="regional-map" aria-label="城市级 AI 平台全国复制网络">
+              <img src="assets/china-blank-map.svg" alt="中国城市级 AI 平台节点地图">
+              <span class="city-pin shanghai" data-en="Shanghai">上海</span>
+              <span class="city-pin yancheng" data-en="Yancheng">盐城</span>
+              <span class="city-pin yichang" data-en="Yichang">宜昌</span>
+              <span class="city-pin chongqing" data-en="Chongqing">重庆</span>
+              <span class="city-pin leshan" data-en="Leshan">乐山</span>
+              <span class="city-pin dongfang" data-en="Dongfang">东方</span>
+              <span class="city-pin hongkong" data-en="Hong Kong">香港</span>
+              <span class="city-pin singapore" data-en="Singapore">新加坡</span>
+            </div>
+            <b data-en="One city node can radiate into a nationwide and Southeast Asian AI network">一个城市节点，可发散为全国与东南亚 AI 网络</b>
+            <p data-en="Mainland city nodes · Hong Kong gateway · Singapore and Southeast Asia">内地城市节点 · 香港国际入口 · 新加坡与东南亚连接</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="company-advantages">
+      <article><b data-en="Sovereign by design">主权内建</b><span data-en="Data, models, runtime and decisions remain under customer control; deployable on-premises, in private cloud or air-gapped environments.">数据、模型、运行与决策留在客户控制域；支持本地、私有云与隔离环境。</span></article>
+      <article><b data-en="Open & interoperable">开放互操作</b><span data-en="An open-source foundation connects multiple models, assets, tools and MCP/API ecosystems without vendor lock-in.">以开源底座连接多模型、资产、工具与 MCP/API 生态，避免单一厂商锁定。</span></article>
+      <article><b data-en="Enterprise ready">企业生产就绪</b><span data-en="Governance, identity, audit, cost and lifecycle operations are built into one operating layer; internationally validated by IMDA Spark.">治理、身份、审计、成本与生命周期运营内建于同一控制层，并获 IMDA Spark 国际生态验证。</span></article>
+    </div>
+    <div class="company-tags">
+      <div class="tag-cloud">
+        <span class="xl" data-en="Open Source">开源</span><span class="lg" data-en="Integrated AgenticOps">一体化 AgenticOps</span><span>GitLab</span>
+        <span class="lg" data-en="OpenCore Model">OpenCore 模式</span><span data-en="Private Hugging Face">私有化 Hugging Face</span><span class="lg" data-en="Private OPC Platform">私有化 OPC 平台</span>
+      </div>
+    </div>
+    <div class="foot"><span>公司定位：开放的 AgenticOps 基础设施</span><span>05</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L08" id="slide-06">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">荣誉与认可　</span><span style="font-size:13px;color:#697472;font-weight:400">Honors & Recognition</span></div>
+    <h2 class="title">产业、政府、媒体与国际生态共同验证 OpenCSG</h2>
+    <div class="honor-grid">
+      <div class="honor"><img src="assets/honor-04.png" alt="新加坡 IMDA SPARK"><div class="hc"><b>新加坡 IMDA SPARK</b><span>国际创新生态认可</span></div></div>
+      <div class="honor"><img src="assets/honor-02.jpg" alt="香港 FinTech Forum"><div class="hc"><b>香港 FinTech Forum</b><span>国际产业交流</span></div></div>
+      <div class="honor"><img src="assets/honor-03.png" alt="CCTV-13 专题采访"><div class="hc"><b>CCTV-13 专题采访</b><span>主流媒体关注</span></div></div>
+      <div class="honor"><img src="assets/honor-06.png" alt="海外投资与服务展洽会"><div class="hc"><b>海外投资与服务展洽会</b><span>产业与资本连接</span></div></div>
+      <div class="honor"><img src="assets/honor-01.png" alt="湖北大数据集团考察"><div class="hc"><b>湖北大数据集团考察</b><span>区域产业合作</span></div></div>
+      <div class="honor"><img src="assets/honor-09.png" alt="WAIC OPC 挑战赛"><div class="hc"><b>WAIC OPC 挑战赛</b><span>个人 AgenticOps 生态</span></div></div>
+      <div class="honor"><img src="assets/honor-07.png" alt="海南省相关调研"><div class="hc"><b>海南省相关调研</b><span>区域 AI 基础设施交流</span></div></div>
+      <div class="honor"><img src="assets/honor-05.png" alt="GENESIS Hackathon"><div class="hc"><b>GENESIS Hackathon</b><span>开发者与 Agent 生态</span></div></div>
+      <div class="honor"><img src="assets/honor-08.jpg" alt="长江数据基金会授牌"><div class="hc"><b>长江数据基金会授牌</b><span>数据与开源生态认可</span></div></div>
+      <div class="honor"><img src="assets/honor-10.png" alt="国际开源生态合作"><div class="hc"><b>国际开源生态合作</b><span>产业伙伴共同验证</span></div></div>
+    </div>
+    <div class="foot"><span>10 个影像位置均为独立图片元素，可单独替换</span><span>06</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L08" id="slide-07">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh" data-en="Enterprise Production Proof　">企业生产验证　</span><span style="font-size:13px;color:#697472;font-weight:400">Enterprise Production Proof</span></div>
+    <h2 class="title" data-en="Enterprises need more than model access—they need an AI control layer from pilot to production">企业需要的不只是模型入口，而是从试验到生产的 AI 控制层</h2>
+    <div class="case7-layout">
+      <div class="case7-thesis">
+        <article class="case7-problem">
+          <small>THE PROBLEM</small>
+          <h3 data-en="Access to one model is not a production system">访问一个模型，不等于拥有生产级 AI</h3>
+          <p data-en="Enterprises need control, governance, private hosting and deployment confidence—not another isolated model endpoint.">企业需要控制、治理、私有化托管和可靠的生产部署，而不是另一个孤立的模型接口。</p>
+        </article>
+        <article class="case7-solution">
+          <small>OPENCSG APPROACH</small>
+          <h3 data-en="An enterprise AI control layer">企业 AI 控制层</h3>
+          <p data-en="OpenCSG manages AI assets, approved models, private copilots and governed agent workflows across public cloud, private cloud, on-premise and sovereign-ready environments.">OpenCSG 统一管理 AI 资产、批准模型、私有 Copilot 和受治理的 Agent 工作流，支持公有云、私有云、本地与主权环境。</p>
+        </article>
+      </div>
+      <div class="case7-capabilities">
+        <article><span>01</span><b data-en="Pilot → Production">从试验到生产</b><p data-en="Govern, secure and operate AI in production.">治理、安全与持续运营。</p></article>
+        <article><span>02</span><b data-en="Beyond a Model Hub">超越模型 Hub</b><p data-en="Models, data, prompts, code, MCP and agents.">模型、数据、Prompt、代码、MCP 与 Agent。</p></article>
+        <article><span>03</span><b data-en="Private & Sovereign">私有化与主权部署</b><p data-en="Private cloud, on-premise and air-gapped.">私有云、本地与隔离环境。</p></article>
+        <article><span>04</span><b data-en="Agentic Lifecycle">Agent 生命周期</b><p data-en="Build, release, monitor and improve.">构建、发布、监控与持续进化。</p></article>
+        <article><span>05</span><b data-en="Open & Enterprise-ready">开源且企业就绪</b><p data-en="Open flexibility with access, audit and control.">开放灵活性叠加权限、审计与控制。</p></article>
+      </div>
+      <div class="case7-cases">
+        <article class="case7-card">
+          <header><small data-en="LEADING TELECOM · ANONYMOUS">头部运营商 · 匿名</small><h3 data-en="Local compliance and multi-model operations">本地合规与多模型运营</h3></header>
+          <div><span data-en="Problem">问题</span><p data-en="Headquarters SaaS could not satisfy local data boundaries or continuous operations.">总部 SaaS 无法满足本地数据边界与持续运营。</p></div>
+          <div><span>OpenCSG</span><p data-en="A self-hosted AgenticOps control layer unified models, permissions and releases.">以自部署 AgenticOps 控制层统一模型、权限与发布。</p></div>
+          <footer><b data-en="Outcome">结果</b><p data-en="Replaceable models, data in-domain and uninterrupted business.">模型可替换、数据不出域、业务连续。</p></footer>
+        </article>
+        <article class="case7-card">
+          <header><small data-en="PROVINCIAL RESEARCH INSTITUTE · ANONYMOUS">省级科研机构 · 匿名</small><h3 data-en="Reusable assets and safe production release">资产复用与安全生产发布</h3></header>
+          <div><span data-en="Problem">问题</span><p data-en="Data, models and experiments were fragmented across individual environments.">数据、模型和实验过程分散在个人环境。</p></div>
+          <div><span>OpenCSG</span><p data-en="Asset graph, evaluation, sandbox and release controls formed one workflow.">统一资产图谱、评测、沙箱与发布流程。</p></div>
+          <footer><b data-en="Outcome">结果</b><p data-en="Reusable, auditable assets that reach production without data leaving.">资产可复用、可审计，并在数据不外流前提下进入生产。</p></footer>
+        </article>
+        <article class="case7-card">
+          <header><small data-en="REGIONAL AI PLATFORM · ANONYMOUS">区域 AI 平台 · 匿名</small><h3 data-en="From one-off delivery to ecosystem operations">从一次性交付到生态运营</h3></header>
+          <div><span data-en="Problem">问题</span><p data-en="Compute, models, data and developers remained disconnected.">算力、模型、数据和开发者彼此割裂。</p></div>
+          <div><span>OpenCSG</span><p data-en="Open assets, a developer portal and operating mechanisms connected the ecosystem.">以开放资产、开发者门户和运营体系串联生态。</p></div>
+          <footer><b data-en="Outcome">结果</b><p data-en="The project moved from building a platform to operating a growing ecosystem.">从“建设平台”升级为“持续运营生态”。</p></footer>
+        </article>
+      </div>
+    </div>
+    <div class="foot"><span data-en="Anonymous cases: the shared proof is control, governance, private deployment and production continuity">匿名案例的共同证明：控制、治理、私有化与生产连续性</span><span>07</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L08" id="slide-08">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">统一产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">Unified Product System</span></div>
+    <h2 class="title">一套 AgenticOps 平台，两种版本形态</h2>
+    <div class="product-shell">
+      <div class="shared-top"><b data-en="One shared AgenticOps control plane">一套共享 AgenticOps 控制平面</b><span data-en="Open assets · Identity and security · Runtime · Evaluation · Observability">开放资产生态 · 身份与安全 · 运行时 · 评测 · 可观测性</span></div>
+      <div class="edition organization-edition">
+        <div class="edition-label"><em data-en="ORGANIZATION EDITION">ORGANIZATION EDITION</em><b>组织型<br>AgenticOps</b><span>企业、科研机构、运营商与区域平台</span></div>
+        <div class="product"><div><h3>CSGHub</h3><div class="role">AI 资产管理与治理</div><ul><li>统一模型、数据集、代码、Prompt 与 Agent 资产</li><li>Git 版本、血缘、元数据、License 与完整性校验</li><li>多源同步、评测、推理、微调和 MCP 服务托管</li><li>组织、权限、审计、合规与私有化部署</li><li>开放社区与企业目录一体化</li></ul><div class="product-meta"><span>Asset Graph</span><span>RBAC / Audit</span><span>Hybrid Hub</span></div></div><div class="screen has-image"><img src="assets/product-csghub.png" alt="CSGHub 产品界面"></div></div>
+        <div class="product"><div><h3>AgenticHub</h3><div class="role">Agent 构建、发布与持续运营</div><ul><li>Agent / Workflow / Skill 的构建、编排与版本管理</li><li>测试、评测、沙箱、发布门禁与人工确认</li><li>生产监控、反馈回流、成本、SLA 与持续优化</li><li>多团队协作、企业工具接入与业务运行治理</li><li>开放 API、Webhook 与企业系统集成</li></ul><div class="product-meta"><span>Build → Run</span><span>Eval / Sandbox</span><span>Observe</span></div></div><div class="screen has-image"><img src="assets/product-agentichub.png" alt="AgenticHub 产品界面"></div></div>
+      </div>
+      <div class="edition personal-edition">
+        <div class="edition-label"><em data-en="PERSONAL OPC EDITION">PERSONAL OPC EDITION</em><b>个人 OPC<br>AgenticOps</b><span>开发者、Solo Founder 与个人知识工作者</span></div>
+        <div class="product"><div><h3>CSGHub-Lite</h3><div class="role">本地 AI 资产与运行底座</div><ul><li>一键启动本地模型，支持 GGUF 与 SafeTensors 转换</li><li>兼容 Ollama API 的 REST 服务与流式对话</li><li>模型下载、断点续传、持久化和跨平台运行</li><li>私有知识、长期记忆与本地开发工具接入</li><li>本地搜索、插件与快捷工作流</li></ul><div class="product-meta"><span>Local-first</span><span>Offline</span><span>Cross-platform</span></div></div><div class="screen has-image"><img src="assets/product-lite.png" alt="CSGHub-Lite 产品界面"></div></div>
+        <div class="product"><div><h3>CSGClaw</h3><div class="role">个人多 Agent 协同执行系统</div><ul><li>Manager–Worker 角色分工与并行任务拆解</li><li>Agent / Skill 发现、组合、调用与执行网络</li><li>本地权限、沙箱、人机确认和可回放过程</li><li>从一次性对话升级为长期运行的个人生产系统</li><li>任务日志、回放与结果归档</li></ul><div class="product-meta"><span>Multi-Agent</span><span>Skill Network</span><span>Human-in-loop</span></div></div><div class="screen has-image"><img src="assets/product-claw.png" alt="CSGClaw 产品界面"></div></div>
+      </div>
+      <div class="shared-bottom"><div>统一用户与身份</div><div>统一资产协议</div><div>统一模型与网关</div><div>统一观测与评测</div><div>统一安全与审计</div><div>开放 API / MCP / SDK</div></div>
+    </div>
+    <div class="foot"><span>不是四条产品线，而是同一 AgenticOps 系统的两个版本</span><span>08</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-09">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">全栈技术架构　</span><span style="font-size:13px;color:#697472;font-weight:400">Full Technical Architecture</span></div>
+    <h2 class="title" data-en="One AgenticOps stack: from the platform foundation to AI-driven production">一体化 AgenticOps 技术栈：从平台底座到 AI 驱动生产</h2>
+    <div class="arch9-tabs" role="tablist" aria-label="Architecture views">
+      <button type="button" data-arch-view="production" data-en="INDUSTRY PRODUCTION LOOP">行业生产闭环</button>
+      <button type="button" class="active" data-arch-view="platform" data-en="FULL PLATFORM STACK">平台全栈架构</button>
+    </div>
+
+    <div class="edge-production-view arch9-view" data-arch-panel="production">
+      <section class="edge-studio">
+        <small data-en="BUSINESS & CONTENT INPUT">业务与内容输入</small>
+        <b data-en="Industry data">行业数据</b>
+        <span data-en="Documents · images · video · device signals">文档 · 图像 · 视频 · 设备信号</span>
+        <i aria-hidden="true">→</i>
+      </section>
+
+      <section class="edge-terminal-layer">
+        <header>
+          <div><small data-en="MULTI-TERMINAL APPLICATION LAYER">多终端应用层</small><b data-en="One content and agent system serves every interaction surface">一套内容与 Agent 系统，服务所有交互终端</b></div>
+          <span>OpenCSG · AGENTICOPS</span>
+        </header>
+        <div class="edge-device-grid">
+          <article><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12"/><path d="M8 21h8M10 17v4m4-4v4"/></svg><b data-en="Smart cockpit">智能座舱</b><span>HMI</span></article>
+          <article><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h8M8 11h8M8 15h5"/></svg><b data-en="Vehicle display">车载屏幕</b><span>DISPLAY</span></article>
+          <article><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20"/><path d="M10 5h4M11 19h2"/></svg><b data-en="Mobile terminal">移动终端</b><span>MOBILE</span></article>
+          <article><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="10"/><path d="M9 2h6v4M9 20h6M8 16v4m8-4v4M9 10h.1M15 10h.1M10 13h4"/></svg><b data-en="Robot terminal">机器人终端</b><span>ROBOT</span></article>
+          <article><svg viewBox="0 0 24 24"><path d="M3 9h18l-2 8h-5l-2-4-2 4H5zM8 9l1-3h6l1 3"/></svg><b>AR / VR</b><span>SPATIAL</span></article>
+          <article><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4zM2 20h20M8 9h8M8 13h5"/></svg><b data-en="Engineering workstation">工业工作站</b><span>WORKSTATION</span></article>
+          <article><svg viewBox="0 0 24 24"><path d="M3 4h18v14H3zM7 8h3v6H7zm7-2h3v8h-3zM8 21h8"/></svg><b data-en="Operations screen">运营大屏</b><span>CONTROL ROOM</span></article>
+        </div>
+        <div class="edge-delivery-band">
+          <span data-en="Content publishing">内容发布</span><i>→</i><span data-en="Agent services">Agent 服务</span><i>→</i><span data-en="Real-time interaction">实时交互</span><i>→</i><span data-en="Usage feedback">使用反馈</span>
+        </div>
+      </section>
+
+      <section class="edge-control-plane">
+        <b>AGENTICOPS CONTROL PLANE</b>
+        <span data-en="Multi-model routing">多模型路由</span>
+        <span data-en="Agent workflows">Agent 工作流</span>
+        <span data-en="Multimodal generation">多模态生成</span>
+        <span data-en="Version & release">版本与发布</span>
+        <span data-en="Safety & observability">安全与可观测</span>
+      </section>
+
+      <section class="edge-production-data">
+        <small data-en="PRODUCTION DATA">生产数据</small>
+        <div class="edge-data-icon"><span></span><span></span><span></span></div>
+        <b data-en="Feedback becomes an enterprise data asset">运行反馈沉淀为企业数据资产</b>
+        <p data-en="Images · video · point clouds · sensor signals · user interaction">图像 · 视频 · 点云 · 传感器 · 用户交互</p>
+      </section>
+
+      <section class="edge-dataflow">
+        <header><b data-en="IoT data services · DataFlow">IoT 数据业务体系 · DataFlow</b><span data-en="A continuous data flywheel from production back to models and agents">从生产现场持续回流到模型与 Agent 的数据飞轮</span></header>
+        <div class="edge-pipeline">
+          <article><span>01</span><b data-en="Collect">数据采集</b></article><i>→</i>
+          <article><span>02</span><b data-en="Clean">清洗治理</b></article><i>→</i>
+          <article><span>03</span><b data-en="Label">标注加工</b></article><i>→</i>
+          <article><span>04</span><b data-en="Evaluate">质量评测</b></article><i>→</i>
+          <article><span>05</span><b data-en="Publish">版本发布</b></article>
+        </div>
+        <div class="edge-return"><span data-en="Private data remains in-domain">私域数据不出域</span><span data-en="High-quality datasets accumulate continuously">高质量数据集持续沉淀</span><span data-en="Agents improve with every operation">Agent 随运行持续进化</span></div>
+      </section>
+
+      <section class="edge-corepro">
+        <header><b>CorePro</b><span data-en="Heterogeneous runtime">异构运行时</span></header>
+        <div><span>PyTorch</span><span>ONNX</span><span>TensorRT</span></div>
+        <p data-en="Cloud · local · edge · air-gapped">云端 · 本地 · 边缘 · 隔离环境</p>
+        <strong data-en="No single-chip lock-in">不绑定单一芯片</strong>
+      </section>
+    </div>
+
+    <div class="arch9 arch9-view active" data-arch-panel="platform">
+      <div class="a9-scene">
+        <div class="a9-side" data-en="SCENARIOS">场景</div>
+        <div class="a9-scene-track">
+          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3M9 9h6v6H9z"/></svg><span data-en="Electronics">电子信息</span></div>
+          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="13"/><path d="M7 21h10M9 18v3m6-3v3M7 9h10"/></svg><span data-en="Media & Entertainment">传媒娱乐</span></div>
+          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg><span data-en="Healthcare">医疗健康</span></div>
+          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6zM8 8a4 4 0 0 1 8 0M8 13h8"/></svg><span data-en="Retail & Commerce">零售电商</span></div>
+          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7a4 4 0 0 1 4 4v10H8a4 4 0 0 0-4 2zM20 5h-5a4 4 0 0 0-4 4v10h5a4 4 0 0 1 4 2z"/></svg><span data-en="Government & Education">政企教育</span></div>
+          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l4-3 4 3 4-3 4 3v12zM7 12h2m2 0h2m2 0h2M7 16h2m2 0h2m2 0h2"/></svg><span data-en="Energy & Power">能源电力</span></div>
+          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="16" rx="2"/><path d="M8 7h8M8 11h8M8 19l-2 3m10-3 2 3M8 15h.1M16 15h.1"/></svg><span data-en="Rail Transit">轨道交通</span></div>
+        </div>
+      </div>
+
+      <div class="a9-matrix">
+        <div class="a9-side a9-side-vertical" data-en="PRODUCT MATRIX">产品矩阵</div>
+        <div class="a9-core">
+          <div class="a9-agent-products">
+            <section class="a9-product a9-ship">
+              <h3>CSGShip</h3>
+              <div class="a9-chip-stack"><span>CodeSouler</span><span>WebIDE</span></div>
+            </section>
+            <section class="a9-product a9-claw">
+              <h3>CSGClaw</h3>
+              <div class="a9-chip-grid cols-2"><span data-en="Agent collaboration">Agent 协作</span><span data-en="IM management">IM 管理</span><span>Sandbox</span><span>Multi Runtime</span></div>
+            </section>
+            <section class="a9-product a9-agenthub">
+              <h3>AgenticHub</h3>
+              <div class="a9-chip-grid cols-6">
+                <span data-en="Agent assistant">Agentic 小助手</span><span data-en="Task scheduling">任务调度</span><span>CSGClaw</span><span>CodeAgent</span><span data-en="Templates">模板</span><span data-en="Tools">工具</span>
+                <span data-en="Skills">Skill 技能</span><span data-en="Task planning">任务规划</span><span data-en="Scheduled tasks">定时任务</span><span>Workflow</span><span data-en="Knowledge base">知识库</span><span data-en="Prompts">提示词</span>
+              </div>
+            </section>
+          </div>
+
+          <div class="a9-build-caption" data-en="Continuously build, package and release agents">持续构建、打包与发布智能体</div>
+          <div class="a9-lifecycle">
+            <span class="a9-infinity">∞</span>
+            <span>Prompt</span><span>Code</span><span>Build</span><span>Test</span><span>Release</span><span>Deploy</span><span>Operate</span><span>Retrain</span>
+          </div>
+
+          <div class="a9-runtime-products">
+            <section class="a9-product a9-lite">
+              <h3>CSGHub-Lite</h3>
+              <div class="a9-feature-groups cols-2">
+                <div class="a9-feature-group"><b data-en="INTERACTION">交互方式</b><div><span data-en="CLI">CLI 命令行</span><span data-en="GUI">GUI 图形界面</span><span data-en="AI Apps">AI 应用</span><span>REST API</span></div></div>
+                <div class="a9-feature-group"><b data-en="LIGHTWEIGHT MODEL SERVICE">Lite 轻量模型服务</b><div><span data-en="One-click inference">一键推理实例</span><span data-en="Private deployment">私有化部署</span><span data-en="Native search">原生搜索</span><span data-en="Resume transfer">断点续传</span><span data-en="Image build">镜像构建</span><span data-en="Multi-device">多端部署</span></div></div>
+              </div>
+            </section>
+            <section class="a9-product a9-hub">
+              <h3>CSGHub</h3>
+              <div class="a9-feature-groups cols-3">
+                <div class="a9-feature-group"><b data-en="SPACES">应用空间</b><div><span data-en="Auto package">自动打包</span><span data-en="Online runtime">在线运行</span><span data-en="Log analysis">日志分析</span><span data-en="Evaluation">评测测试</span></div></div>
+                <div class="a9-feature-group"><b data-en="MODEL SERVICES">模型服务</b><div><span data-en="Fine-tuning">一键微调</span><span data-en="Inference">一键推理</span><span data-en="Evaluation">模型评测</span><span data-en="Multi-model">多模型适配</span><span data-en="Jupyter Instance">Jupyter 实例</span><span>MCP Host</span></div></div>
+                <div class="a9-feature-group"><b>DataFlow</b><div><span data-en="Collection">数据采集</span><span data-en="Conversion">格式转换</span><span data-en="Processing">数据处理</span><span data-en="Algorithm templates">算法模板</span><span data-en="Labelling">数据标注</span><span data-en="Toolbox">工具库</span></div></div>
+              </div>
+            </section>
+          </div>
+          <span class="a9-flow-up a9-flow-left" aria-hidden="true"></span>
+          <span class="a9-flow-up a9-flow-right" aria-hidden="true"></span>
+
+          <section class="a9-assets">
+            <h3>AssetsHub</h3>
+            <div class="a9-asset-grid">
+              <div><b data-en="MODELS">模型</b><span data-en="Search / sort">搜索 / 排序</span></div>
+              <div><b data-en="DATASETS">数据集</b><span data-en="Upload / download">上传 / 下载</span></div>
+              <div><b data-en="PROMPTS">提示词</b><span data-en="Filter">筛选</span></div>
+              <div><b>MCP</b><span data-en="Preview">预览</span></div>
+              <div><b data-en="LINEAGE">血缘关系</b><span data-en="Storage">存储</span></div>
+              <div><b data-en="ASSET LINKS">资产关联</b><span data-en="Multi-source sync">多源同步</span></div>
+            </div>
+          </section>
+
+          <div class="a9-foundation">
+            <section><h3 data-en="USER MANAGEMENT">用户管理</h3><div><span data-en="Self-managed accounts">自建账户</span><span data-en="Multi-tenant">多租户</span><span data-en="SSO federation">SSO 多点</span></div></section>
+            <section><h3 data-en="PLATFORM CAPABILITIES">平台能力</h3><div><span data-en="Workflow engine">工作流引擎</span><span data-en="Compute scheduling">算力调度</span><span data-en="Task scheduling">任务调度</span><span data-en="Version control">版本控制</span><span data-en="Data security">数据安全</span><span data-en="Open SDK">开放 SDK</span></div></section>
+            <section><h3 data-en="OPERATIONS">运维运营</h3><div><span data-en="Metering & billing">计量计费</span><span data-en="Operational analytics">运营分析</span><span data-en="Monitoring">运维监控</span><span data-en="Log management">日志管理</span></div></section>
+          </div>
+        </div>
+      </div>
+
+      <div class="a9-deploy">
+        <div class="a9-side" data-en="DEPLOYMENT">部署环境</div>
+        <div class="a9-deploy-track"><span data-en="OpenCSG Online Community">OpenCSG 线上社区</span><span data-en="Public Cloud (ESC)">公有云（ESC）</span><span data-en="Hybrid Cloud">混合云</span><span data-en="On-premises Private Deployment">本地私有化部署</span></div>
+      </div>
+    </div>
+    <div class="foot"><span data-en="One stack · Platform foundation and production architecture · Full AgenticOps lifecycle">一套技术栈 · 平台底座与生产架构双视图 · 完整 AgenticOps 生命周期</span><span>09</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-10">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">企业与国家/区域市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Enterprise & Sovereign Market</span></div>
+    <h2 class="title" data-en="Enterprise AI is scaling; control, governance and operations become the next infrastructure layer">企业 AI 正进入规模化，控制、治理与持续运营成为下一层基础设施</h2>
+    <div class="market10">
+      <section class="m10-evidence">
+        <h3 data-en="Enterprise adoption is broad; production control remains scarce">企业采用已经普及，生产控制层仍然稀缺</h3>
+        <div class="m10-metrics">
+          <article><b>88%</b><p>组织已在至少一个业务职能中常态化使用 AI。</p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">McKinsey｜The State of AI in 2025: Agents, Innovation, and Transformation</a></article>
+          <article><b>62%</b><p>正在试验或规模化 Agent，其中 23% 已开始扩展。</p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">McKinsey｜The State of AI in 2025: Agents, Innovation, and Transformation</a></article>
+          <article><b>439</b><p>截至 2025H1 中国备案大模型数量，覆盖 30+ 行业。</p><a href="https://www.ndrc.gov.cn/xxgk/jd/jd/202508/t20250826_1400077.html" target="_blank">国家发展改革委｜以技术持续创新支撑“人工智能+”行动加速落地</a></article>
+          <article><b>70%+</b><p>中国 2027 年新一代智能终端、智能体应用普及率目标。</p><a href="https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm" target="_blank">国务院｜关于深入实施“人工智能+”行动的意见（国发〔2025〕11号）</a></article>
+        </div>
+        <div class="m10-sovereign">
+          <div class="m10-sovereign-head"><b>GLOBAL SOVEREIGN AI BUILD-OUT</b><span>国家正在把算力、模型与公共服务平台纳入战略基础设施</span></div>
+          <article><strong>EU</strong><b>19 AI Factories</b><span>另设 €20B AI Gigafactory 基金</span><a href="https://digital-strategy.ec.europa.eu/en/policies/ai-factories" target="_blank">European Commission｜AI Factories</a></article>
+          <article><strong>CANADA</strong><b>C$2B</b><span>Canadian Sovereign AI Compute Strategy</span><a href="https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy" target="_blank">Government of Canada｜Sovereign AI Compute Strategy</a></article>
+          <article><strong>INDIA</strong><b>10,000+ GPUs</b><span>国家级公共 AI 云与本土模型基础设施</span><a href="https://compute.indiaai.gov.in/files/end-user-policy.pdf" target="_blank">IndiaAI Mission｜End-User Policy for AI Services on the Cloud</a></article>
+        </div>
+      </section>
+      <section class="m10-market">
+        <h3 data-en="AgenticOps serves one common control plane across enterprises and sovereign platforms">企业与国家级平台共享同一 AgenticOps 控制层</h3>
+        <div class="m10-demand">
+          <div><span>01</span><b>企业生产</b><p>多模型资产、版本、评测、发布、成本和 SLA 必须持续运营。</p></div>
+          <div><span>02</span><b>国家 / 区域平台</b><p>公共算力、模型与生态需要自主部署、持续运营和区域复制。</p></div>
+          <div><span>03</span><b>共性控制面</b><p>Lineage、RBAC、Audit、Policy 与数据边界必须内建。</p></div>
+        </div>
+        <div class="m10-tam">
+          <div class="m10-tam-head"><span>2026 BASE-CASE · OPENCSG BOTTOM-UP</span><b>$7.5B</b><em>≈ RMB 54B TAM</em></div>
+          <div class="m10-tam-parts">
+            <article><small>ENTERPRISE</small><b>$4.5B</b><p>30,000 家目标组织 × $150K 年均 ACV</p></article>
+            <article><small>SOVEREIGN / REGIONAL</small><b>$3.0B</b><p>300 个平台 × $10M 全生命周期价值</p></article>
+          </div>
+          <p class="m10-assumption">口径：软件 License、私有化实施、持续运营与生态服务；为 OpenCSG 基准情景假设，不是第三方市场预测。</p>
+        </div>
+      </section>
+    </div>
+    <div class="source-note">Primary sources are linked inside each data card. Market size uses an auditable OpenCSG bottom-up base case: 30,000 enterprises × $150K ACV + 300 sovereign/regional platforms × $10M lifecycle value.</div>
+    <div class="foot"><span data-en="The enterprise market is driven by production economics; policy accelerates and standardizes adoption.">企业市场由生产经济性驱动，政策负责加速与标准化</span><span>10</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-11">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">个人 OPC 市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Personal OPC Market</span></div>
+    <h2 class="title" data-en="Personal AI is gaining its own compute, open ecosystem and persistent operating layer">个人 AI 正同时获得算力、开源生态与持续运行层</h2>
+    <div class="opc11">
+      <div class="opc11-signals">
+        <article><small>OPEN ECOSYSTEM</small><b>180M+</b><p>GitHub 开发者，开源个人 AI 最直接的全球分发入口。</p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025: A New Developer Joins Every Second</a></article>
+        <article><small>AI SUPPLY</small><b>4.3M</b><p>GitHub AI 项目，Agent、Skill 与本地运行组件快速积累。</p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025</a></article>
+        <article><small>LOCAL COMPUTE</small><b>143.1M</b><p>2026 年 AI PC 预计出货量，本地推理成为标准硬件能力。</p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025" target="_blank">Gartner｜AI PCs Will Represent 31% of Worldwide PC Market by End-2025</a></article>
+        <article><small>AI PC SHARE</small><b>54.7%</b><p>2026 年 AI PC 占全球 PC 市场预测比例。</p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025" target="_blank">Gartner｜Worldwide AI PC Share and Shipments 2024–2026</a></article>
+      </div>
+      <section class="opc11-path">
+        <div class="opc11-path-head"><h3>个人 AgenticOps：从对话窗口升级为个人生产系统</h3><span>ASK → REMEMBER → RUN → ACT → COORDINATE</span></div>
+        <div class="opc11-nodes">
+          <article><span>01</span><b>Chat Window</b><p>一次性问答<br>无长期状态</p></article>
+          <article><span>02</span><b>Knowledge + Memory</b><p>私有知识<br>长期上下文</p></article>
+          <article><span>03</span><b>Local Model + Runtime</b><p>模型、数据、权限<br>留在本地</p></article>
+          <article><span>04</span><b>Agent + Skill</b><p>连接工具<br>持续执行任务</p></article>
+          <article><span>05</span><b>Multi-Agent OPC</b><p>分工、协同、复盘<br>个人生产系统</p></article>
+        </div>
+        <div class="opc11-products"><b>OpenCSG 产品路径</b><span>CSGHub-Lite｜本地资产与运行底座</span><span>CSGClaw｜多 Agent 协同与执行网络</span></div>
+        <div class="opc11-loop"><article><b>开源分发</b><span>Repo / Community</span></article><i>→</i><article><b>本地激活</b><span>Lite</span></article><i>→</i><article><b>持续留存</b><span>Claw / Skills</span></article><i>→</i><article><b>付费扩展</b><span>订阅 / 交易</span></article></div>
+      </section>
+      <aside class="opc11-market">
+        <div class="opc11-tam"><small>2026 BASE-CASE · BOTTOM-UP</small><b>$2.16B</b><em>≈ RMB 15.6B OPC TAM</em><p>180M GitHub 开发者 × 10% OPC-ready 专业用户 × $120 年 ARPU</p><span>OpenCSG 基准假设，不是第三方预测</span></div>
+        <div class="opc11-policy">
+          <h3>OPC 的政策与产业条件正在形成</h3>
+          <article><b>中国 · 2025</b><p>《人工智能+》提出 2027 年智能终端、智能体应用普及率超 70%。</p><a href="https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm" target="_blank">国务院意见</a></article>
+          <article><b>中国 · 2026</b><p>《智能体规范应用与创新发展实施意见》强调高质量发展、安全与开放生态。</p><a href="https://www.cac.gov.cn/2026-05/08/c_1779979789738376.htm" target="_blank">国家网信办等三部门｜实施意见答记者问</a></article>
+          <article><b>EU · 2025</b><p>Data Act 强化用户对联网设备数据的访问、使用与授权分享权利。</p><a href="https://eur-lex.europa.eu/eli/C/2025/5026/oj/eng/pdf" target="_blank">European Commission Data Act Guidance</a></article>
+        </div>
+      </aside>
+    </div>
+    <div class="source-note">Primary sources are linked inside each card. OPC TAM uses an explicit base case: 180M developers × 10% OPC-ready users × $120 annual ARPU = $2.16B.</div>
+    <div class="foot"><span data-en="OPC is not a consumer-chat market; it is an operating system for professional individual productivity.">OPC 不是消费聊天市场，而是专业个人生产力的运行系统</span><span>11</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-12">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">OpenCore 商业模式　</span><span style="font-size:13px;color:#697472;font-weight:400">OpenCore Business Model</span></div>
+    <h2 class="title">同一开源内核建立采用，企业增强与服务形成持续收入</h2>
+    <div class="open12">
+      <section class="open12-mechanism">
+        <div class="oc-kicker">OPENCORE MECHANISM</div>
+        <div class="oc-one-code"><small>ONE PRODUCT · ONE CODEBASE</small><b>开源版本与企业版本<br>共享同一核心代码</b><span>社区可以直接部署、验证和持续采用；商业版在同一产品上增强生产能力。</span></div>
+        <div class="oc-steps">
+          <article><span>01</span><div><b>完全开源的产品入口</b><p>Repo、核心功能、Issue 与版本节奏公开，降低试用和信任成本。</p></div></article>
+          <article><span>02</span><div><b>社区采用与资产沉淀</b><p>开发者、模型、数据、Prompt 与 MCP 持续进入同一生态。</p></div></article>
+          <article><span>03</span><div><b>企业生产能力增强</b><p>推理、数据处理、可靠性、企业集成、安全和组织治理形成付费边界。</p></div></article>
+          <article><span>04</span><div><b>License + 支持服务</b><p>企业 License、实施、升级、SLA 与专家支持形成持续收入。</p></div></article>
+        </div>
+        <div class="oc-reinvest"><b>收入持续反哺开源</b><span>更强产品 → 更多采用 → 更多企业需求 → 更强开源生态</span></div>
+        <div class="oc-precedents"><b>已验证的 OpenCore 路径</b><span>GitLab</span><span>MongoDB</span><span>Elastic</span><span>Grafana</span></div>
+      </section>
+      <section class="open12-product pricing-console">
+        <div class="pricing-head">
+          <div><span class="label">LIVE PRODUCT BOUNDARY · OPENCSG.COM/CSGHUB</span><h3>官网版本边界：Lite / Community / Enterprise</h3></div>
+          <a href="https://opencsg.com/csghub" target="_blank">查看官网功能与服务对比 ↗</a>
+        </div>
+        <div class="oc-principles">
+          <article><span>01</span><b>同一核心代码</b><p>开源版本与企业版本不割裂，升级路径连续。</p></article>
+          <article><span>02</span><b>生产能力增强</b><p>增强模型推理、数据处理、平台可靠性与企业集成。</p></article>
+          <article><span>03</span><b>企业后台与可控</b><p>满足后台管理、权限、安全、审计与自主部署需求。</p></article>
+          <article><span>04</span><b>持续商业收入</b><p>基于 License、实施与支持服务形成收入。</p></article>
+        </div>
+        <div class="pricing-tabs" role="tablist">
+          <button type="button" data-pricing-tab="lite"><b>Lite</b><span>FREE · PERSONAL</span></button>
+          <button type="button" data-pricing-tab="community"><b>Community</b><span>FREE · OPEN SOURCE</span></button>
+          <button type="button" class="active" data-pricing-tab="enterprise"><b>Enterprise</b><span>¥1999 / YEAR / USER</span></button>
+        </div>
+        <div class="pricing-panels">
+          <article data-pricing-panel="lite">
+            <div><small>CSGHub-Lite</small><h4>个人私有 AI 工作站</h4><p>一条命令启动，完整保留本地模型、数据与 API 控制权。</p></div>
+            <ul><li>模型下载与持久化</li><li>llama.cpp / GGUF</li><li>Ollama 兼容 REST API</li><li>macOS / Linux / Windows</li><li>Streaming Chat</li><li>One-command Startup</li></ul>
+          </article>
+          <article data-pricing-panel="community">
+            <div><small>COMMUNITY EDITION · V2.0</small><h4>组织型开放 AI 资产 Hub</h4><p>自托管部署，统一管理模型、数据、代码、应用、Prompt 与 MCP。</p></div>
+            <ul><li>推理 / 微调 / 评测任务</li><li>数据清洗、标注与算子编排</li><li>模型部署与 MCP 托管</li><li>OpenCSG 社区同步</li><li>Docker / Kubernetes</li><li>社区技术支持</li></ul>
+          </article>
+          <article class="active" data-pricing-panel="enterprise">
+            <div><small>ENTERPRISE EDITION · V2.0</small><h4>企业生产基础设施</h4><p>继承社区版全部能力，并增强计算、组织治理、商业运营和高可用。</p></div>
+            <ul><li>算力管理与异构芯片</li><li>多租户 / RBAC / SSO</li><li>商业计费与运营后台</li><li>多源同步与配额管理</li><li>高可用 / 灾备 / 审计</li><li>工单 + 7×24 专家支持</li></ul>
+          </article>
+        </div>
+        <div class="pricing-compare">
+          <div class="pc-row pc-head"><b>官网功能与服务</b><span>Community · Free</span><span>Enterprise · Paid</span></div>
+          <div class="pc-row"><b>核心代码与资产</b><span>完整开源核心；模型 / 数据 / 代码 / Prompt / MCP</span><span>继承全部社区能力</span></div>
+          <div class="pc-row"><b>生产增强</b><span>基础推理、微调、评测与数据处理</span><span>高性能推理、异构算力、可靠性与集成</span></div>
+          <div class="pc-row"><b>组织与安全</b><span>基础组织和权限</span><span>Admin、RBAC、SSO、审计、灾备与合规</span></div>
+          <div class="pc-row"><b>服务边界</b><span>社区技术支持</span><span>License、实施、升级、SLA、工单与 7×24</span></div>
+        </div>
+        <div class="pricing-foot"><span><b>核心收入</b> Enterprise License · 私有化实施 · 年度支持与升级</span><span><b>扩展收入</b> 区域平台运营 · OPC 订阅 · Agent / Skill 生态</span></div>
+      </section>
+    </div>
+    <div class="foot"><span>外部案例只作证据，主角是 OpenCSG 自己的 OpenCore 飞轮</span><span>12</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-13">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh" data-en="Competitive Landscape　">竞争格局与能力矩阵　</span><span style="font-size:13px;color:#697472;font-weight:400">Competitive Landscape</span></div>
+    <h2 class="title" data-en="Public AI hubs solve model discovery; OpenCSG solves enterprise AI hosting, governance and production deployment">公开 AI Hub 解决模型发现，OpenCSG 解决企业 AI 的托管、治理与生产部署</h2>
+    <div class="comp13-v2">
+      <section class="comp13-message">
+        <div><small>PREFERRED COMPETITIVE MESSAGE</small><b data-en="From model discovery to enterprise control">从模型发现，走向企业控制</b></div>
+        <p data-en="Public AI hubs help developers discover and experiment with models. OpenCSG helps enterprises host, manage, govern and deploy models, datasets, prompts, code, applications and AI agents inside secure production environments.">公开 AI Hub 帮助开发者发现并试用模型；OpenCSG 帮助企业在安全生产环境中托管、管理、治理并部署模型、数据集、Prompt、代码、应用和 AI Agent。</p>
+      </section>
+      <div class="comp13-body">
+        <section class="comp13-category-map">
+          <header><b data-en="Different product categories, different jobs">不同技术品类，解决不同问题</b><span data-en="OpenCSG's boundary is the cross-layer production lifecycle.">OpenCSG 的边界是跨层生产生命周期。</span></header>
+          <article><strong>01</strong><div><b data-en="AI Asset Hub">AI 资产社区</b><p data-en="Discovery and distribution">发现与分发</p></div><span>Hugging Face · 魔搭 · 始智</span></article>
+          <article><strong>02</strong><div><b><span data-en="MaaS / Inference">MaaS / 推理</span></b><p data-en="API, inference and performance">API、推理与性能</p></div><span>硅基流动 · Fireworks · Replicate · vLLM</span></article>
+          <article><strong>03</strong><div><b>Agent Builder</b><p data-en="Applications and workflows">应用与工作流</p></div><span>Dify · Coze · LangChain</span></article>
+          <article><strong>04</strong><div><b data-en="Local Runtime">本地运行</b><p data-en="Model download and runtime">模型下载与 Runtime</p></div><span>Ollama · LM Studio · llama.cpp</span></article>
+          <article><strong>05</strong><div><b>DevOps / Git</b><p data-en="Code and software lifecycle">代码与软件生命周期</p></div><span>GitLab · Gitee</span></article>
+          <article class="open"><strong>06</strong><div><b>AgenticOps</b><p data-en="Assets → agents → operations → governance">资产 → Agent → 运营 → 治理</p></div><span data-en="OpenCSG · fully open-source integrated product">OpenCSG · 完全开源的一体化产品</span></article>
+        </section>
+        <section class="comp13-matrix">
+          <div class="comp13-row comp13-matrix-head"><b data-en="Public product boundary">公开产品边界</b><span data-en="Open entry">开放入口</span><span data-en="Assets & agents">资产与 Agent</span><span data-en="Sovereign deployment">主权部署</span><span data-en="Hardware neutrality">硬件中立</span><span data-en="Open + enterprise control">开源与企业控制</span></div>
+          <div class="comp13-row selected"><b>OpenCSG</b><span data-en="Fully open source">完全开源</span><span data-en="Full lifecycle">全生命周期</span><span data-en="Cloud / private / on-prem / air-gapped">云 / 私有 / 本地 / 隔离</span><span data-en="Heterogeneous compute · cross-chip">异构算力 · 跨芯片</span><span data-en="Open core + enterprise governance">开源核心 + 企业治理</span></div>
+          <div class="comp13-row"><b>Hugging Face</b><span>Hub / OSS</span><span data-en="Models / datasets">模型 / 数据集</span><span>Enterprise Hub</span><span data-en="Defined by deployment stack">取决于部署栈</span><span data-en="OSS libraries + enterprise hub">开源库 + Enterprise Hub</span></div>
+          <div class="comp13-row"><b data-en="ModelScope / Shizhi">魔搭 / 始智</b><span data-en="Model community">模型社区</span><span data-en="Models / datasets">模型 / 数据集</span><span data-en="Platform / private solutions">平台 / 私有化方案</span><span data-en="Platform adaptation">平台适配</span><span data-en="Platform services">平台服务</span></div>
+          <div class="comp13-row"><b>Dify / Coze</b><span data-en="Dify OSS / Platform">Dify OSS / 平台</span><span data-en="Applications / agents">应用 / Agent</span><span data-en="Partial private deployment">部分私有化</span><span data-en="Defined by model runtime">取决于模型 Runtime</span><span data-en="Partial enterprise controls">部分企业能力</span></div>
+          <div class="comp13-row"><b>Ollama</b><span>Runtime OSS</span><span data-en="Local models">本地模型</span><span data-en="Local runtime">本地运行</span><span data-en="CPU / GPU / Multiple backends">CPU / GPU / 多后端</span><span data-en="Open runtime">开源 Runtime</span></div>
+          <div class="comp13-row"><b data-en="SiliconFlow">硅基流动</b><span data-en="API service">API 服务</span><span data-en="Model catalog">模型目录</span><span data-en="Cloud service">云服务</span><span data-en="Cloud compute pool">云端算力池</span><span data-en="Commercial API">商业 API</span></div>
+        </section>
+      </div>
+      <section class="comp13-moats">
+        <article><span>01</span><b data-en="Enterprise control">企业控制</b><p data-en="Not just model discovery.">不只是模型发现。</p></article>
+        <article><span>02</span><b data-en="Private & sovereign">私有化与主权部署</b><p data-en="Not just public access.">不只是公共访问。</p></article>
+        <article><span>03</span><b data-en="End-to-end AgenticOps">端到端 AgenticOps</b><p data-en="Assets, agents, deployment and operations.">贯通资产、Agent、部署与运营。</p></article>
+        <article class="hardware"><span>04</span><b data-en="Runs across heterogeneous hardware">跨芯片、跨架构运行</b><p data-en="Cloud, on-premise, edge and air-gapped; works across domestic accelerators, GPUs, CPUs and heterogeneous pools. Models, agents and governance stay portable, so compute vendors can be replaced.">云端、本地、边缘和隔离环境；兼容国产芯片、GPU、CPU 与异构算力池；模型、Agent 与治理层不绑定硬件，企业可替换算力供应商。</p></article>
+        <article><span>05</span><b data-en="Open and enterprise-ready">完全开源、企业就绪</b><p data-en="Model-neutral with access, audit and observability.">模型中立，具备权限、审计与可观测性。</p></article>
+      </section>
+    </div>
+    <div class="source-note"><span data-en="Open-source evidence:">开源证据：</span> <a href="https://github.com/OpenCSGs/csghub" target="_blank">OpenCSG / CSGHub public repository</a><span data-en=". Competitor boundaries are based on public product pages and deployment models; the comparison describes product scope rather than subjective scores.">。竞品边界依据公开产品页面与部署模式；本页比较产品范围，而非主观评分。</span></div>
+    <div class="foot"><span data-en="Competitive thesis: enterprise control × production lifecycle × hardware neutrality × open foundation">竞争判断：企业控制 × 生产闭环 × 硬件中立 × 开源底座</span><span>13</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-14">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">创始人兼 CEO 与核心团队　</span><span style="font-size:13px;color:#697472;font-weight:400">Founder & Core Team</span></div>
+    <h2 class="title">CEO 主导战略与产品，核心骨干覆盖架构、研发、产品和治理</h2>
+    <div class="team-layout">
+      <div class="ceo-photo"><img src="assets/ceo-clean.png" alt="陈冉"><div class="photo-label"><b>陈冉</b><span>创始人 / CEO</span><small>FORMER FOUNDER & CEO · JIHU GITLAB</small></div><div class="founder-tags"><span>Open Source</span><span>Enterprise Software</span><span>AgenticOps</span></div></div>
+      <div class="ceo-story">
+        <p class="leadline" data-en="Former founder and CEO of JiHu GitLab, with long-term judgment across open source, enterprise software and commercialization.">极狐 GitLab 前创始人 CEO，长期专注开源、企业软件与商业化路径。</p>
+        <div class="ceo-credentials">
+          <article><span>01</span><b>连续创业与开源商业化</b><p>华中科技大学硕士；历任 HP、D2iQ，创办并领导极狐 GitLab；熟悉社区分发、OpenCore 与企业采购。</p></article>
+          <article><span>02</span><b>企业基础设施产品能力</b><p>从 AI 资产社区切入，持续把产品推进至企业治理、Agent 运行、区域平台和个人 OPC。</p></article>
+          <article><span>03</span><b>客户、区域与资本连接</b><p>在开发者生态、企业客户、政府平台、产业伙伴与资本之间建立共同产品语言。</p></article>
+        </div>
+        <div class="team-member-head"><b>核心骨干</b><span>围绕同一 AgenticOps 主线协同，而非并列业务线</span></div>
+        <div class="team-grid">
+          <article><span>ARCHITECTURE</span><b>刘巍峰</b><p>首席架构师 · 中科大<br>Amazon / 昆仑经历</p></article>
+          <article><span>ENGINEERING</span><b>雷达</b><p>研发负责人<br>平台工程与交付</p></article>
+          <article><span>PRODUCT</span><b>陈浩</b><p>产品负责人 · 清华<br>腾讯产品经历</p></article>
+          <article><span>GOVERNANCE</span><b>陈放</b><p>公司治理<br>投资与 AI 产业经验</p></article>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>研发人员占比 70%+；CEO 定义主线，骨干推动产品化与规模化交付</span><span>14</span></div>
+  </section></div>
+
+  <div class="slide-wrap"><section class="slide light" data-layout="L07" id="slide-15">
+    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
+    <div class="section"><span class="section-zh">盈利模式与三年预测　</span><span style="font-size:13px;color:#697472;font-weight:400">Profit Model &amp; 3-Year Outlook</span></div>
+    <h2 class="title" data-en="Three revenue engines share one product foundation; subscription and ecosystem revenue drive the next three years">三类收入引擎共享同一产品底座，订阅化与生态化驱动未来三年</h2>
+    <div class="profit15">
+      <div class="p15-engines">
+        <article class="p15-engine core">
+          <div class="p15-engine-meta"><span>01</span><em data-en="CURRENT CORE">当前核心</em></div>
+          <h3 data-en="Enterprise License / Subscription">企业 License / 订阅</h3>
+          <p data-en="Private deployment, upgrades and support; expand by users, teams and Agents.">私有部署、升级与支持；按用户、团队与 Agent 持续扩容。</p>
+          <div class="p15-engine-tags"><span data-en="Private deployment">私有部署</span><span data-en="Annual renewal">年度续费</span><span data-en="Expansion">增购扩容</span></div>
+          <small data-en="Examples: Bilibili · miHoYo · CATL · CALB · Shopee">典型客户：B 站 · 米哈游 · 宁德时代 · 中航锂电 · Shopee</small>
+        </article>
+        <article class="p15-engine">
+          <div class="p15-engine-meta"><span>02</span><em data-en="SCALE AMPLIFIER">规模放大</em></div>
+          <h3 data-en="Regional Platform Build &amp; Operations">区域平台建设与运营</h3>
+          <p data-en="Construction, annual operations, compute, model and Agent services monetize the full lifecycle.">建设费、年度运营，以及算力、模型与 Agent 服务贯穿全生命周期。</p>
+          <div class="p15-engine-tags"><span data-en="Platform build">平台建设</span><span data-en="Annual operations">年度运营</span><span data-en="Service sharing">服务分成</span></div>
+          <small data-en="Examples: Yichang · Chongqing · Shanghai · Shenzhen Longgang · Dongfang">典型项目：宜昌 · 重庆 · 上海 · 深圳龙岗 · 海南东方</small>
+        </article>
+        <article class="p15-engine">
+          <div class="p15-engine-meta"><span>03</span><em data-en="LONG-TERM UPSIDE">长期上限</em></div>
+          <h3 data-en="OPC &amp; Ecosystem Revenue">OPC 与生态收入</h3>
+          <p data-en="Personal subscriptions, edge licenses, compute transactions, hardware partnerships and Agent / Skill commissions.">个人订阅、边缘授权、算力交易、硬件合作与 Agent / Skill 交易抽佣。</p>
+          <div class="p15-engine-tags"><span data-en="Subscription">订阅</span><span data-en="Marketplace">交易市场</span><span data-en="Revenue share">生态抽佣</span></div>
+          <small data-en="Benchmarks: ModelScope · Hugging Face · SiliconFlow">生态对标：魔搭 · Hugging Face · 硅基流动</small>
+        </article>
+      </div>
+      <div class="p15-forecast">
+        <section class="p15-index">
+          <div class="p15-panel-head">
+            <div><em data-en="YEAR-ON-YEAR REVENUE GROWTH">未来三年收入增速</em><h3 data-en="Three-year growth remains strong while the model becomes more recurring">保持高增长，同时提升订阅与持续运营收入占比</h3></div>
+            <span data-en="No absolute revenue disclosed">不披露绝对金额</span>
+          </div>
+          <div class="p15-index-chart">
+            <div class="p15-year">
+              <div class="p15-year-top"><b>+296%</b><span>2026E</span><em data-en="YoY growth">同比增长</em></div>
+              <div class="p15-bar-track"><i style="height:13.333%"></i></div>
+            </div>
+            <div class="p15-year">
+              <div class="p15-year-top"><b>+200%</b><span>2027E</span><em data-en="YoY growth">同比增长</em></div>
+              <div class="p15-bar-track"><i style="height:40%"></i></div>
+            </div>
+            <div class="p15-year">
+              <div class="p15-year-top"><b>+150%</b><span>2028E</span><em data-en="YoY growth">同比增长</em></div>
+              <div class="p15-bar-track"><i style="height:100%"></i></div>
+            </div>
+          </div>
+        </section>
+        <section class="p15-mix">
+          <div class="p15-panel-head">
+            <div><em data-en="REVENUE MIX">收入结构变化</em><h3 data-en="From project-led revenue to subscription, operations and ecosystem">从项目驱动，走向订阅、运营与生态并重</h3></div>
+          </div>
+          <div class="p15-mix-legend"><span><i class="software"></i><b data-en="Software &amp; subscription">软件与订阅</b></span><span><i class="compute"></i><b data-en="Compute &amp; operations">算力与运营</b></span><span><i class="eco"></i><b data-en="AgenticHub &amp; ecosystem">AgenticHub 与生态</b></span></div>
+          <div class="p15-mix-rows">
+            <div class="p15-mix-row"><b>2026E</b><div class="p15-stack"><span class="software" style="width:59.4%">59.4%</span><span class="compute" style="width:31.3%">31.3%</span><span class="eco" style="width:9.3%">9.3%</span></div></div>
+            <div class="p15-mix-row"><b>2027E</b><div class="p15-stack"><span class="software" style="width:37.5%">37.5%</span><span class="compute" style="width:45.8%">45.8%</span><span class="eco" style="width:16.7%">16.7%</span></div></div>
+            <div class="p15-mix-row"><b>2028E</b><div class="p15-stack"><span class="software" style="width:31.7%">31.7%</span><span class="compute" style="width:45%">45.0%</span><span class="eco" style="width:23.3%">23.3%</span></div></div>
+          </div>
+          <div class="p15-quality">
+            <div><b data-en="RECURRING">订阅化</b><span data-en="Enterprise License and renewals improve predictability">企业 License 与年度续费提升可预测性</span></div>
+            <div><b data-en="OPERATING">运营化</b><span data-en="Regional platforms shift from build-out to annual operations">区域平台从建设收入转向年度运营</span></div>
+            <div><b data-en="ECOSYSTEM">生态化</b><span data-en="OPC and Agent / Skill transactions expand the long-term ceiling">OPC 与 Agent / Skill 交易打开长期上限</span></div>
+          </div>
+          <p class="p15-source" data-en="Source: OpenCSG 2026–2028 profitability forecast model. Indexed and percentage-only presentation; no absolute revenue disclosed.">来源：OpenCSG 2026–2028 盈利预测模型。本页仅展示指数、同比与结构占比，不披露绝对收入金额。</p>
+        </section>
+      </div>
+    </div>
+    <div class="foot"><span data-en="One product foundation · Three revenue engines · Increasing recurring and ecosystem mix">同一产品底座 · 三类收入引擎 · 订阅与生态占比持续提升</span><span>15</span></div>
+  </section></div>
+
+  <script src="assets/deck-appendix.js?v=20260701o"></script>
+  <script src="assets/deck-city-reframe.js?v=20260701o"></script>
+  <script src="assets/deck-slide03-replica.js?v=20260701o"></script>
+  <script src="assets/deck-en-extra.js?v=20260701o"></script>
+  <script>
+    const EN={
+      "主权 AI 开放基础设施":"Sovereign AI Open Infrastructure",
+      "开放、自主、可控、可信":"Open · Autonomous · Controllable · Trusted",
+      "投资论点":"Investment Thesis",
+      "生产系统需要新的控制层":"Production AI needs a new control layer",
+      "AI 从试验进入客服、研发、风控与业务流程后，运行、权限、审计与成本必须成为基础设施。":"Once AI enters service, R&D, risk and core workflows, operations, access, audit and cost become infrastructure.",
+      "开放生态带来低成本分发":"Open ecosystems create efficient distribution",
+      "300 万+社区用户、20 万+模型资产、覆盖 30+国家与地区，形成资产与开发者网络入口。":"3M+ community users, 200K+ model assets and reach across 30+ countries create an asset and developer network.",
+      "企业商业化已经发生":"Enterprise monetization is already proven",
+      "30+终端客户进入生产场景；私有部署、治理、运维和区域平台构成组织型收入。":"30+ customers are in production; private deployment, governance, operations and regional platforms generate revenue.",
+      "个人 OPC 打开规模上限":"Personal OPC expands the scale ceiling",
+      "组织型版本形成高价值合同，个人版通过本地运行、订阅与 Agent/Skill 生态扩大用户边界。":"The organizational edition drives high-value contracts; the personal edition expands reach through local runtime, subscriptions and an Agent/Skill ecosystem.",
+      "开放资产":"Open assets","社区、模型、数据集":"Community, models, datasets","组织生产":"Organizational production",
+      "治理、运行、扩容":"Govern, operate, scale","个人 OPC":"Personal OPC","本地、协同、订阅":"Local, collaborative, subscribed",
+      "持续反哺":"Continuous reinvestment","产品、生态、品牌":"Product, ecosystem, brand",
+      "六大生产痛点":"Six Production Pain Points",
+      "企业AI生产化面对的，不是单一模型的使用问题，而是一整套运行与治理难题":"Enterprise AI production is not a single-model usage problem; it is an operating and governance system problem.",
+      "模型受制于外部厂商":"Models remain controlled by external vendors",
+      "价格、能力、权限与访问政策随时变化，企业无法控制底层依赖。":"Pricing, capabilities, permissions and access policies can change without enterprise control.",
+      "核心业务流程不能中断":"Core workflows cannot stop",
+      "AI 进入客服、研发、风控之后，模型不可用就意味着业务不可用。":"When AI enters service, R&D and risk, model downtime becomes business downtime.",
+      "多模型、多工具高度碎片化":"Models and tools are deeply fragmented",
+      "多云、多芯片、多模型和 Agent 工具缺少统一资产与运行视图。":"Multi-cloud, multi-chip, multi-model and agent tools lack a unified asset and operations view.",
+      "核心数据不能外泄":"Core data cannot leave the boundary",
+      "客户、交易、设计与科研数据不能被交给不可控的外部 API。":"Customer, transaction, design and research data cannot be exposed to uncontrolled external APIs.",
+      "治理能力不能事后补":"Governance cannot be bolted on later",
+      "身份、权限、审计、回滚、沙箱和人工确认必须内生于运行系统。":"Identity, access, audit, rollback, sandboxing and human approval must be native to runtime.",
+      "成本随规模快速放大":"Cost grows rapidly with scale",
+      "Token、推理、GPU 与 Agent 调用需要统一计量、路由和持续优化。":"Tokens, inference, GPUs and agent calls require unified metering, routing and optimization.",
+      "模型迭代太快，底层依赖失控":"Models evolve too fast for unmanaged dependencies",
+      "模型、价格、接口和权限持续变化，企业需要可替换、可评测、可回滚的迭代流程。":"Models, pricing, APIs and permissions keep changing; enterprises need a replaceable, evaluable and rollback-ready iteration process.",
+      "生产流程不能随模型变动中断":"Production workflows cannot stop when models change",
+      "AI 一旦进入客服、研发与风控，切换、升级和故障恢复必须在不中断业务的前提下完成。":"Once AI enters service, R&D and risk, switching, upgrading and recovery must happen without interrupting the business.",
+      "多模型、多工具与算力碎片化":"Models, tools and compute are fragmented",
+      "多云、多芯片、多模型和 Agent 工具彼此割裂，缺少统一资产、运行和观测视图。":"Multi-cloud, multi-chip, multi-model and agent tools are disconnected, without a unified asset, runtime and observability view.",
+      "可训练数据少，核心数据又不能外流":"Trainable data is scarce while core data cannot leave",
+      "企业缺少高质量可训练语料；客户、交易、设计与科研数据又必须留在自己的边界内。":"Enterprises lack high-quality trainable data, while customer, transaction, design and research data must remain inside their own boundary.",
+      "治理与安全必须内建于运行时":"Governance and security must be native to runtime",
+      "身份、权限、审计、回滚、沙箱和人工确认不能事后补丁，必须贯穿完整生命周期。":"Identity, access, audit, rollback, sandboxing and human approval must span the full lifecycle rather than arrive as afterthoughts.",
+      "成本与效果难以持续优化":"Cost and outcomes are hard to optimize continuously",
+      "Token、推理、GPU、Agent 调用与业务效果需要统一计量、路由、评测和持续优化。":"Tokens, inference, GPUs, agent calls and business outcomes require unified metering, routing, evaluation and continuous optimization.",
+      "通用生产需求，而非单一行业或单一政策需求":"A universal production requirement—not a single-industry or policy-only demand",
+      "AgenticOps 方法论与生命周期":"AgenticOps Methodology & Lifecycle",
+      "以工程化方法论，覆盖 AI 原生系统从构建、运行到进化的完整周期":"An engineering methodology spanning the full AI-native lifecycle—from build and run to evolution",
+      "资产与需求发现":"Discover assets and requirements","评测、安全、回归":"Evaluate, secure, regress",
+      "环境、发布、路由":"Environments, release, routing","监控、成本、SLA":"Observe, cost, SLA","反馈、优化、再训练":"Feedback, optimize, retrain",
+      "GOVERNANCE CORE · 全程治理控制层":"GOVERNANCE CORE · END-TO-END CONTROL",
+      "身份":"Identity","权限":"Access","审计":"Audit","成本":"Cost","沙箱":"Sandbox","人工确认":"Human approval",
+      "构建内循环：发现 → 构建 → 测试 → 发布":"Build loop: Discover → Build → Test → Release",
+      "运行外循环：部署 → 运营 → 反馈 → 进化":"Run loop: Deploy → Operate → Feedback → Evolve",
+      "AgenticOps 方法论":"AgenticOps Methodology",
+      "同一方法论覆盖组织与个人 OPC":"One methodology for organizations and personal OPC",
+      "本页定义方法论，不拆分产品":"This page defines the methodology—not separate products",
+      "组织与个人 OPC 共享同一控制层":"One control plane shared by organizations and personal OPC",
+      "本页只讲 AgenticOps 方法论，不拆分产品线":"This page only explains the AgenticOps methodology, not separate product lines",
+      "公司概览":"Company Overview","OpenCSG：主权 AI 的开放基础设施公司":"OpenCSG: Open infrastructure for sovereign AI",
+      "2026 商业计划书 · AgenticOps 主权 AI 的开放基础设施":"2026 Business Plan · AgenticOps open infrastructure for sovereign AI",
+      "OpenCSG：开源 AgenticOps 基础设施公司":"OpenCSG: Open-source AgenticOps infrastructure company",
+      "把开放的 AI 资产，变成组织与个人都能控制、运行和持续进化的生产系统。":"Turn open AI assets into production systems that organizations and individuals can control, operate and continuously evolve.",
+      "公司以开源社区建立资产与开发者入口，以企业级治理和 AgenticOps 运行能力承接商业化，并向个人 OPC 延伸。":"OpenCSG uses open source to build asset and developer distribution, monetizes enterprise governance and AgenticOps, and extends the same foundation to personal OPC.",
+      "把 AI 资产、Agent 生产与持续运营，统一在一套开放底座上。":"Unify AI assets, agent production and continuous operations on one open foundation.",
+      "组织侧由 CSGHub 与 AgenticHub 承载资产治理和 Agent 生产；个人侧由 CSGHub-Lite 与 CSGClaw 承载本地运行与多 Agent 协同。":"On the organization side, CSGHub and AgenticHub handle asset governance and agent production; on the personal side, CSGHub-Lite and CSGClaw handle local runtime and multi-agent collaboration.",
+      "2023 年由极狐 GitLab 前创始人 CEO 陈冉创立；联想创投、国信中数等共同投资。":"Founded in 2023 by Ran Chen, former founder and CEO of JiHu GitLab; backed by Lenovo Capital, Guoxin Zhongshu and others.",
+      "公司成立，开源社区与 CSGHub 起步":"Company founded; community and CSGHub launched",
+      "形成模型、数据集与开发者资产入口。":"Established the entry point for models, datasets and developers.",
+      "企业私有化与治理能力进入生产":"Private deployment and governance entered production",
+      "从社区平台扩展到企业部署、权限、评测与合规。":"Expanded from community platform to enterprise deployment, access, evaluation and compliance.",
+      "AgenticHub 与区域平台完成验证":"AgenticHub and regional platforms validated",
+      "覆盖 Agent 构建、发布、运行和持续运营。":"Covered agent build, release, runtime and continuous operations.",
+      "组织型与个人 OPC 共享 AgenticOps 底座":"One AgenticOps foundation for organizations and personal OPC",
+      "CSGHub-Lite、CSGClaw 打开个人生产力市场。":"CSGHub-Lite and CSGClaw opened the personal productivity market.",
+      "公司成立，启动开源社区与 CSGHub 研发":"Company founded; open-source community and CSGHub R&D launched",
+      "完成 Pre-A 轮融资，形成模型、数据集与开发者资产入口。":"Completed Pre-A financing and established an entry point for models, datasets and developer assets.",
+      "入驻模速空间，成为首批企业":"Joined Model Speed Space as one of its first resident companies",
+      "企业私有化、权限、评测与治理能力开始进入生产。":"Private deployment, access, evaluation and governance capabilities began entering production.",
+      "城市级 AI 建设落地，完成天使+轮融资":"Delivered city-scale AI programs and completed Angel+ financing",
+      "在宜昌、香港数码港等场景验证区域平台与持续运营模式。":"Validated regional platforms and continuous operations in Yichang, Hong Kong Cyberport and other scenarios.",
+      "与 WAIC、B.ai 共建 OPC 开发者生态":"Built the OPC developer ecosystem with WAIC and B.ai",
+      "联合举办 OPC / Agent 黑客松大会，扩大个人 AgenticOps 入口。":"Co-hosted OPC and Agent hackathons to expand the personal AgenticOps entry point.",
+      "公司真正交付的系统能力":"The system capabilities the company actually delivers",
+      "公司定位：开放的 AgenticOps 基础设施":"Positioning: open AgenticOps infrastructure",
+      "公开客户与生态样本":"Public customer and ecosystem references",
+      "可按最终授权名单替换":"Replaceable with the final approved logo list",
+      "历史投资人":"Historical investors","机构与产业资本已完成多阶段验证":"Institutional and strategic capital have backed the company across multiple stages",
+      "联想创投":"Lenovo Capital","国信中数":"Guoxin Zhongshu",
+      "历史客户与合作生态":"Historical customers and ecosystem references","公开或可披露样本，最终以授权名单替换":"Public or disclosable references; final logo list can be replaced after authorization",
+      "公司标签":"Company tags","产品、市场与商业模式的事实摘要":"A compact factual summary of product, market and business model",
+      "开源 AgenticOps":"Open-source AgenticOps","企业私有化":"Enterprise private deployment","多模型治理":"Multi-model governance",
+      "Agent 生命周期":"Agent lifecycle","区域 AI 平台":"Regional AI platforms","OpenCore":"OpenCore","全球开发者生态":"Global developer ecosystem",
+      "300 万+":"3M+","20 万+":"200K+","社区用户":"Community users","模型资产":"Model assets","国家与地区":"Countries & regions",
+      "开源分发":"Open-source distribution","企业治理":"Enterprise governance","个人 OPC":"Personal OPC","OpenCore 商业化":"OpenCore monetization",
+      "开源、企业、OPC 是一条主线，不是三条割裂业务":"Open source, enterprise and OPC are one roadmap—not three businesses",
+      "资产、运行、治理与运营作为一套系统交付":"Asset, runtime, governance and operations are delivered as one system",
+      "免费入口 + 付费控制层 + 服务 + 生态交易":"Free entry + paid control plane + services + ecosystem transactions",
+      "开放生态 × 商业化飞轮":"Open ecosystem × commercialization flywheel","开源资产":"Open assets","开发者":"Developers",
+      "企业生产":"Enterprise production","区域生态":"Regional ecosystem","核心能力":"Core capabilities",
+      "平台研发":"Platform engineering","资产图谱、网关、运行时、评测":"Asset graph, gateway, runtime, evaluation",
+      "企业交付":"Enterprise delivery","私有化、迁移、集成、安全验收":"Private deployment, migration, integration, security acceptance",
+      "开源运营":"Open-source operations","社区、开发者、内容与生态伙伴":"Community, developers, content and ecosystem partners",
+      "持续运营":"Continuous operations","SLA、审计、成本与版本演进":"SLA, audit, cost and release evolution",
+      "商业与组织验证":"Commercial & organizational proof","30+ 客户":"30+ customers",
+      "企业、科研、运营商、区域平台":"Enterprises, research, carriers, regional platforms","50+ 行业":"50+ industries",
+      "多场景资产与 Agent 需求":"Multi-scenario asset and agent demand","70%+ 研发":"70%+ R&D",
+      "基础设施型团队结构":"Infrastructure-oriented team","资本背书":"Investor backing","产业与国资投资方共同支持":"Backed by strategic and state-linked investors",
+      "标准化交付系统":"Standardized delivery system","将定制项目沉淀为可复制的产品、实施方法和伙伴能力。":"Convert custom projects into repeatable product, implementation and partner capabilities.",
+      "诊断":"Diagnose","资产与场景":"Assets & scenarios","方案":"Design","架构与治理":"Architecture & governance",
+      "部署":"Deploy","私有与混合":"Private & hybrid","验收":"Accept","安全与性能":"Security & performance","运营":"Operate","SLA 与扩容":"SLA & expansion",
+      "公司定位：开放的 AgenticOps 基础设施":"Positioning: open AgenticOps infrastructure",
+      "荣誉与认可":"Honors & Recognition","产业、政府、媒体与国际生态共同验证 OpenCSG":"Validated by industry, government, media and the global ecosystem",
+      "新加坡 IMDA SPARK":"Singapore IMDA SPARK","香港 FinTech Forum":"Hong Kong FinTech Forum",
+      "国际创新生态认可":"International innovation recognition","国际产业交流":"Global industry exchange","CCTV-13 专题采访":"CCTV-13 feature",
+      "主流媒体关注":"National media coverage","海外投资与服务展洽会":"Global investment & services forum","产业与资本连接":"Industry and capital connection",
+      "湖北大数据集团考察":"Hubei Big Data Group visit","区域产业合作":"Regional industry collaboration","WAIC OPC 挑战赛":"WAIC OPC Challenge",
+      "个人 AgenticOps 生态":"Personal AgenticOps ecosystem","海南省相关调研":"Hainan regional engagement","区域 AI 基础设施交流":"Regional AI infrastructure exchange",
+      "开发者与 Agent 生态":"Developer and agent ecosystem","长江数据基金会授牌":"Yangtze Data Foundation recognition","数据与开源生态认可":"Data and open-source ecosystem recognition",
+      "国际开源生态合作":"International open-source collaboration","产业伙伴共同验证":"Validated with industry partners",
+      "10 个影像位置均为独立图片元素，可单独替换":"All ten image elements are independently replaceable",
+      "客户案例（匿名）":"Anonymous Customer Cases","解决的是生产问题，而不是功能堆叠":"Solving production problems—not stacking features",
+      "某头部运营商 · 匿名案例":"Leading telecom operator · Anonymous","总部 SaaS 无法承载本地合规、多模型与持续运营":"Central SaaS could not support local compliance, multi-model operations and continuity",
+      "被卡住":"Blocked by","模型、数据和权限分散":"Fragmented models, data and permissions",
+      "外部 API、内部模型和多套业务系统之间缺少统一资产与治理边界。":"External APIs, internal models and business systems lacked a unified asset and governance boundary.",
+      "建立自部署 AgenticOps 控制层":"Built a self-hosted AgenticOps control layer",
+      "统一模型入口、版本、权限、审计和业务 Agent 的发布运行。":"Unified model access, versions, permissions, audit and business-agent release operations.",
+      "关键机制":"Key mechanism","多模型网关 + 资产目录 + RBAC / Audit":"Multi-model gateway + asset catalog + RBAC / Audit",
+      "把替换、发布、回滚、授权和持续运营固化为同一套生产流程。":"Standardized switching, release, rollback, authorization and continuous operations in one production flow.",
+      "获得的能力":"Capability unlocked","模型可替换、数据不出域、业务连续，AI 能力从“租用”转为“掌握”。":"Replaceable models, in-boundary data and business continuity—AI moves from rented to controlled.",
+      "某省级智能科研机构 · 匿名案例":"Provincial AI research institution · Anonymous","研发资产无法复用，Agent 原型难以安全进入生产":"R&D assets were not reusable and agent prototypes could not safely reach production",
+      "数据、模型与实验过程各自为政":"Data, models and experiments were siloed","研究成果散落在个人环境，缺少血缘、评测、权限与安全验收。":"Research outputs lived in personal environments without lineage, evaluation, access or security acceptance.",
+      "贯通资产到 Agent 生命周期":"Connected assets to the agent lifecycle","沉淀可复用资产，统一评测、沙箱、发布、回滚和人工确认。":"Created reusable assets with unified evaluation, sandboxing, release, rollback and human approval.",
+      "让每一次实验都有来源、每一次发布都有门禁、每一次结果都可复盘。":"Every experiment gains provenance, every release a gate and every result an audit trail.",
+      "科研成果可复用、可审计、可持续演进，并能在核心数据不外泄前提下上线。":"Research becomes reusable, auditable and evolvable—without exposing core data.",
+      "某区域 AI 产业平台 · 匿名案例":"Regional AI industry platform · Anonymous","一次性平台建设无法形成持续活跃的产业生态":"One-off platform construction could not create a continuously active ecosystem",
+      "算力、模型、数据与开发者彼此割裂":"Compute, models, data and developers were disconnected","资源有目录但没有生产闭环，平台交付后难以持续运营与扩展。":"Resources had a catalog but no production loop, making post-delivery operations and expansion difficult.",
+      "用开放资产与 AgenticOps 串联生态":"Connected the ecosystem through open assets and AgenticOps","连接资源、开发、部署、运营和社区，形成区域级公共技术底座。":"Connected resources, development, deployment, operations and community into regional technical infrastructure.",
+      "多租户目录 + 开发者门户 + 运营体系":"Multi-tenant catalog + developer portal + operating system","把资源供给、场景孵化、应用交付与生态增长连接成持续循环。":"Connected supply, scenario incubation, application delivery and ecosystem growth into a continuous loop.",
+      "从“建一个平台”升级为“运营一个生态”，持续吸引资产、场景与开发者。":"Upgraded from building a platform to operating an ecosystem that continuously attracts assets, scenarios and developers.",
+      "案例全部匿名；量化数据仅作为尽调附件，不抢占主叙事":"All cases are anonymous; quantitative evidence remains in diligence materials",
+      "统一产品体系":"Unified Product System","一套 AgenticOps 平台，两种版本形态":"One AgenticOps platform, two editions",
+      "共享方法论、开放资产生态、身份与安全、运行时、评测与可观测性":"Shared methodology, open asset ecosystem, identity, security, runtime, evaluation and observability",
+      "组织型":"Organizational","企业、科研机构、运营商与区域平台":"Enterprises, research institutions, carriers and regional platforms",
+      "AI 资产管理与治理":"AI asset management & governance","模型 / 数据集 / Agent 资产":"Model / dataset / agent assets",
+      "版本、血缘、评测与权限":"Version, lineage, evaluation and access","合规、审计与组织协作":"Compliance, audit and organizational collaboration",
+      "Agent 构建与运营":"Agent build & operations","构建、编排、发布与监控":"Build, orchestrate, release and monitor",
+      "反馈、评测与持续优化":"Feedback, evaluation and continuous optimization","生产运行、成本与 SLA":"Production runtime, cost and SLA",
+      "开发者、Solo Founder 与个人知识工作者":"Developers, solo founders and knowledge workers","本地与边缘运行":"Local & edge runtime",
+      "本地模型、数据和 API":"Local models, data and APIs","离线推理与多端环境":"Offline inference and multi-device environments","私有知识与长期记忆":"Private knowledge and long-term memory",
+      "多 Agent 协同执行":"Multi-agent collaborative execution","Manager–Worker 协作":"Manager–Worker collaboration","任务拆解、沙箱与确认":"Task decomposition, sandboxing and approval","Agent / Skill 执行网络":"Agent / Skill execution network",
+      "统一用户与身份":"Unified users & identity","统一资产协议":"Unified asset protocol","统一模型与网关":"Unified models & gateway","统一观测与评测":"Unified observability & evaluation","统一安全与审计":"Unified security & audit","开放 API / MCP / SDK":"Open API / MCP / SDK",
+      "不是四条产品线，而是同一 AgenticOps 系统的两个版本":"Not four product lines—two editions of one AgenticOps system",
+      "全栈技术架构":"Full-stack Architecture","开放、可插拔、可演进：从基础设施到 Agent 运行与治理":"Open, pluggable and evolvable—from infrastructure to agent runtime and governance",
+      "用户场景":"User scenarios","个人知识工作者":"Knowledge workers","开发团队":"Developer teams","企业组织":"Enterprises","科研机构":"Research institutions","区域 AI 平台":"Regional AI platforms",
+      "产品版本":"Product editions","组织型 AgenticOps":"Organizational AgenticOps","个人 OPC AgenticOps":"Personal OPC AgenticOps","生命周期":"Lifecycle",
+      "治理控制":"Governance controls","部署环境":"Deployment environments","个人设备":"Personal devices","边缘节点":"Edge nodes","私有数据中心":"Private data centers","混合云":"Hybrid cloud","公有云":"Public cloud","多芯片 / 多模型":"Multi-chip / multi-model",
+      "三条主路径：资产沉淀、Agent 运行、反馈进化":"Three core paths: asset accumulation, agent runtime and feedback evolution",
+      "企业与国家/区域市场":"Enterprise & Sovereign Market","AI 主权首先是企业生产需求，政策与国家战略进一步加速市场":"AI sovereignty begins as an enterprise production need; policy and national strategy accelerate it",
+      "企业 AI 正进入规模化，控制、治理与持续运营成为下一层基础设施":"Enterprise AI is scaling; control, governance and operations become the next infrastructure layer",
+      "企业共性需求已经形成":"Universal enterprise demand is established","组织已经使用混合云，AI 治理天然跨越公共云、私有云与数据中心。":"Organizations use hybrid cloud; AI governance naturally spans public cloud, private cloud and data centers.",
+      "组织已在公共云服务中使用生成式 AI，生产化不再是未来时。":"Organizations already use GenAI in public-cloud services; production adoption is no longer future tense.",
+      "仍在试验生成式 AI，原型向生产迁移将持续扩大治理需求。":"Many still experiment with GenAI; prototype-to-production migration will expand governance demand.",
+      "FinOps 管理范围已经延伸到私有云，成本控制正跨越混合基础设施。":"FinOps now extends into private cloud; cost control spans hybrid infrastructure.",
+      "企业 TAM = 目标组织数量 × AgenticOps ACV":"Enterprise TAM = target organizations × AgenticOps ACV","区域 TAM = 平台数量 × 建设与年化运营":"Regional TAM = platform count × deployment and annual operations",
+      "国家 / 区域 TAM = 平台数量 × 建设与年化运营":"National / regional TAM = platform count × deployment and annual operations",
+      "以可识别客户池、合同单价和扩容路径计算，不把不同口径简单相加。":"Sized from identifiable accounts, contract value and expansion paths—without adding incompatible markets.",
+      "企业需求已经从“模型调用”转向“生产控制层”":"Enterprise demand has shifted from model calls to a production control layer",
+      "企业、国家/区域与行业监管都在推动可控基础设施":"Enterprises, regions and regulators are all pushing controllable infrastructure",
+      "监管把治理能力变成产品能力":"Regulation turns governance into product capability",
+      "政策让“可控”从偏好变成责任":"Policy turns control from preference into accountability",
+      "透明度与生成内容标识义务进入适用期，提供者与部署者都需承担持续责任。":"Transparency and AI-content labelling obligations enter application; providers and deployers carry ongoing responsibility.",
+      "NIST GenAI Profile · 2026 更新":"NIST GenAI Profile · Updated 2026",
+      "把识别、评估、治理与持续监测放进 AI 产品和系统的完整生命周期。":"Places identification, evaluation, governance and continuous monitoring across the full AI lifecycle.",
+      "中国 AI 生成合成内容标识办法":"China AI-Generated Content Labelling Measures","2025-09-01 起施行，显式/隐式标识、日志与平台责任成为生产要求。":"Effective 1 Sep 2025; explicit/implicit labels, logs and platform accountability become production requirements.",
+      "行业数据与跨境规则":"Industry data & cross-border rules","金融、运营商、科研等行业需要更明确的数据边界、审计和可追溯。":"Finance, telecom and research require explicit data boundaries, audit and traceability.",
+      "自由软件 / 开源":"Free software / open source","企业自托管":"Enterprise self-hosting","类比 DevOps：私有化部署从来不是“只属于政策”的需求":"The DevOps precedent: private deployment was never a policy-only need",
+      "个人 OPC 市场":"Personal OPC Market","个人 AI 正从聊天工具升级为可持续运行的生产力单元":"Personal AI is evolving from chat tools into continuously operating productivity units",
+      "个人 AI 正同时获得算力、开源生态与持续运行层":"Personal AI is gaining its own compute, open ecosystem and persistent operating layer",
+      "GitHub 开发者规模，为个人 AI 工具和开源分发提供全球入口。":"GitHub developers create a global distribution channel for personal AI tools and open source.",
+      "AI 相关项目持续增长，Agent、Skill 与本地运行生态正在成形。":"AI-related repositories keep growing as agent, skill and local-runtime ecosystems emerge.",
+      "2026 年 AI PC 预计出货量；本地算力成为个人 AI 的新基础设施。":"Forecast 2026 AI PC shipments; local compute becomes infrastructure for personal AI.",
+      "预计 AI PC 占年度 PC 市场比例，为本地 AgenticOps 提供硬件底座。":"Forecast share of the 2026 PC market, creating a hardware base for local AgenticOps.",
+      "个人 AgenticOps 的能力升级路径":"Personal AgenticOps capability path","一次性问答":"One-off answers","长期上下文":"Persistent context","本地可控":"Local control","持续执行":"Continuous execution","个人生产系统":"Personal production system",
+      "专业 AI 用户 × 年 ARPU = 个人 OPC 可服务市场":"Professional AI users × annual ARPU = personal OPC serviceable market",
+      "社区与开发者触达":"Community & developer reach","CSGHub-Lite 下载":"CSGHub-Lite downloads","本地激活与留存":"Local activation & retention","CSGClaw 多 Agent 使用":"CSGClaw multi-agent usage","订阅 + Agent / Skill 交易":"Subscriptions + Agent / Skill transactions",
+      "Ollama、Dify 等开源采用证明：本地运行、自托管与个人可控不是小众偏好，而是新的工具范式。":"Open-source adoption of Ollama and Dify shows local runtime, self-hosting and personal control are a new tool paradigm—not a niche preference.",
+      "市场口径：社区用户 × 激活 × 留存 × 付费转化 × ARPU":"Market model: community users × activation × retention × paid conversion × ARPU",
+      "OpenCore 商业模式":"OpenCore Business Model","开源内核驱动开放获客与商业闭环":"An open core drives distribution, adoption and a commercial flywheel",
+      "免费建立采用，企业版为治理、性能与服务付费":"Free builds adoption; enterprise pays for governance, performance and service",
+      "开放社区与 Repo":"Open community & Repo","资产沉淀与采用":"Asset accumulation & adoption","组织 / OPC 付费升级":"Organizational / OPC paid upgrades","持续反哺开源":"Reinvest in open source","OpenCore 飞轮":"OpenCore flywheel",
+      "开放核心建立信任与采用；生产级治理、运行、安全、服务和规模化能力形成付费边界。":"The open core builds trust and adoption; production governance, runtime, security, service and scale define the paid boundary.",
+      "开源 Repo":"Open-source Repo",
+      "真实仓库、版本节奏、Issue 与社区贡献构成低成本信任和分发入口。":"A real repository, release cadence, issues and contributions create efficient trust and distribution.",
+      "免费 / 付费标准":"Free / Paid boundary","免费：核心资产与个人基础能力。付费：组织治理、生产运营、安全、SLA、区域平台与生态能力。":"Free: core assets and personal basics. Paid: organizational governance, production operations, security, SLA, regional platforms and ecosystem capabilities.",
+      "辅助商业证明":"Supporting precedents","外部案例只作证据，主角是 OpenCSG 自己的 OpenCore 飞轮":"External precedents are evidence; OpenCSG's own OpenCore flywheel is the core story",
+      "竞争格局与能力矩阵":"Competitive Landscape & Capability Matrix","OpenCSG 的差异不在单点功能，而在完整 AgenticOps 覆盖":"OpenCSG differentiates through complete AgenticOps coverage—not a single feature",
+      "企业治理 / 私有化能力 →":"Enterprise governance / private deployment →","开放资产生态与社区深度 →":"Open asset ecosystem & community depth →","完整 AgenticOps":"Complete AgenticOps",
+      "魔搭 / 始智":"ModelScope / OpenMind","硅基流动":"SiliconFlow","始智":"OpenMind",
+      "资产社区":"Asset communities","MaaS / 推理":"MaaS / inference","本地运行":"Local runtime","OpenCSG：跨层完整覆盖":"OpenCSG: complete cross-layer coverage",
+      "技术与商业边界覆盖深度":"Technical and commercial boundary coverage","开放资产网络":"Open asset network","入口":"Entry","组织治理":"Organizational governance","付费":"Paid","Agent 生产运行":"Agent production runtime","扩容":"Expansion","私有与混合部署":"Private & hybrid deployment","壁垒":"Moat","增量":"Growth","OpenCore 商业化":"OpenCore monetization","飞轮":"Flywheel",
+      "竞争判断：看完整生命周期与商业闭环，而非单点功能勾叉":"Judge the complete lifecycle and commercial loop—not isolated feature checkmarks",
+      "创始人兼 CEO 与核心团队":"Founder & Core Team","CEO 主导的工程化领导力，围绕同一条 AgenticOps 主线组织":"Founder-led engineering leadership aligned around one AgenticOps thesis",
+      "陈冉":"Ran Chen","刘巍峰":"Weifeng Liu","雷达":"Da Lei","陈浩":"Hao Chen","陈放":"Fang Chen",
+      "创始人 / CEO":"Founder / CEO","团队的核心不是“人多”，而是创始人对开源、企业软件与商业化路径的长期判断。":"The team's core advantage is not headcount, but the founder's long-term judgment across open source, enterprise software and monetization.",
+      "开源商业化经验":"Open-source commercialization","具备 GitLab 与开源企业软件实践，理解社区分发、产品边界与企业付费之间的关系。":"GitLab and open-source enterprise software experience; understands community distribution, product boundaries and enterprise willingness to pay.",
+      "基础设施产品判断":"Infrastructure product judgment","从模型社区切入，持续把能力推向治理、运行、AgenticOps 和个人 OPC。":"Entered through model communities and expanded into governance, runtime, AgenticOps and personal OPC.",
+      "企业客户与产业连接":"Enterprise and industry connection","能够在开发者生态、企业客户、区域平台和产业资本之间建立共同语言。":"Creates shared language across developers, enterprise customers, regional platforms and strategic capital.",
+      "CEO 直接牵引主线":"CEO directly drives the core thesis","产品、技术、社区与商业围绕统一战略推进，避免多条业务线割裂。":"Product, technology, community and go-to-market advance under one strategy, avoiding fragmented business lines.",
+      "核心骨干":"Core leaders","辅助 CEO 完成产品、研发、交付与治理":"Support the CEO across product, engineering, delivery and governance",
+      "首席架构师":"Chief Architect","研发负责人":"Engineering Lead","产品负责人":"Product Lead","公司治理":"Corporate Governance",
+      "研发人员占比 70%+；骨干不与 CEO 并列呈现":"70%+ of the team is R&D; core leaders support rather than dilute founder leadership",
+      "增长路径、财务方向与资金用途":"Growth, Financial Direction & Use of Funds","从产品与客户验证，进入可复制规模化阶段":"Moving from product and customer validation into repeatable scale",
+      "历史经营验证（公司口径，待财务尽调）":"Historical operating proof (company data; subject to diligence)","2023A 基期":"2023A base","持续增长":"Continued growth",">7.0× / 4,044 万":">7.0× / RMB 40.44M",
+      "两条可复制增长路径":"Two repeatable growth paths","试点":"Pilot","私有部署":"Private deployment","多团队扩容":"Multi-team expansion","区域运营":"Regional operations","下载":"Download","激活":"Activate","留存":"Retain","订阅 / 交易":"Subscribe / transact",
+      "未来三年":"Next three years","产品、GTM、区域复制与 OPC 商业化同步推进。":"Advance product, GTM, regional replication and OPC monetization in parallel.",
+      "完善 AgenticOps 产品闭环；建立标准化销售与伙伴交付；验证个人 OPC 留存。":"Complete the AgenticOps product loop; standardize sales and partner delivery; validate personal OPC retention.",
+      "复制重点行业和区域平台；扩大组织型订阅；启动 Agent / Skill 交易。":"Replicate priority industries and regional platforms; expand organizational subscriptions; launch Agent / Skill transactions.",
+      "形成组织、区域与个人多层收入结构；构建开放 AgenticOps 生态。":"Build a multi-layer revenue mix across organizations, regions and individuals; establish an open AgenticOps ecosystem.",
+      "融资用途":"Use of funds","产品与研发":"Product & R&D","市场与销售":"GTM & sales","区域与伙伴交付":"Regional & partner delivery","运营与安全":"Operations & security",
+      "统一模型、数据集、代码、Prompt 与 Agent 资产":"Unified models, datasets, code, prompts and agent assets",
+      "Git 版本、血缘、元数据、License 与完整性校验":"Git versioning, lineage, metadata, license and integrity verification",
+      "多源同步、评测、推理、微调和 MCP 服务托管":"Multi-source sync, evaluation, inference, fine-tuning and MCP hosting",
+      "组织、权限、审计、合规与私有化部署":"Organization, access, audit, compliance and private deployment",
+      "Agent 构建、发布与持续运营":"Agent build, release and continuous operations",
+      "Agent / Workflow / Skill 的构建、编排与版本管理":"Build, orchestration and versioning for agents, workflows and skills",
+      "测试、评测、沙箱、发布门禁与人工确认":"Testing, evaluation, sandboxing, release gates and human approval",
+      "生产监控、反馈回流、成本、SLA 与持续优化":"Production monitoring, feedback, cost, SLA and continuous optimization",
+      "多团队协作、企业工具接入与业务运行治理":"Multi-team collaboration, enterprise integrations and runtime governance",
+      "本地 AI 资产与运行底座":"Local AI assets and runtime foundation",
+      "一键启动本地模型，支持 GGUF 与 SafeTensors 转换":"One-click local models with GGUF and SafeTensors conversion",
+      "兼容 Ollama API 的 REST 服务与流式对话":"Ollama-compatible REST service and streaming chat",
+      "模型下载、断点续传、持久化和跨平台运行":"Model download, resume, persistence and cross-platform runtime",
+      "私有知识、长期记忆与本地开发工具接入":"Private knowledge, long-term memory and local developer-tool integration",
+      "个人多 Agent 协同执行系统":"Personal multi-agent execution system",
+      "Manager–Worker 角色分工与并行任务拆解":"Manager–Worker roles and parallel task decomposition",
+      "Agent / Skill 发现、组合、调用与执行网络":"Agent / Skill discovery, composition, invocation and execution network",
+      "本地权限、沙箱、人机确认和可回放过程":"Local permissions, sandboxing, human approval and replayable processes",
+      "从一次性对话升级为长期运行的个人生产系统":"From one-off chat to a persistent personal production system",
+      "企业需要的不再是一条 API，而是跨模型的资产、版本、评测、发布、回滚、成本和 SLA；这正是 AgenticOps 生命周期。":"Enterprises need more than an API: cross-model assets, versions, evaluation, release, rollback, cost and SLA—the AgenticOps lifecycle.",
+      "88% 已采用 → 仅约 1/3 企业级扩展":"88% adopted → only about one-third scaling enterprise-wide",
+      "政策明确鼓励 AI 进入战略、组织和业务流程，并要求开放共享、安全可控；企业与区域平台需要可持续运营的公共底座。":"Policy encourages AI across strategy, organization and workflows while requiring openness, sharing, safety and control; enterprises and regions need an operable foundation.",
+      "2027：智能终端与智能体应用普及率 70%+":"2027: 70%+ penetration target for intelligent terminals and agents",
+      "EU AI Act 于 2026-08-02 进入主要规则与执法阶段；中国内容标识办法已实施。血缘、日志、标识、权限和审计必须内建。":"The EU AI Act enters its main enforcement phase on 2 Aug 2026; China's labelling measures are active. Lineage, logs, labels, access and audit must be built in.",
+      "合规不是文档，而是运行时控制面":"Compliance is not paperwork; it is a runtime control plane",
+      "多模型 / 混合基础设施":"Multi-model / hybrid infrastructure","Agent 规模化":"Agent scaling","监管与行业边界":"Regulatory and industry boundaries",
+      "企业 TAM":"Enterprise TAM","可识别目标组织 × 初始 License / 实施 × 团队与算力扩容":"Identifiable target accounts × initial license / implementation × team and compute expansion",
+      "国家 / 区域 TAM":"Sovereign / regional TAM","平台数量 × 建设合同 + 年度运营与生态服务":"Platform count × deployment contracts + annual operations and ecosystem services",
+      "当前具名 Pipeline × 赢单率 × 24–36 个月扩容路径":"Named pipeline × win rate × 24–36 month expansion path",
+      "国务院“人工智能+”意见":"China State Council AI+ Action","中国网信办标识办法":"CAC AI-content labelling measures",
+      "GitHub 开发者；全球个人 AI 工具最直接的开源分发入口。":"GitHub developers—the most direct global open-source distribution channel for personal AI tools.",
+      "GitHub AI 项目；Agent、Skill 与本地运行组件快速积累。":"GitHub AI projects; agents, skills and local-runtime components are accumulating rapidly.",
+      "2026 年 AI PC 预计出货量，本地推理成为标准硬件能力。":"Forecast 2026 AI PC shipments; local inference becomes a standard hardware capability.",
+      "2026 年 AI PC 预计占全球 PC 市场，端侧 AI 从选配走向主流。":"Forecast share of the 2026 PC market; on-device AI moves from optional to mainstream.",
+      "最接近企业 AgenticOps 的预算池：软件、平台、治理与持续服务":"The closest addressable AgenticOps budget pool: software, platforms, governance and managed operations",
+      "模型越多，版本、评测、部署、权限和审计的统一需求越强":"More models create stronger demand for unified versioning, evaluation, deployment, access and audit",
+      "终端与智能体普及扩大运行底座需求，但 TAM 仍按可付费组织测算":"Device and agent adoption expands runtime demand, while TAM remains based on paying organizations",
+      "一次性回答，没有长期状态":"One-off answers without persistent state","私有知识与长期上下文":"Private knowledge and persistent context",
+      "模型、数据、权限留在本地":"Models, data and permissions remain local","连接工具并持续执行任务":"Connect tools and execute continuously",
+      "分工、协同、复盘的个人生产系统":"A personal production system for delegation, collaboration and review",
+      "OpenCSG 对应产品":"OpenCSG product mapping","CSGHub-Lite 提供本地资产与运行底座":"CSGHub-Lite provides local assets and runtime",
+      "CSGClaw 提供多 Agent 协同与执行网络":"CSGClaw provides multi-agent collaboration and execution",
+      "免费分发":"Free distribution","开源 Repo 与社区下载降低获客成本":"Open-source repositories and community downloads reduce acquisition cost",
+      "持续留存":"Persistent retention","本地知识、记忆、Agent 与 Skill 形成日常使用":"Local knowledge, memory, agents and skills create daily use",
+      "付费扩展":"Paid expansion","专业订阅、算力服务与 Agent / Skill 交易":"Professional subscriptions, compute services and Agent / Skill transactions",
+      "开源触达":"Open-source reach","本地激活":"Local activation","持续使用":"Persistent use",
+      "政策与产业方向":"Policy and industry direction",
+      "中国“人工智能+”提出到 2027 年新一代智能终端、智能体应用普及率超过 70%。":"China's AI+ Action targets over 70% penetration for next-generation intelligent terminals and agents by 2027.",
+      "Gartner 预计到 2026 年底，40% 软件厂商将优先投资直接运行在 PC 上的 AI 能力。":"Gartner expects 40% of software vendors to prioritize AI capabilities running directly on PCs by the end of 2026.",
+      "硬件解决本地算力，开源解决分发；OpenCSG 争夺的是个人 AI 的持续运行与协同层。":"Hardware provides local compute and open source provides distribution; OpenCSG targets the persistent runtime and collaboration layer for personal AI.",
+      "先以 CSGHub-Lite 建立本地入口，再以 CSGClaw 提升使用深度，最终连接 Agent / Skill 生态交易。":"CSGHub-Lite establishes the local entry point, CSGClaw deepens usage, and the Agent / Skill ecosystem creates transaction potential.",
+      "免费建立采用，企业版为治理、性能与服务付费":"Free editions drive adoption; enterprise pays for governance, performance and service",
+      "官网功能与服务对比 ↗":"Official feature and service comparison ↗","Free · 个人本地":"Free · Personal local","Free · 组织开源":"Free · Organizational open source",
+      "¥1999 / 年 / 用户":"¥1999 / year / user","个人私有 AI 工作站":"Personal private AI workstation",
+      "一个文件即可运行，本地模型、本地 API 与跨平台工具链。":"One file to run local models, local APIs and a cross-platform toolchain.",
+      "模型下载与持久化":"Model download and persistence","Ollama 兼容 REST API":"Ollama-compatible REST API",
+      "组织型开放资产 Hub":"Organizational open asset hub","自托管部署，统一管理模型、数据、代码、应用与 Prompt。":"Self-hosted deployment for unified models, data, code, applications and prompts.",
+      "推理 / 微调 / 评测任务":"Inference / fine-tuning / evaluation jobs","数据处理与算子编排":"Data processing and operator orchestration",
+      "MCP 服务托管":"MCP service hosting","基础社区支持":"Basic community support",
+      "企业生产基础设施":"Enterprise production infrastructure","继承社区版全部能力，增加生产性能、组织治理、合规和服务保障。":"Includes all Community capabilities plus production performance, governance, compliance and support.",
+      "异构算力与国产芯片":"Heterogeneous compute and domestic chips","License 合规与灾备":"License compliance and disaster recovery",
+      "工单 + 7×24 专家服务":"Ticketing + 24/7 expert support","功能与服务":"Features and services","AI 资产与任务":"AI assets and jobs",
+      "模型 / 数据 / 代码 / Prompt；推理、微调、评测":"Models / data / code / prompts; inference, fine-tuning and evaluation",
+      "继承全部社区能力":"Includes all Community capabilities","算力与部署":"Compute and deployment","Docker / Kubernetes 自托管":"Docker / Kubernetes self-hosting",
+      "高性能推理、异构算力、国产芯片":"High-performance inference, heterogeneous compute and domestic chips",
+      "基础组织与权限":"Basic organization and access","企业 Admin、细粒度权限、IDP / SSO":"Enterprise Admin, fine-grained access and IDP / SSO",
+      "安全与服务":"Security and service","社区技术支持":"Community support","合规校验、完整性、灾备、工单与 7×24":"Compliance, integrity, disaster recovery, tickets and 24/7 support",
+      "收入引擎":"Revenue engines","模式参照":"Model precedents","开源形态":"Open-source model",
+      "CSGHub 与 CSGHub-Lite 均为公开 Repo、Apache-2.0；CSGHub 当前约 4.2K Stars / 521 Forks。":"CSGHub and CSGHub-Lite are public Apache-2.0 repositories; CSGHub currently has about 4.2K stars and 521 forks.",
+      "代码、Issue、版本和社区采用均可外部验证":"Code, issues, releases and community adoption are externally verifiable",
+      "源代码、Issue 与版本公开":"Public source code, issues and releases","社区版可直接部署和验证":"Community edition can be deployed and verified directly",
+      "开源资产自然形成开发者入口":"Open assets naturally create a developer entry point",
+      "同一体系覆盖 Asset Hub、Agent 构建、评测发布、私有运行、治理审计与个人 OPC。":"One system spans Asset Hub, agent build, evaluation and release, private runtime, governance and personal OPC.",
+      "资产图谱与多模型网关":"Asset graph and multi-model gateway","Agent 构建、评测和发布门禁":"Agent build, evaluation and release gates",
+      "运行观测、反馈回流与个人 OPC":"Runtime observability, feedback loops and personal OPC",
+      "竞争者多集中于社区、MaaS、Builder 或本地运行单层":"Most competitors concentrate on one layer: community, MaaS, builder or local runtime",
+      "社区版免费建立采用；企业版以异构算力、组织权限、SSO、合规灾备和 7×24 服务收费。":"Community drives free adoption; Enterprise monetizes heterogeneous compute, organizational access, SSO, compliance, recovery and 24/7 service.",
+      "企业 License / 订阅":"Enterprise license / subscription","私有化实施与年度运营":"Private deployment and annual operations",
+      "OPC 订阅与 Agent / Skill 交易":"OPC subscriptions and Agent / Skill transactions",
+      "开源分发 → 企业治理 → 生产扩容":"Open-source distribution → enterprise governance → production expansion",
+      "公开产品边界":"Public product boundary","开放 / 社区入口":"Open / community entry","核心技术品类":"Core technology category",
+      "企业治理 / 私有化":"Enterprise governance / private deployment","Agent 生命周期":"Agent lifecycle",
+      "Repo + Apache-2.0":"Repo + Apache-2.0","Hub + OSS Libraries":"Hub + OSS libraries","模型社区":"Model community",
+      "Dify OSS / 平台":"Dify OSS / platform","Runtime OSS":"Runtime OSS","API 服务":"API service",
+      "资产 + AgenticOps":"Assets + AgenticOps","模型 / 数据资产":"Model / data assets","Agent Builder":"Agent Builder",
+      "本地模型运行":"Local model runtime","MaaS / 推理":"MaaS / inference","RBAC · Audit · SSO":"RBAC · Audit · SSO",
+      "Enterprise Hub":"Enterprise Hub","平台化服务":"Platform service","应用部署":"Application deployment",
+      "本地单机":"Local single-node","云 API":"Cloud API","构建 → 评测 → 发布 → 运营":"Build → evaluate → release → operate",
+      "资产入口":"Asset entry","构建强项":"Builder strength","运行底座":"Runtime layer","推理底座":"Inference layer",
+      "Lite + CSGClaw":"Lite + CSGClaw","本地模型":"Local models",
+      "竞争判断：开放入口 × 生产闭环 × 企业付费边界":"Competitive lens: open entry × production loop × enterprise paid boundary",
+      "每一个组织、每一个人，都需要掌握自己的 AI。":"Every organization and every individual should control their own AI."
+    };
+    Object.assign(EN,window.OPENCSG_EN_EXTRA||{});
+    const wraps=[...document.querySelectorAll('.slide-wrap')];
+    const counter=document.getElementById('counter');
+    const zhBtn=document.getElementById('langZh'),enBtn=document.getElementById('langEn');
+    let overview=false,currentLang='zh',touchY=0;
+    if(new URLSearchParams(location.search).get('watermark'))document.body.classList.add('watermark');
+    function walkText(root,fn){for(const n of root.childNodes){if(n.nodeType===3)fn(n);else if(n.nodeType===1&&!['SCRIPT','STYLE'].includes(n.tagName))walkText(n,fn)}}
+    wraps.forEach(w=>walkText(w,n=>{n.__zh=n.nodeValue}));
+    document.querySelectorAll('[data-en]').forEach(el=>{if(!el.dataset.zh)el.dataset.zh=el.textContent});
+    function buildMobileReaders(){
+      wraps.forEach((wrap,index)=>{
+        const slide=wrap.querySelector('.slide');
+        if(!slide)return;
+        wrap.querySelector('.mobile-reader')?.remove();
+        const reader=document.createElement('article');
+        reader.className='mobile-reader';
+        const section=slide.querySelector('.section-zh,.section,.app-index')?.textContent.trim()||`OPENCSG · ${String(index+1).padStart(2,'0')}`;
+        const title=slide.querySelector('.title,.cover-title h1,.app-name,.closing-left h2')?.textContent.trim()||`OpenCSG ${String(index+1).padStart(2,'0')}`;
+        const excluded='.foot,.section,.title,.cover-title,.app-index,.app-big,.app-name,.brand,.toolbar,.nav,.official-phase-layer';
+        const selectors='h3,h4,p,li,b,small,a,.kpi,.tam-eq,.formula,.leadline,.tag,.signal,.fact,.app-lead,.app-kicker';
+        const seen=new Set([section,title]);
+        const points=[];
+        slide.querySelectorAll(selectors).forEach(el=>{
+          if(el.closest(excluded)||el.closest('svg'))return;
+          const style=getComputedStyle(el);
+          if(style.display==='none'||style.visibility==='hidden')return;
+          const text=el.textContent.replace(/\s+/g,' ').trim();
+          if(text.length<4||text.length>220||seen.has(text))return;
+          if(points.some(p=>p.text.includes(text)||text.includes(p.text)))return;
+          seen.add(text);
+          const strong=/^(H3|H4|B)$/.test(el.tagName)||el.classList.contains('kpi')||el.classList.contains('tam-eq')||el.classList.contains('leadline');
+          points.push({text,strong});
+        });
+        const media=[];
+        slide.querySelectorAll('img').forEach(img=>{
+          if(media.length>=3||img.classList.contains('brand')||img.closest('.official-step-card,.roadmap-product'))return;
+          const src=img.getAttribute('src');
+          if(!src||media.some(x=>x.src===src))return;
+          if(index===3&& !img.classList.contains('official-map-base'))return;
+          const r=img.getBoundingClientRect();
+          if(index!==3&&(r.width<180||r.height<100))return;
+          media.push({src,alt:img.alt||title});
+        });
+        reader.innerHTML=`<div class="mr-kicker">${section}</div><h2>${title}</h2><div class="mr-rule"></div>
+          ${media.length?`<div class="mr-media">${media.map(x=>`<img src="${x.src}" alt="${x.alt.replaceAll('"','&quot;')}">`).join('')}</div>`:''}
+          <div class="mr-points">${points.slice(0,18).map(p=>`<div class="mr-point">${p.strong?`<strong>${p.text}</strong>`:p.text}</div>`).join('')}</div>
+          <div class="mr-index">OPENCSG · ${String(index+1).padStart(2,'0')} / ${wraps.length}</div>`;
+        wrap.appendChild(reader);
+      });
+    }
+    window.refreshMobileReaders=buildMobileReaders;
+    function setLang(lang){
+      currentLang=lang==='en'?'en':'zh';
+      document.documentElement.lang=currentLang==='en'?'en':'zh-CN';
+      document.body.classList.toggle('lang-en',currentLang==='en');
+      wraps.forEach(w=>walkText(w,n=>{
+        const raw=n.__zh??n.nodeValue,core=raw.trim();
+        const lead=raw.slice(0,raw.indexOf(core)),trail=raw.slice(raw.indexOf(core)+core.length);
+        n.nodeValue=currentLang==='en'&&EN[core]?lead+EN[core]+trail:raw;
+      }));
+      document.querySelectorAll('[data-en]').forEach(el=>{
+        if(!el.dataset.zh)el.dataset.zh=el.textContent;
+        el.textContent=currentLang==='en'?el.dataset.en:el.dataset.zh;
+      });
+      document.querySelectorAll('[data-href-zh][data-href-en]').forEach(el=>{
+        el.setAttribute('href',currentLang==='en'?el.dataset.hrefEn:el.dataset.hrefZh);
+      });
+      window.renderRoadmap?.(currentLang);
+      zhBtn.classList.toggle('active',currentLang==='zh');enBtn.classList.toggle('active',currentLang==='en');
+      const u=new URL(location.href);u.searchParams.set('lang',currentLang);history.replaceState(null,'',u);
+      buildMobileReaders();
+    }
+    function fit(){
+      if(overview){
+        const cols=innerWidth<1000?2:3,gap=10,pad=20;
+        const cellWidth=(innerWidth-pad-gap*(cols-1))/cols;
+        const s=Math.min(.3,cellWidth/1600);
+        document.documentElement.style.setProperty('--scale',s);
+        wraps.forEach(w=>{w.style.height=(900*s)+'px';const r=w.querySelector('.mobile-reader');if(r)r.style.marginTop='0'});
+        return;
+      }
+      const portraitReader=innerWidth<=900&&innerHeight>innerWidth;
+      const compactStage=!portraitReader&&innerWidth<=1100&&(innerWidth/innerHeight)<1.48;
+      document.body.classList.toggle('compact-stage',compactStage);
+      if(portraitReader){
+        const s=(innerWidth-20)/1600;
+        document.documentElement.style.setProperty('--scale',s);
+        wraps.forEach(w=>{
+          w.style.height='auto';w.style.minHeight='0';w.style.paddingTop='58px';
+          const r=w.querySelector('.mobile-reader');
+          if(r)r.style.marginTop=(900*s+16)+'px';
+        });
+      }else if(compactStage){
+        const s=(innerWidth-20)/1600;
+        document.documentElement.style.setProperty('--scale',s);
+        wraps.forEach(w=>{
+          w.style.height=(900*s+64)+'px';w.style.minHeight='0';w.style.paddingTop='52px';
+          const r=w.querySelector('.mobile-reader');if(r)r.style.marginTop='0';
+        });
+      }else{
+        const s=Math.min(innerWidth/1600,innerHeight/900)*.975;
+        document.documentElement.style.setProperty('--scale',s);
+        wraps.forEach(w=>{
+          w.style.height='100vh';w.style.minHeight=innerHeight<620?'0':'560px';w.style.paddingTop='0';
+          const r=w.querySelector('.mobile-reader');if(r)r.style.marginTop='0';
+        });
+      }
+    }
+    function currentIndex(){
+      let best=0,dist=Infinity;
+      wraps.forEach((w,i)=>{const d=Math.abs(w.getBoundingClientRect().top);if(d<dist){dist=d;best=i}});
+      return best;
+    }
+    function go(i){wraps[Math.max(0,Math.min(wraps.length-1,i))].scrollIntoView({behavior:'smooth',block:'start'})}
+    function updateCounter(){counter.textContent=String(currentIndex()+1).padStart(2,'0')+' / '+wraps.length}
+    function setOverview(){
+      overview=!overview;
+      document.getElementById('overviewBtn').classList.toggle('active',overview);
+      document.body.classList.toggle('overview-mode',overview);
+      if(overview){
+        document.body.style.scrollSnapType='none';document.body.style.display='grid';
+        document.body.style.gridTemplateColumns=innerWidth<1000?'repeat(2,1fr)':'repeat(3,1fr)';
+        document.body.style.gap='10px';document.body.style.padding='50px 10px 10px';
+        wraps.forEach(w=>{w.style.minHeight='0';w.style.paddingTop='0';w.style.background='#CBD2D0'});
+      }else{
+        document.body.removeAttribute('style');wraps.forEach(w=>w.removeAttribute('style'));
+      }
+      fit();
+    }
+    async function fullscreen(){
+      const root=document.documentElement;
+      const enter=root.requestFullscreen||root.webkitRequestFullscreen;
+      const leave=document.exitFullscreen||document.webkitExitFullscreen;
+      try{
+        if(!(document.fullscreenElement||document.webkitFullscreenElement))await enter?.call(root);
+        else await leave?.call(document);
+      }catch(error){console.warn('Fullscreen is not available in this browser context.',error)}
+    }
+    zhBtn.addEventListener('click',()=>setLang('zh'));enBtn.addEventListener('click',()=>setLang('en'));
+    document.getElementById('overviewBtn').addEventListener('click',setOverview);
+    document.getElementById('fullscreenBtn').addEventListener('click',fullscreen);
+    addEventListener('resize',()=>{if(overview){document.body.style.gridTemplateColumns=innerWidth<1000?'repeat(2,1fr)':'repeat(3,1fr)'}fit()});
+    addEventListener('scroll',updateCounter,{passive:true});
+    addEventListener('touchstart',e=>touchY=e.changedTouches[0].clientY,{passive:true});
+    addEventListener('touchend',e=>{if(overview)return;const dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dy)>55)go(currentIndex()+(dy<0?1:-1))},{passive:true});
+    document.querySelectorAll('[data-pricing-tab]').forEach(button=>{
+      button.addEventListener('click',()=>{
+        const tier=button.dataset.pricingTab;
+        document.querySelectorAll('[data-pricing-tab]').forEach(el=>el.classList.toggle('active',el===button));
+        document.querySelectorAll('[data-pricing-panel]').forEach(el=>el.classList.toggle('active',el.dataset.pricingPanel===tier));
+        window.refreshMobileReaders?.();
+      });
+    });
+    document.querySelectorAll('[data-arch-view]').forEach(button=>{
+      button.addEventListener('click',()=>{
+        const view=button.dataset.archView;
+        document.querySelectorAll('[data-arch-view]').forEach(el=>el.classList.toggle('active',el===button));
+        document.querySelectorAll('[data-arch-panel]').forEach(el=>el.classList.toggle('active',el.dataset.archPanel===view));
+        window.refreshMobileReaders?.();
+      });
+    });
+    addEventListener('keydown',e=>{
+      const idx=currentIndex();
+      if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(idx+1)}
+      if(e.key==='ArrowUp'||e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(idx-1)}
+      if(e.key.toLowerCase()==='o')setOverview();if(e.key.toLowerCase()==='e')setLang('en');if(e.key.toLowerCase()==='c')setLang('zh');
+      if(e.key==='Home')go(0);if(e.key==='End')go(wraps.length-1);if(e.key.toLowerCase()==='f')fullscreen();
+    });
+    setLang(new URLSearchParams(location.search).get('lang')||'zh');fit();updateCounter();
+  </script>
+</body>
+</html>
