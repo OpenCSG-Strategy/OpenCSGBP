@@ -13,7 +13,7 @@
   section.innerHTML = `
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
     <div class="section"><span class="section-zh" data-en="Paradigm Evolution">范式演进</span></div>
-    <h2 class="title" data-en="The evolution of the foundation-model era: from DevOps to AgenticOps">大模型时代的进化：从 DevOps 到 AgenticOps</h2>
+    <h2 class="title" data-en="The evolution of the AI era: from DevOps to AgenticOps">大模型时代的进化：从 DevOps 到 AgenticOps</h2>
     <div class="evo3">
       <div class="evo3-top">
         <article class="evo3-board evo3-devops">
@@ -24,8 +24,8 @@
           </div>
           <svg class="evo3-loop evo3-loop-dev" viewBox="0 0 720 265" aria-label="DevOps 双环">
             <defs>
-              <marker id="dev-arrow-a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#70C9F6"/></marker>
-              <marker id="dev-arrow-b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#089CEB"/></marker>
+              <marker id="dev-arrow-a" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0 0 18 9 0 18z" fill="#70C9F6"/></marker>
+              <marker id="dev-arrow-b" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0 0 18 9 0 18z" fill="#089CEB"/></marker>
             </defs>
             <path d="M356 132C297 42 183 35 106 98C43 149 71 226 151 232C230 238 291 185 356 132" fill="none" stroke="#70C9F6" stroke-width="39" marker-end="url(#dev-arrow-a)"/>
             <path d="M356 132C415 42 529 35 606 98C669 149 641 226 561 232C482 238 421 185 356 132" fill="none" stroke="#079DEB" stroke-width="39" marker-end="url(#dev-arrow-b)"/>
@@ -50,23 +50,7 @@
           <header>${tx("大模型时代开发范式——AgenticOps", "AI-native development paradigm — AgenticOps")}</header>
           <div class="evo3-wordmark opencsg-wordmark"><img src="assets/logo-opencsg.svg" alt="OpenCSG"><b>OpenCSG</b></div>
           <div class="evo3-agentic-stage">
-            <svg class="evo3-loop evo3-loop-agentic" viewBox="0 0 720 265" aria-label="AgenticOps 双环">
-              <defs>
-                <marker id="agent-arrow-a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#0E766C"/></marker>
-                <marker id="agent-arrow-b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#14C6AC"/></marker>
-              </defs>
-              <path d="M356 132C297 42 183 35 106 98C43 149 71 226 151 232C230 238 291 185 356 132" fill="none" stroke="#0E766C" stroke-width="39" marker-end="url(#agent-arrow-a)"/>
-              <path d="M356 132C415 42 529 35 606 98C669 149 641 226 561 232C482 238 421 185 356 132" fill="none" stroke="#14C6AC" stroke-width="39" marker-end="url(#agent-arrow-b)"/>
-              <path d="M297 83 356 132 414 83" fill="none" stroke="#fff" stroke-width="7"/>
-              <path d="M297 181 356 132 414 181" fill="none" stroke="#fff" stroke-width="7"/>
-              <g fill="#fff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
-                <text x="210" y="147" font-size="32">Agentic</text><text x="512" y="147" font-size="38">Ops</text>
-                <text x="184" y="73" font-size="14">CODE</text><text x="293" y="83" font-size="13">PROMPT</text>
-                <text x="115" y="161" font-size="13" transform="rotate(-73 115 161)">BUILD</text><text x="250" y="220" font-size="13">TEST</text>
-                <text x="415" y="84" font-size="13">RELEASE</text><text x="532" y="73" font-size="13">DEPLOY</text>
-                <text x="613" y="161" font-size="13" transform="rotate(72 613 161)">OPERATE</text><text x="471" y="220" font-size="13">RETRAIN</text>
-              </g>
-            </svg>
+            <img class="evo3-roadmap-bg" src="assets/roadmap/new_roadMap_bg.png" alt="AgenticOps 八阶段生命周期">
             <div class="evo3-step s1"><small>STEP 1 · AgenticHub</small><b>${tx("AI 原生", "AI Native")}</b></div>
             <div class="evo3-step s1b"><small>STEP 1 · CSGShip</small><b>CodeSouler</b></div>
             <div class="evo3-step s2"><small>STEP 2 · CSGShip</small><b>${tx("代码生成与审查", "Code generation & review")}</b></div>
@@ -131,7 +115,7 @@
         <article class="evo3-event e2024">
           <div class="event-logo opencsg-event"><img src="assets/logo-opencsg.svg" alt="OpenCSG"><b>OpenCSG</b></div>
           <div class="event-2024-grid">
-            <div class="event-card dark"><b>${tx("全球率先提出 AgenticOps 方法论", "Introduces the AgenticOps methodology")}</b><p>AgenticHub · CSGHub<br>CSGHub-Lite · CSGClaw</p></div>
+            <div class="event-card dark"><b>${tx("推出一体化 AgenticOps 平台", "Launches an integrated AgenticOps platform")}</b><p>AgenticHub · CSGHub<br>CSGHub-Lite · CSGClaw</p></div>
             <div class="event-card pale"><b>${tx("300 万+社区用户", "3M+ community users")}</b><p>${tx("20 万+模型资产", "200K+ model assets")}</p></div>
             <div class="event-card pale"><b>${tx("城市与产业节点持续扩展", "City and industry nodes continue expanding")}</b><p>${tx("宜昌 · 香港 · 重庆等", "Yichang · Hong Kong · Chongqing and more")}</p></div>
           </div>

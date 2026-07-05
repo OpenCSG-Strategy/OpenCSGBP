@@ -67,8 +67,8 @@
       </div>`, "客户价值：资源可见、场景可用、生态可运营", "Customer value: visible resources, usable scenarios, operable ecosystem"),
 
     slide(18, "客户案例 · 国际开源生态", "Customer Case · Global Open Ecosystem",
-      "香港数码港：港版 Hugging Face + Web3 的开放 AI 基础设施",
-      "Hong Kong Cyberport: open AI infrastructure combining Hugging Face and Web3", `
+      "香港数码港：连接全球开发者、AI 资产与 Web3 生态的开放基础设施",
+      "Hong Kong Cyberport: open infrastructure connecting global developers, AI assets and Web3 ecosystems", `
       <div class="app-stage app-split">
         <div class="case-narrative case-narrative-cyberport">
           ${tx("案例简介", "Case summary", "div", "app-kicker")}
@@ -161,9 +161,9 @@
         </div>
       </div>`, "数据飞轮形成不可复制的企业 AI 智能资产", "The data flywheel creates proprietary enterprise AI assets"),
 
-    slide(22, "客户案例 · 信创生态", "Customer Case · Local Technology Ecosystem",
-      "开放龙数社区：深圳本土版 Hugging Face + 信创生态",
-      "Open Longshu Community: Shenzhen's Hugging Face plus local technology ecosystem", `
+    slide(22, "客户案例 · 区域 AI 基础设施", "Customer Case · Regional AI Infrastructure",
+      "开放龙数社区：兼容异构算力的区域 AI 生产平台",
+      "Open Longshu Community: a regional AI production platform across heterogeneous compute", `
       <div class="app-stage">
         <div class="app-two-media" style="height:390px;grid-template-columns:1fr 1fr">
           <div class="app-media contain"><img src="${A}slide-07-image-01.png" alt="开放龙数生态架构"></div>
@@ -228,8 +228,8 @@
     </section></div>`,
 
     slide(25, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
-      "AgenticHub：企业级一站式 AI 原生智能体平台",
-      "AgenticHub: an enterprise all-in-one AI-native agent platform", `
+      "AgenticHub：让企业安全构建、发布和运营 AI Agent",
+      "AgenticHub: securely build, release and operate enterprise AI agents", `
       <div class="app-stage app-product-layout">
         <div class="app-product-visual"><img src="${A}slide-10-image-01.png" alt="AgenticHub 产品能力图"></div>
         <div class="app-feature-grid">
@@ -270,9 +270,9 @@
         </div>
       </div>`, "跨系统、高移动性、低时延、高安全的制造 AgenticOps", "Cross-system, mobile, low-latency and secure manufacturing AgenticOps"),
 
-    slide(27, "产品方案 · 个人 OPC", "Product · Personal OPC",
-      "CSGHub-Lite：个人 OPC 向组织型 OPC 升级的本地运行底座",
-      "CSGHub-Lite: the local runtime foundation from personal to organizational OPC", `
+    slide(27, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
+      "CSGHub-Lite：让模型、数据和 AI 工具在个人设备本地运行",
+      "CSGHub-Lite: run models, data and AI tools locally on personal devices", `
       <div class="app-stage">
         <div class="app-lite-grid">
           <div class="lite-stack">
@@ -285,7 +285,7 @@
             <div class="app-media contain" style="height:250px"><img src="${A}slide-12-image-01.png" alt="CSGHub-Lite 界面"></div>
             <div class="app-card" style="height:154px;margin-top:16px">
               ${tx("开箱即用的本地大模型运行", "Out-of-the-box local model runtime", "h3")}
-              ${tx("面向 OPC 独立环境，支持离线运行、本地推理与 REST API。开发者能快速搭建原型，普通用户通过命令行和 Web 界面直接使用。", "Designed for independent OPC environments with offline runtime, local inference and REST APIs. Developers can prototype quickly while non-technical users operate through CLI and web interfaces.", "p")}
+              ${tx("为个人 AI 工作系统（OPC）提供离线运行、本地推理与 REST API。开发者能快速搭建原型，普通用户也可通过命令行和 Web 界面直接使用。", "Provides offline runtime, local inference and REST APIs for personal AI work systems (OPC). Developers can prototype quickly while non-technical users use CLI and web interfaces.", "p")}
             </div>
           </div>
         </div>
@@ -295,13 +295,13 @@
           <div>${tx("一键安装", "One-click install", "b")}${tx("跨平台脚本自动配置运行环境，减少安装和调试成本。", "Cross-platform scripts configure the runtime automatically and reduce setup cost.", "span")}</div>
           <div>${tx("断点续传", "Resume downloads", "b")}${tx("网络中断后继续下载，无需重来，适合大模型文件。", "Continue interrupted downloads without restarting, ideal for large model files.", "span")}</div>
           <div>${tx("可视化界面", "Visual interface", "b")}${tx("仪表盘、模型管理、聊天与任务日志一屏可见。", "Dashboard, model management, chat and task logs in one view.", "span")}</div>
-          <div>${tx("国产适配", "Domestic adaptation", "b")}${tx("适配国产模型与 Claude Code、Codex，以及 ARM / x86 混合环境。", "Supports domestic models, Claude Code and Codex, plus ARM/x86 mixed environments.", "span")}</div>
+          <div>${tx("全球兼容", "Global compatibility", "b")}${tx("兼容全球开放模型、区域模型、Claude Code、Codex，以及 ARM / x86 混合环境。", "Supports global open models, regional models, Claude Code, Codex and mixed ARM/x86 environments.", "span")}</div>
         </div>
       </div>`, "设计理念：能自动就不手动，能本地就不外传", "Design principle: automate by default; keep data local by default"),
 
-    slide(28, "产品方案 · 个人 OPC", "Product · Personal OPC",
-      "CSGClaw：OPC 原生的协同多智能体工作系统",
-      "CSGClaw: an OPC-native collaborative multi-agent work system", `
+    slide(28, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
+      "CSGClaw：让多个 AI Agent 像一支团队协同工作",
+      "CSGClaw: orchestrate multiple AI agents as one coordinated team", `
       <div class="app-stage app-product-layout">
         <div class="app-product-visual"><img src="${A}slide-13-image-01.png" alt="CSGClaw 多智能体协作架构"></div>
         <div class="app-feature-grid">
@@ -311,14 +311,14 @@
           <div class="app-feature">${tx("跨平台生态互联", "Cross-platform connectivity", "b")}${tx("可接入飞书等 IM 工具，随时调度智能体集群。", "Integrates with IM tools such as Feishu to orchestrate agent teams anywhere.", "p")}${tx("IM · API · REMOTE CONTROL", "IM · API · REMOTE CONTROL", "small")}</div>
           <div class="app-feature" style="grid-column:1/3;background:var(--mint)">
             ${tx("一个人，就是一支队伍。", "One person can operate as a team.", "b")}
-            ${tx("CSGHub-Lite 提供本地算力与模型，CSGClaw 组织多 Agent 协同执行，形成个人 OPC 的生产系统。", "CSGHub-Lite provides local compute and models while CSGClaw organizes multi-agent execution into a personal OPC production system.", "p")}
+            ${tx("CSGHub-Lite 提供本地算力与模型，CSGClaw 组织多个 Agent 协同执行，形成可长期运行的个人 AI 工作系统（OPC）。", "CSGHub-Lite provides local compute and models while CSGClaw coordinates multiple agents into a persistent personal AI work system (OPC).", "p")}
           </div>
         </div>
       </div>`, "Manager–Worker · Sandbox · Human Approval · IM Integration", "Manager–Worker · Sandbox · Human Approval · IM Integration"),
 
     slide(29, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
-      "CSGHub：组织型 OPC 的 AI 资产全生命周期管理平台",
-      "CSGHub: full-lifecycle AI asset management for organizational OPC", `
+      "CSGHub：统一管理模型、数据和 Agent 等关键 AI 资产",
+      "CSGHub: unified management for models, data, agents and other critical AI assets", `
       <div class="app-stage app-product-layout">
         <div class="app-product-visual"><img src="${A}slide-14-image-04.png" alt="CSGHub AI 大模型社区平台"></div>
         <div>
@@ -389,7 +389,7 @@
           <div class="city-blockers">
             <article><span>01</span><b>${tx("资源分散，重复建设", "Fragmented resources and duplicated investment")}</b><p>${tx("算力、数据、模型、工具和项目分布在不同部门与园区，无法复用和统一计量。", "Compute, data, models, tools and projects sit across departments and parks without reuse or unified metering.")}</p></article>
             <article><span>02</span><b>${tx("平台交付后缺少运营", "Platforms stop after delivery")}</b><p>${tx("只有门户和资源目录，没有企业服务、开发者运营、资产沉淀与商业闭环。", "Portals and resource catalogs lack enterprise services, developer operations, asset accumulation and a commercial loop.")}</p></article>
-            <article><span>03</span><b>${tx("外部模型难以承担城市责任", "External models cannot carry city-level responsibility")}</b><p>${tx("数据边界、国产适配、多模型替换、审计和公共服务能力必须掌握在本地。", "Data boundaries, domestic adaptation, model replacement, audit and public services must remain under local control.")}</p></article>
+            <article><span>03</span><b>${tx("单一外部模型无法承担长期运营", "A single external model cannot support long-term operations")}</b><p>${tx("数据边界、跨模型替换、跨芯片适配、审计和公共服务能力必须掌握在本地。", "Data boundaries, model portability, cross-chip compatibility, audit and public services must remain under local control.")}</p></article>
             <article><span>04</span><b>${tx("项目投入没有转化为产业", "Project spending does not become an industry")}</b><p>${tx("技术项目、活动和补贴彼此割裂，难形成企业集聚、人才网络与财政回流。", "Technology projects, events and subsidies remain disconnected, failing to create company clusters, talent networks or fiscal returns.")}</p></article>
           </div>
         </div>
@@ -607,7 +607,7 @@
             </div>
             <h3>${tx("以国产异构算力适配与“1+5+2”架构服务本地企业", "Serve local enterprises through domestic heterogeneous compute and a 1+5+2 architecture")}</h3>
             <p>${tx("核心抓手：算力调度、资产管理、模型服务、Agent 开发、沙箱与产业专区。", "Core levers: compute scheduling, asset management, model services, agent development, sandboxes and industry zones.")}</p>
-            <div class="template-tags"><span>${tx("国产适配", "Domestic stack")}</span><span>${tx("企业生产", "Enterprise production")}</span><span>${tx("技术验证", "Technical validation")}</span></div>
+            <div class="template-tags"><span>${tx("异构适配", "Heterogeneous stack")}</span><span>${tx("企业生产", "Enterprise production")}</span><span>${tx("技术验证", "Technical validation")}</span></div>
           </article>
         </div>
         <div class="city-common-standard">
@@ -624,7 +624,7 @@
         <div class="closing-left">
           <div class="label">OPENCSG · AI SOVEREIGNTY</div>
           <h2>${tx("未来的 AI，", "The future of AI", "span")}${tx("必须掌握在自己手中。", "must be yours to control.", "strong")}</h2>
-          ${tx("OpenCSG 让国家与区域、企业组织和个人 OPC，都拥有自主、可控、可演进的 AI。", "OpenCSG gives sovereign regions, enterprises and personal OPC autonomous, controllable and continuously evolving AI.", "p", "closing-lead")}
+          ${tx("OpenCSG 让国家与区域、全球企业和个人 AI 工作系统（OPC），都拥有自主、可控、可演进的 AI。", "OpenCSG gives sovereign regions, global enterprises and personal AI work systems (OPC) autonomous, controllable and continuously evolving AI.", "p", "closing-lead")}
           <div class="closing-pillars">
             ${tx("开源", "OPEN SOURCE", "span")}<i></i>
             ${tx("开放", "OPEN", "span")}<i></i>
@@ -665,7 +665,7 @@
     { step: "Step 8 · CSGHub", zh: "模型微调与评测", en: "Finetune & Evaluation", descZh: "迭代升级 AI 应用与 Agent", descEn: "Iterate and upgrade AI apps and agents" }
   ];
   const opc = [
-    { step: "Step 1 · AgenticHub", zh: "组织型 OPC", en: "Organizational OPC", descZh: "理解用户意图，自动执行任务", descEn: "Understand intent and execute tasks automatically" },
+    { step: "Step 1 · AgenticHub", zh: "组织型 AI 生产", en: "Organizational AI Production", descZh: "理解用户意图，自动执行任务", descEn: "Understand intent and execute tasks automatically" },
     { step: "Step 1 · CSGClaw", zh: "Manager", en: "Manager", descZh: "在 OPC 房间中输入目标", descEn: "Enter goals in the OPC workspace" },
     { step: "Step 2 · CSGClaw", zh: "Agent 生成与管理", en: "Agent Generation & Management", descZh: "按需创建 OPC Agent", descEn: "Create OPC agents on demand" },
     { step: "Step 3 · CSGClaw", zh: "Agent 构建", en: "Agent Development", descZh: "构建 OPC Agent", descEn: "Build OPC agents" },
@@ -674,7 +674,7 @@
     { step: "Step 6 · CSGHub-Lite", zh: "资产管理", en: "Asset Management", descZh: "部署个人 OPC 推理实例", descEn: "Deploy personal OPC inference instances" },
     { step: "Step 7 · CSGClaw", zh: "智能助手", en: "Intelligent Assistant", descZh: "持续对话、执行和收集数据", descEn: "Converse, execute and collect data continuously" },
     { step: "Step 7 · CSGHub", zh: "组织型 DataFlow", en: "Organizational DataFlow", descZh: "持续沉淀企业数据资产", descEn: "Continuously accumulate enterprise data assets" },
-    { step: "Step 8 · CSGHub", zh: "组织型 OPC 模型微调", en: "Organizational OPC Tuning", descZh: "迭代企业团队的 AI 应用和 Agent", descEn: "Improve AI apps and agents for enterprise teams" }
+    { step: "Step 8 · CSGHub", zh: "组织模型持续优化", en: "Organizational Model Improvement", descZh: "迭代企业团队的 AI 应用和 Agent", descEn: "Improve AI apps and agents for enterprise teams" }
   ];
   const products = [
     { id: "agentichub", name: "AgenticHub", zh: "智能体全生命周期统一管理", en: "Unified full-lifecycle agent management", tags: "TOOLS · WORKFLOW · ASSISTANT", art: "roadMap_card_autohub" },

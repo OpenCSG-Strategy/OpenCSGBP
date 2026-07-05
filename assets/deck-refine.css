@@ -637,6 +637,10 @@ html,body{font-family:var(--body-font);-webkit-font-smoothing:antialiased;text-r
   text-decoration:none
 }
 .toolbar a:hover{background:var(--teal);color:#fff}
+body.pseudo-fullscreen{background:#111817}
+body.pseudo-fullscreen .nav{display:none}
+body.pseudo-fullscreen .toolbar{opacity:.22;transition:opacity .2s ease}
+body.pseudo-fullscreen .toolbar:hover{opacity:1}
 
 /* Appendix case system · every case states need, problem, solution and customer value. */
 .case-narrative{height:100%;display:flex;flex-direction:column;border-top:3px solid var(--teal);padding-top:17px}
@@ -2590,7 +2594,7 @@ html,body{font-family:var(--body-font);-webkit-font-smoothing:antialiased;text-r
   gap:24px
 }
 #slide-14 .ceo-photo{border-top:3px solid var(--teal)}
-#slide-14 .ceo-photo img{object-position:61% center}
+#slide-14 .ceo-photo img{object-position:50% center}
 #slide-14 .ceo-photo:after{height:142px}
 #slide-14 .ceo-photo .photo-label{left:24px;bottom:44px}
 #slide-14 .ceo-photo .photo-label b{font-size:31px}
@@ -4889,6 +4893,7 @@ body.overview-mode .mobile-reader{display:none!important}
 #slide-33 .c33-partners article:last-child{border-bottom:0;background:#F1F8F6}
 #slide-33 .c33-partners b{color:#225E54;font-size:14px}
 #slide-33 .c33-partners span{margin-top:5px;color:#6C7975;font-size:11px;line-height:1.4}
+.lang-en #slide-33 .c33-partners article{padding:8px 12px}
 #slide-33 .c33-system{
   display:grid;
   grid-template-rows:72px 124px 132px 142px 1fr;
@@ -4897,7 +4902,7 @@ body.overview-mode .mobile-reader{display:none!important}
   border-bottom:1px solid var(--line)
 }
 #slide-33 .c33-system-head{display:grid;grid-template-columns:120px 1fr;align-items:center;border-bottom:1px solid var(--line)}
-#slide-33 .c33-system-head>span{display:flex;align-items:center;justify-content:center;height:100%;background:#EAF5F2;color:var(--teal);font-size:24px;font-weight:800}
+#slide-33 .c33-system-head>span{display:flex;align-items:center;justify-content:center;height:100%;background:#EAF5F2;color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.08em}
 #slide-33 .c33-system-head>div{display:flex;flex-direction:column;padding:0 18px}
 #slide-33 .c33-system-head small{color:#7A8985;font-size:8px;letter-spacing:.12em}
 #slide-33 .c33-system-head b{margin-top:5px;color:#214B44;font-size:16px}
@@ -4947,7 +4952,7 @@ body.overview-mode .mobile-reader{display:none!important}
 #slide-34 .c34-goal-list article>span{color:var(--teal);font-size:9px;font-weight:800}
 #slide-34 .c34-goal-list b{color:#205C52;font-size:15px}
 #slide-34 .c34-goal-list p{margin-top:5px;color:#697873;font-size:11px;line-height:1.42}
-#slide-34 .c34-building{display:grid;grid-template-rows:500px 78px 1fr;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+#slide-34 .c34-building{display:grid;grid-template-rows:468px 69px 35px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 #slide-34 .c34-building-image{overflow:hidden;background:#F2F7F6}
 #slide-34 .c34-building-image img{width:100%;height:100%;object-fit:cover;object-position:67% 50%;transform:scale(1.04)}
 #slide-34 .c34-building-caption{display:flex;flex-direction:column;justify-content:center;padding:12px 16px;border-top:1px solid var(--line)}
@@ -4955,11 +4960,12 @@ body.overview-mode .mobile-reader{display:none!important}
 #slide-34 .c34-building-caption b{margin-top:5px;color:#205E54;font-size:17px}
 #slide-34 .c34-building-caption span{margin-top:4px;color:#64736F;font-size:10.5px}
 #slide-34 .c34-floors{display:grid;grid-template-columns:repeat(4,1fr);background:#F1F8F6}
-#slide-34 .c34-floors span{display:flex;align-items:center;justify-content:center;padding:8px;border-right:1px solid var(--line);color:#345F57;font-size:9.5px;text-align:center}
-#slide-34 .c34-floors span:last-child{border-right:0}
+#slide-34 .c34-floors>span{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;padding:4px 6px;border-right:1px solid var(--line);color:#345F57;font-size:9px;line-height:1.2;text-align:center}
+#slide-34 .c34-floors>span:last-child{border-right:0}
+#slide-34 .c34-floors>span>span{display:inline;padding:0;border:0;color:inherit;font:inherit}
 #slide-34 .c34-formula{display:grid;grid-template-rows:38px 112px 205px 1fr;row-gap:10px;padding:17px}
-#slide-34 .c34-foundation{display:grid;grid-template-columns:46px 1fr;align-items:center;border:1px solid var(--line);background:#EDF6F4}
-#slide-34 .c34-foundation>span{display:flex;align-items:center;justify-content:center;height:100%;background:#23877B;color:#fff;font-size:23px;font-weight:800}
+#slide-34 .c34-foundation{display:grid;grid-template-columns:62px 1fr;align-items:center;border:1px solid var(--line);background:#EDF6F4}
+#slide-34 .c34-foundation>span{display:flex;align-items:center;justify-content:center;height:100%;background:#23877B;color:#fff;font-size:9px;font-weight:800;letter-spacing:.08em}
 #slide-34 .c34-foundation>div{padding:14px 18px}
 #slide-34 .c34-foundation b{color:#174F47;font-size:17px}
 #slide-34 .c34-foundation p{margin-top:7px;color:#5D706B;font-size:11.5px;line-height:1.45}
@@ -5023,8 +5029,8 @@ body.overview-mode .mobile-reader{display:none!important}
   top:226px;
   height:575px;
   display:grid;
-  grid-template-rows:92px 220px 62px 190px 58px;
-  gap:12px
+  grid-template-rows:82px 184px 48px 174px 55px;
+  gap:8px
 }
 #slide-36 .c36-anchor{display:grid;grid-template-columns:220px 1fr 380px;align-items:stretch;border-top:2px solid var(--teal);border-bottom:1px solid var(--line);background:#fff}
 #slide-36 .c36-anchor>div{display:flex;align-items:center;gap:16px;padding:12px 18px;background:#23877B;color:#fff}
@@ -5062,8 +5068,8 @@ body.overview-mode .mobile-reader{display:none!important}
   top:226px;
   height:575px;
   display:grid;
-  grid-template-rows:196px 215px 190px 51px;
-  gap:12px
+  grid-template-rows:158px 162px 170px 61px;
+  gap:8px
 }
 #slide-37 .c37-returns{display:grid;grid-template-columns:235px repeat(3,1fr);border-top:2px solid var(--teal);border-bottom:1px solid var(--line);background:#fff}
 #slide-37 .c37-returns>.app-kicker{display:flex;align-items:center;padding:22px;background:#EFF7F5;color:#37665E;font-size:10px}
@@ -5251,12 +5257,12 @@ body.overview-mode .mobile-reader{display:none!important}
   display:flex;
   align-items:center;
   justify-content:center;
-  width:38px;
+  width:54px;
   height:38px;
-  flex:0 0 38px;
+  flex:0 0 54px;
   border:1px solid #71A89E;
   color:var(--teal);
-  font-size:19px;
+  font-size:9px;
   font-weight:800
 }
 #slide-33 .c33-foundation>div b span{
@@ -5298,13 +5304,13 @@ body.overview-mode .mobile-reader{display:none!important}
   display:flex;
   align-items:center;
   justify-content:center;
-  flex:0 0 30px;
-  width:30px;
+  flex:0 0 62px;
+  width:62px;
   height:30px;
   margin-right:12px;
   background:#23877B;
   color:#fff;
-  font-size:15px;
+  font-size:8px;
   font-weight:800
 }
 #slide-34 .c34-consortium-head b span,
@@ -5317,6 +5323,935 @@ body.overview-mode .mobile-reader{display:none!important}
   color:inherit;
   font-size:inherit;
   font-weight:inherit
+}
+
+/* 2026-07-02 · Bottom-safe layout pass.
+   Every content system now ends above the shared footer baseline. */
+#slide-08 .product-shell{height:530px!important;overflow:hidden}
+#slide-08 .shared-top{height:52px}
+#slide-08 .edition{height:207px;grid-template-columns:190px 1fr 1fr}
+#slide-08 .edition-label{padding:16px 14px}
+#slide-08 .edition-label em{margin-bottom:10px;font-size:8px}
+#slide-08 .edition-label b{font-size:18px}
+#slide-08 .edition-label span{margin-top:7px;font-size:10px;line-height:1.35}
+#slide-08 .product{grid-template-columns:minmax(0,1fr) 190px;gap:8px;padding:10px 11px}
+#slide-08 .product h3{font-size:17px}
+#slide-08 .product .role{margin-bottom:5px;font-size:10px}
+#slide-08 .product ul{font-size:9.3px;line-height:1.27}
+#slide-08 .product .screen{height:158px}
+#slide-08 .product-meta{gap:3px;margin-top:4px}
+#slide-08 .product-meta span{padding:2px 4px;font-size:6.8px}
+#slide-08 .shared-bottom{height:64px}
+#slide-08 .shared-bottom div{font-size:10px}
+
+#slide-09 .arch9{
+  height:575px;
+  grid-template-rows:48px 468px 45px;
+  gap:7px;
+  overflow:hidden
+}
+#slide-09 .a9-core{
+  grid-template-rows:104px 24px 32px 124px 54px 72px;
+  gap:5px;
+  padding:7px
+}
+#slide-09 .a9-product h3{height:23px;font-size:12px}
+#slide-09 .a9-chip-stack,
+#slide-09 .a9-chip-grid{height:calc(100% - 23px);padding:6px 9px}
+#slide-09 .a9-feature-groups{height:calc(100% - 23px);padding:5px 7px}
+#slide-09 .a9-flow-up{top:313px}
+#slide-09 .a9-deploy-track span{font-size:9.5px}
+
+#slide-10 .market10,
+#slide-11 .opc11,
+#slide-12 .open12,
+#slide-15 .profit15{overflow:hidden}
+#slide-10 .market10 h3{margin-bottom:9px;font-size:18px}
+#slide-10 .m10-metrics{grid-template-rows:repeat(2,100px)}
+#slide-10 .m10-metrics article{padding:9px 11px}
+#slide-10 .m10-metrics article>b{font-size:27px}
+#slide-10 .m10-metrics article>p{font-size:11.5px;line-height:1.35}
+#slide-10 .m10-metrics article>a{padding-top:5px;font-size:7.6px}
+#slide-10 .m10-sovereign{height:245px;margin-top:9px;grid-template-rows:46px 1fr}
+#slide-10 .m10-sovereign article{justify-content:flex-start;padding:12px}
+#slide-10 .m10-sovereign article>b{margin-top:8px;font-size:20px}
+#slide-10 .m10-sovereign article>span{margin-top:7px;font-size:10.5px;line-height:1.35}
+#slide-10 .m10-sovereign article>a{padding-top:8px;font-size:7.6px}
+#slide-10 .source-note,
+#slide-11 .source-note,
+#slide-13 .source-note{bottom:60px}
+
+#slide-11 .opc11{grid-template-rows:118px 1fr}
+#slide-11 .opc11-signals article{grid-template-columns:88px 1fr;padding:9px 11px}
+#slide-11 .opc11-signals b{font-size:25px}
+#slide-11 .opc11-signals p{font-size:10.5px;line-height:1.32}
+#slide-11 .opc11-path{padding:12px}
+#slide-11 .opc11-path-head h3{font-size:17px}
+#slide-11 .opc11-nodes{height:166px;margin-top:10px}
+#slide-11 .opc11-nodes article{padding:39px 10px 10px}
+#slide-11 .opc11-nodes b{font-size:14px}
+#slide-11 .opc11-nodes p{margin-top:7px;font-size:11px;line-height:1.35}
+#slide-11 .opc11-products{height:46px;margin-top:8px}
+#slide-11 .opc11-products>*{padding:7px 9px;font-size:10px}
+#slide-11 .opc11-loop{margin-top:8px}
+#slide-11 .opc11-loop article{min-height:66px;padding:9px 10px}
+#slide-11 .opc11-loop b{font-size:12px}
+#slide-11 .opc11-loop span{margin-top:5px;font-size:9.5px}
+#slide-11 .opc11-tam{padding:12px 14px}
+#slide-11 .opc11-tam b{font-size:34px}
+#slide-11 .opc11-tam p{margin-top:8px;font-size:10.5px}
+#slide-11 .opc11-policy{margin-top:8px}
+#slide-11 .opc11-policy h3{padding:9px 11px;font-size:12.5px}
+#slide-11 .opc11-policy article{min-height:68px;padding:9px 66px 8px 72px}
+#slide-11 .opc11-policy article>p{font-size:10px;line-height:1.34}
+
+#slide-12 .open12-mechanism{padding-top:9px;overflow:hidden}
+#slide-12 .oc-one-code{margin-top:7px;padding:12px 14px}
+#slide-12 .oc-one-code b{margin-top:7px;font-size:20px}
+#slide-12 .oc-one-code span{margin-top:7px;font-size:10.5px;line-height:1.38}
+#slide-12 .oc-steps{margin-top:7px}
+#slide-12 .oc-steps article{min-height:58px;padding:6px 9px 6px 0}
+#slide-12 .oc-steps b{font-size:13px}
+#slide-12 .oc-steps p{margin-top:4px;font-size:9.7px;line-height:1.3}
+#slide-12 .oc-reinvest{margin-top:7px;padding:8px 10px}
+#slide-12 .oc-precedents{padding-top:7px}
+#slide-12 .oc-precedents span{padding:4px 6px;font-size:8px}
+#slide-12 .open12-product{padding-top:7px;overflow:hidden}
+#slide-12 .open12-product .pricing-head{height:45px;min-height:45px}
+#slide-12 .oc-principles{height:88px;margin-top:6px}
+#slide-12 .oc-principles article{padding:9px 7px 7px 31px}
+#slide-12 .oc-principles b{font-size:10.5px}
+#slide-12 .oc-principles p{margin-top:4px;font-size:8.7px;line-height:1.25}
+#slide-12 .open12-product .pricing-tabs{height:40px;margin-top:6px}
+#slide-12 .open12-product .pricing-tabs button{padding:6px 9px}
+#slide-12 .open12-product .pricing-panels{height:100px}
+#slide-12 .open12-product .pricing-panels article{padding:8px 11px}
+#slide-12 .open12-product .pricing-panels h4{font-size:14px}
+#slide-12 .open12-product .pricing-panels p,
+#slide-12 .open12-product .pricing-panels li{font-size:8.8px;line-height:1.25}
+#slide-12 .open12-product .pricing-compare{margin-top:6px}
+#slide-12 .open12-product .pc-row{min-height:31px}
+#slide-12 .open12-product .pc-row>*{padding:5px 7px;font-size:8.6px;line-height:1.2}
+#slide-12 .open12-product .pricing-foot{height:42px;margin-top:6px}
+#slide-12 .open12-product .pricing-foot span{padding:7px 9px;font-size:8.5px;line-height:1.25}
+
+#slide-14 .team-layout>*{height:100%;min-height:0}
+#slide-14 .ceo-story{overflow:hidden}
+#slide-14 .team-grid{min-height:0;grid-template-rows:repeat(2,minmax(0,1fr))}
+#slide-14 .team-grid article{min-height:0;padding:12px 15px}
+#slide-14 .team-grid p{margin-top:5px;font-size:11.5px;line-height:1.35}
+
+#slide-15 .profit15{grid-template-rows:240px minmax(0,1fr);gap:14px}
+#slide-15 .p15-engine{padding:14px 16px 12px}
+#slide-15 .p15-engine h3{font-size:20px}
+#slide-15 .p15-engine p{font-size:12.5px;line-height:1.38}
+#slide-15 .p15-engine-tags{margin-top:9px}
+#slide-15 .p15-engine small{padding-top:8px;font-size:10px}
+#slide-15 .p15-index,
+#slide-15 .p15-mix{min-height:0;overflow:hidden;padding:12px 14px 10px}
+#slide-15 .p15-panel-head h3{font-size:15px}
+#slide-15 .p15-mix-legend{margin:8px 0 7px;padding-bottom:7px}
+#slide-15 .p15-mix-rows{gap:7px}
+#slide-15 .p15-stack{height:28px}
+#slide-15 .p15-quality{margin-top:8px}
+#slide-15 .p15-quality>div{min-height:57px;padding:8px}
+#slide-15 .p15-quality span{font-size:9.5px;line-height:1.25}
+#slide-15 .p15-source{margin-top:7px;padding-top:5px;font-size:8px}
+
+.appendix-slide:not(.city-reframe) .app-stage{height:600px!important}
+#slide-17 .app-split>div:first-child>.app-media{height:366px!important}
+#slide-17 .app-two-media{height:220px!important}
+#slide-18 .app-split>div:last-child>.app-media:first-child{height:344px!important}
+#slide-18 .app-split>div:last-child>.app-media:last-child{height:240px!important;margin-top:14px!important}
+#slide-19 .telecom-case{grid-template-rows:88px 390px 96px;gap:8px}
+#slide-19 .app-compare{height:390px}
+#slide-19 .app-compare-col h3{height:42px;font-size:15px}
+#slide-19 .app-compare-row{height:86px;padding:12px 15px;font-size:13px;line-height:1.32}
+#slide-19 .telecom-values{height:96px}
+#slide-19 .case-value-band>div{padding:11px 12px}
+#slide-19 .case-value-band span{margin-top:5px;font-size:9px;line-height:1.3}
+#slide-22 .app-two-media{height:280px!important}
+#slide-22 .longshu-story{grid-template-rows:92px 92px 72px;margin-top:10px;gap:8px 10px}
+#slide-22 .longshu-story .app-card{padding:9px 13px}
+#slide-22 .longshu-story .app-card h3{margin-bottom:6px;font-size:14px}
+#slide-22 .longshu-story .app-card p{font-size:10.7px;line-height:1.32}
+#slide-26 .app-arch-notes>div:not(:last-child){height:82px}
+#slide-26 .app-arch-notes>div:last-child{height:260px!important}
+#slide-27 .app-lite-grid,
+#slide-27 .lite-stack{height:360px}
+#slide-27 .app-lite-grid>div:last-child .app-media{height:210px!important}
+#slide-27 .app-lite-grid>div:last-child .app-card{height:138px!important;margin-top:12px!important}
+#slide-27 .app-six{height:222px;grid-template-rows:repeat(2,107px);gap:8px 14px;margin-top:12px}
+#slide-27 .app-six div{padding:11px 14px 10px 48px}
+#slide-27 .app-six span{font-size:11px;line-height:1.32}
+#slide-30 .app-docs{grid-template-rows:330px 250px;gap:14px}
+#slide-30 .doc-media-card{grid-template-rows:225px auto auto;padding-bottom:10px}
+#slide-30 .app-doc-links{height:250px}
+#slide-30 .app-doc-links>div{padding:12px 18px}
+#slide-30 .app-doc-links b{margin-bottom:8px;font-size:15px}
+#slide-30 .app-doc-links a{min-height:40px;padding:8px 28px 8px 0;font-size:10.5px}
+#slide-30 .app-doc-links a:after{top:8px}
+
+/* 2026-07-02 · Final internal-collision pass.
+   These rules keep interactive labels clear of their cards and reserve a
+   dedicated outcome rail instead of layering text over the research story. */
+#slide-03 .e2024 .event-2024-grid{
+  margin-bottom:24px
+}
+
+#slide-04 .official-step-card{
+  height:88px
+}
+#slide-04 .official-step-card.pos-7{top:130px}
+#slide-04 .official-step-card.pos-8{top:218px}
+#slide-04 .official-phase.phase-0{top:194px}
+#slide-04 .official-phase.phase-5{top:194px}
+#slide-04 .official-phase.phase-3{top:329px;bottom:auto}
+#slide-04 .official-phase.phase-4{top:329px;bottom:auto}
+#slide-04 .official-phase.phase-7{top:329px;bottom:auto}
+
+#slide-09 .arch9-tabs{
+  top:164px
+}
+
+#slide-23 .app-solution{
+  box-sizing:border-box;
+  padding-bottom:112px
+}
+#slide-23 .app-outcomes{
+  left:calc(50% + 10px);
+  right:0;
+  bottom:0;
+  height:98px;
+  grid-template-columns:repeat(3,minmax(0,1fr))
+}
+#slide-23 .app-outcomes div{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  justify-content:center;
+  padding:10px 14px
+}
+#slide-23 .app-outcomes b{font-size:13px;line-height:1.25}
+#slide-23 .app-outcomes span{margin-top:5px;font-size:10px;line-height:1.3}
+
+/* Final annotation precedence: the methodology summary needs a real reading
+   row; older compact-rail experiments above must not collapse it again. */
+#slide-04 .official-roadmap{
+  top:190px;
+  height:611px;
+  grid-template-rows:42px 140px minmax(0,1fr)
+}
+
+/* Absolute final override for the annotation-reviewed step rails. */
+#slide-04 .official-step-card{
+  width:166px;
+  height:62px
+}
+#slide-04 .official-step-card.pos-0,
+#slide-04 .official-step-card.pos-5{left:18%}
+#slide-04 .official-step-card.pos-1,
+#slide-04 .official-step-card.pos-6{left:31%}
+#slide-04 .official-step-card.pos-2,
+#slide-04 .official-step-card.pos-7{left:44%;right:auto}
+#slide-04 .official-step-card.pos-3,
+#slide-04 .official-step-card.pos-8{left:57%;right:auto}
+#slide-04 .official-step-card.pos-4,
+#slide-04 .official-step-card.pos-9{left:70%;right:auto}
+#slide-04 .official-step-card.pos-0,
+#slide-04 .official-step-card.pos-1,
+#slide-04 .official-step-card.pos-2,
+#slide-04 .official-step-card.pos-3,
+#slide-04 .official-step-card.pos-4{top:2px;bottom:auto}
+#slide-04 .official-step-card.pos-5,
+#slide-04 .official-step-card.pos-6,
+#slide-04 .official-step-card.pos-7,
+#slide-04 .official-step-card.pos-8,
+#slide-04 .official-step-card.pos-9{top:auto;bottom:2px}
+
+/* 2026-07-05 · Slide 04 restoration.
+   Keep the methodology premise secondary, restore the original orbit layout,
+   phase controls, animated pointers and a clear central lifecycle. */
+#slide-04 .official-roadmap{
+  top:190px;
+  height:611px;
+  display:grid;
+  grid-template-rows:48px minmax(0,1fr) 96px;
+  overflow:hidden
+}
+#slide-04 .official-roadmap .roadmap-head{
+  grid-row:1;
+  height:auto;
+  padding-left:16px;
+  justify-content:space-between
+}
+#slide-04 .roadmap-head>div:first-child{
+  display:block
+}
+#slide-04 .official-roadmap .roadmap-head b{font-size:14px}
+#slide-04 .official-roadmap .roadmap-head p{
+  margin-top:3px;
+  font-size:9.5px
+}
+#slide-04 .official-roadmap .roadmap-tabs{
+  height:36px;
+  margin-right:6px
+}
+#slide-04 .official-roadmap .roadmap-tabs button{
+  min-width:126px;
+  height:34px;
+  font-size:10px
+}
+
+#slide-04 .official-map-stage{
+  grid-row:2;
+  height:auto;
+  min-height:0;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at center,rgba(220,248,243,.46),transparent 48%),
+    #FCFEFD
+}
+#slide-04 .official-map-base{
+  z-index:1;
+  top:19px;
+  width:790px;
+  opacity:.98;
+  animation:roadmap-lifecycle-glow 4.8s ease-in-out infinite
+}
+#slide-04 .official-map-mobile{display:none}
+#slide-04 .official-phase-layer{
+  display:block!important;
+  z-index:2
+}
+#slide-04 .official-step-layer{
+  z-index:3!important
+}
+
+#slide-04 .official-step-card{
+  width:182px;
+  height:68px;
+  overflow:visible;
+  padding:22px 45px 8px 11px;
+  border:1px solid #C8E6E1;
+  border-top:2px solid var(--phase);
+  background:rgba(255,255,255,.96);
+  box-shadow:0 3px 10px rgba(20,70,62,.07);
+  transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease,background .24s ease;
+  animation:roadmap-card-enter .38s ease both
+}
+#slide-04 .official-step-card:hover,
+#slide-04 .official-step-card.active{
+  z-index:5;
+  transform:translateY(-3px);
+  border-color:var(--phase);
+  background:#fff;
+  box-shadow:0 8px 22px color-mix(in srgb,var(--phase) 22%,transparent)
+}
+#slide-04 .official-step-card.active{
+  animation:roadmap-card-pulse 2.2s ease-in-out infinite
+}
+#slide-04 .official-step-card .osc-step{
+  left:11px;
+  top:6px;
+  font-size:8px
+}
+#slide-04 .official-step-card b{
+  font-size:11.5px;
+  line-height:1.16
+}
+#slide-04 .official-step-card small{
+  margin-top:3px;
+  font-size:7.6px;
+  line-height:1.16
+}
+#slide-04 .official-step-card img{
+  right:-5px;
+  bottom:-5px;
+  width:50px;
+  height:50px
+}
+
+/* Restore the orbit around the lifecycle instead of two unrelated card rows. */
+#slide-04 .official-step-card.pos-0{left:39%;right:auto;top:3px;bottom:auto}
+#slide-04 .official-step-card.pos-1{left:54%;right:auto;top:3px;bottom:auto}
+#slide-04 .official-step-card.pos-2{left:20%;right:auto;top:3px;bottom:auto}
+#slide-04 .official-step-card.pos-3{left:1%;right:auto;top:153px;bottom:auto}
+#slide-04 .official-step-card.pos-4{left:15%;right:auto;top:auto;bottom:3px}
+#slide-04 .official-step-card.pos-5{left:34%;right:auto;top:auto;bottom:3px}
+#slide-04 .official-step-card.pos-6{left:auto;right:16%;top:3px;bottom:auto}
+#slide-04 .official-step-card.pos-7{left:auto;right:1%;top:128px;bottom:auto}
+#slide-04 .official-step-card.pos-8{left:auto;right:1%;top:222px;bottom:auto}
+#slide-04 .official-step-card.pos-9{left:57%;right:auto;top:auto;bottom:3px}
+
+/* Animated pointer lines from each card back into its lifecycle phase. */
+#slide-04 .official-step-card:after{
+  content:"";
+  display:block!important;
+  position:absolute;
+  width:2px;
+  height:34px;
+  left:50%;
+  background:repeating-linear-gradient(to bottom,var(--phase) 0 5px,transparent 5px 9px);
+  background-size:2px 18px;
+  animation:roadmap-pointer-flow .8s linear infinite
+}
+#slide-04 .official-step-card:before{
+  content:"";
+  position:absolute;
+  left:calc(50% - 4px);
+  border-left:4px solid transparent;
+  border-right:4px solid transparent
+}
+#slide-04 .official-step-card.pos-0:after,
+#slide-04 .official-step-card.pos-1:after,
+#slide-04 .official-step-card.pos-2:after,
+#slide-04 .official-step-card.pos-6:after{top:100%;bottom:auto}
+#slide-04 .official-step-card.pos-0:before,
+#slide-04 .official-step-card.pos-1:before,
+#slide-04 .official-step-card.pos-2:before,
+#slide-04 .official-step-card.pos-6:before{
+  top:calc(100% + 30px);
+  border-top:6px solid var(--phase)
+}
+#slide-04 .official-step-card.pos-4:after,
+#slide-04 .official-step-card.pos-5:after,
+#slide-04 .official-step-card.pos-9:after{top:auto;bottom:100%}
+#slide-04 .official-step-card.pos-4:before,
+#slide-04 .official-step-card.pos-5:before,
+#slide-04 .official-step-card.pos-9:before{
+  bottom:calc(100% + 30px);
+  border-bottom:6px solid var(--phase)
+}
+#slide-04 .official-step-card.pos-3:after{
+  left:100%;
+  right:auto;
+  top:50%;
+  width:86px;
+  height:2px;
+  background:repeating-linear-gradient(to right,var(--phase) 0 5px,transparent 5px 9px);
+  background-size:18px 2px
+}
+#slide-04 .official-step-card.pos-3:before{
+  left:calc(100% + 82px);
+  top:calc(50% - 4px);
+  border:4px solid transparent;
+  border-left:6px solid var(--phase)
+}
+#slide-04 .official-step-card.pos-7:after,
+#slide-04 .official-step-card.pos-8:after{
+  left:auto;
+  right:100%;
+  top:50%;
+  width:86px;
+  height:2px;
+  background:repeating-linear-gradient(to left,var(--phase) 0 5px,transparent 5px 9px);
+  background-size:18px 2px
+}
+#slide-04 .official-step-card.pos-7:before,
+#slide-04 .official-step-card.pos-8:before{
+  left:auto;
+  right:calc(100% + 82px);
+  top:calc(50% - 4px);
+  border:4px solid transparent;
+  border-right:6px solid var(--phase)
+}
+
+#slide-04 .official-phase{
+  display:block;
+  min-width:68px;
+  height:22px;
+  padding:0 7px 0 19px;
+  border-color:color-mix(in srgb,var(--phase) 28%,#D7E1DF);
+  background:rgba(255,255,255,.9);
+  font-size:8px;
+  backdrop-filter:blur(5px);
+  transition:transform .2s ease,box-shadow .2s ease
+}
+#slide-04 .official-phase:before{
+  left:7px;
+  top:7px;
+  width:7px;
+  height:7px;
+  border-radius:50%
+}
+#slide-04 .official-phase:hover,
+#slide-04 .official-phase.active{
+  transform:scale(1.06);
+  box-shadow:0 4px 14px color-mix(in srgb,var(--phase) 22%,transparent)
+}
+#slide-04 .official-phase.phase-0{left:36%;top:90px}
+#slide-04 .official-phase.phase-1{left:23%;top:108px}
+#slide-04 .official-phase.phase-2{left:20%;top:221px}
+#slide-04 .official-phase.phase-3{left:30%;top:auto;bottom:74px}
+#slide-04 .official-phase.phase-4{left:47%;top:auto;bottom:55px}
+#slide-04 .official-phase.phase-5{left:auto;right:25%;top:101px}
+#slide-04 .official-phase.phase-6{left:auto;right:18%;top:221px}
+#slide-04 .official-phase.phase-7{left:auto;right:29%;top:auto;bottom:72px}
+
+/* Move the explanatory rail below the visual so it supports rather than covers it. */
+#slide-04 .method-contrast{
+  grid-row:3;
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr) 38px 278px;
+  min-height:0;
+  border:1px solid var(--line);
+  background:#fff
+}
+#slide-04 .method-summary-label{
+  padding:11px 14px;
+  background:#EDF6F4
+}
+#slide-04 .method-summary-label small,
+#slide-04 .method-summary-result small,
+#slide-04 .method-shifts article small{
+  display:block;
+  font-size:7px
+}
+#slide-04 .method-summary-label b{
+  margin-top:6px;
+  font-size:12px
+}
+#slide-04 .method-contrast .method-shifts article{
+  display:flex;
+  padding:9px 11px
+}
+#slide-04 .method-shifts article>b{
+  margin-top:5px;
+  font-size:10.5px
+}
+#slide-04 .method-shifts article>span{
+  margin-top:4px;
+  font-size:8px
+}
+#slide-04 .method-summary-arrow{font-size:22px}
+#slide-04 .method-summary-result{padding:10px 16px}
+#slide-04 .method-summary-result b{
+  margin-top:5px;
+  font-size:13px
+}
+#slide-04 .method-summary-result span{
+  margin-top:5px;
+  font-size:8px
+}
+
+@keyframes roadmap-pointer-flow{
+  to{background-position:0 18px}
+}
+@keyframes roadmap-lifecycle-glow{
+  0%,100%{filter:drop-shadow(0 0 0 rgba(35,135,123,0))}
+  50%{filter:drop-shadow(0 10px 18px rgba(35,135,123,.16))}
+}
+@keyframes roadmap-card-enter{
+  from{opacity:0;transform:translateY(7px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes roadmap-card-pulse{
+  0%,100%{box-shadow:0 4px 12px color-mix(in srgb,var(--phase) 14%,transparent)}
+  50%{box-shadow:0 8px 24px color-mix(in srgb,var(--phase) 32%,transparent)}
+}
+@media(prefers-reduced-motion:reduce){
+  #slide-04 .official-map-base,
+  #slide-04 .official-step-card,
+  #slide-04 .official-step-card:after{animation:none!important}
+}
+
+/* 2026-07-02f · Annotation review: restore hierarchy and remove crowded overlays. */
+
+/* 04 · The source artwork already carries phase names. The second interactive phase
+   label layer duplicated those names and made PROMPT appear in the wrong place. */
+#slide-04 .official-phase-layer{
+  display:none!important
+}
+#slide-04 .official-map-stage{
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,transparent 0 15%,rgba(245,250,248,.88) 15% 85%,transparent 85%)
+}
+#slide-04 .official-map-base{
+  top:68px;
+  width:540px
+}
+#slide-04 .official-step-layer{
+  z-index:3!important
+}
+#slide-04 .official-step-card{
+  width:166px;
+  height:62px;
+  padding:20px 34px 6px 10px;
+  border-top-width:2px;
+  box-shadow:0 2px 8px rgba(20,70,62,.05)
+}
+#slide-04 .official-step-card .osc-step{
+  left:10px;
+  top:5px;
+  font-size:7.5px
+}
+#slide-04 .official-step-card b{
+  font-size:10.5px;
+  line-height:1.15
+}
+#slide-04 .official-step-card small{
+  margin-top:2px;
+  font-size:7.2px;
+  line-height:1.15
+}
+#slide-04 .official-step-card img{
+  right:-6px;
+  bottom:-6px;
+  width:45px;
+  height:45px
+}
+#slide-04 .official-step-card:after{
+  display:none
+}
+#slide-04 .official-step-card.pos-0,
+#slide-04 .official-step-card.pos-5{left:18%}
+#slide-04 .official-step-card.pos-1,
+#slide-04 .official-step-card.pos-6{left:31%}
+#slide-04 .official-step-card.pos-2,
+#slide-04 .official-step-card.pos-7{left:44%}
+#slide-04 .official-step-card.pos-3,
+#slide-04 .official-step-card.pos-8{left:57%;right:auto}
+#slide-04 .official-step-card.pos-4,
+#slide-04 .official-step-card.pos-9{left:70%;right:auto}
+#slide-04 .official-step-card.pos-0,
+#slide-04 .official-step-card.pos-1,
+#slide-04 .official-step-card.pos-2,
+#slide-04 .official-step-card.pos-3,
+#slide-04 .official-step-card.pos-4{top:2px;bottom:auto}
+#slide-04 .official-step-card.pos-5,
+#slide-04 .official-step-card.pos-6,
+#slide-04 .official-step-card.pos-7,
+#slide-04 .official-step-card.pos-8,
+#slide-04 .official-step-card.pos-9{top:auto;bottom:2px}
+
+/* 05 · The former advantage/tag rails repeated the proof above and collided with
+   the footer. The page now ends with the two coherent proof columns. */
+#slide-05 .company-left,
+#slide-05 .company-right{
+  top:226px!important;
+  height:580px!important
+}
+#slide-05 .company-left{
+  left:78px!important;
+  width:620px!important
+}
+#slide-05 .company-right{
+  right:78px!important;
+  width:804px!important;
+  grid-template-rows:166px 402px!important
+}
+
+/* 08 · Give every product a real reading rhythm instead of shrinking five bullets
+   into a 207px lane. */
+#slide-08 .product-shell{
+  height:595px!important;
+  overflow:hidden
+}
+#slide-08 .shared-top{
+  height:52px
+}
+#slide-08 .edition{
+  height:239px;
+  grid-template-columns:190px minmax(0,1fr) minmax(0,1fr)
+}
+#slide-08 .edition-label{
+  padding:20px 16px
+}
+#slide-08 .edition-label em{
+  margin-bottom:13px;
+  font-size:8.5px
+}
+#slide-08 .edition-label b{
+  font-size:19px
+}
+#slide-08 .edition-label span{
+  margin-top:9px;
+  font-size:10.5px;
+  line-height:1.42
+}
+#slide-08 .product{
+  grid-template-columns:minmax(0,1fr) 205px;
+  gap:13px;
+  padding:14px 15px
+}
+#slide-08 .product h3{
+  font-size:18px;
+  line-height:1.15
+}
+#slide-08 .product .role{
+  margin:4px 0 8px;
+  font-size:10.5px
+}
+#slide-08 .product ul{
+  padding-left:16px;
+  font-size:10.5px;
+  line-height:1.42
+}
+#slide-08 .product li+li{
+  margin-top:3px
+}
+#slide-08 .product .screen{
+  height:178px
+}
+#slide-08 .product-meta{
+  gap:4px;
+  margin-top:8px
+}
+#slide-08 .product-meta span{
+  padding:2px 5px;
+  font-size:7.2px
+}
+#slide-08 .shared-bottom{
+  height:65px
+}
+#slide-08 .shared-bottom div{
+  font-size:10px
+}
+
+/* 10 · Numbers lead, explanation follows, and source attribution sits on a quiet
+   baseline. National build-out remains a separate, lower evidence band. */
+#slide-10 .market10{
+  grid-template-columns:1.08fr .92fr;
+  gap:22px
+}
+#slide-10 .m10-evidence,
+#slide-10 .m10-market{
+  padding-top:12px
+}
+#slide-10 .market10 h3{
+  margin-bottom:11px;
+  font-size:18px;
+  line-height:1.28
+}
+#slide-10 .m10-metrics{
+  grid-template-rows:repeat(2,116px)
+}
+#slide-10 .m10-metrics article{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-rows:auto 1fr auto;
+  align-items:start;
+  gap:5px;
+  padding:12px 14px 9px
+}
+#slide-10 .m10-metrics article>b{
+  grid-row:auto;
+  font-size:27px;
+  line-height:1
+}
+#slide-10 .m10-metrics article>p{
+  margin:0;
+  font-size:11px;
+  line-height:1.35
+}
+#slide-10 .m10-metrics article>a{
+  grid-column:auto;
+  padding-top:5px;
+  font-size:7px;
+  line-height:1.2
+}
+#slide-10 .m10-sovereign{
+  height:214px;
+  margin-top:12px;
+  grid-template-rows:44px 1fr
+}
+#slide-10 .m10-sovereign-head{
+  padding:0 14px
+}
+#slide-10 .m10-sovereign-head b{
+  font-size:9.5px
+}
+#slide-10 .m10-sovereign-head span{
+  max-width:58%;
+  font-size:9.5px;
+  line-height:1.25;
+  text-align:right
+}
+#slide-10 .m10-sovereign article{
+  display:flex;
+  justify-content:center;
+  gap:0;
+  padding:12px 14px
+}
+#slide-10 .m10-sovereign article>b{
+  margin-top:7px;
+  font-size:20px
+}
+#slide-10 .m10-sovereign article>span{
+  margin-top:6px;
+  font-size:9.5px;
+  line-height:1.3
+}
+#slide-10 .m10-sovereign article>a{
+  margin-top:auto;
+  padding-top:7px;
+  font-size:6.8px;
+  line-height:1.2
+}
+
+/* 2026-07-02 · Annotation pass: restore the original simple lifecycle
+   comparison and remove the competing historical/step-card narratives. */
+#slide-03 .evolution-page{
+  top:226px;
+  height:575px;
+  display:block
+}
+#slide-03 .paradigm-compare{
+  height:575px;
+  grid-template-columns:minmax(0,1fr) 118px minmax(0,1fr);
+  gap:20px
+}
+#slide-03 .paradigm-panel{
+  grid-template-rows:56px 62px minmax(0,1fr);
+  border-color:#6EAFA6
+}
+#slide-03 .paradigm-panel header{
+  font-size:22px
+}
+#slide-03 .paradigm-brand{
+  padding:0 24px
+}
+#slide-03 .paradigm-brand b{font-size:22px}
+#slide-03 .paradigm-brand span{font-size:11px}
+#slide-03 .paradigm-loop{
+  align-self:center;
+  width:100%;
+  height:330px
+}
+#slide-03 .paradigm-loop text{font-size:16px}
+#slide-03 .paradigm-loop text:nth-of-type(1),
+#slide-03 .paradigm-loop text:nth-of-type(2){font-size:38px}
+#slide-03 .devops-panel .paradigm-loop text:nth-of-type(1),
+#slide-03 .devops-panel .paradigm-loop text:nth-of-type(2){fill:#2B6D98}
+#slide-03 .agentic-panel .paradigm-loop text:nth-of-type(1),
+#slide-03 .agentic-panel .paradigm-loop text:nth-of-type(2){fill:#176C60}
+#slide-03 .devops-panel .loop-left,
+#slide-03 .devops-panel .loop-right,
+#slide-03 .agentic-panel .loop-left,
+#slide-03 .agentic-panel .loop-right{stroke-width:28}
+#slide-03 .devops-panel .loop-cross,
+#slide-03 .agentic-panel .loop-cross{stroke-width:11}
+#slide-03 .paradigm-arrow i{font-size:86px}
+#slide-03 .evolution-timeline{display:none!important}
+
+/* 04 · Three drivers lead to one operating answer. */
+#slide-04 .official-roadmap{
+  top:190px;
+  height:611px;
+  grid-template-rows:42px 140px minmax(0,1fr)
+}
+#slide-04 .method-contrast{
+  display:grid;
+  grid-template-columns:182px minmax(0,1fr) 48px 360px;
+  min-height:0;
+  border:1px solid var(--line);
+  border-top:0;
+  background:#fff
+}
+#slide-04 .method-summary-label{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:16px 18px;
+  background:#EDF6F4
+}
+#slide-04 .method-summary-label small,
+#slide-04 .method-summary-result small,
+#slide-04 .method-shifts article small{
+  display:block;
+  color:#6E8580;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.12em
+}
+#slide-04 .method-summary-label b{
+  margin-top:8px;
+  color:#1E5E54;
+  font-size:15px;
+  line-height:1.3
+}
+#slide-04 .method-shifts{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr))
+}
+#slide-04 .method-contrast .method-shifts article{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  padding:12px 15px;
+  border-right:1px solid var(--line)
+}
+#slide-04 .method-shifts article>b{
+  margin-top:7px;
+  color:#284D46;
+  font-size:13px;
+  line-height:1.25
+}
+#slide-04 .method-shifts article>span{
+  margin-top:6px;
+  color:#6A7773;
+  font-size:9.5px;
+  line-height:1.3
+}
+#slide-04 .method-summary-arrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#23877B;
+  font-size:28px;
+  font-style:normal
+}
+#slide-04 .method-summary-result{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:14px 20px;
+  background:#23877B;
+  color:#fff
+}
+#slide-04 .method-summary-result small{color:rgba(255,255,255,.68)}
+#slide-04 .method-summary-result b{
+  margin-top:7px;
+  color:#fff;
+  font-size:17px;
+  line-height:1.25
+}
+#slide-04 .method-summary-result span{
+  margin-top:7px;
+  color:rgba(255,255,255,.84);
+  font-size:10px;
+  line-height:1.3
+}
+
+/* Slide 03 timeline belongs on the common baseline after the clean rebuild. */
+#slide-03 .e2024 .event-2024-grid{margin-bottom:0}
+
+#slide-11 .opc11-policy article{
+  min-height:72px;
+  padding:9px 14px 22px 72px
+}
+#slide-11 .opc11-policy article>a{
+  top:auto;
+  right:14px;
+  bottom:6px;
+  max-width:calc(100% - 86px);
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis
+}
+
+html[lang="en"] #slide-03.slide03-replica>.title{
+  max-width:1450px;
+  font-size:32px;
+  line-height:1.08
+}
+#slide-10 .m10-assumption{
+  padding:7px 12px;
+  font-size:8px;
+  line-height:1.25
 }
 #slide-03 .evo3-history{
   position:relative;
@@ -5659,3 +6594,354 @@ body.overview-mode .mobile-reader{display:none!important}
   font-size:9px
 }
 #slide-34 .c34-blueprint-foundation span:last-child{border-right:0}
+
+/* 2026-07-02 · Slide 03 clean rebuild.
+   One clear evolution statement, two balanced lifecycle boards and a readable
+   proof timeline. This final layer intentionally replaces the accumulated
+   historical overrides above. */
+#slide-03.slide03-replica>.title{
+  left:58px!important;
+  right:auto!important;
+  top:104px!important;
+  width:1484px;
+  max-width:none;
+  height:44px;
+  overflow:hidden;
+  font-size:34px;
+  line-height:1.15;
+  white-space:nowrap
+}
+html[lang="en"] #slide-03.slide03-replica>.title{
+  width:1484px;
+  max-width:none;
+  font-size:31px;
+  line-height:1.15
+}
+#slide-03 .evo3{
+  left:58px;
+  right:58px;
+  top:165px;
+  height:656px;
+  grid-template-rows:306px 336px;
+  gap:14px
+}
+#slide-03 .evo3-top{
+  grid-template-columns:minmax(0,1fr) 112px minmax(0,1fr);
+  gap:20px
+}
+#slide-03 .evo3-board{
+  border-color:#73B7AE
+}
+#slide-03 .evo3-board>header{
+  height:44px;
+  font-size:19px;
+  letter-spacing:.005em
+}
+#slide-03 .evo3-wordmark{
+  top:54px;
+  left:18px;
+  height:28px
+}
+#slide-03 .evo3-wordmark svg{width:25px;height:24px}
+#slide-03 .evo3-wordmark img{width:86px;height:24px;object-fit:contain}
+#slide-03 .evo3-wordmark b{font-size:18px}
+#slide-03 .opencsg-wordmark{left:16px;gap:0}
+#slide-03 .opencsg-wordmark b{display:none}
+#slide-03 .evo3-loop{
+  left:40px;
+  right:40px;
+  bottom:6px;
+  width:calc(100% - 80px);
+  height:200px
+}
+#slide-03 .evo3-transition>span{
+  color:#70827E;
+  font-size:9px
+}
+#slide-03 .evo3-transition svg{
+  width:92px;
+  height:64px;
+  margin:9px 0 5px
+}
+#slide-03 .evo3-transition b{font-size:14px}
+#slide-03 .evo3-transition small{max-width:100px;font-size:8px}
+#slide-03 .evo3-agentic-stage{top:44px}
+#slide-03 .evo3-agentic-stage .evo3-loop{
+  left:66px;
+  right:66px;
+  bottom:8px;
+  width:calc(100% - 132px);
+  height:194px
+}
+#slide-03 .evo3-step{
+  width:116px;
+  height:35px;
+  padding:4px 7px
+}
+#slide-03 .evo3-step small{font-size:6px}
+#slide-03 .evo3-step b{font-size:8px}
+#slide-03 .evo3-step.s2{left:112px;top:8px}
+#slide-03 .evo3-step.s1b{left:237px;top:8px}
+#slide-03 .evo3-step.s1{left:362px;top:8px}
+#slide-03 .evo3-step.s6{right:10px;top:8px}
+#slide-03 .evo3-step.s3{left:7px;top:92px}
+#slide-03 .evo3-step.s7{right:7px;top:85px}
+#slide-03 .evo3-step.s7b{right:7px;top:126px}
+#slide-03 .evo3-step.s4{left:85px;bottom:5px}
+#slide-03 .evo3-step.s5{left:210px;bottom:5px}
+#slide-03 .evo3-step.s8{right:72px;bottom:5px}
+#slide-03 .evo3-roadmap-bg{
+  position:absolute;
+  left:50%;
+  top:-31px;
+  z-index:1;
+  width:610px;
+  height:331px;
+  transform:translateX(-50%);
+  object-fit:fill;
+  opacity:.98
+}
+#slide-03 .evo3-step:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  border-color:#60B8AB;
+  border-style:dashed
+}
+#slide-03 .evo3-step.s2:after,
+#slide-03 .evo3-step.s1b:after,
+#slide-03 .evo3-step.s1:after,
+#slide-03 .evo3-step.s6:after{
+  left:50%;
+  bottom:-15px;
+  height:15px;
+  border-width:0 0 0 1px
+}
+#slide-03 .evo3-step.s4:after,
+#slide-03 .evo3-step.s5:after,
+#slide-03 .evo3-step.s8:after{
+  left:50%;
+  top:-15px;
+  height:15px;
+  border-width:0 0 0 1px
+}
+#slide-03 .evo3-step.s3:after{
+  right:-20px;
+  top:50%;
+  width:20px;
+  border-width:1px 0 0
+}
+#slide-03 .evo3-step.s7:after,
+#slide-03 .evo3-step.s7b:after{
+  left:-20px;
+  top:50%;
+  width:20px;
+  border-width:1px 0 0
+}
+
+#slide-03 .evo3-history{
+  grid-template-columns:7% 14% 14% 15% 13% 17% 20%;
+  padding:0 0 44px
+}
+#slide-03 .evo3-history-line{bottom:29px}
+#slide-03 .evo3-event{
+  justify-content:flex-end;
+  min-height:0;
+  height:100%;
+  padding:0 6px
+}
+#slide-03 .evo3-event time{
+  bottom:-3px;
+  font-size:16px
+}
+#slide-03 .event-logo{
+  min-height:24px;
+  margin-bottom:6px;
+  font-size:10px
+}
+#slide-03 .event-logo b{font-size:12px}
+#slide-03 .event-card,
+#slide-03 .event-card.dark,
+#slide-03 .event-card.pale{
+  min-height:152px;
+  padding:10px 11px
+}
+#slide-03 .event-card>b{font-size:11px;line-height:1.3}
+#slide-03 .event-card p{margin-top:6px;font-size:8.5px;line-height:1.34}
+#slide-03 .e2008 .event-card{min-height:50px}
+#slide-03 .e2016 .event-card{min-height:168px}
+#slide-03 .e2021 .event-card{min-height:156px}
+#slide-03 .e2023 .event-card{min-height:176px}
+#slide-03 .e2024 .event-2024-grid{
+  grid-template-columns:1.18fr .82fr;
+  gap:5px;
+  margin-bottom:0
+}
+#slide-03 .event-2024-grid .event-card:first-child{min-height:176px}
+#slide-03 .event-2024-grid .event-card{padding:8px}
+#slide-03 .event-2024-grid .event-card>b{font-size:9.5px}
+#slide-03 .event-2024-grid .event-card p{font-size:8px;line-height:1.3}
+#slide-03 .opencsg-event img{width:72px;height:22px;object-fit:contain}
+#slide-03 .opencsg-event b{display:none}
+
+/* 2026-07-02e · Final precedence layer for collision-free composition. */
+#slide-03 .e2024 .event-2024-grid{margin-bottom:24px}
+
+#slide-04 .official-step-card{height:88px}
+#slide-04 .official-step-card.pos-7{top:130px}
+#slide-04 .official-step-card.pos-8{top:218px}
+#slide-04 .official-phase.phase-0,
+#slide-04 .official-phase.phase-5{top:194px}
+#slide-04 .official-phase.phase-3,
+#slide-04 .official-phase.phase-4,
+#slide-04 .official-phase.phase-7{top:329px;bottom:auto}
+
+#slide-09 .arch9-tabs{top:164px}
+
+#slide-23 .app-solution{
+  box-sizing:border-box;
+  padding-bottom:112px
+}
+#slide-23 .app-outcomes{
+  left:calc(50% + 10px);
+  right:0;
+  bottom:0;
+  height:98px;
+  grid-template-columns:repeat(3,minmax(0,1fr))
+}
+#slide-23 .app-outcomes div{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  justify-content:center;
+  padding:10px 14px
+}
+#slide-23 .app-outcomes b{font-size:13px;line-height:1.25}
+#slide-23 .app-outcomes span{margin-top:5px;font-size:10px;line-height:1.3}
+
+/* Absolute final override for the annotation-reviewed methodology rail. */
+#slide-04 .official-roadmap{
+  top:190px;
+  height:611px;
+  grid-template-rows:42px 140px minmax(0,1fr)
+}
+
+/* Final step rails: no cards cover the lifecycle artwork. */
+#slide-04 .official-map-base{
+  top:68px;
+  width:540px
+}
+#slide-04 .official-step-card{
+  width:166px;
+  height:62px
+}
+#slide-04 .official-step-card.pos-0,
+#slide-04 .official-step-card.pos-5{left:18%}
+#slide-04 .official-step-card.pos-1,
+#slide-04 .official-step-card.pos-6{left:31%}
+#slide-04 .official-step-card.pos-2,
+#slide-04 .official-step-card.pos-7{left:44%;right:auto}
+#slide-04 .official-step-card.pos-3,
+#slide-04 .official-step-card.pos-8{left:57%;right:auto}
+#slide-04 .official-step-card.pos-4,
+#slide-04 .official-step-card.pos-9{left:70%;right:auto}
+#slide-04 .official-step-card.pos-0,
+#slide-04 .official-step-card.pos-1,
+#slide-04 .official-step-card.pos-2,
+#slide-04 .official-step-card.pos-3,
+#slide-04 .official-step-card.pos-4{top:2px;bottom:auto}
+#slide-04 .official-step-card.pos-5,
+#slide-04 .official-step-card.pos-6,
+#slide-04 .official-step-card.pos-7,
+#slide-04 .official-step-card.pos-8,
+#slide-04 .official-step-card.pos-9{top:auto;bottom:2px}
+
+/* Slide 04 final precedence: restoration rules must win over legacy review layers. */
+#slide-04 .official-roadmap{
+  grid-template-rows:48px minmax(0,1fr) 96px
+}
+#slide-04 .roadmap-head>div:first-child{display:block}
+#slide-04 .official-map-stage{
+  grid-row:2;
+  height:auto
+}
+#slide-04 .method-contrast{
+  grid-row:3;
+  grid-template-columns:150px minmax(0,1fr) 38px 278px
+}
+#slide-04 .method-contrast .method-shifts article{
+  display:flex;
+  grid-template-columns:none;
+  grid-template-rows:none;
+  gap:0;
+  padding:9px 11px
+}
+#slide-04 .method-summary-label small,
+#slide-04 .method-summary-result small,
+#slide-04 .method-shifts article small{display:block}
+#slide-04 .method-shifts article>span{font-size:8px}
+#slide-04 .method-shifts article>b{font-size:10.5px}
+#slide-04 .method-summary-result b{font-size:13px}
+#slide-04 .method-summary-result span{font-size:8px}
+
+#slide-04 .official-phase-layer{display:block!important}
+#slide-04 .official-map-base{
+  top:19px;
+  width:790px
+}
+#slide-04 .official-step-card{
+  width:182px;
+  height:68px
+}
+#slide-04 .official-step-card.pos-0{left:39%;right:auto;top:3px;bottom:auto}
+#slide-04 .official-step-card.pos-1{left:54%;right:auto;top:3px;bottom:auto}
+#slide-04 .official-step-card.pos-2{left:20%;right:auto;top:3px;bottom:auto}
+#slide-04 .official-step-card.pos-3{left:1%;right:auto;top:153px;bottom:auto}
+#slide-04 .official-step-card.pos-4{left:15%;right:auto;top:auto;bottom:3px}
+#slide-04 .official-step-card.pos-5{left:34%;right:auto;top:auto;bottom:3px}
+#slide-04 .official-step-card.pos-6{left:auto;right:16%;top:3px;bottom:auto}
+#slide-04 .official-step-card.pos-7{left:auto;right:1%;top:128px;bottom:auto}
+#slide-04 .official-step-card.pos-8{left:auto;right:1%;top:222px;bottom:auto}
+#slide-04 .official-step-card.pos-9{left:57%;right:auto;top:auto;bottom:3px}
+
+#slide-04 .official-phase.phase-0{left:36%;right:auto;top:90px;bottom:auto}
+#slide-04 .official-phase.phase-1{left:23%;right:auto;top:108px;bottom:auto}
+#slide-04 .official-phase.phase-2{left:20%;right:auto;top:221px;bottom:auto}
+#slide-04 .official-phase.phase-3{left:30%;right:auto;top:auto;bottom:74px}
+#slide-04 .official-phase.phase-4{left:47%;right:auto;top:auto;bottom:55px}
+#slide-04 .official-phase.phase-5{left:auto;right:25%;top:101px;bottom:auto}
+#slide-04 .official-phase.phase-6{left:auto;right:18%;top:221px;bottom:auto}
+#slide-04 .official-phase.phase-7{left:auto;right:29%;top:auto;bottom:72px}
+
+/* 2026-07-05 · Reuse the detailed CSGClaw architecture from slide 28. */
+#slide-08 .csgclaw-architecture{
+  padding:4px;
+  background:#fff
+}
+#slide-08 .csgclaw-architecture img{
+  object-fit:contain;
+  object-position:center
+}
+
+/* Slide 09 · Connect AssetsHub upward without covering its asset cells. */
+#slide-09 .a9-flow-up{
+  top:282px;
+  width:2px;
+  height:30px;
+  border:0;
+  background:var(--teal);
+  transform:none;
+  filter:drop-shadow(0 1px 1px rgba(35,135,123,.18))
+}
+#slide-09 .a9-flow-up:before{
+  content:"";
+  position:absolute;
+  left:-5px;
+  top:-1px;
+  width:0;
+  height:0;
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+  border-bottom:8px solid var(--teal)
+}
+#slide-09 .a9-flow-up:after{display:none}

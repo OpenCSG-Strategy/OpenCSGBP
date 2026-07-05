@@ -30,7 +30,7 @@
         <div class="c32-blockers">
           <article><span>01</span><b>${tx("资源分散，重复建设", "Fragmented resources")}</b><p>${tx("算力、数据、模型和项目分布在不同部门与园区，无法复用和统一计量。", "Compute, data, models and projects sit across departments without reuse or unified metering.")}</p></article>
           <article><span>02</span><b>${tx("平台交付后缺少运营", "Platforms stop after delivery")}</b><p>${tx("只有门户和资源目录，没有企业服务、开发者运营和资产沉淀。", "Portals and catalogs lack enterprise services, developer operations and asset accumulation.")}</p></article>
-          <article><span>03</span><b>${tx("外部模型难承担城市责任", "External models cannot carry city responsibility")}</b><p>${tx("数据边界、国产适配、模型替换、审计和公共服务必须掌握在本地。", "Data boundaries, domestic adaptation, model replacement, audit and public services must stay local.")}</p></article>
+          <article><span>03</span><b>${tx("单一外部模型无法承担长期运营", "A single external model cannot support long-term operations")}</b><p>${tx("城市必须掌握数据边界、跨模型替换、跨芯片适配、审计和公共服务能力。", "Cities must control data boundaries, model portability, cross-chip compatibility, audit and public services.")}</p></article>
           <article><span>04</span><b>${tx("项目投入未转化为产业", "Projects do not become an industry")}</b><p>${tx("技术项目、活动和补贴彼此割裂，难形成企业集聚与财政回流。", "Projects, events and subsidies remain disconnected from company clustering and fiscal returns.")}</p></article>
         </div>
       </div>
@@ -41,7 +41,7 @@
           <div><small>AFTER</small><b>${tx("城市 AI 公共基础设施", "City AI public infrastructure")}</b></div>
         </div>
         <div class="c32-shift-grid">
-          <span>${tx("采购单一算力与设备", "Purchase a single compute stack")}</span><b>${tx("统一调度、计量并适配国产芯片、GPU、CPU 与异构算力池", "Schedule and meter domestic chips, GPUs, CPUs and heterogeneous compute pools")}</b>
+          <span>${tx("采购单一算力与设备", "Purchase a single compute stack")}</span><b>${tx("统一调度、计量并兼容全球主流 GPU、CPU、区域芯片与异构算力池", "Schedule and meter global GPUs, CPUs, regional accelerators and heterogeneous compute pools")}</b>
           <span>${tx("建设模型门户", "Build a model portal")}</span><b>${tx("可治理、可评测、可发布的 AI 资产 Hub", "A governed, evaluated and deployable AI asset hub")}</b>
           <span>${tx("交付单点应用", "Deliver isolated applications")}</span><b>${tx("Agent 构建、运行、反馈与持续进化", "Agent build, operation, feedback and continuous evolution")}</b>
           <span>${tx("举办活动与招商", "Run events and attraction campaigns")}</span><b>${tx("开发者、企业、资本和场景的常态运营", "Ongoing operations across developers, enterprises, capital and scenarios")}</b>
@@ -69,8 +69,8 @@
 
   render(33,
     "城市级方案 · 建什么", "City Solution · What to Build",
-    "城市 AI 建设不是堆叠产品，而是“1 个底座 + 5 类平台 + 2 个产业专区”",
-    "City AI is not a product stack; it is one foundation, five platforms and two industry zones", `
+    "城市 AI 平台由治理主体、资源底座、开放控制层与产业服务共同构成",
+    "A city AI platform combines an operator, resource foundation, open control plane and industry services", `
     <div class="app-stage city33">
       <div class="c33-governance">
         <div class="app-kicker">WHO OWNS & OPERATES</div>
@@ -89,8 +89,8 @@
       </div>
       <div class="c33-system">
         <div class="c33-system-head">
-          <span>1 + 5 + 2</span>
-          <div><small>OPEN CITY AI ARCHITECTURE</small><b>${tx("一套可运营、可治理、可复制的城市 AI 系统", "An operable, governed and repeatable city AI system")}</b></div>
+          <span>4 LAYERS</span>
+          <div><small>OPEN CITY AI ARCHITECTURE</small><b>${tx("从城市资源到生产服务的完整运营架构", "A complete operating architecture from city resources to production services")}</b></div>
         </div>
         <div class="c33-control">
           <small>OPEN CONTROL PLANE</small>
@@ -98,19 +98,19 @@
           <p>${tx("贯通资产目录、模型服务、Agent 生命周期、身份权限、评测、审计与运营计量", "Connect assets, model services, the agent lifecycle, identity, evaluation, audit and operating metering")}</p>
         </div>
         <div class="c33-platforms">
-          <article><span>01</span><b>${tx("算力服务", "Compute services")}</b><small>${tx("调度 · 计量 · 资源运营", "Scheduling · metering · operations")}</small></article>
-          <article><span>02</span><b>${tx("数据语料", "Data & corpus")}</b><small>${tx("数据空间 · 治理 · 交易", "Data spaces · governance · exchange")}</small></article>
-          <article><span>03</span><b>${tx("模型资产", "Model assets")}</b><small>${tx("托管 · 评测 · 发布", "Hosting · evaluation · release")}</small></article>
-          <article><span>04</span><b>${tx("Agent 应用", "Agent applications")}</b><small>${tx("构建 · 运行 · 反馈", "Build · run · feedback")}</small></article>
-          <article><span>05</span><b>${tx("运营治理", "Operations & governance")}</b><small>${tx("权限 · 审计 · 成本", "Access · audit · cost")}</small></article>
+          <article><span>RESOURCE</span><b>${tx("异构算力", "Heterogeneous compute")}</b><small>${tx("纳管 · 调度 · 计量", "Manage · schedule · meter")}</small></article>
+          <article><span>ASSET</span><b>${tx("数据与模型资产", "Data & model assets")}</b><small>${tx("目录 · 血缘 · 评测", "Catalog · lineage · evaluation")}</small></article>
+          <article><span>AGENT</span><b>${tx("Agent 生产", "Agent production")}</b><small>${tx("构建 · 发布 · 运行", "Build · release · operate")}</small></article>
+          <article><span>CONTROL</span><b>${tx("治理控制", "Governance control")}</b><small>${tx("权限 · 审计 · 安全", "Access · audit · security")}</small></article>
+          <article><span>OPERATE</span><b>${tx("持续运营", "Continuous operations")}</b><small>${tx("成本 · SLA · 反馈", "Cost · SLA · feedback")}</small></article>
         </div>
         <div class="c33-foundation">
-          <div><span>1</span><b>${tx("统一异构算力底座", "Unified heterogeneous-compute foundation")}</b></div>
-          <p>${tx("兼容国产芯片、GPU、CPU、边缘节点与混合云；统一纳管、调度、计量并允许替换算力供应商。", "Supports domestic chips, GPUs, CPUs, edge nodes and hybrid cloud with unified management, scheduling, metering and vendor replaceability.")}</p>
+          <div><span>INFRA</span><b>${tx("资源与基础设施层", "Resource & infrastructure layer")}</b></div>
+          <p>${tx("兼容全球主流 GPU、CPU、国产芯片、边缘节点和混合云；数据、模型与运行环境均留在城市和企业可控边界内。", "Supports global GPUs, CPUs, domestic accelerators, edge nodes and hybrid cloud while keeping data, models and runtime within controlled boundaries.")}</p>
         </div>
         <div class="c33-zones">
-          <article><span>2A</span><b>${tx("城市公共服务专区", "City public-service zone")}</b><small>${tx("政务 · 科研 · 园区 · 公共机构", "Government · research · parks · public institutions")}</small></article>
-          <article><span>2B</span><b>${tx("企业与产业孵化专区", "Enterprise & incubation zone")}</b><small>${tx("私有化生产 · 创业孵化 · 场景验证", "Private production · incubation · scenario validation")}</small></article>
+          <article><span>PUBLIC</span><b>${tx("城市公共 AI 服务", "City public AI services")}</b><small>${tx("政务 · 科研 · 园区 · 公共机构", "Government · research · parks · public institutions")}</small></article>
+          <article><span>INDUSTRY</span><b>${tx("企业生产与产业运营", "Enterprise production & industry operations")}</b><small>${tx("私有化生产 · 创业孵化 · 场景验证 · 服务交易", "Private production · incubation · validation · service exchange")}</small></article>
         </div>
       </div>
       <div class="c33-outcomes">
@@ -121,8 +121,8 @@
         <article><small>INDUSTRY</small><b>${tx("招商与生态交易", "Industry attraction & transactions")}</b><p>${tx("形成企业、项目、人才、资本和服务交易网络。", "Build a network of companies, projects, talent, capital and services.")}</p></article>
       </div>
     </div>`,
-    "交付物：异构算力底座、五类平台、两类专区、运营主体与产业生态",
-    "Deliverables: heterogeneous compute, five platforms, two zones, an operator and an industry ecosystem");
+    "交付物：城市运营主体、异构资源底座、开放 AgenticOps 控制层与持续产业服务",
+    "Deliverables: a city operator, heterogeneous resources, an open AgenticOps control plane and continuous industry services");
 
   render(34,
     "城市级方案 · 怎么建", "City Solution · How to Build",
@@ -178,23 +178,23 @@
       <div class="c34-formula">
         <div class="app-kicker">PHASE-1 ORGANIZATION</div>
         <div class="c34-foundation">
-          <span>1</span>
-          <div><b>${tx("统一异构算力底座", "Unified heterogeneous-compute foundation")}</b><p>${tx("纳管国产芯片、GPU、CPU、边缘节点和混合云，为城市平台提供可替换的算力基础。", "Manage domestic chips, GPUs, CPUs, edge nodes and hybrid cloud as a replaceable compute foundation.")}</p></div>
+          <span>INFRA</span>
+          <div><b>${tx("统一异构算力与开放技术底座", "Unified heterogeneous compute and open technology foundation")}</b><p>${tx("纳管全球主流 GPU、CPU、国产芯片、边缘节点和混合云，承载 CSGHub、AgenticOps 与城市公共服务。", "Manage global GPUs, CPUs, domestic accelerators, edge nodes and hybrid cloud for CSGHub, AgenticOps and city public services.")}</p></div>
         </div>
         <div class="c34-consortium">
-          <div class="c34-consortium-head"><span>4</span><b>${tx("四位一体创新联合体", "Four-in-one innovation consortium")}</b></div>
-          <article><b>${tx("开放平台", "Open platform")}</b><span>${tx("技术与公共服务入口", "Technology & public-service entry")}</span></article>
-          <article><b>${tx("数据基金", "Data fund")}</b><span>${tx("数据资产化与项目支持", "Data assets & project support")}</span></article>
-          <article><b>${tx("产业孵化基金", "Industry incubation fund")}</b><span>${tx("股权投资与企业孵化", "Equity investment & incubation")}</span></article>
-          <article><b>${tx("产业联盟", "Industry alliance")}</b><span>${tx("企业、科研和场景协同", "Enterprise, research & scenario collaboration")}</span></article>
+          <div class="c34-consortium-head"><span>CO-BUILD</span><b>${tx("联合建设与运营机制", "Joint construction and operating mechanism")}</b></div>
+          <article><b>${tx("政府与运营主体", "Government & operator")}</b><span>${tx("政策、载体、公共资源与年度运营", "Policy, physical hub, public resources and annual operations")}</span></article>
+          <article><b>${tx("开源基金会", "Open-source foundation")}</b><span>${tx("开源治理、标准、社区与品牌", "Open governance, standards, community and brand")}</span></article>
+          <article><b>${tx("科研院校与企业", "Research & enterprises")}</b><span>${tx("技术底座、应用场景与成果转化", "Technology, scenarios and commercialization")}</span></article>
+          <article><b>${tx("产业基金与联盟", "Industry fund & alliance")}</b><span>${tx("股权投资、企业孵化与产业协同", "Equity investment, incubation and industry collaboration")}</span></article>
         </div>
         <div class="c34-platform-chain">
-          <div class="c34-platform-title"><span>3</span><b>${tx("三类可收费平台服务", "Three monetizable platform services")}</b></div>
+          <div class="c34-platform-title"><span>OPERATE</span><b>${tx("三类持续运营平台", "Three continuously operated platforms")}</b></div>
           <article><small>01</small><b>${tx("算力服务平台", "Compute service platform")}</b><p>${tx("异构调度 → 使用计量 → 资源运营", "Scheduling → metering → resource operations")}</p></article>
           <i>→</i>
           <article><small>02</small><b>${tx("数据语料平台", "Data corpus platform")}</b><p>${tx("数据空间 → 治理加工 → 合规交易", "Data spaces → governance → compliant exchange")}</p></article>
           <i>→</i>
-          <article><small>03</small><b>${tx("模型与 Agent 平台", "Model & agent platform")}</b><p>${tx("调用服务 → 应用构建 → 企业交付", "Invocation → application build → enterprise delivery")}</p></article>
+          <article><small>03</small><b>${tx("算法调用平台", "Model and algorithm service platform")}</b><p>${tx("模型服务 → Agent 构建 → 企业应用交付", "Model services → agent building → enterprise delivery")}</p></article>
         </div>
       </div>
     </div>`,
@@ -255,15 +255,15 @@
     <div class="app-stage city36">
       <div class="c36-anchor">
         <div><small>STARTING ANCHOR</small><b>¥54M</b></div>
-        <p>${tx("首期投入用于建设“1 个统一底座 + 5 类平台 + 2 个产业专区”，不是重资产园区投资。", "Initial investment builds one unified foundation, five platforms and two industry zones — not a heavy-asset real-estate project.")}</p>
+        <p>${tx("首期投入用于建设统一开放 AI 底座、运营主体与产业服务体系，不是重资产园区投资。", "Initial investment builds an open AI foundation, operating entity and industry-service system — not a heavy real-estate project.")}</p>
         <span>${tx("目标：3 个月平台上线，6 个月形成首批企业与场景", "Target: platform online in 3 months; first enterprises and scenarios in 6 months")}</span>
       </div>
       <div class="c36-phases">
-        <article><span>01 · 0–12M</span><b>${tx("政府启动：建底座", "Public launch: build the foundation")}</b><p>${tx("接入异构算力、数据与国产软硬件，上线 CSGHub、AgenticOps 和安全治理。", "Connect heterogeneous compute, data and domestic stacks; launch CSGHub, AgenticOps and security governance.")}</p><em>${tx("从零到可用", "From zero to usable")}</em></article>
+        <article><span>01 · 0–12M</span><b>${tx("政府启动：底座与主体", "Public launch: foundation & operator")}</b><p>${tx("接入异构算力、数据与开源生态，上线 CSGHub、AgenticOps、安全治理和常态运营主体。", "Connect heterogeneous compute, data and open source; launch CSGHub, AgenticOps, security governance and the operating entity.")}</p><em>${tx("从零到可用", "From zero to usable")}</em></article>
         <i>→</i>
-        <article><span>02 · 12–36M</span><b>${tx("平台运营：开始造血", "Platform operations: generate revenue")}</b><p>${tx("面向企业与开发者提供算力、平台订阅、数据和 Agent 服务，形成持续收入。", "Sell compute, subscriptions, data and agent services to enterprises and developers.")}</p><em>${tx("从成本中心到收入中心", "From cost center to revenue center")}</em></article>
+        <article><span>02 · 12–36M</span><b>${tx("产业运营：企业与场景集聚", "Industry operations: companies & scenarios")}</b><p>${tx("面向企业和开发者提供算力、平台订阅、Agent 服务与场景验证，形成持续服务收入。", "Provide compute, subscriptions, agent services and scenario validation to enterprises and developers.")}</p><em>${tx("从平台交付到产业服务", "From platform delivery to industry services")}</em></article>
         <i>→</i>
-        <article><span>03 · 36–60M</span><b>${tx("市场放大：财政回流", "Market scale: fiscal return")}</b><p>${tx("扩大企业集聚、跨境服务和生态交易，以税收、服务收入和再投资形成正循环。", "Scale enterprise clustering, cross-border services and ecosystem transactions into taxes, service revenue and reinvestment.")}</p><em>${tx("从平台收入到财政正循环", "From platform revenue to a fiscal loop")}</em></article>
+        <article><span>03 · 36–60M</span><b>${tx("区域放大：跨境服务网络", "Regional scale: cross-border service network")}</b><p>${tx("连接香港、新加坡和东南亚，扩大企业集聚、数字服务出口与生态交易，形成财政回流。", "Connect Hong Kong, Singapore and Southeast Asia to scale enterprise clustering, digital-service exports and ecosystem transactions.")}</p><em>${tx("从城市平台到区域数字接口", "From city platform to regional digital gateway")}</em></article>
       </div>
       <div class="c36-revenue-head">
         <div><small>THREE CORE REVENUE STREAMS</small><b>${tx("同一底座，三类可规模化收入", "One foundation, three scalable revenue streams")}</b></div>
@@ -272,7 +272,7 @@
       <div class="c36-revenues">
         <article><span>01</span><b>${tx("算力开始收费", "Compute becomes billable")}</b><p>${tx("训练、推理、项目算力、异构调度与资源运营。", "Training, inference, project compute, heterogeneous scheduling and resource operations.")}</p><small>${tx("按量 / 包年 / 项目", "Usage / annual / project")}</small></article>
         <article><span>02</span><b>${tx("平台开始收费", "Platform becomes billable")}</b><p>${tx("企业 License、订阅、年度运营、治理和开发者服务。", "Enterprise licenses, subscriptions, annual operations, governance and developer services.")}</p><small>${tx("订阅 / 服务 / 运营", "Subscription / service / operations")}</small></article>
-        <article><span>03</span><b>${tx("数据开始变现", "Data becomes monetizable")}</b><p>${tx("数据空间、合规加工、跨境数据服务与项目引入。", "Data spaces, compliant processing, cross-border data services and project introduction.")}</p><small>${tx("加工 / 交易 / 跨境服务", "Processing / exchange / cross-border")}</small></article>
+        <article><span>03</span><b>${tx("数字服务形成收入", "Digital services become billable")}</b><p>${tx("数据空间、合规加工、跨境数字服务、模型与 Agent 出海服务。", "Data spaces, compliant processing, cross-border digital services, and model and agent globalization services.")}</p><small>${tx("加工 / 服务 / 出海", "Processing / services / globalization")}</small></article>
       </div>
       <div class="c36-loop"><span>${tx("政府点火", "PUBLIC IGNITION")}</span><i>→</i><span>${tx("平台运营", "PLATFORM OPERATIONS")}</span><i>→</i><span>${tx("市场放大", "MARKET SCALE")}</span><i>→</i><span>${tx("财政回流", "FISCAL RETURN")}</span><i>→</i><span>${tx("再投资", "REINVEST")}</span></div>
     </div>`,
@@ -280,28 +280,28 @@
     "Core insight: value comes from operating rights and regional network effects, not only technology delivery");
 
   render(37,
-    "城市级方案 · 收益与复制", "City Solution · Returns & Replication",
-    "城市 AI 平台最终要交付三层回报，并形成可复制的区域网络",
-    "A city AI platform must deliver three layers of returns and create a repeatable regional network", `
+    "城市级方案 · 案例与复制", "City Solution · Cases & Replication",
+    "同一开放底座，服务三种城市任务：产业载体、区域接口与国产算力适配",
+    "One open foundation serves three city missions: industry hub, regional gateway and domestic compute adaptation", `
     <div class="app-stage city37">
       <div class="c37-returns">
-        <div class="app-kicker">THREE LAYERS OF RETURN</div>
-        <article><span>01</span><div><small>DIRECT FISCAL RETURN</small><b>${tx("直接财政回报", "Direct fiscal return")}</b><p>${tx("算力与平台服务收入、税收、运营收入和政策红利。", "Compute and platform revenue, taxes, operating income and policy dividends.")}</p></div></article>
-        <article><span>02</span><div><small>INDUSTRY DEPTH RETURN</small><b>${tx("产业深度回报", "Industry depth return")}</b><p>${tx("企业与算力服务商落地、高端就业、项目集聚与产业链形成。", "Company and compute-provider settlement, high-end jobs, projects and an industry chain.")}</p></div></article>
-        <article><span>03</span><div><small>CITY CAPABILITY RETURN</small><b>${tx("城市能力与品牌回报", "City capability and brand return")}</b><p>${tx("形成数字接口城市、数据制度能力、人才网络和全国影响力。", "Create a digital gateway, data-governance capability, talent network and national influence.")}</p></div></article>
+        <div class="app-kicker">THREE CITY MISSIONS</div>
+        <article><span>01</span><div><small>YICHANG · PRACTICE</small><b>${tx("宜昌：产业载体与长期运营", "Yichang: industry hub & operations")}</b><p>${tx("把城市空间、算力、企业服务和开发者生态组织为持续运营的产业中枢。", "Organize city space, compute, enterprise services and developers into an operating industry hub.")}</p></div></article>
+        <article><span>02</span><div><small>DONGFANG · PLAN</small><b>${tx("东方：面向东南亚的数字接口", "Dongfang: digital gateway to Southeast Asia")}</b><p>${tx("以自贸港制度、开放 AI 底座和跨境数字服务形成区域连接能力。", "Combine free-trade policy, an open AI foundation and cross-border digital services.")}</p></div></article>
+        <article><span>03</span><div><small>LONGGANG · FEASIBILITY</small><b>${tx("龙岗：国产异构算力适配", "Longgang: domestic heterogeneous compute")}</b><p>${tx("围绕国产算力调度、模型资产、公共服务、Agent 开发与行业验证建设实验平台。", "Build an experimental platform around domestic compute, model assets, public services, agent development and industry validation.")}</p></div></article>
       </div>
       <div class="c37-flywheel">
-        <div class="c37-flywheel-title"><small>THE CITY GROWTH FLYWHEEL</small><b>${tx("不是一次性项目，而是持续自我强化的运营系统", "Not a one-off project, but a continuously reinforcing operating system")}</b></div>
+        <div class="c37-flywheel-title"><small>LONGGANG · PROJECT-SPECIFIC ARCHITECTURE</small><b>${tx("龙岗可研中的“1 + 5 + 2”：1 个基础设施层、5 个平台、2 个行业专区", "Longgang's 1 + 5 + 2: one infrastructure layer, five platforms and two industry zones")}</b></div>
         <div class="c37-cycle">
-          <article><span>01</span><b>${tx("政府点火", "Public ignition")}</b><small>${tx("公共底座与制度入口", "Infrastructure & policy entry")}</small></article><i>→</i>
-          <article><span>02</span><b>${tx("平台运营", "Platform operations")}</b><small>${tx("算力、平台与数据收费", "Compute, platform & data billing")}</small></article><i>→</i>
-          <article><span>03</span><b>${tx("企业集聚", "Enterprise clustering")}</b><small>${tx("项目、人才、资本进入", "Projects, talent & capital enter")}</small></article><i>→</i>
-          <article><span>04</span><b>${tx("市场放大", "Market scale")}</b><small>${tx("跨境服务与生态交易", "Cross-border services & transactions")}</small></article><i>→</i>
-          <article><span>05</span><b>${tx("财政回流", "Fiscal return")}</b><small>${tx("税收、收入与再投资", "Taxes, revenue & reinvestment")}</small></article>
+          <article><span>01</span><b>${tx("模型资产管理", "Model asset management")}</b><small>${tx("模型与数据资产的托管、版本和治理", "Hosting, versioning and governance")}</small></article><i>+</i>
+          <article><span>02</span><b>${tx("公共模型服务", "Public model services")}</b><small>${tx("推理、微调、评测与统一服务入口", "Inference, tuning, evaluation and APIs")}</small></article><i>+</i>
+          <article><span>03</span><b>${tx("异构资源调度", "Heterogeneous scheduling")}</b><small>${tx("国产芯片与多类算力统一纳管", "Unified management of domestic and mixed compute")}</small></article><i>+</i>
+          <article><span>04</span><b>${tx("智能体开发", "Agent development")}</b><small>${tx("Agent 构建、工作流、工具与发布", "Agent building, workflows, tools and release")}</small></article><i>+</i>
+          <article><span>05</span><b>${tx("AI 沙箱与定制", "AI sandbox & customization")}</b><small>${tx("安全验证、行业应用和定制开发", "Safe validation, industry apps and customization")}</small></article>
         </div>
       </div>
       <div class="c37-network">
-        <div class="c37-network-head"><small>REGIONAL REPLICATION NETWORK</small><b>${tx("技术底座可复制，城市定位不复制", "The technology foundation repeats; each city's positioning remains distinct")}</b></div>
+        <div class="c37-network-head"><small>REGIONAL REPLICATION NETWORK</small><b>${tx("复制技术底座与运营方法，不复制城市定位", "Repeat the foundation and operating method, not the city's positioning")}</b></div>
         <article class="validated"><span>${tx("实践", "LIVE")}</span><b>${tx("宜昌", "Yichang")}</b><small>${tx("产业载体型", "Industry hub")}</small></article>
         <article class="planned"><span>${tx("方案", "PLAN")}</span><b>${tx("东方", "Dongfang")}</b><small>${tx("区域接口型", "Regional gateway")}</small></article>
         <article class="planned"><span>${tx("可研", "STUDY")}</span><b>${tx("深圳龙岗", "Shenzhen Longgang")}</b><small>${tx("技术底座型", "Technology foundation")}</small></article>
@@ -309,8 +309,8 @@
         <article><span>${tx("节点", "NODE")}</span><b>${tx("重庆", "Chongqing")}</b><small>${tx("开发者生态型", "Developer ecosystem")}</small></article>
         <article><span>${tx("节点", "NODE")}</span><b>${tx("四川 · 乐山", "Sichuan · Leshan")}</b><small>${tx("特色产业型", "Sector-specific AI")}</small></article>
       </div>
-      <div class="c37-standard"><b>${tx("共同标准件", "COMMON BUILDING BLOCKS")}</b><span>${tx("开源 AgenticOps 控制层", "Open AgenticOps control plane")}</span><span>${tx("异构算力与城市运营主体", "Heterogeneous compute and city operator")}</span><span>${tx("平台收入与产业生态", "Platform revenue and industry ecosystem")}</span></div>
+      <div class="c37-standard"><b>${tx("龙岗 1 + 5 + 2", "LONGGANG 1 + 5 + 2")}</b><span>${tx("1：基础设施层", "1: infrastructure layer")}</span><span>${tx("5：资产、公共服务、调度、Agent、沙箱平台", "5: assets, services, scheduling, agents and sandbox")}</span><span>${tx("2：具身智能专区 + Web3 专区", "2: embodied AI zone + Web3 zone")}</span></div>
     </div>`,
-    "可复制的是“技术底座 + 城市运营 + 产业生态”，不是一张软件清单",
-    "What repeats is the technology foundation, city operations and industry ecosystem — not a software checklist");
+    "资料依据：宜昌方案、东方国家级数字枢纽方案、龙岗国产异构算力适配场景实验平台可研",
+    "Sources: Yichang plan, Dongfang national digital hub plan and Longgang heterogeneous-compute feasibility study");
 })();

@@ -14,48 +14,118 @@
     *{box-sizing:border-box}
     html,body{margin:0;background:#DDE2E0;color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei"}
     body{overflow-y:auto;scroll-snap-type:y mandatory}
-    .slide-wrap {
-      width: 100% !important;
-      position: relative !important;
-      display: block !important;
-      overflow: hidden !important;
-    }
-    .slide {
-      width: 1600px !important;
-      height: 900px !important;
-      position: absolute !important;
-      top: 58px !important;
-      left: 50% !important;
-      margin-left: -800px !important; /* Center the 1600px width */
-      transform-origin: top center !important;
-      transform: scale(var(--scale)) !important;
-      background: var(--paper) !important;
-      overflow: hidden !important;
-    }
-  
-  @media (max-width: 1100px) {
-    .slide-wrap {
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-    .slide {
-      width: 1600px !important;
-      height: 900px !important;
-      position: absolute !important;
-      left: 50% !important;
-      margin-left: -800px !important;
-      transform-origin: top center !important;
-      transform: scale(var(--scale)) !important;
-      background: var(--paper) !important;
-      overflow: hidden !important;
-    }
-  }
-
   </style>
+  <link rel="stylesheet" href="assets/deck-base.css?v=20260702a">
   <link rel="stylesheet" href="assets/deck-appendix.css?v=20260630j">
-  <link rel="stylesheet" href="assets/deck-refine.css?v=20260701o">
+  <link rel="stylesheet" href="assets/deck-refine.css?v=20260702t">
+
+  <style id="responsive-stage">
+    html{overflow-x:hidden}
+    body{overflow-x:hidden;overflow-y:auto;scroll-snap-type:y mandatory}
+    .slide-wrap{
+      position:relative!important;
+      display:block!important;
+      width:100%!important;
+      height:100vh;
+      height:100dvh;
+      min-height:0!important;
+      padding:0!important;
+      overflow:hidden!important;
+      scroll-snap-align:start
+    }
+    .slide{
+      position:absolute!important;
+      left:50%!important;
+      top:50%!important;
+      width:1600px!important;
+      height:900px!important;
+      margin:0!important;
+      overflow:hidden!important;
+      background:var(--paper)!important;
+      transform:translate(-50%,-50%) scale(var(--scale))!important;
+      transform-origin:center center!important
+    }
+    body.stacked-stage{
+      padding-top:52px!important;
+      background:#E8ECEB;
+      scroll-snap-type:y proximity!important
+    }
+    body.stacked-stage .slide-wrap{
+      border-bottom:1px solid #CBD5D2;
+      scroll-snap-align:start
+    }
+    body.stacked-stage .slide{
+      top:10px!important;
+      transform:translateX(-50%) scale(var(--scale))!important;
+      transform-origin:top center!important
+    }
+    body.overview-mode{padding-top:50px!important}
+    body.overview-mode .slide-wrap{border:0}
+    body.overview-mode .slide{
+      top:50%!important;
+      transform:translate(-50%,-50%) scale(var(--scale))!important;
+      transform-origin:center center!important
+    }
+    @media print{
+      body{padding:0!important}
+      .slide-wrap{width:1600px!important;height:900px!important}
+      .slide{
+        position:relative!important;
+        left:auto!important;
+        top:auto!important;
+        transform:none!important;
+        transform-origin:top left!important
+      }
+    }
+    @media(max-width:900px) and (orientation:portrait){
+      .toolbar{
+        left:0!important;
+        right:0!important;
+        top:0!important;
+        height:46px!important
+      }
+    }
+    @media(orientation:landscape) and (max-height:500px){
+      .toolbar{top:6px;right:8px}
+      .toolbar button{padding:6px 8px;font-size:9px}
+    }
+    .pdf-preview-dialog{
+      width:min(1180px,94vw);
+      height:min(820px,90dvh);
+      padding:0;
+      border:1px solid var(--line);
+      background:var(--paper);
+      box-shadow:0 24px 80px rgba(17,24,23,.28)
+    }
+    .pdf-preview-dialog::backdrop{
+      background:rgba(17,24,23,.68);
+      backdrop-filter:blur(5px)
+    }
+    .pdf-preview-shell{display:flex;flex-direction:column;height:100%}
+    .pdf-preview-header{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-height:52px;
+      padding:8px 10px 8px 16px;
+      border-bottom:1px solid var(--line);
+      background:rgba(252,253,253,.96)
+    }
+    .pdf-preview-header strong{margin-right:auto;font-size:13px;letter-spacing:.04em}
+    .pdf-preview-header a,.pdf-preview-header button{
+      appearance:none;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#53605D;
+      padding:8px 11px;
+      font:600 11px Arial,"PingFang SC","Microsoft YaHei";
+      letter-spacing:.04em;
+      text-decoration:none;
+      cursor:pointer
+    }
+    .pdf-preview-header a:hover,.pdf-preview-header button:hover{border-color:var(--teal);color:var(--teal)}
+    .pdf-preview-frame{width:100%;min-height:0;flex:1;border:0;background:#E8ECEB}
+  </style>
 
 
 
@@ -89,24 +159,18 @@
   .cover-title { width: 540px !important; }
   .cover-visual { width: 1000px !important; }
 
-  /* Title vs Brand overlap fix */
-  .brand { left: 48px !important; top: 32px !important; bottom: auto !important; }
-  .section { left: 48px !important; top: 32px !important; }
-  .title { left: 48px !important; right: 48px !important; top: 96px !important; }
+  /* Stable three-level header: brand, section kicker, then title. */
+  .slide:not(#slide-38) > .brand {
+    left: 48px !important;
+    top: 24px !important;
+    bottom: auto !important;
+    width: 138px !important;
+  }
+  .section { left: 48px !important; top: 78px !important; }
+  .title { left: 48px !important; right: 48px !important; top: 116px !important; }
 
-  /* Fix z-index layers on Slide 04 */
-  .official-phase-layer { z-index: 1 !important; }
-  .official-step-layer { z-index: 2 !important; }
-
-  /* Slide 05 overlaps */
-  .company-left { width: 620px !important; }
-  .company-right { width: 720px !important; }
-
-  /* Slide 08 */
-  .product-shell { height: 530px !important; }
-
-  /* Foot overlaps (Slide 17-30) */
-  .app-stage, .app-split, .telecom-case, .app-building, .app-flywheel, .app-product-layout, .app-architecture, .app-docs {
+  /* Appendix content stage (Slide 17-30 only; city pages own their grid height). */
+  .appendix-slide:not(.city-reframe) :is(.app-stage, .app-split, .telecom-case, .app-building, .app-flywheel, .app-product-layout, .app-architecture, .app-docs) {
     height: 600px !important;
     overflow: hidden !important;
   }
@@ -121,7 +185,19 @@
     <button type="button" id="langEn">EN</button>
     <button type="button" id="overviewBtn">OVERVIEW</button>
     <button type="button" id="fullscreenBtn">FULLSCREEN</button>
+    <button type="button" id="pdfPreviewBtn" data-zh="预览 PDF" data-en="VIEW PDF">预览 PDF</button>
+    <button type="button" id="pdfDownloadBtn" data-zh="下载 PDF" data-en="DOWNLOAD PDF">下载 PDF</button>
   </div>
+  <dialog id="pdfPreviewDialog" class="pdf-preview-dialog" aria-labelledby="pdfPreviewTitle">
+    <div class="pdf-preview-shell">
+      <header class="pdf-preview-header">
+        <strong id="pdfPreviewTitle" data-zh="PDF 预览" data-en="PDF PREVIEW">PDF 预览</strong>
+        <a id="pdfPreviewDownload" href="#" download data-zh="下载 PDF" data-en="DOWNLOAD PDF">下载 PDF</a>
+        <button type="button" id="pdfPreviewClose" data-zh="关闭" data-en="CLOSE">关闭</button>
+      </header>
+      <iframe id="pdfPreviewFrame" class="pdf-preview-frame" title="PDF preview"></iframe>
+    </div>
+  </dialog>
   <div class="nav"><span id="counter">01 / 38</span><span id="navHint" data-en="↑ ↓ Navigate · O Overview">　↑ ↓ 翻页　O 总览</span></div>
 
   <div class="slide-wrap"><section class="slide hero light" data-layout="L01" id="slide-01">
@@ -184,13 +260,13 @@
         <article class="paradigm-panel devops-panel">
           <header data-en="Traditional development paradigm · DevOps">传统开发范式 · DevOps</header>
           <div class="paradigm-brand"><b>GitLab</b><span data-en="Code-centric software lifecycle">以代码为中心的软件生命周期</span></div>
-          <svg class="paradigm-loop" viewBox="0 0 650 235" aria-label="DevOps infinity lifecycle">
-            <path class="loop-left" d="M325 118C266 28 142 25 80 118C142 210 266 208 325 118"/>
-            <path class="loop-right" d="M325 118C384 28 508 25 570 118C508 210 384 208 325 118"/>
-            <path class="loop-cross" d="M80 118C142 25 266 28 325 118C384 208 508 210 570 118"/>
-            <text x="187" y="128">Dev</text><text x="455" y="128">Ops</text>
-            <text x="122" y="57">CODE</text><text x="247" y="62">PLAN</text><text x="91" y="187">BUILD</text><text x="241" y="194">TEST</text>
-            <text x="350" y="63">RELEASE</text><text x="478" y="60">DEPLOY</text><text x="506" y="190">OPERATE</text><text x="353" y="194">MONITOR</text>
+          <svg class="paradigm-loop" viewBox="0 0 650 300" aria-label="DevOps infinity lifecycle">
+            <path class="loop-left" d="M325 150C266 45 145 40 72 150C145 260 266 255 325 150"/>
+            <path class="loop-right" d="M325 150C384 45 505 40 578 150C505 260 384 255 325 150"/>
+            <path class="loop-cross" d="M72 150C145 40 266 45 325 150C384 255 505 260 578 150"/>
+            <text x="186" y="161">Dev</text><text x="464" y="161">Ops</text>
+            <text x="166" y="78">CODE</text><text x="270" y="82">PLAN</text><text x="166" y="224">BUILD</text><text x="270" y="230">TEST</text>
+            <text x="390" y="85">RELEASE</text><text x="515" y="90">DEPLOY</text><text x="515" y="210">OPERATE</text><text x="390" y="215">MONITOR</text>
           </svg>
         </article>
         <div class="paradigm-arrow">
@@ -200,51 +276,14 @@
         <article class="paradigm-panel agentic-panel">
           <header data-en="AI-native development paradigm · AgenticOps">大模型时代开发范式 · AgenticOps</header>
           <div class="paradigm-brand"><b>OpenCSG</b><span data-en="Assets, agents and continuous evolution">资产、Agent 与持续进化</span></div>
-          <svg class="paradigm-loop" viewBox="0 0 650 235" aria-label="AgenticOps infinity lifecycle">
-            <path class="loop-left" d="M325 118C266 28 142 25 80 118C142 210 266 208 325 118"/>
-            <path class="loop-right" d="M325 118C384 28 508 25 570 118C508 210 384 208 325 118"/>
-            <path class="loop-cross" d="M80 118C142 25 266 28 325 118C384 208 508 210 570 118"/>
-            <text x="160" y="128">Agentic</text><text x="455" y="128">Ops</text>
-            <text x="121" y="57">CODE</text><text x="247" y="62">PROMPT</text><text x="91" y="187">BUILD</text><text x="241" y="194">TEST</text>
-            <text x="350" y="63">RELEASE</text><text x="478" y="60">DEPLOY</text><text x="506" y="190">OPERATE</text><text x="353" y="194">RETRAIN</text>
+          <svg class="paradigm-loop" viewBox="0 0 650 300" aria-label="AgenticOps infinity lifecycle">
+            <path class="loop-left" d="M325 150C266 45 145 40 72 150C145 260 266 255 325 150"/>
+            <path class="loop-right" d="M325 150C384 45 505 40 578 150C505 260 384 255 325 150"/>
+            <path class="loop-cross" d="M72 150C145 40 266 45 325 150C384 255 505 260 578 150"/>
+            <text x="168" y="161">Agentic</text><text x="464" y="161">Ops</text>
+            <text x="166" y="78">CODE</text><text x="270" y="82">PROMPT</text><text x="166" y="224">BUILD</text><text x="270" y="230">TEST</text>
+            <text x="390" y="85">RELEASE</text><text x="515" y="90">DEPLOY</text><text x="515" y="210">OPERATE</text><text x="390" y="215">RETRAIN</text>
           </svg>
-        </article>
-      </div>
-      <div class="evolution-timeline">
-        <article>
-          <time>2008</time><b data-en="GitHub is founded">GitHub 成立</b>
-          <p data-en="Open collaboration turns code repositories into a global developer network.">开放协作让代码仓库成为全球开发者网络。</p>
-          <em>GITHUB</em>
-        </article>
-        <article>
-          <time>2012</time><b data-en="Open code collaboration becomes mainstream">开源代码协作成为主流</b>
-          <p data-en="GitHub grows beyond 2M users and 3M repositories, validating community distribution and developer network effects.">GitHub 用户超过 200 万、代码库超过 300 万，验证社区分发与开发者网络效应。</p>
-          <em>COMMUNITY</em>
-        </article>
-        <article>
-          <time>2016</time><b data-en="Enterprise DevOps and private deployment mature">企业 DevOps 与私有化成熟</b>
-          <p data-en="GitLab wins enterprise customers and validates OpenCore: open adoption plus private deployment and enterprise control.">GitLab 获得大量企业客户，验证“开放获客 + 私有部署 + 企业控制”的 OpenCore 路径。</p>
-          <em>GITLAB</em>
-        </article>
-        <article>
-          <time>2018</time><b data-en="AI assets move into open communities">AI 资产进入开源社区</b>
-          <p data-en="Hugging Face pivots toward an open AI community; Microsoft acquires GitHub for $7.5B.">Hugging Face 转向开源 AI 社区；微软以 75 亿美元收购 GitHub。</p>
-          <em>AI ASSETS</em>
-        </article>
-        <article>
-          <time>2021</time><b data-en="OpenCore proves enterprise-scale value">OpenCore 验证企业级价值</b>
-          <p data-en="GitLab lists at a market value of about $14.8B, proving that open-source distribution and enterprise software can scale together.">GitLab 上市市值约 148 亿美元，证明开源分发与企业软件可同时规模化。</p>
-          <em>OPENCORE</em>
-        </article>
-        <article>
-          <time>2023</time><b data-en="Model hubs become AI distribution infrastructure">模型 Hub 成为 AI 分发基础设施</b>
-          <p data-en="Hugging Face connects 1M+ repositories and 10K+ customers, and raises $235M at a $4.5B valuation.">Hugging Face 连接超 100 万个资源库和 1 万家客户，以 45 亿美元估值融资 2.35 亿美元。</p>
-          <em>MODEL HUB</em>
-        </article>
-        <article class="opencsg-node">
-          <time>2024</time><b data-en="OpenCSG introduces AgenticOps">OpenCSG 推出 AgenticOps</b>
-          <p data-en="With 3M+ users and 200K+ models, the lifecycle expands from code delivery to assets, agents, governance, operations and continuous evolution.">以 300 万+用户和 20 万+模型为入口，生命周期扩展到资产、Agent、治理、运营与持续进化。</p>
-          <em>3M+ USERS · 200K+ MODELS</em>
         </article>
       </div>
     </div>
@@ -267,48 +306,33 @@
         </div>
       </div>
       <div class="method-contrast">
-        <article>
-          <small data-en="MODEL ITERATION">模型迭代</small>
-          <span data-en="Models change every day">模型天天变</span>
-          <i>→</i>
-          <b data-en="Lifecycle adapts continuously">全生命周期适配变化</b>
-        </article>
-        <article>
-          <small data-en="DATA QUALITY">数据质量</small>
-          <span data-en="Data is scarce and inconsistent">数据少、质量不稳</span>
-          <i>→</i>
-          <b data-en="Feedback creates quality datasets">反馈闭环形成高质量数据</b>
-        </article>
-        <article>
-          <small data-en="TIME TO RELEASE">发布时效</small>
-          <span data-en="Apps and agents update slowly">应用 / Agent 更新慢</span>
-          <i>→</i>
-          <b data-en="Fast updates and standardized release">快速更新与标准化发布</b>
-        </article>
-        <article>
-          <small data-en="TECH STACK">技术栈</small>
-          <span data-en="Fragmented and tightly coupled">碎片化、耦合度高</span>
-          <i>→</i>
-          <b data-en="One integrated control layer">平台化、一体化控制层</b>
-        </article>
-        <article>
-          <small data-en="ITERATION LOOP">迭代方式</small>
-          <span data-en="Manual retraining and long cycles">手动重训练、周期长</span>
-          <i>→</i>
-          <b data-en="Automated feedback and continuous evolution">自动反馈、持续进化</b>
-        </article>
-        <article>
-          <small data-en="COST STRUCTURE">成本结构</small>
-          <span data-en="High trial cost and labor intensity">试错成本高、人力密集</span>
-          <i>→</i>
-          <b data-en="Resource reuse and automated cost reduction">资源复用、自动化降本</b>
-        </article>
-        <article>
-          <small data-en="SECURITY & COMPLIANCE">合规安全</small>
-          <span data-en="After-the-fact audit is difficult">事后审计、难度大</span>
-          <i>→</i>
-          <b data-en="Security is built in and workflows are auditable">安全内建、流程可审计</b>
-        </article>
+        <div class="method-summary-label">
+          <small>WHY AGENTICOPS</small>
+          <b data-en="Three changes in AI production">AI 生产的三个变化</b>
+        </div>
+        <div class="method-shifts">
+          <article>
+            <small>01 · MODEL</small>
+            <b data-en="Models keep changing">模型持续变化</b>
+            <span data-en="Versions, evaluation and release must move together">版本、评测与发布必须联动</span>
+          </article>
+          <article>
+            <small>02 · DATA</small>
+            <b data-en="Data improves through use">数据在使用中进化</b>
+            <span data-en="Runtime feedback must return to the asset layer">运行反馈必须回流资产层</span>
+          </article>
+          <article>
+            <small>03 · AGENT</small>
+            <b data-en="Agents operate continuously">Agent 持续运行</b>
+            <span data-en="Operations, security and cost need one control plane">运营、安全与成本需要统一控制</span>
+          </article>
+        </div>
+        <i class="method-summary-arrow">→</i>
+        <div class="method-summary-result">
+          <small>OPERATING ANSWER</small>
+          <b data-en="Manage AI with one continuous lifecycle">用一个持续闭环管理 AI</b>
+          <span data-en="Build · Evaluate · Release · Operate · Feedback">构建 · 评测 · 发布 · 运行 · 反馈</span>
+        </div>
       </div>
       <div class="official-map-stage">
         <img class="official-map-base" src="assets/roadmap/new_roadMap_bg.png" alt="OpenCSG AgenticOps infinity lifecycle">
@@ -390,17 +414,6 @@
             <p data-en="Proven delivery · Hong Kong gateway · Singapore and Southeast Asia · Global expansion">已落地场景验证 · 香港国际入口 · 新加坡与东南亚连接 · 面向全球拓展</p>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="company-advantages">
-      <article><b data-en="Sovereign by design">主权内建</b><span data-en="Data, models, runtime and decisions remain under customer control; deployable on-premises, in private cloud or air-gapped environments.">数据、模型、运行与决策留在客户控制域；支持本地、私有云与隔离环境。</span></article>
-      <article><b data-en="Open & interoperable">开放互操作</b><span data-en="An open-source foundation connects multiple models, assets, tools and MCP/API ecosystems without vendor lock-in.">以开源底座连接多模型、资产、工具与 MCP/API 生态，避免单一厂商锁定。</span></article>
-      <article><b data-en="Enterprise ready">企业生产就绪</b><span data-en="Governance, identity, audit, cost and lifecycle operations are built into one operating layer; internationally validated by IMDA Spark.">治理、身份、审计、成本与生命周期运营内建于同一控制层，并获 IMDA Spark 国际生态验证。</span></article>
-    </div>
-    <div class="company-tags">
-      <div class="tag-cloud">
-        <span class="xl" data-en="Open Source">开源</span><span class="lg" data-en="Integrated AgenticOps">一体化 AgenticOps</span><span>GitLab</span>
-        <span class="lg" data-en="OpenCore Model">OpenCore 模式</span><span data-en="Private Hugging Face">私有化 Hugging Face</span><span class="lg" data-en="Private OPC Platform">私有化 OPC 平台</span>
       </div>
     </div>
     <div class="foot"><span>公司定位：开放的 AgenticOps 基础设施</span><span>05</span></div>
@@ -485,9 +498,9 @@
         <div class="product"><div><h3>AgenticHub</h3><div class="role">Agent 构建、发布与持续运营</div><ul><li>Agent / Workflow / Skill 的构建、编排与版本管理</li><li>测试、评测、沙箱、发布门禁与人工确认</li><li>生产监控、反馈回流、成本、SLA 与持续优化</li><li>多团队协作、企业工具接入与业务运行治理</li><li>开放 API、Webhook 与企业系统集成</li></ul><div class="product-meta"><span>Build → Run</span><span>Eval / Sandbox</span><span>Observe</span></div></div><div class="screen has-image"><img src="assets/product-agentichub.png" alt="AgenticHub 产品界面"></div></div>
       </div>
       <div class="edition personal-edition">
-        <div class="edition-label"><em data-en="PERSONAL AI / OPC">PERSONAL AI / OPC</em><b>个人 AI 工作系统<br>（OPC）</b><span>开发者、Solo Founder 与个人知识工作者</span></div>
+        <div class="edition-label"><em data-en="PERSONAL AI / OPC">PERSONAL AI / OPC</em><b><span data-en="Personal AI Work System">个人 AI 工作系统</span><br><span data-en="(OPC)">（OPC）</span></b><span>开发者、Solo Founder 与个人知识工作者</span></div>
         <div class="product"><div><h3>CSGHub-Lite</h3><div class="role">本地 AI 资产与运行底座</div><ul><li>一键启动本地模型，支持 GGUF 与 SafeTensors 转换</li><li>兼容 Ollama API 的 REST 服务与流式对话</li><li>模型下载、断点续传、持久化和跨平台运行</li><li>私有知识、长期记忆与本地开发工具接入</li><li>本地搜索、插件与快捷工作流</li></ul><div class="product-meta"><span>Local-first</span><span>Offline</span><span>Cross-platform</span></div></div><div class="screen has-image"><img src="assets/product-lite.png" alt="CSGHub-Lite 产品界面"></div></div>
-        <div class="product"><div><h3>CSGClaw</h3><div class="role">个人多 Agent 协同执行系统</div><ul><li>Manager–Worker 角色分工与并行任务拆解</li><li>Agent / Skill 发现、组合、调用与执行网络</li><li>本地权限、沙箱、人机确认和可回放过程</li><li>从一次性对话升级为长期运行的个人生产系统</li><li>任务日志、回放与结果归档</li></ul><div class="product-meta"><span>Multi-Agent</span><span>Skill Network</span><span>Human-in-loop</span></div></div><div class="screen has-image"><img src="assets/product-claw.png" alt="CSGClaw 产品界面"></div></div>
+        <div class="product"><div><h3>CSGClaw</h3><div class="role">个人多 Agent 协同执行系统</div><ul><li>Manager–Worker 角色分工与并行任务拆解</li><li>Agent / Skill 发现、组合、调用与执行网络</li><li>本地权限、沙箱、人机确认和可回放过程</li><li>从一次性对话升级为长期运行的个人生产系统</li><li>任务日志、回放与结果归档</li></ul><div class="product-meta"><span>Multi-Agent</span><span>Skill Network</span><span>Human-in-loop</span></div></div><div class="screen has-image csgclaw-architecture"><img src="assets/appendix/slide-13-image-01.png" alt="CSGClaw 多 Agent 协同架构"></div></div>
       </div>
       <div class="shared-bottom"><div>统一用户与身份</div><div>统一资产协议</div><div>统一模型与网关</div><div>统一观测与评测</div><div>统一安全与审计</div><div>开放 API / MCP / SDK</div></div>
     </div>
@@ -839,7 +852,7 @@
     <div class="section"><span class="section-zh">创始人兼 CEO 与核心团队　</span><span style="font-size:13px;color:#697472;font-weight:400">Founder & Core Team</span></div>
     <h2 class="title">CEO 主导战略与产品，核心骨干覆盖架构、研发、产品和治理</h2>
     <div class="team-layout">
-      <div class="ceo-photo"><img src="assets/ceo-clean.png" alt="陈冉"><div class="photo-label"><b>陈冉</b><span>创始人 / CEO</span><small>FORMER FOUNDER & CEO · JIHU GITLAB</small></div><div class="founder-tags"><span>Open Source</span><span>Enterprise Software</span><span>AgenticOps</span></div></div>
+      <div class="ceo-photo"><img src="assets/ceo-portrait.jpg" alt="陈冉"><div class="photo-label"><b>陈冉</b><span>创始人 / CEO</span><small>FORMER FOUNDER & CEO · JIHU GITLAB</small></div><div class="founder-tags"><span>Open Source</span><span>Enterprise Software</span><span>AgenticOps</span></div></div>
       <div class="ceo-story">
         <p class="leadline" data-en="Former founder and CEO of JiHu GitLab, with long-term judgment across open source, enterprise software and commercialization.">极狐 GitLab 前创始人 CEO，长期专注开源、企业软件与商业化路径。</p>
         <div class="ceo-credentials">
@@ -931,8 +944,7 @@
   </section></div>
 
   <script src="assets/deck-appendix.js?v=20260701p"></script>
-  <script src="assets/deck-city-reframe.js?v=20260701p"></script>
-  <script src="assets/deck-slide03-replica.js?v=20260701p"></script>
+  <script src="assets/deck-city-reframe.js?v=20260702c"></script>
   <script src="assets/deck-en-extra.js?v=20260701o"></script>
   <script>
     const EN={
@@ -1278,35 +1290,41 @@
       const u=new URL(location.href);u.searchParams.set('lang',currentLang);history.replaceState(null,'',u);
       buildMobileReaders();
     }
+    function viewportSize(){
+      const viewport=window.visualViewport;
+      return {
+        width:Math.round(viewport?.width||document.documentElement.clientWidth||innerWidth),
+        height:Math.round(viewport?.height||document.documentElement.clientHeight||innerHeight)
+      };
+    }
+    function overviewColumns(width){return width<640?1:width<1000?2:3}
     function fit(){
+      const {width,height}=viewportSize();
       if(overview){
-        const cols=innerWidth<1000?2:3,gap=10,pad=20;
-        const cellWidth=(innerWidth-pad-gap*(cols-1))/cols;
+        const cols=overviewColumns(width),gap=10,pad=20;
+        const cellWidth=(width-pad-gap*(cols-1))/cols;
         const s=Math.min(.3,cellWidth/1600);
         document.documentElement.style.setProperty('--scale',s);
-        wraps.forEach(w=>{w.style.height=(900*s)+'px';const r=w.querySelector('.mobile-reader');if(r)r.style.marginTop='0'});
+        document.body.classList.remove('stacked-stage','compact-stage');
+        wraps.forEach(w=>{w.style.height=(900*s)+'px'});
         return;
       }
-      const portraitReader=innerWidth<=900&&innerHeight>innerWidth;
-      const compactStage=!portraitReader&&innerWidth<=1100&&(innerWidth/innerHeight)<1.48;
-      document.body.classList.toggle('compact-stage',compactStage);
-      if(portraitReader){
-        const s=(innerWidth-20)/1600;
+      const portrait=width<=900&&height>width;
+      const compact=width<=1100&&(width/height)<1.48;
+      const stacked=portrait||compact;
+      document.body.classList.toggle('stacked-stage',stacked);
+      document.body.classList.remove('compact-stage');
+      if(stacked){
+        const s=Math.max(0,(width-20)/1600);
         document.documentElement.style.setProperty('--scale',s);
         wraps.forEach(w=>{
-          w.style.height=(900*s+64)+'px';w.style.minHeight='0';w.style.paddingTop='52px';
-        });
-      }else if(compactStage){
-        const s=(innerWidth-20)/1600;
-        document.documentElement.style.setProperty('--scale',s);
-        wraps.forEach(w=>{
-          w.style.height=(900*s+64)+'px';w.style.minHeight='0';w.style.paddingTop='52px';
+          w.style.height=(900*s+20)+'px';
         });
       }else{
-        const s=Math.min(innerWidth/1600,innerHeight/900)*.975;
+        const s=Math.max(0,Math.min((width-20)/1600,(height-20)/900));
         document.documentElement.style.setProperty('--scale',s);
         wraps.forEach(w=>{
-          w.style.height='100vh';w.style.minHeight=innerHeight<620?'0':'560px';w.style.paddingTop='0';
+          w.style.height=height+'px';
         });
       }
     }
@@ -1323,7 +1341,7 @@
       document.body.classList.toggle('overview-mode',overview);
       if(overview){
         document.body.style.scrollSnapType='none';document.body.style.display='grid';
-        document.body.style.gridTemplateColumns=innerWidth<1000?'repeat(2,1fr)':'repeat(3,1fr)';
+        document.body.style.gridTemplateColumns=`repeat(${overviewColumns(viewportSize().width)},1fr)`;
         document.body.style.gap='10px';document.body.style.padding='50px 10px 10px';
         wraps.forEach(w=>{w.style.minHeight='0';w.style.paddingTop='0';w.style.background='#CBD2D0'});
       }else{
@@ -1332,21 +1350,71 @@
       fit();
     }
     async function fullscreen(){
+      if(document.body.classList.contains('pseudo-fullscreen')){
+        document.body.classList.remove('pseudo-fullscreen');
+        fit();
+        return;
+      }
       const root=document.documentElement;
       const enter=root.requestFullscreen||root.webkitRequestFullscreen;
       const leave=document.exitFullscreen||document.webkitExitFullscreen;
       try{
-        if(!(document.fullscreenElement||document.webkitFullscreenElement))await enter?.call(root);
+        if(!(document.fullscreenElement||document.webkitFullscreenElement)){
+          await enter?.call(root);
+          if(!(document.fullscreenElement||document.webkitFullscreenElement))document.body.classList.add('pseudo-fullscreen');
+        }
         else await leave?.call(document);
-      }catch(error){console.warn('Fullscreen is not available in this browser context.',error)}
+      }catch(error){
+        document.body.classList.add('pseudo-fullscreen');
+        console.warn('Native fullscreen is unavailable; using presentation focus mode.',error);
+      }
+      fit();
+    }
+    function currentPdfFile(){
+      return currentLang==='en'
+        ?'OpenCSG_Investor_Deck_2026_EN.pdf'
+        :'OpenCSG_Investor_Deck_2026_ZH.pdf';
+    }
+    function previewPdf(){
+      const file=currentPdfFile();
+      const dialog=document.getElementById('pdfPreviewDialog');
+      document.getElementById('pdfPreviewFrame').src=file;
+      document.getElementById('pdfPreviewDownload').href=file;
+      dialog.showModal();
+    }
+    function downloadPdf(){
+      const file=currentPdfFile();
+      const link=document.createElement('a');
+      link.href=file;
+      link.download=file;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
     }
     zhBtn.addEventListener('click',()=>setLang('zh'));enBtn.addEventListener('click',()=>setLang('en'));
     document.getElementById('overviewBtn').addEventListener('click',setOverview);
     document.getElementById('fullscreenBtn').addEventListener('click',fullscreen);
-    addEventListener('resize',()=>{if(overview){document.body.style.gridTemplateColumns=innerWidth<1000?'repeat(2,1fr)':'repeat(3,1fr)'}fit()});
+    document.getElementById('pdfPreviewBtn').addEventListener('click',previewPdf);
+    document.getElementById('pdfDownloadBtn').addEventListener('click',downloadPdf);
+    document.getElementById('pdfPreviewClose').addEventListener('click',()=>{
+      document.getElementById('pdfPreviewDialog').close();
+    });
+    document.getElementById('pdfPreviewDialog').addEventListener('close',()=>{
+      document.getElementById('pdfPreviewFrame').removeAttribute('src');
+    });
+    function refit(){
+      if(overview)document.body.style.gridTemplateColumns=`repeat(${overviewColumns(viewportSize().width)},1fr)`;
+      fit();
+    }
+    addEventListener('resize',refit);
+    window.visualViewport?.addEventListener('resize',refit);
     addEventListener('scroll',updateCounter,{passive:true});
     addEventListener('touchstart',e=>touchY=e.changedTouches[0].clientY,{passive:true});
-    addEventListener('touchend',e=>{if(overview)return;const dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dy)>55)go(currentIndex()+(dy<0?1:-1))},{passive:true});
+    addEventListener('touchend',e=>{
+      if(overview||document.body.classList.contains('stacked-stage'))return;
+      const dy=e.changedTouches[0].clientY-touchY;
+      if(Math.abs(dy)>55)go(currentIndex()+(dy<0?1:-1));
+    },{passive:true});
     document.querySelectorAll('[data-pricing-tab]').forEach(button=>{
       button.addEventListener('click',()=>{
         const tier=button.dataset.pricingTab;
@@ -1369,6 +1437,7 @@
       if(e.key==='ArrowUp'||e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(idx-1)}
       if(e.key.toLowerCase()==='o')setOverview();if(e.key.toLowerCase()==='e')setLang('en');if(e.key.toLowerCase()==='c')setLang('zh');
       if(e.key==='Home')go(0);if(e.key==='End')go(wraps.length-1);if(e.key.toLowerCase()==='f')fullscreen();
+      if(e.key==='Escape'&&document.body.classList.contains('pseudo-fullscreen')){document.body.classList.remove('pseudo-fullscreen');fit()}
     });
     setLang(new URLSearchParams(location.search).get('lang')||'zh');fit();updateCounter();
   </script>
