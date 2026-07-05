@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="assets/deck-refine.css?v=20260702t">
   <link rel="stylesheet" href="assets/deck-slide03-earliest.css?v=20260705g">
   <link rel="stylesheet" href="assets/deck-review-20260705.css?v=20260705g">
+  <link rel="stylesheet" href="assets/deck-tighten-20260705.css?v=20260705a">
 
   <style id="responsive-stage">
     html{overflow-x:hidden}
@@ -70,16 +71,34 @@
       transform-origin:center center!important
     }
     @media print{
-      body{padding:0!important}
-      .slide-wrap{width:1600px!important;height:900px!important;page-break-after:always;break-after:page}
+      :root{--print-w:1600px;--print-h:900px;--print-scale:1}
+      body{padding:0!important;background:#fff!important}
+      .toolbar,.nav{display:none!important}
+      .slide-wrap{
+        width:var(--print-w)!important;
+        height:var(--print-h)!important;
+        page-break-after:always;
+        break-after:page;
+        overflow:hidden!important;
+        position:relative!important;
+        display:block!important;
+        margin:0!important;
+        padding:0!important
+      }
       .slide-wrap:last-of-type{page-break-after:auto;break-after:auto}
       .slide-wrap[style*="display: none"]{display:none!important}
       .slide{
-        position:relative!important;
-        left:auto!important;
-        top:auto!important;
-        transform:none!important;
-        transform-origin:top left!important
+        position:absolute!important;
+        left:50%!important;
+        top:50%!important;
+        width:1600px!important;
+        height:900px!important;
+        margin:0!important;
+        margin-left:-800px!important;
+        margin-top:-450px!important;
+        transform:scale(var(--print-scale))!important;
+        transform-origin:center center!important;
+        overflow:hidden!important
       }
     }
     @media(max-width:900px) and (orientation:portrait){
