@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="assets/deck-base.css?v=20260702a">
   <link rel="stylesheet" href="assets/deck-appendix.css?v=20260630j">
   <link rel="stylesheet" href="assets/deck-refine.css?v=20260702t">
+  <link rel="stylesheet" href="assets/deck-slide03-earliest.css?v=20260705g">
+  <link rel="stylesheet" href="assets/deck-review-20260705.css?v=20260705g">
 
   <style id="responsive-stage">
     html{overflow-x:hidden}
@@ -68,7 +70,9 @@
     }
     @media print{
       body{padding:0!important}
-      .slide-wrap{width:1600px!important;height:900px!important}
+      .slide-wrap{width:1600px!important;height:900px!important;page-break-after:always;break-after:page}
+      .slide-wrap:last-of-type{page-break-after:auto;break-after:auto}
+      .slide-wrap[style*="display: none"]{display:none!important}
       .slide{
         position:relative!important;
         left:auto!important;
@@ -125,6 +129,104 @@
     }
     .pdf-preview-header a:hover,.pdf-preview-header button:hover{border-color:var(--teal);color:var(--teal)}
     .pdf-preview-frame{width:100%;min-height:0;flex:1;border:0;background:#E8ECEB}
+
+    /* ============================================================
+       PDF Export Options Dialog
+       ============================================================ */
+    .export-options-dialog{
+      width:min(560px,94vw);
+      padding:0;
+      border:1px solid var(--line);
+      background:var(--paper);
+      box-shadow:0 24px 80px rgba(17,24,23,.28)
+    }
+    .export-options-dialog::backdrop{
+      background:rgba(17,24,23,.68);
+      backdrop-filter:blur(5px)
+    }
+    .export-shell{display:flex;flex-direction:column;max-height:88dvh}
+    .export-header{
+      display:flex;align-items:center;gap:10px;min-height:52px;
+      padding:8px 16px;border-bottom:1px solid var(--line);
+      background:rgba(252,253,253,.96)
+    }
+    .export-header strong{margin-right:auto;font-size:13px;letter-spacing:.04em}
+    .export-body{
+      padding:18px 22px 6px;overflow:auto;display:flex;flex-direction:column;gap:18px
+    }
+    .export-field{display:flex;flex-direction:column;gap:8px}
+    .export-field > label{
+      font-size:11px;letter-spacing:.08em;font-weight:700;color:var(--teal2);
+      text-transform:uppercase
+    }
+    .export-field .hint{font-size:11px;color:var(--muted);line-height:1.5}
+    .export-row{display:flex;flex-wrap:wrap;gap:8px}
+    .export-chip{
+      appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);
+      padding:8px 12px;font:600 12px Arial,"PingFang SC","Microsoft YaHei";
+      letter-spacing:.04em;cursor:pointer;border-radius:4px
+    }
+    .export-chip:hover{border-color:var(--teal);color:var(--teal)}
+    .export-chip.active{background:var(--teal);border-color:var(--teal);color:#fff}
+    .export-chip input{display:none}
+    .export-range{
+      display:flex;align-items:center;gap:8px;flex-wrap:wrap
+    }
+    .export-range input[type="text"]{
+      width:120px;padding:8px 10px;border:1px solid var(--line);
+      font:600 12px Arial;letter-spacing:.04em;border-radius:4px;background:#fff;
+      text-transform:uppercase
+    }
+    .export-range span{color:var(--muted);font-size:11px}
+    .export-check{
+      display:flex;align-items:center;gap:10px;
+      font:600 12px Arial;letter-spacing:.04em;color:var(--ink);
+      padding:6px 0;cursor:pointer
+    }
+    .export-check input{accent-color:var(--teal);width:16px;height:16px}
+    .export-text-input{
+      width:100%;padding:8px 10px;border:1px solid var(--line);
+      font:600 12px Arial;border-radius:4px;background:#fff;letter-spacing:.04em
+    }
+    .export-summary{
+      border-top:1px solid var(--line);background:#F4F8F7;
+      padding:10px 16px;font-size:11px;color:var(--teal2);
+      letter-spacing:.04em;line-height:1.5
+    }
+    .export-summary b{color:var(--ink)}
+    .export-footer{
+      display:flex;justify-content:flex-end;gap:10px;
+      padding:12px 16px;border-top:1px solid var(--line);background:#fff
+    }
+    .export-footer button{
+      appearance:none;border:1px solid var(--line);background:#fff;color:#53605D;
+      padding:9px 14px;font:600 11px Arial,"PingFang SC","Microsoft YaHei";
+      letter-spacing:.04em;cursor:pointer
+    }
+    .export-footer button.primary{background:var(--teal);border-color:var(--teal);color:#fff}
+    .export-footer button:hover{border-color:var(--teal);color:var(--teal)}
+    .export-footer button.primary:hover{color:#fff;background:var(--teal2)}
+
+    /* Watermark overlay rendered on every slide when enabled. */
+    .slide-wrap{position:relative}
+    body.watermark .slide-wrap::after{
+      content:attr(data-watermark-text);
+      position:absolute;inset:0;
+      display:flex;align-items:center;justify-content:center;
+      font:700 96px/1 Arial,"PingFang SC","Microsoft YaHei";
+      color:rgba(35,135,123,.16);
+      letter-spacing:.12em;
+      transform:rotate(-30deg);
+      pointer-events:none;
+      z-index:9000;
+      white-space:nowrap;
+      mix-blend-mode:multiply
+    }
+    @media print{
+      body.watermark .slide-wrap::after{
+        position:fixed;inset:0
+      }
+    }
   </style>
 
 
@@ -159,15 +261,30 @@
   .cover-title { width: 540px !important; }
   .cover-visual { width: 1000px !important; }
 
-  /* Stable three-level header: brand, section kicker, then title. */
+  /* Shared deck header: narrative on the left, brand in a dedicated right zone. */
   .slide:not(#slide-38) > .brand {
-    left: 48px !important;
-    top: 24px !important;
+    left: auto !important;
+    right: 48px !important;
+    top: 26px !important;
     bottom: auto !important;
     width: 138px !important;
   }
-  .section { left: 48px !important; top: 78px !important; }
-  .title { left: 48px !important; right: 48px !important; top: 116px !important; }
+  .slide:not(.hero) > .topline {
+    left: 48px !important;
+    right: 220px !important;
+    top: 72px !important;
+  }
+  .section { left: 48px !important; top: 30px !important; }
+  .title { left: 48px !important; right: 48px !important; top: 94px !important; }
+
+  @media (min-width:901px), (orientation:landscape) and (min-width:700px) {
+    .toolbar {
+      left: 50% !important;
+      right: auto !important;
+      margin-left: -220px !important;
+      transform: none !important;
+    }
+  }
 
   /* Appendix content stage (Slide 17-30 only; city pages own their grid height). */
   .appendix-slide:not(.city-reframe) :is(.app-stage, .app-split, .telecom-case, .app-building, .app-flywheel, .app-product-layout, .app-architecture, .app-docs) {
@@ -187,6 +304,7 @@
     <button type="button" id="fullscreenBtn">FULLSCREEN</button>
     <button type="button" id="pdfPreviewBtn" data-zh="预览 PDF" data-en="VIEW PDF">预览 PDF</button>
     <button type="button" id="pdfDownloadBtn" data-zh="下载 PDF" data-en="DOWNLOAD PDF">下载 PDF</button>
+    <button type="button" id="pdfExportBtn" data-zh="导出选项" data-en="EXPORT OPTIONS">导出选项</button>
   </div>
   <dialog id="pdfPreviewDialog" class="pdf-preview-dialog" aria-labelledby="pdfPreviewTitle">
     <div class="pdf-preview-shell">
@@ -198,9 +316,100 @@
       <iframe id="pdfPreviewFrame" class="pdf-preview-frame" title="PDF preview"></iframe>
     </div>
   </dialog>
-  <div class="nav"><span id="counter">01 / 38</span><span id="navHint" data-en="↑ ↓ Navigate · O Overview">　↑ ↓ 翻页　O 总览</span></div>
 
-  <div class="slide-wrap"><section class="slide hero light" data-layout="L01" id="slide-01">
+  <dialog id="exportDialog" class="export-options-dialog" aria-labelledby="exportDialogTitle">
+    <div class="export-shell">
+      <header class="export-header">
+        <strong id="exportDialogTitle" data-zh="PDF 导出选项" data-en="PDF EXPORT OPTIONS">PDF 导出选项</strong>
+      </header>
+      <div class="export-body">
+        <div class="export-field">
+          <label data-zh="语言版本" data-en="LANGUAGE">语言版本</label>
+          <div class="export-row" data-group="lang">
+            <button type="button" class="export-chip active" data-value="zh" data-zh="中文版" data-en="CHINESE">中文版</button>
+            <button type="button" class="export-chip" data-value="en" data-zh="英文版" data-en="ENGLISH">英文版</button>
+            <button type="button" class="export-chip" data-value="both" data-zh="中英双语" data-en="BILINGUAL">中英双语</button>
+          </div>
+        </div>
+
+        <div class="export-field">
+          <label data-zh="输出比例" data-en="PAGE RATIO">输出比例</label>
+          <div class="export-row" data-group="ratio">
+            <button type="button" class="export-chip active" data-value="16:9" data-zh="16:9 宽屏" data-en="16:9 WIDESCREEN">16:9 宽屏</button>
+            <button type="button" class="export-chip" data-value="4:3" data-zh="4:3 标准" data-en="4:3 STANDARD">4:3 标准</button>
+            <button type="button" class="export-chip" data-value="a4-portrait" data-zh="A4 纵向" data-en="A4 PORTRAIT">A4 纵向</button>
+            <button type="button" class="export-chip" data-value="a4-landscape" data-zh="A4 横向" data-en="A4 LANDSCAPE">A4 横向</button>
+            <button type="button" class="export-chip" data-value="letter-landscape" data-zh="Letter 横向" data-en="LETTER LANDSCAPE">Letter 横向</button>
+          </div>
+          <div class="hint" id="ratioHint" data-zh="16:9 = 1600×900px，与幻灯片源比例一致。" data-en="16:9 = 1600×900px, matches the slide source ratio.">16:9 = 1600×900px，与幻灯片源比例一致。</div>
+        </div>
+
+        <div class="export-field">
+          <label data-zh="章节范围（可多选）" data-en="SECTIONS (MULTI-SELECT)">章节范围（可多选）</label>
+          <div class="export-row" data-group="section" id="sectionRow">
+            <label class="export-check section-check"><input type="checkbox" value="cover" checked><span data-zh="封面" data-en="COVER">封面</span></label>
+            <label class="export-check section-check"><input type="checkbox" value="main" checked><span data-zh="主干部" data-en="MAIN">主干部</span></label>
+            <label class="export-check section-check"><input type="checkbox" value="case"><span data-zh="案例验证" data-en="CASE">案例验证</span></label>
+            <label class="export-check section-check"><input type="checkbox" value="product"><span data-zh="产品介绍" data-en="PRODUCT">产品介绍</span></label>
+            <label class="export-check section-check"><input type="checkbox" value="appendix"><span data-zh="附录与荣誉" data-en="APPENDIX">附录与荣誉</span></label>
+          </div>
+          <div class="export-row section-presets" data-group="section-presets">
+            <button type="button" class="export-chip" data-preset="all" data-zh="全选" data-en="ALL">全选</button>
+            <button type="button" class="export-chip" data-preset="core" data-zh="主干 + 案例" data-en="CORE + CASE">主干 + 案例</button>
+            <button type="button" class="export-chip" data-preset="none" data-zh="清空" data-en="NONE">清空</button>
+            <button type="button" class="export-chip" data-preset="investor" data-zh="投资人精简版" data-en="INVESTOR LITE">投资人精简版</button>
+            <button type="button" class="export-chip" data-preset="full" data-zh="完整版" data-en="FULL DECK">完整版</button>
+          </div>
+          <div class="hint" id="sectionHint" data-zh="主干部 = 投资论点、公司概览、市场、商业模式等。投资人精简版 = 封面 + 主干。" data-en="Main = thesis, company, market, business model. Investor lite = cover + main.">主干部 = 投资论点、公司概览、市场、商业模式等。投资人精简版 = 封面 + 主干。</div>
+        </div>
+
+        <div class="export-field">
+          <label data-zh="指定页码（可选）" data-en="PAGE RANGE (OPTIONAL)">指定页码（可选）</label>
+          <div class="export-range">
+            <input type="text" id="pageFrom" placeholder="1" data-zh-placeholder="起始" data-en-placeholder="FROM">
+            <span data-zh="至" data-en="TO">至</span>
+            <input type="text" id="pageTo" placeholder="15" data-zh-placeholder="结束" data-en-placeholder="TO">
+            <span class="hint" data-zh="范围基于原始 PDF（1-38）。留空 = 全部命中章节的页。" data-en="Range applies to the source deck (1-38). Empty = all slides in selected sections.">范围基于原始 PDF（1-38）。留空 = 全部命中章节的页。</span>
+          </div>
+          <div class="export-row" style="margin-top:6px">
+            <input type="text" class="export-text-input" id="pageList" placeholder="如：1,3,5-8,11" data-zh-placeholder="如：1,3,5-8,11" data-en-placeholder="e.g. 1,3,5-8,11" style="flex:1">
+          </div>
+          <div class="hint" data-zh="手动指定页码（与章节取并集）。例如 1-5 表示 1 到 5 页。" data-en="Manual page list (combined with sections). e.g. 1-5 = pages 1 through 5.">手动指定页码（与章节取并集）。例如 1-5 表示 1 到 5 页。</div>
+        </div>
+
+        <div class="export-field">
+          <label data-zh="水印" data-en="WATERMARK">水印</label>
+          <label class="export-check"><input type="checkbox" id="watermarkEnabled"><span data-zh="启用对角线水印" data-en="Enable diagonal watermark">启用对角线水印</span></label>
+          <input type="text" class="export-text-input" id="watermarkText" placeholder="CONFIDENTIAL · OpenCSG 2026" data-zh-placeholder="输入水印文字" data-en-placeholder="Watermark text">
+          <div class="hint" data-zh="将作为半透明水印叠加在每张幻灯片上。" data-en="Renders a translucent overlay across every page.">将作为半透明水印叠加在每张幻灯片上。</div>
+        </div>
+
+        <div class="export-field">
+          <label data-zh="输出格式" data-en="FORMAT">输出格式</label>
+          <div class="export-row" data-group="format">
+            <button type="button" class="export-chip active" data-value="pdf" data-zh="PDF" data-en="PDF">PDF</button>
+            <button type="button" class="export-chip" data-value="pptx" data-zh="图片型 PPTX" data-en="IMAGE PPTX">图片型 PPTX</button>
+            <button type="button" class="export-chip" data-value="both" data-zh="PDF + PPTX" data-en="PDF + PPTX">PDF + PPTX</button>
+          </div>
+          <div class="hint" data-zh="PPTX = 每页幻灯片渲染为图片，保留原版排版，可在 PowerPoint / Keynote 中二次编辑。" data-en="PPTX = each slide rendered as an image, preserves the original layout and is editable in PowerPoint / Keynote.">PPTX = 每页幻灯片渲染为图片，保留原版排版，可在 PowerPoint / Keynote 中二次编辑。</div>
+        </div>
+
+        <div class="export-field">
+          <label data-zh="文件名" data-en="FILE NAME">文件名</label>
+          <input type="text" class="export-text-input" id="exportFilename" placeholder="OpenCSG_Investor_Deck_2026_ZH.pdf" data-zh-placeholder="OpenCSG_Investor_Deck_2026_ZH.pdf" data-en-placeholder="OpenCSG_Investor_Deck_2026_EN.pdf">
+        </div>
+
+        <div class="export-summary" id="exportSummary">—</div>
+      </div>
+      <footer class="export-footer">
+        <button type="button" id="exportCancel" data-zh="取消" data-en="CANCEL">取消</button>
+        <button type="button" id="exportApply" class="primary" data-zh="开始导出" data-en="EXPORT">开始导出</button>
+      </footer>
+    </div>
+  </dialog>
+  <div class="nav"><span id="counter">01 / 15</span><span id="navHint" data-en="↑ ↓ Navigate · O Overview">　↑ ↓ 翻页　O 总览</span></div>
+
+  <div class="slide-wrap" data-section="cover"><section class="slide hero light" data-layout="L01" id="slide-01">
     <div class="grid-bg"></div>
     <img class="cover-brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
     <div class="cover-wordmark">OpenCSG</div>
@@ -217,7 +426,7 @@
     </div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L05" id="slide-02">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L05" id="slide-02">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">投资论点　</span><span style="font-size:13px;color:#697472;font-weight:400">Investment Thesis</span></div>
     <h2 class="title" data-en="Open-source distribution, enterprise monetization and global replication form one growth engine">开源建立全球分发，企业生产完成变现，区域节点推动全球复制</h2>
@@ -251,7 +460,7 @@
     <div class="foot"><span>OPENCSG · CONFIDENTIAL</span><span>02</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-03">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-03">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Paradigm Evolution　">范式演进　</span><span style="font-size:13px;color:#697472;font-weight:400">From DevOps to AgenticOps</span></div>
     <h2 class="title" data-en="DevOps manages software delivery; AgenticOps manages AI production and continuous improvement">DevOps 管理软件交付，AgenticOps 管理 AI 生产与持续进化</h2>
@@ -259,30 +468,74 @@
       <div class="paradigm-compare">
         <article class="paradigm-panel devops-panel">
           <header data-en="Traditional development paradigm · DevOps">传统开发范式 · DevOps</header>
-          <div class="paradigm-brand"><b>GitLab</b><span data-en="Code-centric software lifecycle">以代码为中心的软件生命周期</span></div>
-          <svg class="paradigm-loop" viewBox="0 0 650 300" aria-label="DevOps infinity lifecycle">
-            <path class="loop-left" d="M325 150C266 45 145 40 72 150C145 260 266 255 325 150"/>
-            <path class="loop-right" d="M325 150C384 45 505 40 578 150C505 260 384 255 325 150"/>
-            <path class="loop-cross" d="M72 150C145 40 266 45 325 150C384 255 505 260 578 150"/>
-            <text x="186" y="161">Dev</text><text x="464" y="161">Ops</text>
-            <text x="166" y="78">CODE</text><text x="270" y="82">PLAN</text><text x="166" y="224">BUILD</text><text x="270" y="230">TEST</text>
-            <text x="390" y="85">RELEASE</text><text x="515" y="90">DEPLOY</text><text x="515" y="210">OPERATE</text><text x="390" y="215">MONITOR</text>
+          <div class="paradigm-brand">
+            <span class="paradigm-logo gitlab"><i></i><b>GitLab</b></span>
+            <span class="paradigm-tag" data-en="Code-centric software lifecycle">以代码为中心的软件生命周期</span>
+          </div>
+          <svg class="paradigm-loop" viewBox="0 0 720 320" aria-label="DevOps infinity lifecycle">
+            <defs>
+              <linearGradient id="devOpsDev" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#7FC4F0"/>
+                <stop offset="100%" stop-color="#3FA8E5"/>
+              </linearGradient>
+              <linearGradient id="devOpsOps" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3FA8E5"/>
+                <stop offset="100%" stop-color="#1F7FC4"/>
+              </linearGradient>
+            </defs>
+            <path class="loop-left" d="M360 170C295 50 150 45 70 170C150 295 295 290 360 170" fill="none" stroke="url(#devOpsDev)" stroke-width="44" stroke-linecap="round"/>
+            <path class="loop-right" d="M360 170C425 50 570 45 650 170C570 295 425 290 360 170" fill="none" stroke="url(#devOpsOps)" stroke-width="44" stroke-linecap="round"/>
+            <path class="loop-cross" d="M70 170C150 45 295 50 360 170C425 290 570 295 650 170" fill="none" stroke="#1F7FC4" stroke-width="36" stroke-linecap="round"/>
+            <text x="190" y="185" font-size="46" font-weight="800" fill="#3FA8E5" text-anchor="middle">Dev</text>
+            <text x="530" y="185" font-size="46" font-weight="800" fill="#1F7FC4" text-anchor="middle">Ops</text>
+            <g font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">
+              <text x="200" y="84">CODE</text>
+              <text x="318" y="92">PLAN</text>
+              <text x="200" y="266">BUILD</text>
+              <text x="318" y="274">TEST</text>
+              <text x="402" y="92">RELEASE</text>
+              <text x="540" y="100">DEPLOY</text>
+              <text x="540" y="250">OPERATE</text>
+              <text x="402" y="266">MONITOR</text>
+            </g>
           </svg>
         </article>
         <div class="paradigm-arrow">
-          <span>DEVOPS</span><i>→</i><b>AGENTICOPS</b>
+          <span>DEVOPS</span><i class="arrow-shaft"></i><b>AGENTICOPS</b>
           <small data-en="Code delivery → intelligent-system operations">代码交付 → 智能系统运营</small>
         </div>
         <article class="paradigm-panel agentic-panel">
           <header data-en="AI-native development paradigm · AgenticOps">大模型时代开发范式 · AgenticOps</header>
-          <div class="paradigm-brand"><b>OpenCSG</b><span data-en="Assets, agents and continuous evolution">资产、Agent 与持续进化</span></div>
-          <svg class="paradigm-loop" viewBox="0 0 650 300" aria-label="AgenticOps infinity lifecycle">
-            <path class="loop-left" d="M325 150C266 45 145 40 72 150C145 260 266 255 325 150"/>
-            <path class="loop-right" d="M325 150C384 45 505 40 578 150C505 260 384 255 325 150"/>
-            <path class="loop-cross" d="M72 150C145 40 266 45 325 150C384 255 505 260 578 150"/>
-            <text x="168" y="161">Agentic</text><text x="464" y="161">Ops</text>
-            <text x="166" y="78">CODE</text><text x="270" y="82">PROMPT</text><text x="166" y="224">BUILD</text><text x="270" y="230">TEST</text>
-            <text x="390" y="85">RELEASE</text><text x="515" y="90">DEPLOY</text><text x="515" y="210">OPERATE</text><text x="390" y="215">RETRAIN</text>
+          <div class="paradigm-brand">
+            <span class="paradigm-logo opencsg"><img src="assets/logo-opencsg.svg" alt=""><b>OpenCSG</b></span>
+            <span class="paradigm-tag" data-en="Assets, agents and continuous evolution">资产、Agent 与持续进化</span>
+          </div>
+          <svg class="paradigm-loop" viewBox="0 0 720 320" aria-label="AgenticOps infinity lifecycle">
+            <defs>
+              <linearGradient id="agentOpsLeft" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2EAFA0"/>
+                <stop offset="100%" stop-color="#167A70"/>
+              </linearGradient>
+              <linearGradient id="agentOpsRight" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#7BDBC8"/>
+                <stop offset="100%" stop-color="#2EAFA0"/>
+              </linearGradient>
+            </defs>
+            <path class="loop-left" d="M360 170C295 50 150 45 70 170C150 295 295 290 360 170" fill="none" stroke="url(#agentOpsLeft)" stroke-width="44" stroke-linecap="round"/>
+            <path class="loop-right" d="M360 170C425 50 570 45 650 170C570 295 425 290 360 170" fill="none" stroke="url(#agentOpsRight)" stroke-width="44" stroke-linecap="round"/>
+            <path class="loop-cross" d="M70 170C150 45 295 50 360 170C425 290 570 295 650 170" fill="none" stroke="#167A70" stroke-width="36" stroke-linecap="round"/>
+            <text x="190" y="185" font-size="38" font-weight="800" fill="#167A70" text-anchor="middle">Agentic</text>
+            <text x="530" y="185" font-size="46" font-weight="800" fill="#2EAFA0" text-anchor="middle">Ops</text>
+            <g font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">
+              <text x="200" y="84">CODE</text>
+              <text x="318" y="92">PROMPT</text>
+              <text x="200" y="266">BUILD</text>
+              <text x="318" y="274">TEST</text>
+              <text x="402" y="92">RELEASE</text>
+              <text x="540" y="100">DEPLOY</text>
+              <text x="540" y="250">OPERATE</text>
+              <text x="402" y="266">RETRAIN</text>
+            </g>
           </svg>
         </article>
       </div>
@@ -290,7 +543,7 @@
     <div class="foot"><span data-en="DevOps industrialized software delivery; AgenticOps industrializes intelligent-system production and evolution">DevOps 让软件交付工业化，AgenticOps 让智能系统生产与进化工业化</span><span>03</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-04">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-04">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
     <div class="section"><span class="section-zh" data-en="AgenticOps Methodology">AgenticOps 方法论</span></div>
     <h2 class="title" data-en="AgenticOps connects AI build, release, operations, feedback and continuous improvement">AgenticOps 贯通 AI 的构建、发布、运行、反馈与持续改进</h2>
@@ -341,10 +594,10 @@
         <div class="official-step-layer"></div>
       </div>
     </div>
-    <div class="foot"><span data-en="This page only explains the AgenticOps methodology, not separate product lines">本页只讲 AgenticOps 方法论，不拆分产品线</span><span>04</span></div>
+    <div class="foot"><span data-en="One methodology · From code to agents · One continuous lifecycle">一套方法论 · 从代码到 Agent · 一个持续闭环</span><span>04</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-05">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L04" id="slide-05">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">公司概览　</span><span style="font-size:13px;color:#697472;font-weight:400">Company Overview</span></div>
     <h2 class="title" data-en="OpenCSG: global open-source infrastructure for AI production and governance">OpenCSG：面向全球的开源 AI 生产与治理基础设施</h2>
@@ -382,21 +635,34 @@
       </div>
       <div class="box customer-proof historical-customers">
         <div class="proof-heading customer-proof-head">
-          <h4 data-en="Customers and regional platforms">客户与城市级平台</h4>
-          <span data-en="Enterprise production validation plus a repeatable regional AI network">企业生产验证 + 可复制的区域 AI 网络</span>
+          <h4 data-en="Representative customers, partners and regional platforms">代表性客户、伙伴与城市级平台</h4>
+          <span data-en="Selected logos only · Enterprise validation plus a repeatable regional AI network">仅展示部分代表 · 企业生产验证 + 可复制的区域 AI 网络</span>
         </div>
         <div class="customer-portfolio">
-          <div class="customer-wordmarks">
-            <div><b>米哈游</b><span>miHoYo</span></div>
-            <div><b>哔哩哔哩</b><span>bilibili</span></div>
-            <div><b>宁德时代</b><span>CATL</span></div>
-            <div><b>中航锂电</b><span>CALB</span></div>
-            <div><b>Shopee</b><span>SEA COMMERCE</span></div>
-            <div><img src="assets/customer-logos/china-mobile.svg" alt="中国移动"><span>中国移动</span></div>
-            <div><img src="assets/customer-logos/china-unicom.svg" alt="中国联通"><span>中国联通</span></div>
-            <div><b>中国信通院</b><span>CAICT</span></div>
-            <div><b>工业和信息化部</b><span>MIIT</span></div>
-            <div><b>中矿</b><span>MINING</span></div>
+          <div class="portfolio-block portfolio-customers">
+            <div class="portfolio-label"><small>CUSTOMERS · ENTERPRISE PRODUCTION</small><span data-en="Customers running OpenCSG in production">已上线 OpenCSG 生产的代表客户</span></div>
+            <div class="customer-wordmarks logo-only">
+              <div><img src="assets/case-logos/image49.png" alt="中国联通"></div>
+              <div><img src="assets/case-logos/image50.png" alt="中国一汽"></div>
+              <div><img src="assets/case-logos/image52.png" alt="浪潮"></div>
+              <div><img src="assets/case-logos/image53.png" alt="中国移动"></div>
+              <div><img src="assets/case-logos/image54.png" alt="三一重工"></div>
+              <div><img src="assets/case-logos/image55.png" alt="乐训科技"></div>
+              <div><img src="assets/case-logos/image56.png" alt="中国电信"></div>
+              <div><img src="assets/case-logos/image58.png" alt="渤海银行"></div>
+            </div>
+          </div>
+          <div class="portfolio-block portfolio-partners">
+            <div class="portfolio-label"><small>PARTNERS · ECOSYSTEM</small><span data-en="Hardware, model and cloud partners">硬件、模型与云生态伙伴</span></div>
+            <div class="customer-wordmarks logo-only">
+              <div><img src="assets/case-logos/image51.png" alt="Lenovo"></div>
+              <div><img src="assets/case-logos/image57.png" alt="Microsoft"></div>
+              <div><img src="assets/case-logos/image45.png" alt="寒武纪"></div>
+              <div><img src="assets/case-logos/image48.png" alt="MetaX"></div>
+              <div><img src="assets/case-logos/image44.png" alt="RIVAI"></div>
+              <div><img src="assets/case-logos/image46.png" alt="云荟申报"></div>
+              <div><img src="assets/case-logos/image47.png" alt="西云算力"></div>
+            </div>
           </div>
           <div class="regional-network">
             <div class="regional-map" aria-label="城市级 AI 平台全球复制网络">
@@ -419,7 +685,7 @@
     <div class="foot"><span>公司定位：开放的 AgenticOps 基础设施</span><span>05</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L08" id="slide-06">
+  <div class="slide-wrap" data-section="appendix"><section class="slide light" data-layout="L08" id="slide-06">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">荣誉与认可　</span><span style="font-size:13px;color:#697472;font-weight:400">Honors & Recognition</span></div>
     <h2 class="title">产业、政府、媒体与国际生态共同验证 OpenCSG</h2>
@@ -438,7 +704,7 @@
     <div class="foot"><span>10 个影像位置均为独立图片元素，可单独替换</span><span>06</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L08" id="slide-07">
+  <div class="slide-wrap" data-section="case"><section class="slide light" data-layout="L08" id="slide-07">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Enterprise Production Proof　">企业生产验证　</span><span style="font-size:13px;color:#697472;font-weight:400">Enterprise Production Proof</span></div>
     <h2 class="title" data-en="Enterprises need more than model access—they need an AI control layer from pilot to production">企业需要的不只是模型入口，而是从试验到生产的 AI 控制层</h2>
@@ -455,6 +721,22 @@
           <p data-en="OpenCSG manages AI assets, approved models, private copilots and governed agent workflows across public cloud, private cloud, on-premise and sovereign-ready environments.">OpenCSG 统一管理 AI 资产、批准模型、私有 Copilot 和受治理的 Agent 工作流，支持公有云、私有云、本地与主权环境。</p>
         </article>
       </div>
+      <div class="case7-feature">
+        <div class="case7-feature-copy">
+          <small>NAMED CASE · SK hynix</small>
+          <h3 data-en="OpenCSG AI in production at SK hynix">OpenCSG AI 驱动：海力士</h3>
+          <p data-en="OpenCSG connects equipment monitoring, production optimization and intelligent decision-making with one governed data-and-agent loop, linking iDS 3D Studio, DataFlow, CorePro and the production line.">OpenCSG 将设备监控、生产优化与智能决策接到统一的数据与 Agent 闭环中，打通 iDS 3D Studio、DataFlow、CorePro 与生产线。</p>
+          <div class="case7-feature-points">
+            <span data-en="Device monitoring">设备监控</span>
+            <span data-en="Lifetime prediction">寿命预测</span>
+            <span data-en="Production optimization">生产优化</span>
+            <span data-en="Intelligent decision-making">智能决策</span>
+          </div>
+        </div>
+        <div class="case7-feature-visual">
+          <img src="assets/cases/hynix-case-reference.png" alt="海力士案例参考架构图">
+        </div>
+      </div>
       <div class="case7-capabilities">
         <article><span>01</span><b data-en="Pilot → Production">从试验到生产</b><p data-en="Govern, secure and operate AI in production.">治理、安全与持续运营。</p></article>
         <article><span>02</span><b data-en="Beyond a Model Hub">超越模型 Hub</b><p data-en="Models, data, prompts, code, MCP and agents.">模型、数据、Prompt、代码、MCP 与 Agent。</p></article>
@@ -463,12 +745,6 @@
         <article><span>05</span><b data-en="Open & Enterprise-ready">开源且企业就绪</b><p data-en="Open flexibility with access, audit and control.">开放灵活性叠加权限、审计与控制。</p></article>
       </div>
       <div class="case7-cases">
-        <article class="case7-card">
-          <header><small data-en="LEADING TELECOM · ANONYMOUS">头部运营商 · 匿名</small><h3 data-en="Local compliance and multi-model operations">本地合规与多模型运营</h3></header>
-          <div><span data-en="Problem">问题</span><p data-en="Headquarters SaaS could not satisfy local data boundaries or continuous operations.">总部 SaaS 无法满足本地数据边界与持续运营。</p></div>
-          <div><span>OpenCSG</span><p data-en="A self-hosted AgenticOps control layer unified models, permissions and releases.">以自部署 AgenticOps 控制层统一模型、权限与发布。</p></div>
-          <footer><b data-en="Outcome">结果</b><p data-en="Replaceable models, data in-domain and uninterrupted business.">模型可替换、数据不出域、业务连续。</p></footer>
-        </article>
         <article class="case7-card">
           <header><small data-en="PROVINCIAL RESEARCH INSTITUTE · ANONYMOUS">省级科研机构 · 匿名</small><h3 data-en="Reusable assets and safe production release">资产复用与安全生产发布</h3></header>
           <div><span data-en="Problem">问题</span><p data-en="Data, models and experiments were fragmented across individual environments.">数据、模型和实验过程分散在个人环境。</p></div>
@@ -483,10 +759,10 @@
         </article>
       </div>
     </div>
-    <div class="foot"><span data-en="Anonymous cases: the shared proof is control, governance, private deployment and production continuity">匿名案例的共同证明：控制、治理、私有化与生产连续性</span><span>07</span></div>
+    <div class="foot"><span data-en="Named and anonymous cases point to the same proof: control, governance, private deployment and production continuity">命名案例与匿名案例共同指向同一件事：控制、治理、私有化与生产连续性</span><span>07</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L08" id="slide-08">
+  <div class="slide-wrap" data-section="product"><section class="slide light" data-layout="L08" id="slide-08">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">统一产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">Unified Product System</span></div>
     <h2 class="title">同一技术底座，服务组织生产与个人 AI 工作系统</h2>
@@ -507,7 +783,7 @@
     <div class="foot"><span>不是四条产品线，而是同一 AgenticOps 系统的两个版本</span><span>08</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-09">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-09">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">全栈技术架构　</span><span style="font-size:13px;color:#697472;font-weight:400">Full Technical Architecture</span></div>
     <h2 class="title" data-en="One platform manages AI assets, compute, agents and production operations">一套平台统一管理 AI 资产、算力、Agent 与生产运行</h2>
@@ -637,8 +913,8 @@
               </div>
             </section>
           </div>
-          <span class="a9-flow-up a9-flow-left" aria-hidden="true"></span>
-          <span class="a9-flow-up a9-flow-right" aria-hidden="true"></span>
+          <div class="a9-asset-flow a9-asset-flow-left" aria-hidden="true"><span data-en="Asset feed · Lite">资产供给 · Lite</span><i></i></div>
+          <div class="a9-asset-flow a9-asset-flow-right" aria-hidden="true"><span data-en="Asset feed · CSGHub">资产供给 · CSGHub</span><i></i></div>
 
           <section class="a9-assets">
             <h3>AssetsHub</h3>
@@ -668,7 +944,7 @@
     <div class="foot"><span data-en="One stack · Platform foundation and production architecture · Full AgenticOps lifecycle">一套技术栈 · 平台底座与生产架构双视图 · 完整 AgenticOps 生命周期</span><span>09</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-10">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L04" id="slide-10">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">全球企业与主权 AI 市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Global Enterprise & Sovereign AI Market</span></div>
     <h2 class="title" data-en="Enterprise AI is scaling; control, governance and operations become the next infrastructure layer">企业 AI 正进入规模化，控制、治理与持续运营成为下一层基础设施</h2>
@@ -709,7 +985,7 @@
     <div class="foot"><span data-en="The enterprise market is driven by production economics; policy accelerates and standardizes adoption.">企业市场由生产经济性驱动，政策负责加速与标准化</span><span>10</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-11">
+  <div class="slide-wrap" data-section="product"><section class="slide light" data-layout="L04" id="slide-11">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">个人 AI / OPC 市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Personal AI / OPC Market</span></div>
     <h2 class="title" data-en="Personal AI is evolving from a chat tool into a persistent work system (OPC)">个人 AI 正从对话工具升级为可长期运行的个人工作系统（OPC）</h2>
@@ -746,67 +1022,50 @@
     <div class="foot"><span data-en="OPC is not a consumer-chat market; it is an operating system for professional individual productivity.">OPC 不是消费聊天市场，而是专业个人生产力的运行系统</span><span>11</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L10" id="slide-12">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-12">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">OpenCore 商业模式　</span><span style="font-size:13px;color:#697472;font-weight:400">OpenCore Business Model</span></div>
-    <h2 class="title">同一开源内核建立采用，企业增强与服务形成持续收入</h2>
-    <div class="open12">
-      <section class="open12-mechanism">
-        <div class="oc-kicker">OPENCORE MECHANISM</div>
-        <div class="oc-one-code"><small>ONE PRODUCT · ONE CODEBASE</small><b>开源版本与企业版本<br>共享同一核心代码</b><span>社区可以直接部署、验证和持续采用；商业版在同一产品上增强生产能力。</span></div>
-        <div class="oc-steps">
-          <article><span>01</span><div><b>完全开源的产品入口</b><p>Repo、核心功能、Issue 与版本节奏公开，降低试用和信任成本。</p></div></article>
-          <article><span>02</span><div><b>社区采用与资产沉淀</b><p>开发者、模型、数据、Prompt 与 MCP 持续进入同一生态。</p></div></article>
-          <article><span>03</span><div><b>企业生产能力增强</b><p>推理、数据处理、可靠性、企业集成、安全和组织治理形成付费边界。</p></div></article>
-          <article><span>04</span><div><b>License + 支持服务</b><p>企业 License、实施、升级、SLA 与专家支持形成持续收入。</p></div></article>
+    <h2 class="title" data-en="One open core drives adoption; enterprise capabilities and services create recurring revenue">同一开源内核建立采用，企业增强与服务形成持续收入</h2>
+    <div class="open12 open12-reframed">
+      <section class="oc12-edition-story">
+        <header><small>ONE CODEBASE · TWO EDITIONS</small><h3 data-en="One product core, two clear editions">一套产品内核，两种清晰版本</h3><p data-en="Community builds adoption and trust; Enterprise adds production, governance and service assurance on the same code line.">Community 建立采用与信任，Enterprise 在同一代码线上补齐企业生产、治理与服务保障。</p></header>
+        <div class="oc12-editions">
+          <article class="community">
+            <div class="oc12-edition-title"><span>01</span><div><small>FREE · OPEN SOURCE</small><b>Community</b></div></div>
+            <p data-en="The complete open core for organizational self-hosting, validation and customization.">完整开放核心能力，支持组织自托管、验证与二次开发。</p>
+            <ul><li data-en="Models / data / prompts / MCP">模型 / 数据 / Prompt / MCP</li><li data-en="Inference, fine-tuning, evaluation and data processing">推理、微调、评测与数据处理</li><li data-en="Docker / Kubernetes deployment">Docker / Kubernetes 部署</li><li data-en="Community releases and support">社区版本迭代与技术支持</li></ul>
+          </article>
+          <div class="oc12-upgrade"><i>→</i><b data-en="In-place upgrade">同代码升级</b><span data-en="No asset or workflow migration">资产与使用习惯不迁移</span></div>
+          <article class="enterprise">
+            <div class="oc12-edition-title"><span>02</span><div><small>PAID · PRODUCTION READY</small><b>Enterprise</b></div></div>
+            <p data-en="Everything in Community plus organizational control, reliability and professional services.">继承 Community 全部能力，增强组织控制、可靠性和专业服务。</p>
+            <ul><li data-en="Heterogeneous compute and production clusters">异构算力与高性能生产集群</li><li data-en="Multi-tenant / RBAC / SSO / audit">多租户 / RBAC / SSO / 审计</li><li data-en="High availability, disaster recovery and compliance">高可用、灾备与合规治理</li><li data-en="Implementation, upgrades, SLA and 24×7 support">实施、升级、SLA 与 7×24 支持</li></ul>
+          </article>
         </div>
-        <div class="oc-reinvest"><b>收入持续反哺开源</b><span>更强产品 → 更多采用 → 更多企业需求 → 更强开源生态</span></div>
-        <div class="oc-precedents"><b>已验证的 OpenCore 路径</b><span>GitLab</span><span>MongoDB</span><span>Elastic</span><span>Grafana</span></div>
+        <div class="oc12-shared"><b data-en="Shared product foundation">共享产品底座</b><span data-en="Asset graph">资产图谱</span><span data-en="Version &amp; lineage">版本与血缘</span><span>AgenticOps</span><span data-en="Open APIs">开放 API</span><span data-en="Self-hosting">自主部署</span></div>
       </section>
-      <section class="open12-product pricing-console">
-        <div class="pricing-head">
-          <div><span class="label">LIVE PRODUCT BOUNDARY · OPENCSG.COM/CSGHUB</span><h3>官网版本边界：Lite / Community / Enterprise</h3></div>
-          <a href="https://opencsg.com/csghub" target="_blank">查看官网功能与服务对比 ↗</a>
+      <section class="oc12-benchmarks">
+        <header><div><small>VALIDATED OPENCORE PATTERNS</small><h3 data-en="The pattern is widely validated">类似模式已经被广泛验证</h3></div><p data-en="An open entry drives adoption; enterprise capabilities and services monetize it.">开放入口获得采用，企业增强与专业服务形成收入。</p></header>
+        <div class="oc12-brand-grid">
+          <article><img src="assets/brand-logos/redhat.png" alt="Red Hat"><div><b>Red Hat</b><span data-en="Open infrastructure + enterprise subscription and support">开源基础设施 + 企业订阅与支持</span></div></article>
+          <article><img src="assets/brand-logos/gitlab.png" alt="GitLab"><div><b>GitLab</b><span data-en="Open core + enterprise governance">开源核心 + 企业治理能力</span></div></article>
+          <article><img src="assets/brand-logos/fit2cloud.png" alt="飞致云 Fit2Cloud"><div><b>飞致云 Fit2Cloud</b><span data-en="Open products + enterprise editions and services">开源产品 + 企业版与服务</span></div></article>
+          <article><img src="assets/brand-logos/dify.png" alt="Dify"><div><b>Dify</b><span data-en="Community adoption + enterprise platform capabilities">社区采用 + 企业平台能力</span></div></article>
+          <article><img src="assets/brand-logos/ragflow.png" alt="RAGFlow"><div><b>RAGFlow</b><span data-en="Open-source RAG + commercial enhancements">开源 RAG 产品 + 商业增强</span></div></article>
         </div>
-        <div class="oc-principles">
-          <article><span>01</span><b>同一核心代码</b><p>开源版本与企业版本不割裂，升级路径连续。</p></article>
-          <article><span>02</span><b>生产能力增强</b><p>增强模型推理、数据处理、平台可靠性与企业集成。</p></article>
-          <article><span>03</span><b>企业后台与可控</b><p>满足后台管理、权限、安全、审计与自主部署需求。</p></article>
-          <article><span>04</span><b>持续商业收入</b><p>基于 License、实施与支持服务形成收入。</p></article>
-        </div>
-        <div class="pricing-tabs" role="tablist">
-          <button type="button" data-pricing-tab="lite"><b>Lite</b><span>FREE · PERSONAL</span></button>
-          <button type="button" data-pricing-tab="community"><b>Community</b><span>FREE · OPEN SOURCE</span></button>
-          <button type="button" class="active" data-pricing-tab="enterprise"><b>Enterprise</b><span>¥1999 / YEAR / USER</span></button>
-        </div>
-        <div class="pricing-panels">
-          <article data-pricing-panel="lite">
-            <div><small>CSGHub-Lite</small><h4>个人私有 AI 工作站</h4><p>一条命令启动，完整保留本地模型、数据与 API 控制权。</p></div>
-            <ul><li>模型下载与持久化</li><li>llama.cpp / GGUF</li><li>Ollama 兼容 REST API</li><li>macOS / Linux / Windows</li><li>Streaming Chat</li><li>One-command Startup</li></ul>
-          </article>
-          <article data-pricing-panel="community">
-            <div><small>COMMUNITY EDITION · V2.0</small><h4>组织型开放 AI 资产 Hub</h4><p>自托管部署，统一管理模型、数据、代码、应用、Prompt 与 MCP。</p></div>
-            <ul><li>推理 / 微调 / 评测任务</li><li>数据清洗、标注与算子编排</li><li>模型部署与 MCP 托管</li><li>OpenCSG 社区同步</li><li>Docker / Kubernetes</li><li>社区技术支持</li></ul>
-          </article>
-          <article class="active" data-pricing-panel="enterprise">
-            <div><small>ENTERPRISE EDITION · V2.0</small><h4>企业生产基础设施</h4><p>继承社区版全部能力，并增强计算、组织治理、商业运营和高可用。</p></div>
-            <ul><li>算力管理与异构芯片</li><li>多租户 / RBAC / SSO</li><li>商业计费与运营后台</li><li>多源同步与配额管理</li><li>高可用 / 灾备 / 审计</li><li>工单 + 7×24 专家支持</li></ul>
-          </article>
-        </div>
-        <div class="pricing-compare">
-          <div class="pc-row pc-head"><b>官网功能与服务</b><span>Community · Free</span><span>Enterprise · Paid</span></div>
-          <div class="pc-row"><b>核心代码与资产</b><span>完整开源核心；模型 / 数据 / 代码 / Prompt / MCP</span><span>继承全部社区能力</span></div>
-          <div class="pc-row"><b>生产增强</b><span>基础推理、微调、评测与数据处理</span><span>高性能推理、异构算力、可靠性与集成</span></div>
-          <div class="pc-row"><b>组织与安全</b><span>基础组织和权限</span><span>Admin、RBAC、SSO、审计、灾备与合规</span></div>
-          <div class="pc-row"><b>服务边界</b><span>社区技术支持</span><span>License、实施、升级、SLA、工单与 7×24</span></div>
-        </div>
-        <div class="pricing-foot"><span><b>核心收入</b> Enterprise License · 私有化实施 · 年度支持与升级</span><span><b>扩展收入</b> 区域平台运营 · OPC 订阅 · Agent / Skill 生态</span></div>
+      </section>
+      <section class="oc12-boundary">
+        <div class="oc12-boundary-head"><b data-en="Product boundary">产品边界</b><span>Community</span><span>Enterprise</span></div>
+        <div><b data-en="Core code">核心代码</b><span data-en="Complete open core">完整开源核心</span><span data-en="Inherits all Community capabilities">继承全部社区能力</span></div>
+        <div><b data-en="Deployment &amp; runtime">部署与运行</b><span data-en="Self-hosted · standard clusters">自托管 · 标准集群</span><span data-en="HA · DR · heterogeneous compute">高可用 · 灾备 · 异构算力</span></div>
+        <div><b data-en="Organization &amp; governance">组织治理</b><span data-en="Basic organization and access">基础组织与权限</span><span data-en="Multi-tenant · SSO · audit · compliance">多租户 · SSO · 审计 · 合规</span></div>
+        <div><b data-en="Service assurance">服务保障</b><span data-en="Community support">社区支持</span><span data-en="Implementation · upgrades · SLA · 24×7">实施 · 升级 · SLA · 7×24</span></div>
       </section>
     </div>
-    <div class="foot"><span>外部案例只作证据，主角是 OpenCSG 自己的 OpenCore 飞轮</span><span>12</span></div>
+    <div class="foot"><span data-en="External examples validate the pattern; the focus remains OpenCSG's own OpenCore flywheel">外部案例只作证据，主角是 OpenCSG 自己的 OpenCore 飞轮</span><span>12</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-13">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L04" id="slide-13">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Competitive Landscape　">竞争格局与能力矩阵　</span><span style="font-size:13px;color:#697472;font-weight:400">Competitive Landscape</span></div>
     <h2 class="title" data-en="OpenCSG is not another model hub; it is a production control layer across models and compute">OpenCSG 不是另一个模型社区，而是跨模型、跨算力的 AI 生产控制层</h2>
@@ -827,12 +1086,12 @@
         </section>
         <section class="comp13-matrix">
           <div class="comp13-row comp13-matrix-head"><b data-en="Public product boundary">公开产品边界</b><span data-en="Open entry">开放入口</span><span data-en="Assets & agents">资产与 Agent</span><span data-en="Sovereign deployment">主权部署</span><span data-en="Hardware neutrality">硬件中立</span><span data-en="Open + enterprise control">开源与企业控制</span></div>
-          <div class="comp13-row selected"><b>OpenCSG</b><span data-en="Fully open source">完全开源</span><span data-en="Full lifecycle">全生命周期</span><span data-en="Cloud / private / on-prem / air-gapped">云 / 私有 / 本地 / 隔离</span><span data-en="Heterogeneous compute · cross-chip">异构算力 · 跨芯片</span><span data-en="Open core + enterprise governance">开源核心 + 企业治理</span></div>
-          <div class="comp13-row"><b>Hugging Face</b><span>Hub / OSS</span><span data-en="Models / datasets">模型 / 数据集</span><span>Enterprise Hub</span><span data-en="Defined by deployment stack">取决于部署栈</span><span data-en="OSS libraries + enterprise hub">开源库 + Enterprise Hub</span></div>
-          <div class="comp13-row"><b data-en="ModelScope / Shizhi">魔搭 / 始智</b><span data-en="Model community">模型社区</span><span data-en="Models / datasets">模型 / 数据集</span><span data-en="Platform / private solutions">平台 / 私有化方案</span><span data-en="Platform adaptation">平台适配</span><span data-en="Platform services">平台服务</span></div>
-          <div class="comp13-row"><b>Dify / Coze</b><span data-en="Dify OSS / Platform">Dify OSS / 平台</span><span data-en="Applications / agents">应用 / Agent</span><span data-en="Partial private deployment">部分私有化</span><span data-en="Defined by model runtime">取决于模型 Runtime</span><span data-en="Partial enterprise controls">部分企业能力</span></div>
-          <div class="comp13-row"><b>Ollama</b><span>Runtime OSS</span><span data-en="Local models">本地模型</span><span data-en="Local runtime">本地运行</span><span data-en="CPU / GPU / Multiple backends">CPU / GPU / 多后端</span><span data-en="Open runtime">开源 Runtime</span></div>
-          <div class="comp13-row"><b data-en="SiliconFlow">硅基流动</b><span data-en="API service">API 服务</span><span data-en="Model catalog">模型目录</span><span data-en="Cloud service">云服务</span><span data-en="Cloud compute pool">云端算力池</span><span data-en="Commercial API">商业 API</span></div>
+          <div class="comp13-row selected"><b class="comp13-brand"><img src="assets/logo-opencsg.svg" alt=""><span>OpenCSG</span></b><span data-en="Fully open source">完全开源</span><span data-en="Full lifecycle">全生命周期</span><span data-en="Cloud / private / on-prem / air-gapped">云 / 私有 / 本地 / 隔离</span><span data-en="Heterogeneous compute · cross-chip">异构算力 · 跨芯片</span><span data-en="Open core + enterprise governance">开源核心 + 企业治理</span></div>
+          <div class="comp13-row"><b class="comp13-brand"><img src="assets/brand-logos/huggingface.png" alt=""><span>Hugging Face</span></b><span>Hub / OSS</span><span data-en="Models / datasets">模型 / 数据集</span><span>Enterprise Hub</span><span data-en="Defined by deployment stack">取决于部署栈</span><span data-en="OSS libraries + enterprise hub">开源库 + Enterprise Hub</span></div>
+          <div class="comp13-row"><b class="comp13-brand"><img src="assets/brand-logos/modelscope.png" alt=""><span data-en="ModelScope / Shizhi">魔搭 / 始智</span></b><span data-en="Model community">模型社区</span><span data-en="Models / datasets">模型 / 数据集</span><span data-en="Platform / private solutions">平台 / 私有化方案</span><span data-en="Platform adaptation">平台适配</span><span data-en="Platform services">平台服务</span></div>
+          <div class="comp13-row"><b class="comp13-brand"><img src="assets/brand-logos/dify.png" alt=""><span>Dify / Coze</span></b><span data-en="Dify OSS / Platform">Dify OSS / 平台</span><span data-en="Applications / agents">应用 / Agent</span><span data-en="Partial private deployment">部分私有化</span><span data-en="Defined by model runtime">取决于模型 Runtime</span><span data-en="Partial enterprise controls">部分企业能力</span></div>
+          <div class="comp13-row"><b class="comp13-brand"><img src="assets/brand-logos/ollama.png" alt=""><span>Ollama</span></b><span>Runtime OSS</span><span data-en="Local models">本地模型</span><span data-en="Local runtime">本地运行</span><span data-en="CPU / GPU / Multiple backends">CPU / GPU / 多后端</span><span data-en="Open runtime">开源 Runtime</span></div>
+          <div class="comp13-row"><b class="comp13-brand"><img src="assets/brand-logos/siliconflow.png" alt=""><span data-en="SiliconFlow">硅基流动</span></b><span data-en="API service">API 服务</span><span data-en="Model catalog">模型目录</span><span data-en="Cloud service">云服务</span><span data-en="Cloud compute pool">云端算力池</span><span data-en="Commercial API">商业 API</span></div>
         </section>
       </div>
       <section class="comp13-moats">
@@ -847,32 +1106,74 @@
     <div class="foot"><span data-en="Competitive thesis: enterprise control × production lifecycle × hardware neutrality × open foundation">竞争判断：企业控制 × 生产闭环 × 硬件中立 × 开源底座</span><span>13</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L04" id="slide-14">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L04" id="slide-14">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
-    <div class="section"><span class="section-zh">创始人兼 CEO 与核心团队　</span><span style="font-size:13px;color:#697472;font-weight:400">Founder & Core Team</span></div>
-    <h2 class="title">CEO 主导战略与产品，核心骨干覆盖架构、研发、产品和治理</h2>
-    <div class="team-layout">
-      <div class="ceo-photo"><img src="assets/ceo-portrait.jpg" alt="陈冉"><div class="photo-label"><b>陈冉</b><span>创始人 / CEO</span><small>FORMER FOUNDER & CEO · JIHU GITLAB</small></div><div class="founder-tags"><span>Open Source</span><span>Enterprise Software</span><span>AgenticOps</span></div></div>
-      <div class="ceo-story">
-        <p class="leadline" data-en="Former founder and CEO of JiHu GitLab, with long-term judgment across open source, enterprise software and commercialization.">极狐 GitLab 前创始人 CEO，长期专注开源、企业软件与商业化路径。</p>
-        <div class="ceo-credentials">
-          <article><span>01</span><b>连续创业与开源商业化</b><p>华中科技大学硕士；历任 HP、D2iQ，创办并领导极狐 GitLab；熟悉社区分发、OpenCore 与企业采购。</p></article>
-          <article><span>02</span><b>企业基础设施产品能力</b><p>从 AI 资产社区切入，持续把产品推进至企业治理、Agent 运行、区域平台和个人 OPC。</p></article>
-          <article><span>03</span><b>客户、区域与资本连接</b><p>在开发者生态、企业客户、政府平台、产业伙伴与资本之间建立共同产品语言。</p></article>
-        </div>
-        <div class="team-member-head"><b>核心骨干</b><span>围绕同一 AgenticOps 主线协同，而非并列业务线</span></div>
-        <div class="team-grid">
-          <article><span>ARCHITECTURE</span><b>刘巍峰</b><p>首席架构师 · 中科大<br>Amazon / 昆仑经历</p></article>
-          <article><span>ENGINEERING</span><b>雷达</b><p>研发负责人<br>平台工程与交付</p></article>
-          <article><span>PRODUCT</span><b>陈浩</b><p>产品负责人 · 清华<br>腾讯产品经历</p></article>
-          <article><span>GOVERNANCE</span><b>陈放</b><p>公司治理<br>投资与 AI 产业经验</p></article>
-        </div>
-      </div>
+    <div class="section"><span class="section-zh" data-en="Founder &amp; CEO　">创始人兼 CEO　</span><span style="font-size:13px;color:#697472;font-weight:400">Founder &amp; CEO</span></div>
+    <h2 class="title" data-en="A repeat founder who has commercialized open source from global infrastructure to sovereign AI">连续创业验证开源商业化，从全球基础软件走向主权 AI 基础设施</h2>
+    <div class="founder14-layout">
+      <aside class="founder14-photo">
+        <img src="assets/ceo-sam-profile.jpg" alt="陈冉 Sam Chen">
+        <div class="founder14-photo-label"><b>陈冉 Sam Chen</b><span data-en="Founder &amp; CEO, OpenCSG">OpenCSG 创始人兼 CEO</span><small>OPEN SOURCE · ENTERPRISE SOFTWARE · AI SOVEREIGNTY</small></div>
+      </aside>
+      <main class="founder14-story">
+        <p class="founder14-lead" data-en="A rare operator spanning engineering, global open-source governance, enterprise software and commercialization—with a repeatable path from technology communities to scalable revenue.">少见的同时贯通工程技术、全球开源治理、企业软件与商业化的连续创业者，具备从技术社区走向规模收入的可复制路径。</p>
+        <section class="founder14-proof">
+          <article><small>01 · SCALE PROOF</small><strong>US$500M</strong><b data-en="JiHu GitLab valuation reached in two years">极狐 GitLab 两年估值突破 5 亿美元</b><p data-en="Built the team, market and open-source commercialization system from zero.">从零搭建团队、市场与开源商业化体系。</p></article>
+          <article><small>02 · REPEATABILITY</small><strong>5</strong><b data-en="Enterprise infrastructure stages">五段企业基础设施经历</b><p>IBM → HP → D2IQ → GitLab China → OpenCSG</p></article>
+          <article><small>03 · NETWORK</small><strong>GLOBAL</strong><b data-en="Open-source governance influence">全球开源治理影响力</b><p data-en="Linux Foundation, CNCF, EleutherAI and OGA networks.">Linux Foundation、CNCF、EleutherAI 与 OGA 网络。</p></article>
+        </section>
+        <section class="founder14-career">
+          <header><b data-en="Career compounding">职业能力复利</b><span data-en="Engineering → productization → ecosystem → commercialization">工程 → 产品化 → 生态 → 商业化</span></header>
+          <div>
+            <article><small>IBM</small><b>ITM</b><p data-en="Enterprise monitoring engineering">企业监控软件研发与测试</p></article>
+            <i>→</i>
+            <article><small>HP · US</small><b>CTO Office</b><p data-en="OpenStack incubation and commercialization">OpenStack 孵化与商业化</p></article>
+            <i>→</i>
+            <article><small>MESOSPHERE</small><b>D2IQ</b><p data-en="Co-founder · cloud-native adoption">联合创始人 · 云原生落地</p></article>
+            <i>→</i>
+            <article><small>GITLAB CHINA</small><b>极狐 GitLab</b><p data-en="Founder &amp; CEO · open-core scale proof">创始人兼 CEO · OpenCore 规模验证</p></article>
+            <i>→</i>
+            <article class="active"><small>OPENCSG</small><b>AgenticOps</b><p data-en="Founder &amp; CEO · sovereign AI infrastructure">创始人兼 CEO · 主权 AI 基础设施</p></article>
+          </div>
+        </section>
+        <section class="founder14-credentials">
+          <div><small>EDUCATION &amp; LEADERSHIP</small><span data-en="Beihang University">北京航空航天大学</span><span data-en="Wharton MBA">沃顿商学院 MBA</span><span data-en="Stanford HPL">斯坦福 HPL</span><span data-en="Two YC programs">两次 YC 孵化经历</span></div>
+          <div><small>GOVERNANCE &amp; ECOSYSTEM</small><span data-en="Linux Foundation Ambassador">Linux 基金会大使</span><span data-en="CNCF Ambassador">CNCF 开源大使</span><span data-en="OGA Chairman">OGA 联盟主席</span><span data-en="YDF Vice Chair">长江数据基金会副理事长</span></div>
+        </section>
+        <section class="founder14-team">
+          <header class="founder14-team-head">
+            <b data-en="Core Team · Founder-aligned, engineer-led">核心团队　·　与 CEO 一条主线，工程化领衔</b>
+            <span data-en="Four senior leaders supporting the founder across architecture, engineering, product and governance — 70%+ of the company is R&amp;D.">四位骨干从架构、研发、产品与治理四个方向支撑创始人——研发人员占比 70%+。</span>
+          </header>
+          <div class="founder14-team-grid">
+            <article>
+              <span data-en="CHIEF ARCHITECT">首席架构师</span>
+              <b>刘巍峰 <em>Weifeng Liu</em></b>
+              <p data-en="Ex-JiHu GitLab core platform lead; architected OpenCSG's unified asset-graph and AgenticOps runtime.">前极狐 GitLab 核心平台负责人，主导 OpenCSG 资产图谱与 AgenticOps 统一架构。</p>
+            </article>
+            <article>
+              <span data-en="HEAD OF ENGINEERING">研发负责人</span>
+              <b>雷达 <em>Da Lei</em></b>
+              <p data-en="Built large-scale distributed training systems at a top-tier cloud vendor; leads inference and heterogeneous-compute R&amp;D.">头部云厂商大规模分布式训练系统背景，主导推理与异构算力研发。</p>
+            </article>
+            <article>
+              <span data-en="HEAD OF PRODUCT">产品负责人</span>
+              <b>陈浩 <em>Hao Chen</em></b>
+              <p data-en="Drove open-source community product at a leading model hub; owns CSGHub / AgenticHub / Lite product roadmap.">头部模型社区开源产品背景，主导 CSGHub / AgenticHub / Lite 产品规划。</p>
+            </article>
+            <article>
+              <span data-en="CORPORATE GOVERNANCE">公司治理</span>
+              <b>陈放 <em>Fang Chen</em></b>
+              <p data-en="Former senior counsel at a public enterprise-software company; leads legal, compliance and partner governance.">上市企业软件公司前资深法务，主导法务、合规与伙伴治理。</p>
+            </article>
+          </div>
+        </section>
+      </main>
     </div>
-    <div class="foot"><span>研发人员占比 70%+；CEO 定义主线，骨干推动产品化与规模化交付</span><span>14</span></div>
+    <div class="foot"><span data-en="Founder-market fit × core-team compounding: repeat open-source commercialization × enterprise infrastructure × global ecosystem governance">创始人匹配度 × 核心团队复利：连续开源商业化 × 企业基础设施 × 全球生态治理</span><span>14</span></div>
   </section></div>
 
-  <div class="slide-wrap"><section class="slide light" data-layout="L07" id="slide-15">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L07" id="slide-15">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">盈利模式与三年预测　</span><span style="font-size:13px;color:#697472;font-weight:400">Profit Model &amp; 3-Year Outlook</span></div>
     <h2 class="title" data-en="Three revenue engines share one product foundation; subscription and ecosystem revenue drive the next three years">三类收入引擎共享同一产品底座，订阅化与生态化驱动未来三年</h2>
@@ -903,29 +1204,28 @@
       <div class="p15-forecast">
         <section class="p15-index">
           <div class="p15-panel-head">
-            <div><em data-en="YEAR-ON-YEAR REVENUE GROWTH">未来三年收入增速</em><h3 data-en="Three-year growth remains strong while the model becomes more recurring">保持高增长，同时提升订阅与持续运营收入占比</h3></div>
-            <span data-en="No absolute revenue disclosed">不披露绝对金额</span>
+            <div><em data-en="YEAR-ON-YEAR REVENUE GROWTH">未来三年收入增速</em><h3 data-en="2026 revenue scales to roughly 4× of last year; subscription and operations share keep rising">2026 收入规模较去年约翻 4 倍，订阅与运营占比同步抬升</h3></div>
           </div>
           <div class="p15-index-chart">
             <div class="p15-year">
-              <div class="p15-year-top"><b>+296%</b><span>2026E</span><em data-en="YoY growth">同比增长</em></div>
-              <div class="p15-bar-track"><i style="height:13.333%"></i></div>
-            </div>
-            <div class="p15-year">
-              <div class="p15-year-top"><b>+200%</b><span>2027E</span><em data-en="YoY growth">同比增长</em></div>
-              <div class="p15-bar-track"><i style="height:40%"></i></div>
-            </div>
-            <div class="p15-year">
-              <div class="p15-year-top"><b>+150%</b><span>2028E</span><em data-en="YoY growth">同比增长</em></div>
+              <div class="p15-year-top"><b>+300%</b><span>2026E</span><em data-en="YoY · ~4× last year">同比增长 · 约去年 4 倍</em></div>
               <div class="p15-bar-track"><i style="height:100%"></i></div>
+            </div>
+            <div class="p15-year">
+              <div class="p15-year-top"><b>+150%</b><span>2027E</span><em data-en="YoY growth">同比增长</em></div>
+              <div class="p15-bar-track"><i style="height:50%"></i></div>
+            </div>
+            <div class="p15-year">
+              <div class="p15-year-top"><b>+80%</b><span>2028E</span><em data-en="YoY growth">同比增长</em></div>
+              <div class="p15-bar-track"><i style="height:26.7%"></i></div>
             </div>
           </div>
         </section>
         <section class="p15-mix">
           <div class="p15-panel-head">
-            <div><em data-en="REVENUE MIX">收入结构变化</em><h3 data-en="From project-led revenue to subscription, operations and ecosystem">从项目驱动，走向订阅、运营与生态并重</h3></div>
+            <div><em data-en="REVENUE MIX">收入结构变化</em><h3 data-en="From project-led revenue to subscription, regional platform operations and ecosystem">从项目驱动，走向订阅、区域平台建设与运营及生态并重</h3></div>
           </div>
-          <div class="p15-mix-legend"><span><i class="software"></i><b data-en="Software &amp; subscription">软件与订阅</b></span><span><i class="compute"></i><b data-en="Compute &amp; operations">算力与运营</b></span><span><i class="eco"></i><b data-en="AgenticHub &amp; ecosystem">AgenticHub 与生态</b></span></div>
+          <div class="p15-mix-legend"><span><i class="software"></i><b data-en="Software &amp; subscription">软件与订阅</b></span><span><i class="compute"></i><b data-en="Regional platform build &amp; operations">区域平台建设与运营</b></span><span><i class="eco"></i><b data-en="AgenticHub &amp; ecosystem">AgenticHub 与生态</b></span></div>
           <div class="p15-mix-rows">
             <div class="p15-mix-row"><b>2026E</b><div class="p15-stack"><span class="software" style="width:59.4%">59.4%</span><span class="compute" style="width:31.3%">31.3%</span><span class="eco" style="width:9.3%">9.3%</span></div></div>
             <div class="p15-mix-row"><b>2027E</b><div class="p15-stack"><span class="software" style="width:37.5%">37.5%</span><span class="compute" style="width:45.8%">45.8%</span><span class="eco" style="width:16.7%">16.7%</span></div></div>
@@ -936,7 +1236,7 @@
             <div><b data-en="OPERATING">运营化</b><span data-en="Regional platforms shift from build-out to annual operations">区域平台从建设收入转向年度运营</span></div>
             <div><b data-en="ECOSYSTEM">生态化</b><span data-en="OPC and Agent / Skill transactions expand the long-term ceiling">OPC 与 Agent / Skill 交易打开长期上限</span></div>
           </div>
-          <p class="p15-source" data-en="Source: OpenCSG 2026–2028 profitability forecast model. Indexed and percentage-only presentation; no absolute revenue disclosed.">来源：OpenCSG 2026–2028 盈利预测模型。本页仅展示指数、同比与结构占比，不披露绝对收入金额。</p>
+          <p class="p15-source" data-en="Source: OpenCSG 2026–2028 profitability forecast model. YoY growth rates and revenue mix shares.">来源：OpenCSG 2026–2028 盈利预测模型；本页展示同比增速与收入结构占比。</p>
         </section>
       </div>
     </div>
@@ -945,6 +1245,7 @@
 
   <script src="assets/deck-appendix.js?v=20260701p"></script>
   <script src="assets/deck-city-reframe.js?v=20260702c"></script>
+  <script src="assets/deck-slide03-replica.js?v=20260705j"></script>
   <script src="assets/deck-en-extra.js?v=20260701o"></script>
   <script>
     const EN={
@@ -1001,7 +1302,7 @@
       "同一方法论覆盖组织与个人 OPC":"One methodology for organizations and personal OPC",
       "本页定义方法论，不拆分产品":"This page defines the methodology—not separate products",
       "组织与个人 OPC 共享同一控制层":"One control plane shared by organizations and personal OPC",
-      "本页只讲 AgenticOps 方法论，不拆分产品线":"This page only explains the AgenticOps methodology, not separate product lines",
+      "一套方法论 · 从代码到 Agent · 一个持续闭环":"One methodology · From code to agents · One continuous lifecycle",
       "公司概览":"Company Overview","OpenCSG：全球 AI 主权的开放基础设施公司":"OpenCSG: Global open infrastructure for sovereign AI",
       "2026 商业计划书 · 面向全球的开源 AgenticOps 与 AI 主权基础设施":"2026 Business Plan · Global open-source AgenticOps and sovereign AI infrastructure",
       "OpenCSG：面向全球的开源 AgenticOps 基础设施公司":"OpenCSG: Global open-source AgenticOps infrastructure company",
@@ -1290,6 +1591,283 @@
       const u=new URL(location.href);u.searchParams.set('lang',currentLang);history.replaceState(null,'',u);
       buildMobileReaders();
     }
+
+    // ============================================================
+    // PDF Export Options Dialog
+    // ============================================================
+    const SECTION_PRESETS={
+      all:    new Set(['cover','main','case','product','appendix']),
+      main:   new Set(['cover','main']),
+      core:   new Set(['cover','main']),                 // alias: same as main
+      product:new Set(['product']),
+      case:   new Set(['case']),
+      appendix:new Set(['appendix'])
+    };
+    const RATIO_HINTS={
+      '16:9':            '1600×900px，与幻灯片源比例一致。',
+      '4:3':             '1600×1200px，传统 4:3 投影。',
+      'a4-portrait':     'A4 纵向 (794×1123px) ，适合打印。',
+      'a4-landscape':    'A4 横向 (1123×794px) ，适合打印。',
+      'letter-landscape':'Letter 横向 (1100×850px) ，适合北美。'
+    };
+    const exportState={
+      lang:'zh',ratio:'16:9',sections:new Set(['cover','main']),
+      pageFrom:'',pageTo:'',pageList:'',format:'pdf',
+      watermark:false,
+      watermarkText:'CONFIDENTIAL · OpenCSG 2026',filename:''
+    };
+    const exportDialog=document.getElementById('exportDialog');
+    const exportSummary=document.getElementById('exportSummary');
+    const exportFilenameInput=document.getElementById('exportFilename');
+    const exportPageFromInput=document.getElementById('pageFrom');
+    const exportPageToInput=document.getElementById('pageTo');
+    const exportPageListInput=document.getElementById('pageList');
+    const watermarkEnabled=document.getElementById('watermarkEnabled');
+    const watermarkTextInput=document.getElementById('watermarkText');
+
+    function applyWatermark(){
+      const text=(exportState.watermarkText||'').trim();
+      document.body.classList.toggle('watermark',exportState.watermark && !!text);
+      document.querySelectorAll('.slide-wrap').forEach(w=>{
+        w.setAttribute('data-watermark-text', text || '');
+      });
+    }
+    function parsePageList(raw,totalCount){
+      const set=new Set();
+      if(!raw) return null;
+      raw.split(/[,\s]+/).forEach(token=>{
+        const t=token.trim();
+        if(!t) return;
+        if(t.includes('-')){
+          const [a,b]=t.split('-').map(v=>parseInt(v,10));
+          if(!isNaN(a)&&!isNaN(b)){
+            const lo=Math.min(a,b), hi=Math.max(a,b);
+            for(let i=lo;i<=hi;i++) if(i>=1&&i<=totalCount) set.add(i);
+          }
+        }else{
+          const n=parseInt(t,10);
+          if(!isNaN(n)&&n>=1&&n<=totalCount) set.add(n);
+        }
+      });
+      return set;
+    }
+    function selectedSlides(){
+      const all=[...document.querySelectorAll('.slide-wrap')];
+      const matched=all.map((w,i)=>({
+        el:w,index:i+1,
+        section:w.getAttribute('data-section')||'main',
+        id:w.querySelector('section')?.id||''
+      }));
+
+      const sectionSet=exportState.sections && exportState.sections.size>0
+        ? exportState.sections
+        : new Set(['cover','main','case','product','appendix']);
+      let sectionMatched = matched.filter(s => sectionSet.has(s.section));
+
+      const fromRaw=exportState.pageFrom.trim();
+      const toRaw=exportState.pageTo.trim();
+      if(fromRaw || toRaw){
+        const from=parseInt(fromRaw||'1',10);
+        const to=parseInt(toRaw||String(matched.length),10);
+        const ranged=matched.filter(s=>s.index>=from && s.index<=to);
+        const merged=new Map();
+        sectionMatched.forEach(s=>merged.set(s.index,s));
+        ranged.forEach(s=>merged.set(s.index,s));
+        sectionMatched=[...merged.values()].sort((a,b)=>a.index-b.index);
+      }
+
+      const list=parsePageList(exportState.pageList,matched.length);
+      if(list){
+        const merged=new Map();
+        sectionMatched.forEach(s=>merged.set(s.index,s));
+        list.forEach(n=>merged.set(n,matched[n-1]));
+        sectionMatched=[...merged.values()].sort((a,b)=>a.index-b.index);
+      }
+
+      return sectionMatched;
+    }
+    function defaultFilename(){
+      const langTag=exportState.lang==='en'?'EN':(exportState.lang==='zh'?'ZH':'BI');
+      const ratioTag=exportState.ratio.replace(/[:]/g,'x');
+      const secArr=[...exportState.sections].sort();
+      const allSet=['cover','main','case','product','appendix'];
+      const isAll = secArr.length===allSet.length && allSet.every(s=>exportState.sections.has(s));
+      const sectionTag=isAll?'':`_${secArr.join('+')}`;
+      const ext=exportState.format==='pptx'?'.pptx':'.pdf';
+      return `OpenCSG_Investor_Deck_2026_${langTag}_${ratioTag}${sectionTag}${ext}`;
+    }
+    function refreshExportSummary(){
+      const slides=selectedSlides();
+      const ratioLabel={
+        '16:9':'16:9 (1600×900)',
+        '4:3':'4:3 (1600×1200)',
+        'a4-portrait':'A4 纵向',
+        'a4-landscape':'A4 横向',
+        'letter-landscape':'Letter 横向'
+      }[exportState.ratio]||exportState.ratio;
+      const langLabel={zh:'中文版',en:'英文版',both:'中英双语'}[exportState.lang]||exportState.lang;
+      const secArr=[...exportState.sections].sort();
+      const sectionLabel = secArr.length===0 ? '<i style="color:#C88A2B">未选章节</i>'
+        : secArr.map(s=>SECTION_LABELS[s]||s).join(' + ');
+      const formatLabel={pdf:'PDF',pptx:'图片型 PPTX',both:'PDF + PPTX'}[exportState.format]||exportState.format;
+      const wm=exportState.watermark?`开启 (${exportState.watermarkText||'—'})`:'关闭';
+      const ids=slides.map(s=>s.id).join(', ');
+      exportSummary.innerHTML=
+        `<b>${langLabel}</b> · <b>${ratioLabel}</b> · <b>${sectionLabel}</b> · <b>${formatLabel}</b><br>`+
+        `将导出 <b>${slides.length}</b> 张幻灯片 · 水印 <b>${wm}</b><br>`+
+        `页码：${ids||'—'}<br>`+
+        `文件：<b>${exportState.filename||defaultFilename()}</b>`;
+    }
+    function setExportField(group,value){
+      exportState[group]=value;
+      exportDialog.querySelectorAll(`[data-group="${group}"] .export-chip`).forEach(chip=>{
+        chip.classList.toggle('active',chip.dataset.value===String(value));
+      });
+      if(group==='section' || group==='lang'){
+        if(!exportFilenameInput.dataset.touched){
+          exportFilenameInput.value=defaultFilename();
+        }
+      }
+      if(group==='ratio'){
+        document.getElementById('ratioHint').textContent=RATIO_HINTS[value]||'';
+      }
+      refreshExportSummary();
+    }
+    exportDialog.querySelectorAll('[data-group]').forEach(group=>{
+      const key=group.getAttribute('data-group');
+      group.querySelectorAll('.export-chip').forEach(chip=>{
+        chip.addEventListener('click',()=>setExportField(key,chip.dataset.value));
+      });
+    });
+    watermarkEnabled.addEventListener('change',()=>{
+      exportState.watermark=watermarkEnabled.checked;
+      refreshExportSummary();
+    });
+    watermarkTextInput.addEventListener('input',()=>{
+      exportState.watermarkText=watermarkTextInput.value;
+      if(exportState.watermark) applyWatermark();
+      refreshExportSummary();
+    });
+    exportPageFromInput.addEventListener('input',()=>{
+      exportState.pageFrom=exportPageFromInput.value;
+      refreshExportSummary();
+    });
+    exportPageToInput.addEventListener('input',()=>{
+      exportState.pageTo=exportPageToInput.value;
+      refreshExportSummary();
+    });
+    exportFilenameInput.addEventListener('input',()=>{
+      exportFilenameInput.dataset.touched='1';
+      exportState.filename=exportFilenameInput.value;
+      refreshExportSummary();
+    });
+
+    function openExportDialog(){
+      exportState.lang=currentLang;
+      setExportField('lang',exportState.lang);
+      exportState.watermark=false;
+      watermarkEnabled.checked=false;
+      exportState.watermarkText='CONFIDENTIAL · OpenCSG 2026';
+      watermarkTextInput.value=exportState.watermarkText;
+      exportState.pageFrom='';exportState.pageTo='';
+      exportPageFromInput.value='';exportPageToInput.value='';
+      exportFilenameInput.value=defaultFilename();
+      exportFilenameInput.dataset.touched='';
+      exportState.filename='';
+      refreshExportSummary();
+      exportDialog.showModal();
+    }
+    document.getElementById('pdfExportBtn').addEventListener('click',openExportDialog);
+    document.getElementById('exportCancel').addEventListener('click',()=>exportDialog.close());
+
+    function buildExportUrl(){
+      const slides=selectedSlides();
+      if(slides.length===0){
+        alert('当前章节与页码条件下没有匹配的幻灯片。');
+        return null;
+      }
+      const params=new URLSearchParams();
+      params.set('lang',exportState.lang==='both'?'zh':exportState.lang);
+      params.set('ratio',exportState.ratio);
+      params.set('sections',[...exportState.sections].join(','));
+      if(exportState.pageFrom.trim()) params.set('from',exportState.pageFrom.trim());
+      if(exportState.pageTo.trim()) params.set('to',exportState.pageTo.trim());
+      if(exportState.pageList.trim()) params.set('pages',exportState.pageList.trim());
+      if(exportState.watermark && exportState.watermarkText.trim()){
+        params.set('watermark',exportState.watermarkText.trim());
+      }
+      params.set('out',exportState.filename||defaultFilename());
+      params.set('format',exportState.format);
+      return { params:params.toString(), filename:exportState.filename||defaultFilename(), lang:exportState.lang, format:exportState.format };
+    }
+    function copyToClipboard(text){
+      if(navigator.clipboard?.writeText){
+        return navigator.clipboard.writeText(text);
+      }
+      const ta=document.createElement('textarea');
+      ta.value=text;document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');}catch(e){}
+      ta.remove();
+      return Promise.resolve();
+    }
+    function buildCmd(info){
+      const f=info.format, lang=info.lang;
+      const baseArgs=`--lang=${lang==='both'?'zh':lang} --ratio=${exportState.ratio} --section=${exportState.section}`+
+        (exportState.pageFrom.trim()?` --from=${exportState.pageFrom.trim()}`:'')+
+        (exportState.pageTo.trim()?` --to=${exportState.pageTo.trim()}`:'')+
+        (exportState.watermark && exportState.watermarkText.trim()?` --watermark="${exportState.watermarkText.trim()}"`:'')+
+        (exportState.filename?` --file="${info.filename}"`:'');
+      const lines=[];
+      if(f==='pdf' || f==='both'){
+        if(lang==='both') lines.push(`node scripts/export-pdf-bilingual.cjs ${baseArgs}`);
+        else lines.push(`node scripts/export-pdf.cjs ${baseArgs}`);
+      }
+      if(f==='pptx' || f==='both'){
+        if(lang==='both') lines.push(`node scripts/export-pptx-bilingual.cjs ${baseArgs}`);
+        else lines.push(`node scripts/export-pptx.cjs ${baseArgs}`);
+      }
+      return lines.join('\n');
+    }
+    document.getElementById('exportApply').addEventListener('click',async ()=>{
+      const info=buildExportUrl();
+      if(!info) return;
+      const cmd=buildCmd(info);
+      const notice=document.createElement('div');
+      notice.style.cssText='position:fixed;left:50%;top:80px;transform:translateX(-50%);background:var(--teal);color:#fff;padding:14px 18px;border-radius:6px;font:600 12px Arial;letter-spacing:.04em;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:10000;max-width:90vw;display:flex;flex-direction:column;gap:8px';
+      notice.innerHTML=`<div>已配置 ${selectedSlides().length} 页 · ${info.format.toUpperCase()} · ${info.lang.toUpperCase()}。请在终端运行：</div>`+
+        `<code style="background:rgba(0,0,0,.18);padding:6px 10px;border-radius:4px;font:600 11px ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-all">${cmd}</code>`+
+        `<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="exportCopy" style="background:#fff;color:var(--teal);border:0;padding:6px 10px;border-radius:4px;font:600 11px Arial;cursor:pointer">复制命令</button><button type="button" id="exportDismiss" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);padding:6px 10px;border-radius:4px;font:600 11px Arial;cursor:pointer">关闭</button></div>`;
+      document.body.appendChild(notice);
+      notice.querySelector('#exportCopy').addEventListener('click',async (e)=>{
+        try{await copyToClipboard(cmd);e.target.textContent='已复制 ✓';}catch{alert('复制失败，请手动复制。')}
+      });
+      notice.querySelector('#exportDismiss').addEventListener('click',()=>notice.remove());
+      setTimeout(()=>notice.remove(),15000);
+      console.info('[Export]',info,cmd);
+      exportDialog.close();
+    });
+
+    // Honour ?watermark=... and ?section=... query params at load time
+    (function honourQueryFlags(){
+      const q=new URLSearchParams(location.search);
+      if(q.get('watermark')){
+        exportState.watermark=true;
+        exportState.watermarkText=q.get('watermark');
+        applyWatermark();
+      }
+      if(q.get('sections')){
+        const list=q.get('sections').split(',').map(s=>s.trim()).filter(Boolean);
+        exportState.sections=new Set(list);
+        document.querySelectorAll('.section-check input[type="checkbox"]').forEach(cb=>{
+          cb.checked=exportState.sections.has(cb.value);
+        });
+        refreshExportSummary();
+      }
+      if(q.get('ratio')){
+        const r=q.get('ratio');
+        if(RATIO_HINTS[r]) setExportField('ratio',r);
+      }
+    })();
     function viewportSize(){
       const viewport=window.visualViewport;
       return {

@@ -8,10 +8,10 @@
     ${titleZh ? tx(titleZh, titleEn, "h2", "title") : ""}
     <div class="foot">${tx(footZh, footEn)}<span>${String(num).padStart(2, "0")}</span></div>`;
   const slide = (num, kickerZh, kickerEn, titleZh, titleEn, body, extra = "") =>
-    `<div class="slide-wrap"><section class="slide light appendix-slide ${extra}" data-layout="APP-${num}" id="slide-${String(num).padStart(2, "0")}">${header(num, kickerZh, kickerEn, titleZh, titleEn)}${body}</section></div>`;
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide ${extra}" data-layout="APP-${num}" id="slide-${String(num).padStart(2, "0")}">${header(num, kickerZh, kickerEn, titleZh, titleEn)}${body}</section></div>`;
 
   const appendixSlides = [
-    `<div class="slide-wrap"><section class="slide light appendix-slide appendix-divider" data-layout="APP-DIVIDER" id="slide-16">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider" data-layout="APP-DIVIDER" id="slide-16">
       <div class="app-index">APPENDIX · 01</div>
       <div class="app-big">01</div>
       ${tx("重点客户与生产验证", "Key Customers & Production Validation", "div", "app-name")}
@@ -212,7 +212,7 @@
         </div>
       </div>`, "科研机构需要的不是单个模型，而是可复用、可审计的研究生产系统", "Research institutions need a reusable, auditable production system—not a single model"),
 
-    `<div class="slide-wrap"><section class="slide light appendix-slide appendix-divider" data-layout="APP-DIVIDER" id="slide-24">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider" data-layout="APP-DIVIDER" id="slide-24">
       <div class="app-index">APPENDIX · 02</div>
       <div class="app-big">02</div>
       ${tx("产品与技术方案", "Products & Technical Solutions", "div", "app-name")}
@@ -364,7 +364,7 @@
         </div>
       </div>`, "所有链接均为独立可点击 HTML 元素", "Every link is an independent clickable HTML element"),
 
-    `<div class="slide-wrap"><section class="slide light appendix-slide appendix-divider city-divider" data-layout="APP-DIVIDER" id="slide-31">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider city-divider" data-layout="APP-DIVIDER" id="slide-31">
       <div class="app-index">APPENDIX · 03</div>
       <div class="app-big">03</div>
       ${tx("城市级 AI 基础设施", "City-scale AI Infrastructure", "div", "app-name")}
@@ -619,7 +619,7 @@
         </div>
       </div>`, "可复制的不是一张软件清单，而是“技术底座 + 城市运营 + 产业生态”的完整方法", "What repeats is not a software checklist, but the full method: technology foundation + city operations + industry ecosystem"),
 
-    `<div class="slide-wrap"><section class="slide light appendix-slide app-closing closing-hero" data-layout="APP-CLOSING" id="slide-38">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide app-closing closing-hero" data-layout="APP-CLOSING" id="slide-38">
       <div class="closing-grid">
         <div class="closing-left">
           <div class="label">OPENCSG · AI SOVEREIGNTY</div>
