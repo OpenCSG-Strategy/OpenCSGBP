@@ -3,7 +3,7 @@
   const esc = (s = "") => s.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   const tx = (zh, en, tag = "span", cls = "") => `<${tag}${cls ? ` class="${cls}"` : ""} data-en="${esc(en)}">${zh}</${tag}>`;
   const header = (num, kickerZh, kickerEn, titleZh, titleEn, footZh = "OPENCSG · APPENDIX", footEn = "OPENCSG · APPENDIX") => `
-    <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
+    <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
     <div class="section">${tx(kickerZh, kickerEn, "span", "section-zh")}</div>
     ${titleZh ? tx(titleZh, titleEn, "h2", "title") : ""}
     <div class="foot">${tx(footZh, footEn)}<span>${String(num).padStart(2, "0")}</span></div>`;
@@ -22,7 +22,7 @@
         <div><b>06–07</b>${tx("科研机构与数据飞轮", "Research institutions & data flywheel", "span")}</div>
         <div><b>PROOF</b>${tx("从单点项目走向可复制生产系统", "From one-off projects to repeatable production systems", "span")}</div>
       </div>
-      <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
+      <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
       <div class="foot"><span>OPENCSG · CUSTOMER PROOF</span><span>16</span></div>
     </section></div>`,
 
@@ -223,7 +223,7 @@
         <div><b>03–05</b>${tx("CSGHub-Lite · CSGClaw · CSGHub", "CSGHub-Lite · CSGClaw · CSGHub", "span")}</div>
         <div><b>06</b>${tx("技术文档与试用入口", "Documentation & trial access", "span")}</div>
       </div>
-      <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
+      <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
       <div class="foot"><span>OPENCSG · PRODUCT & TECHNOLOGY</span><span>24</span></div>
     </section></div>`,
 
@@ -375,7 +375,7 @@
         <div><b>04–05</b>${tx("东方定位、实施路径与运营回报", "Dongfang positioning, delivery and returns", "span")}</div>
         <div><b>06</b>${tx("已有工作、阶段结果与复制验证", "Work completed, stage results and repeatability", "span")}</div>
       </div>
-      <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
+      <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
       <div class="foot"><span>OPENCSG · CITY-SCALE AI</span><span>31</span></div>
     </section></div>`,
 
@@ -648,7 +648,7 @@
           <div class="closing-page">38</div>
         </div>
       </div>
-      <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
+      <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
       <div class="foot">
         <span class="foot-tag">OPEN SOURCE · SOVEREIGN AI · AGENTICOPS</span>
         <span class="foot-social" aria-label="OpenCSG social channels">

@@ -2403,7 +2403,7 @@ body.pseudo-fullscreen .toolbar:hover{opacity:1}
   line-height:1.25
 }
 
-/* 10 · Source-complete market evidence, sovereign AI build-out and direct TAM. */
+/* 10 · Sovereign AI market — headline, sovereign build-out, enterprise + policy, TAM. */
 #slide-10 .market10{
   position:absolute;
   left:78px;
@@ -2411,60 +2411,101 @@ body.pseudo-fullscreen .toolbar:hover{opacity:1}
   top:226px;
   height:575px;
   display:grid;
+  grid-template-rows:auto 1fr;
   grid-template-columns:1.06fr .94fr;
-  gap:20px
+  gap:12px 18px
 }
+#slide-10 .m10-headline{grid-column:1/3}
+
+/* Headline strip */
+#slide-10 .m10-headline{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:16px;
+  height:88px;
+  border:1px solid var(--line);
+  border-left:4px solid var(--teal);
+  background:linear-gradient(135deg,#F0F7F5 0%,#FAFCFB 100%)
+}
+#slide-10 .m10-headline-main{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:10px 18px;
+  border-right:1px solid var(--line)
+}
+#slide-10 .m10-headline-main small{
+  color:var(--teal);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.12em
+}
+#slide-10 .m10-headline-main b{
+  font-size:38px;
+  letter-spacing:-.05em;
+  color:#1F332F;
+  line-height:1.1
+}
+#slide-10 .m10-headline-main b span{
+  font-size:16px;
+  color:var(--teal);
+  font-weight:700;
+  margin-left:8px
+}
+#slide-10 .m10-headline-main em{
+  font-style:normal;
+  font-size:10px;
+  color:#6B7875;
+  margin-top:3px
+}
+#slide-10 .m10-headline-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  align-items:center
+}
+#slide-10 .m10-headline-stats article{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  height:100%;
+  padding:8px 16px;
+  border-right:1px solid var(--line)
+}
+#slide-10 .m10-headline-stats article:last-child{border-right:0}
+#slide-10 .m10-headline-stats b{
+  color:var(--teal);
+  font-size:26px;
+  letter-spacing:-.03em
+}
+#slide-10 .m10-headline-stats span{
+  margin-top:4px;
+  color:#53615E;
+  font-size:10px;
+  line-height:1.35
+}
+
+/* Two-column body */
 #slide-10 .m10-evidence,
 #slide-10 .m10-market{
   min-width:0;
-  padding-top:14px;
+  padding-top:12px;
   border-top:3px solid var(--teal)
 }
-#slide-10 .market10 h3{margin:0 0 12px;font-size:21px;line-height:1.25}
-#slide-10 .m10-metrics{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:repeat(2,126px);
-  border-top:1px solid var(--line);
-  border-left:1px solid var(--line)
+#slide-10 .m10-evidence{grid-column:1;grid-row:2;min-height:0;overflow:hidden}
+#slide-10 .m10-market{grid-column:2;grid-row:2;min-height:0;overflow:hidden}
+#slide-10 .m10-evidence{
+  display:flex;
+  flex-direction:column
 }
-#slide-10 .m10-metrics article{
-  display:grid;
-  grid-template-columns:82px 1fr;
-  grid-template-rows:1fr auto;
-  align-items:center;
-  padding:12px 14px;
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line)
-}
-#slide-10 .m10-metrics article>b{
-  grid-row:1/2;
-  color:var(--teal);
-  font-size:31px;
-  letter-spacing:-.04em
-}
-#slide-10 .m10-metrics article>p{
-  margin:0;
-  color:#3F4D49;
-  font-size:12.5px;
-  line-height:1.45
-}
-#slide-10 .m10-metrics article>a{
-  grid-column:1/3;
-  align-self:end;
-  padding-top:8px;
-  border-top:1px solid #E4E9E7;
-  color:#71807D;
-  font-size:8.5px;
-  line-height:1.28;
-  text-decoration:none
-}
+#slide-10 .market10 h3{margin:0 0 10px;font-size:18px;line-height:1.25}
+
+/* Sovereign AI grid — 2 rows × 3 columns */
 #slide-10 .m10-sovereign{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  grid-template-rows:58px 1fr;
-  height:306px;
-  margin-top:14px;
+  grid-template-rows:44px 1fr 1fr;
+  flex:1;
+  min-height:0;
   border:1px solid var(--line)
 }
 #slide-10 .m10-sovereign-head{
@@ -2472,42 +2513,167 @@ body.pseudo-fullscreen .toolbar:hover{opacity:1}
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 16px;
+  padding:0 14px;
   border-bottom:1px solid var(--line);
   background:#F5F8F7
 }
-#slide-10 .m10-sovereign-head b{color:var(--teal);font-size:11px;letter-spacing:.09em}
-#slide-10 .m10-sovereign-head span{font-size:11px;color:#687673}
+#slide-10 .m10-sovereign-head b{color:var(--teal);font-size:10px;letter-spacing:.09em}
+#slide-10 .m10-sovereign-head span{font-size:10px;color:#687673}
 #slide-10 .m10-sovereign article{
   display:flex;
   flex-direction:column;
   justify-content:center;
   min-width:0;
-  padding:15px;
-  border-right:1px solid var(--line)
+  padding:10px 13px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line)
 }
-#slide-10 .m10-sovereign article:last-child{border-right:0}
-#slide-10 .m10-sovereign strong{color:#69807B;font-size:9px;letter-spacing:.12em}
-#slide-10 .m10-sovereign article>b{margin-top:11px;color:#1F332F;font-size:23px}
-#slide-10 .m10-sovereign article>span{margin-top:9px;color:#53615E;font-size:11px;line-height:1.4}
-#slide-10 .m10-sovereign article>a{margin-top:auto;padding-top:12px;color:#70807C;font-size:8.5px;line-height:1.3;text-decoration:none}
+#slide-10 .m10-sovereign article:nth-child(4),
+#slide-10 .m10-sovereign article:nth-child(5),
+#slide-10 .m10-sovereign article:nth-child(6){border-bottom:0}
+#slide-10 .m10-sovereign article:nth-child(3n+3){border-right:0}
+#slide-10 .m10-sovereign strong{color:#69807B;font-size:8.5px;letter-spacing:.12em}
+#slide-10 .m10-sovereign article>b{margin-top:7px;color:#1F332F;font-size:20px;letter-spacing:-.02em}
+#slide-10 .m10-sovereign article>span{margin-top:6px;color:#53615E;font-size:10px;line-height:1.35}
+#slide-10 .m10-sovereign article>a{margin-top:auto;padding-top:8px;color:#70807C;font-size:8px;line-height:1.25;text-decoration:none}
+
+/* Jensen quote */
+#slide-10 .m10-jensen{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:14px;
+  margin-top:10px;
+  padding:12px;
+  border:1px solid var(--line);
+  background:#FAFCFB
+}
+#slide-10 .m10-jensen img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:4px
+}
+#slide-10 .m10-jensen-body{display:flex;flex-direction:column;justify-content:center}
+#slide-10 .m10-jensen blockquote{margin:0}
+#slide-10 .m10-jensen q{
+  display:block;
+  font-size:14px;
+  line-height:1.5;
+  color:#2A3A36;
+  font-style:italic
+}
+#slide-10 .m10-jensen cite{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-top:8px;
+  font-style:normal;
+  font-size:10px;
+  color:#6B7875
+}
+#slide-10 .m10-jensen cite b{color:#1F332F}
+#slide-10 .m10-jensen cite a{color:var(--teal);text-decoration:none}
+#slide-10 .m10-jensen-tags{
+  display:flex;
+  gap:8px;
+  margin-top:10px
+}
+#slide-10 .m10-jensen-tags span{
+  padding:5px 10px;
+  border:1px solid var(--teal);
+  border-radius:3px;
+  color:var(--teal);
+  font-size:9px;
+  font-weight:700;
+  white-space:nowrap
+}
+
+/* Right column: market */
 #slide-10 .m10-market{display:flex;flex-direction:column}
-#slide-10 .m10-demand{display:grid;grid-template-columns:1fr;gap:8px}
-#slide-10 .m10-demand>div{
-  position:relative;
-  min-height:79px;
-  padding:13px 15px 12px 57px;
+#slide-10 .m10-metrics{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  height:100px;
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line)
+}
+#slide-10 .m10-metrics article{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  grid-template-rows:1fr auto;
+  align-items:center;
+  padding:10px 12px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line)
+}
+#slide-10 .m10-metrics article>b{
+  grid-row:1/2;
+  color:var(--teal);
+  font-size:28px;
+  letter-spacing:-.04em
+}
+#slide-10 .m10-metrics article>p{
+  margin:0;
+  color:#3F4D49;
+  font-size:11px;
+  line-height:1.4
+}
+#slide-10 .m10-metrics article>a{
+  grid-column:1/3;
+  align-self:end;
+  padding-top:6px;
+  border-top:1px solid #E4E9E7;
+  color:#71807D;
+  font-size:8px;
+  line-height:1.25;
+  text-decoration:none
+}
+
+/* Policy targets */
+#slide-10 .m10-policy{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:40px 1fr;
+  margin-top:10px;
   border:1px solid var(--line)
 }
-#slide-10 .m10-demand span{position:absolute;left:17px;top:15px;color:var(--teal);font-size:11px;font-weight:800}
-#slide-10 .m10-demand b{font-size:14px}
-#slide-10 .m10-demand p{margin:7px 0 0;color:#5F6D69;font-size:11.5px;line-height:1.42}
+#slide-10 .m10-policy-head{
+  grid-column:1/3;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 14px;
+  border-bottom:1px solid var(--line);
+  background:#F5F8F7
+}
+#slide-10 .m10-policy-head b{color:var(--teal);font-size:10px;letter-spacing:.09em}
+#slide-10 .m10-policy-head span{font-size:10px;color:#687673}
+#slide-10 .m10-policy article{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  border-right:1px solid var(--line)
+}
+#slide-10 .m10-policy article:last-child{border-right:0}
+#slide-10 .m10-policy article>b{color:var(--teal);font-size:24px;letter-spacing:-.03em}
+#slide-10 .m10-policy article>span{
+  margin-top:6px;
+  text-align:center;
+  color:#4F5E5A;
+  font-size:11px;
+  line-height:1.4
+}
+#slide-10 .m10-policy article>span strong{color:var(--teal);font-size:14px}
+
+/* TAM */
 #slide-10 .m10-tam{
   display:flex;
   flex-direction:column;
   flex:1;
   min-height:0;
-  margin-top:12px;
+  margin-top:10px;
   border:1px solid #7EAFA6;
   background:#F7FAF9
 }
@@ -2516,22 +2682,22 @@ body.pseudo-fullscreen .toolbar:hover{opacity:1}
   grid-template-columns:1fr auto;
   grid-template-rows:1fr 1fr;
   align-items:center;
-  min-height:112px;
-  padding:14px 17px;
+  min-height:90px;
+  padding:12px 16px;
   border-bottom:1px solid var(--line)
 }
 #slide-10 .m10-tam-head span{color:var(--teal);font-size:9px;font-weight:800;letter-spacing:.1em}
-#slide-10 .m10-tam-head b{grid-row:1/3;grid-column:2;font-size:47px;letter-spacing:-.055em}
-#slide-10 .m10-tam-head em{align-self:start;color:#536963;font-size:14px;font-style:normal;font-weight:700}
+#slide-10 .m10-tam-head b{grid-row:1/3;grid-column:2;font-size:42px;letter-spacing:-.055em}
+#slide-10 .m10-tam-head em{align-self:start;color:#536963;font-size:13px;font-style:normal;font-weight:700}
 #slide-10 .m10-tam-parts{display:grid;grid-template-columns:1fr 1fr;flex:1}
-#slide-10 .m10-tam-parts article{display:flex;flex-direction:column;justify-content:center;padding:14px 17px;border-right:1px solid var(--line)}
+#slide-10 .m10-tam-parts article{display:flex;flex-direction:column;justify-content:center;padding:12px 15px;border-right:1px solid var(--line)}
 #slide-10 .m10-tam-parts article:last-child{border-right:0}
-#slide-10 .m10-tam-parts small{color:#70807C;font-size:8.5px;letter-spacing:.09em}
-#slide-10 .m10-tam-parts b{margin-top:7px;color:var(--teal);font-size:27px}
-#slide-10 .m10-tam-parts p{margin:7px 0 0;color:#4F5E5A;font-size:11px;line-height:1.4}
-#slide-10 .m10-assumption{margin:0;padding:10px 16px;border-top:1px solid var(--line);color:#75827F;font-size:9px;line-height:1.35}
+#slide-10 .m10-tam-parts small{color:#70807C;font-size:8px;letter-spacing:.09em}
+#slide-10 .m10-tam-parts b{margin-top:6px;color:var(--teal);font-size:24px}
+#slide-10 .m10-tam-parts p{margin:6px 0 0;color:#4F5E5A;font-size:10px;line-height:1.35}
+#slide-10 .m10-assumption{margin:0;padding:8px 14px;border-top:1px solid var(--line);color:#75827F;font-size:8.5px;line-height:1.3}
 
-/* 11 · OPC evidence, capability progression, policy and explicit market size. */
+/* 11 · OPC market — signals, agent trend, evolution, TAM, policy. */
 #slide-11 .opc11{
   position:absolute;
   left:78px;
@@ -2539,85 +2705,235 @@ body.pseudo-fullscreen .toolbar:hover{opacity:1}
   top:226px;
   height:575px;
   display:grid;
-  grid-template-columns:1fr 462px;
-  grid-template-rows:132px 1fr;
-  gap:12px 16px
+  grid-template-columns:1.05fr .95fr;
+  gap:18px
 }
+#slide-11 .opc11-left{min-height:0;align-self:stretch}
+#slide-11 .opc11-market{min-height:0;align-self:stretch}
+
+/* Left column */
+#slide-11 .opc11-left{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-width:0;
+  min-height:0
+}
+
 #slide-11 .opc11-signals{
-  grid-column:1/3;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
+  display:flex;
+  flex-direction:column;
+  padding-top:12px;
   border-top:3px solid var(--teal);
-  border-left:1px solid var(--line)
+  flex:0 0 auto
 }
+#slide-11 .opc11-signals h3{margin:0 0 10px;font-size:17px;line-height:1.25}
 #slide-11 .opc11-signals article{
   display:grid;
-  grid-template-columns:105px 1fr;
-  grid-template-rows:auto 1fr auto;
-  min-width:0;
-  padding:11px 13px;
+  grid-template-columns:90px 1fr;
+  grid-template-rows:auto auto;
+  align-items:center;
+  padding:10px 12px;
+  border-bottom:1px solid var(--line)
+}
+#slide-11 .opc11-signals article:last-child{border-bottom:0}
+#slide-11 .opc11-signals small{
+  grid-column:1/3;
+  color:#75827F;
+  font-size:8px;
+  letter-spacing:.1em;
+  margin-bottom:4px
+}
+#slide-11 .opc11-signals b{
+  color:var(--teal);
+  font-size:26px;
+  letter-spacing:-.03em
+}
+#slide-11 .opc11-signals p{
+  margin:0;
+  color:#52615D;
+  font-size:10.5px;
+  line-height:1.38
+}
+#slide-11 .opc11-signals p strong{color:var(--teal);font-weight:700}
+#slide-11 .opc11-signals a{
+  grid-column:1/3;
+  padding-top:5px;
+  border-top:1px solid #E4E9E7;
+  color:#7A8784;
+  font-size:7.5px;
+  line-height:1.25;
+  text-decoration:none;
+  margin-top:4px
+}
+
+/* Trend section */
+#slide-11 .opc11-trend{
+  flex:1 1 0;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  padding-top:12px;
+  border-top:3px solid var(--teal)
+}
+#slide-11 .opc11-trend-head h3{margin:0 0 10px;font-size:17px;line-height:1.25}
+#slide-11 .opc11-trend-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  flex:1;
+  min-height:0;
+  border:1px solid var(--line)
+}
+#slide-11 .opc11-trend-grid article{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
   border-right:1px solid var(--line);
   border-bottom:1px solid var(--line)
 }
-#slide-11 .opc11-signals small{grid-column:1/3;color:#75827F;font-size:8px;letter-spacing:.1em}
-#slide-11 .opc11-signals b{align-self:center;color:var(--teal);font-size:28px}
-#slide-11 .opc11-signals p{align-self:center;margin:0;color:#52615D;font-size:10.5px;line-height:1.38}
-#slide-11 .opc11-signals a{grid-column:1/3;padding-top:6px;border-top:1px solid #E4E9E7;color:#7A8784;font-size:7.8px;line-height:1.25;text-decoration:none}
-#slide-11 .opc11-path{
+#slide-11 .opc11-trend-grid article:nth-child(2n){border-right:0}
+#slide-11 .opc11-trend-grid article:nth-child(3),
+#slide-11 .opc11-trend-grid article:nth-child(4){border-bottom:0}
+#slide-11 .opc11-trend-grid b{
+  color:var(--teal);
+  font-size:24px;
+  letter-spacing:-.03em
+}
+#slide-11 .opc11-trend-grid span{
+  margin-top:5px;
+  text-align:center;
+  color:#53615D;
+  font-size:9.5px;
+  line-height:1.35
+}
+
+/* Right column: market aside */
+#slide-11 .opc11-market{
   display:flex;
   flex-direction:column;
+  gap:10px;
   min-width:0;
-  padding:15px 15px 13px;
-  border:1px solid var(--line);
+  min-height:0
+}
+
+/* TAM box */
+#slide-11 .opc11-tam{
+  padding:14px 16px;
+  border:1px solid #7EAFA6;
+  background:#EDF6F4;
   border-top:3px solid var(--teal)
 }
-#slide-11 .opc11-path-head{display:flex;align-items:center;justify-content:space-between}
-#slide-11 .opc11-path-head h3{margin:0;font-size:19px}
-#slide-11 .opc11-path-head span{color:#788481;font-size:8px;letter-spacing:.08em}
-#slide-11 .opc11-nodes{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:8px;
-  height:210px;
-  margin-top:14px
+#slide-11 .opc11-tam small{color:#507069;font-size:8.5px;letter-spacing:.1em}
+#slide-11 .opc11-tam b{display:block;margin-top:6px;font-size:36px;letter-spacing:-.05em}
+#slide-11 .opc11-tam em{display:block;color:var(--teal);font-size:14px;font-style:normal;font-weight:800}
+#slide-11 .opc11-tam p{margin:10px 0 0;color:#344A45;font-size:11px;line-height:1.45}
+#slide-11 .opc11-tam span{display:block;margin-top:6px;color:#72807D;font-size:8.5px}
+
+/* Evolution section */
+#slide-11 .opc11-evolution{
+  flex:1 1 0;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  padding-top:12px;
+  border-top:3px solid var(--teal)
 }
-#slide-11 .opc11-nodes article{
-  position:relative;
+#slide-11 .opc11-evolution h3{margin:0 0 10px;font-size:15px;line-height:1.25}
+#slide-11 .opc11-evo-flow{
+  display:grid;
+  grid-template-columns:1fr 18px 1fr 18px 1fr 18px 1fr;
+  align-items:center;
+  flex:1;
+  min-height:0
+}
+#slide-11 .opc11-evo-flow article{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:44px 13px 15px;
+  height:100%;
+  min-height:70px;
+  padding:10px 12px;
   border:1px solid var(--line);
-  background:#FBFCFC
+  position:relative
 }
-#slide-11 .opc11-nodes article:after{content:"";position:absolute;right:-9px;top:50%;width:9px;height:1px;background:var(--teal)}
-#slide-11 .opc11-nodes article:last-child:after{display:none}
-#slide-11 .opc11-nodes article>span{position:absolute;left:13px;top:13px;width:25px;height:25px;display:flex;align-items:center;justify-content:center;background:var(--teal);color:#fff;font-size:10px;font-weight:800}
-#slide-11 .opc11-nodes b{font-size:14px;line-height:1.3}
-#slide-11 .opc11-nodes p{margin:10px 0 0;color:#697673;font-size:11.5px;line-height:1.5}
-#slide-11 .opc11-products{display:grid;grid-template-columns:155px 1fr 1fr;height:58px;margin-top:10px;border:1px solid var(--line)}
-#slide-11 .opc11-products>*{display:flex;align-items:center;padding:9px 12px;border-right:1px solid var(--line);font-size:11px}
+#slide-11 .opc11-evo-flow article>span{
+  position:absolute;
+  left:10px;
+  top:10px;
+  color:var(--teal);
+  font-size:9px;
+  font-weight:800
+}
+#slide-11 .opc11-evo-flow article>b{
+  margin-top:14px;
+  font-size:12px;
+  line-height:1.3
+}
+#slide-11 .opc11-evo-flow article>p{
+  margin:6px 0 0;
+  color:#697673;
+  font-size:9.5px;
+  line-height:1.4
+}
+#slide-11 .opc11-evo-flow i{
+  color:var(--teal);
+  font-size:14px;
+  font-style:normal;
+  text-align:center
+}
+#slide-11 .opc11-products{
+  display:grid;
+  grid-template-columns:130px 1fr 1fr;
+  height:46px;
+  margin-top:8px;
+  border:1px solid var(--line)
+}
+#slide-11 .opc11-products>*{
+  display:flex;
+  align-items:center;
+  padding:8px 10px;
+  border-right:1px solid var(--line);
+  font-size:10px
+}
 #slide-11 .opc11-products>*:last-child{border-right:0}
 #slide-11 .opc11-products b{color:var(--teal)}
-#slide-11 .opc11-loop{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr 22px 1fr;align-items:center;flex:1;margin-top:10px}
-#slide-11 .opc11-loop article{display:flex;flex-direction:column;justify-content:center;height:100%;min-height:82px;padding:12px 14px;border:1px solid var(--line)}
-#slide-11 .opc11-loop b{font-size:13px}
-#slide-11 .opc11-loop span{margin-top:7px;color:#6B7875;font-size:10.5px}
-#slide-11 .opc11-loop i{color:var(--teal);font-size:17px;font-style:normal;text-align:center}
-#slide-11 .opc11-market{display:flex;flex-direction:column;min-width:0;border-top:3px solid var(--teal)}
-#slide-11 .opc11-tam{padding:16px 17px;border:1px solid #7EAFA6;background:#EDF6F4}
-#slide-11 .opc11-tam small{color:#507069;font-size:8.5px;letter-spacing:.1em}
-#slide-11 .opc11-tam b{display:block;margin-top:7px;font-size:40px;letter-spacing:-.05em}
-#slide-11 .opc11-tam em{display:block;color:var(--teal);font-size:15px;font-style:normal;font-weight:800}
-#slide-11 .opc11-tam p{margin:12px 0 0;color:#344A45;font-size:11.5px;line-height:1.45}
-#slide-11 .opc11-tam span{display:block;margin-top:8px;color:#72807D;font-size:8.5px}
-#slide-11 .opc11-policy{flex:1;margin-top:10px;border:1px solid var(--line)}
-#slide-11 .opc11-policy h3{margin:0;padding:12px 14px;border-bottom:1px solid var(--line);font-size:14px}
-#slide-11 .opc11-policy article{position:relative;min-height:86px;padding:11px 75px 10px 82px;border-bottom:1px solid var(--line)}
-#slide-11 .opc11-policy article:last-child{border-bottom:0}
-#slide-11 .opc11-policy article>b{position:absolute;left:13px;top:13px;color:var(--teal);font-size:10px}
-#slide-11 .opc11-policy article>p{margin:0;color:#52615D;font-size:10.5px;line-height:1.42}
-#slide-11 .opc11-policy article>a{position:absolute;right:12px;top:13px;color:#627A75;font-size:8px;text-decoration:none}
+
+/* Policy */
+#slide-11 .opc11-policy{
+  border:1px solid var(--line);
+  padding-top:12px;
+  border-top:3px solid var(--teal)
+}
+#slide-11 .opc11-policy h3{margin:0 0 8px;padding:0 12px;font-size:13px;line-height:1.25}
+#slide-11 .opc11-policy article{
+  position:relative;
+  min-height:64px;
+  padding:8px 70px 8px 60px;
+  border-top:1px solid var(--line)
+}
+#slide-11 .opc11-policy article>b{
+  position:absolute;
+  left:10px;
+  top:10px;
+  color:var(--teal);
+  font-size:9px
+}
+#slide-11 .opc11-policy article>p{
+  margin:0;
+  color:#52615D;
+  font-size:9.5px;
+  line-height:1.4
+}
+#slide-11 .opc11-policy article>a{
+  position:absolute;
+  right:10px;
+  top:10px;
+  color:#627A75;
+  font-size:7.5px;
+  text-decoration:none
+}
 
 /* 12 · OpenCore mechanism plus official website edition boundary. */
 #slide-12 .open12{
@@ -5517,26 +5833,14 @@ body.overview-mode .mobile-reader{display:none!important}
 #slide-11 .source-note,
 #slide-13 .source-note{bottom:60px}
 
-#slide-11 .opc11{grid-template-rows:118px 1fr}
 #slide-11 .opc11-signals article{grid-template-columns:88px 1fr;padding:9px 11px}
 #slide-11 .opc11-signals b{font-size:25px}
 #slide-11 .opc11-signals p{font-size:10.5px;line-height:1.32}
-#slide-11 .opc11-path{padding:12px}
-#slide-11 .opc11-path-head h3{font-size:17px}
-#slide-11 .opc11-nodes{height:166px;margin-top:10px}
-#slide-11 .opc11-nodes article{padding:39px 10px 10px}
-#slide-11 .opc11-nodes b{font-size:14px}
-#slide-11 .opc11-nodes p{margin-top:7px;font-size:11px;line-height:1.35}
 #slide-11 .opc11-products{height:46px;margin-top:8px}
 #slide-11 .opc11-products>*{padding:7px 9px;font-size:10px}
-#slide-11 .opc11-loop{margin-top:8px}
-#slide-11 .opc11-loop article{min-height:66px;padding:9px 10px}
-#slide-11 .opc11-loop b{font-size:12px}
-#slide-11 .opc11-loop span{margin-top:5px;font-size:9.5px}
 #slide-11 .opc11-tam{padding:12px 14px}
 #slide-11 .opc11-tam b{font-size:34px}
 #slide-11 .opc11-tam p{margin-top:8px;font-size:10.5px}
-#slide-11 .opc11-policy{margin-top:8px}
 #slide-11 .opc11-policy h3{padding:9px 11px;font-size:12.5px}
 #slide-11 .opc11-policy article{min-height:68px;padding:9px 66px 8px 72px}
 #slide-11 .opc11-policy article>p{font-size:10px;line-height:1.34}

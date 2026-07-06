@@ -12,7 +12,7 @@
     section.className = "slide light appendix-slide city-reframe";
     section.dataset.layout = `CITY-${num}`;
     section.innerHTML = `
-      <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
+      <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
       <div class="section">${tx(kickerZh, kickerEn, "span", "section-zh")}</div>
       ${tx(titleZh, titleEn, "h2", "title")}
       ${body}
