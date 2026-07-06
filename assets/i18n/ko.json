@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "name": "Korean",
+    "nativeName": "한국어",
+    "dir": "ltr",
+    "flag": "한"
+  },
+  "toolbar": {
+    "overview": "개요",
+    "fullscreen": "전체 화면",
+    "previewPdf": "PDF 미리보기",
+    "downloadPdf": "PDF 다운로드",
+    "exportOptions": "내보내기 옵션"
+  },
+  "nav": {
+    "hint": "↑ ↓ 페이지 이동　O 개요",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "예",
+    "no": "아니요",
+    "cancel": "취소",
+    "apply": "적용",
+    "export": "내보내기",
+    "close": "닫기",
+    "viewPdf": "PDF 다운로드",
+    "loading": "불러오는 중…"
+  },
+  "slide03": {
+    "title": "DevOps 는 소프트웨어 납품을 관리하고, AgenticOps 는 AI 생산과 지속적 진화를 관리한다",
+    "evidenceLabel": "왜 지금인가",
+    "evidenceTitle": "패러다임 전환의 산업 증거",
+    "evidenceLead": "오픈 자산은 코드에서 모델·데이터·Agent 로 확장됐고, 생산 시스템도 납품에서 지속 운영으로 이동했다.",
+    "foot": "DevOps 는 소프트웨어 납품을 산업화했고, AgenticOps 는 지능 시스템의 생산과 진화를 산업화한다",
+    "coBuildLabel": "공동 구축 파트너",
+    "coBuildTail": "운영 환경에서 30 곳 이상 가동 중",
+    "milestone": {
+      "0": "코드 협업이 오픈 인프라가 됨",
+      "1": "오픈소스 배포가 규모화 단계로 진입",
+      "2": "자체 호스팅 DevOps 가 기업에 채택",
+      "3": "모델과 데이터가 새로운 오픈 자산으로 부상",
+      "4": "DevOps 비즈니스 모델이 자본시장에서 검증",
+      "5": "모델 배포가 추론·평가·배포로 확장",
+      "6": "AgenticOps 가 자산·Agent·운영을 연결"
+    }
+  }
+}

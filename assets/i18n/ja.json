@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "name": "Japanese",
+    "nativeName": "日本語",
+    "dir": "ltr",
+    "flag": "日"
+  },
+  "toolbar": {
+    "overview": "概要",
+    "fullscreen": "フルスクリーン",
+    "previewPdf": "PDFをプレビュー",
+    "downloadPdf": "PDFをダウンロード",
+    "exportOptions": "書き出し設定"
+  },
+  "nav": {
+    "hint": "↑ ↓ ページ送り　O 概要",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "はい",
+    "no": "いいえ",
+    "cancel": "キャンセル",
+    "apply": "適用",
+    "export": "書き出し",
+    "close": "閉じる",
+    "viewPdf": "PDFをダウンロード",
+    "loading": "読み込み中…"
+  },
+  "slide03": {
+    "title": "DevOps はソフトウェアの納品を管理し、AgenticOps は AI の生産と継続的な進化を管理する",
+    "evidenceLabel": "なぜ今か",
+    "evidenceTitle": "パラダイム移行の産業証跡",
+    "evidenceLead": "オープン資産はコードからモデル・データ・Agent に拡張され、生産システムも納品から継続運用へと移行した。",
+    "foot": "DevOps はソフトウェア納品を工業化し、AgenticOps は知能システムの生産と進化を工業化する",
+    "coBuildLabel": "共創パートナー",
+    "coBuildTail": "本番環境で 30 社以上が稼働中",
+    "milestone": {
+      "0": "コード協業がオープンインフラになる",
+      "1": "オープンソース配布が規模化",
+      "2": "セルフホスト DevOps が企業に浸透",
+      "3": "モデルとデータが新しいオープン資産に",
+      "4": "DevOps のビジネスモデルが資本市場で検証",
+      "5": "モデル配布が推論・評価・デプロイへ",
+      "6": "AgenticOps が資産・Agent・運用を貫通"
+    }
+  }
+}

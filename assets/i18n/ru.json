@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "name": "Russian",
+    "nativeName": "Русский",
+    "dir": "ltr",
+    "flag": "Ру"
+  },
+  "toolbar": {
+    "overview": "ОБЗОР",
+    "fullscreen": "ПОЛНЫЙ ЭКРАН",
+    "previewPdf": "ПРОСМОТР PDF",
+    "downloadPdf": "СКАЧАТЬ PDF",
+    "exportOptions": "ПАРАМЕТРЫ ЭКСПОРТА"
+  },
+  "nav": {
+    "hint": "↑ ↓ Перелистывание　O Обзор",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "Да",
+    "no": "Нет",
+    "cancel": "Отмена",
+    "apply": "Применить",
+    "export": "Экспорт",
+    "close": "Закрыть",
+    "viewPdf": "Скачать PDF",
+    "loading": "Загрузка…"
+  }
+}

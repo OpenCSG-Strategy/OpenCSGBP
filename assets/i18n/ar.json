@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "name": "Arabic",
+    "nativeName": "العربية",
+    "dir": "rtl",
+    "flag": "ع"
+  },
+  "toolbar": {
+    "overview": "نظرة عامة",
+    "fullscreen": "ملء الشاشة",
+    "previewPdf": "معاينة PDF",
+    "downloadPdf": "تنزيل PDF",
+    "exportOptions": "خيارات التصدير"
+  },
+  "nav": {
+    "hint": "↑ ↓ الانتقال بين الصفحات　O نظرة عامة",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "نعم",
+    "no": "لا",
+    "cancel": "إلغاء",
+    "apply": "تطبيق",
+    "export": "تصدير",
+    "close": "إغلاق",
+    "viewPdf": "تنزيل PDF",
+    "loading": "جارٍ التحميل…"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "name": "German",
+    "nativeName": "Deutsch",
+    "dir": "ltr",
+    "flag": "DE"
+  },
+  "toolbar": {
+    "overview": "ÜBERSICHT",
+    "fullscreen": "VOLLBILD",
+    "previewPdf": "PDF-VORSCHAU",
+    "downloadPdf": "PDF HERUNTERLADEN",
+    "exportOptions": "EXPORTOPTIONEN"
+  },
+  "nav": {
+    "hint": "↑ ↓ Blättern　O Übersicht",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "Ja",
+    "no": "Nein",
+    "cancel": "Abbrechen",
+    "apply": "Anwenden",
+    "export": "EXPORTIEREN",
+    "close": "Schließen",
+    "viewPdf": "PDF herunterladen",
+    "loading": "Wird geladen…"
+  }
+}

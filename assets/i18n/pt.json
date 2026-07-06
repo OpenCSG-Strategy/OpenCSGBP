@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "name": "Portuguese",
+    "nativeName": "Português",
+    "dir": "ltr",
+    "flag": "PT"
+  },
+  "toolbar": {
+    "overview": "VISÃO GERAL",
+    "fullscreen": "TELA CHEIA",
+    "previewPdf": "PRÉ-VISUALIZAR PDF",
+    "downloadPdf": "BAIXAR PDF",
+    "exportOptions": "OPÇÕES DE EXPORTAÇÃO"
+  },
+  "nav": {
+    "hint": "↑ ↓ Navegar　O Visão geral",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "Sim",
+    "no": "Não",
+    "cancel": "Cancelar",
+    "apply": "Aplicar",
+    "export": "Exportar",
+    "close": "Fechar",
+    "viewPdf": "Baixar PDF",
+    "loading": "Carregando…"
+  }
+}

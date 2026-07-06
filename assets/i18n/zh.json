@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "name": "中文",
+    "nativeName": "简体中文",
+    "dir": "ltr",
+    "flag": "中"
+  },
+  "toolbar": {
+    "overview": "总览",
+    "fullscreen": "全屏",
+    "previewPdf": "预览 PDF",
+    "downloadPdf": "下载 PDF",
+    "exportOptions": "导出选项"
+  },
+  "nav": {
+    "hint": "↑ ↓ 翻页　O 总览",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "是",
+    "no": "否",
+    "cancel": "取消",
+    "apply": "应用",
+    "export": "开始导出",
+    "close": "关闭",
+    "viewPdf": "下载 PDF",
+    "loading": "加载中…"
+  }
+}

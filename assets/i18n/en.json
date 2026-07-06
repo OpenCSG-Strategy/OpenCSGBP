@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "name": "English",
+    "nativeName": "English",
+    "dir": "ltr",
+    "flag": "EN"
+  },
+  "toolbar": {
+    "overview": "OVERVIEW",
+    "fullscreen": "FULLSCREEN",
+    "previewPdf": "VIEW PDF",
+    "downloadPdf": "DOWNLOAD PDF",
+    "exportOptions": "EXPORT OPTIONS"
+  },
+  "nav": {
+    "hint": "↑ ↓ Navigate · O Overview",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "export": "EXPORT",
+    "close": "CLOSE",
+    "viewPdf": "DOWNLOAD PDF",
+    "loading": "Loading…"
+  },
+  "slide03": {
+    "title": "DevOps manages software delivery; AgenticOps manages AI production and continuous improvement",
+    "evidenceLabel": "WHY NOW",
+    "evidenceTitle": "Industry evidence for the paradigm shift",
+    "evidenceLead": "Open assets expanded from code to models, data and agents; production systems moved from delivery to continuous operations.",
+    "foot": "DevOps industrialized software delivery; AgenticOps industrializes intelligent-system production and evolution",
+    "coBuildLabel": "CO-BUILDING WITH",
+    "coBuildTail": "+ 30 more in production",
+    "milestone": {
+      "0": "Code collaboration becomes open infrastructure",
+      "1": "Open-source distribution reaches scale",
+      "2": "Self-hosted DevOps wins enterprise adoption",
+      "3": "Models and data become new open assets",
+      "4": "The DevOps business model is market-validated",
+      "5": "Model distribution expands into inference, evaluation and deployment",
+      "6": "AgenticOps connects assets, agents and operations"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "name": "French",
+    "nativeName": "Français",
+    "dir": "ltr",
+    "flag": "FR"
+  },
+  "toolbar": {
+    "overview": "VUE D’ENSEMBLE",
+    "fullscreen": "PLEIN ÉCRAN",
+    "previewPdf": "APERÇU PDF",
+    "downloadPdf": "TÉLÉCHARGER PDF",
+    "exportOptions": "OPTIONS D’EXPORT"
+  },
+  "nav": {
+    "hint": "↑ ↓ Naviguer　O Vue d’ensemble",
+    "counter": "{current} / {total}"
+  },
+  "common": {
+    "yes": "Oui",
+    "no": "Non",
+    "cancel": "Annuler",
+    "apply": "Appliquer",
+    "export": "Exporter",
+    "close": "Fermer",
+    "viewPdf": "Télécharger PDF",
+    "loading": "Chargement…"
+  }
+}
