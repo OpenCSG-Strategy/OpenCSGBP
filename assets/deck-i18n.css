@@ -1,0 +1,22 @@
+.lang-en #slide-09 .a9-scene-item span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+  padding:0 5px;
+  overflow:visible;
+  font-size:10px;
+  line-height:1.12;
+  text-align:center;
+  white-space:normal;
+  text-overflow:clip
+}
+
+html[lang="ru"] #slide-09 .a9-scene-item span{
+  font-size:8.5px
+}
+
+.lang-en #slide-12 .oc12-brand-grid span{
+  font-size:5.6px;
+  -webkit-line-clamp:3
+}

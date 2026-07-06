@@ -661,13 +661,22 @@
           <a class="foot-social-link" href="https://github.com/OpenCSGs" target="_blank" rel="noopener" aria-label="GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.1c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56 4.56-1.52 7.85-5.83 7.85-10.91C23.5 5.65 18.35.5 12 .5z"/></svg>
           </a>
-          <button class="foot-social-link foot-wechat" type="button" aria-label="OpenCSG WeChat Official Account" aria-expanded="false">
+          <button class="foot-social-link foot-wechat" type="button" aria-label="OpenCSG WeChat Official Accounts" aria-expanded="false">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.36 4 2 6.69 2 10c0 1.78.93 3.36 2.41 4.43L4 16.5l2.36-1.18c.45.13.92.23 1.41.28A6.6 6.6 0 0 1 7.5 14c0-3.31 3.36-6 7.5-6 .4 0 .79.03 1.17.08C15.5 5.66 12.78 4 9.5 4zm-2.6 4.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zm5.2 0a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zM22 14c0-2.76-2.91-5-6.5-5S9 11.24 9 14s2.91 5 6.5 5c.8 0 1.55-.12 2.25-.34L20 19.5l-.66-1.83A4.92 4.92 0 0 0 22 14zm-8.7-1.5a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm4.4 0a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/></svg>
-            <span class="foot-wechat-tip" data-en="WeChat 微信公众号 OpenCSG">WeChat</span>
-            <span class="foot-wechat-pop" role="dialog" aria-label="OpenCSG WeChat QR Code">
-              <img src="assets/closing-wechat-qr.png" alt="OpenCSG WeChat QR Code">
-              <em data-en="WECHAT · OpenCSG">微信公众号 OpenCSG</em>
-              <small data-en="Scan to follow">扫码关注</small>
+            <span class="foot-wechat-tip" data-en="WeChat Official Accounts · OpenCSG">WeChat</span>
+            <span class="foot-wechat-pop" role="dialog" aria-label="OpenCSG WeChat QR Codes">
+              <div class="foot-wechat-grid">
+                <div class="foot-wechat-item">
+                  <img src="assets/wechat-qr-official.jpg" alt="OpenCSG Official Account QR">
+                  <em data-en="OFFICIAL · OpenCSG">OpenCSG 官方号</em>
+                  <small data-en="Scan to follow">扫码关注</small>
+                </div>
+                <div class="foot-wechat-item">
+                  <img src="assets/wechat-qr-community.jpg" alt="OpenCSG Community Account QR">
+                  <em data-en="COMMUNITY · OpenCSG">OpenCSG 社区</em>
+                  <small data-en="Scan to follow">扫码关注</small>
+                </div>
+              </div>
             </span>
           </button>
         </span>

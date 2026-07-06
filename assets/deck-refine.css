@@ -7135,3 +7135,50 @@ html[lang="en"] #slide-03.slide03-replica>.title{
   color:#1F332F;
 }
 @page slide-10-img-mock{}
+
+/* 2026-07-06 · Closing slide · dual WeChat QR codes (Official + Community). */
+#slide-38 .foot-wechat-pop{
+  width:auto;
+  padding:14px 14px 12px;
+}
+#slide-38 .foot-wechat-grid{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+#slide-38 .foot-wechat-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  width:128px;
+}
+#slide-38 .foot-wechat-item img{
+  display:block;
+  width:128px;
+  height:128px;
+  margin:0 0 6px;
+  background:#F4F8F7;
+  object-fit:cover;
+  border-radius:4px;
+}
+#slide-38 .foot-wechat-item em{
+  font-style:normal;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.08em;
+  color:var(--teal);
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+#slide-38 .foot-wechat-item small{
+  margin-top:2px;
+  font-size:9.5px;
+  font-weight:600;
+  color:#6E7E7B;
+  letter-spacing:.04em;
+}
+/* Hide the legacy single-image rules that conflict with the grid. */
+#slide-38 .foot-wechat-pop img{
+  margin:0;
+}

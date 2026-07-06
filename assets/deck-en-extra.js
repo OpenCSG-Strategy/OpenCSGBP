@@ -1,5 +1,5 @@
 window.OPENCSG_EN_EXTRA = {
-  "中文":"中文",
+  "中文":"Chinese",
   "↑ ↓ 翻页 O 总览":"↑ ↓ Navigate · O Overview",
   "汇聚开放资产":"Converge open assets",
   "扩散智能能力":"Spread intelligent capabilities",

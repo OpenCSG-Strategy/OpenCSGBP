@@ -24,19 +24,21 @@ assets/i18n/
 {
   "_meta": { "name": "English", "nativeName": "English", "dir": "ltr", "flag": "EN" },
   "toolbar": { ... },
-  "slide03": { "title": "...", "milestone": { "0": "...", "1": "..." } }
+  "slide03": { "title": "...", "milestone": { "0": "...", "1": "..." } },
+  "phrases": { "English source text": "Translated text" }
 }
 ```
 
 - `_meta.dir` 写 `"ltr"` 或 `"rtl"`（阿拉伯语是 `"rtl"`）。
 - `_meta.flag` 是顶栏胶囊上显示的两个字符（`中` / `EN` / `日` / `الع`）。
-- 缺失 key 时，i18n.js 会回退中文，不会出现空白。
+- `phrases` 覆盖静态页面、动态附录、路线图和弹窗正文。
+- 非中文语言缺少词条时回退英文，不再回退中文，也不会出现空白。
 
 ## 二、加一种新语言（假设要加越南语 `vi`）
 
 1. **复制 `en.json`** → 重命名 `vi.json`。
 2. **改 `_meta`**：`name: "Vietnamese"` / `nativeName: "Tiếng Việt"` / `dir: "ltr"` / `flag: "Vi"`。
-3. **逐项翻** key 即可（结构必须保留）。
+3. **逐项翻** key 即可（结构必须保留），并生成完整 `phrases`。
 4. **在 `assets/deck-i18n.js` 顶部 `SUPPORTED`** 数组里加 `'vi'`。
 5. 打开页面，右上角语言胶囊应自动出现 Tiếng Việt。
 
@@ -46,15 +48,33 @@ const SUPPORTED = ['zh','en','ja','ko','ar','ru','fr','de','es','pt','vi'];
 
 ## 三、新增一段需要翻译的文案
 
-在 HTML / JS 渲染出的元素上挂一个 `data-i18n`：
+正文优先保留中英文源文案，生成脚本会为其他语言补齐 `phrases`：
+
+```html
+<h2 data-en="Enterprise production system">企业生产系统</h2>
+```
+
+动态页面使用同样的中英文参数：
+
+```js
+tx("企业生产系统", "Enterprise production system", "h2")
+```
+
+新增或修改文案后运行：
+
+```bash
+TRANSLATION_PROVIDER=mmx node scripts/generate-i18n-packs.cjs
+```
+
+结构化公共文案也可以继续使用 `data-i18n`：
 
 ```html
 <h2 data-i18n="slide07.caseTitle">海力士 12 寸晶圆缺陷分类</h2>
 <p  data-i18n="slide07.caseLead">用 CSGHub 上的视觉模型把缺陷识别准确率拉到 99.2%。</p>
 ```
 
-- 文本里**留中文原文**作为兜底（缺 key 时原样显示，不会空白）。
-- 在 10 个 JSON 文件里同步加 `slide07.caseTitle` / `slide07.caseLead`，缺哪个就以中文兜底。
+- 文本里保留中文原文，`data-en` 提供统一英文源文案。
+- `data-i18n` 的结构化 key 需在对应 JSON 中同步维护。
 
 > 也支持 `data-i18n-placeholder="common.search"` 给 input 写 placeholder。
 

@@ -1,10 +1,4 @@
-/* OpenCSG Deck · i18n core
- * - Loads a JSON language pack and replaces every [data-i18n] / [data-i18n-placeholder] node.
- * - Falls back to the original HTML text if a key is missing in the pack.
- * - Supports RTL (e.g. Arabic) by toggling <html dir="rtl"> and a `[lang-dir]` body attribute.
- * - Persists the chosen language in localStorage and dispatches a `deck:i18n` event
- *   so the existing deck JS can keep working.
- */
+/* OpenCSG Deck · i18n core */
 (function(){
   const SUPPORTED = ['zh','en','ja','ko','ar','ru','fr','de','es','pt'];
   const DEFAULT = 'zh';
@@ -38,6 +32,82 @@
     return template.replace(/\{(\w+)\}/g, (_,k)=> (k in vars ? vars[k] : `{${k}}`));
   }
 
+  function decode(value){
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = value || '';
+    return textarea.value;
+  }
+
+  function phrase(pack, lang, zh, en){
+    if (lang === 'zh') return zh;
+    if (lang === 'en') return en || zh;
+    const phrases = pack.phrases || {};
+    return phrases[en] || phrases[(en || '').trim()] || phrases[zh] || phrases[(zh || '').trim()] || en || zh;
+  }
+
+  function rememberElement(el){
+    if (!el.dataset.i18nSourceZh){
+      el.dataset.i18nSourceZh = el.getAttribute('data-zh') || el.textContent.trim();
+    }
+    if (!el.dataset.i18nSourceEn){
+      el.dataset.i18nSourceEn = decode(el.getAttribute('data-en') || '').trim();
+    }
+  }
+
+  function translateLegacyElements(root, pack, lang){
+    const elements = [];
+    if (root.nodeType === 1 && root.matches('[data-en]')) elements.push(root);
+    if (root.querySelectorAll) elements.push(...root.querySelectorAll('[data-en]'));
+    elements.forEach(el=>{
+      rememberElement(el);
+      const value = phrase(pack, lang, el.dataset.i18nSourceZh, el.dataset.i18nSourceEn);
+      if (typeof value === 'string' && el.textContent !== value) el.textContent = value;
+    });
+  }
+
+  function translateTextNodes(root, pack, lang){
+    const englishMap = window.OPENCSG_EN || {};
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const parent = node.parentElement;
+        if (!parent || parent.closest('script,style,[data-en],[data-i18n]')) return NodeFilter.FILTER_REJECT;
+        return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node=>{
+      if (typeof node.__deckI18nZh !== 'string') node.__deckI18nZh = node.nodeValue;
+      const raw = node.__deckI18nZh;
+      const core = raw.trim();
+      if (!core) return;
+      const start = raw.indexOf(core);
+      const lead = raw.slice(0, start);
+      const trail = raw.slice(start + core.length);
+      const en = englishMap[core] || core;
+      const value = phrase(pack, lang, core, en);
+      node.nodeValue = lead + value + trail;
+    });
+  }
+
+  function translatePlaceholders(root, pack, lang){
+    const elements = [];
+    if (root.nodeType === 1 && root.matches('input[data-en-placeholder],textarea[data-en-placeholder]')) elements.push(root);
+    if (root.querySelectorAll) elements.push(...root.querySelectorAll('input[data-en-placeholder],textarea[data-en-placeholder]'));
+    elements.forEach(el=>{
+      const zh = el.getAttribute('data-zh-placeholder') || el.getAttribute('placeholder') || '';
+      const en = el.getAttribute('data-en-placeholder') || zh;
+      el.setAttribute('placeholder', phrase(pack, lang, zh, en));
+    });
+  }
+
+  function translateTree(root, pack, lang){
+    if (!root) return;
+    translateLegacyElements(root, pack, lang);
+    translateTextNodes(root, pack, lang);
+    translatePlaceholders(root, pack, lang);
+  }
+
   function apply(pack, lang){
     document.documentElement.setAttribute('lang', lang);
     // Only flip document direction for languages whose meta says so. We deliberately
@@ -66,17 +136,12 @@
       if (typeof v === 'string') el.setAttribute('placeholder', v);
     });
 
-    // Legacy data-en / data-zh bilingual nodes — let the new lang take precedence.
-    document.querySelectorAll('[data-en]').forEach(el=>{
-      // The original Chinese text remains the default. Only override when switching to a non-zh lang
-      // and we have a matching key under "legacy.<hash>".
-      if (lang === 'zh') return;
-      const hash = el.getAttribute('data-en').trim();
-      if (!hash) return;
-      const key = 'legacy.' + hash;
-      const v = lookup(pack, key);
-      if (typeof v === 'string') el.textContent = v;
-    });
+    translateTree(document.body, pack, lang);
+    if (typeof window.renderRoadmap === 'function'){
+      window.renderRoadmap(lang === 'zh' ? 'zh' : 'en');
+      const roadmap = document.querySelector('.roadmap-app');
+      if (roadmap) translateTree(roadmap, pack, lang);
+    }
 
     // Update the current-language chip
     const chip = document.getElementById('langCurrent');
@@ -187,6 +252,15 @@
       const reapply = ()=> apply(packs[localStorage.getItem(STORAGE_KEY) || initial] || pack0, localStorage.getItem(STORAGE_KEY) || initial);
       requestAnimationFrame(()=> requestAnimationFrame(reapply));
       window.addEventListener('load', reapply, {once:true});
+
+      const observer = new MutationObserver(records=>{
+        const lang = localStorage.getItem(STORAGE_KEY) || initial;
+        const pack = packs[lang] || pack0;
+        records.forEach(record=>record.addedNodes.forEach(node=>{
+          if (node.nodeType === 1) translateTree(node, pack, lang);
+        }));
+      });
+      observer.observe(document.body, {childList:true, subtree:true});
     });
   }
   if (document.readyState === 'loading'){
@@ -210,5 +284,5 @@
   });
 
   // Expose for legacy callers (deck-extra.js still does language toggling)
-  window.DeckI18n = { setLang, SUPPORTED };
+  window.DeckI18n = { setLang, SUPPORTED, translateTree };
 })();

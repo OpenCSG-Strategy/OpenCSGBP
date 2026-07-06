@@ -1,0 +1,255 @@
+/* Slide 03 · Community evolution: content → code → models → tokens → AgenticOps. */
+#slide-03 .evo3-modern{
+  grid-template-rows:minmax(0,1fr) 232px 74px!important;
+  gap:12px!important
+}
+
+#slide-03 .evo3-evidence{
+  grid-template-columns:194px minmax(0,1fr)!important;
+  border:1px solid #CEDCD9!important;
+  border-top:3px solid #23877B!important;
+  border-radius:7px!important;
+  background:#FFFFFF!important
+}
+#slide-03 .evo3-evidence>header{
+  position:relative!important;
+  justify-content:flex-start!important;
+  padding:17px 15px 13px!important;
+  border-right:1px solid #D8E3E0!important;
+  background:#F0F7F5!important
+}
+#slide-03 .evo3-evidence>header small{
+  color:#23877B!important;
+  font-size:8px!important;
+  font-weight:800!important;
+  letter-spacing:.15em!important
+}
+#slide-03 .evo3-evidence>header b{
+  margin-top:8px!important;
+  color:#173D37!important;
+  font-size:15px!important;
+  line-height:1.25!important
+}
+#slide-03 .evo3-evidence>header p{
+  display:block!important;
+  margin:8px 0 0!important;
+  color:#526762!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  line-height:1.45!important
+}
+#slide-03 .evo3-source{
+  position:absolute;
+  left:15px;
+  right:12px;
+  bottom:12px;
+  color:#82908D;
+  font-size:7px;
+  line-height:1.4
+}
+
+#slide-03 .evo3-timeline{
+  display:grid!important;
+  grid-template-columns:.92fr 1.18fr 1.23fr 1fr 1.18fr!important;
+  min-width:0!important;
+  min-height:0!important;
+  padding:0!important;
+  overflow:hidden!important
+}
+#slide-03 .evo3-timeline:before{display:none!important}
+#slide-03 .evo3-timeline article{
+  position:relative!important;
+  display:grid!important;
+  grid-template-rows:25px 16px 50px 29px minmax(0,1fr)!important;
+  gap:2px!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:13px 11px 11px!important;
+  border:0!important;
+  border-right:1px solid #DFE7E5!important;
+  background:#FFFFFF!important
+}
+#slide-03 .evo3-timeline article:last-child{border-right:0!important}
+#slide-03 .evo3-stage-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  min-width:0
+}
+#slide-03 .evo3-stage-head time{
+  color:#23877B!important;
+  font-size:15px!important;
+  font-weight:800!important;
+  line-height:1!important
+}
+#slide-03 .evo3-stage-head i{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:17px!important;
+  height:17px!important;
+  margin:0!important;
+  border:1px solid #B7CDCA!important;
+  border-radius:50%!important;
+  background:#F4F8F7!important;
+  box-shadow:none!important;
+  color:#66817C!important;
+  font-size:6px!important;
+  font-style:normal!important;
+  font-weight:800!important
+}
+#slide-03 .evo3-timeline article>small{
+  color:#83908D;
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.08em;
+  white-space:nowrap
+}
+#slide-03 .evo3-stage-logos{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+  overflow:hidden
+}
+#slide-03 .evo3-brand-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  min-width:0;
+  height:36px;
+  padding:5px 7px;
+  border:1px solid #DCE5E3;
+  border-radius:5px;
+  background:#FAFBFB
+}
+#slide-03 .evo3-brand-chip img{
+  display:block;
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  object-fit:contain
+}
+#slide-03 .evo3-brand-chip b{
+  min-width:0;
+  overflow:hidden;
+  color:#263B37;
+  font-size:8.5px;
+  font-weight:800;
+  line-height:1;
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+#slide-03 .evo3-brand-chip.wordmark img{
+  width:58px;
+  height:22px;
+  flex-basis:58px
+}
+#slide-03 .evo3-brand-chip.opencsg{
+  border-color:#91C4BC;
+  background:#FFFFFF
+}
+#slide-03 .evo3-brand-chip.opencsg img{
+  width:25px;
+  height:25px;
+  flex-basis:25px
+}
+#slide-03 .evo3-brand-chip.opencsg b{color:#176C61}
+#slide-03 .evo3-timeline article>b{
+  align-self:end;
+  color:#213D38!important;
+  font-size:13px!important;
+  line-height:1.15!important
+}
+#slide-03 .evo3-timeline article>p{
+  margin:1px 0 0!important;
+  color:#687873!important;
+  font-size:9px!important;
+  line-height:1.42!important
+}
+#slide-03 .evo3-timeline article.active{
+  border-color:#23877B!important;
+  background:linear-gradient(180deg,#23877B 0,#1D766C 100%)!important
+}
+#slide-03 .evo3-timeline article.active .evo3-stage-head time,
+#slide-03 .evo3-timeline article.active>small,
+#slide-03 .evo3-timeline article.active>b,
+#slide-03 .evo3-timeline article.active>p{color:#FFFFFF!important}
+#slide-03 .evo3-timeline article.active .evo3-stage-head i{
+  border-color:rgba(255,255,255,.45)!important;
+  background:rgba(255,255,255,.12)!important;
+  color:#FFFFFF!important
+}
+
+#slide-03 .evo3-differentiator{
+  display:grid;
+  grid-template-columns:1.04fr 1.46fr;
+  gap:18px;
+  align-items:center;
+  min-width:0;
+  min-height:0;
+  padding:9px 15px;
+  border:1px solid #C8DAD6;
+  border-left:5px solid #23877B;
+  border-radius:7px;
+  background:linear-gradient(90deg,#F1F8F6 0,#FFFFFF 50%,#F4F9F8 100%)
+}
+#slide-03 .evo3-differentiator>div{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:9px;
+  align-items:baseline;
+  min-width:0
+}
+#slide-03 .evo3-differentiator small{
+  grid-column:1/-1;
+  color:#23877B;
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.13em
+}
+#slide-03 .evo3-differentiator b{
+  color:#173E38;
+  font-size:13px;
+  white-space:nowrap
+}
+#slide-03 .evo3-differentiator>div span{
+  min-width:0;
+  color:#5D6D69;
+  font-size:8.5px;
+  line-height:1.3
+}
+#slide-03 .evo3-differentiator>p{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:5px;
+  min-width:0;
+  margin:0
+}
+#slide-03 .evo3-differentiator>p span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  padding:7px 8px;
+  border:1px solid #BFD5D1;
+  border-radius:4px;
+  background:#FFFFFF;
+  color:#265E56;
+  font-size:8px;
+  font-weight:800;
+  line-height:1.1;
+  text-align:center;
+  white-space:nowrap
+}
+#slide-03 .evo3-differentiator>p i{
+  color:#56A99D;
+  font-size:10px;
+  font-style:normal;
+  font-weight:800
+}
+
+@media (prefers-reduced-motion:reduce){
+  #slide-03 *{animation:none!important;transition:none!important}
+}

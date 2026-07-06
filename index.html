@@ -18,10 +18,12 @@
   </style>
   <link rel="stylesheet" href="assets/deck-base.css?v=20260702a">
   <link rel="stylesheet" href="assets/deck-appendix.css?v=20260630j">
-  <link rel="stylesheet" href="assets/deck-refine.css?v=20260702t">
+  <link rel="stylesheet" href="assets/deck-refine.css?v=20260706wechat">
   <link rel="stylesheet" href="assets/deck-slide03-earliest.css?v=20260705g">
-  <link rel="stylesheet" href="assets/deck-review-20260705.css?v=20260705g">
+  <link rel="stylesheet" href="assets/deck-review-20260705.css?v=20260705k">
   <link rel="stylesheet" href="assets/deck-tighten-20260705.css?v=20260705a">
+  <link rel="stylesheet" href="assets/deck-slide03-community.css?v=20260706a">
+  <link rel="stylesheet" href="assets/deck-i18n.css?v=20260706i18n">
 
   <style id="responsive-stage">
     html{overflow-x:hidden}
@@ -661,30 +663,53 @@
       </div>
       <div class="box customer-proof historical-customers">
         <div class="proof-heading customer-proof-head">
-          <h4 data-en="Representative customers, partners and regional platforms">代表性客户、伙伴与城市级平台</h4>
-          <span data-en="Selected logos only · Enterprise validation plus a repeatable regional AI network">仅展示部分代表 · 企业生产验证 + 可复制的区域 AI 网络</span>
+          <h4 data-en="Key customers and national-level industry connections">重点客户与国家级产业连接</h4>
+          <span data-en="Five priority references · Central SOEs, national institutions and leading new-energy enterprises">五项重点验证置顶 · 央企、国家部委与新能源龙头</span>
         </div>
-        <div class="customer-portfolio">
-          <div class="customer-wordmarks logo-only">
-            <div><img src="assets/case-logos/image44.png" alt=""></div>
-            <div><img src="assets/case-logos/image45.png" alt=""></div>
-            <div><img src="assets/case-logos/image46.png" alt=""></div>
-            <div><img src="assets/case-logos/image47.png" alt=""></div>
-            <div><img src="assets/case-logos/image48.png" alt=""></div>
-            <div><img src="assets/case-logos/image49.png" alt=""></div>
-            <div><img src="assets/case-logos/image50.png" alt=""></div>
-            <div><img src="assets/case-logos/image51.png" alt=""></div>
-            <div><img src="assets/case-logos/image52.png" alt=""></div>
-            <div><img src="assets/case-logos/image53.png" alt=""></div>
-            <div><img src="assets/case-logos/image54.png" alt=""></div>
-            <div><img src="assets/case-logos/image55.png" alt=""></div>
-            <div><img src="assets/case-logos/image56.png" alt=""></div>
-            <div><img src="assets/case-logos/image57.png" alt=""></div>
-            <div><img src="assets/case-logos/image58.png" alt=""></div>
-            <div><b>香港数码港</b><span>CYBERPORT</span></div>
-            <div><b>上海 AI 实验室</b><span>SHLAB</span></div>
-            <div><b>开放龙数</b><span>OPENLONG</span></div>
-            <div><b>中矿</b><span>MINING</span></div>
+        <div class="customer-portfolio tiered-customers">
+          <div class="customer-accounts">
+            <div class="customer-priority">
+              <article class="priority-account miit">
+                <span data-en="NATIONAL INSTITUTION · MIIT">国家部委 · MIIT</span>
+                <b data-en="Ministry of Industry and Information Technology">工业和信息化部</b>
+                <small data-en="National industry connection">国家级产业连接</small>
+              </article>
+              <article class="priority-account">
+                <span data-en="CENTRAL SOE · TELECOM">央企运营商</span>
+                <img src="assets/customer-logos/china-mobile.svg" alt="中国移动">
+                <small data-en="China Mobile">中国移动</small>
+              </article>
+              <article class="priority-account">
+                <span data-en="CENTRAL SOE · TELECOM">央企运营商</span>
+                <img src="assets/customer-logos/china-unicom.svg" alt="中国联通">
+                <small data-en="China Unicom">中国联通</small>
+              </article>
+              <article class="priority-account wordmark">
+                <span data-en="NEW ENERGY LEADER">新能源龙头</span>
+                <b>CATL</b>
+                <small data-en="CATL">宁德时代</small>
+              </article>
+              <article class="priority-account wordmark">
+                <span data-en="NEW ENERGY LEADER">新能源龙头</span>
+                <b>CALB</b>
+                <small data-en="CALB">中航锂电</small>
+              </article>
+            </div>
+            <div class="supporting-customers">
+              <div class="supporting-label"><b data-en="Additional representative customers and ecosystem partners">其他代表性客户与生态伙伴</b><span data-en="Selected">部分展示</span></div>
+              <div class="customer-wordmarks logo-only">
+                <div><img src="assets/case-logos/image45.png" alt="寒武纪"></div>
+                <div><img src="assets/case-logos/image48.png" alt="沐曦"></div>
+                <div><img src="assets/case-logos/image50.png" alt="中国一汽"></div>
+                <div><img src="assets/case-logos/image51.png" alt="联想"></div>
+                <div><img src="assets/case-logos/image52.png" alt="浪潮"></div>
+                <div><img src="assets/case-logos/image54.png" alt="三一"></div>
+                <div><img src="assets/case-logos/image56.png" alt="中国电信"></div>
+                <div><img src="assets/case-logos/image57.png" alt="微软"></div>
+                <div><img src="assets/case-logos/image58.png" alt="渤海银行"></div>
+                <div><b data-en="Hong Kong Cyberport">香港数码港</b><span>CYBERPORT</span></div>
+              </div>
+            </div>
           </div>
           <div class="regional-network">
             <div class="regional-map" aria-label="城市级 AI 平台全球复制网络">
@@ -743,22 +768,6 @@
           <p data-en="OpenCSG manages AI assets, approved models, private copilots and governed agent workflows across public cloud, private cloud, on-premise and sovereign-ready environments.">OpenCSG 统一管理 AI 资产、批准模型、私有 Copilot 和受治理的 Agent 工作流，支持公有云、私有云、本地与主权环境。</p>
         </article>
       </div>
-      <div class="case7-feature">
-        <div class="case7-feature-copy">
-          <small>NAMED CASE · SK hynix</small>
-          <h3 data-en="OpenCSG AI in production at SK hynix">OpenCSG AI 驱动：海力士</h3>
-          <p data-en="OpenCSG connects equipment monitoring, production optimization and intelligent decision-making with one governed data-and-agent loop, linking iDS 3D Studio, DataFlow, CorePro and the production line.">OpenCSG 将设备监控、生产优化与智能决策接到统一的数据与 Agent 闭环中，打通 iDS 3D Studio、DataFlow、CorePro 与生产线。</p>
-          <div class="case7-feature-points">
-            <span data-en="Device monitoring">设备监控</span>
-            <span data-en="Lifetime prediction">寿命预测</span>
-            <span data-en="Production optimization">生产优化</span>
-            <span data-en="Intelligent decision-making">智能决策</span>
-          </div>
-        </div>
-        <div class="case7-feature-visual">
-          <img src="assets/cases/hynix-case-reference.png" alt="海力士案例参考架构图">
-        </div>
-      </div>
       <div class="case7-capabilities">
         <article><span>01</span><b data-en="Pilot → Production">从试验到生产</b><p data-en="Govern, secure and operate AI in production.">治理、安全与持续运营。</p></article>
         <article><span>02</span><b data-en="Beyond a Model Hub">超越模型 Hub</b><p data-en="Models, data, prompts, code, MCP and agents.">模型、数据、Prompt、代码、MCP 与 Agent。</p></article>
@@ -781,13 +790,14 @@
         </article>
       </div>
     </div>
-    <div class="foot"><span data-en="Named and anonymous cases point to the same proof: control, governance, private deployment and production continuity">命名案例与匿名案例共同指向同一件事：控制、治理、私有化与生产连续性</span><span>07</span></div>
+    <div class="foot"><span data-en="Two production patterns point to the same proof: control, governance, private deployment and production continuity">两类生产验证共同指向同一件事：控制、治理、私有化与生产连续性</span><span>07</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="product"><section class="slide light" data-layout="L08" id="slide-08">
     <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh">统一产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">Unified Product System</span></div>
     <h2 class="title">同一技术底座，服务组织生产与个人 AI 工作系统</h2>
+    <p class="product8-bridge"><b data-en="One foundation, two work systems:">一套底座、两类工作系统：</b><span data-en="CSGHub and AgenticHub power organizational production, while CSGHub-Lite and CSGClaw keep personal AI running continuously.">CSGHub 与 AgenticHub 支撑组织生产，CSGHub-Lite 与 CSGClaw 支撑个人 AI 持续运行。</span></p>
     <div class="product-shell">
       <div class="shared-top"><b data-en="One shared AgenticOps control plane">一套共享 AgenticOps 控制平面</b><span data-en="Open assets · Identity and security · Runtime · Evaluation · Observability">开放资产生态 · 身份与安全 · 运行时 · 评测 · 可观测性</span></div>
       <div class="edition organization-edition">
@@ -1085,9 +1095,24 @@
         <div class="oc12-brand-grid">
           <article><img src="assets/brand-logos/redhat.png" alt="Red Hat"><div><b>Red Hat</b><span data-en="Open infrastructure + enterprise subscription and support">开源基础设施 + 企业订阅与支持</span></div></article>
           <article><img src="assets/brand-logos/gitlab.png" alt="GitLab"><div><b>GitLab</b><span data-en="Open core + enterprise governance">开源核心 + 企业治理能力</span></div></article>
-          <article><img src="assets/brand-logos/fit2cloud.png" alt="飞致云 Fit2Cloud"><div><b>飞致云 Fit2Cloud</b><span data-en="Open products + enterprise editions and services">开源产品 + 企业版与服务</span></div></article>
+          <article><img src="assets/brand-logos/fit2cloud.png" alt="飞致云 Fit2Cloud"><div><b data-en="Fit2Cloud">飞致云 Fit2Cloud</b><span data-en="Open products + enterprise editions and services">开源产品 + 企业版与服务</span></div></article>
           <article><img src="assets/brand-logos/dify.png" alt="Dify"><div><b>Dify</b><span data-en="Community adoption + enterprise platform capabilities">社区采用 + 企业平台能力</span></div></article>
           <article><img src="assets/brand-logos/ragflow.png" alt="RAGFlow"><div><b>RAGFlow</b><span data-en="Open-source RAG + commercial enhancements">开源 RAG 产品 + 商业增强</span></div></article>
+          <article><img src="assets/brand-logos/grafana.svg" alt="Grafana"><div><b>Grafana</b><span data-en="OSS observability + Enterprise / Cloud">开源可观测 + Enterprise / Cloud</span></div></article>
+          <article><img src="assets/brand-logos/odoo.svg" alt="Odoo"><div><b>Odoo</b><span data-en="Community core + enterprise modules">Community 核心 + 企业模块</span></div></article>
+          <article><img src="assets/brand-logos/neo4j.svg" alt="Neo4j"><div><b>Neo4j</b><span data-en="Community graph DB + enterprise scale">社区图数据库 + 企业扩展</span></div></article>
+          <article><img src="assets/brand-logos/mattermost.svg" alt="Mattermost"><div><b>Mattermost</b><span data-en="Open collaboration + enterprise compliance">开源协作 + 企业合规</span></div></article>
+          <article><img src="assets/brand-logos/rocketchat.svg" alt="Rocket.Chat"><div><b>Rocket.Chat</b><span data-en="MIT community edition + enterprise edition">MIT 社区版 + 企业版</span></div></article>
+          <article><img src="assets/brand-logos/elastic.svg" alt="Elastic"><div><b>Elastic</b><span data-en="Open core + commercial subscriptions">开源内核 + 商业订阅</span></div></article>
+          <article><img src="assets/brand-logos/mongodb.svg" alt="MongoDB"><div><b>MongoDB</b><span data-en="Community + Enterprise / Atlas">Community + Enterprise / Atlas</span></div></article>
+          <article><img src="assets/brand-logos/confluent.svg" alt="Confluent"><div><b>Confluent</b><span data-en="Kafka core + enterprise platform / cloud">Kafka 核心 + 企业平台 / 云</span></div></article>
+          <article><img src="assets/brand-logos/redis.svg" alt="Redis"><div><b>Redis</b><span data-en="Open core + Enterprise / Cloud">开源核心 + Enterprise / Cloud</span></div></article>
+        </div>
+        <div class="oc12-proof-strip" aria-label="OpenCore commercial proof">
+          <a href="https://ir.gitlab.com/news/news-details/2026/GitLab-Reports-Fourth-Quarter-and-Full-Year-Fiscal-Year-2026-Financial-Results-Board-of-Directors-Authorizes-400-million-for-Share-Repurchase-Program/default.aspx" target="_blank" rel="noopener"><b>$220M</b><span data-en="GitLab FY26 adjusted FCF">GitLab FY26 调整后自由现金流</span></a>
+          <a href="https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-fourth-quarter-fiscal-2026-financial" target="_blank" rel="noopener"><b>$2.46B</b><span data-en="MongoDB FY26 revenue · +23%">MongoDB FY26 收入 · +23%</span></a>
+          <a href="https://grafana.com/press/2024/08/21/grafana-labs-soars-past-250m-arr-and-5000-customers-completes-270m-primary-and-secondary-transaction-and-named-a-leader-in-the-gartner-magic-quadrant-for-observability-platforms/" target="_blank" rel="noopener"><b>$6B+</b><span data-en="Grafana private valuation">Grafana 公司估值</span></a>
+          <a href="https://newsroom.ibm.com/2025-12-08-ibm-to-acquire-confluent-to-create-smart-data-platform-for-enterprise-generative-ai" target="_blank" rel="noopener"><b>$11B</b><span data-en="IBM acquisition of Confluent">IBM 收购 Confluent</span></a>
         </div>
       </section>
       <section class="oc12-boundary">
@@ -1149,13 +1174,13 @@
     <div class="founder14-layout">
       <aside class="founder14-photo">
         <img src="assets/ceo-sam-profile.jpg" alt="陈冉 Sam Chen">
-        <div class="founder14-photo-label"><b>陈冉 Sam Chen</b><span data-en="Founder &amp; CEO, OpenCSG">OpenCSG 创始人兼 CEO</span><small>OPEN SOURCE · ENTERPRISE SOFTWARE · AI SOVEREIGNTY</small></div>
+        <div class="founder14-photo-label"><b data-en="Sam Chen">陈冉 Sam Chen</b><span data-en="Founder &amp; CEO, OpenCSG">OpenCSG 创始人兼 CEO</span><small>OPEN SOURCE · ENTERPRISE SOFTWARE · AI SOVEREIGNTY</small></div>
       </aside>
       <main class="founder14-story">
         <p class="founder14-lead" data-en="A rare operator spanning engineering, global open-source governance, enterprise software and commercialization—with a repeatable path from technology communities to scalable revenue.">少见的同时贯通工程技术、全球开源治理、企业软件与商业化的连续创业者，具备从技术社区走向规模收入的可复制路径。</p>
         <section class="founder14-proof">
-          <article><small>01 · SCALE PROOF</small><strong>US$500M</strong><b data-en="JiHu GitLab valuation reached in two years">极狐 GitLab 两年估值突破 5 亿美元</b><p data-en="Built the team, market and open-source commercialization system from zero.">从零搭建团队、市场与开源商业化体系。</p></article>
-          <article><small>02 · REPEATABILITY</small><strong>5</strong><b data-en="Enterprise infrastructure stages">五段企业基础设施经历</b><p>IBM → HP → D2IQ → GitLab China → OpenCSG</p></article>
+          <article><small>01 · FOUNDER-MARKET FIT</small><strong>REPEAT</strong><b data-en="Repeat founder in open-source commercialization">开源商业化连续创业者</b><p data-en="From cloud native and DevOps to sovereign AI, repeatedly building from zero to scale.">从云原生、DevOps 到主权 AI，持续完成从 0 到 1 再到规模化。</p></article>
+          <article><small>02 · SCALE REPEATABILITY</small><strong>0→1→N</strong><b data-en="Enterprise infrastructure scaling capability">企业基础软件规模化能力</b><p data-en="IBM → HP → D2IQ → JiHu GitLab → OpenCSG; JiHu reached a US$500M valuation in two years.">IBM → HP → D2IQ → 极狐 → OpenCSG；极狐两年估值突破 5 亿美元。</p></article>
           <article><small>03 · NETWORK</small><strong>GLOBAL</strong><b data-en="Open-source governance influence">全球开源治理影响力</b><p data-en="Linux Foundation, CNCF, EleutherAI and OGA networks.">Linux Foundation、CNCF、EleutherAI 与 OGA 网络。</p></article>
         </section>
         <section class="founder14-career">
@@ -1167,7 +1192,7 @@
             <i>→</i>
             <article><small>MESOSPHERE</small><b>D2IQ</b><p data-en="Co-founder · cloud-native adoption">联合创始人 · 云原生落地</p></article>
             <i>→</i>
-            <article><small>GITLAB CHINA</small><b>极狐 GitLab</b><p data-en="Founder &amp; CEO · open-core scale proof">创始人兼 CEO · OpenCore 规模验证</p></article>
+            <article><small>GITLAB CHINA</small><b data-en="JiHu GitLab">极狐 GitLab</b><p data-en="Founder &amp; CEO · open-core scale proof">创始人兼 CEO · OpenCore 规模验证</p></article>
             <i>→</i>
             <article class="active"><small>OPENCSG</small><b>AgenticOps</b><p data-en="Founder &amp; CEO · sovereign AI infrastructure">创始人兼 CEO · 主权 AI 基础设施</p></article>
           </div>
@@ -1279,11 +1304,11 @@
     <div class="foot"><span data-en="One product foundation · Three revenue engines · Increasing recurring and ecosystem mix">同一产品底座 · 三类收入引擎 · 订阅与生态占比持续提升</span><span>15</span></div>
   </section></div>
 
-  <script src="assets/deck-appendix.js?v=20260701p"></script>
+  <script src="assets/deck-appendix.js?v=20260706wechat"></script>
   <script src="assets/deck-city-reframe.js?v=20260702c"></script>
-  <script src="assets/deck-slide03-replica.js?v=20260705j"></script>
-  <script src="assets/deck-i18n.js?v=20260705a"></script>
-  <script src="assets/deck-en-extra.js?v=20260701o"></script>
+  <script src="assets/deck-slide03-replica.js?v=20260706a"></script>
+  <script src="assets/deck-i18n.js?v=20260706i18n"></script>
+  <script src="assets/deck-en-extra.js?v=20260706i18n"></script>
   <script>
     const EN={
       "主权 AI 开放基础设施":"Sovereign AI Open Infrastructure",
@@ -1595,6 +1620,7 @@
       "每一个组织、每一个人，都需要掌握自己的 AI。":"Every organization and every individual should control their own AI."
     };
     Object.assign(EN,window.OPENCSG_EN_EXTRA||{});
+    window.OPENCSG_EN=EN;
     const wraps=[...document.querySelectorAll('.slide-wrap')];
     const counter=document.getElementById('counter');
     const zhBtn=document.getElementById('langZh'),enBtn=document.getElementById('langEn');
@@ -1608,12 +1634,11 @@
     }
     window.refreshMobileReaders=buildMobileReaders;
     function setLang(lang){
-      const code = lang==='en'?'en':(lang==='zh'?'zh':null);
-      // Forward to the i18n core if it understands this code (zh/en/ja/ko/ar/ru/fr/de/es/pt).
-      if (code && window.DeckI18n && window.DeckI18n.setLang){
+      const code = window.DeckI18n?.SUPPORTED.includes(lang) ? lang : 'zh';
+      if (window.DeckI18n && window.DeckI18n.setLang){
         window.DeckI18n.setLang(code);
         currentLang = code;
-        document.body.classList.toggle('lang-en', code==='en');
+        document.body.classList.toggle('lang-en', code!=='zh');
         zhBtn && zhBtn.classList.toggle('active', code==='zh');
         enBtn && enBtn.classList.toggle('active', code==='en');
         const u=new URL(location.href);u.searchParams.set('lang', code);history.replaceState(null,'',u);
@@ -1639,17 +1664,28 @@
       const u=new URL(location.href);u.searchParams.set('lang',currentLang);history.replaceState(null,'',u);
       buildMobileReaders();
     }
+    document.addEventListener('deck:i18n',event=>{
+      currentLang=event.detail.lang;
+      document.body.classList.toggle('lang-en',currentLang!=='zh');
+      buildMobileReaders();
+    });
 
     // ============================================================
     // PDF Export Options Dialog
     // ============================================================
+    const SECTION_LABELS={
+      cover:'封面',main:'主干部',case:'案例验证',product:'产品介绍',appendix:'附录与荣誉'
+    };
     const SECTION_PRESETS={
-      all:    new Set(['cover','main','case','product','appendix']),
-      main:   new Set(['cover','main']),
-      core:   new Set(['cover','main']),                 // alias: same as main
-      product:new Set(['product']),
-      case:   new Set(['case']),
-      appendix:new Set(['appendix'])
+      all:      new Set(['cover','main','case','product','appendix']),
+      main:     new Set(['cover','main']),
+      core:     new Set(['cover','main','case']),        // 主干 + 案例
+      product:  new Set(['product']),
+      case:     new Set(['case']),
+      appendix: new Set(['appendix']),
+      none:     new Set([]),
+      investor: new Set(['cover','main']),               // 投资人精简版 = 封面 + 主干
+      full:     new Set(['cover','main','case','product','appendix'])
     };
     const RATIO_HINTS={
       '16:9':            '1600×900px，与幻灯片源比例一致。',
@@ -1783,9 +1819,32 @@
     }
     exportDialog.querySelectorAll('[data-group]').forEach(group=>{
       const key=group.getAttribute('data-group');
-      if(key==='section-presets') return; // handled separately
+      if(key==='section-presets') return; // handled by preset handler below
       group.querySelectorAll('.export-chip').forEach(chip=>{
         chip.addEventListener('click',()=>setExportField(key,chip.dataset.value));
+      });
+    });
+    // Section preset buttons: 全选 / 主干+案例 / 清空 / 投资人精简版 / 完整版
+    exportDialog.querySelectorAll('[data-preset]').forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        const preset=chip.dataset.preset;
+        const target=SECTION_PRESETS[preset];
+        if(!target) return;
+        exportState.sections=new Set(target);
+        document.querySelectorAll('.section-check input[type="checkbox"]').forEach(cb=>{
+          cb.checked=exportState.sections.has(cb.value);
+        });
+        exportDialog.querySelectorAll('[data-preset]').forEach(c=>c.classList.toggle('active',c===chip));
+        refreshExportSummary();
+      });
+    });
+    // Section checkboxes: 封面 / 主干部 / 案例验证 / 产品介绍 / 附录与荣誉
+    document.querySelectorAll('.section-check input[type="checkbox"]').forEach(cb=>{
+      cb.addEventListener('change',()=>{
+        if(cb.checked) exportState.sections.add(cb.value);
+        else exportState.sections.delete(cb.value);
+        exportDialog.querySelectorAll('[data-preset]').forEach(c=>c.classList.remove('active'));
+        refreshExportSummary();
       });
     });
     watermarkEnabled.addEventListener('change',()=>{
