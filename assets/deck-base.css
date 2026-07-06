@@ -35,6 +35,38 @@
 .toolbar button{appearance:none;border:0;border-right:1px solid #D8E0DE;background:transparent;color:#53605D;padding:9px 12px;font:600 11px Arial;letter-spacing:.06em;cursor:pointer}
 .toolbar button:last-child{border-right:0}
 .toolbar button.active{background:var(--teal);color:#fff}
+
+/* Language switch — compact chip + dropdown */
+.lang-switch{position:relative;display:inline-flex;align-items:stretch;border-right:1px solid #D8E0DE}
+.lang-switch .lang-current{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:0;background:transparent;color:#1F3A36;font-weight:700;font-size:11px;letter-spacing:.08em;cursor:pointer;min-width:64px
+}
+.lang-switch .lang-current .lang-flag{
+  display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:4px;background:#23877B;color:#fff;font-size:10px;font-weight:700
+}
+.lang-switch .lang-current .lang-caret{font-size:9px;color:#7C8B89;margin-left:2px}
+.lang-switch.open .lang-current{background:var(--teal);color:#fff}
+.lang-switch.open .lang-current .lang-caret{color:#CDE8E4}
+.lang-menu{
+  position:absolute;top:100%;right:0;margin:6px 0 0;padding:6px;
+  list-style:none;background:#fff;border:1px solid #D8E0DE;border-radius:10px;
+  box-shadow:0 18px 42px rgba(18,67,60,.18);
+  display:none;min-width:200px;max-height:340px;overflow-y:auto;z-index:200
+}
+.lang-menu li{
+  display:grid;grid-template-columns:24px 1fr auto;align-items:center;gap:10px;
+  padding:8px 10px;border-radius:6px;cursor:pointer;color:#1F3A36;font-size:12px
+}
+.lang-menu li:hover{background:#F1F7F6}
+.lang-menu li[aria-selected="true"]{background:#E7F2F0}
+.lang-menu li .lang-flag{
+  display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:#EAF2F0;color:#17685E;font-size:11px;font-weight:700
+}
+.lang-menu li .lang-native{font-weight:600}
+.lang-menu li .lang-name{color:#7C8B89;font-size:11px;letter-spacing:.04em}
+
+body[lang-dir="rtl"] .lang-menu{right:auto;left:0}
+body[lang-dir="rtl"] .toolbar{direction:ltr}
 .cover-brand{position:absolute;left:84px;top:72px;width:208px}
 .cover-title{position:absolute;left:84px;top:238px;width:650px}
 .cover-title h1{font-size:72px;line-height:.98;margin:0 0 26px;letter-spacing:-.055em}

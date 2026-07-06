@@ -1,0 +1,46 @@
+# Build artefacts & PDF/PPTX exports
+*.pdf
+*.pptx
+verify-*.png
+debug*.pdf
+mobile*.png
+ipad-*.png
+qa-*.png
+mobile_preview.png
+/assets/.DS_Store
+
+# Project-root ad-hoc testing scripts
+/refine_spacing.js
+/review.js
+/screenshot_all.js
+/test_changes.js
+/test_desktop.js
+/tmp/
+
+# Temporary scratch files & ad-hoc fix scripts in the project root
+/check_overlap*.js
+/check_layout*.py
+/find_overlaps.js
+/fix_*.js
+/fix_*.py
+/get_html.js
+/current_styles.html
+/test_*.pdf
+/nvidia-sovereign-ai-deck/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -318,13 +318,19 @@
 </head>
 <body>
   <div class="toolbar">
-    <button type="button" id="langZh" class="active">中文</button>
-    <button type="button" id="langEn">EN</button>
-    <button type="button" id="overviewBtn">OVERVIEW</button>
-    <button type="button" id="fullscreenBtn">FULLSCREEN</button>
-    <button type="button" id="pdfPreviewBtn" data-zh="预览 PDF" data-en="VIEW PDF">预览 PDF</button>
-    <button type="button" id="pdfDownloadBtn" data-zh="下载 PDF" data-en="DOWNLOAD PDF">下载 PDF</button>
-    <button type="button" id="pdfExportBtn" data-zh="导出选项" data-en="EXPORT OPTIONS">导出选项</button>
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" id="langCurrent" class="lang-current" aria-haspopup="listbox" aria-expanded="false">
+        <span class="lang-flag" data-flag="zh">中</span>
+        <span class="lang-code">ZH</span>
+        <span class="lang-caret">▾</span>
+      </button>
+      <ul class="lang-menu" role="listbox" aria-label="Language"></ul>
+    </div>
+    <button type="button" id="overviewBtn" data-i18n="toolbar.overview">OVERVIEW</button>
+    <button type="button" id="fullscreenBtn" data-i18n="toolbar.fullscreen">FULLSCREEN</button>
+    <button type="button" id="pdfPreviewBtn" data-i18n="toolbar.previewPdf">预览 PDF</button>
+    <button type="button" id="pdfDownloadBtn" data-i18n="toolbar.downloadPdf">下载 PDF</button>
+    <button type="button" id="pdfExportBtn" data-i18n="toolbar.exportOptions">导出选项</button>
   </div>
   <dialog id="pdfPreviewDialog" class="pdf-preview-dialog" aria-labelledby="pdfPreviewTitle">
     <div class="pdf-preview-shell">
@@ -659,30 +665,26 @@
           <span data-en="Selected logos only · Enterprise validation plus a repeatable regional AI network">仅展示部分代表 · 企业生产验证 + 可复制的区域 AI 网络</span>
         </div>
         <div class="customer-portfolio">
-          <div class="portfolio-block portfolio-customers">
-            <div class="portfolio-label"><small>CUSTOMERS · ENTERPRISE PRODUCTION</small><span data-en="Customers running OpenCSG in production">已上线 OpenCSG 生产的代表客户</span></div>
-            <div class="customer-wordmarks logo-only">
-              <div><img src="assets/case-logos/image49.png" alt="中国联通"></div>
-              <div><img src="assets/case-logos/image50.png" alt="中国一汽"></div>
-              <div><img src="assets/case-logos/image52.png" alt="浪潮"></div>
-              <div><img src="assets/case-logos/image53.png" alt="中国移动"></div>
-              <div><img src="assets/case-logos/image54.png" alt="三一重工"></div>
-              <div><img src="assets/case-logos/image55.png" alt="乐训科技"></div>
-              <div><img src="assets/case-logos/image56.png" alt="中国电信"></div>
-              <div><img src="assets/case-logos/image58.png" alt="渤海银行"></div>
-            </div>
-          </div>
-          <div class="portfolio-block portfolio-partners">
-            <div class="portfolio-label"><small>PARTNERS · ECOSYSTEM</small><span data-en="Hardware, model and cloud partners">硬件、模型与云生态伙伴</span></div>
-            <div class="customer-wordmarks logo-only">
-              <div><img src="assets/case-logos/image51.png" alt="Lenovo"></div>
-              <div><img src="assets/case-logos/image57.png" alt="Microsoft"></div>
-              <div><img src="assets/case-logos/image45.png" alt="寒武纪"></div>
-              <div><img src="assets/case-logos/image48.png" alt="MetaX"></div>
-              <div><img src="assets/case-logos/image44.png" alt="RIVAI"></div>
-              <div><img src="assets/case-logos/image46.png" alt="云荟申报"></div>
-              <div><img src="assets/case-logos/image47.png" alt="西云算力"></div>
-            </div>
+          <div class="customer-wordmarks logo-only">
+            <div><img src="assets/case-logos/image44.png" alt=""></div>
+            <div><img src="assets/case-logos/image45.png" alt=""></div>
+            <div><img src="assets/case-logos/image46.png" alt=""></div>
+            <div><img src="assets/case-logos/image47.png" alt=""></div>
+            <div><img src="assets/case-logos/image48.png" alt=""></div>
+            <div><img src="assets/case-logos/image49.png" alt=""></div>
+            <div><img src="assets/case-logos/image50.png" alt=""></div>
+            <div><img src="assets/case-logos/image51.png" alt=""></div>
+            <div><img src="assets/case-logos/image52.png" alt=""></div>
+            <div><img src="assets/case-logos/image53.png" alt=""></div>
+            <div><img src="assets/case-logos/image54.png" alt=""></div>
+            <div><img src="assets/case-logos/image55.png" alt=""></div>
+            <div><img src="assets/case-logos/image56.png" alt=""></div>
+            <div><img src="assets/case-logos/image57.png" alt=""></div>
+            <div><img src="assets/case-logos/image58.png" alt=""></div>
+            <div><b>香港数码港</b><span>CYBERPORT</span></div>
+            <div><b>上海 AI 实验室</b><span>SHLAB</span></div>
+            <div><b>开放龙数</b><span>OPENLONG</span></div>
+            <div><b>中矿</b><span>MINING</span></div>
           </div>
           <div class="regional-network">
             <div class="regional-map" aria-label="城市级 AI 平台全球复制网络">
@@ -1266,6 +1268,7 @@
   <script src="assets/deck-appendix.js?v=20260701p"></script>
   <script src="assets/deck-city-reframe.js?v=20260702c"></script>
   <script src="assets/deck-slide03-replica.js?v=20260705j"></script>
+  <script src="assets/deck-i18n.js?v=20260705a"></script>
   <script src="assets/deck-en-extra.js?v=20260701o"></script>
   <script>
     const EN={
@@ -1591,6 +1594,17 @@
     }
     window.refreshMobileReaders=buildMobileReaders;
     function setLang(lang){
+      const code = lang==='en'?'en':(lang==='zh'?'zh':null);
+      // Forward to the i18n core if it understands this code (zh/en/ja/ko/ar/ru/fr/de/es/pt).
+      if (code && window.DeckI18n && window.DeckI18n.setLang){
+        window.DeckI18n.setLang(code);
+        currentLang = code;
+        document.body.classList.toggle('lang-en', code==='en');
+        zhBtn && zhBtn.classList.toggle('active', code==='zh');
+        enBtn && enBtn.classList.toggle('active', code==='en');
+        const u=new URL(location.href);u.searchParams.set('lang', code);history.replaceState(null,'',u);
+        return;
+      }
       currentLang=lang==='en'?'en':'zh';
       document.documentElement.lang=currentLang==='en'?'en':'zh-CN';
       document.body.classList.toggle('lang-en',currentLang==='en');
@@ -1607,7 +1621,7 @@
         el.setAttribute('href',currentLang==='en'?el.dataset.hrefEn:el.dataset.hrefZh);
       });
       window.renderRoadmap?.(currentLang);
-      zhBtn.classList.toggle('active',currentLang==='zh');enBtn.classList.toggle('active',currentLang==='en');
+      zhBtn && zhBtn.classList.toggle('active',currentLang==='zh');enBtn && enBtn.classList.toggle('active',currentLang==='en');
       const u=new URL(location.href);u.searchParams.set('lang',currentLang);history.replaceState(null,'',u);
       buildMobileReaders();
     }
@@ -1990,7 +2004,7 @@
       link.click();
       link.remove();
     }
-    zhBtn.addEventListener('click',()=>setLang('zh'));enBtn.addEventListener('click',()=>setLang('en'));
+    zhBtn && zhBtn.addEventListener('click',()=>setLang('zh'));enBtn && enBtn.addEventListener('click',()=>setLang('en'));
     document.getElementById('overviewBtn').addEventListener('click',setOverview);
     document.getElementById('fullscreenBtn').addEventListener('click',fullscreen);
     document.getElementById('pdfPreviewBtn').addEventListener('click',previewPdf);

@@ -631,7 +631,10 @@
             ${tx("自主", "AUTONOMOUS", "span")}<i></i>
             ${tx("可信", "TRUSTED", "span")}
           </div>
-          <div class="closing-contact"><span>opencsg.com</span><span>ir@opencsg.com</span></div>
+          <div class="closing-contact">
+            <a class="closing-contact-link primary" href="https://opencsg.com" target="_blank" rel="noopener">opencsg.com</a>
+            <a class="closing-contact-link primary" href="mailto:ir@opencsg.com">ir@opencsg.com</a>
+          </div>
         </div>
         <div class="closing-command">
           <div class="closing-ai-ghost">AI</div>
@@ -646,7 +649,30 @@
         </div>
       </div>
       <img class="brand" src="assets/logo-opencsg.svg" alt="OpenCSG">
-      <div class="foot"><span>OPEN SOURCE · SOVEREIGN AI · AGENTICOPS</span><span>INVESTOR PRESENTATION · 2026</span></div>
+      <div class="foot">
+        <span class="foot-tag">OPEN SOURCE · SOVEREIGN AI · AGENTICOPS</span>
+        <span class="foot-social" aria-label="OpenCSG social channels">
+          <a class="foot-social-link" href="https://www.linkedin.com/company/opencsg/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a class="foot-social-link" href="https://x.com/OpenCsg" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21.5l-7.5 8.575L23 22h-6.875l-5.387-7.05L4.6 22H1.34l8.025-9.175L1 2h7.05l4.875 6.45L18.244 2zm-1.207 18h1.82L7.05 4H5.1l11.937 16z"/></svg>
+          </a>
+          <a class="foot-social-link" href="https://github.com/OpenCSGs" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.1c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56 4.56-1.52 7.85-5.83 7.85-10.91C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+          <button class="foot-social-link foot-wechat" type="button" aria-label="OpenCSG WeChat Official Account" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.36 4 2 6.69 2 10c0 1.78.93 3.36 2.41 4.43L4 16.5l2.36-1.18c.45.13.92.23 1.41.28A6.6 6.6 0 0 1 7.5 14c0-3.31 3.36-6 7.5-6 .4 0 .79.03 1.17.08C15.5 5.66 12.78 4 9.5 4zm-2.6 4.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zm5.2 0a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zM22 14c0-2.76-2.91-5-6.5-5S9 11.24 9 14s2.91 5 6.5 5c.8 0 1.55-.12 2.25-.34L20 19.5l-.66-1.83A4.92 4.92 0 0 0 22 14zm-8.7-1.5a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm4.4 0a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/></svg>
+            <span class="foot-wechat-tip" data-en="WeChat 微信公众号 OpenCSG">WeChat</span>
+            <span class="foot-wechat-pop" role="dialog" aria-label="OpenCSG WeChat QR Code">
+              <img src="assets/closing-wechat-qr.png" alt="OpenCSG WeChat QR Code">
+              <em data-en="WECHAT · OpenCSG">微信公众号 OpenCSG</em>
+              <small data-en="Scan to follow">扫码关注</small>
+            </span>
+          </button>
+        </span>
+        <span class="foot-meta">INVESTOR PRESENTATION · 2026</span>
+      </div>
     </section></div>`
   ];
 
@@ -751,4 +777,27 @@
     }));
     window.renderRoadmap("zh");
   }
+
+  // WeChat QR pop: click on touch devices, click-outside to close.
+  document.querySelectorAll("#slide-38 .foot-wechat").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      btn.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", btn.classList.contains("is-open") ? "true" : "false");
+    });
+    btn.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        btn.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+  document.addEventListener("click", (e) => {
+    document.querySelectorAll("#slide-38 .foot-wechat.is-open").forEach(btn => {
+      if (!btn.contains(e.target)) {
+        btn.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
 })();

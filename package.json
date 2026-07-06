@@ -1,5 +1,14 @@
 {
   "dependencies": {
     "playwright": "^1.61.1"
+  },
+  "devDependencies": {
+    "pptxgenjs": "^3.12.0"
+  },
+  "scripts": {
+    "export:pdf": "node scripts/export-pdf.cjs",
+    "export:pdf-bilingual": "node scripts/export-pdf-bilingual.cjs",
+    "export:pptx": "node scripts/export-pptx.cjs",
+    "export:pptx-bilingual": "node scripts/export-pptx-bilingual.cjs"
   }
 }
