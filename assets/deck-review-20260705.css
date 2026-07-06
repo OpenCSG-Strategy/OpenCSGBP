@@ -1351,27 +1351,26 @@
   position:absolute;
   left:48px;
   right:48px;
-  top:178px;
-  bottom:50px;
+  top:170px;
+  bottom:60px;
   display:grid;
-  grid-template-columns:380px minmax(0,1fr);
-  gap:20px;
+  grid-template-columns:330px minmax(0,1fr);
+  gap:18px;
   min-height:0
 }
 
 /* Left column */
 #slide-14 .founder14-left{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  min-height:0
+  display:grid;
+  grid-template-rows:340px auto 1fr;
+  gap:10px;
+  min-height:0;
+  overflow:hidden
 }
 
 /* Photo */
 #slide-14 .founder14-photo{
   position:relative;
-  flex:1;
-  min-height:0;
   overflow:hidden;
   border-top:3px solid var(--teal);
   background:#444
@@ -1423,12 +1422,14 @@
 
 /* Company logos */
 #slide-14 .founder14-logos{
-  background:#F7F9F8;
+  background:#FFFFFF;
   border:1px solid #D8E2E0;
-  padding:10px 12px
+  padding:8px 6px;
+  margin-top:-4px
 }
 #slide-14 .founder14-logos-label{
-  margin-bottom:8px
+  margin-bottom:6px;
+  padding:0 4px
 }
 #slide-14 .founder14-logos-label small{
   color:#888;
@@ -1439,8 +1440,9 @@
 #slide-14 .founder14-logos-row{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:6px;
-  align-items:center
+  gap:4px;
+  align-items:end;
+  padding:0 2px
 }
 #slide-14 .founder14-logo-item{
   display:flex;
@@ -1449,52 +1451,62 @@
   gap:3px
 }
 #slide-14 .founder14-logo-item img{
-  height:18px;
-  width:auto;
+  height:30px;
+  width:100%;
+  max-width:75px;
   object-fit:contain
 }
-#slide-14 .founder14-logo-item.hp img{height:16px}
-#slide-14 .founder14-logo-item.gitlab img{height:18px}
-#slide-14 .founder14-logo-item b{
-  font-size:9px;
-  font-weight:700;
-  color:#155F56
-}
 #slide-14 .founder14-logo-item span{
-  font-size:6px;
-  color:#667
+  font-size:7px;
+  color:#667;
+  text-align:center;
+  font-weight:600;
+  white-space:nowrap
 }
 
 /* Credentials */
 #slide-14 .founder14-credentials{
   background:#EDF7F5;
   border:1px solid #BDD3CF;
-  padding:8px 12px
+  padding:10px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  overflow:hidden
+}
+#slide-14 .founder14-credentials > small{
+  color:#888;
+  font-size:7px;
+  font-weight:700;
+  letter-spacing:.1em;
+  margin-bottom:2px
 }
 #slide-14 .founder14-cred-row{
   display:flex;
   align-items:center;
-  gap:8px;
-  font-size:8px;
+  gap:6px;
   color:#244E47;
-  margin-bottom:4px
+  font-size:9px;
+  line-height:1.3
 }
-#slide-14 .founder14-cred-row:last-child{margin-bottom:0}
-#slide-14 .founder14-cred-row small{
-  color:#888;
-  font-size:6px;
-  font-weight:700;
-  letter-spacing:.08em
+#slide-14 .founder14-cred-row:before{
+  content:"";
+  display:inline-block;
+  width:4px;
+  height:4px;
+  background:#23877B;
+  flex:none
 }
 #slide-14 .founder14-cred-row span{
   color:#183F39;
-  font-size:8px
+  font-size:9px;
+  font-weight:500
 }
 
 /* Right column - story */
 #slide-14 .founder14-story{
   display:grid;
-  grid-template-rows:80px 140px 90px 52px 108px;
+  grid-template-rows:85px 130px 85px 50px 1fr;
   gap:8px;
   min-width:0;
   min-height:0
@@ -1513,19 +1525,19 @@
   justify-content:center;
   background:linear-gradient(135deg,#23877B,#1A6B60);
   color:#fff;
-  padding:8px;
+  padding:10px 8px;
   text-align:center
 }
 #slide-14 .founder14-stat strong{
-  font-size:28px;
+  font-size:30px;
   font-weight:800;
   line-height:1
 }
 #slide-14 .founder14-stat b{
-  font-size:7px;
-  font-weight:400;
-  margin-top:4px;
-  opacity:.9
+  font-size:8px;
+  font-weight:500;
+  margin-top:5px;
+  opacity:.95
 }
 
 /* Proof cards */

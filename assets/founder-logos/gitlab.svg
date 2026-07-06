@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70">
+<rect width="200" height="70" fill="white"/>
+<g transform="translate(40,40)">
+<polygon points="0,-22 -16,18 -8,18 0,4 8,18 16,18" fill="#E24329"/>
+<polygon points="0,-22 -16,18 -32,18 -8,-10" fill="#FC6D26"/>
+<polygon points="0,-22 16,18 32,18 8,-10" fill="#FC6D26"/>
+<polygon points="-32,18 32,18 16,18 0,4 -16,18" fill="#FCA326"/>
+</g>
+<text x="120" y="44" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#380D6A">GitLab</text>
+</svg>
