@@ -1343,3 +1343,378 @@
 @media (max-width:900px){
   #slide-04 .method-contrast{right:292px!important}
 }
+
+/* =====================================================
+   SLIDE 14 - Founder Profile (Redesigned)
+   ===================================================== */
+#slide-14 .founder14-layout{
+  position:absolute;
+  left:48px;
+  right:48px;
+  top:178px;
+  bottom:50px;
+  display:grid;
+  grid-template-columns:380px minmax(0,1fr);
+  gap:20px;
+  min-height:0
+}
+
+/* Left column */
+#slide-14 .founder14-left{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:0
+}
+
+/* Photo */
+#slide-14 .founder14-photo{
+  position:relative;
+  flex:1;
+  min-height:0;
+  overflow:hidden;
+  border-top:3px solid var(--teal);
+  background:#444
+}
+#slide-14 .founder14-photo>img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:none;
+  opacity:1
+}
+#slide-14 .founder14-photo:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:120px;
+  background:linear-gradient(180deg,transparent,rgba(11,42,38,.92))
+}
+#slide-14 .founder14-photo-label{
+  position:absolute;
+  left:18px;
+  right:16px;
+  bottom:16px;
+  z-index:2;
+  color:#fff
+}
+#slide-14 .founder14-photo-label b{
+  display:block;
+  font-size:24px;
+  line-height:1.1;
+  font-weight:700
+}
+#slide-14 .founder14-photo-label span{
+  display:block;
+  margin-top:5px;
+  font-size:11px
+}
+#slide-14 .founder14-photo-label small{
+  display:block;
+  margin-top:7px;
+  color:#C7DDD8;
+  font-size:6px;
+  letter-spacing:.1em
+}
+
+/* Company logos */
+#slide-14 .founder14-logos{
+  background:#F7F9F8;
+  border:1px solid #D8E2E0;
+  padding:10px 12px
+}
+#slide-14 .founder14-logos-label{
+  margin-bottom:8px
+}
+#slide-14 .founder14-logos-label small{
+  color:#888;
+  font-size:7px;
+  font-weight:700;
+  letter-spacing:.1em
+}
+#slide-14 .founder14-logos-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
+  align-items:center
+}
+#slide-14 .founder14-logo-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px
+}
+#slide-14 .founder14-logo-item img{
+  height:18px;
+  width:auto;
+  object-fit:contain
+}
+#slide-14 .founder14-logo-item.hp img{height:16px}
+#slide-14 .founder14-logo-item.gitlab img{height:18px}
+#slide-14 .founder14-logo-item b{
+  font-size:9px;
+  font-weight:700;
+  color:#155F56
+}
+#slide-14 .founder14-logo-item span{
+  font-size:6px;
+  color:#667
+}
+
+/* Credentials */
+#slide-14 .founder14-credentials{
+  background:#EDF7F5;
+  border:1px solid #BDD3CF;
+  padding:8px 12px
+}
+#slide-14 .founder14-cred-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:8px;
+  color:#244E47;
+  margin-bottom:4px
+}
+#slide-14 .founder14-cred-row:last-child{margin-bottom:0}
+#slide-14 .founder14-cred-row small{
+  color:#888;
+  font-size:6px;
+  font-weight:700;
+  letter-spacing:.08em
+}
+#slide-14 .founder14-cred-row span{
+  color:#183F39;
+  font-size:8px
+}
+
+/* Right column - story */
+#slide-14 .founder14-story{
+  display:grid;
+  grid-template-rows:80px 140px 90px 52px 108px;
+  gap:8px;
+  min-width:0;
+  min-height:0
+}
+
+/* Hero stats */
+#slide-14 .founder14-hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px
+}
+#slide-14 .founder14-stat{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#23877B,#1A6B60);
+  color:#fff;
+  padding:8px;
+  text-align:center
+}
+#slide-14 .founder14-stat strong{
+  font-size:28px;
+  font-weight:800;
+  line-height:1
+}
+#slide-14 .founder14-stat b{
+  font-size:7px;
+  font-weight:400;
+  margin-top:4px;
+  opacity:.9
+}
+
+/* Proof cards */
+#slide-14 .founder14-proof{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border:1px solid #D8E2E0
+}
+#slide-14 .founder14-proof article{
+  display:flex;
+  flex-direction:column;
+  padding:12px 14px;
+  border-right:1px solid #D8E2E0;
+  background:#FBFCFC
+}
+#slide-14 .founder14-proof article:last-child{border-right:none}
+#slide-14 .founder14-proof article:first-child{background:#EDF7F5}
+#slide-14 .founder14-proof small{
+  color:#23877B;
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.1em
+}
+#slide-14 .founder14-proof strong{
+  margin-top:5px;
+  color:#155F56;
+  font-size:18px;
+  font-weight:700;
+  line-height:1
+}
+#slide-14 .founder14-proof b{
+  margin-top:4px;
+  color:#243F3A;
+  font-size:9px;
+  font-weight:600;
+  line-height:1.3
+}
+#slide-14 .founder14-proof p{
+  margin:4px 0 0;
+  color:#677570;
+  font-size:8px;
+  line-height:1.35
+}
+
+/* Timeline */
+#slide-14 .founder14-career-timeline{
+  background:#F7F9F8;
+  border:1px solid #D8E2E0;
+  padding:8px 12px
+}
+#slide-14 .founder14-timeline-head{
+  margin-bottom:6px
+}
+#slide-14 .founder14-timeline-head b{
+  font-size:10px;
+  color:#244E47;
+  font-weight:700
+}
+#slide-14 .founder14-timeline{
+  display:flex;
+  align-items:center;
+  gap:4px
+}
+#slide-14 .founder14-tl-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:4px 8px;
+  background:#fff;
+  border:1px solid #D8E2E0;
+  border-radius:3px;
+  min-width:0
+}
+#slide-14 .founder14-tl-item span{
+  font-size:8px;
+  font-weight:700;
+  color:#244E47;
+  white-space:nowrap
+}
+#slide-14 .founder14-tl-item small{
+  font-size:6px;
+  color:#667;
+  margin-top:2px;
+  white-space:nowrap
+}
+#slide-14 .founder14-tl-item.highlight{
+  background:#FFF8E7;
+  border-color:#C88A2B
+}
+#slide-14 .founder14-tl-item.active{
+  background:#EAF5F2;
+  border-color:#23877B
+}
+#slide-14 .founder14-tl-arrow{
+  color:#BDD3CF;
+  font-size:12px;
+  font-weight:300
+}
+
+/* Governance badges */
+#slide-14 .founder14-governance{
+  display:flex;
+  flex-direction:column;
+  gap:6px
+}
+#slide-14 .founder14-governance small{
+  color:#667;
+  font-size:7px;
+  font-weight:700;
+  letter-spacing:.1em
+}
+#slide-14 .founder14-gov-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px
+}
+#slide-14 .founder14-gov-badges span{
+  display:inline-block;
+  padding:4px 10px;
+  background:#EDF7F5;
+  border:1px solid #23877B;
+  color:#155F56;
+  font-size:8px;
+  font-weight:600;
+  border-radius:20px
+}
+
+/* Team section */
+#slide-14 .founder14-team{
+  display:flex;
+  flex-direction:column;
+  min-height:0
+}
+#slide-14 .founder14-team-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:6px;
+  flex-shrink:0
+}
+#slide-14 .founder14-team-head>b{
+  color:#244E47;
+  font-size:10px;
+  font-weight:700
+}
+#slide-14 .founder14-team-head>span{
+  color:#75827F;
+  font-size:7px
+}
+#slide-14 .founder14-team-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+  flex:1;
+  min-height:0
+}
+#slide-14 .founder14-team-grid article{
+  display:flex;
+  flex-direction:column;
+  padding:8px 10px;
+  background:#FBFCFC;
+  border:1px solid #D8E2E0;
+  overflow:hidden
+}
+#slide-14 .founder14-team-grid article>span{
+  color:#23877B;
+  font-size:6px;
+  font-weight:700;
+  letter-spacing:.08em;
+  margin-bottom:4px
+}
+#slide-14 .founder14-team-grid b{
+  font-size:11px;
+  color:#183F39;
+  font-weight:700;
+  line-height:1.2
+}
+#slide-14 .founder14-team-grid b em{
+  display:block;
+  font-size:7px;
+  font-weight:400;
+  color:#667;
+  margin-top:2px
+}
+#slide-14 .founder14-team-grid p{
+  margin:4px 0 0;
+  font-size:7px;
+  color:#667;
+  line-height:1.35;
+  flex:1;
+  overflow:hidden
+}
