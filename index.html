@@ -1728,7 +1728,7 @@
       case:     new Set(['case']),
       appendix: new Set(['appendix']),
       none:     new Set([]),
-      investor: new Set(['cover','main']),               // 投资人精简版 = 封面 + 主干
+      investor: new Set(['cover','main','case']),         // 投资人版 = 封面 + 主干 + 案例
       full:     new Set(['cover','main','case','product','appendix'])
     };
     const RATIO_HINTS={
@@ -1970,7 +1970,16 @@
         ratio:exportState.ratio,
         scope:exportState.scope,
         format:exportState.format,
-        currentPage:currentIndex()+1
+        currentPage:currentIndex()+1,
+        // 新增参数
+        sections:exportState.scope==='full'||exportState.scope==='investor'
+          ?[...exportState.sections]
+          :[],
+        pageFrom:exportState.pageFrom.trim()||null,
+        pageTo:exportState.pageTo.trim()||null,
+        pageList:exportState.scope==='current'?null:null,
+        watermarkEnabled:exportState.watermark,
+        watermarkText:exportState.watermarkText
       };
     }
 

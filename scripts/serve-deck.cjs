@@ -75,6 +75,26 @@ function validateExport(input) {
   const scope = String(input.scope || 'full').toLowerCase();
   const currentPage = Number.parseInt(input.currentPage, 10);
 
+  // 解析页码范围参数
+  const pageFrom = input.pageFrom ? Number.parseInt(input.pageFrom, 10) : null;
+  const pageTo = input.pageTo ? Number.parseInt(input.pageTo, 10) : null;
+
+  // 解析自定义 section 列表
+  let sections = null;
+  if (input.sections && Array.isArray(input.sections)) {
+    sections = input.sections.filter(s => allSections.includes(s));
+  }
+
+  // 解析页码列表 (逗号分隔或范围)
+  let pageList = null;
+  if (input.pageList && typeof input.pageList === 'string' && input.pageList.trim()) {
+    pageList = input.pageList.trim();
+  }
+
+  // 水印相关
+  const watermarkEnabled = Boolean(input.watermarkEnabled);
+  const watermarkText = String(input.watermarkText || '').trim();
+
   if (!supportedLanguages.has(lang)) throw new Error('不支持的语言。');
   if (!supportedRatios.has(ratio)) throw new Error('不支持的页面比例。');
   if (!supportedFormats.has(format)) throw new Error('不支持的导出格式。');
@@ -82,19 +102,41 @@ function validateExport(input) {
   if (scope === 'current' && (!Number.isInteger(currentPage) || currentPage < 1 || currentPage > 200)) {
     throw new Error('当前页码无效。');
   }
+  if (pageFrom !== null && (isNaN(pageFrom) || pageFrom < 1)) {
+    throw new Error('起始页码无效。');
+  }
+  if (pageTo !== null && (isNaN(pageTo) || pageTo < 1)) {
+    throw new Error('结束页码无效。');
+  }
 
-  return { lang, ratio, format, scope, currentPage };
+  return {
+    lang, ratio, format, scope, currentPage,
+    pageFrom, pageTo, sections, pageList,
+    watermarkEnabled, watermarkText
+  };
 }
 
 function downloadFilename(options) {
   const language = options.lang.toUpperCase();
   const ratio = options.ratio.replace(':', 'x').replace(/[^a-z0-9-]/gi, '');
-  const scope = options.scope === 'investor'
-    ? 'Investor'
-    : options.scope === 'current'
-      ? `P${options.currentPage}`
-      : 'Full';
-  return `OpenCSG_Investor_Deck_2026_${language}_${ratio}_${scope}.${options.format}`;
+
+  let scope = '';
+  if (options.scope === 'investor') {
+    scope = 'Investor';
+  } else if (options.scope === 'current') {
+    scope = `P${options.currentPage}`;
+  } else if (options.pageList) {
+    // 自定义页码列表，生成简短标识
+    scope = 'Custom';
+  } else if (options.sections && options.sections.length > 0 && options.sections.length < 5) {
+    // 自定义 section，生成简短标识
+    scope = options.sections.sort().join('+');
+  } else {
+    scope = 'Full';
+  }
+
+  const watermarkTag = options.watermarkEnabled && options.watermarkText ? '_Watermark' : '';
+  return `OpenCSG_Investor_Deck_2026_${language}_${ratio}_${scope}${watermarkTag}.${options.format}`;
 }
 
 function exporterArgs(options, relativeOutput) {
@@ -107,12 +149,34 @@ function exporterArgs(options, relativeOutput) {
     `${outputFlag}=${relativeOutput}`
   ];
 
-  if (options.scope === 'current') {
+  // 优先级：pageList > sections > scope preset
+  if (options.pageList) {
+    // 直接指定页码列表
+    args.push(`--pages=${options.pageList}`);
+  } else if (options.scope === 'current') {
+    // 当前页
     args.push(`--pages=${options.currentPage}`);
+  } else if (options.sections && options.sections.length > 0) {
+    // 自定义 section 列表
+    args.push(`--sections=${options.sections.join(',')}`);
+    // 如果还有页码范围限制
+    if (options.pageFrom !== null || options.pageTo !== null) {
+      if (options.pageFrom !== null) args.push(`--from=${options.pageFrom}`);
+      if (options.pageTo !== null) args.push(`--to=${options.pageTo}`);
+    }
+  } else if (options.scope === 'investor') {
+    // 投资人版：cover, main, case
+    args.push('--sections=cover,main,case');
   } else {
-    const sections = options.scope === 'investor' ? ['cover', 'main'] : allSections;
-    args.push(`--sections=${sections.join(',')}`);
+    // 完整版
+    args.push('--sections=cover,main,case,product,appendix');
   }
+
+  // 水印参数
+  if (options.watermarkEnabled && options.watermarkText) {
+    args.push(`--watermark=${options.watermarkText}`);
+  }
+
   return args;
 }
 

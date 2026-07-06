@@ -29,11 +29,78 @@
 
 const path = require('path');
 const fs = require('fs');
+const http = require('http');
+const os = require('os');
 const { pathToFileURL } = require('url');
 const { chromium } = require('playwright');
+// pdf-lib is optional; the exporter will fall back to a single-pass page.pdf()
+// render if it can't be loaded.
+let PDFLib = null;
+try { PDFLib = require('pdf-lib'); } catch (_) { PDFLib = null; }
 
 const root = path.resolve(__dirname, '..');
-const htmlUrl = pathToFileURL(path.join(root, 'index.html')).href;
+
+// We must serve the deck over HTTP so that `fetch('assets/i18n/*.json')` works;
+// Chromium refuses to fetch file:// URLs from a file:// document. When the user
+// doesn't supply a DECK_BASE_URL, we spin up a tiny static server for the
+// duration of the export and tear it down on exit.
+const MIME = {
+  '.css': 'text/css; charset=utf-8',
+  '.gif': 'image/gif',
+  '.html': 'text/html; charset=utf-8',
+  '.ico': 'image/x-icon',
+  '.jpeg': 'image/jpeg',
+  '.jpg': 'image/jpeg',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.webp': 'image/webp',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2'
+};
+
+function createStaticServer(directory) {
+  const server = http.createServer((req, res) => {
+    const urlPath = decodeURIComponent(req.url.split('?')[0] || '/');
+    const safe = urlPath === '/' ? '/index.html' : urlPath;
+    const resolved = path.resolve(directory, `.${safe}`);
+    if (resolved !== directory && !resolved.startsWith(`${directory}${path.sep}`)) {
+      res.writeHead(403); res.end('Forbidden'); return;
+    }
+    fs.stat(resolved, (err, stat) => {
+      if (err || !stat.isFile()) { res.writeHead(404); res.end('Not found'); return; }
+      res.writeHead(200, {
+        'Content-Type': MIME[path.extname(resolved).toLowerCase()] || 'application/octet-stream',
+        'Content-Length': stat.size,
+        'Cache-Control': 'no-cache'
+      });
+      fs.createReadStream(resolved).pipe(res);
+    });
+  });
+  return new Promise((resolve, reject) => {
+    server.once('error', reject);
+    server.listen(0, '127.0.0.1', () => {
+      const { port } = server.address();
+      resolve({ server, baseUrl: `http://127.0.0.1:${port}` });
+    });
+  });
+}
+
+async function resolveHtmlUrl() {
+  if (process.env.DECK_BASE_URL) {
+    return process.env.DECK_BASE_URL.replace(/\/$/, '') + '/index.html';
+  }
+  const { server, baseUrl } = await createStaticServer(root);
+  process.on('exit', () => { try { server.close(); } catch (_) {} });
+  process.on('SIGINT', () => { server.close(() => process.exit(130)); });
+  return baseUrl + '/index.html';
+}
+let htmlUrlPromise = null;
+function getHtmlUrl() {
+  if (!htmlUrlPromise) htmlUrlPromise = resolveHtmlUrl();
+  return htmlUrlPromise;
+}
 
 function parseArgs(argv) {
   const args = {};
@@ -91,6 +158,11 @@ function defaultFilename({ lang, ratio, sections }) {
 }
 
 // Inject print-mode CSS that scales the design canvas into the requested ratio.
+// We deliberately reuse the centering rules already present in the page's
+// own `@media print` block (left:50%/top:50% + negative margin) and only
+// override the size, scale and page-break behaviour. Trying to relayout
+// `.slide` from scratch breaks all the inline left/top positioning of
+// children (cards, labels, the AgenticOps infinity loop, etc.).
 function buildPrintStyle({ width, height, designW, designH }) {
   const scaleX = width / designW;
   const scaleY = height / designH;
@@ -99,33 +171,30 @@ function buildPrintStyle({ width, height, designW, designH }) {
 @page { size: ${width}px ${height}px; margin: 0 }
 @media print {
   :root { --print-w: ${width}px; --print-h: ${height}px; --print-scale: ${scale}; }
-  html, body { width: ${width}px; margin: 0; padding: 0; background: #fff; }
+  html, body { width: ${width}px; height: ${height}px; margin: 0; padding: 0; background: #fff; overflow: hidden; }
   .toolbar, .nav, .mobile-reader { display: none !important; }
   .slide-wrap {
     width: ${width}px !important;
     height: ${height}px !important;
-    position: relative !important;
-    overflow: hidden !important;
     page-break-after: always !important;
     break-after: page !important;
-    margin: 0 !important; padding: 0 !important;
-    background: #fff !important;
-    border: 0 !important;
-    display: block !important;
-    transform: translateZ(0);
+    break-inside: avoid !important;
+    contain: layout paint size !important;
+    transform: translateZ(0) !important;
   }
   .slide-wrap:last-of-type { page-break-after: auto !important; break-after: auto !important; }
   .slide-wrap[style*="display: none"] { display: none !important; }
+  /* Keep the 1600x900 design canvas centered inside the new ratio even
+     when the page is no longer 16:9. Use translate(-50%,-50%) to center
+     before scaling so the design stays anchored to the page center. */
   .slide {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
+    left: 50% !important;
+    top: 50% !important;
     width: ${designW}px !important;
     height: ${designH}px !important;
-    transform: scale(${scale}) !important;
-    transform-origin: top left !important;
-    overflow: hidden !important;
-    background: #fff !important;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) scale(var(--print-scale)) !important;
+    transform-origin: center center !important;
   }
 }`;
 }
@@ -133,7 +202,9 @@ function buildPrintStyle({ width, height, designW, designH }) {
 async function exportDeck(browser, options) {
   const ratio = RATIOS[options.ratio] || RATIOS['16:9'];
   const { width, height, designW, designH } = ratio;
-  const page = await browser.newPage({ viewport: { width, height } });
+  // We always render at the *design* resolution so the slide canvas is 1:1
+  // and never sub-pixel. The output PDF still uses the requested ratio.
+  const page = await browser.newPage({ viewport: { width: designW, height: designH } });
 
   const params = new URLSearchParams();
   params.set('lang', options.lang);
@@ -145,8 +216,14 @@ async function exportDeck(browser, options) {
   if (options.to) params.set('to', options.to);
   if (options.watermark) params.set('watermark', options.watermark);
 
-  await page.goto(`${htmlUrl}?${params.toString()}`, { waitUntil: 'networkidle' });
+  await page.goto(`${await getHtmlUrl()}?${params.toString()}`, { waitUntil: 'domcontentloaded' });
+  await page.waitForLoadState('load');
+  // Wait for i18n to finish loading AND for the i18n 'ready' event before
+  // we attempt to take a snapshot, otherwise English / non-zh exports will
+  // be missing translated copy and fall back to Chinese placeholders.
   await page.waitForFunction(() => document.querySelectorAll('.slide-wrap').length >= 15);
+  await page.waitForFunction(() => Boolean(window.__i18nReady || document.documentElement.lang), null, { timeout: 10000 }).catch(() => {});
+  await page.waitForTimeout(400);
 
   // Inject responsive print CSS that scales the design to fit the chosen ratio.
   await page.addStyleTag({ content: buildPrintStyle(ratio) });
@@ -225,14 +302,64 @@ async function exportDeck(browser, options) {
   const filename = options.out || defaultFilename(options);
   const output = path.join(root, filename);
 
-  await page.pdf({
-    path: output,
-    width: `${width}px`,
-    height: `${height}px`,
-    printBackground: true,
-    preferCSSPageSize: true,
-    margin: { top: '0', right: '0', bottom: '0', left: '0' }
-  });
+  // Strategy A: render each visible slide-wrap to a PNG via Playwright, then
+  // assemble a multi-page PDF with pdf-lib. This avoids the long-standing
+  // Playwright bug where `page.pdf()` collapses a print-emulated document
+  // into a single page when the @page size matches the viewport.
+  if (PDFLib && PDFLib.PDFDocument) {
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'opencsg-pdf-'));
+    try {
+      const pngPaths = [];
+      for (let k = 0; k < visibleIndexes.length; k++) {
+        const idx = visibleIndexes[k];
+        // Reveal only the k-th visible slide.
+        await page.evaluate((targetIdx) => {
+          const wrapList = [...document.querySelectorAll('.slide-wrap')];
+          wrapList.forEach((w, i) => {
+            w.style.display = (i + 1) === targetIdx ? '' : 'none';
+          });
+          window.scrollTo(0, 0);
+        }, idx);
+        await page.waitForTimeout(80);
+        const pngPath = path.join(tmpDir, `slide-${String(k + 1).padStart(3, '0')}.png`);
+        // Use the print stylesheet layout (16:9 ish), screenshot the viewport.
+        await page.screenshot({ path: pngPath, type: 'png', fullPage: false });
+        pngPaths.push(pngPath);
+      }
+
+      // Restore all selected slides for a clean shutdown.
+      await page.evaluate((indexes) => {
+        const wrapList = [...document.querySelectorAll('.slide-wrap')];
+        wrapList.forEach((w, i) => {
+          w.style.display = indexes.includes(i + 1) ? '' : 'none';
+        });
+      }, visibleIndexes);
+
+      const pdfDoc = await PDFLib.PDFDocument.create();
+      for (const pngPath of pngPaths) {
+        const bytes = fs.readFileSync(pngPath);
+        const img = await pdfDoc.embedPng(bytes);
+        const page = pdfDoc.addPage([width, height]);
+        page.drawImage(img, { x: 0, y: 0, width, height });
+      }
+      const out = await pdfDoc.save();
+      fs.writeFileSync(output, out);
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    } catch (err) {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+      throw err;
+    }
+  } else {
+    // Fallback: single page.pdf() call (may produce 1 page only).
+    await page.pdf({
+      path: output,
+      width: `${width}px`,
+      height: `${height}px`,
+      printBackground: true,
+      preferCSSPageSize: true,
+      margin: { top: '0', right: '0', bottom: '0', left: '0' }
+    });
+  }
 
   await page.close();
   return { output, pages: visibleIndexes.length, ratio: options.ratio };
