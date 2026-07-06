@@ -7081,3 +7081,57 @@ html[lang="en"] #slide-03.slide03-replica>.title{
   border-bottom:8px solid var(--teal)
 }
 #slide-09 .a9-flow-up:after{display:none}
+
+/* ============================================================
+   SLIDE-10 Jensen NVIDIA GTC quote + photo strip
+   Added: NVIDIA GTC 2025 Sovereign AI proof point
+   ============================================================ */
+#slide-10 .m10-jensen{
+  display:flex; align-items:stretch; gap:14px;
+  margin:6px 0 12px;
+  padding:0;
+  border-radius:8px;
+  overflow:hidden;
+  border:1px solid #C9D6D3;
+  background:linear-gradient(180deg, #FFFFFF 0%, #F4F8F7 100%);
+}
+#slide-10 .m10-jensen img{
+  width:118px; height:118px; object-fit:cover; object-position:center 22%;
+  flex-shrink:0; border-radius:8px 0 0 8px;
+  filter:contrast(1.03) saturate(1.05);
+}
+#slide-10 .m10-jensen-body{
+  flex:1; padding:10px 14px 10px 4px;
+  display:flex; flex-direction:column; justify-content:center; gap:8px;
+  min-width:0;
+}
+#slide-10 .m10-jensen blockquote{margin:0;padding:0}
+#slide-10 .m10-jensen q{
+  color:#1F332F; font-size:12.5px; line-height:1.45; font-weight:600;
+  quotes:"\201C" "\201D";
+}
+#slide-10 .m10-jensen q:before{content:open-quote;color:var(--teal);font-weight:800;margin-right:2px}
+#slide-10 .m10-jensen q:after{content:close-quote;color:var(--teal);font-weight:800;margin-left:2px}
+#slide-10 .m10-jensen cite{
+  font-style:normal; display:flex; gap:8px; align-items:baseline;
+  margin-top:4px;
+  font-size:9.5px; color:#53615E; letter-spacing:.06em;
+}
+#slide-10 .m10-jensen cite b{
+  color:var(--teal); font-weight:700; letter-spacing:.08em;
+  font-size:10px;
+}
+#slide-10 .m10-jensen cite a{
+  color:#1F8580; text-decoration:none; border-bottom:1px dotted #A9C5C1;
+}
+#slide-10 .m10-jensen cite a:hover{border-bottom-style:solid;color:#0F4F4B}
+#slide-10 .m10-jensen-tags{
+  display:flex; flex-wrap:wrap; gap:5px; margin-top:2px;
+}
+#slide-10 .m10-jensen-tags span{
+  display:inline-block;
+  padding:3px 8px; border:1px solid #C9D6D3; border-radius:999px;
+  background:#FFFFFF; font-size:9px; font-weight:600; letter-spacing:.04em;
+  color:#1F332F;
+}
+@page slide-10-img-mock{}
