@@ -6,6 +6,7 @@
     "pptxgenjs": "^3.12.0"
   },
   "scripts": {
+    "serve": "node scripts/serve-deck.cjs",
     "export:pdf": "node scripts/export-pdf.cjs",
     "export:pdf-bilingual": "node scripts/export-pdf-bilingual.cjs",
     "export:pptx": "node scripts/export-pptx.cjs",

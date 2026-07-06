@@ -55,7 +55,7 @@ const SECTION_PRESETS = {
 };
 
 function defaultFilename({ lang, ratio, sections }) {
-  const langTag = lang === 'en' ? 'EN' : 'ZH';
+  const langTag = String(lang || 'zh').toUpperCase();
   const ratioTag = ratio.replace(/[:]/g, 'x');
   const allSet = ['cover','main','case','product','appendix'];
   const isAll = sections.length === allSet.length && allSet.every((s) => sections.includes(s));
@@ -135,6 +135,48 @@ async function captureSlides(browser, options) {
     );
   });
 
+  const designWidth = 1600;
+  const designHeight = 900;
+  const scale = Math.min(width / designWidth, height / designHeight);
+  const offsetX = (width - designWidth * scale) / 2;
+  const offsetY = (height - designHeight * scale) / 2;
+  await page.addStyleTag({
+    content: `
+      html, body {
+        width: ${width}px !important;
+        height: ${height}px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background: #fff !important;
+      }
+      .toolbar, .nav, .mobile-reader { display: none !important; }
+      .slide-wrap { display: none !important; }
+      .slide-wrap[data-export-target="true"] {
+        display: block !important;
+        position: fixed !important;
+        inset: 0 !important;
+        width: ${width}px !important;
+        height: ${height}px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background: #fff !important;
+        transform: none !important;
+      }
+      .slide-wrap[data-export-target="true"] > .slide {
+        position: absolute !important;
+        left: ${offsetX}px !important;
+        top: ${offsetY}px !important;
+        width: ${designWidth}px !important;
+        height: ${designHeight}px !important;
+        margin: 0 !important;
+        transform: scale(${scale}) !important;
+        transform-origin: top left !important;
+      }
+    `
+  });
+
   const indexes = await selectSlides(page, options);
   if (indexes.length === 0) {
     await page.close();
@@ -145,60 +187,23 @@ async function captureSlides(browser, options) {
   const captures = [];
 
   for (const idx of indexes) {
-    // Scroll target slide into view to ensure the responsive scaling kicks in.
     await page.evaluate((target) => {
       const wrapList = [...document.querySelectorAll('.slide-wrap')];
-      const el = wrapList[target - 1];
-      if (el) el.scrollIntoView({ block: 'start' });
-    }, idx);
-    await page.waitForTimeout(400);
-    await page.evaluate((target) => {
-      const wrapList = [...document.querySelectorAll('.slide-wrap')];
-      const el = wrapList[target - 1];
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      el.style.position = 'fixed';
-      el.style.left = '0';
-      el.style.top = '0';
-      el.style.width = '1600px';
-      el.style.height = '900px';
-      el.style.transform = 'none';
-      el.style.zIndex = '99999';
-      // Hide all other slides during the screenshot.
-      wrapList.forEach((w, i) => {
-        if (i + 1 !== target) {
-          w.dataset._prevDisplay = w.style.display;
-          w.style.display = 'none';
-        }
+      wrapList.forEach((wrap, index) => {
+        if (index + 1 === target) wrap.setAttribute('data-export-target', 'true');
+        else wrap.removeAttribute('data-export-target');
       });
     }, idx);
+    await page.waitForTimeout(120);
 
     const file = path.join(tmpDir, `slide-${String(idx).padStart(2, '0')}.png`);
-    const target = await page.$('.slide-wrap:not([style*="display: none"])');
-    if (!target) {
-      await page.close();
-      throw new Error(`未找到第 ${idx} 张幻灯片元素。`);
-    }
-    await target.screenshot({ path: file, type: 'png', omitBackground: false });
-    captures.push({ index: idx, file });
-
-    // Restore layout so the next iteration scrolls cleanly.
-    await page.evaluate(() => {
-      const wrapList = [...document.querySelectorAll('.slide-wrap')];
-      wrapList.forEach((w) => {
-        w.style.position = '';
-        w.style.left = '';
-        w.style.top = '';
-        w.style.width = '';
-        w.style.height = '';
-        w.style.transform = '';
-        w.style.zIndex = '';
-        if (w.dataset._prevDisplay !== undefined) {
-          w.style.display = w.dataset._prevDisplay;
-          delete w.dataset._prevDisplay;
-        }
-      });
+    await page.screenshot({
+      path: file,
+      type: 'png',
+      omitBackground: false,
+      clip: { x: 0, y: 0, width, height }
     });
+    captures.push({ index: idx, file });
   }
 
   await page.close();

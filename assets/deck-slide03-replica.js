@@ -1,4 +1,3 @@
-/* Slide 03 · Community Data Dashboard — real platform metrics, SVG charts, live reference. */
 (() => {
   const esc = (s = "") => s
     .replaceAll("&", "&amp;")
@@ -9,168 +8,225 @@
   const section = document.getElementById("slide-03");
   if (!section) return;
 
-  /* ── KPI data (company-level stats, consistent with slide-05) ── */
-  const kpis = [
-    { n: "300万+", en: "3M+", label: "社区用户", enLabel: "Community Users", icon: "users" },
-    { n: "20万+", en: "200K+", label: "模型资产", enLabel: "Model Assets", icon: "model" },
-    { n: "5,600+", en: "5,600+", label: "GitHub Stars", enLabel: "GitHub Stars", icon: "star" },
-    { n: "34", en: "34", label: "开源仓库", enLabel: "Open-source Repos", icon: "repo" },
-    { n: "30+", en: "30+", label: "国家与地区", enLabel: "Countries & Regions", icon: "globe" }
+  const stages = [
+    {
+      period: "2008",
+      code: "01 · COMMUNITY",
+      zhTitle: "内容与开发者社区",
+      enTitle: "Knowledge & developer community",
+      zhBody: "资讯、项目索引与交流，先解决“在哪里发现开源”。",
+      enBody: "News, project discovery and discussion answer where open source is found.",
+      zhObject: "资讯 / 项目",
+      enObject: "Knowledge / projects",
+      logos: [
+        {
+          src: "assets/brand-logos/oschina.jpg",
+          alt: "开源中国 OSCHINA",
+          label: "OSCHINA",
+          url: "https://www.oschina.net/home/about"
+        }
+      ]
+    },
+    {
+      period: "2008–2016",
+      code: "02 · CODE / DEVOPS",
+      zhTitle: "代码托管与研发协作",
+      enTitle: "Code hosting & DevOps",
+      zhBody: "代码协作、CI/CD 与企业研发，解决“怎样持续交付软件”。",
+      enBody: "Collaboration, CI/CD and enterprise delivery answer how software ships.",
+      zhObject: "代码 / 流水线",
+      enObject: "Code / pipelines",
+      logos: [
+        {
+          src: "assets/brand-logos/github.png",
+          alt: "GitHub",
+          label: "GitHub",
+          url: "https://github.com/about/press"
+        },
+        {
+          src: "assets/brand-logos/gitee.png",
+          alt: "Gitee",
+          label: "Gitee",
+          url: "https://gitee.com/about_us"
+        }
+      ]
+    },
+    {
+      period: "2018–2022",
+      code: "03 · AI ASSET HUB",
+      zhTitle: "模型与数据资产社区",
+      enTitle: "Model & dataset hubs",
+      zhBody: "模型、数据集成为新型开放资产，社区从代码扩展到 AI。",
+      enBody: "Models and datasets become open assets as communities expand into AI.",
+      zhObject: "模型 / 数据集",
+      enObject: "Models / datasets",
+      logos: [
+        {
+          src: "assets/brand-logos/huggingface.png",
+          alt: "Hugging Face",
+          label: "Hugging Face",
+          url: "https://huggingface.co/blog/series-c"
+        },
+        {
+          src: "assets/brand-logos/modelscope.png",
+          alt: "魔搭 ModelScope",
+          label: "ModelScope",
+          url: "https://community.modelscope.cn/66988b50962e585a2563af79.html"
+        }
+      ]
+    },
+    {
+      period: "2023–2024",
+      code: "04 · TOKEN FACTORY",
+      zhTitle: "Token 工厂 / MaaS",
+      enTitle: "Token factory / MaaS",
+      zhBody: "统一 API 与推理加速，把模型变成可规模消费的 Token。",
+      enBody: "Unified APIs and inference turn models into tokens consumed at scale.",
+      zhObject: "Token / API",
+      enObject: "Tokens / APIs",
+      logos: [
+        {
+          src: "assets/brand-logos/siliconflow.png",
+          alt: "硅基流动 SiliconFlow",
+          label: "SiliconFlow",
+          url: "https://siliconflow.cn/about"
+        }
+      ]
+    },
+    {
+      period: "2024+",
+      code: "05 · AGENTICOPS",
+      zhTitle: "AI 生产与持续进化",
+      enTitle: "AI production & evolution",
+      zhBody: "贯通资产、算力、Agent、评测发布、运行反馈与再训练。",
+      enBody: "Connect assets, compute, agents, release gates, operations and retraining.",
+      zhObject: "Agent / 运行数据",
+      enObject: "Agents / runtime data",
+      logos: [
+        {
+          src: "assets/logo-opencsg.png",
+          alt: "OpenCSG",
+          label: "",
+          cls: "opencsg",
+          url: "https://opencsg.com/docs/en/other/agenticops"
+        }
+      ],
+      active: true
+    }
   ];
 
-  /* ── Top models by downloads (opencsg.com hot models, Jul 2026) ── */
-  const topModels = [
-    { name: "MiniMax-M2.5", dl: 9984 },
-    { name: "DeepSeek-OCR", dl: 2141 },
-    { name: "DeepSeek-V3.2", dl: 1187 },
-    { name: "Qwen3.5-2B", dl: 242 },
-    { name: "HunyuanOCR", dl: 215 }
-  ];
+  const renderLogo = ({ src, alt, label, cls = "", url }) => `
+    <a class="evo3-brand-chip ${cls}" href="${url}" target="_blank" rel="noopener" title="${alt} · Official source">
+      <img src="${src}" alt="${alt}">
+      ${label ? `<b>${label}</b>` : ""}
+    </a>`;
 
-  /* ── Top datasets by downloads (opencsg.com hot datasets, Jul 2026) ── */
-  const topDatasets = [
-    { name: "Fineweb-Edu-Chinese-V2.1", dl: 15242 },
-    { name: "chinese-fineweb-edu", dl: 14013 },
-    { name: "smoltalk_chinese", dl: 1866 },
-    { name: "chinese-cosmopedia", dl: 1277 },
-    { name: "chinese-fineweb-edu-v2", dl: 1104 }
-  ];
+  const devOpsLoop = `
+    <svg class="evo3-loop" viewBox="0 0 720 260" aria-label="DevOps infinity lifecycle">
+      <defs>
+        <linearGradient id="evo3DevLeft" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#7FC4F0"/>
+          <stop offset="100%" stop-color="#3FA8E5"/>
+        </linearGradient>
+        <linearGradient id="evo3DevRight" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#3FA8E5"/>
+          <stop offset="100%" stop-color="#1F7FC4"/>
+        </linearGradient>
+      </defs>
+      <path d="M360 135C295 35 150 30 70 135C150 240 295 235 360 135" fill="none" stroke="url(#evo3DevLeft)" stroke-width="38" stroke-linecap="round"/>
+      <path d="M360 135C425 35 570 30 650 135C570 240 425 235 360 135" fill="none" stroke="url(#evo3DevRight)" stroke-width="38" stroke-linecap="round"/>
+      <path d="M70 135C150 30 295 35 360 135C425 235 570 240 650 135" fill="none" stroke="#1F7FC4" stroke-width="31" stroke-linecap="round"/>
+      <text x="190" y="151" font-size="40" font-weight="800" fill="#3FA8E5" text-anchor="middle">Dev</text>
+      <text x="530" y="151" font-size="40" font-weight="800" fill="#1F7FC4" text-anchor="middle">Ops</text>
+      <g font-family="Arial,sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.1">
+        <text x="196" y="57">CODE</text><text x="311" y="66">PLAN</text>
+        <text x="196" y="220">BUILD</text><text x="311" y="224">TEST</text>
+        <text x="409" y="66">RELEASE</text><text x="540" y="72">DEPLOY</text>
+        <text x="540" y="207">OPERATE</text><text x="409" y="220">MONITOR</text>
+      </g>
+    </svg>`;
 
-  /* ── GitHub repos by stars (OpenCSGs org, Jul 2026) ── */
-  const topRepos = [
-    { name: "csghub", stars: 4179, forks: 521 },
-    { name: "csghub-server", stars: 1071, forks: 232 },
-    { name: "llm-inference", stars: 95, forks: 17 },
-    { name: "csglite", stars: 31, forks: 6 },
-    { name: "coagent", stars: 29, forks: 5 }
-  ];
+  const agenticOpsLoop = `
+    <svg class="evo3-loop" viewBox="0 0 720 260" aria-label="AgenticOps infinity lifecycle">
+      <defs>
+        <linearGradient id="evo3AgentLeft" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2EAFA0"/>
+          <stop offset="100%" stop-color="#167A70"/>
+        </linearGradient>
+        <linearGradient id="evo3AgentRight" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#7BDBC8"/>
+          <stop offset="100%" stop-color="#2EAFA0"/>
+        </linearGradient>
+      </defs>
+      <path d="M360 135C295 35 150 30 70 135C150 240 295 235 360 135" fill="none" stroke="url(#evo3AgentLeft)" stroke-width="38" stroke-linecap="round"/>
+      <path d="M360 135C425 35 570 30 650 135C570 240 425 235 360 135" fill="none" stroke="url(#evo3AgentRight)" stroke-width="38" stroke-linecap="round"/>
+      <path d="M70 135C150 30 295 35 360 135C425 235 570 240 650 135" fill="none" stroke="#167A70" stroke-width="31" stroke-linecap="round"/>
+      <text x="190" y="149" font-size="31" font-weight="800" fill="#167A70" text-anchor="middle">Agentic</text>
+      <text x="530" y="151" font-size="40" font-weight="800" fill="#2EAFA0" text-anchor="middle">Ops</text>
+      <g font-family="Arial,sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.1">
+        <text x="196" y="57">CODE</text><text x="311" y="66">PROMPT</text>
+        <text x="196" y="220">BUILD</text><text x="311" y="224">TEST</text>
+        <text x="409" y="66">RELEASE</text><text x="540" y="72">DEPLOY</text>
+        <text x="540" y="207">OPERATE</text><text x="409" y="220">RETRAIN</text>
+      </g>
+    </svg>`;
 
-  /* ── SVG bar chart generator ── */
-  function barChart(data, opts = {}) {
-    const { key = "dl", color = "#23877B", w = 420, h = 180 } = opts;
-    const max = Math.max(...data.map(d => d[key]));
-    const barH = 22;
-    const gap = 8;
-    const labelW = 150;
-    const valW = 55;
-    const chartW = w - labelW - valW - 20;
-    const totalH = data.length * (barH + gap) + 10;
-    let bars = "";
-    data.forEach((d, i) => {
-      const y = i * (barH + gap) + 8;
-      const bw = Math.max(2, (d[key] / max) * chartW);
-      const val = d[key] >= 1000 ? (d[key] / 1000).toFixed(1) + "K" : d[key];
-      bars += `
-        <text x="${labelW - 8}" y="${y + barH / 2 + 4}" font-size="10" fill="#3A4A47" text-anchor="end" font-family="Arial,sans-serif">${esc(d.name)}</text>
-        <rect x="${labelW}" y="${y}" width="${bw}" height="${barH}" rx="3" fill="${color}" opacity="${0.7 + i * 0.06}"/>
-        <text x="${labelW + bw + 6}" y="${y + barH / 2 + 4}" font-size="10" fill="#1C3430" font-weight="700" font-family="Arial,sans-serif">${val}</text>`;
-    });
-    return `<svg viewBox="0 0 ${w} ${totalH}" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="overflow:visible">${bars}</svg>`;
-  }
-
-  /* ── KPI icon SVGs ── */
-  const icons = {
-    users: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-    model: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
-    star: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
-    repo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v12"/><circle cx="6" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v6"/><path d="M6 3h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-6"/></svg>',
-    globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>'
-  };
-
-  /* ── Platform asset types (actual CSGHub platform features) ── */
-  const assetTypes = [
-    { n: "Models", zh: "模型", en: "Models" },
-    { n: "Datasets", zh: "数据集", en: "Datasets" },
-    { n: "Spaces", zh: "应用空间", en: "Spaces" },
-    { n: "Codes", zh: "代码", en: "Codes" },
-    { n: "Skills", zh: "技能", en: "Skills" },
-    { n: "Prompts", zh: "提示词", en: "Prompts" },
-    { n: "MCP Servers", zh: "MCP 服务", en: "MCP Servers" },
-    { n: "Collections", zh: "合集", en: "Collections" }
-  ];
-
-  /* ── Platform live link card ── */
-  const platformCard = `
-    <div class="dash-platform">
-      <div class="dash-platform-head">
-        <img src="assets/logo-opencsg.png" alt="OpenCSG">
-        <div>
-          <b data-en="OpenCSG Community Platform">OpenCSG 社区平台</b>
-          <span data-en="Hybrid HuggingFace+ · AgenticOps Platform">Hybrid HuggingFace+ · AgenticOps 平台</span>
-        </div>
-      </div>
-      <div class="dash-platform-assets">
-        ${assetTypes.map(a => `
-          <div class="dash-asset-type">
-            <i></i>
-            <span data-en="${esc(a.en)}">${a.zh}</span>
-          </div>`).join("")}
-      </div>
-      <a class="dash-platform-link" href="https://opencsg.com" target="_blank" rel="noopener">
-        <span data-en="opencsg.com">opencsg.com</span>
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>
-    </div>`;
-
-  /* ── Build the slide ── */
-  section.className = "slide light slide03-dashboard";
-  section.dataset.layout = "COMMUNITY-DASHBOARD";
+  section.className = "slide light slide03-community-evolution";
+  section.dataset.layout = "COMMUNITY-EVOLUTION";
   section.innerHTML = `
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
     <div class="topline"></div>
-    <div class="section"><span class="section-zh" data-en="Community Data　">社区数据全景　</span><span class="section-en">Community Data Dashboard</span></div>
-    <h2 class="title" data-en="Real platform metrics: 3M+ users, 200K+ assets, 5,600+ GitHub stars across 30+ countries">真实社区数据：300万+用户、20万+资产、5,600+ GitHub Stars，覆盖30+国家与地区</h2>
+    <div class="section"><span class="section-zh" data-en="Community Evolution　">社区范式演进　</span><span class="section-en">From Open-source Community to AI Production</span></div>
+    <h2 class="title" data-en="Communities evolved from discovering open source to producing AI; OpenCSG connects the entire AgenticOps loop">社区从“发现开源”走向“生产 AI”，OpenCSG 贯通 AgenticOps 完整闭环</h2>
 
-    <div class="dash-body">
-      <!-- KPI Row -->
-      <div class="dash-kpi-row">
-        ${kpis.map(k => `
-          <div class="dash-kpi">
-            <div class="dash-kpi-icon">${icons[k.icon]}</div>
-            <div class="dash-kpi-val" data-en="${esc(k.en)}">${k.n}</div>
-            <div class="dash-kpi-label" data-en="${esc(k.enLabel)}">${k.label}</div>
-          </div>`).join("")}
-      </div>
+    <div class="evo3-community">
+      <section class="evo3-compare-ref" aria-label="DevOps 与 AgenticOps 原版无穷号对比图">
+        <figure class="evo3-ref-panel">
+          <img src="assets/cases/slide03-left-reference.png?v=20260705b" alt="DevOps 原版无穷号">
+        </figure>
+        <div class="evo3-ref-arrow" aria-hidden="true">
+          <small>AI NATIVE</small>
+          <i></i>
+        </div>
+        <figure class="evo3-ref-panel">
+          <img src="assets/cases/slide03-right-reference.png?v=20260705b" alt="AgenticOps 原版无穷号">
+        </figure>
+      </section>
 
-      <!-- Charts Row -->
-      <div class="dash-charts">
-        <div class="dash-chart-panel">
-          <div class="dash-chart-head">
-            <small data-en="TOP MODELS BY DOWNLOADS">热门模型下载量</small>
-            <span data-en="opencsg.com · Jul 2026">opencsg.com · 2026.07</span>
-          </div>
-          <div class="dash-chart-body">${barChart(topModels, { key: "dl", color: "#23877B" })}</div>
+      <section class="evo3-generation" aria-label="开源社区五阶段演进">
+        <header>
+          <small>5-STAGE EVOLUTION</small>
+          <b data-en="What the community carries keeps expanding">社区承载的对象持续变化</b>
+          <p data-en="Knowledge → code → models → tokens → intelligent systems">资讯 → 代码 → 模型 → Token → 智能系统</p>
+          <span data-en="Dates: official brand sources; classification: OpenCSG research, Jul 2026">年份据各品牌官方资料；分类为 OpenCSG 研究口径（2026.07）</span>
+        </header>
+        <div class="evo3-stages">
+          ${stages.map((stage, index) => `
+            <article class="${stage.active ? "active" : ""}">
+              <div class="evo3-stage-head"><time>${stage.period}</time><i>${String(index + 1).padStart(2, "0")}</i></div>
+              <small>${stage.code}</small>
+              <div class="evo3-stage-logos">${stage.logos.map(renderLogo).join("")}</div>
+              <b data-en="${esc(stage.enTitle)}">${esc(stage.zhTitle)}</b>
+              <p data-en="${esc(stage.enBody)}">${esc(stage.zhBody)}</p>
+              <em data-en="${esc(stage.enObject)}">${esc(stage.zhObject)}</em>
+            </article>`).join("")}
         </div>
-        <div class="dash-chart-panel">
-          <div class="dash-chart-head">
-            <small data-en="TOP DATASETS BY DOWNLOADS">热门数据集下载量</small>
-            <span data-en="opencsg.com · Jul 2026">opencsg.com · 2026.07</span>
-          </div>
-          <div class="dash-chart-body">${barChart(topDatasets, { key: "dl", color: "#0E675F" })}</div>
-        </div>
-        <div class="dash-chart-panel">
-          <div class="dash-chart-head">
-            <small data-en="GITHUB STARS BY REPO">GitHub 仓库 Stars</small>
-            <span data-en="github.com/OpenCSGs · Jul 2026">github.com/OpenCSGs · 2026.07</span>
-          </div>
-          <div class="dash-chart-body">${barChart(topRepos, { key: "stars", color: "#C88A2B" })}</div>
-        </div>
-      </div>
+      </section>
 
-      <!-- Platform + Insight Row -->
-      <div class="dash-bottom">
-        ${platformCard}
-        <div class="dash-insight">
-          <small data-en="COMMUNITY AS STRATEGIC MOAT">社区即战略护城河</small>
-          <b data-en="Open assets attract developers; the platform converts them into enterprise production systems">开放资产吸引开发者，平台将其转化为企业生产系统</b>
-          <div class="dash-insight-tags">
-            <span data-en="Open-source flywheel">开源飞轮</span>
-            <span data-en="Asset → Production">资产 → 生产</span>
-            <span data-en="Developer → Enterprise">开发者 → 企业</span>
-            <span data-en="Community → Revenue">社区 → 收入</span>
-          </div>
+      <div class="evo3-thesis">
+        <div>
+          <small>WHY OPENCSG IS DIFFERENT</small>
+          <b data-en="The community is the entry point—not the destination">社区是入口，不是终点</b>
+          <span data-en="OpenCSG does not stop at single-layer distribution; it connects open assets with an AI production loop that organizations and individuals can control.">OpenCSG 不停留在单层分发，而是把开放资产与组织、个人可控的 AI 生产闭环接在一起。</span>
         </div>
+        <p>
+          <span data-en="Open assets">开放资产</span><i>×</i>
+          <span data-en="Private compute">私有算力</span><i>×</i>
+          <span data-en="Agent build">Agent 构建</span><i>×</i>
+          <span data-en="Evaluation & release">评测发布</span><i>×</i>
+          <span data-en="Operate & retrain">运行反馈 / 再训练</span>
+        </p>
       </div>
     </div>
-    <div class="foot"><span data-en="Data: OpenCSG platform and GitHub, Jul 2026; community is the entry point, not the destination">数据来源：OpenCSG 平台与 GitHub 实时统计（2026.07）；社区是入口，不是终点</span><span>03</span></div>`;
+    <div class="foot"><span data-en="OpenCSG is not another model hub or token factory—it is an open AgenticOps production system">OpenCSG 不是另一个模型社区或 Token 工厂，而是开放的 AgenticOps 生产系统</span><span>03</span></div>`;
 })();

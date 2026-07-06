@@ -15,7 +15,8 @@
  *   node scripts/export-pdf.cjs --from=1 --to=10 --ratio=4:3
  *
  * Flags:
- *   --lang=zh|en                  Language version (default: zh)
+ *   --lang=zh|en|ja|ko|ar|ru|fr|de|es|pt
+ *                                  Language version (default: zh)
  *   --ratio=16:9|4:3|a4-portrait|a4-landscape|letter-landscape
  *   --sections=cover,main,case,product,appendix
  *                                  Comma-separated section list (default: cover,main,case,product,appendix)
@@ -81,7 +82,7 @@ function parsePageList(raw, total) {
 }
 
 function defaultFilename({ lang, ratio, sections }) {
-  const langTag = lang === 'en' ? 'EN' : 'ZH';
+  const langTag = String(lang || 'zh').toUpperCase();
   const ratioTag = ratio.replace(/[:]/g, 'x');
   const allSet = ['cover','main','case','product','appendix'];
   const isAll = sections.length === allSet.length && allSet.every((s) => sections.includes(s));

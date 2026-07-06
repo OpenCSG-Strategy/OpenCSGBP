@@ -22,7 +22,7 @@ const sourceFiles = [
   'assets/deck-appendix.js',
   'assets/deck-city-reframe.js',
   'assets/deck-slide03-replica.js'
-];
+].filter(relativePath => fs.existsSync(path.join(root, relativePath)));
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -74,7 +74,7 @@ function collectPhrases() {
 
   return [...new Set(phrases
     .map(value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').trim())
-    .filter(Boolean))];
+    .filter(value => value && !value.includes('${')))];
 }
 
 async function requestTranslation(text, language) {
@@ -186,6 +186,43 @@ async function generateLanguage(language, phrases) {
   fs.writeFileSync(filePath, `${JSON.stringify(pack, null, 2)}\n`);
 }
 
+function shouldReviewUnchanged(text) {
+  const protectedTerms = new Set([
+    'PDF', 'PDF + PPTX', '(OPC)', 'CLI', 'GUI', 'PLC', 'REST API', '3M+', '200K+',
+    'CATL', 'CALB', 'CAICT', 'MIIT', 'miHoYo', 'Bilibili', 'Fit2Cloud',
+    'Sam Chen', 'Ran Chen', 'Weifeng Liu', 'Da Lei', 'Hao Chen', 'Fang Chen',
+    'JiHu GitLab', 'OpenCore', 'CodeSouler', 'DataFlow', 'OpenMind',
+    'SiliconFlow', 'Longgang', 'Shanghai', 'Yancheng', 'Yichang', 'Chongqing',
+    'Leshan', 'Dongfang', 'Hong Kong', 'Shenzhen', 'Sanxia'
+  ]);
+  if (protectedTerms.has(text)) return false;
+  if (!/[A-Za-z]/.test(text)) return false;
+  if (text.includes('${') || text.includes('{current}') || /https?:|github\.com|opencsg\.com/.test(text)) return false;
+  if (/^[\d\s+×.$%/:·→–—-]+[A-Za-z0-9\s+×.$%/:·→–—-]*$/.test(text)) return false;
+  return true;
+}
+
+async function reviewUnchanged(language) {
+  const filePath = path.join(root, 'assets/i18n', `${language}.json`);
+  const pack = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  const candidates = Object.entries(pack.phrases || {})
+    .filter(([source, translated]) => source === translated && shouldReviewUnchanged(source))
+    .map(([text], index) => ({index, text}));
+  if (!candidates.length) return;
+
+  const corrected = {};
+  for (let index = 0; index < candidates.length; index += 120) {
+    const batch = candidates.slice(index, index + 120);
+    const result = await translateBatchWithMmx(batch, language);
+    result.forEach((value, candidateIndex) => {
+      corrected[candidates[candidateIndex].text] = value;
+    });
+  }
+  Object.assign(pack.phrases, corrected);
+  fs.writeFileSync(filePath, `${JSON.stringify(pack, null, 2)}\n`);
+  process.stdout.write(`${language}: reviewed ${candidates.length} unchanged phrases\n`);
+}
+
 async function main() {
   const phrases = collectPhrases();
   process.stdout.write(`Collected ${phrases.length} English phrases.\n`);
@@ -193,6 +230,9 @@ async function main() {
     await Promise.all(targets.map(language => generateLanguage(language, phrases)));
   } else {
     for (const language of targets) await generateLanguage(language, phrases);
+  }
+  if (process.env.REVIEW_UNCHANGED === '1') {
+    await Promise.all(targets.map(language => reviewUnchanged(language)));
   }
 }
 

@@ -1,226 +1,522 @@
-/* Slide 03 · Community Data Dashboard — KPIs, bar charts, platform card. */
-#slide-03.slide03-dashboard .section{display:block!important}
-#slide-03.slide03-dashboard .section-en{color:#697472;font-size:13px;font-weight:400}
-#slide-03.slide03-dashboard>.title{white-space:normal!important;overflow:visible!important}
-
-/* ── Dashboard body grid ── */
-#slide-03 .dash-body{
+/* Slide 03 · Community evolution: knowledge → code → models → tokens → AgenticOps. */
+#slide-03.slide03-community-evolution .section{display:block!important}
+#slide-03.slide03-community-evolution .section-en{
+  color:#697472;
+  font-size:13px;
+  font-weight:400
+}
+#slide-03.slide03-community-evolution>.title{
+  white-space:normal!important;
+  overflow:visible!important
+}
+#slide-03 .evo3-community{
   position:absolute;
-  left:78px;right:78px;
-  top:200px;bottom:120px;
+  left:78px;
+  right:78px;
+  top:190px;
+  bottom:70px;
   display:grid;
-  grid-template-rows:108px minmax(0,1fr) 96px;
-  gap:14px
+  grid-template-rows:304px 238px 74px;
+  gap:12px;
+  min-width:0;
+  min-height:0
 }
 
-/* ── KPI Row ── */
-#slide-03 .dash-kpi-row{
+/* Original DevOps → AgenticOps artwork; keep its geometry unchanged. */
+#slide-03 .evo3-compare-ref{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:12px
+  grid-template-columns:minmax(0,1fr) 110px minmax(0,1fr);
+  gap:16px;
+  min-width:0;
+  min-height:0
 }
-#slide-03 .dash-kpi{
+#slide-03 .evo3-ref-panel{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  min-height:0;
+  margin:0;
+  overflow:hidden;
+  border:1px solid #C8DAD7;
+  border-radius:7px;
+  background:#FFFFFF;
+  box-shadow:0 8px 22px rgba(25,72,65,.05)
+}
+#slide-03 .evo3-ref-panel img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain
+}
+#slide-03 .evo3-ref-arrow{
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:4px;
-  border:1px solid #CEDCD9;
-  border-top:3px solid #23877B;
-  border-radius:7px;
-  background:linear-gradient(180deg,#F0F7F5 0,#FFFFFF 60%);
-  text-align:center
+  gap:12px;
+  color:#49B8A8
 }
-#slide-03 .dash-kpi-icon{
-  width:28px;height:28px;
-  color:#23877B;
-  display:flex;
-  align-items:center;
-  justify-content:center
-}
-#slide-03 .dash-kpi-icon svg{width:100%;height:100%}
-#slide-03 .dash-kpi-val{
-  color:#173D37;
-  font-size:28px;
+#slide-03 .evo3-ref-arrow small{
+  color:#176C61;
+  font-size:10px;
   font-weight:800;
-  line-height:1;
-  letter-spacing:-.02em
+  letter-spacing:.14em
 }
-#slide-03 .dash-kpi-label{
-  color:#5D6D69;
-  font-size:11px;
-  font-weight:600
+#slide-03 .evo3-ref-arrow i{
+  position:relative;
+  display:block;
+  width:72px;
+  height:14px;
+  background:#7ED8CA
+}
+#slide-03 .evo3-ref-arrow i:after{
+  content:"";
+  position:absolute;
+  right:-18px;
+  top:-11px;
+  border-left:22px solid #7ED8CA;
+  border-top:18px solid transparent;
+  border-bottom:18px solid transparent
 }
 
-/* ── Charts Row ── */
-#slide-03 .dash-charts{
+/* Retained for compatibility with older exported slide markup. */
+#slide-03 .evo3-live-compare{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;
+  grid-template-columns:minmax(0,1fr) 110px minmax(0,1fr);
+  gap:16px;
+  min-width:0;
   min-height:0
 }
-#slide-03 .dash-chart-panel{
+#slide-03 .evo3-live-panel{
   display:grid;
-  grid-template-rows:32px minmax(0,1fr);
-  border:1px solid #D0DDD9;
+  grid-template-rows:54px minmax(0,1fr);
+  min-width:0;
+  min-height:0;
+  overflow:hidden;
+  border:1px solid #BFD4D0;
   border-radius:7px;
   background:#FFFFFF;
-  overflow:hidden
+  box-shadow:0 8px 22px rgba(25,72,65,.05)
 }
-#slide-03 .dash-chart-head{
+#slide-03 .evo3-live-panel>header{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 18px;
+  border-bottom:1px solid #D9E4E1;
+  background:#F0F5F4
+}
+#slide-03 .evo3-live-panel.agentic>header{
+  border-color:#23877B;
+  background:#23877B
+}
+#slide-03 .evo3-live-panel>header small{
+  color:#71807D;
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.15em
+}
+#slide-03 .evo3-live-panel>header b{
+  margin-top:3px;
+  color:#1C3732;
+  font-size:17px;
+  line-height:1.15
+}
+#slide-03 .evo3-live-panel.agentic>header small{color:#C9E7E2}
+#slide-03 .evo3-live-panel.agentic>header b{color:#FFFFFF}
+#slide-03 .evo3-live-body{
+  display:grid;
+  grid-template-rows:34px minmax(0,1fr) 30px;
+  min-height:0;
+  padding:8px 14px 10px
+}
+#slide-03 .evo3-live-brand{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 12px;
-  border-bottom:1px solid #DCE5E2;
-  background:#F4F8F7
+  gap:10px;
+  min-width:0
 }
-#slide-03 .dash-chart-head small{
-  color:#23877B;
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:.1em
-}
-#slide-03 .dash-chart-head span{
-  color:#82908D;
-  font-size:8px;
-  font-weight:600
-}
-#slide-03 .dash-chart-body{
+#slide-03 .evo3-live-brand a{
   display:flex;
   align-items:center;
-  padding:10px 8px;
+  gap:6px;
+  min-width:0;
+  color:#253A36;
+  text-decoration:none
+}
+#slide-03 .evo3-live-brand a img{
+  display:block;
+  width:24px;
+  height:24px;
+  object-fit:contain
+}
+#slide-03 .evo3-live-panel.agentic .evo3-live-brand a img{
+  width:98px;
+  height:28px;
+  object-fit:contain;
+  object-position:left center
+}
+#slide-03 .evo3-live-brand a b{
+  color:#253A36;
+  font-size:14px
+}
+#slide-03 .evo3-live-brand>span{
+  overflow:hidden;
+  color:#72807D;
+  font-size:8px;
+  font-weight:600;
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+#slide-03 .evo3-loop{
+  position:static;
+  inset:auto;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  min-height:0;
+  align-self:stretch;
+  justify-self:stretch;
+  overflow:hidden
+}
+#slide-03 .evo3-live-body>p{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-width:0;
+  margin:0;
+  padding:0 10px;
+  border:1px solid #D9E4E1;
+  border-radius:4px;
+  background:#F7F9F9
+}
+#slide-03 .evo3-live-panel.agentic .evo3-live-body>p{
+  border-color:#B9D9D4;
+  background:#EEF7F5
+}
+#slide-03 .evo3-live-body>p b{
+  color:#50635F;
+  font-size:8px
+}
+#slide-03 .evo3-live-body>p span{
+  color:#23877B;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.04em
+}
+#slide-03 .evo3-live-arrow{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  text-align:center
+}
+#slide-03 .evo3-live-arrow small{
+  color:#788783;
+  font-size:6.5px;
+  font-weight:800;
+  letter-spacing:.13em
+}
+#slide-03 .evo3-live-arrow span{
+  margin-top:6px;
+  color:#50635F;
+  font-size:8px;
+  font-weight:700;
+  line-height:1.35
+}
+#slide-03 .evo3-live-arrow i{
+  position:relative;
+  display:block;
+  width:72px;
+  height:13px;
+  margin:15px 10px 12px 0;
+  border-radius:2px;
+  background:#76D4C6
+}
+#slide-03 .evo3-live-arrow i:after{
+  content:"";
+  position:absolute;
+  right:-18px;
+  top:-11px;
+  border-left:22px solid #76D4C6;
+  border-top:18px solid transparent;
+  border-bottom:18px solid transparent
+}
+#slide-03 .evo3-live-arrow b{
+  color:#176C61;
+  font-size:8px;
+  letter-spacing:.08em
+}
+
+/* Five generations with representative logos and explicit community objects */
+#slide-03 .evo3-generation{
+  display:grid;
+  grid-template-columns:194px minmax(0,1fr);
+  min-width:0;
+  min-height:0;
+  overflow:hidden;
+  border:1px solid #CEDCD9;
+  border-top:3px solid #23877B;
+  border-radius:7px;
+  background:#FFFFFF
+}
+#slide-03 .evo3-generation>header{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding:17px 15px 13px;
+  border-right:1px solid #D8E3E0;
+  background:#F0F7F5
+}
+#slide-03 .evo3-generation>header small{
+  color:#23877B;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.15em
+}
+#slide-03 .evo3-generation>header b{
+  margin-top:8px;
+  color:#173D37;
+  font-size:15px;
+  line-height:1.25
+}
+#slide-03 .evo3-generation>header p{
+  margin:8px 0 0;
+  color:#526762;
+  font-size:9px;
+  font-weight:700;
+  line-height:1.45
+}
+#slide-03 .evo3-generation>header>span{
+  position:absolute;
+  left:15px;
+  right:12px;
+  bottom:12px;
+  color:#82908D;
+  font-size:7px;
+  line-height:1.4
+}
+#slide-03 .evo3-stages{
+  display:grid;
+  grid-template-columns:.92fr 1.18fr 1.23fr 1fr 1.18fr;
+  min-width:0;
   min-height:0;
   overflow:hidden
 }
-#slide-03 .dash-chart-body svg{
-  width:100%;
-  height:100%;
-  max-height:100%
-}
-
-/* ── Bottom Row: Platform + Insight ── */
-#slide-03 .dash-bottom{
+#slide-03 .evo3-stages article{
+  position:relative;
   display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:14px
+  grid-template-rows:23px 14px 42px 27px minmax(0,1fr) 24px;
+  gap:2px;
+  min-width:0;
+  min-height:0;
+  padding:11px 10px 10px;
+  border-right:1px solid #DFE7E5;
+  background:#FFFFFF
 }
-
-/* Platform card */
-#slide-03 .dash-platform{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  grid-template-rows:auto 1fr;
+#slide-03 .evo3-stages article:last-child{border-right:0}
+#slide-03 .evo3-stage-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  min-width:0
+}
+#slide-03 .evo3-stage-head time{
+  color:#23877B;
+  font-size:14px;
+  font-weight:800;
+  line-height:1
+}
+#slide-03 .evo3-stage-head i{
+  display:flex;
   align-items:center;
-  gap:6px 12px;
-  padding:10px 16px;
+  justify-content:center;
+  width:17px;
+  height:17px;
   border:1px solid #B7CDCA;
-  border-left:4px solid #23877B;
-  border-radius:7px;
-  background:linear-gradient(90deg,#EAF4F2 0,#FFFFFF 50%,#F4F9F8 100%)
+  border-radius:50%;
+  background:#F4F8F7;
+  color:#66817C;
+  font-size:6px;
+  font-style:normal;
+  font-weight:800
 }
-#slide-03 .dash-platform-head{
+#slide-03 .evo3-stages article>small{
+  color:#83908D;
+  font-size:6.5px;
+  font-weight:800;
+  letter-spacing:.08em;
+  white-space:nowrap
+}
+#slide-03 .evo3-stage-logos{
   display:flex;
   align-items:center;
-  gap:10px;
-  grid-column:1;
-  grid-row:1
-}
-#slide-03 .dash-platform-head img{
-  width:28px;height:28px
-}
-#slide-03 .dash-platform-head b{
-  color:#173E38;
-  font-size:13px;
-  line-height:1.2
-}
-#slide-03 .dash-platform-head span{
-  display:block;
-  color:#5D6D69;
-  font-size:8px;
-  font-weight:600
-}
-#slide-03 .dash-platform-assets{
-  grid-column:1/3;
-  grid-row:2;
-  display:flex;
-  flex-wrap:wrap;
   gap:5px;
-  align-content:center
+  min-width:0;
+  overflow:hidden
 }
-#slide-03 .dash-asset-type{
-  display:flex;
+#slide-03 .evo3-brand-chip{
+  display:inline-flex;
   align-items:center;
   gap:4px;
-  padding:3px 8px;
+  min-width:0;
+  height:32px;
+  padding:4px 6px;
+  border:1px solid #DCE5E3;
+  border-radius:5px;
+  background:#FAFBFB;
+  color:#263B37;
+  text-decoration:none
+}
+#slide-03 .evo3-brand-chip img{
+  display:block;
+  width:22px;
+  height:22px;
+  flex:0 0 22px;
+  object-fit:contain
+}
+#slide-03 .evo3-brand-chip b{
+  min-width:0;
+  overflow:hidden;
+  color:#263B37;
+  font-size:7.5px;
+  line-height:1;
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+#slide-03 .evo3-brand-chip.opencsg{
+  border-color:#91C4BC;
+  background:#FFFFFF
+}
+#slide-03 .evo3-brand-chip.opencsg img{
+  width:64px;
+  height:22px;
+  flex-basis:64px;
+  object-position:left center
+}
+#slide-03 .evo3-stages article>b{
+  align-self:end;
+  color:#213D38;
+  font-size:12px;
+  line-height:1.15
+}
+#slide-03 .evo3-stages article>p{
+  margin:1px 0 0;
+  color:#687873;
+  font-size:8px;
+  line-height:1.38
+}
+#slide-03 .evo3-stages article>em{
+  display:flex;
+  align-items:center;
+  align-self:end;
+  width:max-content;
+  max-width:100%;
+  padding:4px 7px;
+  border:1px solid #CCDBD8;
+  border-radius:999px;
+  background:#F4F8F7;
+  color:#46625D;
+  font-size:7px;
+  font-style:normal;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap
+}
+#slide-03 .evo3-stages article.active{
+  border-color:#23877B;
+  background:linear-gradient(180deg,#23877B 0,#1D766C 100%)
+}
+#slide-03 .evo3-stages article.active .evo3-stage-head time,
+#slide-03 .evo3-stages article.active>small,
+#slide-03 .evo3-stages article.active>b,
+#slide-03 .evo3-stages article.active>p{color:#FFFFFF}
+#slide-03 .evo3-stages article.active .evo3-stage-head i{
+  border-color:rgba(255,255,255,.45);
+  background:rgba(255,255,255,.12);
+  color:#FFFFFF
+}
+#slide-03 .evo3-stages article.active>em{
+  border-color:rgba(255,255,255,.42);
+  background:rgba(255,255,255,.12);
+  color:#FFFFFF
+}
+
+/* OpenCSG thesis */
+#slide-03 .evo3-thesis{
+  display:grid;
+  grid-template-columns:1.14fr 1.36fr;
+  gap:16px;
+  align-items:center;
+  min-width:0;
+  min-height:0;
+  padding:9px 15px;
+  border:1px solid #C8DAD6;
+  border-left:5px solid #23877B;
+  border-radius:7px;
+  background:linear-gradient(90deg,#F1F8F6 0,#FFFFFF 50%,#F4F9F8 100%)
+}
+#slide-03 .evo3-thesis>div{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:9px;
+  align-items:baseline;
+  min-width:0
+}
+#slide-03 .evo3-thesis small{
+  grid-column:1/-1;
+  color:#23877B;
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.13em
+}
+#slide-03 .evo3-thesis b{
+  color:#173E38;
+  font-size:13px;
+  white-space:nowrap
+}
+#slide-03 .evo3-thesis>div span{
+  min-width:0;
+  color:#5D6D69;
+  font-size:8px;
+  line-height:1.3
+}
+#slide-03 .evo3-thesis>p{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:5px;
+  min-width:0;
+  margin:0
+}
+#slide-03 .evo3-thesis>p span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  padding:7px 8px;
   border:1px solid #BFD5D1;
   border-radius:4px;
   background:#FFFFFF;
   color:#265E56;
   font-size:8px;
-  font-weight:700
-}
-#slide-03 .dash-asset-type i{
-  display:block;
-  width:6px;height:6px;
-  border-radius:50%;
-  background:#23877B;
-  flex:0 0 6px
-}
-#slide-03 .dash-platform-link{
-  grid-column:3;
-  grid-row:1/3;
-  display:flex;
-  align-items:center;
-  gap:5px;
-  padding:6px 12px;
-  border:1px solid #91C4BC;
-  border-radius:5px;
-  background:#FFFFFF;
-  color:#176C61;
-  font-size:10px;
-  font-weight:700;
-  text-decoration:none;
+  font-weight:800;
+  line-height:1.1;
+  text-align:center;
   white-space:nowrap
 }
-#slide-03 .dash-platform-link:hover{background:#EAF4F2}
-
-/* Insight card */
-#slide-03 .dash-insight{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:6px;
-  padding:10px 16px;
-  border:1px solid #C8DAD6;
-  border-left:4px solid #C88A2B;
-  border-radius:7px;
-  background:linear-gradient(90deg,#FDF8EE 0,#FFFFFF 50%,#FDF8EE 100%)
-}
-#slide-03 .dash-insight small{
-  color:#C88A2B;
-  font-size:8px;
-  font-weight:800;
-  letter-spacing:.12em
-}
-#slide-03 .dash-insight b{
-  color:#173E38;
-  font-size:12px;
-  line-height:1.3
-}
-#slide-03 .dash-insight-tags{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap
-}
-#slide-03 .dash-insight-tags span{
-  padding:4px 8px;
-  border:1px solid #D8C8A0;
-  border-radius:4px;
-  background:#FFF9E8;
-  color:#8A6A1E;
-  font-size:8px;
-  font-weight:700
+#slide-03 .evo3-thesis>p i{
+  color:#56A99D;
+  font-size:10px;
+  font-style:normal;
+  font-weight:800
 }
 
 @media(prefers-reduced-motion:reduce){

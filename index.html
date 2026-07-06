@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/deck-slide03-earliest.css?v=20260705g">
   <link rel="stylesheet" href="assets/deck-review-20260705.css?v=20260705k">
   <link rel="stylesheet" href="assets/deck-tighten-20260705.css?v=20260705a">
-  <link rel="stylesheet" href="assets/deck-slide03-community.css?v=20260706d">
+  <link rel="stylesheet" href="assets/deck-slide03-community.css?v=20260706f">
   <link rel="stylesheet" href="assets/deck-i18n.css?v=20260706i18n">
   <link rel="stylesheet" href="assets/deck-live-sites.css?v=20260706live">
 
@@ -157,7 +157,7 @@
        PDF Export Options Dialog
        ============================================================ */
     .export-options-dialog{
-      width:min(560px,94vw);
+      width:min(460px,94vw);
       padding:0;
       border:1px solid var(--line);
       background:var(--paper);
@@ -175,7 +175,7 @@
     }
     .export-header strong{margin-right:auto;font-size:13px;letter-spacing:.04em}
     .export-body{
-      padding:18px 22px 6px;overflow:auto;display:flex;flex-direction:column;gap:18px
+      padding:20px 22px 8px;overflow:auto;display:flex;flex-direction:column;gap:16px
     }
     .export-field{display:flex;flex-direction:column;gap:8px}
     .export-field > label{
@@ -184,6 +184,20 @@
     }
     .export-field .hint{font-size:11px;color:var(--muted);line-height:1.5}
     .export-row{display:flex;flex-wrap:wrap;gap:8px}
+    .export-simple-row{display:grid;grid-template-columns:repeat(var(--export-cols,2),1fr)}
+    .export-simple-row .export-chip{width:100%;min-height:42px}
+    .export-select{
+      width:100%;
+      min-height:42px;
+      padding:0 12px;
+      border:1px solid var(--line);
+      border-radius:4px;
+      background:#fff;
+      color:var(--ink);
+      font:600 12px Arial,"PingFang SC","Microsoft YaHei";
+      cursor:pointer
+    }
+    .export-select:focus{outline:2px solid rgba(35,135,123,.18);border-color:var(--teal)}
     .export-chip{
       appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);
       padding:8px 12px;font:600 12px Arial,"PingFang SC","Microsoft YaHei";
@@ -213,10 +227,12 @@
     }
     .export-summary{
       border-top:1px solid var(--line);background:#F4F8F7;
-      padding:10px 16px;font-size:11px;color:var(--teal2);
+      padding:12px 16px;font-size:11px;color:var(--teal2);
       letter-spacing:.04em;line-height:1.5
     }
     .export-summary b{color:var(--ink)}
+    .export-summary span{margin:0 6px;color:#91A19D}
+    .export-summary em{display:block;margin-top:4px;color:var(--muted);font-style:normal}
     .export-footer{
       display:flex;justify-content:flex-end;gap:10px;
       padding:12px 16px;border-top:1px solid var(--line);background:#fff
@@ -333,7 +349,7 @@
     <button type="button" id="fullscreenBtn" data-i18n="toolbar.fullscreen">FULLSCREEN</button>
     <button type="button" id="pdfPreviewBtn" data-i18n="toolbar.previewPdf">预览 PDF</button>
     <button type="button" id="pdfDownloadBtn" data-i18n="toolbar.downloadPdf">下载 PDF</button>
-    <button type="button" id="pdfExportBtn" data-i18n="toolbar.exportOptions">导出选项</button>
+    <button type="button" id="pdfExportBtn" data-zh="导出" data-en="EXPORT">导出</button>
   </div>
   <dialog id="pdfPreviewDialog" class="pdf-preview-dialog" aria-labelledby="pdfPreviewTitle">
     <div class="pdf-preview-shell">
@@ -349,90 +365,74 @@
   <dialog id="exportDialog" class="export-options-dialog" aria-labelledby="exportDialogTitle">
     <div class="export-shell">
       <header class="export-header">
-        <strong id="exportDialogTitle" data-zh="PDF 导出选项" data-en="PDF EXPORT OPTIONS">PDF 导出选项</strong>
+        <strong id="exportDialogTitle" data-zh="导出演示文稿" data-en="EXPORT DECK">导出演示文稿</strong>
       </header>
       <div class="export-body">
         <div class="export-field">
-          <label data-zh="语言版本" data-en="LANGUAGE">语言版本</label>
-          <div class="export-row" data-group="lang">
-            <button type="button" class="export-chip active" data-value="zh" data-zh="中文版" data-en="CHINESE">中文版</button>
-            <button type="button" class="export-chip" data-value="en" data-zh="英文版" data-en="ENGLISH">英文版</button>
-            <button type="button" class="export-chip" data-value="both" data-zh="中英双语" data-en="BILINGUAL">中英双语</button>
+          <label data-zh="语言" data-en="LANGUAGE">语言</label>
+          <select id="exportLanguage" class="export-select" aria-label="导出语言">
+            <option value="zh">简体中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="ar">العربية</option>
+            <option value="ru">Русский</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+          </select>
+        </div>
+
+        <div class="export-field">
+          <label data-zh="范围" data-en="RANGE">范围</label>
+          <div class="export-row export-simple-row" style="--export-cols:3">
+            <button type="button" class="export-chip active" data-preset="full" data-zh="完整演示" data-en="FULL DECK">完整演示</button>
+            <button type="button" class="export-chip" data-preset="investor" data-zh="投资人版" data-en="INVESTOR">投资人版</button>
+            <button type="button" class="export-chip" data-preset="current" data-zh="当前页" data-en="CURRENT">当前页</button>
           </div>
         </div>
 
         <div class="export-field">
-          <label data-zh="输出比例" data-en="PAGE RATIO">输出比例</label>
-          <div class="export-row" data-group="ratio">
-            <button type="button" class="export-chip active" data-value="16:9" data-zh="16:9 宽屏" data-en="16:9 WIDESCREEN">16:9 宽屏</button>
-            <button type="button" class="export-chip" data-value="4:3" data-zh="4:3 标准" data-en="4:3 STANDARD">4:3 标准</button>
-            <button type="button" class="export-chip" data-value="a4-portrait" data-zh="A4 纵向" data-en="A4 PORTRAIT">A4 纵向</button>
+          <label data-zh="比例" data-en="RATIO">比例</label>
+          <div class="export-row export-simple-row" data-group="ratio" style="--export-cols:4">
+            <button type="button" class="export-chip active" data-value="16:9">16:9</button>
+            <button type="button" class="export-chip" data-value="4:3">4:3</button>
             <button type="button" class="export-chip" data-value="a4-landscape" data-zh="A4 横向" data-en="A4 LANDSCAPE">A4 横向</button>
-            <button type="button" class="export-chip" data-value="letter-landscape" data-zh="Letter 横向" data-en="LETTER LANDSCAPE">Letter 横向</button>
+            <button type="button" class="export-chip" data-value="a4-portrait" data-zh="A4 纵向" data-en="A4 PORTRAIT">A4 纵向</button>
           </div>
-          <div class="hint" id="ratioHint" data-zh="16:9 = 1600×900px，与幻灯片源比例一致。" data-en="16:9 = 1600×900px, matches the slide source ratio.">16:9 = 1600×900px，与幻灯片源比例一致。</div>
         </div>
 
         <div class="export-field">
-          <label data-zh="章节范围（可多选）" data-en="SECTIONS (MULTI-SELECT)">章节范围（可多选）</label>
-          <div class="export-row" data-group="section" id="sectionRow">
-            <label class="export-check section-check"><input type="checkbox" value="cover" checked><span data-zh="封面" data-en="COVER">封面</span></label>
-            <label class="export-check section-check"><input type="checkbox" value="main" checked><span data-zh="主干部" data-en="MAIN">主干部</span></label>
-            <label class="export-check section-check"><input type="checkbox" value="case"><span data-zh="案例验证" data-en="CASE">案例验证</span></label>
-            <label class="export-check section-check"><input type="checkbox" value="product"><span data-zh="产品介绍" data-en="PRODUCT">产品介绍</span></label>
-            <label class="export-check section-check"><input type="checkbox" value="appendix"><span data-zh="附录与荣誉" data-en="APPENDIX">附录与荣誉</span></label>
+          <label data-zh="格式" data-en="FORMAT">格式</label>
+          <div class="export-row export-simple-row" data-group="format" style="--export-cols:2">
+            <button type="button" class="export-chip active" data-value="pdf">PDF</button>
+            <button type="button" class="export-chip" data-value="pptx">PPTX</button>
           </div>
-          <div class="export-row section-presets" data-group="section-presets">
-            <button type="button" class="export-chip" data-preset="all" data-zh="全选" data-en="ALL">全选</button>
-            <button type="button" class="export-chip" data-preset="core" data-zh="主干 + 案例" data-en="CORE + CASE">主干 + 案例</button>
-            <button type="button" class="export-chip" data-preset="none" data-zh="清空" data-en="NONE">清空</button>
-            <button type="button" class="export-chip" data-preset="investor" data-zh="投资人精简版" data-en="INVESTOR LITE">投资人精简版</button>
-            <button type="button" class="export-chip" data-preset="full" data-zh="完整版" data-en="FULL DECK">完整版</button>
-          </div>
-          <div class="hint" id="sectionHint" data-zh="主干部 = 投资论点、公司概览、市场、商业模式等。投资人精简版 = 封面 + 主干。" data-en="Main = thesis, company, market, business model. Investor lite = cover + main.">主干部 = 投资论点、公司概览、市场、商业模式等。投资人精简版 = 封面 + 主干。</div>
         </div>
 
-        <div class="export-field">
-          <label data-zh="指定页码（可选）" data-en="PAGE RANGE (OPTIONAL)">指定页码（可选）</label>
-          <div class="export-range">
-            <input type="text" id="pageFrom" placeholder="1" data-zh-placeholder="起始" data-en-placeholder="FROM">
-            <span data-zh="至" data-en="TO">至</span>
-            <input type="text" id="pageTo" placeholder="15" data-zh-placeholder="结束" data-en-placeholder="TO">
-            <span class="hint" data-zh="范围基于原始 PDF（1-38）。留空 = 全部命中章节的页。" data-en="Range applies to the source deck (1-38). Empty = all slides in selected sections.">范围基于原始 PDF（1-38）。留空 = 全部命中章节的页。</span>
+        <div hidden aria-hidden="true">
+          <div id="ratioHint"></div>
+          <div id="sectionRow">
+            <label class="section-check"><input type="checkbox" value="cover" checked></label>
+            <label class="section-check"><input type="checkbox" value="main" checked></label>
+            <label class="section-check"><input type="checkbox" value="case" checked></label>
+            <label class="section-check"><input type="checkbox" value="product" checked></label>
+            <label class="section-check"><input type="checkbox" value="appendix" checked></label>
           </div>
-          <div class="export-row" style="margin-top:6px">
-            <input type="text" class="export-text-input" id="pageList" placeholder="如：1,3,5-8,11" data-zh-placeholder="如：1,3,5-8,11" data-en-placeholder="e.g. 1,3,5-8,11" style="flex:1">
-          </div>
-          <div class="hint" data-zh="手动指定页码（与章节取并集）。例如 1-5 表示 1 到 5 页。" data-en="Manual page list (combined with sections). e.g. 1-5 = pages 1 through 5.">手动指定页码（与章节取并集）。例如 1-5 表示 1 到 5 页。</div>
-        </div>
-
-        <div class="export-field">
-          <label data-zh="水印" data-en="WATERMARK">水印</label>
-          <label class="export-check"><input type="checkbox" id="watermarkEnabled"><span data-zh="启用对角线水印" data-en="Enable diagonal watermark">启用对角线水印</span></label>
-          <input type="text" class="export-text-input" id="watermarkText" placeholder="CONFIDENTIAL · OpenCSG 2026" data-zh-placeholder="输入水印文字" data-en-placeholder="Watermark text">
-          <div class="hint" data-zh="将作为半透明水印叠加在每张幻灯片上。" data-en="Renders a translucent overlay across every page.">将作为半透明水印叠加在每张幻灯片上。</div>
-        </div>
-
-        <div class="export-field">
-          <label data-zh="输出格式" data-en="FORMAT">输出格式</label>
-          <div class="export-row" data-group="format">
-            <button type="button" class="export-chip active" data-value="pdf" data-zh="PDF" data-en="PDF">PDF</button>
-            <button type="button" class="export-chip" data-value="pptx" data-zh="图片型 PPTX" data-en="IMAGE PPTX">图片型 PPTX</button>
-            <button type="button" class="export-chip" data-value="both" data-zh="PDF + PPTX" data-en="PDF + PPTX">PDF + PPTX</button>
-          </div>
-          <div class="hint" data-zh="PPTX = 每页幻灯片渲染为图片，保留原版排版，可在 PowerPoint / Keynote 中二次编辑。" data-en="PPTX = each slide rendered as an image, preserves the original layout and is editable in PowerPoint / Keynote.">PPTX = 每页幻灯片渲染为图片，保留原版排版，可在 PowerPoint / Keynote 中二次编辑。</div>
-        </div>
-
-        <div class="export-field">
-          <label data-zh="文件名" data-en="FILE NAME">文件名</label>
-          <input type="text" class="export-text-input" id="exportFilename" placeholder="OpenCSG_Investor_Deck_2026_ZH.pdf" data-zh-placeholder="OpenCSG_Investor_Deck_2026_ZH.pdf" data-en-placeholder="OpenCSG_Investor_Deck_2026_EN.pdf">
+          <input type="text" id="pageFrom">
+          <input type="text" id="pageTo">
+          <input type="text" id="pageList">
+          <input type="checkbox" id="watermarkEnabled">
+          <input type="text" id="watermarkText">
+          <input type="text" id="exportFilename">
         </div>
 
         <div class="export-summary" id="exportSummary">—</div>
       </div>
       <footer class="export-footer">
         <button type="button" id="exportCancel" data-zh="取消" data-en="CANCEL">取消</button>
-        <button type="button" id="exportApply" class="primary" data-zh="开始导出" data-en="EXPORT">开始导出</button>
+        <button type="button" id="exportApply" class="primary" data-zh="生成并下载" data-en="GENERATE &amp; DOWNLOAD">生成并下载</button>
       </footer>
     </div>
   </dialog>
@@ -729,15 +729,15 @@
               <div class="live-site-overlay" id="liveSiteOverlay">
                 <div class="live-site-overlay-inner">
                   <div class="live-site-icon">🌐</div>
-                  <div class="live-site-hint">点击城市节点查看实时平台</div>
+                  <div class="live-site-hint" data-en="Click a city node to view the live platform">点击城市节点查看实时平台</div>
                 </div>
               </div>
             </div>
             <div class="live-site-tabs" id="liveSiteTabs">
-              <button class="live-tab active" data-site="https://sanxia.opencsg.com/"><b data-en="Sanxia">三峡</b><small>宜昌</small></button>
+              <button class="live-tab active" data-site="https://sanxia.opencsg.com/"><b data-en="Sanxia">三峡</b><small data-en="Yichang">宜昌</small></button>
               <button class="live-tab" data-site="https://openeast.opencsg.com/"><b data-en="Open East">开放东方</b><small data-en="Dongfang">东方</small></button>
-              <button class="live-tab" data-site="https://occ.opencsg.hk/"><b>香港</b><small>Hong Kong</small></button>
-              <button class="live-tab" data-site="https://sg.opencsg.com/"><b>新加坡</b><small>Singapore</small></button>
+              <button class="live-tab" data-site="https://occ.opencsg.hk/"><b data-en="Hong Kong">香港</b><small>Hong Kong</small></button>
+              <button class="live-tab" data-site="https://sg.opencsg.com/"><b data-en="Singapore">新加坡</b><small>Singapore</small></button>
               <button class="live-tab" data-site="https://aihub.caict.ac.cn/"><b data-en="CAICT AI Hub">鲸智</b><small>CAICT</small></button>
               <button class="live-tab" data-site="https://modelhub.lgdg.cc/"><b data-en="Longgang">龙岗</b><small data-en="Shenzhen">深圳</small></button>
             </div>
@@ -1020,7 +1020,7 @@
           <article><strong>CANADA</strong><b>C$2B</b><span data-en="Sovereign AI Compute Strategy · supercomputing system">Sovereign AI Compute Strategy · 超算系统</span><a href="https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy" target="_blank">Government of Canada</a></article>
           <article><strong>SAUDI</strong><b>HUMAIN</b><span data-en="PIF sovereign fund · AI infrastructure and local LLMs">PIF 主权基金 · AI 基础设施与本土大模型</span><a href="https://humain.com/" target="_blank">HUMAIN</a></article>
           <article><strong>JAPAN</strong><b>AI Nation</b><span data-en="Japanese LLMs · disaster response · climate resilience">日语言模型 · 灾害响应 · 气候韧性</span><a href="https://blogs.nvidia.com/blog/what-is-sovereign-ai/" target="_blank">NVIDIA｜Sovereign AI</a></article>
-          <article><strong>CHINA</strong><b>439 LLMs</b><span data-en="30+ industries · ¥700B+ market · AI+ national strategy">30+ 行业 · ¥700B+ 产业规模 · AI+ 国家战略</span><a href="https://www.ndrc.gov.cn/xxgk/jd/jd/202508/t20250826_1400077.html" target="_blank">国家发改委</a></article>
+          <article><strong>CHINA</strong><b>439 LLMs</b><span data-en="30+ industries · ¥700B+ market · AI+ national strategy">30+ 行业 · ¥700B+ 产业规模 · AI+ 国家战略</span><a href="https://www.ndrc.gov.cn/xxgk/jd/jd/202508/t20250826_1400077.html" target="_blank" data-en="National Development and Reform Commission">国家发改委</a></article>
         </div>
         <div class="m10-jensen">
           <img src="assets/jensen-keynote-nvidia-gtc.jpg" alt="Jensen Huang at NVIDIA GTC">
@@ -1040,13 +1040,13 @@
       <section class="m10-market">
         <h3 data-en="Enterprise adoption + policy acceleration">企业规模化 + 政策加速</h3>
         <div class="m10-metrics">
-          <article><b>88%</b><p>组织已在至少一个业务职能中常态化使用 AI</p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">McKinsey｜State of AI 2025</a></article>
-          <article><b>62%</b><p>正在试验或规模化 Agent，23% 已开始扩展</p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">McKinsey｜State of AI 2025</a></article>
+          <article><b>88%</b><p data-en="Organizations regularly use AI in at least one business function">组织已在至少一个业务职能中常态化使用 AI</p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">McKinsey｜State of AI 2025</a></article>
+          <article><b>62%</b><p data-en="Organizations are experimenting with or scaling agents; 23% have begun expanding">正在试验或规模化 Agent，23% 已开始扩展</p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">McKinsey｜State of AI 2025</a></article>
         </div>
         <div class="m10-policy">
-          <div class="m10-policy-head"><b>CHINA AI+ POLICY TARGETS</b><span>国务院国发〔2025〕11号</span></div>
-          <article><b>2027</b><span>智能终端、智能体应用普及率超 <strong>70%</strong></span></article>
-          <article><b>2030</b><span>智能终端、智能体应用普及率超 <strong>90%</strong></span></article>
+          <div class="m10-policy-head"><b>CHINA AI+ POLICY TARGETS</b><span data-en="State Council Document No. 11 (2025)">国务院国发〔2025〕11号</span></div>
+          <article><b>2027</b><span><span data-en="Adoption of intelligent devices and agent applications above">智能终端、智能体应用普及率超</span> <strong>70%</strong></span></article>
+          <article><b>2030</b><span><span data-en="Adoption of intelligent devices and agent applications above">智能终端、智能体应用普及率超</span> <strong>90%</strong></span></article>
         </div>
         <div class="m10-tam">
           <div class="m10-tam-head"><span>2026 BASE-CASE · OPENCSG BOTTOM-UP</span><b>$7.5B</b><em>≈ RMB 54B TAM</em></div>
@@ -1070,18 +1070,18 @@
       <div class="opc11-left">
         <section class="opc11-signals">
           <h3 data-en="Market signals: developers, AI projects, and local compute are converging">市场信号：开发者、AI 项目与本地算力正在汇聚</h3>
-          <article><small>OPEN ECOSYSTEM</small><b>180M+</b><p>GitHub 开发者总数，2025 年新增 <strong>36M</strong>（+23% YoY），每秒新增 1+ 开发者。</p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025</a></article>
-          <article><small>AI SUPPLY</small><b>1.1M</b><p>GitHub 公开仓库使用 LLM SDK，过去 12 个月新增 <strong>693K</strong>（+178% YoY）。</p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025</a></article>
+          <article><small>OPEN ECOSYSTEM</small><b>180M+</b><p><span data-en="Total GitHub developers; new developers added in 2025">GitHub 开发者总数，2025 年新增</span> <strong>36M</strong><span data-en=" (+23% YoY), with more than one new developer joining every second.">（+23% YoY），每秒新增 1+ 开发者。</span></p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025</a></article>
+          <article><small>AI SUPPLY</small><b>1.1M</b><p><span data-en="Public GitHub repositories using LLM SDKs; added over the past 12 months">GitHub 公开仓库使用 LLM SDK，过去 12 个月新增</span> <strong>693K</strong><span>（+178% YoY）。</span></p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025</a></article>
           <article><small>LOCAL COMPUTE</small><b>143.1M</b><p>2026 年 AI PC 预计出货量，本地推理成为标准硬件能力。</p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025" target="_blank">Gartner｜AI PC Forecast 2024–2026</a></article>
           <article><small>AI PC SHARE</small><b>54.7%</b><p data-en="2026 AI PC share of global PC market forecast (31% at end of 2025).">2026 年 AI PC 占全球 PC 市场预测比例（2025 年底为 31%）。</p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025" target="_blank">Gartner｜Worldwide AI PC Share</a></article>
         </section>
         <section class="opc11-trend">
           <div class="opc11-trend-head"><h3 data-en="AI agents entering the mainstream">AI Agent 正在进入主流</h3></div>
           <div class="opc11-trend-grid">
-            <article><b>80%</b><span>新开发者在第一周内使用 GitHub Copilot</span></article>
-            <article><b>+178%</b><span>LLM SDK 仓库同比增长（2025 vs 2024）</span></article>
-            <article><b>2.4M</b><span>仓库使用 Jupyter Notebooks（+75% YoY）</span></article>
-            <article><b>1.9M</b><span>仓库使用 Dockerfile（+120% YoY）沙箱化 Agent</span></article>
+            <article><b>80%</b><span data-en="New developers use GitHub Copilot in their first week">新开发者在第一周内使用 GitHub Copilot</span></article>
+            <article><b>+178%</b><span data-en="YoY growth of repositories using LLM SDKs (2025 vs 2024)">LLM SDK 仓库同比增长（2025 vs 2024）</span></article>
+            <article><b>2.4M</b><span data-en="Repositories use Jupyter Notebooks (+75% YoY)">仓库使用 Jupyter Notebooks（+75% YoY）</span></article>
+            <article><b>1.9M</b><span data-en="Repositories use Dockerfiles for sandboxed agents (+120% YoY)">仓库使用 Dockerfile（+120% YoY）沙箱化 Agent</span></article>
           </div>
         </section>
       </div>
@@ -1096,13 +1096,13 @@
             <i>→</i>
             <article><span>03</span><b>Agent + Skill</b><p>连接工具<br>持续执行任务</p></article>
             <i>→</i>
-            <article><span>04</span><b>Multi-Agent OPC</b><p>分工、协同<br>个人生产系统</p></article>
+            <article><span>04</span><b>Multi-Agent OPC</b><p><span data-en="Delegation and collaboration">分工、协同</span><br><span data-en="Personal production system">个人生产系统</span></p></article>
           </div>
           <div class="opc11-products"><b>OpenCSG 产品路径</b><span>CSGHub-Lite｜本地资产与运行底座</span><span>CSGClaw｜多 Agent 协同与执行网络</span></div>
         </div>
         <div class="opc11-policy">
           <h3 data-en="Policy conditions for OPC are forming">OPC 的政策与产业条件正在形成</h3>
-          <article><b>中国 · 2025</b><p>《人工智能+》提出 2027 年智能终端、智能体应用普及率超 70%，2030 年超 90%。</p><a href="https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm" target="_blank">国务院意见</a></article>
+          <article><b>中国 · 2025</b><p data-en="The AI+ policy targets adoption above 70% for intelligent devices and agent applications by 2027, and above 90% by 2030.">《人工智能+》提出 2027 年智能终端、智能体应用普及率超 70%，2030 年超 90%。</p><a href="https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm" target="_blank">国务院意见</a></article>
           <article><b>EU · 2025</b><p>Data Act 强化用户对联网设备数据的访问、使用与授权分享权利。</p><a href="https://eur-lex.europa.eu/eli/C/2025/5026/oj/eng/pdf" target="_blank">EC Data Act Guidance</a></article>
         </div>
       </aside>
@@ -1349,7 +1349,7 @@
 
   <script src="assets/deck-appendix.js?v=20260706wechat"></script>
   <script src="assets/deck-city-reframe.js?v=20260702c"></script>
-  <script src="assets/deck-slide03-replica.js?v=20260706d"></script>
+  <script src="assets/deck-slide03-replica.js?v=20260706f"></script>
   <script src="assets/deck-i18n.js?v=20260706i18n"></script>
   <script src="assets/deck-en-extra.js?v=20260706i18n"></script>
   <script src="assets/deck-live-sites.js?v=20260706live"></script>
@@ -1718,7 +1718,7 @@
     // PDF Export Options Dialog
     // ============================================================
     const SECTION_LABELS={
-      cover:'封面',main:'主干部',case:'案例验证',product:'产品介绍',appendix:'附录与荣誉'
+      cover:'封面',main:'主干部',case:'案例验证',product:'产品介绍',appendix:'荣誉与认可'
     };
     const SECTION_PRESETS={
       all:      new Set(['cover','main','case','product','appendix']),
@@ -1738,14 +1738,22 @@
       'a4-landscape':    'A4 横向 (1123×794px) ，适合打印。',
       'letter-landscape':'Letter 横向 (1100×850px) ，适合北美。'
     };
+    const EXPORT_LANGUAGE_LABELS={
+      zh:'简体中文',en:'English',ja:'日本語',ko:'한국어',ar:'العربية',
+      ru:'Русский',fr:'Français',de:'Deutsch',es:'Español',pt:'Português'
+    };
     const exportState={
-      lang:'zh',ratio:'16:9',sections:new Set(['cover','main']),
+      lang:'zh',ratio:'16:9',scope:'full',
+      sections:new Set(['cover','main','case','product','appendix']),
       pageFrom:'',pageTo:'',pageList:'',format:'pdf',
       watermark:false,
       watermarkText:'CONFIDENTIAL · OpenCSG 2026',filename:''
     };
     const exportDialog=document.getElementById('exportDialog');
     const exportSummary=document.getElementById('exportSummary');
+    const exportLanguageInput=document.getElementById('exportLanguage');
+    const exportApplyButton=document.getElementById('exportApply');
+    const exportCancelButton=document.getElementById('exportCancel');
     const exportFilenameInput=document.getElementById('exportFilename');
     const exportPageFromInput=document.getElementById('pageFrom');
     const exportPageToInput=document.getElementById('pageTo');
@@ -1787,6 +1795,10 @@
         id:w.querySelector('section')?.id||''
       }));
 
+      if(exportState.scope==='current'){
+        return [matched[currentIndex()]];
+      }
+
       const sectionSet=exportState.sections && exportState.sections.size>0
         ? exportState.sections
         : new Set(['cover','main','case','product','appendix']);
@@ -1815,52 +1827,54 @@
       return sectionMatched;
     }
     function defaultFilename(){
-      const langTag=exportState.lang==='en'?'EN':(exportState.lang==='zh'?'ZH':'BI');
-      const ratioTag=exportState.ratio.replace(/[:]/g,'x');
-      const secArr=[...exportState.sections].sort();
-      const allSet=['cover','main','case','product','appendix'];
-      const isAll = secArr.length===allSet.length && allSet.every(s=>exportState.sections.has(s));
-      const sectionTag=isAll?'':`_${secArr.join('+')}`;
+      const langTag=exportState.lang.toUpperCase();
+      const ratioTag=exportState.ratio.replace(':','x');
+      const scopeTag=exportState.scope==='investor'?'_Investor'
+        :(exportState.scope==='current'?`_P${currentIndex()+1}`:'');
       const ext=exportState.format==='pptx'?'.pptx':'.pdf';
-      return `OpenCSG_Investor_Deck_2026_${langTag}_${ratioTag}${sectionTag}${ext}`;
+      return `OpenCSG_Investor_Deck_2026_${langTag}_${ratioTag}${scopeTag}${ext}`;
     }
     function refreshExportSummary(){
       const slides=selectedSlides();
+      const english=currentLang==='en';
+      const langLabel=EXPORT_LANGUAGE_LABELS[exportState.lang]||exportState.lang.toUpperCase();
+      const scopeLabel={
+        full:english?'Full deck':'完整演示',
+        investor:english?'Investor version':'投资人版',
+        current:english?'Current slide':'当前页'
+      }[exportState.scope];
       const ratioLabel={
-        '16:9':'16:9 (1600×900)',
-        '4:3':'4:3 (1600×1200)',
-        'a4-portrait':'A4 纵向',
-        'a4-landscape':'A4 横向',
-        'letter-landscape':'Letter 横向'
+        '16:9':'16:9',
+        '4:3':'4:3',
+        'a4-landscape':english?'A4 landscape':'A4 横向',
+        'a4-portrait':english?'A4 portrait':'A4 纵向'
       }[exportState.ratio]||exportState.ratio;
-      const langLabel={zh:'中文版',en:'英文版',both:'中英双语'}[exportState.lang]||exportState.lang;
-      const secArr=[...exportState.sections].sort();
-      const sectionLabel = secArr.length===0 ? '<i style="color:#C88A2B">未选章节</i>'
-        : secArr.map(s=>SECTION_LABELS[s]||s).join(' + ');
-      const formatLabel={pdf:'PDF',pptx:'图片型 PPTX',both:'PDF + PPTX'}[exportState.format]||exportState.format;
-      const wm=exportState.watermark?`开启 (${exportState.watermarkText||'—'})`:'关闭';
-      const ids=slides.map(s=>s.id).join(', ');
+      const formatLabel=exportState.format.toUpperCase();
       exportSummary.innerHTML=
-        `<b>${langLabel}</b> · <b>${ratioLabel}</b> · <b>${sectionLabel}</b> · <b>${formatLabel}</b><br>`+
-        `将导出 <b>${slides.length}</b> 张幻灯片 · 水印 <b>${wm}</b><br>`+
-        `页码：${ids||'—'}<br>`+
-        `文件：<b>${exportState.filename||defaultFilename()}</b>`;
+        `<b>${langLabel}</b><span>·</span><b>${scopeLabel}</b><span>·</span><b>${ratioLabel}</b><span>·</span><b>${formatLabel}</b>`+
+        `<em>${english?`${slides.length} slides · generates and downloads automatically`:`${slides.length} 页 · 自动生成并下载`}</em>`;
     }
     function setExportField(group,value){
       exportState[group]=value;
       exportDialog.querySelectorAll(`[data-group="${group}"] .export-chip`).forEach(chip=>{
         chip.classList.toggle('active',chip.dataset.value===String(value));
       });
-      if(group==='lang' || group==='format'){
+      if(group==='format'){
         if(!exportFilenameInput.dataset.touched){
           exportFilenameInput.value=defaultFilename();
         }
       }
       if(group==='ratio'){
-        document.getElementById('ratioHint').textContent=RATIO_HINTS[value]||'';
+        const ratioHint=document.getElementById('ratioHint');
+        if(ratioHint) ratioHint.textContent=RATIO_HINTS[value]||'';
       }
       refreshExportSummary();
     }
+    exportLanguageInput.addEventListener('change',()=>{
+      exportState.lang=exportLanguageInput.value;
+      exportFilenameInput.value=defaultFilename();
+      refreshExportSummary();
+    });
     exportDialog.querySelectorAll('[data-group]').forEach(group=>{
       const key=group.getAttribute('data-group');
       if(key==='section-presets') return; // handled by preset handler below
@@ -1868,10 +1882,16 @@
         chip.addEventListener('click',()=>setExportField(key,chip.dataset.value));
       });
     });
-    // Section preset buttons: 全选 / 主干+案例 / 清空 / 投资人精简版 / 完整版
+    // Export scope: full deck / investor version / current slide.
     exportDialog.querySelectorAll('[data-preset]').forEach(chip=>{
       chip.addEventListener('click',()=>{
         const preset=chip.dataset.preset;
+        exportState.scope=preset;
+        if(preset==='current'){
+          exportDialog.querySelectorAll('[data-preset]').forEach(c=>c.classList.toggle('active',c===chip));
+          refreshExportSummary();
+          return;
+        }
         const target=SECTION_PRESETS[preset];
         if(!target) return;
         exportState.sections=new Set(target);
@@ -1915,8 +1935,15 @@
     });
 
     function openExportDialog(){
-      exportState.lang=currentLang;
-      setExportField('lang',exportState.lang);
+      exportState.lang=EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh';
+      exportLanguageInput.value=exportState.lang;
+      exportState.scope='full';
+      exportState.sections=new Set(SECTION_PRESETS.full);
+      exportDialog.querySelectorAll('[data-preset]').forEach(chip=>{
+        chip.classList.toggle('active',chip.dataset.preset==='full');
+      });
+      setExportField('ratio','16:9');
+      setExportField('format','pdf');
       exportState.watermark=false;
       watermarkEnabled.checked=false;
       exportState.watermarkText='CONFIDENTIAL · OpenCSG 2026';
@@ -1930,73 +1957,70 @@
       exportDialog.showModal();
     }
     document.getElementById('pdfExportBtn').addEventListener('click',openExportDialog);
-    document.getElementById('exportCancel').addEventListener('click',()=>exportDialog.close());
+    exportCancelButton.addEventListener('click',()=>exportDialog.close());
 
-    function buildExportUrl(){
+    function exportPayload(){
       const slides=selectedSlides();
       if(slides.length===0){
-        alert('当前章节与页码条件下没有匹配的幻灯片。');
+        alert(currentLang==='en'?'No slides match this export range.':'当前导出范围没有匹配的幻灯片。');
         return null;
       }
-      const params=new URLSearchParams();
-      params.set('lang',exportState.lang==='both'?'zh':exportState.lang);
-      params.set('ratio',exportState.ratio);
-      params.set('sections',[...exportState.sections].join(','));
-      if(exportState.pageFrom.trim()) params.set('from',exportState.pageFrom.trim());
-      if(exportState.pageTo.trim()) params.set('to',exportState.pageTo.trim());
-      if(exportState.pageList.trim()) params.set('pages',exportState.pageList.trim());
-      if(exportState.watermark && exportState.watermarkText.trim()){
-        params.set('watermark',exportState.watermarkText.trim());
-      }
-      params.set('out',exportState.filename||defaultFilename());
-      params.set('format',exportState.format);
-      return { params:params.toString(), filename:exportState.filename||defaultFilename(), lang:exportState.lang, format:exportState.format };
+      return {
+        lang:exportState.lang,
+        ratio:exportState.ratio,
+        scope:exportState.scope,
+        format:exportState.format,
+        currentPage:currentIndex()+1
+      };
     }
-    function copyToClipboard(text){
-      if(navigator.clipboard?.writeText){
-        return navigator.clipboard.writeText(text);
-      }
-      const ta=document.createElement('textarea');
-      ta.value=text;document.body.appendChild(ta);ta.select();
-      try{document.execCommand('copy');}catch(e){}
-      ta.remove();
-      return Promise.resolve();
-    }
-    function buildCmd(info){
-      const f=info.format, lang=info.lang;
-      const baseArgs=`--lang=${lang==='both'?'zh':lang} --ratio=${exportState.ratio} --section=${exportState.section}`+
-        (exportState.pageFrom.trim()?` --from=${exportState.pageFrom.trim()}`:'')+
-        (exportState.pageTo.trim()?` --to=${exportState.pageTo.trim()}`:'')+
-        (exportState.watermark && exportState.watermarkText.trim()?` --watermark="${exportState.watermarkText.trim()}"`:'')+
-        (exportState.filename?` --file="${info.filename}"`:'');
-      const lines=[];
-      if(f==='pdf' || f==='both'){
-        if(lang==='both') lines.push(`node scripts/export-pdf-bilingual.cjs ${baseArgs}`);
-        else lines.push(`node scripts/export-pdf.cjs ${baseArgs}`);
-      }
-      if(f==='pptx' || f==='both'){
-        if(lang==='both') lines.push(`node scripts/export-pptx-bilingual.cjs ${baseArgs}`);
-        else lines.push(`node scripts/export-pptx.cjs ${baseArgs}`);
-      }
-      return lines.join('\n');
-    }
-    document.getElementById('exportApply').addEventListener('click',async ()=>{
-      const info=buildExportUrl();
-      if(!info) return;
-      const cmd=buildCmd(info);
+
+    function showExportNotice(message,isError=false){
       const notice=document.createElement('div');
-      notice.style.cssText='position:fixed;left:50%;top:80px;transform:translateX(-50%);background:var(--teal);color:#fff;padding:14px 18px;border-radius:6px;font:600 12px Arial;letter-spacing:.04em;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:10000;max-width:90vw;display:flex;flex-direction:column;gap:8px';
-      notice.innerHTML=`<div>已配置 ${selectedSlides().length} 页 · ${info.format.toUpperCase()} · ${info.lang.toUpperCase()}。请在终端运行：</div>`+
-        `<code style="background:rgba(0,0,0,.18);padding:6px 10px;border-radius:4px;font:600 11px ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-all">${cmd}</code>`+
-        `<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="exportCopy" style="background:#fff;color:var(--teal);border:0;padding:6px 10px;border-radius:4px;font:600 11px Arial;cursor:pointer">复制命令</button><button type="button" id="exportDismiss" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);padding:6px 10px;border-radius:4px;font:600 11px Arial;cursor:pointer">关闭</button></div>`;
+      notice.style.cssText=`position:fixed;left:50%;top:80px;transform:translateX(-50%);background:${isError?'#A94138':'var(--teal)'};color:#fff;padding:12px 16px;border-radius:6px;font:600 12px Arial;letter-spacing:.03em;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:10000;max-width:min(520px,90vw)`;
+      notice.textContent=message;
       document.body.appendChild(notice);
-      notice.querySelector('#exportCopy').addEventListener('click',async (e)=>{
-        try{await copyToClipboard(cmd);e.target.textContent='已复制 ✓';}catch{alert('复制失败，请手动复制。')}
-      });
-      notice.querySelector('#exportDismiss').addEventListener('click',()=>notice.remove());
-      setTimeout(()=>notice.remove(),15000);
-      console.info('[Export]',info,cmd);
-      exportDialog.close();
+      setTimeout(()=>notice.remove(),isError?8000:4000);
+    }
+
+    exportApplyButton.addEventListener('click',async ()=>{
+      const payload=exportPayload();
+      if(!payload) return;
+      const originalLabel=exportApplyButton.textContent;
+      exportApplyButton.disabled=true;
+      exportCancelButton.disabled=true;
+      exportApplyButton.textContent=currentLang==='en'?'GENERATING…':'正在生成…';
+      exportSummary.innerHTML=`<b>${currentLang==='en'?'Rendering slides, please wait…':'正在渲染幻灯片，请稍候…'}</b><em>${selectedSlides().length} ${currentLang==='en'?'slides':'页'} · ${exportState.format.toUpperCase()} · ${exportState.ratio}</em>`;
+
+      try{
+        const response=await fetch('/api/export',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify(payload)
+        });
+        if(!response.ok){
+          const body=await response.json().catch(()=>({}));
+          throw new Error(body.error||`${currentLang==='en'?'Export failed':'导出失败'} (${response.status})`);
+        }
+        const blob=await response.blob();
+        const filename=response.headers.get('X-Export-Filename')||defaultFilename();
+        const url=URL.createObjectURL(blob);
+        const link=document.createElement('a');
+        link.href=url;
+        link.download=filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(()=>URL.revokeObjectURL(url),2000);
+        exportDialog.close();
+        showExportNotice(currentLang==='en'?`${filename} is ready.`:`${filename} 已生成并开始下载。`);
+      }catch(error){
+        refreshExportSummary();
+        showExportNotice(error.message||String(error),true);
+      }finally{
+        exportApplyButton.disabled=false;
+        exportCancelButton.disabled=false;
+        exportApplyButton.textContent=originalLabel;
+      }
     });
 
     // Honour ?watermark=... and ?section=... query params at load time
