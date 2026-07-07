@@ -46,6 +46,68 @@ assets/i18n/
 const SUPPORTED = ['zh','en','ja','ko','ar','ru','fr','de','es','pt','vi'];
 ```
 
+## 二点五、以中文 PPT 为第一版
+
+> 工作流：**中文永远是 source of truth**，其他语言靠 phrases 字典翻译。
+
+| 文件 | 角色 | 必须有 phrases？ |
+| --- | --- | --- |
+| `zh.json` | source of truth；HTML 直接写中文，frame 短路返回 | ❌（可省略，但有也无害） |
+| `en.json` | 英文 PPT；HTML 里 data-en 优先匹配 phrases，否则 fallback 到 data-en 自身 | ✅ |
+| `ja/ko/ar/ru/fr/de/es/pt.json` | 多国翻译 | ✅ |
+
+i18n 框架（`assets/deck-i18n.js`）查找顺序：
+
+```
+zh 模式 → 直接返回传入的中文（frame 内 'if (lang === zh) return zh'）
+en 模式 → phrases[en]  ||  fallback 到 en（即 data-en 原文）
+其它    → phrases[en（已 HTML 实体 decode + 全角空格折叠 + trim）]  ||  phrases[zh]  ||  fallback 到 en
+```
+
+> key 归一化：phrases 字典的 key 一律存字面 `&` / `<` / `>` / `"` / `'`，**不要存 HTML 实体**。查找前 `normalizeKey()` 会把 `&amp;` / 全角空格等还原。
+
+### 自检脚本
+
+仓库 `scripts/i18n/` 目录存放体检/修复脚本：
+
+| 脚本 | 作用 |
+| --- | --- |
+| `audit.js` | 收齐 S1（HTML/JS 的 `data-en`）/ TX（`tx(zh, en)`）/ EN 字典的 en 值，与 10 国 phrases 比对，输出 U 的覆盖率报告到 `/tmp/i18n-audit/` |
+| `gen-phrases.js` | 给 `zh.json` / `en.json` 补 phrases 字段；en value=key，zh value 从 EN 字典反查 |
+| `gen-en-phrases.js` | 合并 phrases 中剩余的 HTML 实体 key（如果有） |
+| `apply-translations.js` | 把 `translation-pack.json` 中的手工翻译写进 8 国语言包 |
+| `translation-pack.json` | 手工翻译对照表，新加短语后追加到这里再 apply 即可 |
+| `normalize-check.js` | 临时调试工具：用归一化后的 key 检查 phrases 命中率 |
+| `run-all.sh` | 一键入口：`audit / gen / apply / all` |
+
+### 新增一条短语的最小工作流（以"以中文为第一版"为例）
+
+1. **写中文 PPT**：
+   ```html
+   <h2 data-en="Founder &amp; Team">创始人与团队</h2>
+   ```
+2. **同步英文源文到 data-en**：浏览器会自动把 `&amp;` 解码成 `&`，i18n 框架的 `normalizeKey()` 也会做同样归一化。
+3. **追加 8 国翻译到 `scripts/i18n/translation-pack.json`**：
+   ```json
+   {
+     "Founder & Team": {
+       "ja": "創業者 & チーム",
+       "ko": "창업자 & 팀",
+       "ar": "المؤسس والفريق",
+       ...
+     }
+   }
+   ```
+4. **跑 apply**：
+   ```bash
+   bash scripts/i18n/run-all.sh apply
+   ```
+5. **验证**：
+   ```bash
+   bash scripts/i18n/run-all.sh audit    # 期望 8 国 100% 覆盖
+   ```
+   刷新页面，切到日文，应当看到「創業者 & チーム」。
+
 ## 三、新增一段需要翻译的文案
 
 正文优先保留中英文源文案，生成脚本会为其他语言补齐 `phrases`：
@@ -63,7 +125,8 @@ tx("企业生产系统", "Enterprise production system", "h2")
 新增或修改文案后运行：
 
 ```bash
-TRANSLATION_PROVIDER=mmx node scripts/generate-i18n-packs.cjs
+bash scripts/i18n/run-all.sh apply   # 把手工翻译写进 8 国语言包
+bash scripts/i18n/run-all.sh audit   # 验证覆盖率（期望 8 国 100%）
 ```
 
 结构化公共文案也可以继续使用 `data-i18n`：
@@ -102,4 +165,6 @@ TRANSLATION_PROVIDER=mmx node scripts/generate-i18n-packs.cjs
 - 浏览器 console：`localStorage.getItem('opencsg.deck.lang')` 看当前语言。
 - 想强制重置回中文：`localStorage.removeItem('opencsg.deck.lang'); location.reload()`。
 - URL 也可以指定：`?lang=ja` 直接以日文进入。
-- QA：跑 `python3 assets/i18n/qa/qa_snap.py`（仓库根目录）能截 10 国菜单 + 中文版 03/04/05 三页。
+- 覆盖率体检：`bash scripts/i18n/run-all.sh audit`，输出 `/tmp/i18n-audit/` 报告。
+- 浏览器端查询：`window.__opencsgI18n.phrase(pack, lang, zh, en)` 手动测试某条翻译。
+- 浏览器端全量审计：`window.__opencsgI18nAudit([...所有英文源文])` 会打印每个语言的命中率和缺失清单到 console（默认折叠）。

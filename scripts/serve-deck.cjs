@@ -3,17 +3,21 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { randomUUID } = require('crypto');
+const { createHash, randomUUID } = require('crypto');
 const { spawn } = require('child_process');
 
 const root = path.resolve(__dirname, '..');
 const exportDir = path.join(root, '.exports');
+const pdfCacheDir = path.join(exportDir, 'pdf-cache');
 const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || '127.0.0.1';
+const defaultWatermark = process.env.DECK_WATERMARK_TEXT || '';
+const pdfCacheVersion = '20260707-single-custom-watermark-v1';
 const supportedLanguages = new Set(['zh', 'en', 'ja', 'ko', 'ar', 'ru', 'fr', 'de', 'es', 'pt']);
-const supportedRatios = new Set(['16:9', '4:3', 'a4-landscape', 'a4-portrait']);
+const supportedRatios = new Set(['16:9', '4:3', 'a4-landscape', 'a4-portrait', 'letter-landscape']);
 const supportedFormats = new Set(['pdf', 'pptx']);
 const supportedScopes = new Set(['full', 'investor', 'current']);
+const supportedDispositions = new Set(['attachment', 'inline']);
 const allSections = ['cover', 'main', 'case', 'product', 'appendix'];
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -33,6 +37,7 @@ const mimeTypes = {
 };
 
 let activeExports = 0;
+const pdfWarmJobs = new Map();
 
 function sendJson(response, status, body) {
   const data = Buffer.from(JSON.stringify(body));
@@ -68,16 +73,31 @@ function readJson(request) {
   });
 }
 
+function parsePositiveInteger(value) {
+  if (value === null || value === undefined || value === '') return null;
+  const number = Number.parseInt(value, 10);
+  return Number.isInteger(number) ? number : NaN;
+}
+
+function validatePageList(raw) {
+  const value = String(raw || '').trim();
+  if (!value) return null;
+  if (!/^\d+(?:\s*-\s*\d+)?(?:[\s,]+\d+(?:\s*-\s*\d+)?)*$/.test(value)) {
+    throw new Error('页码列表格式无效，请使用 1,3,5-8。');
+  }
+  return value.replace(/\s*-\s*/g, '-').replace(/[\s,]+/g, ',');
+}
+
 function validateExport(input) {
   const lang = String(input.lang || 'zh').toLowerCase();
   const ratio = String(input.ratio || '16:9').toLowerCase();
   const format = String(input.format || 'pdf').toLowerCase();
   const scope = String(input.scope || 'full').toLowerCase();
+  const disposition = String(input.disposition || 'attachment').toLowerCase();
   const currentPage = Number.parseInt(input.currentPage, 10);
 
-  // 解析页码范围参数
-  const pageFrom = input.pageFrom ? Number.parseInt(input.pageFrom, 10) : null;
-  const pageTo = input.pageTo ? Number.parseInt(input.pageTo, 10) : null;
+  const pageFrom = parsePositiveInteger(input.pageFrom);
+  const pageTo = parsePositiveInteger(input.pageTo);
 
   // 解析自定义 section 列表
   let sections = null;
@@ -85,11 +105,7 @@ function validateExport(input) {
     sections = input.sections.filter(s => allSections.includes(s));
   }
 
-  // 解析页码列表 (逗号分隔或范围)
-  let pageList = null;
-  if (input.pageList && typeof input.pageList === 'string' && input.pageList.trim()) {
-    pageList = input.pageList.trim();
-  }
+  const pageList = validatePageList(input.pageList);
 
   // 水印相关
   const watermarkEnabled = Boolean(input.watermarkEnabled);
@@ -99,6 +115,7 @@ function validateExport(input) {
   if (!supportedRatios.has(ratio)) throw new Error('不支持的页面比例。');
   if (!supportedFormats.has(format)) throw new Error('不支持的导出格式。');
   if (!supportedScopes.has(scope)) throw new Error('不支持的导出范围。');
+  if (!supportedDispositions.has(disposition)) throw new Error('不支持的响应方式。');
   if (scope === 'current' && (!Number.isInteger(currentPage) || currentPage < 1 || currentPage > 200)) {
     throw new Error('当前页码无效。');
   }
@@ -108,11 +125,15 @@ function validateExport(input) {
   if (pageTo !== null && (isNaN(pageTo) || pageTo < 1)) {
     throw new Error('结束页码无效。');
   }
+  if (pageFrom !== null && pageTo !== null && pageFrom > pageTo) {
+    throw new Error('起始页码不能大于结束页码。');
+  }
 
   return {
-    lang, ratio, format, scope, currentPage,
+    lang, ratio, format, scope, disposition, currentPage,
     pageFrom, pageTo, sections, pageList,
-    watermarkEnabled, watermarkText
+    watermarkEnabled, watermarkText,
+    filename: String(input.filename || '').trim()
   };
 }
 
@@ -137,6 +158,60 @@ function downloadFilename(options) {
 
   const watermarkTag = options.watermarkEnabled && options.watermarkText ? '_Watermark' : '';
   return `OpenCSG_Investor_Deck_2026_${language}_${ratio}_${scope}${watermarkTag}.${options.format}`;
+}
+
+function sanitizeFilename(input, fallback, extension) {
+  let filename = String(input || '').trim();
+  if (!filename) return fallback;
+  filename = path.basename(filename)
+    .replace(/[\x00-\x1f\x7f]/g, '')
+    .replace(/[<>:"/\\|?*]+/g, '-')
+    .replace(/\s+/g, ' ')
+    .replace(/^\.+/, '')
+    .trim();
+  if (!filename) return fallback;
+  filename = filename.replace(/\.(pdf|pptx)$/i, '');
+  filename = filename.slice(0, 140).trim();
+  return filename ? `${filename}.${extension}` : fallback;
+}
+
+function contentDisposition(disposition, filename) {
+  const asciiFilename = filename
+    .replace(/[^\x20-\x7e]/g, '_')
+    .replace(/["\\]/g, '_');
+  return `${disposition}; filename="${asciiFilename}"; filename*=UTF-8''${encodeURIComponent(filename)}`;
+}
+
+function cacheKeyForPdf(options) {
+  return createHash('sha256')
+    .update(JSON.stringify({
+      lang: options.lang,
+      ratio: options.ratio,
+      scope: options.scope,
+      sections: options.sections || allSections,
+      watermarkText: options.watermarkText || '',
+      pdfCacheVersion
+    }))
+    .digest('hex')
+    .slice(0, 24);
+}
+
+function defaultViewPdfOptions(lang, watermarkText = defaultWatermark) {
+  return validateExport({
+    lang,
+    ratio: '16:9',
+    format: 'pdf',
+    scope: 'full',
+    currentPage: 1,
+    sections: allSections,
+    pageFrom: null,
+    pageTo: null,
+    pageList: null,
+    watermarkEnabled: Boolean(watermarkText),
+    watermarkText,
+    filename: `OpenCSG_Investor_Deck_2026_${String(lang).toUpperCase()}_16x9_Full_Watermark.pdf`,
+    disposition: 'inline'
+  });
 }
 
 function exporterArgs(options, relativeOutput) {
@@ -210,17 +285,9 @@ function runExporter(args) {
   });
 }
 
-async function handleExport(request, response) {
+async function streamExport(options, response) {
   if (activeExports >= 2) {
     sendJson(response, 429, { error: '已有导出任务正在运行，请稍后再试。' });
-    return;
-  }
-
-  let options;
-  try {
-    options = validateExport(await readJson(request));
-  } catch (error) {
-    sendJson(response, 400, { error: error.message });
     return;
   }
 
@@ -235,14 +302,14 @@ async function handleExport(request, response) {
     await runExporter(exporterArgs(options, relativeOutput));
     if (!fs.existsSync(absoluteOutput)) throw new Error('导出程序没有生成文件。');
 
-    const filename = downloadFilename(options);
+    const filename = sanitizeFilename(options.filename, downloadFilename(options), extension);
     const stat = fs.statSync(absoluteOutput);
     response.writeHead(200, {
       'Content-Type': options.format === 'pdf'
         ? 'application/pdf'
         : 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
       'Content-Length': stat.size,
-      'Content-Disposition': `attachment; filename="${filename}"`,
+      'Content-Disposition': contentDisposition(options.disposition, filename),
       'Cache-Control': 'no-store',
       'X-Export-Filename': filename
     });
@@ -259,6 +326,92 @@ async function handleExport(request, response) {
   } finally {
     activeExports -= 1;
   }
+}
+
+async function handleExport(request, response) {
+  let options;
+  try {
+    options = validateExport(await readJson(request));
+  } catch (error) {
+    sendJson(response, 400, { error: error.message });
+    return;
+  }
+  await streamExport(options, response);
+}
+
+async function ensureCachedPdf(options) {
+  fs.mkdirSync(pdfCacheDir, { recursive: true });
+  const key = cacheKeyForPdf(options);
+  const absoluteOutput = path.join(pdfCacheDir, `${key}.pdf`);
+  const relativeOutput = path.relative(root, absoluteOutput);
+  const filename = sanitizeFilename(options.filename, downloadFilename(options), 'pdf');
+
+  if (fs.existsSync(absoluteOutput)) {
+    return { absoluteOutput, filename, key, cached: true };
+  }
+  if (pdfWarmJobs.has(key)) {
+    await pdfWarmJobs.get(key);
+    return { absoluteOutput, filename, key, cached: true };
+  }
+  if (activeExports >= 2) {
+    throw new Error('已有导出任务正在运行，请稍后再试。');
+  }
+
+  const job = (async () => {
+    activeExports += 1;
+    try {
+      await runExporter(exporterArgs(options, relativeOutput));
+      if (!fs.existsSync(absoluteOutput)) throw new Error('导出程序没有生成文件。');
+    } finally {
+      activeExports -= 1;
+      pdfWarmJobs.delete(key);
+    }
+  })();
+  pdfWarmJobs.set(key, job);
+  await job;
+  return { absoluteOutput, filename, key, cached: false };
+}
+
+function viewPdfOptionsFromUrl(url) {
+  const lang = String(url.searchParams.get('lang') || 'zh').toLowerCase();
+  const watermarkText = String(url.searchParams.get('watermark') ?? defaultWatermark).trim();
+  return defaultViewPdfOptions(lang, watermarkText);
+}
+
+async function handleWarmPdf(url, response) {
+  let result;
+  try {
+    result = await ensureCachedPdf(viewPdfOptionsFromUrl(url));
+  } catch (error) {
+    sendJson(response, 500, { ok: false, error: error.message });
+    return;
+  }
+  sendJson(response, 200, {
+    ok: true,
+    cached: result.cached,
+    key: result.key,
+    filename: result.filename
+  });
+}
+
+async function handleViewPdf(url, response) {
+  let result;
+  try {
+    result = await ensureCachedPdf(viewPdfOptionsFromUrl(url));
+  } catch (error) {
+    sendJson(response, 500, { error: error.message });
+    return;
+  }
+  const stat = fs.statSync(result.absoluteOutput);
+  response.writeHead(200, {
+    'Content-Type': 'application/pdf',
+    'Content-Length': stat.size,
+    'Content-Disposition': contentDisposition('inline', result.filename),
+    'Cache-Control': 'no-store',
+    'X-Export-Filename': result.filename,
+    'X-Export-Cache': result.cached ? 'HIT' : 'MISS'
+  });
+  fs.createReadStream(result.absoluteOutput).pipe(response);
 }
 
 function staticFilePath(urlPath) {
@@ -299,6 +452,14 @@ const server = http.createServer(async (request, response) => {
     await handleExport(request, response);
     return;
   }
+  if (request.method === 'GET' && url.pathname === '/api/view-pdf') {
+    await handleViewPdf(url, response);
+    return;
+  }
+  if (request.method === 'GET' && url.pathname === '/api/warm-pdf') {
+    await handleWarmPdf(url, response);
+    return;
+  }
   if (request.method === 'GET' && url.pathname === '/api/health') {
     sendJson(response, 200, { ok: true, activeExports });
     return;
@@ -309,6 +470,15 @@ const server = http.createServer(async (request, response) => {
     return;
   }
   serveStatic(request, response, url.pathname);
+});
+
+server.on('error', (error) => {
+  if (error.code === 'EADDRINUSE') {
+    console.error(`端口已被占用: http://${host}:${port}，请设置 PORT 使用其他端口。`);
+    process.exit(1);
+  }
+  console.error(error);
+  process.exit(1);
 });
 
 server.listen(port, host, () => {

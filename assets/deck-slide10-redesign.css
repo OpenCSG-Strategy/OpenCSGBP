@@ -1,0 +1,254 @@
+/* =================================================================
+   Slide 10 · Market Opportunity · Visual-led redesign 2026-07-07
+   Layout (matching other content slides — header / footer / brand):
+     [section label + title]
+     ┌──────────────┬─────────────────────────────────┐
+     │  Investment  │                                 │
+     │  logic + 3   │   Cover-style isometric visual  │
+     │  data tiles  │   (same asset as slide-01)      │
+     │  + TAM card  │                                 │
+     └──────────────┴─────────────────────────────────┘
+     [source note]
+     [foot]
+   ================================================================= */
+
+/* Kill every legacy inner selector (clean swap from earlier draft) */
+#slide-10 .m10-headline,
+#slide-10 .m10-evidence,
+#slide-10 .m10-sovereign,
+#slide-10 .m10-jensen,
+#slide-10 .m10-market,
+#slide-10 .m10-metrics,
+#slide-10 .m10-policy,
+#slide-10 .m10-tam,
+#slide-10 .m10-hero,
+#slide-10 .m10-row,
+#slide-10 .m10-card,
+#slide-10 .m10-sov-list,
+#slide-10 .m10-stat-row,
+#slide-10 .m10-policy-mini,
+#slide-10 .m10-quote-card,
+#slide-10 .m10-tam-bar,
+#slide-10 .m10-tam-main,
+#slide-10 .m10-tam-break,
+#slide-10 .m10-tam-foot{
+  display:none !important;
+}
+
+/* Main two-column canvas */
+#slide-10 .market10{
+  position:absolute !important;
+  left:60px !important;
+  right:60px !important;
+  top:218px !important;
+  bottom:80px !important;
+  height:auto !important;
+  display:grid !important;
+  grid-template-columns:minmax(360px,430px) 1fr !important;
+  gap:28px !important;
+  align-items:stretch !important;
+  overflow:visible !important;
+}
+
+/* -------- LEFT SIDE ---------- */
+#slide-10 .m10-side{
+  display:flex !important;
+  flex-direction:column;
+  gap:14px;
+  min-height:0;
+  padding-top:2px;
+}
+#slide-10 .m10-side-statement{
+  padding:14px 18px;
+  border:1px solid var(--line);
+  border-left:4px solid var(--teal);
+  background:linear-gradient(135deg,#F4F8F6 0%,#FBFDFC 100%);
+}
+#slide-10 .m10-side-statement small{
+  display:block;
+  color:var(--teal);
+  font-size:9.5px;
+  letter-spacing:.16em;
+  font-weight:800;
+}
+#slide-10 .m10-side-statement p{
+  margin:8px 0 0;
+  color:#1F332F;
+  font-size:14px;
+  line-height:1.55;
+  font-weight:500;
+}
+#slide-10 .m10-side-statement p b{
+  color:var(--teal);
+  font-weight:700;
+}
+
+#slide-10 .m10-side-stats{
+  display:flex !important;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+  min-height:0;
+}
+#slide-10 .m10-side-stats article{
+  display:grid !important;
+  grid-template-columns:96px 1fr;
+  gap:12px;
+  align-items:center;
+  padding:10px 14px;
+  border:1px solid var(--line);
+  background:#FFFFFF;
+}
+#slide-10 .m10-side-stats b{
+  color:var(--teal);
+  font-size:28px;
+  letter-spacing:-.04em;
+  line-height:1;
+  font-weight:800;
+}
+#slide-10 .m10-side-stats span{
+  display:block;
+  color:#1F332F;
+  font-size:12px;
+  line-height:1.35;
+  font-weight:600;
+}
+#slide-10 .m10-side-stats em{
+  display:block;
+  margin-top:3px;
+  font-style:normal;
+  color:#7A8582;
+  font-size:9.5px;
+  letter-spacing:.02em;
+}
+
+#slide-10 .m10-side-tam{
+  display:flex !important;
+  flex-direction:column;
+  gap:6px;
+  padding:14px 18px 16px;
+  border:1px solid #7EAFA6;
+  background:linear-gradient(135deg,#EAF3F0 0%,#F8FBFA 100%);
+}
+#slide-10 .m10-side-tam small{
+  color:var(--teal);
+  font-size:9.5px;
+  letter-spacing:.16em;
+  font-weight:800;
+}
+#slide-10 .m10-side-tam > div{
+  display:flex !important;
+  align-items:baseline;
+  gap:10px;
+  margin-top:2px;
+}
+#slide-10 .m10-side-tam b{
+  color:var(--teal);
+  font-size:40px;
+  letter-spacing:-.05em;
+  font-weight:800;
+  line-height:1;
+}
+#slide-10 .m10-side-tam em{
+  font-style:normal;
+  color:#1F332F;
+  font-size:11.5px;
+  font-weight:600;
+}
+#slide-10 .m10-side-tam p{
+  margin:0;
+  color:#53615E;
+  font-size:10.5px;
+  line-height:1.45;
+}
+
+/* -------- RIGHT VISUAL ---------- */
+#slide-10 .m10-hero-visual{
+  position:relative !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  min-height:0;
+  min-width:0;
+  overflow:hidden;
+}
+#slide-10 .m10-hero-visual img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:contain;
+  object-position:center 40%;
+}
+
+/* Floating tags on the visual */
+#slide-10 .m10-tag{
+  position:absolute;
+  margin:0;
+  padding:8px 14px;
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--teal);
+  border-radius:4px;
+  color:#1F332F;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:500;
+  box-shadow:0 2px 6px rgba(35,135,123,.12);
+  max-width:42%;
+  pointer-events:none;
+  z-index:2;
+}
+#slide-10 .m10-tag::before{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:1px;
+  background:var(--teal);
+}
+#slide-10 .m10-tag-tr{
+  top:8%;
+  right:4%;
+  text-align:right;
+}
+#slide-10 .m10-tag-tr::before{
+  left:-18px; top:50%;
+}
+#slide-10 .m10-tag-bl{
+  bottom:8%;
+  left:4%;
+}
+#slide-10 .m10-tag-bl::before{
+  right:-18px; top:50%;
+}
+
+/* Keep header/footer consistent with other content slides */
+#slide-10 .foot{
+  position:absolute !important;
+  left:60px; right:60px; bottom:38px;
+}
+
+/* ---------- responsive tightening ---------- */
+@media (max-width:1280px){
+  #slide-10 .market10{
+    grid-template-columns:minmax(320px,400px) 1fr !important;
+    gap:20px !important;
+  }
+  #slide-10 .m10-side-stats b{font-size:24px}
+  #slide-10 .m10-side-tam b{font-size:34px}
+}
+@media (max-width:1100px){
+  #slide-10 .market10{
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto 1fr !important;
+  }
+  #slide-10 .m10-side-stats{
+    flex-direction:row;
+  }
+  #slide-10 .m10-side-stats article{
+    flex:1;
+    grid-template-columns:auto;
+    grid-template-rows:auto auto auto;
+  }
+}

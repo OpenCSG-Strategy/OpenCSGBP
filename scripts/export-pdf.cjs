@@ -39,6 +39,7 @@ let PDFLib = null;
 try { PDFLib = require('pdf-lib'); } catch (_) { PDFLib = null; }
 
 const root = path.resolve(__dirname, '..');
+let ownedStaticServer = null;
 
 // We must serve the deck over HTTP so that `fetch('assets/i18n/*.json')` works;
 // Chromium refuses to fetch file:// URLs from a file:// document. When the user
@@ -92,6 +93,7 @@ async function resolveHtmlUrl() {
     return process.env.DECK_BASE_URL.replace(/\/$/, '') + '/index.html';
   }
   const { server, baseUrl } = await createStaticServer(root);
+  ownedStaticServer = server;
   process.on('exit', () => { try { server.close(); } catch (_) {} });
   process.on('SIGINT', () => { server.close(() => process.exit(130)); });
   return baseUrl + '/index.html';
@@ -100,6 +102,13 @@ let htmlUrlPromise = null;
 function getHtmlUrl() {
   if (!htmlUrlPromise) htmlUrlPromise = resolveHtmlUrl();
   return htmlUrlPromise;
+}
+
+function closeOwnedStaticServer() {
+  if (!ownedStaticServer) return Promise.resolve();
+  const server = ownedStaticServer;
+  ownedStaticServer = null;
+  return new Promise((resolve) => server.close(() => resolve()));
 }
 
 function parseArgs(argv) {
@@ -166,11 +175,14 @@ function defaultFilename({ lang, ratio, sections }) {
 function buildPrintStyle({ width, height, designW, designH }) {
   const scaleX = width / designW;
   const scaleY = height / designH;
-  const scale = Math.min(scaleX, scaleY);
+  const isNativeWideDeck = width === 1600 && height === 900 && designW === 1600 && designH === 900;
+  const pdfSafeScale = isNativeWideDeck ? 0.965 : 1;
+  const yOffset = isNativeWideDeck ? '-10px' : '0px';
+  const scale = Math.min(scaleX, scaleY) * pdfSafeScale;
   return `
 @page { size: ${width}px ${height}px; margin: 0 }
 @media print {
-  :root { --print-w: ${width}px; --print-h: ${height}px; --print-scale: ${scale}; }
+  :root { --print-w: ${width}px; --print-h: ${height}px; --print-scale: ${scale}; --print-y-offset: ${yOffset}; }
   html, body { width: ${width}px; height: ${height}px; margin: 0; padding: 0; background: #fff; overflow: hidden; }
   .toolbar, .nav, .mobile-reader { display: none !important; }
   .slide-wrap {
@@ -189,7 +201,7 @@ function buildPrintStyle({ width, height, designW, designH }) {
      before scaling so the design stays anchored to the page center. */
   .slide {
     left: 50% !important;
-    top: 50% !important;
+    top: calc(50% + var(--print-y-offset)) !important;
     width: ${designW}px !important;
     height: ${designH}px !important;
     margin: 0 !important;
@@ -214,8 +226,6 @@ async function exportDeck(browser, options) {
   if (options.pages) params.set('pages', options.pages);
   if (options.from) params.set('from', options.from);
   if (options.to) params.set('to', options.to);
-  if (options.watermark) params.set('watermark', options.watermark);
-
   await page.goto(`${await getHtmlUrl()}?${params.toString()}`, { waitUntil: 'domcontentloaded' });
   await page.waitForLoadState('load');
   // Wait for i18n to finish loading AND for the i18n 'ready' event before
@@ -224,6 +234,17 @@ async function exportDeck(browser, options) {
   await page.waitForFunction(() => document.querySelectorAll('.slide-wrap').length >= 15);
   await page.waitForFunction(() => Boolean(window.__i18nReady || document.documentElement.lang), null, { timeout: 10000 }).catch(() => {});
   await page.waitForTimeout(400);
+
+  // Ensure the exported PDF has exactly one watermark source: the current
+  // CLI/server option. Do not rely on page query flags or previous page state,
+  // because those can leave stale watermark text in cached/local browser state.
+  await page.evaluate((watermark) => {
+    const text = String(watermark || '').trim();
+    document.body.classList.toggle('watermark', Boolean(text));
+    document.querySelectorAll('.slide-wrap').forEach((wrap) => {
+      wrap.setAttribute('data-watermark-text', text);
+    });
+  }, options.watermark);
 
   // Inject responsive print CSS that scales the design to fit the chosen ratio.
   await page.addStyleTag({ content: buildPrintStyle(ratio) });
@@ -391,8 +412,9 @@ async function exportDeck(browser, options) {
     console.log(`✔ ${result.output}  (${result.pages} 页 · ${result.ratio} · ${(size / 1024).toFixed(1)} KB)`);
   } catch (error) {
     console.error('导出失败:', error.message);
-    process.exit(1);
+    process.exitCode = 1;
   } finally {
     await browser.close();
+    await closeOwnedStaticServer();
   }
 })();

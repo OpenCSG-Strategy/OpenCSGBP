@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="assets/deck-tighten-20260705.css?v=20260705a">
   <link rel="stylesheet" href="assets/deck-slide03-community.css?v=20260706f">
   <link rel="stylesheet" href="assets/deck-i18n.css?v=20260706i18n">
-  <link rel="stylesheet" href="assets/deck-live-sites.css?v=20260706live">
 
   <style id="responsive-stage">
     html{overflow-x:hidden}
@@ -115,6 +114,142 @@
     @media(orientation:landscape) and (max-height:500px){
       .toolbar{top:6px;right:8px}
       .toolbar button{padding:6px 8px;font-size:9px}
+    }
+    .watermark-control{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      height:30px;
+      padding:0 8px;
+      border:1px solid rgba(216,224,222,.86);
+      background:rgba(255,255,255,.9);
+      color:#53605D;
+      box-shadow:0 1px 2px rgba(17,24,23,.04);
+    }
+    .watermark-control span{
+      font:700 10px Arial,"PingFang SC","Microsoft YaHei";
+      letter-spacing:.08em;
+      color:var(--teal2);
+      white-space:nowrap;
+    }
+    .watermark-control input{
+      width:210px;
+      min-width:120px;
+      height:24px;
+      border:0;
+      outline:0;
+      background:transparent;
+      color:var(--ink);
+      font:600 11px Arial,"PingFang SC","Microsoft YaHei";
+      letter-spacing:.03em;
+    }
+    .watermark-control input::placeholder{color:#9AA5A2}
+    .watermark-control:focus-within{
+      border-color:var(--teal);
+      box-shadow:0 0 0 3px rgba(35,135,123,.12)
+    }
+    .pdf-status{
+      min-width:72px;
+      max-width:150px;
+      color:#6E7A77;
+      font:600 10px Arial,"PingFang SC","Microsoft YaHei";
+      letter-spacing:.04em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      opacity:.88;
+    }
+    .pdf-loading-overlay{
+      position:fixed;
+      inset:0;
+      display:grid;
+      place-items:center;
+      background:rgba(10,23,22,.35);
+      backdrop-filter:blur(6px);
+      z-index:9999;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .18s ease;
+    }
+    .pdf-loading-overlay.active{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .pdf-loading-card{
+      width:min(420px,calc(100vw - 40px));
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:18px;
+      background:rgba(255,255,255,.94);
+      box-shadow:0 24px 80px rgba(0,0,0,.24);
+      color:#102A27;
+      padding:24px 24px 22px;
+      text-align:center;
+    }
+    .pdf-loading-card::before{
+      content:"";
+      display:block;
+      width:34px;
+      height:34px;
+      margin:0 auto 14px;
+      border-radius:999px;
+      border:3px solid rgba(29,140,128,.18);
+      border-top-color:var(--teal);
+      animation:pdf-spin .85s linear infinite;
+    }
+    .pdf-loading-card strong{
+      display:block;
+      font:800 18px/1.25 Arial,"PingFang SC","Microsoft YaHei";
+      letter-spacing:-.01em;
+    }
+    .pdf-loading-card span{
+      display:block;
+      margin-top:8px;
+      color:#526966;
+      font:600 13px/1.55 Arial,"PingFang SC","Microsoft YaHei";
+    }
+    .pdf-loading-bar{
+      height:4px;
+      margin-top:18px;
+      overflow:hidden;
+      border-radius:999px;
+      background:rgba(29,140,128,.12);
+    }
+    .pdf-loading-bar i{
+      display:block;
+      width:42%;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg,rgba(29,140,128,.2),var(--teal),rgba(29,140,128,.2));
+      animation:pdf-loading-sweep 1.35s ease-in-out infinite;
+    }
+    #pdfPreviewBtn[data-pdf-state="warming"]::after,
+    #pdfPreviewBtn[data-pdf-state="opening"]::after{
+      content:"";
+      display:inline-block;
+      width:8px;
+      height:8px;
+      margin-left:6px;
+      border:2px solid rgba(35,135,123,.18);
+      border-top-color:var(--teal);
+      border-radius:50%;
+      animation:pdf-spin .75s linear infinite;
+      vertical-align:-1px;
+    }
+    #pdfPreviewBtn[data-pdf-state="ready"]{
+      border-color:rgba(35,135,123,.34);
+      color:var(--teal2);
+    }
+    @keyframes pdf-spin{to{transform:rotate(360deg)}}
+    @keyframes pdf-loading-sweep{
+      0%{transform:translateX(-110%)}
+      100%{transform:translateX(250%)}
+    }
+    @media(max-width:980px){
+      .watermark-control input{width:140px}
+      .pdf-status{display:none}
+    }
+    @media(max-width:760px){
+      .watermark-control{display:none}
     }
     .pdf-preview-dialog{
       width:min(1180px,94vw);
@@ -334,6 +469,11 @@
   .foot { z-index: 100 !important; background: rgba(255,255,255,0.8); }
 </style>
 
+  <link rel="stylesheet" href="assets/deck-visual-polish-20260706.css?v=20260706g">
+  <link rel="stylesheet" href="assets/deck-slide07-simplify.css?v=20260707a">
+  <link rel="stylesheet" href="assets/deck-slide10-redesign.css?v=20260707c">
+  <link rel="stylesheet" href="assets/deck-slide14-founder.css?v=20260707a">
+
 </head>
 <body>
   <div class="toolbar">
@@ -347,15 +487,18 @@
     </div>
     <button type="button" id="overviewBtn" data-i18n="toolbar.overview">OVERVIEW</button>
     <button type="button" id="fullscreenBtn" data-i18n="toolbar.fullscreen">FULLSCREEN</button>
-    <button type="button" id="pdfPreviewBtn" data-i18n="toolbar.previewPdf">预览 PDF</button>
-    <button type="button" id="pdfDownloadBtn" data-i18n="toolbar.downloadPdf">下载 PDF</button>
-    <button type="button" id="pdfExportBtn" data-zh="导出" data-en="EXPORT">导出</button>
+    <label class="watermark-control" for="pdfWatermarkInput">
+      <span data-zh="水印" data-en="WATERMARK">水印</span>
+      <input type="text" id="pdfWatermarkInput" value="" placeholder="20260504" aria-label="PDF 水印文字">
+    </label>
+    <button type="button" id="pdfPreviewBtn" data-i18n="toolbar.previewPdf">查看 PDF</button>
+    <span id="pdfStatus" class="pdf-status" aria-live="polite"></span>
   </div>
   <dialog id="pdfPreviewDialog" class="pdf-preview-dialog" aria-labelledby="pdfPreviewTitle">
     <div class="pdf-preview-shell">
       <header class="pdf-preview-header">
         <strong id="pdfPreviewTitle" data-zh="PDF 预览" data-en="PDF PREVIEW">PDF 预览</strong>
-        <a id="pdfPreviewDownload" href="#" download data-zh="下载 PDF" data-en="DOWNLOAD PDF">下载 PDF</a>
+        <a id="pdfPreviewDownload" href="#" download data-zh="下载带水印 PDF" data-en="DOWNLOAD WATERMARKED PDF">下载带水印 PDF</a>
         <button type="button" id="pdfPreviewClose" data-zh="关闭" data-en="CLOSE">关闭</button>
       </header>
       <iframe id="pdfPreviewFrame" class="pdf-preview-frame" title="PDF preview"></iframe>
@@ -446,7 +589,7 @@
     <div class="cover-title">
       <div class="label">GLOBAL OPEN SOURCE · AGENTICOPS · AI SOVEREIGNTY</div>
       <h1>OpenCSG</h1>
-      <h2 data-en="Open by design. Everyone owns their own large models.">开放，让每个人都拥有自己的大模型</h2>
+      <h2 data-en="Empowering everyone with large models.">让大模型赋能每一个人</h2>
       <p>OPEN BY DESIGN. AI UNDER YOUR CONTROL.</p>
     </div>
     <div class="cover-meta"><span>GLOBAL OPEN SOURCE</span><span>ENTERPRISE + SOVEREIGN</span><span>PERSONAL AI / OPC</span></div>
@@ -486,7 +629,7 @@
       <div class="fly-label bottom"><b data-en="Regional nodes & personal AI">区域节点与个人 AI（OPC）</b><span data-en="Local runtime · collaboration · subscription">本地运行 · 协同 · 订阅</span></div>
       <div class="fly-label left"><b data-en="Foundations & industry capital">基金会与产业资本</b><span data-en="Ecosystem · capital · global reach">生态 · 资本 · 国际连接</span></div>
     </div>
-    <div class="foot"><span>OPENCSG · CONFIDENTIAL</span><span>02</span></div>
+    <div class="foot"><span>OPENCSG · INVESTOR MATERIALS</span><span>02</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-03">
@@ -712,42 +855,10 @@
               </div>
             </div>
           </div>
-          <div class="regional-network live-sites">
-            <div class="regional-map" aria-label="城市级 AI 平台全球复制网络">
-              <img src="assets/china-blank-map.svg" alt="中国城市级 AI 平台节点地图">
-              <span class="city-pin shanghai" data-en="Shanghai">上海</span>
-              <span class="city-pin yancheng" data-en="Yancheng">盐城</span>
-              <span class="city-pin yichang live-pin" data-site="https://sanxia.opencsg.com/" data-en="Yichang">宜昌</span>
-              <span class="city-pin chongqing" data-en="Chongqing">重庆</span>
-              <span class="city-pin leshan" data-en="Leshan">乐山</span>
-              <span class="city-pin dongfang live-pin" data-site="https://openeast.opencsg.com/" data-en="Dongfang">东方</span>
-              <span class="city-pin hongkong live-pin" data-site="https://occ.opencsg.hk/" data-en="Hong Kong">香港</span>
-              <span class="city-pin singapore live-pin" data-site="https://sg.opencsg.com/" data-en="Singapore">新加坡</span>
-            </div>
-            <div class="live-site-iframe-wrap" id="liveSiteFrameWrap">
-              <iframe class="live-site-iframe" id="liveSiteFrame" src="about:blank" title="城市级 AI 平台实时展示" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
-              <div class="live-site-overlay" id="liveSiteOverlay">
-                <div class="live-site-overlay-inner">
-                  <div class="live-site-icon">🌐</div>
-                  <div class="live-site-hint" data-en="Click a city node to view the live platform">点击城市节点查看实时平台</div>
-                </div>
-              </div>
-            </div>
-            <div class="live-site-tabs" id="liveSiteTabs">
-              <button class="live-tab active" data-site="https://sanxia.opencsg.com/"><b data-en="Sanxia">三峡</b><small data-en="Yichang">宜昌</small></button>
-              <button class="live-tab" data-site="https://openeast.opencsg.com/"><b data-en="Open East">开放东方</b><small data-en="Dongfang">东方</small></button>
-              <button class="live-tab" data-site="https://occ.opencsg.hk/"><b data-en="Hong Kong">香港</b><small>Hong Kong</small></button>
-              <button class="live-tab" data-site="https://sg.opencsg.com/"><b data-en="Singapore">新加坡</b><small>Singapore</small></button>
-              <button class="live-tab" data-site="https://aihub.caict.ac.cn/"><b data-en="CAICT AI Hub">鲸智</b><small>CAICT</small></button>
-              <button class="live-tab" data-site="https://modelhub.lgdg.cc/"><b data-en="Longgang">龙岗</b><small data-en="Shenzhen">深圳</small></button>
-            </div>
-            <b data-en="Validated regional nodes can expand into a global open AI network">以区域节点完成落地验证，向全球开放 AI 网络复制</b>
-            <p data-en="Proven delivery · Hong Kong gateway · Singapore and Southeast Asia · Global expansion">已落地场景验证 · 香港国际入口 · 新加坡与东南亚连接 · 面向全球拓展</p>
-          </div>
         </div>
       </div>
     </div>
-    <div class="foot"><span data-en="Company positioning: open AgenticOps infrastructure">公司定位：开放的 AgenticOps 基础设施</span><span>05</span></div>
+    <div class="foot"><span data-en="Enterprise AI infrastructure · operating system for the Agentic era">企业级AI基础设施 · Agentic时代的操作系统</span><span>05</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="appendix"><section class="slide light" data-layout="L08" id="slide-06">
@@ -772,43 +883,30 @@
   <div class="slide-wrap" data-section="case"><section class="slide light" data-layout="L08" id="slide-07">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Enterprise Production Proof　">企业生产验证　</span><span style="font-size:13px;color:#697472;font-weight:400">Enterprise Production Proof</span></div>
-    <h2 class="title" data-en="Enterprises need more than model access—they need an AI control layer from pilot to production">企业需要的不只是模型入口，而是从试验到生产的 AI 控制层</h2>
+    <h2 class="title" data-en="Enterprises don't need another model endpoint—they need an AI control layer, from pilot to production">企业需要的不只是模型接口，而是从试验到生产的 AI 控制层</h2>
+
     <div class="case7-layout">
-      <div class="case7-thesis">
-        <article class="case7-problem">
-          <small>THE PROBLEM</small>
-          <h3 data-en="Access to one model is not a production system">访问一个模型，不等于拥有生产级 AI</h3>
-          <p data-en="Enterprises need control, governance, private hosting and deployment confidence—not another isolated model endpoint.">企业需要控制、治理、私有化托管和可靠的生产部署，而不是另一个孤立的模型接口。</p>
-        </article>
-        <article class="case7-solution">
-          <small>OPENCSG APPROACH</small>
-          <h3 data-en="An enterprise AI control layer">企业 AI 控制层</h3>
-          <p data-en="OpenCSG manages AI assets, approved models, private copilots and governed agent workflows across public cloud, private cloud, on-premise and sovereign-ready environments.">OpenCSG 统一管理 AI 资产、批准模型、私有 Copilot 和受治理的 Agent 工作流，支持公有云、私有云、本地与主权环境。</p>
-        </article>
+      <!-- 主图：占视觉 70%，让画面一目了然 -->
+      <div class="case7-hero">
+        <img src="assets/case7-hero.svg" alt="AI 控制层：私有数据底座 → 治理与运营 → Agent 与多终端输出">
+        <span class="case7-hero-caption">FROM PRIVATE DATA · TO GOVERNED AI · TO EVERY TERMINAL</span>
       </div>
-      <div class="case7-capabilities">
-        <article><span>01</span><b data-en="Pilot → Production">从试验到生产</b><p data-en="Govern, secure and operate AI in production.">治理、安全与持续运营。</p></article>
-        <article><span>02</span><b data-en="Beyond a Model Hub">超越模型 Hub</b><p data-en="Models, data, prompts, code, MCP and agents.">模型、数据、Prompt、代码、MCP 与 Agent。</p></article>
-        <article><span>03</span><b data-en="Private & Sovereign">私有化与主权部署</b><p data-en="Private cloud, on-premise and air-gapped.">私有云、本地与隔离环境。</p></article>
-        <article><span>04</span><b data-en="Agentic Lifecycle">Agent 生命周期</b><p data-en="Build, release, monitor and improve.">构建、发布、监控与持续进化。</p></article>
-        <article><span>05</span><b data-en="Open & Enterprise-ready">开源且企业就绪</b><p data-en="Open flexibility with access, audit and control.">开放灵活性叠加权限、审计与控制。</p></article>
-      </div>
-      <div class="case7-cases">
-        <article class="case7-card">
-          <header><small data-en="PROVINCIAL RESEARCH INSTITUTE · ANONYMOUS">省级科研机构 · 匿名</small><h3 data-en="Reusable assets and safe production release">资产复用与安全生产发布</h3></header>
-          <div><span data-en="Problem">问题</span><p data-en="Data, models and experiments were fragmented across individual environments.">数据、模型和实验过程分散在个人环境。</p></div>
-          <div><span>OpenCSG</span><p data-en="Asset graph, evaluation, sandbox and release controls formed one workflow.">统一资产图谱、评测、沙箱与发布流程。</p></div>
-          <footer><b data-en="Outcome">结果</b><p data-en="Reusable, auditable assets that reach production without data leaving.">资产可复用、可审计，并在数据不外流前提下进入生产。</p></footer>
-        </article>
-        <article class="case7-card">
-          <header><small data-en="REGIONAL AI PLATFORM · ANONYMOUS">区域 AI 平台 · 匿名</small><h3 data-en="From one-off delivery to ecosystem operations">从一次性交付到生态运营</h3></header>
-          <div><span data-en="Problem">问题</span><p data-en="Compute, models, data and developers remained disconnected.">算力、模型、数据和开发者彼此割裂。</p></div>
-          <div><span>OpenCSG</span><p data-en="Open assets, a developer portal and operating mechanisms connected the ecosystem.">以开放资产、开发者门户和运营体系串联生态。</p></div>
-          <footer><b data-en="Outcome">结果</b><p data-en="The project moved from building a platform to operating a growing ecosystem.">从“建设平台”升级为“持续运营生态”。</p></footer>
-        </article>
+
+      <!-- 右侧三句简短重点（不用格子堆叠） -->
+      <aside class="case7-three-points">
+        <div><b data-en="01 · Pilot → Production">试验 → 生产</b><p data-en="Govern, secure and continuously operate AI in real production.">让 AI 在真实生产里可被治理、可被安全运营。</p></div>
+        <div><b data-en="02 · Private & Sovereign">私有化部署</b><p data-en="Private cloud, on-premise and air-gapped—data never has to leave.">私有云、本地、隔离环境—数据不必外流。</p></div>
+        <div><b data-en="03 · Agentic Lifecycle">Agent 全生命周期</b><p data-en="Build, release, monitor and improve—models, data, prompts, MCP and agents in one loop.">模型、数据、Prompt、MCP、Agent 同闭环运营。</p></div>
+      </aside>
+
+      <!-- 底部一条案例证据（不占独立格子） -->
+      <div class="case7-proof">
+        <span class="case7-proof-tag" data-en="CASE · 2026">案例 · 2026</span>
+        <b data-en="Provincial Research Institute: scattered experiments unified into governed AI production, data kept in-domain">省级科研机构：分散实验统一进入可治理、可审计的 AI 生产，数据不出域。</b>
       </div>
     </div>
-    <div class="foot"><span data-en="Two production patterns point to the same proof: control, governance, private deployment and production continuity">两类生产验证共同指向同一件事：控制、治理、私有化与生产连续性</span><span>07</span></div>
+
+    <div class="foot"><span data-en="From scattered experiments to governed AI production">从分散实验到受治理的 AI 生产</span><span>07</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="product"><section class="slide light" data-layout="L08" id="slide-08">
@@ -838,11 +936,11 @@
     <div class="section"><span class="section-zh">全栈技术架构　</span><span style="font-size:13px;color:#697472;font-weight:400">Full Technical Architecture</span></div>
     <h2 class="title" data-en="One platform manages AI assets, compute, agents and production operations">一套平台统一管理 AI 资产、算力、Agent 与生产运行</h2>
     <div class="arch9-tabs" role="tablist" aria-label="Architecture views">
-      <button type="button" data-arch-view="production" data-en="INDUSTRY PRODUCTION LOOP">行业生产闭环</button>
-      <button type="button" class="active" data-arch-view="platform" data-en="FULL PLATFORM STACK">平台全栈架构</button>
+      <button type="button" class="active" data-arch-view="production" data-en="INDUSTRY PRODUCTION LOOP">行业生产闭环</button>
+      <button type="button" data-arch-view="platform" data-en="FULL PLATFORM STACK">平台全栈架构</button>
     </div>
 
-    <div class="edge-production-view arch9-view" data-arch-panel="production">
+    <div class="edge-production-view arch9-view active" data-arch-panel="production">
       <section class="edge-studio">
         <small data-en="BUSINESS & CONTENT INPUT">业务与内容输入</small>
         <b data-en="Industry data">行业数据</b>
@@ -905,7 +1003,7 @@
       </section>
     </div>
 
-    <div class="arch9 arch9-view active" data-arch-panel="platform">
+    <div class="arch9 arch9-view" data-arch-panel="platform">
       <div class="a9-scene">
         <div class="a9-side" data-en="SCENARIOS">场景</div>
         <div class="a9-scene-track">
@@ -996,69 +1094,49 @@
 
   <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L04" id="slide-10">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
-    <div class="section"><span class="section-zh">全球企业与主权 AI 市场　</span><span style="font-size:13px;color:#697472;font-weight:400">Global Enterprise & Sovereign AI Market</span></div>
-    <h2 class="title" data-en="AI is essential infrastructure — every company uses it, every nation builds it">AI 已成为基础设施 — 每个企业都在用，每个国家都在建</h2>
+    <div class="section"><span class="section-zh">市场机会　</span><span style="font-size:13px;color:#697472;font-weight:400">Market Opportunity</span></div>
+    <h2 class="title" data-en="AI is becoming essential infrastructure — a $4.2T global market, with policy-driven sovereign build-out">AI 正在成为基础设施 — $4.2T 全球市场，叠加主权 AI 政策驱动</h2>
+
     <div class="market10">
-      <div class="m10-headline">
-        <div class="m10-headline-main">
-          <small data-en="GLOBAL AI MARKET">全球 AI 市场</small>
-          <b>$900B<span data-en="→ $4.2T by 2035">→ $4.2T (2035)</span></b>
-          <em data-en="CAGR 18% · Precedence Research 2026">CAGR 18% · Precedence Research 2026</em>
+      <!-- 左侧：叙事 + 数据角标 -->
+      <aside class="m10-side">
+        <div class="m10-side-statement">
+          <small data-en="INVESTMENT LOGIC">投资逻辑</small>
+          <p data-en="From global AI demand to sovereign build-out, the market is being shaped by three forces: enterprise adoption, national AI factories and policy acceleration.">从全球 AI 需求到主权 AI 建设，市场由三股力量推动：<b>企业规模化</b>、<b>国家级 AI 基础设施</b>、<b>政策加速</b>。</p>
         </div>
-        <div class="m10-headline-stats">
-          <article><b>¥700B+</b><span data-en="China AI industry (2024), 20%+ annual growth">中国 AI 产业规模 (2024)<br>连续多年 20%+ 增长</span></article>
-          <article><b>$57B</b><span data-en="NVIDIA Q3 FY26 record revenue · Data Center $51.2B">NVIDIA Q3 FY26 收入<br>数据中心 $51.2B</span></article>
-          <article><b>€20B</b><span data-en="EU InvestAI Fund · 5 AI Gigafactories">EU InvestAI 基金<br>5 个 AI Gigafactory</span></article>
+        <div class="m10-side-stats">
+          <article>
+            <b>$4.2T</b>
+            <span data-en="Global AI market by 2035">2035 年全球 AI 市场</span>
+            <em>CAGR 18% · Precedence</em>
+          </article>
+          <article>
+            <b>88%</b>
+            <span data-en="of orgs already use AI in production">企业已在生产中使用 AI</span>
+            <em>McKinsey · State of AI 2025</em>
+          </article>
+          <article>
+            <b>6</b>
+            <span data-en="regions are building sovereign AI">大区域建设主权 AI</span>
+            <em>EU / China / India / Saudi / Canada / Japan</em>
+          </article>
         </div>
-      </div>
-      <section class="m10-evidence">
-        <h3 data-en="Sovereign AI: nations building AI as strategic infrastructure">主权 AI：国家将算力、模型与平台纳入战略基础设施</h3>
-        <div class="m10-sovereign">
-          <div class="m10-sovereign-head"><b>GLOBAL SOVEREIGN AI BUILD-OUT</b><span data-en="6 regions · trillion-level investment">6 大区域 · 万亿级投资</span></div>
-          <article><strong>EU</strong><b>19 AI Factories</b><span>€20B InvestAI · 5 AI Gigafactory · €10B EuroHPC</span><a href="https://digital-strategy.ec.europa.eu/en/policies/ai-factories" target="_blank">EC｜AI Factories</a></article>
-          <article><strong>INDIA</strong><b>10,000+ GPUs</b><span data-en="IndiaAI Mission · national public AI cloud">IndiaAI Mission · 国家级公共 AI 云</span><a href="https://compute.indiaai.gov.in/files/end-user-policy.pdf" target="_blank">IndiaAI Mission</a></article>
-          <article><strong>CANADA</strong><b>C$2B</b><span data-en="Sovereign AI Compute Strategy · supercomputing system">Sovereign AI Compute Strategy · 超算系统</span><a href="https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy" target="_blank">Government of Canada</a></article>
-          <article><strong>SAUDI</strong><b>HUMAIN</b><span data-en="PIF sovereign fund · AI infrastructure and local LLMs">PIF 主权基金 · AI 基础设施与本土大模型</span><a href="https://humain.com/" target="_blank">HUMAIN</a></article>
-          <article><strong>JAPAN</strong><b>AI Nation</b><span data-en="Japanese LLMs · disaster response · climate resilience">日语言模型 · 灾害响应 · 气候韧性</span><a href="https://blogs.nvidia.com/blog/what-is-sovereign-ai/" target="_blank">NVIDIA｜Sovereign AI</a></article>
-          <article><strong>CHINA</strong><b>439 LLMs</b><span data-en="30+ industries · ¥700B+ market · AI+ national strategy">30+ 行业 · ¥700B+ 产业规模 · AI+ 国家战略</span><a href="https://www.ndrc.gov.cn/xxgk/jd/jd/202508/t20250826_1400077.html" target="_blank" data-en="National Development and Reform Commission">国家发改委</a></article>
+        <div class="m10-side-tam">
+          <small data-en="OPENCSG 2026 BASE-CASE TAM">OpenCSG · 2026 基准 TAM</small>
+          <div><b>$7.5B</b><em data-en="≈ RMB 54B">≈ 540 亿人民币</em></div>
+          <p data-en="Enterprise $4.5B (30K orgs × $150K ACV) + Sovereign / Regional $3.0B (300 platforms × $10M lifecycle). OpenCSG base case, not a third-party forecast.">企业 $4.5B（3 万家目标组织 × $15 万 ACV）+ 主权 / 区域 $3.0B（300 个平台 × $1000 万全生命周期）；OpenCSG 基准假设，非第三方预测。</p>
         </div>
-        <div class="m10-jensen">
-          <img src="assets/jensen-keynote-nvidia-gtc.jpg" alt="Jensen Huang at NVIDIA GTC">
-          <div class="m10-jensen-body">
-            <blockquote>
-              <q data-en="Every company will use it. Every nation will build it. AI is essential infrastructure.">"每个企业都会使用 AI，每个国家都会建造 AI。AI 是基础设施。"</q>
-              <cite><b>Jensen Huang</b><span>CEO, NVIDIA · <a href="https://www.rev.com/transcripts/gtc-keynote-with-nvidia-ceo-jensen-huang" target="_blank" data-en="GTC 2025 Keynote">GTC 2025 Keynote</a></span></cite>
-            </blockquote>
-            <div class="m10-jensen-tags">
-              <span data-en="10 GW NVIDIA-OpenAI partnership">10 GW NVIDIA-OpenAI 合作</span>
-              <span data-en="Blackwell sold out · cloud GPUs sold out">Blackwell 供不应求</span>
-              <span data-en="Trillions in economic dividends">万亿级经济红利</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="m10-market">
-        <h3 data-en="Enterprise adoption + policy acceleration">企业规模化 + 政策加速</h3>
-        <div class="m10-metrics">
-          <article><b>88%</b><p data-en="Organizations regularly use AI in at least one business function">组织已在至少一个业务职能中常态化使用 AI</p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">McKinsey｜State of AI 2025</a></article>
-          <article><b>62%</b><p data-en="Organizations are experimenting with or scaling agents; 23% have begun expanding">正在试验或规模化 Agent，23% 已开始扩展</p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">McKinsey｜State of AI 2025</a></article>
-        </div>
-        <div class="m10-policy">
-          <div class="m10-policy-head"><b>CHINA AI+ POLICY TARGETS</b><span data-en="State Council Document No. 11 (2025)">国务院国发〔2025〕11号</span></div>
-          <article><b>2027</b><span><span data-en="Adoption of intelligent devices and agent applications above">智能终端、智能体应用普及率超</span> <strong>70%</strong></span></article>
-          <article><b>2030</b><span><span data-en="Adoption of intelligent devices and agent applications above">智能终端、智能体应用普及率超</span> <strong>90%</strong></span></article>
-        </div>
-        <div class="m10-tam">
-          <div class="m10-tam-head"><span>2026 BASE-CASE · OPENCSG BOTTOM-UP</span><b>$7.5B</b><em>≈ RMB 54B TAM</em></div>
-          <div class="m10-tam-parts">
-            <article><small>ENTERPRISE</small><b>$4.5B</b><p>30,000 家目标组织 × $150K 年均 ACV</p></article>
-            <article><small>SOVEREIGN / REGIONAL</small><b>$3.0B</b><p>300 个平台 × $10M 全生命周期价值</p></article>
-          </div>
-          <p class="m10-assumption">口径：软件 License、私有化实施、持续运营与生态服务；为 OpenCSG 基准情景假设，不是第三方市场预测。</p>
-        </div>
-      </section>
+      </aside>
+
+      <!-- 右侧：首页同款示意图 + 浮动数据标签 -->
+      <figure class="m10-hero-visual">
+        <img src="assets/sovereign-ai-cover-v3.png" alt="AI 主权开放基础设施：连接城市、企业与个人智能节点">
+        <figcaption class="m10-tag m10-tag-tr" data-en="6 national AI factories · EU InvestAI €20B · 5 Gigafactories">6 大国家级 AI 工厂 · EU InvestAI €20B · 5 Gigafactory</figcaption>
+        <figcaption class="m10-tag m10-tag-bl" data-en="Blackwell sold out · cloud GPUs sold out · trillions in dividends">Blackwell 供不应求 · 万亿级红利 · 黄仁勋：AI 是基础设施</figcaption>
+      </figure>
     </div>
-    <div class="source-note">Primary sources: Precedence Research (global AI market), EC/Government of Canada/IndiaAI/NVIDIA (sovereign AI), NDRC/State Council (China), McKinsey (enterprise). TAM: 30,000 enterprises × $150K ACV + 300 platforms × $10M lifecycle.</div>
+
+    <div class="source-note">Primary sources: Precedence Research (global AI market), EC / Government of Canada / IndiaAI / NVIDIA (sovereign AI), NDRC / State Council (China), McKinsey (enterprise).</div>
     <div class="foot"><span data-en="The enterprise market is driven by production economics; policy accelerates and standardizes adoption.">企业市场由生产经济性驱动，政策负责加速与标准化</span><span>10</span></div>
   </section></div>
 
@@ -1210,113 +1288,109 @@
     <div class="foot"><span data-en="Competitive thesis: enterprise control × production lifecycle × hardware neutrality × open foundation">竞争判断：企业控制 × 生产闭环 × 硬件中立 × 开源底座</span><span>13</span></div>
   </section></div>
 
-  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L04" id="slide-14">
+  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L14" id="slide-14">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
-    <div class="section"><span class="section-zh" data-en="Founder &amp; CEO　">创始人兼 CEO　</span><span style="font-size:13px;color:#697472;font-weight:400">Founder &amp; CEO</span></div>
-    <h2 class="title" data-en="Repeat founder proven across IBM · HP · Mesosphere · GitLab → OpenCSG">连续创业者：IBM → HP → Mesosphere → 极狐 GitLab → OpenCSG</h2>
+    <div class="section"><span class="section-zh" data-en="Founder &amp; Team　">创始人 &amp; 团队　</span><span style="font-size:13px;color:#697472;font-weight:400">Founder &amp; Team</span></div>
+    <h2 class="title" data-en="A repeat founder with global open-source reach, building OpenCSG with a senior operator team.">连续创业者 × 全球开源影响力，携资深运营团队打造 OpenCSG。</h2>
     <div class="founder14-layout">
-      <aside class="founder14-left">
-        <div class="founder14-photo">
+      <!-- LEFT: founder hero -->
+      <section class="founder14-hero">
+        <div class="founder14-portrait">
           <img src="assets/ceo-sam-profile.jpg" alt="陈冉 Sam Chen">
-          <div class="founder14-photo-label"><b data-en="Sam Chen">陈冉 Sam Chen</b><span data-en="Founder &amp; CEO, OpenCSG">OpenCSG 创始人兼 CEO</span><small>OPEN SOURCE · ENTERPRISE SOFTWARE · AI SOVEREIGNTY</small></div>
         </div>
-        <div class="founder14-logos">
-          <div class="founder14-logos-label"><small>PREVIOUS COMPANIES</small></div>
-          <div class="founder14-logos-row">
-            <div class="founder14-logo-item"><img src="assets/founder-logos/ibm.svg" alt="IBM"><span>IBM</span></div>
-            <div class="founder14-logo-item"><img src="assets/founder-logos/hp.svg" alt="HP"><span>HP · US</span></div>
-            <div class="founder14-logo-item"><img src="assets/founder-logos/d2iq.svg" alt="D2iQ"><span>D2iQ · Mesosphere</span></div>
-            <div class="founder14-logo-item"><img src="assets/founder-logos/gitlab.svg" alt="GitLab"><span>极狐 GitLab</span></div>
-          </div>
-        </div>
-        <div class="founder14-credentials">
-          <small>EDUCATION</small>
-          <div class="founder14-cred-row"><span data-en="Beihang University">北京航空航天大学</span></div>
-          <div class="founder14-cred-row"><span data-en="Wharton MBA">沃顿商学院 MBA</span></div>
-          <div class="founder14-cred-row"><span data-en="Stanford HPL">斯坦福 HPL</span></div>
-          <div class="founder14-cred-row"><span data-en="Two YC programs">两次 YC 孵化</span></div>
-        </div>
-      </aside>
-      <main class="founder14-story">
-        <div class="founder14-hero-stats">
-          <div class="founder14-stat">
-            <strong>0→5亿</strong>
-            <b data-en="JiHu GitLab valuation in 2 years">极狐 GitLab 两年估值</b>
-          </div>
-          <div class="founder14-stat">
-            <strong>5次</strong>
-            <b data-en="Continuous entrepreneur">连续创业</b>
-          </div>
-          <div class="founder14-stat">
-            <strong>4项</strong>
-            <b data-en="Global governance titles">全球治理头衔</b>
+        <div class="founder14-id">
+          <b class="founder14-name" data-en="Sam Chen">陈冉 <em>Sam Chen</em></b>
+          <span class="founder14-role" data-en="Founder &amp; CEO, OpenCSG">Founder &amp; CEO · OpenCSG</span>
+          <span class="founder14-prev" data-en="Previously founder &amp; CEO of JiHu GitLab">前极狐 GitLab 创始人兼 CEO</span>
+          <div class="founder14-meta">
+            <div><small data-en="EDUCATION">教育</small><b data-en="Wharton MBA · Stanford HPL · Beihang">沃顿 MBA · 斯坦福 HPL · 北航</b></div>
+            <div><small data-en="BACKING">资历</small><b data-en="Two-time YC founder · MIIT reserve talent">两次 YC 创始人 · 工信部领军人物储备人才</b></div>
           </div>
         </div>
-        <section class="founder14-proof">
-          <article><small>01 · FOUNDER-MARKET FIT</small><strong>连续创业者</strong><b data-en="Proven track record: 0→1→N">验证路径：0→1→规模化</b><p data-en="From cloud native and DevOps to sovereign AI infrastructure.">从云原生、DevOps 到主权 AI 基础设施。</p></article>
-          <article><small>02 · GLOBAL RECOGNITION</small><strong>全球影响力</strong><b data-en="China's rare global open-source ambassador">中国稀缺的全球开源大使</b><p data-en="Linux Foundation · CNCF · EleutherAI · OGA Chairman">Linux 基金会 · CNCF · EleutherAI · OGA 联盟主席</p></article>
-          <article><small>03 · NATIONAL STRATEGY</small><strong>战略稀缺</strong><b data-en="AI sovereignty ecosystem builder">AI 主权生态建设者</b><p data-en="Key talent for China's digital economy and AI independence.">中国数字经济与 AI 主权体系建设关键人才。</p></article>
-        </section>
-        <section class="founder14-career-timeline">
-          <div class="founder14-timeline-head"><b data-en="Career Path">职业路径</b></div>
-          <div class="founder14-timeline">
-            <div class="founder14-tl-item"><span>IBM</span><small>ITM 研发</small></div>
-            <div class="founder14-tl-arrow">→</div>
-            <div class="founder14-tl-item"><span>HP · US</span><small>CTO Office</small></div>
-            <div class="founder14-tl-arrow">→</div>
-            <div class="founder14-tl-item"><span>Mesosphere</span><small>联合创始人</small></div>
-            <div class="founder14-tl-arrow">→</div>
-            <div class="founder14-tl-item highlight"><span>极狐 GitLab</span><small>CEO · 5亿美元</small></div>
-            <div class="founder14-tl-arrow">→</div>
-            <div class="founder14-tl-item active"><span>OpenCSG</span><small>CEO · 当前</small></div>
-          </div>
-        </section>
-        <div class="founder14-governance">
-          <small>OPEN SOURCE GOVERNANCE</small>
-          <div class="founder14-gov-badges">
-            <span data-en="Linux Foundation Ambassador">Linux 基金会大使</span>
-            <span data-en="CNCF Ambassador">CNCF 开源大使</span>
-            <span data-en="EleutherAI Contributor">EleutherAI 贡献者</span>
-            <span data-en="OGA Chairman">OGA 联盟主席</span>
-            <span data-en="YDF Vice Chair">长江数据基金会副理事长</span>
-          </div>
+      </section>
+
+      <!-- RIGHT: narrative -->
+      <section class="founder14-right">
+        <header class="founder14-lead">
+          <b data-en="OpenCSG was founded by Sam Chen, the former founder &amp; CEO of JiHu GitLab. MIIT reserve talent, open-source foundation strategy expert, builder of AI sovereignty platforms &amp; ecosystems.">由原极狐 GitLab 创始人兼 CEO 陈冉创立。工信部领军人物储备人才，开源基金会战略专家，AI 主权平台与生态缔造者。</b>
+        </header>
+
+        <!-- big stat row -->
+        <div class="founder14-stats">
+          <div><strong>0 → $500M</strong><span data-en="JiHu GitLab valuation in 2 years">极狐 GitLab 两年估值</span></div>
+          <div><strong>5×</strong><span data-en="Continuous founder: IBM · HP · Mesosphere · JiHu · OpenCSG">连续创业：IBM · HP · Mesosphere · 极狐 · OpenCSG</span></div>
+          <div><strong>70%+</strong><span data-en="Engineering headcount in the company">公司研发人员占比</span></div>
         </div>
-        <section class="founder14-team">
-          <header class="founder14-team-head">
-            <b data-en="Core Team · 5 senior leaders across architecture, engineering, algorithm, product & governance">核心团队　·　架构、研发、算法、产品与治理五位骨干</b>
-            <span data-en="R&amp;D team accounts for 70%+ of the company.">研发人员占比 70%+。</span>
+
+        <!-- career timeline -->
+        <div class="founder14-path">
+          <small data-en="CAREER">职业路径</small>
+          <ol>
+            <li><b>IBM</b><span data-en="R&amp;D · ITM">研发 · ITM</span></li>
+            <li><b>HP · US</b><span data-en="CTO Office">CTO Office</span></li>
+            <li><b>Mesosphere</b><span data-en="Co-founder · D2iQ">联合创始人 · D2iQ</span></li>
+            <li class="hi"><b data-en="JiHu GitLab">极狐 GitLab</b><span data-en="Founder &amp; CEO · $500M">创始人兼 CEO · 5亿美元</span></li>
+            <li class="now"><b>OpenCSG</b><span data-en="Founder &amp; CEO · now">创始人兼 CEO · 当前</span></li>
+          </ol>
+        </div>
+
+        <!-- previous logos -->
+        <div class="founder14-brands">
+          <small data-en="PREVIOUSLY BUILT AT">过往经历</small>
+          <ul>
+            <li><img src="assets/founder-logos/ibm.svg" alt="IBM"></li>
+            <li><img src="assets/founder-logos/hp.svg" alt="HP"></li>
+            <li><img src="assets/founder-logos/d2iq.svg" alt="D2iQ"></li>
+            <li><img src="assets/founder-logos/gitlab.svg" alt="GitLab"></li>
+          </ul>
+        </div>
+
+        <!-- core team -->
+        <div class="founder14-team">
+          <header>
+            <small data-en="CORE OPERATORS · 5">核心团队 · 5 人</small>
+            <span data-en="Architecture, engineering, algorithm, product &amp; governance">架构 · 研发 · 算法 · 产品 · 治理</span>
           </header>
-          <div class="founder14-team-grid">
-            <article>
-              <span data-en="CHIEF ARCHITECT">首席架构师</span>
-              <b>刘巍峰 <em>Weifeng Liu</em></b>
-              <p data-en="Ex-HP, D2iQ, JiHu GitLab; 10+ years in cloud-native, containers and DevOps.">前 HP、D2iQ、极狐 GitLab；10年以上云原生、容器与 DevOps 经验。</p>
-            </article>
-            <article>
-              <span data-en="HEAD OF ENGINEERING">研发总监</span>
-              <b>雷达 <em>Da Lei</em></b>
-              <p data-en="Ex-Kunlun, Amazon, Letv; high-concurrency distributed systems expert.">前昆仑万维、亚马逊、乐视；高并发分布式系统专家。</p>
-            </article>
-            <article>
-              <span data-en="HEAD OF AI LAB">AI Lab 负责人</span>
-              <b>段永耀 <em>Yongyao Duan</em></b>
-              <p data-en="Ex-WuXi AppTec, Tencent; 8+ years in recommendation, NLP and LLM.">前药明康德、腾讯；8年以上推荐、NLP与大模型经验。</p>
-            </article>
-            <article>
-              <span data-en="HEAD OF PRODUCT">产品总监</span>
-              <b>陈浩 <em>Hao Chen</em></b>
-              <p data-en="Ex-Tencent, Kaya Medical; 10+ years in 3D graphics, 8+ years in AI products.">前腾讯、科亚医疗；10年三维图形，8年 AI 产品经验。</p>
-            </article>
-            <article>
-              <span data-en="BOARD SECRETARY">董事会秘书</span>
-              <b>陈放 <em>Fang Chen</em></b>
-              <p data-en="Ex-Paradise Ventures, Fanta Tech; led GitLab China investment; AI best-seller author.">前天堂硅谷、范特科技；主导极狐 GitLab 投资；AI 畅销书作者。</p>
-            </article>
-          </div>
-        </section>
-      </main>
+          <ul>
+            <li>
+              <b data-en="CHIEF ARCHITECT">首席架构师</b>
+              <p>刘巍峰 <em>Weifeng Liu</em><i data-en="Ex-HP · D2iQ · JiHu GitLab">前 HP · D2iQ · 极狐 GitLab</i></p>
+            </li>
+            <li>
+              <b data-en="HEAD OF ENGINEERING">研发总监</b>
+              <p>雷达 <em>Da Lei</em><i data-en="Ex-Kunlun · Amazon · Letv">前昆仑万维 · 亚马逊 · 乐视</i></p>
+            </li>
+            <li>
+              <b data-en="HEAD OF AI LAB">AI Lab 负责人</b>
+              <p>段永耀 <em>Yongyao Duan</em><i data-en="Ex-WuXi AppTec · Tencent">前药明康德 · 腾讯</i></p>
+            </li>
+            <li>
+              <b data-en="HEAD OF PRODUCT">产品总监</b>
+              <p>陈浩 <em>Hao Chen</em><i data-en="Ex-Tencent · Kaya Medical">前腾讯 · 科亚医疗</i></p>
+            </li>
+            <li>
+              <b data-en="BOARD SECRETARY">董事会秘书</b>
+              <p>陈放 <em>Fang Chen</em><i data-en="Ex-Paradise Ventures · Fanta">前天堂硅谷 · 范特科技</i></p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- honors / tags -->
+        <div class="founder14-tags">
+          <small data-en="HONORS · TITLES · ECOSYSTEM ROLES">荣誉 · 头衔 · 生态角色</small>
+          <ul>
+            <li data-en="MIIT Reserve Talent">工信部领军人物储备人才</li>
+            <li data-en="Linux Foundation Ambassador">Linux 基金会大使</li>
+            <li data-en="CNCF Ambassador">CNCF 开源大使</li>
+            <li data-en="OGA Chairman">OGA 联盟主席</li>
+            <li data-en="YDF Vice Chair">长江数据基金会副理事长</li>
+            <li data-en="EleutherAI Contributor">EleutherAI 贡献者</li>
+            <li data-en="Open-source Strategy Expert">开源基金会战略专家</li>
+          </ul>
+        </div>
+      </section>
     </div>
-    <div class="foot"><span data-en="Founder-market fit × core-team compounding: repeat open-source commercialization × enterprise infrastructure × global ecosystem governance">创始人匹配度 × 核心团队复利：连续开源商业化 × 企业基础设施 × 全球生态治理</span><span>14</span></div>
+    <div class="foot"><span data-en="Repeat open-source founder × global ecosystem governance × senior operator team">连续开源创始人 × 全球生态治理 × 资深运营团队</span><span>14</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L07" id="slide-15">
@@ -1394,7 +1468,6 @@
   <script src="assets/deck-slide03-replica.js?v=20260706f"></script>
   <script src="assets/deck-i18n.js?v=20260706i18n"></script>
   <script src="assets/deck-en-extra.js?v=20260706i18n"></script>
-  <script src="assets/deck-live-sites.js?v=20260706live"></script>
   <script>
     const EN={
       "主权 AI 开放基础设施":"Sovereign AI Open Infrastructure",
@@ -1476,7 +1549,7 @@
       "与 WAIC、B.ai 共建 OPC 开发者生态":"Built the OPC developer ecosystem with WAIC and B.ai",
       "联合举办 OPC / Agent 黑客松大会，扩大个人 AgenticOps 入口。":"Co-hosted OPC and Agent hackathons to expand the personal AgenticOps entry point.",
       "公司真正交付的系统能力":"The system capabilities the company actually delivers",
-      "公司定位：开放的 AgenticOps 基础设施":"Positioning: open AgenticOps infrastructure",
+      "企业级AI基础设施 · Agentic时代的操作系统":"Enterprise AI infrastructure · operating system for the Agentic era",
       "公开客户与生态样本":"Public customer and ecosystem references",
       "可按最终授权名单替换":"Replaceable with the final approved logo list",
       "历史投资人":"Historical investors","机构与产业资本已完成多阶段验证":"Institutional and strategic capital have backed the company across multiple stages",
@@ -1503,7 +1576,7 @@
       "标准化交付系统":"Standardized delivery system","将定制项目沉淀为可复制的产品、实施方法和伙伴能力。":"Convert custom projects into repeatable product, implementation and partner capabilities.",
       "诊断":"Diagnose","资产与场景":"Assets & scenarios","方案":"Design","架构与治理":"Architecture & governance",
       "部署":"Deploy","私有与混合":"Private & hybrid","验收":"Accept","安全与性能":"Security & performance","运营":"Operate","SLA 与扩容":"SLA & expansion",
-      "公司定位：开放的 AgenticOps 基础设施":"Positioning: open AgenticOps infrastructure",
+      "企业级AI基础设施 · Agentic时代的操作系统":"Enterprise AI infrastructure · operating system for the Agentic era",
       "荣誉与认可":"Honors & Recognition","产业、政府、媒体与国际生态共同验证 OpenCSG":"Validated by industry, government, media and the global ecosystem",
       "新加坡 IMDA SPARK":"Singapore IMDA SPARK","香港 FinTech Forum":"Hong Kong FinTech Forum",
       "国际创新生态认可":"International innovation recognition","国际产业交流":"Global industry exchange","CCTV-13 专题采访":"CCTV-13 feature",
@@ -1595,7 +1668,7 @@
       "技术与商业边界覆盖深度":"Technical and commercial boundary coverage","开放资产网络":"Open asset network","入口":"Entry","组织治理":"Organizational governance","付费":"Paid","Agent 生产运行":"Agent production runtime","扩容":"Expansion","私有与混合部署":"Private & hybrid deployment","壁垒":"Moat","增量":"Growth","OpenCore 商业化":"OpenCore monetization","飞轮":"Flywheel",
       "竞争判断：看完整生命周期与商业闭环，而非单点功能勾叉":"Judge the complete lifecycle and commercial loop—not isolated feature checkmarks",
       "创始人兼 CEO 与核心团队":"Founder & Core Team","CEO 主导的工程化领导力，围绕同一条 AgenticOps 主线组织":"Founder-led engineering leadership aligned around one AgenticOps thesis",
-      "陈冉":"Ran Chen","刘巍峰":"Weifeng Liu","雷达":"Da Lei","陈浩":"Hao Chen","陈放":"Fang Chen",
+      "陈冉":"Ran Chen","刘巍峰":"Weifeng Liu","雷达":"Da Lei","段永耀":"Yongyao Duan","陈浩":"Hao Chen","陈放":"Fang Chen",
       "创始人 / CEO":"Founder / CEO","团队的核心不是“人多”，而是创始人对开源、企业软件与商业化路径的长期判断。":"The team's core advantage is not headcount, but the founder's long-term judgment across open source, enterprise software and monetization.",
       "开源商业化经验":"Open-source commercialization","具备 GitLab 与开源企业软件实践，理解社区分发、产品边界与企业付费之间的关系。":"GitLab and open-source enterprise software experience; understands community distribution, product boundaries and enterprise willingness to pay.",
       "基础设施产品判断":"Infrastructure product judgment","从模型社区切入，持续把能力推向治理、运行、AgenticOps 和个人 OPC。":"Entered through model communities and expanded into governance, runtime, AgenticOps and personal OPC.",
@@ -1749,11 +1822,13 @@
       zhBtn && zhBtn.classList.toggle('active',currentLang==='zh');enBtn && enBtn.classList.toggle('active',currentLang==='en');
       const u=new URL(location.href);u.searchParams.set('lang',currentLang);history.replaceState(null,'',u);
       buildMobileReaders();
+      resetPdfWarm();
     }
     document.addEventListener('deck:i18n',event=>{
       currentLang=event.detail.lang;
       document.body.classList.toggle('lang-en',currentLang!=='zh');
       buildMobileReaders();
+      resetPdfWarm();
     });
 
     // ============================================================
@@ -1789,7 +1864,7 @@
       sections:new Set(['cover','main','case','product','appendix']),
       pageFrom:'',pageTo:'',pageList:'',format:'pdf',
       watermark:false,
-      watermarkText:'CONFIDENTIAL · OpenCSG 2026',filename:''
+      watermarkText:'',filename:''
     };
     const exportDialog=document.getElementById('exportDialog');
     const exportSummary=document.getElementById('exportSummary');
@@ -1851,19 +1926,12 @@
       if(fromRaw || toRaw){
         const from=parseInt(fromRaw||'1',10);
         const to=parseInt(toRaw||String(matched.length),10);
-        const ranged=matched.filter(s=>s.index>=from && s.index<=to);
-        const merged=new Map();
-        sectionMatched.forEach(s=>merged.set(s.index,s));
-        ranged.forEach(s=>merged.set(s.index,s));
-        sectionMatched=[...merged.values()].sort((a,b)=>a.index-b.index);
+        sectionMatched=sectionMatched.filter(s=>s.index>=from && s.index<=to);
       }
 
       const list=parsePageList(exportState.pageList,matched.length);
       if(list){
-        const merged=new Map();
-        sectionMatched.forEach(s=>merged.set(s.index,s));
-        list.forEach(n=>merged.set(n,matched[n-1]));
-        sectionMatched=[...merged.values()].sort((a,b)=>a.index-b.index);
+        sectionMatched=[...list].sort((a,b)=>a-b).map(n=>matched[n-1]).filter(Boolean);
       }
 
       return sectionMatched;
@@ -1970,6 +2038,10 @@
       exportState.pageTo=exportPageToInput.value;
       refreshExportSummary();
     });
+    exportPageListInput.addEventListener('input',()=>{
+      exportState.pageList=exportPageListInput.value;
+      refreshExportSummary();
+    });
     exportFilenameInput.addEventListener('input',()=>{
       exportFilenameInput.dataset.touched='1';
       exportState.filename=exportFilenameInput.value;
@@ -1988,17 +2060,18 @@
       setExportField('format','pdf');
       exportState.watermark=false;
       watermarkEnabled.checked=false;
-      exportState.watermarkText='CONFIDENTIAL · OpenCSG 2026';
+      exportState.watermarkText='';
       watermarkTextInput.value=exportState.watermarkText;
       exportState.pageFrom='';exportState.pageTo='';
-      exportPageFromInput.value='';exportPageToInput.value='';
+      exportState.pageList='';
+      exportPageFromInput.value='';exportPageToInput.value='';exportPageListInput.value='';
       exportFilenameInput.value=defaultFilename();
       exportFilenameInput.dataset.touched='';
       exportState.filename='';
       refreshExportSummary();
       exportDialog.showModal();
     }
-    document.getElementById('pdfExportBtn').addEventListener('click',openExportDialog);
+    document.getElementById('pdfExportBtn')?.addEventListener('click',openExportDialog);
     exportCancelButton.addEventListener('click',()=>exportDialog.close());
 
     function exportPayload(){
@@ -2019,9 +2092,10 @@
           :[],
         pageFrom:exportState.pageFrom.trim()||null,
         pageTo:exportState.pageTo.trim()||null,
-        pageList:exportState.scope==='current'?null:null,
+        pageList:exportState.pageList.trim()||null,
         watermarkEnabled:exportState.watermark,
-        watermarkText:exportState.watermarkText
+        watermarkText:exportState.watermarkText,
+        filename:exportState.filename||exportFilenameInput.value||''
       };
     }
 
@@ -2031,6 +2105,210 @@
       notice.textContent=message;
       document.body.appendChild(notice);
       setTimeout(()=>notice.remove(),isError?8000:4000);
+    }
+
+    async function requestExport(payload,disposition='attachment'){
+      const response=await fetch('/api/export',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({...payload,disposition})
+      });
+      if(!response.ok){
+        const body=await response.json().catch(()=>({}));
+        throw new Error(body.error||`${currentLang==='en'?'Export failed':'导出失败'} (${response.status})`);
+      }
+      const blob=await response.blob();
+      return {
+        blob,
+        filename:response.headers.get('X-Export-Filename')||payload.filename||defaultFilename()
+      };
+    }
+    function triggerBlobDownload(blob,filename){
+      const url=URL.createObjectURL(blob);
+      const link=document.createElement('a');
+      link.href=url;
+      link.download=filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),2500);
+    }
+    let activePdfPreviewUrl='';
+    function revokeActivePdfPreview(){
+      if(activePdfPreviewUrl){
+        URL.revokeObjectURL(activePdfPreviewUrl);
+        activePdfPreviewUrl='';
+      }
+    }
+    function quickPdfPayload(){
+      const lang=EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh';
+      return {
+        lang,
+        ratio:'16:9',
+        scope:'full',
+        format:'pdf',
+        currentPage:currentIndex()+1,
+        sections:[...SECTION_PRESETS.full],
+        pageFrom:null,
+        pageTo:null,
+        pageList:null,
+        watermarkEnabled:true,
+        watermarkText:currentPdfWatermarkText(),
+        filename:`OpenCSG_Investor_Deck_2026_${lang.toUpperCase()}_16x9_Full_Watermark.pdf`
+      };
+    }
+    const DEFAULT_PDF_WATERMARK_TEXT='';
+    const LEGACY_PDF_WATERMARK_TEXT='CONFIDENTIAL · OpenCSG 2026';
+    const PDF_WATERMARK_STORAGE_KEY='opencsg.pdfWatermarkText';
+    let pdfWarmState='idle';
+    let pdfWarmTimer=0;
+    let pdfWarmPromise=null;
+    function storedPdfWatermarkText(){
+      try{
+        const stored=localStorage.getItem(PDF_WATERMARK_STORAGE_KEY)||DEFAULT_PDF_WATERMARK_TEXT;
+        if(stored===LEGACY_PDF_WATERMARK_TEXT){
+          localStorage.removeItem(PDF_WATERMARK_STORAGE_KEY);
+          return DEFAULT_PDF_WATERMARK_TEXT;
+        }
+        return stored;
+      }
+      catch(_){return DEFAULT_PDF_WATERMARK_TEXT}
+    }
+    function watermarkInput(){
+      return document.getElementById('pdfWatermarkInput');
+    }
+    function currentPdfWatermarkText(){
+      const input=watermarkInput();
+      return (input?.value||DEFAULT_PDF_WATERMARK_TEXT).trim();
+    }
+    function savePdfWatermarkText(){
+      const text=currentPdfWatermarkText();
+      const input=watermarkInput();
+      if(input && input.value!==text) input.value=text;
+      try{localStorage.setItem(PDF_WATERMARK_STORAGE_KEY,text)}catch(_){}
+      resetPdfWarm(650);
+    }
+    function initPdfWatermarkInput(){
+      const input=watermarkInput();
+      if(!input) return;
+      input.value=storedPdfWatermarkText();
+      input.addEventListener('change',savePdfWatermarkText);
+      input.addEventListener('input',()=>{
+        try{localStorage.setItem(PDF_WATERMARK_STORAGE_KEY,input.value)}catch(_){}
+        resetPdfWarm(1100);
+      });
+      input.addEventListener('keydown',event=>{
+        if(event.key==='Enter'){
+          event.preventDefault();
+          input.blur();
+          savePdfWatermarkText();
+        }
+      });
+    }
+    function pdfBaseUrl(){
+      return /^https?:$/.test(location.protocol) ? location.origin : 'http://127.0.0.1:4173';
+    }
+    function pdfUrl(kind='view'){
+      const lang=EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh';
+      const path=kind==='warm'?'/api/warm-pdf':'/api/view-pdf';
+      const params=new URLSearchParams({lang});
+      const watermark=currentPdfWatermarkText();
+      if(watermark) params.set('watermark',watermark);
+      return `${pdfBaseUrl()}${path}?${params.toString()}`;
+    }
+    function updatePdfButtonState(){
+      const button=document.getElementById('pdfPreviewBtn');
+      const status=document.getElementById('pdfStatus');
+      if(!button) return;
+      button.dataset.pdfState=pdfWarmState;
+      if(pdfWarmState==='warming'){
+        button.title=currentLang==='en'?'Preparing watermarked PDF in background':'正在后台准备带水印 PDF';
+        if(status) status.textContent=currentLang==='en'?'Preparing PDF…':'正在准备 PDF…';
+      }else if(pdfWarmState==='ready'){
+        button.title=currentLang==='en'?'Watermarked PDF is ready':'带水印 PDF 已准备好';
+        if(status) status.textContent=currentLang==='en'?'PDF ready':'PDF 已就绪';
+      }else if(pdfWarmState==='opening'){
+        button.title=currentLang==='en'?'Opening PDF after preparation':'准备完成后自动打开 PDF';
+        if(status) status.textContent=currentLang==='en'?'Opening…':'正在打开…';
+      }else if(pdfWarmState==='error'){
+        button.title=currentLang==='en'?'PDF will be generated when opened':'打开时将重新生成 PDF';
+        if(status) status.textContent=currentLang==='en'?'Will generate on open':'打开时生成';
+      }else{
+        button.removeAttribute('title');
+        if(status) status.textContent='';
+      }
+    }
+    function pdfLoadingCopy(mode='preparing'){
+      const isEn=currentLang==='en';
+      if(mode==='opening'){
+        return {
+          title:isEn?'Opening PDF…':'正在打开 PDF…',
+          detail:isEn?'The watermarked file is ready. Your browser will open it now.':'带水印文件已准备好，浏览器马上打开。'
+        };
+      }
+      if(mode==='error'){
+        return {
+          title:isEn?'Still working on it…':'还在处理中…',
+          detail:isEn?'Background preparation was interrupted, so the PDF will be generated in the viewer now.':'后台预生成中断了，将在查看页继续生成 PDF。'
+        };
+      }
+      return {
+        title:isEn?'Preparing your PDF…':'正在准备 PDF…',
+        detail:isEn?'First generation can take around 10 seconds. It will open automatically when ready.':'首次生成大约需要 10 秒，完成后会自动打开。'
+      };
+    }
+    function ensurePdfLoadingOverlay(){
+      let overlay=document.getElementById('pdfLoadingOverlay');
+      if(overlay) return overlay;
+      overlay=document.createElement('div');
+      overlay.id='pdfLoadingOverlay';
+      overlay.className='pdf-loading-overlay';
+      overlay.setAttribute('role','status');
+      overlay.setAttribute('aria-live','polite');
+      overlay.innerHTML='<div class="pdf-loading-card"><strong></strong><span></span><div class="pdf-loading-bar" aria-hidden="true"><i></i></div></div>';
+      document.body.appendChild(overlay);
+      return overlay;
+    }
+    function showPdfLoading(mode='preparing'){
+      const overlay=ensurePdfLoadingOverlay();
+      const copy=pdfLoadingCopy(mode);
+      overlay.querySelector('strong').textContent=copy.title;
+      overlay.querySelector('span').textContent=copy.detail;
+      overlay.classList.add('active');
+    }
+    function hidePdfLoading(delay=0){
+      const overlay=document.getElementById('pdfLoadingOverlay');
+      if(!overlay) return;
+      setTimeout(()=>overlay.classList.remove('active'),delay);
+    }
+    async function warmPdf(){
+      if(pdfWarmState==='ready') return {ok:true,cached:true};
+      if(pdfWarmPromise) return pdfWarmPromise;
+      pdfWarmState='warming';
+      updatePdfButtonState();
+      pdfWarmPromise=(async()=>{
+        try{
+          const response=await fetch(pdfUrl('warm'),{cache:'no-store'});
+          if(!response.ok) throw new Error(`warm-pdf ${response.status}`);
+          const body=await response.json().catch(()=>({ok:true}));
+          pdfWarmState='ready';
+          return body;
+        }catch(error){
+          console.warn('PDF warm-up failed; it will be generated on open.',error);
+          pdfWarmState='error';
+          throw error;
+        }finally{
+          pdfWarmPromise=null;
+          updatePdfButtonState();
+        }
+      })();
+      return pdfWarmPromise;
+    }
+    function resetPdfWarm(delay=300){
+      pdfWarmState='idle';
+      updatePdfButtonState();
+      clearTimeout(pdfWarmTimer);
+      pdfWarmTimer=setTimeout(warmPdf,delay);
     }
 
     exportApplyButton.addEventListener('click',async ()=>{
@@ -2043,25 +2321,8 @@
       exportSummary.innerHTML=`<b>${currentLang==='en'?'Rendering slides, please wait…':'正在渲染幻灯片，请稍候…'}</b><em>${selectedSlides().length} ${currentLang==='en'?'slides':'页'} · ${exportState.format.toUpperCase()} · ${exportState.ratio}</em>`;
 
       try{
-        const response=await fetch('/api/export',{
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body:JSON.stringify(payload)
-        });
-        if(!response.ok){
-          const body=await response.json().catch(()=>({}));
-          throw new Error(body.error||`${currentLang==='en'?'Export failed':'导出失败'} (${response.status})`);
-        }
-        const blob=await response.blob();
-        const filename=response.headers.get('X-Export-Filename')||defaultFilename();
-        const url=URL.createObjectURL(blob);
-        const link=document.createElement('a');
-        link.href=url;
-        link.download=filename;
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        setTimeout(()=>URL.revokeObjectURL(url),2000);
+        const {blob,filename}=await requestExport(payload,'attachment');
+        triggerBlobDownload(blob,filename);
         exportDialog.close();
         showExportNotice(currentLang==='en'?`${filename} is ready.`:`${filename} 已生成并开始下载。`);
       }catch(error){
@@ -2105,6 +2366,18 @@
     function overviewColumns(width){return width<640?1:width<1000?2:3}
     function fit(){
       const {width,height}=viewportSize();
+      const focusMode=Boolean(
+        document.fullscreenElement||
+        document.webkitFullscreenElement||
+        document.body.classList.contains('pseudo-fullscreen')
+      );
+      const topSafe=focusMode?0:54;
+      const bottomSafe=0;
+      const availableHeight=Math.max(320,height-topSafe-bottomSafe);
+      document.documentElement.style.setProperty('--deck-top-safe',topSafe+'px');
+      document.documentElement.style.setProperty('--deck-bottom-safe',bottomSafe+'px');
+      document.documentElement.style.setProperty('--deck-stage-center',(topSafe+availableHeight/2)+'px');
+      document.body.classList.toggle('deck-chrome',!focusMode&&!overview);
       if(overview){
         const cols=overviewColumns(width),gap=10,pad=20;
         const cellWidth=(width-pad-gap*(cols-1))/cols;
@@ -2123,10 +2396,10 @@
         const s=Math.max(0,(width-20)/1600);
         document.documentElement.style.setProperty('--scale',s);
         wraps.forEach(w=>{
-          w.style.height=(900*s+20)+'px';
+          w.style.height=(900*s+topSafe+20)+'px';
         });
       }else{
-        const s=Math.max(0,Math.min((width-20)/1600,(height-20)/900));
+        const s=Math.max(0,Math.min((width-20)/1600,(availableHeight-10)/900));
         document.documentElement.style.setProperty('--scale',s);
         wraps.forEach(w=>{
           w.style.height=height+'px';
@@ -2175,37 +2448,49 @@
       }
       fit();
     }
-    function currentPdfFile(){
-      return currentLang==='en'
-        ?'OpenCSG_Investor_Deck_2026_EN.pdf'
-        :'OpenCSG_Investor_Deck_2026_ZH.pdf';
-    }
-    function previewPdf(){
-      const file=currentPdfFile();
-      const dialog=document.getElementById('pdfPreviewDialog');
-      document.getElementById('pdfPreviewFrame').src=file;
-      document.getElementById('pdfPreviewDownload').href=file;
-      dialog.showModal();
-    }
-    function downloadPdf(){
-      const file=currentPdfFile();
-      const link=document.createElement('a');
-      link.href=file;
-      link.download=file;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+    async function previewPdf(){
+      const url=pdfUrl('view');
+      if(pdfWarmState!=='ready'){
+        pdfWarmState='opening';
+        updatePdfButtonState();
+        showPdfLoading('preparing');
+        showExportNotice(currentLang==='en'
+          ? 'Preparing PDF… it will open automatically when ready.'
+          : '正在生成 PDF…完成后会自动打开。');
+        try{
+          await warmPdf();
+        }catch(_){
+          showPdfLoading('error');
+          showExportNotice(currentLang==='en'
+            ? 'Background preparation failed; opening and generating now…'
+            : '后台准备失败，正在打开并现场生成…',true);
+        }
+      }else{
+        showExportNotice(currentLang==='en'?'Opening cached PDF…':'正在打开已缓存 PDF…');
+      }
+      pdfWarmState='opening';
+      updatePdfButtonState();
+      showPdfLoading('opening');
+      const opened=window.open(url,'_blank','noopener');
+      if(!opened) location.href=url;
+      setTimeout(()=>{
+        pdfWarmState='ready';
+        updatePdfButtonState();
+        hidePdfLoading();
+      },1200);
     }
     zhBtn && zhBtn.addEventListener('click',()=>setLang('zh'));enBtn && enBtn.addEventListener('click',()=>setLang('en'));
     document.getElementById('overviewBtn').addEventListener('click',setOverview);
     document.getElementById('fullscreenBtn').addEventListener('click',fullscreen);
     document.getElementById('pdfPreviewBtn').addEventListener('click',previewPdf);
-    document.getElementById('pdfDownloadBtn').addEventListener('click',downloadPdf);
+    initPdfWatermarkInput();
+    setTimeout(warmPdf,1200);
     document.getElementById('pdfPreviewClose').addEventListener('click',()=>{
       document.getElementById('pdfPreviewDialog').close();
     });
     document.getElementById('pdfPreviewDialog').addEventListener('close',()=>{
       document.getElementById('pdfPreviewFrame').removeAttribute('src');
+      revokeActivePdfPreview();
     });
     function refit(){
       if(overview)document.body.style.gridTemplateColumns=`repeat(${overviewColumns(viewportSize().width)},1fr)`;
@@ -2237,6 +2522,7 @@
       });
     });
     addEventListener('keydown',e=>{
+      if(e.target&&['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))return;
       const idx=currentIndex();
       if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(idx+1)}
       if(e.key==='ArrowUp'||e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(idx-1)}

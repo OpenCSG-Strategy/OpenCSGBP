@@ -1506,80 +1506,67 @@
 /* Right column - story */
 #slide-14 .founder14-story{
   display:grid;
-  grid-template-rows:85px 130px 85px 50px 1fr;
-  gap:8px;
+  grid-template-rows:auto auto auto 1fr;
+  gap:10px;
   min-width:0;
   min-height:0
 }
 
-/* Hero stats */
-#slide-14 .founder14-hero-stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px
-}
-#slide-14 .founder14-stat{
+/* Lead / one-line intro */
+#slide-14 .founder14-lead{
   display:flex;
-  flex-direction:column;
   align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#23877B,#1A6B60);
-  color:#fff;
-  padding:10px 8px;
-  text-align:center
+  margin:0;
+  padding:12px 16px;
+  border-left:3px solid var(--teal);
+  background:linear-gradient(90deg,#EDF7F5 0%,#FBFCFC 100%);
+  border-radius:0 4px 4px 0
 }
-#slide-14 .founder14-stat strong{
-  font-size:30px;
-  font-weight:800;
-  line-height:1
-}
-#slide-14 .founder14-stat b{
-  font-size:8px;
-  font-weight:500;
-  margin-top:5px;
-  opacity:.95
+#slide-14 .founder14-lead b{
+  display:block;
+  color:#155F56;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.55;
+  letter-spacing:.01em
 }
 
 /* Proof cards */
 #slide-14 .founder14-proof{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  border:1px solid #D8E2E0
+  border:1px solid #D8E2E0;
+  border-radius:4px;
+  overflow:hidden
 }
 #slide-14 .founder14-proof article{
   display:flex;
   flex-direction:column;
-  padding:12px 14px;
+  padding:10px 12px;
   border-right:1px solid #D8E2E0;
   background:#FBFCFC
 }
 #slide-14 .founder14-proof article:last-child{border-right:none}
 #slide-14 .founder14-proof article:first-child{background:#EDF7F5}
-#slide-14 .founder14-proof small{
-  color:#23877B;
-  font-size:7px;
-  font-weight:800;
-  letter-spacing:.1em
-}
 #slide-14 .founder14-proof strong{
-  margin-top:5px;
-  color:#155F56;
-  font-size:18px;
-  font-weight:700;
-  line-height:1
+  color:#23877B;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.05em;
+  font-family:'JetBrains Mono',ui-monospace,monospace
 }
 #slide-14 .founder14-proof b{
   margin-top:4px;
-  color:#243F3A;
-  font-size:9px;
-  font-weight:600;
+  color:#155F56;
+  font-size:11px;
+  font-weight:700;
   line-height:1.3
 }
 #slide-14 .founder14-proof p{
   margin:4px 0 0;
   color:#677570;
   font-size:8px;
-  line-height:1.35
+  line-height:1.4
 }
 
 /* Timeline */
@@ -1637,32 +1624,38 @@
   font-weight:300
 }
 
-/* Governance badges */
-#slide-14 .founder14-governance{
+/* Tags */
+#slide-14 .founder14-tags{
   display:flex;
   flex-direction:column;
-  gap:6px
+  gap:6px;
+  min-height:0
 }
-#slide-14 .founder14-governance small{
-  color:#667;
+#slide-14 .founder14-tags small{
+  color:#697472;
   font-size:7px;
   font-weight:700;
-  letter-spacing:.1em
+  letter-spacing:.12em
 }
-#slide-14 .founder14-gov-badges{
+#slide-14 .founder14-tag-list{
   display:flex;
   flex-wrap:wrap;
   gap:6px
 }
-#slide-14 .founder14-gov-badges span{
+#slide-14 .founder14-tag-list span{
   display:inline-block;
   padding:4px 10px;
   background:#EDF7F5;
-  border:1px solid #23877B;
+  border:1px solid #BDD3CF;
   color:#155F56;
-  font-size:8px;
+  font-size:8.5px;
   font-weight:600;
-  border-radius:20px
+  border-radius:20px;
+  white-space:nowrap
+}
+#slide-14 .founder14-tag-list span:hover{
+  background:#E0F0EC;
+  border-color:#23877B
 }
 
 /* Team section */

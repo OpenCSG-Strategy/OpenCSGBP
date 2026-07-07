@@ -1,0 +1,130 @@
+/* 2026-07-07 · Slide 07 — standard content page, focused hierarchy
+   Goal:
+   - Drop the cover-page hero chrome.
+   - Use the same slim page chrome as slide 02–06 (logo + section + title + content + foot).
+   - Let ONE large illustration carry the visual weight (no boxes-of-text).
+   - Three short capability points sit on the side, proof line below.
+   This file supersedes the previous hero-style rebuild. */
+
+#slide-07{
+  background:#FBFCFC;
+}
+
+/* Layout: image area 75% + side text area 25%.
+   Proof line spans the bottom.
+   IMPORTANT: beat the older .case7-layout overrides in deck-visual-polish-20260706.css. */
+#slide-07 .case7-layout{
+  position:absolute!important;
+  left:78px!important;
+  right:78px!important;
+  top:194px!important;
+  bottom:62px!important;
+  height:auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,2.8fr) minmax(240px,1fr)!important;
+  grid-template-rows:minmax(0,1fr) auto!important;
+  grid-template-areas:
+    "hero points"
+    "proof proof"!important;
+  column-gap:30px;
+  row-gap:14px!important;
+  gap:14px!important;
+}
+
+/* Hero illustration: stretch in remaining space */
+#slide-07 .case7-hero{
+  grid-area:hero!important;
+  position:relative;
+  min-width:0;
+  min-height:0;
+  display:flex!important;
+  align-items:stretch;
+  justify-content:center;
+  background:#F4F9F7;
+  border:1px solid #DDE6E3;
+  overflow:hidden;
+}
+#slide-07 .case7-hero img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  object-fit:contain!important;
+  -o-object-fit:contain!important;
+  object-position:center;
+  display:block;
+}
+#slide-07 .case7-hero-caption{
+  position:absolute;
+  left:18px;
+  bottom:12px;
+  font-size:9.5px;
+  letter-spacing:.3em;
+  color:#7C8B89;
+  font-weight:700;
+}
+
+/* Three short capability points — plain text, no boxes. */
+#slide-07 .case7-three-points{
+  grid-area:points;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:18px;
+  border-left:1px solid #DDE6E3;
+  padding-left:24px;
+}
+#slide-07 .case7-three-points>div{min-width:0}
+#slide-07 .case7-three-points b{
+  display:block;
+  color:#155247;
+  font-size:14.5px;
+  font-weight:800;
+  letter-spacing:.02em;
+  margin-bottom:6px;
+}
+#slide-07 .case7-three-points p{
+  margin:0;
+  color:#42504D;
+  font-size:12.5px;
+  line-height:1.55;
+}
+
+/* Proof line: single horizontal strip, no boxes */
+#slide-07 .case7-proof{
+  grid-area:proof;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:13px 18px;
+  border-top:3px solid var(--teal);
+  background:#F1F7F5;
+}
+#slide-07 .case7-proof-tag{
+  flex:none;
+  display:inline-block;
+  padding:5px 10px;
+  background:var(--teal);
+  color:#fff;
+  font-size:10.5px;
+  font-weight:800;
+  letter-spacing:.18em;
+  border-radius:2px;
+}
+#slide-07 .case7-proof b{
+  font-size:14px;
+  color:#1B3631;
+  font-weight:700;
+  line-height:1.4;
+}
+
+/* English language adjustments */
+.lang-en #slide-07 .case7-three-points b{font-size:13px}
+.lang-en #slide-07 .case7-three-points p{font-size:11.5px;line-height:1.5}
+.lang-en #slide-07 .case7-proof b{font-size:13px;line-height:1.38}
+
+/* Hide hero/cover residue from the previous iteration */
+#slide-07 .case7-cover-title,
+#slide-07 .case7-cover-visual,
+#slide-07 .case7-cover-meta,
+#slide-07 .grid-bg,
+#slide-07 .cover-bp{display:none!important}

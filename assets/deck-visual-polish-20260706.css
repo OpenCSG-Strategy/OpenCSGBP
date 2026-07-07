@@ -1,0 +1,547 @@
+/* 2026-07-06 · Visual polish
+   Scoped corrections for stage chrome, dense slides and under-filled cards.
+   This file is intentionally loaded last. */
+
+/* --------------------------------------------------------------------------
+   Stage chrome: controls live outside the 16:9 canvas instead of covering it.
+   -------------------------------------------------------------------------- */
+body.deck-chrome{
+  background:#E8ECEB;
+}
+body.deck-chrome:not(.stacked-stage):not(.overview-mode) .slide{
+  top:var(--deck-stage-center,50%)!important;
+}
+body.deck-chrome.stacked-stage{
+  padding-top:52px!important;
+}
+body.deck-chrome.stacked-stage .slide{
+  top:10px!important;
+}
+body.stacked-stage .toolbar{
+  position:absolute!important;
+  left:50%!important;
+  right:auto!important;
+  top:8px!important;
+  width:max-content!important;
+  height:auto!important;
+  margin-left:0!important;
+  transform:translateX(-50%)!important;
+}
+.toolbar{
+  top:8px!important;
+  border-color:rgba(166,181,177,.72)!important;
+  border-radius:9px!important;
+  overflow:visible;
+  box-shadow:0 8px 24px rgba(20,45,40,.11);
+}
+.toolbar button,
+.toolbar .lang-current{
+  min-height:36px;
+}
+.nav{
+  right:18px!important;
+  top:8px!important;
+  bottom:auto!important;
+  padding:7px 11px!important;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:8px;
+  box-shadow:0 8px 22px rgba(17,24,23,.14);
+}
+body.pseudo-fullscreen .toolbar,
+body.pseudo-fullscreen .nav,
+:fullscreen .toolbar,
+:fullscreen .nav{
+  display:none!important;
+}
+body.pseudo-fullscreen .slide,
+:fullscreen .slide{
+  top:50%!important;
+}
+body.stacked-stage .nav{
+  display:none;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 01: the late inline overlap guard was clipping the complete promise.
+   -------------------------------------------------------------------------- */
+#slide-01 .cover-title{
+  width:650px!important;
+  z-index:3;
+}
+#slide-01 .cover-title h2{
+  max-width:640px!important;
+  overflow:visible!important;
+  white-space:normal!important;
+  word-break:normal;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 03: keep the five-stage evidence readable after browser scaling.
+   -------------------------------------------------------------------------- */
+#slide-03 .evo3-modern{
+  inset:170px 78px 66px!important;
+  grid-template-rows:minmax(0,1fr) 154px 48px!important;
+}
+#slide-03 .evo3-evidence{
+  grid-template-columns:236px minmax(0,1fr)!important;
+}
+#slide-03 .evo3-evidence>header small{
+  font-size:10px!important;
+}
+#slide-03 .evo3-evidence>header b{
+  font-size:15px!important;
+}
+#slide-03 .evo3-evidence>header p{
+  font-size:9.5px!important;
+  line-height:1.35!important;
+}
+#slide-03 .evo3-timeline{
+  padding:12px 10px 9px!important;
+}
+#slide-03 .evo3-timeline article{
+  grid-template-rows:28px 18px 24px minmax(0,1fr)!important;
+}
+#slide-03 .evo3-timeline article :is(small,span){
+  font-size:8px!important;
+}
+#slide-03 .evo3-timeline article b{
+  font-size:10.5px!important;
+}
+#slide-03 .evo3-timeline article p{
+  font-size:8.5px!important;
+  line-height:1.3!important;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 04: increase labels without disturbing the official lifecycle map.
+   -------------------------------------------------------------------------- */
+#slide-04 .official-step-card{
+  height:92px!important;
+}
+#slide-04 .official-step-card .osc-step{
+  font-size:8.5px!important;
+}
+#slide-04 .official-step-card b{
+  font-size:12px!important;
+  line-height:1.2!important;
+}
+#slide-04 .official-step-card small{
+  font-size:9px!important;
+  line-height:1.24!important;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 05: remove real overlaps and rebalance customers / regional network.
+   -------------------------------------------------------------------------- */
+#slide-05 .customer-portfolio{
+  grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr)!important;
+  gap:12px!important;
+}
+#slide-05 .customer-priority{
+  grid-template-columns:1.65fr repeat(4,1fr)!important;
+}
+#slide-05 .regional-network.live-sites{
+  grid-template-columns:44% minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,1fr) auto auto auto!important;
+  grid-template-areas:
+    "map iframe"
+    "tabs tabs"
+    "headline headline"
+    "copy copy"!important;
+  gap:5px 7px!important;
+  padding:8px 9px 9px!important;
+}
+#slide-05 .live-sites .regional-map,
+#slide-05 .live-site-iframe-wrap{
+  min-height:0!important;
+  height:auto!important;
+}
+#slide-05 .live-site-iframe{
+  height:calc(100% - 18px)!important;
+  margin-top:18px!important;
+}
+#slide-05 .live-sites>b{
+  grid-area:headline!important;
+  margin:2px 0 0!important;
+  font-size:12px!important;
+  line-height:1.25!important;
+}
+#slide-05 .live-sites>p{
+  grid-area:copy!important;
+  margin:0!important;
+  font-size:9.5px!important;
+  line-height:1.32!important;
+}
+#slide-05 .live-tab{
+  padding:4px 7px!important;
+}
+#slide-05 .live-tab b{
+  font-size:9px!important;
+}
+#slide-05 .live-tab small{
+  font-size:7.5px!important;
+}
+#slide-05 .live-sites .city-pin{
+  font-size:9px!important;
+  padding:3px 5px 3px 12px!important;
+}
+#slide-05 .live-sites .city-pin.live-pin.active{
+  font-size:9.5px!important;
+}
+#slide-05 .city-pin.yichang{left:54%;top:48%}
+#slide-05 .city-pin.chongqing{left:37%;top:57%}
+#slide-05 .city-pin.leshan{left:28%;top:67%}
+#slide-05 .priority-account>span{
+  font-size:8px!important;
+}
+#slide-05 .priority-account small{
+  font-size:9px!important;
+}
+#slide-05 .supporting-label b{
+  font-size:10px!important;
+}
+#slide-05 .customer-wordmarks b{
+  font-size:11px!important;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 07: keep the cards purposeful instead of stretching four short rows.
+   -------------------------------------------------------------------------- */
+#slide-07 .case7-layout{
+  top:190px!important;
+  height:560px!important;
+  grid-template-rows:136px 96px 300px!important;
+  gap:14px!important;
+}
+#slide-07 .case7-capabilities b{
+  font-size:13px!important;
+}
+#slide-07 .case7-capabilities p{
+  font-size:10.5px!important;
+}
+#slide-07 .case7-card{
+  grid-template-rows:68px 82px 82px 68px!important;
+}
+#slide-07 .case7-card header h3{
+  font-size:17px!important;
+}
+#slide-07 .case7-card>div p,
+#slide-07 .case7-card footer p{
+  font-size:13px!important;
+  line-height:1.4!important;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 09: show the readable production loop first; full stack stays a tab.
+   -------------------------------------------------------------------------- */
+#slide-09 .arch9-tabs button{
+  min-width:150px;
+  padding:8px 14px;
+  font-size:10.5px;
+}
+#slide-09 .arch9-tabs{
+  top:148px!important;
+}
+#slide-09 .edge-production-view{
+  top:190px!important;
+  bottom:68px!important;
+  height:auto!important;
+  grid-template-rows:300px 56px minmax(0,1fr)!important;
+  gap:10px!important;
+}
+#slide-09 .edge-device-grid article b,
+#slide-09 .edge-control-plane span,
+#slide-09 .edge-pipeline article b{
+  font-size:12px!important;
+}
+#slide-09 .edge-device-grid article span,
+#slide-09 .edge-production-view small{
+  font-size:9px!important;
+}
+#slide-09 .edge-dataflow header span,
+#slide-09 .edge-production-data p{
+  font-size:10.5px!important;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 12: keep the business-model story, remove micro-copy from logo tiles.
+   -------------------------------------------------------------------------- */
+#slide-12 .open12-reframed{
+  top:184px!important;
+  grid-template-rows:minmax(0,1fr) 188px!important;
+}
+#slide-12 .oc12-edition-story>header{
+  padding:14px 18px 12px;
+}
+#slide-12 .oc12-edition-story>header small{
+  font-size:10px;
+}
+#slide-12 .oc12-edition-story>header p,
+#slide-12 .oc12-editions article>p{
+  font-size:11.5px;
+}
+#slide-12 .oc12-editions{
+  grid-template-columns:1fr 76px 1fr;
+  padding:14px 16px 12px;
+}
+#slide-12 .oc12-editions li{
+  font-size:10.5px;
+  line-height:1.35;
+}
+#slide-12 .oc12-upgrade span{
+  display:none;
+}
+#slide-12 .oc12-shared span{
+  font-size:9px;
+}
+#slide-12 .oc12-benchmarks>header{
+  padding:13px 15px 10px;
+}
+#slide-12 .oc12-benchmarks header small{
+  font-size:9px;
+}
+#slide-12 .oc12-benchmarks header p{
+  font-size:10px;
+}
+#slide-12 .oc12-brand-grid{
+  gap:6px;
+  padding:8px 10px;
+}
+#slide-12 .oc12-brand-grid article{
+  min-height:38px;
+  padding:5px 7px;
+}
+#slide-12 .oc12-brand-grid img{
+  width:23px;
+  height:23px;
+  flex-basis:23px;
+}
+#slide-12 .oc12-brand-grid b{
+  font-size:10.5px;
+  white-space:normal;
+}
+#slide-12 .oc12-brand-grid span{
+  display:none!important;
+}
+#slide-12 .oc12-proof-strip{
+  min-height:34px;
+}
+#slide-12 .oc12-proof-strip a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#slide-12 .oc12-proof-strip b{
+  font-size:11.5px;
+}
+#slide-12 .oc12-proof-strip span{
+  display:none;
+}
+#slide-12 .oc12-boundary b,
+#slide-12 .oc12-boundary span{
+  font-size:10.5px;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 14: remove the hollow five-card row and restore readable hierarchy.
+   -------------------------------------------------------------------------- */
+#slide-14 .founder14-story{
+  grid-template-rows:85px 132px 82px 50px minmax(0,1fr);
+}
+#slide-14 .founder14-stat b{
+  font-size:9.5px;
+}
+#slide-14 .founder14-proof small{
+  font-size:8px;
+}
+#slide-14 .founder14-proof b{
+  font-size:10px;
+}
+#slide-14 .founder14-proof p{
+  font-size:9px;
+}
+#slide-14 .founder14-tl-item small{
+  font-size:7.5px;
+}
+#slide-14 .founder14-governance small{
+  font-size:8px;
+}
+#slide-14 .founder14-gov-badges span{
+  font-size:9px;
+}
+#slide-14 .founder14-team-head>b{
+  font-size:11px;
+}
+#slide-14 .founder14-team-head>span{
+  font-size:8.5px;
+}
+#slide-14 .founder14-team-grid{
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+#slide-14 .founder14-team-grid article:nth-child(1){grid-column:1/span 2}
+#slide-14 .founder14-team-grid article:nth-child(2){grid-column:3/span 2}
+#slide-14 .founder14-team-grid article:nth-child(3){grid-column:5/span 2}
+#slide-14 .founder14-team-grid article:nth-child(4){grid-column:2/span 2}
+#slide-14 .founder14-team-grid article:nth-child(5){grid-column:4/span 2}
+#slide-14 .founder14-team-grid article{
+  justify-content:center;
+  padding:10px 14px;
+  border-top:2px solid #C8DDD8;
+  background:linear-gradient(180deg,#FFFFFF,#F7FAF9);
+}
+#slide-14 .founder14-team-grid article>span{
+  font-size:9px;
+}
+#slide-14 .founder14-team-grid b{
+  font-size:13px;
+}
+#slide-14 .founder14-team-grid b em{
+  display:inline;
+  font-size:9px;
+}
+#slide-14 .founder14-team-grid p{
+  flex:none;
+  overflow:visible;
+  font-size:9.5px;
+  line-height:1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 23: vertically balance short copy inside fixed-height cards.
+   -------------------------------------------------------------------------- */
+#slide-23 .app-stage{
+  top:190px!important;
+  height:604px!important;
+}
+#slide-23 .app-sol{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:20px 24px;
+}
+#slide-23 .app-sol b{
+  font-size:19px;
+}
+#slide-23 .app-sol p{
+  font-size:14px;
+}
+#slide-23 .app-outcomes div{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* --------------------------------------------------------------------------
+   Slides 32–37: use more of the stage and lift the smallest repeated labels.
+   -------------------------------------------------------------------------- */
+#slide-32 .city32,
+#slide-33 .city33,
+#slide-34 .city34,
+#slide-35 .city35,
+#slide-36 .city36,
+#slide-37 .city37{
+  top:198px!important;
+  height:603px!important;
+}
+.city-reframe .app-kicker{
+  font-size:9.5px;
+}
+.city-reframe :is(article>span,article>small){
+  font-size:max(9px,1em);
+}
+#slide-36 .city36{
+  grid-template-rows:84px 196px 50px 186px 55px;
+}
+#slide-37 .city37{
+  grid-template-rows:166px 170px 178px 65px;
+}
+#slide-32 .c32-blockers article,
+#slide-33 .c33-partners article,
+#slide-33 .c33-outcomes article,
+#slide-35 .c35-triangle article,
+#slide-35 .c35-services article{
+  justify-content:center;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 38: keep the brand out of the dark panel and clear the headline rule.
+   -------------------------------------------------------------------------- */
+#slide-38>.brand{
+  left:72px!important;
+  right:auto!important;
+  top:48px!important;
+  bottom:auto!important;
+  width:145px!important;
+  height:auto!important;
+  z-index:6!important;
+}
+#slide-38 .closing-left:after{
+  top:204px;
+  z-index:0;
+}
+#slide-38 .closing-left :is(.label,h2,.closing-lead,.closing-pillars,.closing-contact){
+  position:relative;
+  z-index:1;
+}
+#slide-38 .closing-ai-ghost{
+  right:22px;
+  top:70px;
+  font-size:250px;
+  letter-spacing:-.08em;
+}
+#slide-38 .closing-command-tags{
+  top:58px;
+  z-index:2;
+}
+#slide-38 .foot-wechat-pop{
+  z-index:20;
+}
+
+@media print{
+  body .slide,
+  body.deck-chrome .slide,
+  body.deck-chrome.stacked-stage .slide{
+    top:50%!important;
+  }
+  .toolbar,.nav{display:none!important}
+
+  #slide-04 .official-map-base,
+  #slide-04 .official-step-card,
+  #slide-04 .official-step-card:before,
+  #slide-04 .official-step-card:after{
+    animation:none!important;
+    transition:none!important;
+  }
+  #slide-04 .official-step-card{
+    opacity:1!important;
+    transform:none!important;
+  }
+
+  #slide-05 .regional-network.live-sites{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:minmax(0,1fr) auto auto!important;
+    grid-template-areas:
+      "map"
+      "headline"
+      "copy"!important;
+    gap:5px!important;
+    padding:8px 10px 9px!important;
+  }
+  #slide-05 .live-sites .regional-map{
+    grid-area:map!important;
+    min-height:0!important;
+  }
+  #slide-05 .live-sites>b{
+    display:block!important;
+    grid-area:headline!important;
+    font-size:12px!important;
+  }
+  #slide-05 .live-sites>p{
+    display:block!important;
+    grid-area:copy!important;
+    font-size:9px!important;
+  }
+}

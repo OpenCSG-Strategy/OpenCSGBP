@@ -1,0 +1,410 @@
+/* ====================================================================
+   Slide 14 — Founder & Team
+   Clean Silicon Valley / Sequoia / a16z-style founder page.
+   White background, generous whitespace, big typography, one accent rule.
+   ==================================================================== */
+
+/* ---- Override slide-14 title size for one-liner --------------------- */
+#slide-14 .title{
+  font-size:30px;
+  line-height:1.2;
+  max-width:1100px
+}
+
+/* ---- Page layout shell ----------------------------------------------- */
+#slide-14 .founder14-layout{
+  position:absolute;
+  left:78px;
+  right:78px;
+  top:188px;
+  bottom:78px;
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:48px;
+  min-height:0;
+  align-items:stretch
+}
+
+/* ---- LEFT: founder hero --------------------------------------------- */
+#slide-14 .founder14-hero{
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  border-top:3px solid var(--teal);
+  padding-top:18px;
+  position:relative
+}
+
+#slide-14 .founder14-portrait{
+  position:relative;
+  flex:0 0 auto;
+  width:100%;
+  height:340px;
+  background:#DDE5E3;
+  overflow:hidden
+}
+#slide-14 .founder14-portrait img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 30%;
+  filter:grayscale(.04) contrast(1.02)
+}
+
+#slide-14 .founder14-id{
+  display:flex;
+  flex-direction:column;
+  padding:18px 0 0;
+  min-height:0;
+  flex:1
+}
+#slide-14 .founder14-name{
+  display:block;
+  color:#0F2722;
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:-.025em;
+  line-height:1.1
+}
+#slide-14 .founder14-name em{
+  display:inline-block;
+  margin-left:10px;
+  font-style:normal;
+  font-weight:500;
+  font-size:16px;
+  color:#7C8785;
+  letter-spacing:0
+}
+#slide-14 .founder14-role{
+  display:block;
+  margin-top:6px;
+  color:var(--teal2);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.04em
+}
+#slide-14 .founder14-prev{
+  display:block;
+  margin-top:3px;
+  color:#677570;
+  font-size:11px;
+  line-height:1.5
+}
+#slide-14 .founder14-meta{
+  margin-top:auto;
+  padding-top:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px
+}
+#slide-14 .founder14-meta > div{
+  display:flex;
+  flex-direction:column;
+  gap:4px
+}
+#slide-14 .founder14-meta small{
+  color:#9AA6A4;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em
+}
+#slide-14 .founder14-meta b{
+  color:#1A2E2A;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.45
+}
+
+/* ---- RIGHT: narrative ----------------------------------------------- */
+#slide-14 .founder14-right{
+  display:grid;
+  grid-template-rows:auto auto auto auto auto auto;
+  gap:14px;
+  min-height:0;
+  min-width:0
+}
+
+/* Lead paragraph */
+#slide-14 .founder14-lead{
+  display:flex;
+  align-items:flex-start;
+  padding:2px 0 14px;
+  border-bottom:1px solid #D8E2E0;
+  border-left:0;
+  margin-left:0;
+  min-height:0
+}
+#slide-14 .founder14-lead b{
+  display:block;
+  color:#0F2722;
+  font-size:17px;
+  font-weight:500;
+  line-height:1.5;
+  letter-spacing:-.01em;
+  padding-left:0
+}
+
+/* Big stat row */
+#slide-14 .founder14-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-top:1px solid #D8E2E0;
+  border-bottom:1px solid #D8E2E0
+}
+#slide-14 .founder14-stats > div{
+  display:flex;
+  flex-direction:column;
+  padding:14px 16px 12px;
+  border-right:1px solid #D8E2E0
+}
+#slide-14 .founder14-stats > div:last-child{border-right:none}
+#slide-14 .founder14-stats strong{
+  color:#0F2722;
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:-.03em;
+  line-height:1;
+  font-family:'Inter','Helvetica Neue',Arial,sans-serif;
+  font-variant-numeric:tabular-nums
+}
+#slide-14 .founder14-stats span{
+  margin-top:6px;
+  color:#677570;
+  font-size:11px;
+  line-height:1.45
+}
+
+/* Career path (horizontal step list) */
+#slide-14 .founder14-path{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0
+}
+#slide-14 .founder14-path small{
+  color:#9AA6A4;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em
+}
+#slide-14 .founder14-path ol{
+  list-style:none;
+  margin:0;
+  padding:0 0 0 2px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  position:relative;
+  align-items:stretch
+}
+#slide-14 .founder14-path li{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:4px 14px 4px 18px;
+  border-left:1px solid #E2E9E7;
+  position:relative;
+  min-width:0
+}
+#slide-14 .founder14-path li:first-child{
+  border-left:1px solid #0F2722
+}
+#slide-14 .founder14-path li::before{
+  content:"";
+  position:absolute;
+  left:-5px;
+  top:8px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#fff;
+  border:2px solid #C7D1CF
+  flex-shrink:0;
+}
+#slide-14 .founder14-path li:first-child::before{
+  background:#0F2722;
+  border-color:#0F2722
+}
+#slide-14 .founder14-path li b{
+  color:#0F2722;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.2;
+  white-space:nowrap
+}
+#slide-14 .founder14-path li span{
+  color:#7C8785;
+  font-size:10px;
+  line-height:1.4;
+  white-space:nowrap
+}
+#slide-14 .founder14-path li.hi b{color:var(--teal2)}
+#slide-14 .founder14-path li.hi::before{
+  background:var(--teal);
+  border-color:var(--teal)
+}
+#slide-14 .founder14-path li.now b{color:#0F2722}
+#slide-14 .founder14-path li.now::before{
+  background:#fff;
+  border:2px solid var(--teal);
+  box-shadow:0 0 0 3px #EDF7F5
+}
+
+/* Previous brand logos (single row, monochrome) */
+#slide-14 .founder14-brands{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0
+}
+#slide-14 .founder14-brands small{
+  color:#9AA6A4;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em
+}
+#slide-14 .founder14-brands ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  align-items:center;
+  gap:36px;
+  flex-wrap:wrap;
+  height:32px
+}
+#slide-14 .founder14-brands li{
+  display:flex;
+  align-items:center;
+  height:32px
+}
+#slide-14 .founder14-brands img{
+  display:block;
+  height:30px;
+  width:auto;
+  max-width:110px;
+  opacity:1;
+  filter:contrast(.95);
+  transition:opacity .2s ease, filter .2s ease;
+  object-fit:contain
+}
+#slide-14 .founder14-brands img:hover{
+  opacity:1;
+  filter:none
+}
+
+/* Core team — horizontal 5-up grid */
+#slide-14 .founder14-team{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:0
+}
+#slide-14 .founder14-team header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:1px solid #D8E2E0;
+  padding-top:12px;
+  gap:16px
+}
+#slide-14 .founder14-team header small{
+  color:#0F2722;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.04em;
+  flex-shrink:0
+}
+#slide-14 .founder14-team header span{
+  color:#9AA6A4;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-align:right
+}
+#slide-14 .founder14-team ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  min-height:0
+}
+#slide-14 .founder14-team li{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding:2px 14px 2px 0;
+  border-right:1px solid #E2E9E7;
+  padding-right:14px
+}
+#slide-14 .founder14-team li:last-child{border-right:none}
+#slide-14 .founder14-team b{
+  color:#9AA6A4;
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.16em
+}
+#slide-14 .founder14-team p{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:3px
+}
+#slide-14 .founder14-team p em{
+  font-style:normal;
+  color:#0F2722;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.2
+}
+#slide-14 .founder14-team p i{
+  font-style:normal;
+  color:#7C8785;
+  font-size:9.5px;
+  line-height:1.4
+}
+
+/* Tags — pill row */
+#slide-14 .founder14-tags{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height:0;
+  padding-top:4px
+}
+#slide-14 .founder14-tags small{
+  color:#9AA6A4;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em
+}
+#slide-14 .founder14-tags ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px
+}
+#slide-14 .founder14-tags li{
+  display:inline-block;
+  padding:5px 11px;
+  background:#F2F5F4;
+  border:1px solid #D8E2E0;
+  color:#3D4D49;
+  font-size:10.5px;
+  font-weight:500;
+  border-radius:999px;
+  white-space:nowrap;
+  letter-spacing:.01em;
+  line-height:1.2
+}
+#slide-14 .founder14-tags li:hover{
+  background:#EDF7F5;
+  border-color:var(--teal);
+  color:var(--teal2)
+}

@@ -1,0 +1,648 @@
+{
+  "_meta": {
+    "purpose": "为 8 国语言补全 65 个真正缺的短语。key=英文源文（已 decode），value=对应语言翻译。",
+    "note": "对每条短语我们保留品牌名不译（OpenCSG、CSGHub、CSGHub-Lite、CSGClaw、AgenticHub、AgenticOps、OPC、OpenCore、DevOps、GitLab、Mesosphere、IBM、HP、EleutherAI、YC、Beihang、Wharton、Stanford、MIIT、CAICT、CALB、CATL、miHoYo、Bilibili、D2iQ、Kunlun、Amazon、Letv、Tencent、WuXi AppTec、Kaya Medical、Paradise Ventures、Fanta、Wharton MBA 等）"
+  },
+  "TRANSLATIONS": {
+    "DOWNLOAD WATERMARKED PDF": {
+      "ja": "ウォーターマーク付き PDF をダウンロード",
+      "ko": "워터마크 PDF 다운로드",
+      "ar": "تنزيل PDF بعلامة مائية",
+      "ru": "Скачать PDF с водяным знаком",
+      "fr": "Télécharger le PDF filigrané",
+      "de": "Wasserzeichen-PDF herunterladen",
+      "es": "Descargar PDF con marca de agua",
+      "pt": "Baixar PDF com marca d'água"
+    },
+    "EXPORT DECK": {
+      "ja": "デッキを書き出し",
+      "ko": "덱 내보내기",
+      "ar": "تصدير المجموعة",
+      "ru": "Экспорт презентации",
+      "fr": "Exporter le deck",
+      "de": "Deck exportieren",
+      "es": "Exportar presentación",
+      "pt": "Exportar apresentação"
+    },
+    "RANGE": {
+      "ja": "範囲",
+      "ko": "범위",
+      "ar": "النطاق",
+      "ru": "Диапазон",
+      "fr": "Plage",
+      "de": "Bereich",
+      "es": "Rango",
+      "pt": "Intervalo"
+    },
+    "INVESTOR": {
+      "ja": "投資家向け",
+      "ko": "투자자용",
+      "ar": "المستثمر",
+      "ru": "Инвестор",
+      "fr": "Investisseur",
+      "de": "Investor",
+      "es": "Inversor",
+      "pt": "Investidor"
+    },
+    "CURRENT": {
+      "ja": "現在のページ",
+      "ko": "현재 페이지",
+      "ar": "الصفحة الحالية",
+      "ru": "Текущая",
+      "fr": "Page actuelle",
+      "de": "Aktuelle Seite",
+      "es": "Página actual",
+      "pt": "Página atual"
+    },
+    "RATIO": {
+      "ja": "比率",
+      "ko": "비율",
+      "ar": "النسبة",
+      "ru": "Соотношение",
+      "fr": "Ratio",
+      "de": "Seitenverhältnis",
+      "es": "Proporción",
+      "pt": "Proporção"
+    },
+    "GENERATE & DOWNLOAD": {
+      "ja": "生成してダウンロード",
+      "ko": "생성 및 다운로드",
+      "ar": "إنشاء وتنزيل",
+      "ru": "Создать и скачать",
+      "fr": "Générer et télécharger",
+      "de": "Erstellen und herunterladen",
+      "es": "Generar y descargar",
+      "pt": "Gerar e baixar"
+    },
+    "Empowering everyone with large models.": {
+      "ja": "すべての人に大規模モデルの力を。",
+      "ko": "모든 사람에게 대규모 모델의 힘을.",
+      "ar": "تمكين الجميع بالنماذج الكبيرة.",
+      "ru": "Дать большие модели в руки каждому.",
+      "fr": "Donner à chacun la puissance des grands modèles.",
+      "de": "Große Modelle für alle.",
+      "es": "Llevar el poder de los grandes modelos a cada persona.",
+      "pt": "Levando o poder dos grandes modelos a cada pessoa."
+    },
+    "Enterprises don't need another model endpoint—they need an AI control layer, from pilot to production": {
+      "ja": "企業に必要なのはもう一つのモデルエンドポイントではなく、パイロットから本番までを担う AI 制御層です",
+      "ko": "기업에 필요한 것은 또 하나의 모델 엔드포인트가 아니라 파일럿부터 운영까지 아우르는 AI 제어 계층입니다",
+      "ar": "الشركات لا تحتاج إلى نقطة نهاية نموذج أخرى — بل إلى طبقة تحكم بالذكاء الاصطناعي من التجربة إلى الإنتاج",
+      "ru": "Компаниям не нужна ещё одна точка доступа к модели — нужен уровень управления ИИ от пилота до промышленной эксплуатации",
+      "fr": "Les entreprises n'ont pas besoin d'un point d'accès supplémentaire à un modèle — elles ont besoin d'une couche de contrôle IA, du pilote à la production",
+      "de": "Unternehmen brauchen keinen weiteren Modell-Endpunkt, sondern eine KI-Steuerungsschicht vom Pilot bis zur Produktion",
+      "es": "Las empresas no necesitan otro punto de acceso a un modelo: necesitan una capa de control de IA, del piloto a la producción",
+      "pt": "As empresas não precisam de mais um endpoint de modelo — precisam de uma camada de controle de IA, do piloto à produção"
+    },
+    "01 · Pilot → Production": {
+      "ja": "01 · パイロット → 本番",
+      "ko": "01 · 파일럿 → 운영",
+      "ar": "01 · التجربة ← الإنتاج",
+      "ru": "01 · Пилот → Промышленная эксплуатация",
+      "fr": "01 · Pilote → Production",
+      "de": "01 · Pilot → Produktion",
+      "es": "01 · Piloto → Producción",
+      "pt": "01 · Piloto → Produção"
+    },
+    "Govern, secure and continuously operate AI in real production.": {
+      "ja": "本番運用で AI をガバナンスし、安全を確保し、継続的に運用します。",
+      "ko": "실제 운영 환경에서 AI를 거버넌스하고, 안전하게 보호하며, 지속적으로 운영합니다.",
+      "ar": "إدارة وتأمين وتشغيل الذكاء الاصطناعي بشكل مستمر في بيئة الإنتاج الحقيقية.",
+      "ru": "Управляйте, защищайте и непрерывно эксплуатируйте ИИ в реальной промышленной среде.",
+      "fr": "Gouvernez, sécurisez et exploitez en continu l'IA en production réelle.",
+      "de": "KI in der realen Produktion steuern, absichern und kontinuierlich betreiben.",
+      "es": "Gobierna, asegura y opera continuamente la IA en producción real.",
+      "pt": "Governar, proteger e operar continuamente a IA em produção real."
+    },
+    "02 · Private & Sovereign": {
+      "ja": "02 · プライベート & 主権",
+      "ko": "02 · 프라이빗 &主权",
+      "ar": "02 · خاصة وسيادية",
+      "ru": "02 · Частное и суверенное",
+      "fr": "02 · Privé & Souverain",
+      "de": "02 · Privat & Souverän",
+      "es": "02 · Privado y soberano",
+      "pt": "02 · Privado & Soberano"
+    },
+    "Private cloud, on-premise and air-gapped—data never has to leave.": {
+      "ja": "プライベートクラウド、オンプレ、エアギャップに対応。データが外部に出ることはありません。",
+      "ko": "프라이빗 클라우드, 온프레미스, 에어갭 환경 지원 — 데이터가 외부로 나갈 필요가 없습니다.",
+      "ar": "سحابة خاصة، داخل المؤسسة، ومعزولة — لا حاجة لمغادرة البيانات.",
+      "ru": "Частное облако, локальная инфраструктура и изолированные среды — данные никогда не покидают периметр.",
+      "fr": "Cloud privé, sur site et air-gap — les données ne quittent jamais le périmètre.",
+      "de": "Private Cloud, On-Premise und Air-Gap – Daten müssen das Netzwerk nie verlassen.",
+      "es": "Nube privada, on-premise y air-gapped: los datos nunca tienen que salir.",
+      "pt": "Nuvem privada, on-premise e air-gapped — os dados nunca precisam sair."
+    },
+    "03 · Agentic Lifecycle": {
+      "ja": "03 · Agentic ライフサイクル",
+      "ko": "03 · Agentic 라이프사이클",
+      "ar": "03 · دورة حياة الوكيل",
+      "ru": "03 · Жизненный цикл Agentic",
+      "fr": "03 · Cycle de vie Agentic",
+      "de": "03 · Agentic-Lebenszyklus",
+      "es": "03 · Ciclo de vida Agentic",
+      "pt": "03 · Ciclo de vida Agentic"
+    },
+    "Build, release, monitor and improve—models, data, prompts, MCP and agents in one loop.": {
+      "ja": "モデル、データ、プロンプト、MCP、Agent を 1 つのループで構築・リリース・監視・改善。",
+      "ko": "모델, 데이터, 프롬프트, MCP, Agent를 하나의 루프로 구축·릴리스·모니터링·개선.",
+      "ar": "بناء وإصدار ومراقبة وتحسين النماذج والبيانات والمطالبات وMCP والوكلاء في حلقة واحدة.",
+      "ru": "Создавайте, выпускайте, отслеживайте и улучшайте модели, данные, промпты, MCP и агентов в одном цикле.",
+      "fr": "Construire, publier, surveiller et améliorer — modèles, données, prompts, MCP et agents dans une seule boucle.",
+      "de": "Bauen, veröffentlichen, überwachen und verbessern – Modelle, Daten, Prompts, MCP und Agents in einem Kreislauf.",
+      "es": "Construir, publicar, monitorizar y mejorar — modelos, datos, prompts, MCP y agentes en un único ciclo.",
+      "pt": "Construir, publicar, monitorar e melhorar — modelos, dados, prompts, MCP e agentes em um único loop."
+    },
+    "CASE · 2026": {
+      "ja": "事例 · 2026",
+      "ko": "사례 · 2026",
+      "ar": "القضية · 2026",
+      "ru": "Кейс · 2026",
+      "fr": "Cas · 2026",
+      "de": "Fall · 2026",
+      "es": "Caso · 2026",
+      "pt": "Caso · 2026"
+    },
+    "Provincial Research Institute: scattered experiments unified into governed AI production, data kept in-domain": {
+      "ja": "省級研究機関：散在していた実験を統合し、データは域内に保持した管理された AI 生産へ",
+      "ko": "성급 연구기관: 산재해 있던 실험을 통합하고 데이터를 도메인 내부에 유지하는 관리형 AI 운영으로 전환",
+      "ar": "معهد أبحاث إقليمي: تجارب متفرقة تم توحيدها إلى إنتاج ذكاء اصطناعي مُدار، مع إبقاء البيانات داخل النطاق",
+      "ru": "Провинциальный НИИ: разрозненные эксперименты объединены в управляемое промышленное ИИ-производство, данные остаются внутри периметра",
+      "fr": "Institut provincial de recherche : des expériences dispersées unifiées dans une production IA gouvernée, données gardées dans le périmètre",
+      "de": "Provinzielles Forschungsinstitut: verstreute Experimente wurden zu einer verwalteten KI-Produktion vereint – Daten bleiben in der Domäne",
+      "es": "Instituto provincial de investigación: experimentos dispersos unificados en producción de IA gobernada, datos dentro del dominio",
+      "pt": "Instituto provincial de pesquisa: experimentos dispersos unificados em produção de IA governada, dados mantidos no domínio"
+    },
+    "From scattered experiments to governed AI production": {
+      "ja": "散在する実験から、管理された AI 生産へ",
+      "ko": "산재한 실험에서 관리형 AI 운영으로",
+      "ar": "من تجارب متفرقة إلى إنتاج ذكاء اصطناعي مُدار",
+      "ru": "От разрозненных экспериментов к управляемому промышленному ИИ",
+      "fr": "D'expériences dispersées à une production IA gouvernée",
+      "de": "Von verstreuten Experimenten zu verwalteter KI-Produktion",
+      "es": "De experimentos dispersos a producción de IA gobernada",
+      "pt": "De experimentos dispersos à produção de IA governada"
+    },
+    "AI is becoming essential infrastructure — a $4.2T global market, with policy-driven sovereign build-out": {
+      "ja": "AI は不可欠なインフラになりつつあります — 4.2 兆ドルのグローバル市場、政策主導の主権 AI 構築が進む",
+      "ko": "AI는 필수 인프라가 되어가고 있습니다 — 4.2조 달러 글로벌 시장, 정책 주도 주권 AI 구축이 진행",
+      "ar": "الذكاء الاصطناعي يصبح بنية تحتية أساسية — سوق عالمي بتريليونات الدولارات، مع بناء سيادي يقوده السياسات",
+      "ru": "ИИ становится критической инфраструктурой — глобальный рынок объёмом $4,2 трлн, движимый политикой суверенный разворот",
+      "fr": "L'IA devient une infrastructure essentielle — un marché mondial de 4 200 Md$, avec une construction souveraine portée par les politiques",
+      "de": "KI wird zur kritischen Infrastruktur – ein globaler Markt von 4,2 Bio. $, mit politisch getriebenem souveränem Aufbau",
+      "es": "La IA se está convirtiendo en infraestructura esencial: un mercado global de 4,2 billones de USD, con construcción soberana impulsada por políticas",
+      "pt": "A IA está se tornando infraestrutura essencial — um mercado global de US$ 4,2 trilhões, com construção soberana guiada por políticas"
+    },
+    "From global AI demand to sovereign build-out, the market is being shaped by three forces: enterprise adoption, national AI factories and policy acceleration.": {
+      "ja": "グローバル AI 需要から主権 AI 構築へ。市場は 3 つの力——企業導入、国家 AI ファクトリー、政策加速——によって形成されています。",
+      "ko": "글로벌 AI 수요에서 주권 AI 구축까지. 시장은 세 가지 힘 — 기업 도입, 국가 AI 팩토리, 정책 가속 — 에 의해 형성됩니다.",
+      "ar": "من الطلب العالمي على الذكاء الاصطناعي إلى البناء السيادي، يتشكل السوق بثلاث قوى: تبني المؤسسات، ومصانع الذكاء الاصطناعي الوطنية، وتسارع السياسات.",
+      "ru": "От глобального спроса на ИИ к суверенному развороту — рынок формируют три силы: корпоративное внедрение, национальные ИИ-фабрики и ускорение политики.",
+      "fr": "De la demande mondiale en IA au déploiement souverain — le marché est façonné par trois forces : adoption par les entreprises, usines nationales d'IA et accélération des politiques.",
+      "de": "Von der globalen KI-Nachfrage zum souveränen Aufbau – drei Kräfte formen den Markt: Enterprise-Adoption, nationale KI-Fabriken und politische Beschleunigung.",
+      "es": "De la demanda global de IA al despliegue soberano: tres fuerzas moldean el mercado: adopción empresarial, fábricas nacionales de IA y aceleración política.",
+      "pt": "Da demanda global por IA à construção soberana — o mercado é moldado por três forças: adoção empresarial, fábricas nacionais de IA e aceleração de políticas."
+    },
+    "Global AI market by 2035": {
+      "ja": "2035 年までのグローバル AI 市場",
+      "ko": "2035년 글로벌 AI 시장",
+      "ar": "سوق الذكاء الاصطناعي العالمي بحلول 2035",
+      "ru": "Глобальный рынок ИИ к 2035 году",
+      "fr": "Marché mondial de l'IA d'ici 2035",
+      "de": "Globaler KI-Markt bis 2035",
+      "es": "Mercado global de IA hacia 2035",
+      "pt": "Mercado global de IA até 2035"
+    },
+    "of orgs already use AI in production": {
+      "ja": "の組織がすでに本番で AI を利用中",
+      "ko": "의 조직이 이미 운영 환경에서 AI 활용 중",
+      "ar": "من المؤسسات تستخدم بالفعل الذكاء الاصطناعي في الإنتاج",
+      "ru": "организаций уже используют ИИ в промышленной эксплуатации",
+      "fr": "des organisations utilisent déjà l'IA en production",
+      "de": "der Organisationen setzen KI bereits produktiv ein",
+      "es": "de las organizaciones ya usan IA en producción",
+      "pt": "das organizações já usam IA em produção"
+    },
+    "regions are building sovereign AI": {
+      "ja": "の地域が主権 AI を構築中",
+      "ko": "의 지역이 주권 AI를 구축 중",
+      "ar": "مناطق تبني ذكاءً اصطناعيًا سياديًا",
+      "ru": "регионов строят суверенный ИИ",
+      "fr": "régions construisent une IA souveraine",
+      "de": "Regionen bauen souveräne KI auf",
+      "es": "regiones están construyendo IA soberana",
+      "pt": "regiões estão construindo IA soberana"
+    },
+    "OPENCSG 2026 BASE-CASE TAM": {
+      "ja": "OpenCSG 2026 ベースケース TAM",
+      "ko": "OpenCSG 2026 기준 시나리오 TAM",
+      "ar": "OpenCSG 2026 سيناريو أساسي لحجم السوق الإجمالي",
+      "ru": "OpenCSG 2026 базовый сценарий TAM",
+      "fr": "TAM du scénario de base OpenCSG 2026",
+      "de": "OpenCSG 2026 Basis-Szenario TAM",
+      "es": "TAM del caso base OpenCSG 2026",
+      "pt": "TAM do caso-base OpenCSG 2026"
+    },
+    "≈ RMB 54B": {
+      "ja": "≈ 540 億元",
+      "ko": "≈ 540억 위안",
+      "ar": "≈ 54 مليار يوان صيني",
+      "ru": "≈ 54 млрд юаней",
+      "fr": "≈ 54 Md¥ RMB",
+      "de": "≈ 54 Mrd. RMB",
+      "es": "≈ 54 mil millones de RMB",
+      "pt": "≈ RMB 54 bilhões"
+    },
+    "Enterprise $4.5B (30K orgs × $150K ACV) + Sovereign / Regional $3.0B (300 platforms × $10M lifecycle). OpenCSG base case, not a third-party forecast.": {
+      "ja": "エンタープライズ 45 億ドル（30,000 組織 × 15 万ドル ACV）＋ 主権/リージョナル 30 億ドル（300 プラットフォーム × 1,000 万ドル ライフサイクル）。OpenCSG ベースケースであり、第三者予測ではありません。",
+      "ko": "엔터프라이즈 45억 달러(30,000 조직 × 15만 달러 ACV) + 주권/지역 30억 달러(300개 플랫폼 × 1,000만 달러 라이프사이클). OpenCSG 기준 시나리오이며 제3자 예측이 아닙니다.",
+      "ar": "المؤسسات 4.5 مليار دولار (30 ألف مؤسسة × 150 ألف دولار ACV) + السيادية/الإقليمية 3 مليار دولار (300 منصة × 10 مليون دولار دورة حياة). سيناريو OpenCSG الأساسي، وليس توقعًا لطرف ثالث.",
+      "ru": "Корпоративный сегмент $4,5 млрд (30 000 организаций × $150 тыс. ACV) + суверенный/региональный $3,0 млрд (300 платформ × $10 млн LTV). Базовый сценарий OpenCSG, не сторонний прогноз.",
+      "fr": "Entreprise 4,5 Md$ (30 000 organisations × 150 000 $ ACV) + Souverain/Régional 3,0 Md$ (300 plateformes × 10 M$ sur le cycle de vie). Scénario de base OpenCSG, pas une prévision tierce.",
+      "de": "Enterprise 4,5 Mrd. $ (30 000 Organisationen × 150 000 $ ACV) + Souverän/Regional 3,0 Mrd. $ (300 Plattformen × 10 Mio. $ Lifecycle). OpenCSG-Basisszenario, keine Drittprognose.",
+      "es": "Enterprise 4.500 M$ (30 000 organizaciones × 150 000 $ ACV) + Soberano/Regional 3.000 M$ (300 plataformas × 10 M$ de ciclo de vida). Caso base de OpenCSG, no una previsión de terceros.",
+      "pt": "Enterprise US$ 4,5 bi (30 000 organizações × US$ 150 mil ACV) + Soberano/Regional US$ 3,0 bi (300 plataformas × US$ 10 mi de ciclo de vida). Cenário-base da OpenCSG, não previsão de terceiros."
+    },
+    "6 national AI factories · EU InvestAI €20B · 5 Gigafactories": {
+      "ja": "国家 AI ファクトリー 6 か所 · EU InvestAI 200 億ユーロ · ギガファクトリー 5 か所",
+      "ko": "국가 AI 팩토리 6곳 · EU InvestAI 200억 유로 · 기가팩토리 5곳",
+      "ar": "6 مصانع ذكاء اصطناعي وطنية · InvestAI الأوروبية 20 مليار يورو · 5 مصانع عملاقة",
+      "ru": "6 национальных ИИ-фабрик · EU InvestAI €20 млрд · 5 гигафабрик",
+      "fr": "6 usines nationales d'IA · EU InvestAI 20 Md€ · 5 Gigafactories",
+      "de": "6 nationale KI-Fabriken · EU InvestAI 20 Mrd. € · 5 Gigafabriken",
+      "es": "6 fábricas nacionales de IA · EU InvestAI 20 000 M€ · 5 Gigafactorías",
+      "pt": "6 fábricas nacionais de IA · EU InvestAI €20 bi · 5 Gigafábricas"
+    },
+    "Blackwell sold out · cloud GPUs sold out · trillions in dividends": {
+      "ja": "Blackwell 完売 · クラウド GPU 完売 · 数兆円の配当",
+      "ko": "Blackwell 매진 · 클라우드 GPU 매진 · 수조 원 배당",
+      "ar": "Blackwell نفد · وحدات معالجة الرسومات السحابية نفدت · تريليونات في توزيعات الأرباح",
+      "ru": "Blackwell распродан · облачные GPU распроданы · триллионы дивидендов",
+      "fr": "Blackwell épuisé · GPU cloud épuisés · des milliers de milliards de dividendes",
+      "de": "Blackwell ausverkauft · Cloud-GPUs ausverkauft · Billionen an Dividenden",
+      "es": "Blackwell agotado · GPU en la nube agotadas · billones en dividendos",
+      "pt": "Blackwell esgotado · GPUs na nuvem esgotadas · trilhões em dividendos"
+    },
+    "Founder & Team": {
+      "ja": "創業者 & チーム",
+      "ko": "창업자 & 팀",
+      "ar": "المؤسس والفريق",
+      "ru": "Основатель и команда",
+      "fr": "Fondateur et équipe",
+      "de": "Gründer & Team",
+      "es": "Fundador y equipo",
+      "pt": "Fundador e equipe"
+    },
+    "A repeat founder with global open-source reach, building OpenCSG with a senior operator team.": {
+      "ja": "グローバルなオープンソースの影響力を持つ連続起業家。OpenCSG をシニアオペレーターチームとともに築いています。",
+      "ko": "글로벌 오픈소스 영향력을 갖춘 연속 창업자. OpenCSG를シニア 운영진 팀과 함께 구축 중입니다.",
+      "ar": "رائد أعمال متكرر يتمتع بنفوذ عالمي في المصادر المفتوحة، يبني OpenCSG مع فريق تنفيذي مخضرم.",
+      "ru": "Серийный основатель с глобальным open-source весом, строит OpenCSG вместе с командой опытных операторов.",
+      "fr": "Un fondateur répétant avec une portée open source mondiale, qui construit OpenCSG avec une équipe d'opérateurs chevronnés.",
+      "de": "Serial Founder mit globaler Open-Source-Reichweite, der OpenCSG mit einem erfahrenen Operator-Team aufbaut.",
+      "es": "Un emprendedor en serie con alcance global en código abierto, construyendo OpenCSG con un equipo senior de operadores.",
+      "pt": "Empreendedor serial com alcance global em open source, construindo a OpenCSG com uma equipe sênior de operadores."
+    },
+    "Previously founder & CEO of JiHu GitLab": {
+      "ja": "前 極狐 GitLab 創業者兼 CEO",
+      "ko": "구 극狐 GitLab 창업자 겸 CEO",
+      "ar": "سابقًا المؤسس والرئيس التنفيذي لـ JiHu GitLab",
+      "ru": "Бывший основатель и CEO JiHu GitLab",
+      "fr": "Ancien fondateur et CEO de JiHu GitLab",
+      "de": "Ehemaliger Gründer & CEO von JiHu GitLab",
+      "es": "Anteriormente fundador y CEO de JiHu GitLab",
+      "pt": "Anteriormente fundador e CEO da JiHu GitLab"
+    },
+    "EDUCATION": {
+      "ja": "学歴",
+      "ko": "학력",
+      "ar": "التعليم",
+      "ru": "Образование",
+      "fr": "Formation",
+      "de": "Ausbildung",
+      "es": "Formación",
+      "pt": "Formação"
+    },
+    "Wharton MBA · Stanford HPL · Beihang": {
+      "ja": "Wharton MBA · Stanford HPL · 北京航空航天大学",
+      "ko": "Wharton MBA · Stanford HPL · 베이항(베이징 항공항천 대학)",
+      "ar": "Wharton MBA · Stanford HPL · Beihang",
+      "ru": "Wharton MBA · Stanford HPL · Бэйхан",
+      "fr": "Wharton MBA · Stanford HPL · Beihang",
+      "de": "Wharton MBA · Stanford HPL · Beihang",
+      "es": "Wharton MBA · Stanford HPL · Beihang",
+      "pt": "Wharton MBA · Stanford HPL · Beihang"
+    },
+    "BACKING": {
+      "ja": "支援体制",
+      "ko": "지원 배경",
+      "ar": "الدعم",
+      "ru": "Поддержка",
+      "fr": "Soutien",
+      "de": "Rückenwind",
+      "es": "Respaldo",
+      "pt": "Apoio"
+    },
+    "Two-time YC founder · MIIT reserve talent": {
+      "ja": "2 度の YC 創業者 · MIIT リザーブタレント",
+      "ko": "두 차례 YC 창업자 · MIIT 예비 인재",
+      "ar": "مؤسس YC مرتين · ك talent احتياطي في MIIT",
+      "ru": "Двукратный основатель YC · кадровый резерв MIIT",
+      "fr": "Fondateur YC à deux reprises · talent de réserve MIIT",
+      "de": "Zweifacher YC-Gründer · MIIT-Reservetalent",
+      "es": "Fundador de YC en dos ocasiones · talento de reserva del MIIT",
+      "pt": "Fundador duas vezes na YC · talento reserva do MIIT"
+    },
+    "JiHu GitLab valuation in 2 years": {
+      "ja": "極狐 GitLab 2 年での企業価値",
+      "ko": "JiHu GitLab 2년 내 기업 가치",
+      "ar": "تقييم JiHu GitLab خلال عامين",
+      "ru": "Оценка JiHu GitLab за 2 года",
+      "fr": "Valorisation de JiHu GitLab en 2 ans",
+      "de": "Bewertung von JiHu GitLab in 2 Jahren",
+      "es": "Valoración de JiHu GitLab en 2 años",
+      "pt": "Valorização da JiHu GitLab em 2 anos"
+    },
+    "OpenCSG was founded by Sam Chen, the former founder & CEO of JiHu GitLab. MIIT reserve talent, open-source foundation strategy expert, builder of AI sovereignty platforms & ecosystems.": {
+      "ja": "OpenCSG は JiHu GitLab 元創業者兼 CEO である Sam Chen によって設立されました。MIIT リザーブ人材、オープンソース基盤戦略の第一人者、AI 主権プラットフォームとエコシステムの構築者。",
+      "ko": "OpenCSG는 JiHu GitLab의 전 창업자 겸 CEO인 Sam Chen이 설립했습니다. MIIT 예비 인재, 오픈소스 기반 전략 전문가, AI 주권 플랫폼 및 생태계 구축자.",
+      "ar": "تأسست OpenCSG على يد سام تشين، المؤسس والرئيس التنفيذي السابق لـ JiHu GitLab. talent احتياطي في MIIT، خبير في استراتيجية الأساسات مفتوحة المصدر، وباني منصات ومنظومات سيادة الذكاء الاصطناعي.",
+      "ru": "OpenCSG основана Сэмом Ченем, бывшим основателем и CEO JiHu GitLab. Кадровый резерв MIIT, эксперт по стратегии open-source фондов, строитель платформ и экосистем суверенного ИИ.",
+      "fr": "OpenCSG a été fondée par Sam Chen, ancien fondateur et CEO de JiHu GitLab. Talent de réserve MIIT, expert en stratégie de fondations open source, bâtisseur de plateformes et d'écosystèmes d'IA souveraine.",
+      "de": "OpenCSG wurde von Sam Chen gegründet, dem früheren Gründer & CEO von JiHu GitLab. MIIT-Reservetalent, Open-Source-Foundation-Stratege, Erbauer souveräner KI-Plattformen und -Ökosysteme.",
+      "es": "OpenCSG fue fundada por Sam Chen, ex fundador y CEO de JiHu GitLab. Talento de reserva del MIIT, experto en estrategia de fundaciones open source, constructor de plataformas y ecosistemas de IA soberana.",
+      "pt": "A OpenCSG foi fundada por Sam Chen, ex-fundador e CEO da JiHu GitLab. Talento reserva do MIIT, especialista em estratégia de fundações open source, construtor de plataformas e ecossistemas de IA soberana."
+    },
+    "Yongyao Duan": {
+      "ja": "ユン・ヤオ・ドゥアン",
+      "ko": "융야오 두안",
+      "ar": "يونغياو دوان",
+      "ru": "Юнъяо Дуань",
+      "fr": "Yongyao Duan",
+      "de": "Yongyao Duan",
+      "es": "Yongyao Duan",
+      "pt": "Yongyao Duan"
+    },
+    "Continuous founder: IBM · HP · Mesosphere · JiHu · OpenCSG": {
+      "ja": "連続創業：IBM · HP · Mesosphere · 極狐 · OpenCSG",
+      "ko": "연속 창업: IBM · HP · Mesosphere · JiHu · OpenCSG",
+      "ar": "مؤسس متكرر: IBM · HP · Mesosphere · JiHu · OpenCSG",
+      "ru": "Серийный основатель: IBM · HP · Mesosphere · JiHu · OpenCSG",
+      "fr": "Fondateur en série : IBM · HP · Mesosphere · JiHu · OpenCSG",
+      "de": "Serial-Gründer: IBM · HP · Mesosphere · JiHu · OpenCSG",
+      "es": "Emprendedor en serie: IBM · HP · Mesosphere · JiHu · OpenCSG",
+      "pt": "Empreendedor serial: IBM · HP · Mesosphere · JiHu · OpenCSG"
+    },
+    "Engineering headcount in the company": {
+      "ja": "社内のエンジニア比率",
+      "ko": "전사 엔지니어 비중",
+      "ar": "نسبة المهندسين في الشركة",
+      "ru": "Доля инженеров в компании",
+      "fr": "Part des ingénieurs dans l'entreprise",
+      "de": "Anteil der Ingenieure im Unternehmen",
+      "es": "Proporción de ingenieros en la empresa",
+      "pt": "Participação de engenharia na empresa"
+    },
+    "CAREER": {
+      "ja": "経歴",
+      "ko": "경력",
+      "ar": "المسيرة المهنية",
+      "ru": "Карьера",
+      "fr": "Parcours",
+      "de": "Karriere",
+      "es": "Carrera",
+      "pt": "Carreira"
+    },
+    "R&D · ITM": {
+      "ja": "R&D · ITM",
+      "ko": "R&D · ITM",
+      "ar": "البحث والتطوير · ITM",
+      "ru": "R&D · ITM",
+      "fr": "R&D · ITM",
+      "de": "F&E · ITM",
+      "es": "I+D · ITM",
+      "pt": "P&D · ITM"
+    },
+    "CTO Office": {
+      "ja": "CTO オフィス",
+      "ko": "CTO 오피스",
+      "ar": "مكتب CTO",
+      "ru": "Офис CTO",
+      "fr": "Bureau du CTO",
+      "de": "CTO-Büro",
+      "es": "Oficina del CTO",
+      "pt": "Escritório do CTO"
+    },
+    "Co-founder · D2iQ": {
+      "ja": "共同創業者 · D2iQ",
+      "ko": "공동 창업자 · D2iQ",
+      "ar": "مؤسس مشارك · D2iQ",
+      "ru": "Сооснователь · D2iQ",
+      "fr": "Co-fondateur · D2iQ",
+      "de": "Mitgründer · D2iQ",
+      "es": "Co-fundador · D2iQ",
+      "pt": "Co-fundador · D2iQ"
+    },
+    "Founder & CEO · $500M": {
+      "ja": "創業者兼 CEO · 5億ドル",
+      "ko": "창업자 겸 CEO · 5억 달러",
+      "ar": "المؤسس والرئيس التنفيذي · 500 مليون دولار",
+      "ru": "Основатель и CEO · $500 млн",
+      "fr": "Fondateur et CEO · 500 M$",
+      "de": "Gründer & CEO · 500 Mio. $",
+      "es": "Fundador y CEO · 500 M$",
+      "pt": "Fundador e CEO · US$ 500 mi"
+    },
+    "Founder & CEO · now": {
+      "ja": "創業者兼 CEO · 現在",
+      "ko": "창업자 겸 CEO · 현재",
+      "ar": "المؤسس والرئيس التنفيذي · حاليًا",
+      "ru": "Основатель и CEO · сейчас",
+      "fr": "Fondateur et CEO · actuellement",
+      "de": "Gründer & CEO · aktuell",
+      "es": "Fundador y CEO · actualmente",
+      "pt": "Fundador e CEO · agora"
+    },
+    "PREVIOUSLY BUILT AT": {
+      "ja": "これまでの実績",
+      "ko": "이전 경험",
+      "ar": "بنى سابقًا في",
+      "ru": "Ранее строил в",
+      "fr": "Construit auparavant chez",
+      "de": "Zuvor aufgebaut bei",
+      "es": "Construyó anteriormente en",
+      "pt": "Anteriormente construiu em"
+    },
+    "CORE OPERATORS · 5": {
+      "ja": "コア オペレーター · 5 名",
+      "ko": "핵심 운영진 · 5명",
+      "ar": "المشغلون الأساسيون · 5",
+      "ru": "Ключевые операторы · 5",
+      "fr": "Opérateurs clés · 5",
+      "de": "Kern-Operatoren · 5",
+      "es": "Operadores clave · 5",
+      "pt": "Operadores principais · 5"
+    },
+    "Architecture, engineering, algorithm, product & governance": {
+      "ja": "アーキテクチャ、エンジニアリング、Algorithm、Product、ガバナンス",
+      "ko": "아키텍처, 엔지니어링, 알고리즘, 제품, 거버넌스",
+      "ar": "البنية، الهندسة، الخوارزميات، المنتجات، والحوكمة",
+      "ru": "Архитектура, разработка, алгоритмы, продукт и управление",
+      "fr": "Architecture, ingénierie, algorithme, produit et gouvernance",
+      "de": "Architektur, Engineering, Algorithmus, Produkt und Governance",
+      "es": "Arquitectura, ingeniería, algoritmo, producto y gobernanza",
+      "pt": "Arquitetura, engenharia, algoritmo, produto e governança"
+    },
+    "Ex-HP · D2iQ · JiHu GitLab": {
+      "ja": "元 HP · D2iQ · 極狐 GitLab",
+      "ko": "전 HP · D2iQ · JiHu GitLab",
+      "ar": "سابقًا في HP · D2iQ · JiHu GitLab",
+      "ru": "Бывший HP · D2iQ · JiHu GitLab",
+      "fr": "Ex-HP · D2iQ · JiHu GitLab",
+      "de": "Ex-HP · D2iQ · JiHu GitLab",
+      "es": "Ex-HP · D2iQ · JiHu GitLab",
+      "pt": "Ex-HP · D2iQ · JiHu GitLab"
+    },
+    "Ex-Kunlun · Amazon · Letv": {
+      "ja": "元 Kunlun · Amazon · Letv",
+      "ko": "전 Kunlun · Amazon · Letv",
+      "ar": "سابقًا في Kunlun · Amazon · Letv",
+      "ru": "Бывший Kunlun · Amazon · Letv",
+      "fr": "Ex-Kunlun · Amazon · Letv",
+      "de": "Ex-Kunlun · Amazon · Letv",
+      "es": "Ex-Kunlun · Amazon · Letv",
+      "pt": "Ex-Kunlun · Amazon · Letv"
+    },
+    "HEAD OF AI LAB": {
+      "ja": "AI Lab 責任者",
+      "ko": "AI Lab 책임자",
+      "ar": "رئيس مختبر الذكاء الاصطناعي",
+      "ru": "Руководитель AI Lab",
+      "fr": "Responsable du Laboratoire IA",
+      "de": "Leiter AI Lab",
+      "es": "Responsable del Laboratorio de IA",
+      "pt": "Chefe do AI Lab"
+    },
+    "Ex-WuXi AppTec · Tencent": {
+      "ja": "元 WuXi AppTec · Tencent",
+      "ko": "전 WuXi AppTec · Tencent",
+      "ar": "سابقًا في WuXi AppTec · Tencent",
+      "ru": "Бывший WuXi AppTec · Tencent",
+      "fr": "Ex-WuXi AppTec · Tencent",
+      "de": "Ex-WuXi AppTec · Tencent",
+      "es": "Ex-WuXi AppTec · Tencent",
+      "pt": "Ex-WuXi AppTec · Tencent"
+    },
+    "Ex-Tencent · Kaya Medical": {
+      "ja": "元 Tencent · Kaya Medical",
+      "ko": "전 Tencent · Kaya Medical",
+      "ar": "سابقًا في Tencent · Kaya Medical",
+      "ru": "Бывший Tencent · Kaya Medical",
+      "fr": "Ex-Tencent · Kaya Medical",
+      "de": "Ex-Tencent · Kaya Medical",
+      "es": "Ex-Tencent · Kaya Medical",
+      "pt": "Ex-Tencent · Kaya Medical"
+    },
+    "BOARD SECRETARY": {
+      "ja": "取締役会秘書",
+      "ko": "이사회 비서",
+      "ar": "سكرتير مجلس الإدارة",
+      "ru": "Корпоративный секретарь",
+      "fr": "Secrétaire du Conseil",
+      "de": "Vorstandssekretär",
+      "es": "Secretario del Consejo",
+      "pt": "Secretário do Conselho"
+    },
+    "Ex-Paradise Ventures · Fanta": {
+      "ja": "元 Paradise Ventures · Fanta",
+      "ko": "전 Paradise Ventures · Fanta",
+      "ar": "سابقًا في Paradise Ventures · Fanta",
+      "ru": "Бывший Paradise Ventures · Fanta",
+      "fr": "Ex-Paradise Ventures · Fanta",
+      "de": "Ex-Paradise Ventures · Fanta",
+      "es": "Ex-Paradise Ventures · Fanta",
+      "pt": "Ex-Paradise Ventures · Fanta"
+    },
+    "HONORS · TITLES · ECOSYSTEM ROLES": {
+      "ja": "栄誉 · 肩書 · エコシステムでの役割",
+      "ko": "명예 · 직함 · 생태계 역할",
+      "ar": "الأوسمة · الألقاب · الأدوار في المنظومة",
+      "ru": "Награды · Звания · Роли в экосистеме",
+      "fr": "Honneurs · Titres · Rôles dans l'écosystème",
+      "de": "Auszeichnungen · Titel · Ökosystem-Rollen",
+      "es": "Honores · Títulos · Roles en el ecosistema",
+      "pt": "Honras · Títulos · Papéis no ecossistema"
+    },
+    "MIIT Reserve Talent": {
+      "ja": "MIIT リザーブタレント",
+      "ko": "MIIT 예비 인재",
+      "ar": "talent احتياطي في MIIT",
+      "ru": "Кадровый резерв MIIT",
+      "fr": "Talent de réserve MIIT",
+      "de": "MIIT-Reservetalent",
+      "es": "Talento de reserva del MIIT",
+      "pt": "Talento reserva do MIIT"
+    },
+    "EleutherAI Contributor": {
+      "ja": "EleutherAI コントリビューター",
+      "ko": "EleutherAI 기여자",
+      "ar": "مساهم في EleutherAI",
+      "ru": "Контрибьютор EleutherAI",
+      "fr": "Contributeur EleutherAI",
+      "de": "EleutherAI-Contributor",
+      "es": "Contribuidor de EleutherAI",
+      "pt": "Contribuidor da EleutherAI"
+    },
+    "Open-source Strategy Expert": {
+      "ja": "オープンソース戦略の専門家",
+      "ko": "오픈소스 전략 전문가",
+      "ar": "خبير استراتيجية المصادر المفتوحة",
+      "ru": "Эксперт по open-source стратегии",
+      "fr": "Expert en stratégie open source",
+      "de": "Open-Source-Stratege",
+      "es": "Experto en estrategia open source",
+      "pt": "Especialista em estratégia open source"
+    },
+    "Repeat open-source founder × global ecosystem governance × senior operator team": {
+      "ja": "連続オープンソース創業者 × グローバルエコシステム運営 × シニアオペレーターチーム",
+      "ko": "연속 오픈소스 창업자 × 글로벌 생태계 거버넌스 × 시니어 운영진 팀",
+      "ar": "مؤسس متكرر مفتوح المصدر × حوكمة منظومة عالمية × فريق تنفيذي مخضرم",
+      "ru": "Серийный open-source основатель × глобальное управление экосистемой × команда опытных операторов",
+      "fr": "Fondateur open source en série × gouvernance d'écosystème mondial × équipe d'opérateurs chevronnés",
+      "de": "Serial-Open-Source-Gründer × globale Ökosystem-Governance × Senior-Operator-Team",
+      "es": "Fundador open source en serie × gobernanza de ecosistema global × equipo senior de operadores",
+      "pt": "Fundador serial open source × governança de ecossistema global × equipe sênior de operadores"
+    },
+    "Create Hong Kong": {
+      "ja": "香港に作る",
+      "ko": "홍콩에 만든다",
+      "ar": "إنشاء هونج كونج",
+      "ru": "Создаём Гонконг",
+      "fr": "Créer Hong Kong",
+      "de": "Hongkong aufbauen",
+      "es": "Crear Hong Kong",
+      "pt": "Criar Hong Kong"
+    },
+    "INVESTMENT LOGIC": {
+      "ja": "投資ロジック",
+      "ko": "투자 논리",
+      "ar": "منطق الاستثمار",
+      "ru": "Инвестиционная логика",
+      "fr": "Logique d'investissement",
+      "de": "Investment-Logik",
+      "es": "Lógica de inversión",
+      "pt": "Lógica de investimento"
+    },
+    "Repeat the foundation and operating method, not the city": {
+      "ja": "都市ではなく、基盤と運営手法を複製する",
+      "ko": "도시가 아니라 기반과 운영 방식을 복제한다",
+      "ar": "إعادة تكرار الأساس وأسلوب التشغيل، وليس المدينة",
+      "ru": "Воспроизводим фундамент и метод эксплуатации, а не город",
+      "fr": "Reproduire le fondement et la méthode d'exploitation, pas la ville",
+      "de": "Grundlage und Betriebsmethode reproduzieren – nicht die Stadt",
+      "es": "Reproducir la base y el método operativo, no la ciudad",
+      "pt": "Reproduzir a base e o método de operação, não a cidade"
+    }
+  }
+}

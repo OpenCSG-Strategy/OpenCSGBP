@@ -3092,19 +3092,6 @@ body.compact-stage .slide{
 }
 body.compact-stage .slide-wrap+.slide-wrap{border-top:1px solid #CBD5D2}
 
-body.watermark .slide:after{
-  content:"CONFIDENTIAL";
-  position:absolute;
-  left:50%;
-  top:50%;
-  z-index:120;
-  transform:translate(-50%,-50%) rotate(-24deg);
-  color:rgba(35,135,123,.09);
-  font:700 74px var(--display-font);
-  letter-spacing:.12em;
-  pointer-events:none
-}
-
 @page{size:1600px 900px;margin:0}
 @media print{
   html,body{width:1600px!important;margin:0!important;padding:0!important;background:#fff!important;display:block!important}

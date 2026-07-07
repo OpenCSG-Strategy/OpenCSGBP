@@ -23,6 +23,50 @@
     return r.json();
   }
 
+  // 在控制台输出 phrases 字典覆盖率（开发期自检）。
+  // 调用方式：__opencsgI18nAudit({en:[...]})，传入英文源文集合。
+  // 通常由 audit-bootstrap.js 在 window.__i18nAuditKeys 存在时自动调用。
+  function auditCoverage(pack, lang, keySet){
+    const phrases = pack.phrases || {};
+    let hit = 0, miss = 0;
+    const missing = [];
+    keySet.forEach(k => {
+      const norm = normalizeKey(k);
+      if (phrases[k] || (norm && phrases[norm])) hit++;
+      else { miss++; missing.push(k); }
+    });
+    const total = keySet.size;
+    const pct = total ? (hit / total * 100).toFixed(1) : '100.0';
+    // eslint-disable-next-line no-console
+    console.groupCollapsed(`[i18n] ${lang}: ${hit}/${total} (${pct}%) phrases hit`);
+    if (missing.length){
+      // eslint-disable-next-line no-console
+      console.warn(`[i18n] ${lang} 缺失 ${missing.length} 个短语：`, missing);
+    }
+    // eslint-disable-next-line no-console
+    console.groupEnd();
+  }
+
+  // 暴露给外部调用
+  window.__opencsgI18nAudit = function(keySet){
+    if (!(keySet instanceof Set)) keySet = new Set(keySet || []);
+    Promise.all(SUPPORTED.map(async code => {
+      try {
+        const pack = await loadPack(code);
+        auditCoverage(pack, code, keySet);
+      } catch(_){ /* ignore */ }
+    }));
+  };
+
+  // 暴露 phrase() 和 normalizeKey()，方便 QA / 测试。
+  window.__opencsgI18n = Object.assign(window.__opencsgI18n || {}, {
+    phrase,
+    normalizeKey,
+    normalizeZh: s => normalizeKey(s),
+    langs: SUPPORTED,
+    packs: {},
+  });
+
   function lookup(pack, dotted){
     return dotted.split('.').reduce((acc,k)=> acc && acc[k], pack);
   }
@@ -38,11 +82,35 @@
     return textarea.value;
   }
 
+  // 对短语 key 做 HTML 实体归一化。HTML 里 [data-en] 通常写成 `Founder &amp; CEO`，
+  // phrases 字典里我们约定存字面 `&`。查找前先把候选 key 全部 decode，
+  // 这样 `&amp; / &lt; / &gt; / &quot; / &#39;` 五种常见实体都能正确命中。
+  // 同时把全角空格 (\u3000) 折叠成半角空格并 trim，避免"Paradigm Evolution　"与
+  // "Paradigm Evolution" 对不上。
+  function normalizeKey(value){
+    if (!value) return '';
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = String(value);
+    return textarea.value.replace(/\u3000/g, ' ').trim();
+  }
+
   function phrase(pack, lang, zh, en){
     if (lang === 'zh') return zh;
-    if (lang === 'en') return en || zh;
     const phrases = pack.phrases || {};
-    return phrases[en] || phrases[(en || '').trim()] || phrases[zh] || phrases[(zh || '').trim()] || en || zh;
+    // 1) 英文源文命中
+    if (en){
+      const enNorm = normalizeKey(en);
+      if (phrases[en]) return phrases[en];
+      if (enNorm && phrases[enNorm]) return phrases[enNorm];
+    }
+    // 2) 中文源文命中
+    if (zh){
+      const zhNorm = normalizeKey(zh);
+      if (phrases[zh]) return phrases[zh];
+      if (zhNorm && phrases[zhNorm]) return phrases[zhNorm];
+    }
+    // 3) 兜底
+    return en || zh;
   }
 
   function rememberElement(el){
