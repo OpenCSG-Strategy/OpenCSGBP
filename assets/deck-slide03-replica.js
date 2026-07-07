@@ -11,19 +11,32 @@
   const stages = [
     {
       period: "2008",
-      code: "01 · COMMUNITY",
-      zhTitle: "内容与开发者社区",
-      enTitle: "Knowledge & developer community",
-      zhBody: "资讯、项目索引与交流，先解决“在哪里发现开源”。",
-      enBody: "News, project discovery and discussion answer where open source is found.",
-      zhObject: "资讯 / 项目",
-      enObject: "Knowledge / projects",
+      code: "01 · GLOBAL COMMUNITY",
+      cls: "stage-community",
+      zhTitle: "内容、问答与开发者社区",
+      enTitle: "Content, Q&A & developer community",
+      zhBody: "资讯、问答、项目索引与协作社区，先解决“在哪里发现开源”。",
+      enBody: "News, Q&A, project discovery and collaboration answer where open source is found.",
+      zhObject: "资讯 / 问答 / 项目",
+      enObject: "Knowledge / Q&A / projects",
       logos: [
         {
           src: "assets/brand-logos/oschina.jpg",
           alt: "开源中国 OSCHINA",
           label: "OSCHINA",
           url: "https://www.oschina.net/home/about"
+        },
+        {
+          src: "assets/brand-logos/github.png",
+          alt: "GitHub",
+          label: "GitHub",
+          url: "https://github.com/about/press"
+        },
+        {
+          alt: "Stack Overflow",
+          label: "Stack Overflow",
+          cls: "stack text-only",
+          url: "https://stackoverflow.co/company/"
         }
       ]
     },
@@ -117,7 +130,7 @@
 
   const renderLogo = ({ src, alt, label, cls = "", url }) => `
     <a class="evo3-brand-chip ${cls}" href="${url}" target="_blank" rel="noopener" title="${alt} · Official source">
-      <img src="${src}" alt="${alt}">
+      ${src ? `<img src="${src}" alt="${alt}">` : ""}
       ${label ? `<b>${label}</b>` : ""}
     </a>`;
 
@@ -202,7 +215,7 @@
         </header>
         <div class="evo3-stages">
           ${stages.map((stage, index) => `
-            <article class="${stage.active ? "active" : ""}">
+            <article class="${stage.active ? "active" : ""} ${stage.cls || ""}">
               <div class="evo3-stage-head"><time>${stage.period}</time><i>${String(index + 1).padStart(2, "0")}</i></div>
               <small>${stage.code}</small>
               <div class="evo3-stage-logos">${stage.logos.map(renderLogo).join("")}</div>

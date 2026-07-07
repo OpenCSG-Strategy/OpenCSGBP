@@ -1,0 +1,436 @@
+/* =================================================================
+   Market + competition focus pass · 2026-07-07
+   Goal: turn evidence-heavy pages into investor-deck pages with one
+   dominant takeaway, visible proof, and lower-noise source details.
+   Loaded last on purpose.
+   ================================================================= */
+
+/* ---------- Slide 10 · Global / sovereign AI market ---------- */
+#slide-10 .market10{
+  top:190px !important;
+  bottom:82px !important;
+  left:60px !important;
+  right:60px !important;
+  grid-template-columns:420px minmax(0,1fr) !important;
+  gap:34px !important;
+}
+
+#slide-10 .m10-side{
+  gap:12px !important;
+}
+
+#slide-10 .m10-side-statement{
+  padding:18px 20px !important;
+  border:0 !important;
+  border-left:5px solid var(--teal) !important;
+  background:#F1F7F5 !important;
+  box-shadow:inset 0 0 0 1px rgba(35,135,123,.18);
+}
+
+#slide-10 .m10-side-statement p{
+  font-size:15.5px !important;
+  line-height:1.58 !important;
+}
+
+#slide-10 .m10-side-stats{
+  flex:0 0 auto !important;
+  gap:9px !important;
+}
+
+#slide-10 .m10-side-stats article{
+  grid-template-columns:92px minmax(0,1fr) !important;
+  min-height:76px;
+  padding:12px 15px !important;
+  border:0 !important;
+  background:#FFFFFF !important;
+  box-shadow:inset 0 0 0 1px #D9E4E1;
+}
+
+#slide-10 .m10-side-stats b{
+  font-size:30px !important;
+}
+
+#slide-10 .m10-side-stats span{
+  font-size:12.5px !important;
+}
+
+#slide-10 .m10-side-stats em{
+  color:#8A9693 !important;
+  font-size:10px !important;
+}
+
+#slide-10 .m10-side-tam{
+  margin-top:auto;
+  padding:18px 20px 20px !important;
+  border:0 !important;
+  background:#E5F2EF !important;
+  box-shadow:inset 0 0 0 1px rgba(35,135,123,.36);
+}
+
+#slide-10 .m10-side-tam b{
+  font-size:46px !important;
+}
+
+#slide-10 .m10-side-tam p{
+  max-width:360px;
+  font-size:11.5px !important;
+  line-height:1.45 !important;
+}
+
+#slide-10 .m10-hero-visual img{
+  object-position:center center !important;
+  transform:scale(1.06);
+}
+
+#slide-10 .m10-tag{
+  max-width:360px !important;
+  padding:9px 15px !important;
+  border-radius:0 !important;
+  font-size:11.5px !important;
+  box-shadow:0 10px 30px rgba(35,135,123,.08);
+}
+
+#slide-10 .m10-tag-tr{top:7% !important;right:2% !important}
+#slide-10 .m10-tag-bl{bottom:7% !important;left:2% !important}
+
+#slide-10 .source-note,
+#slide-11 .source-note,
+#slide-13 .source-note{
+  bottom:58px !important;
+  color:#7D8986 !important;
+  opacity:.78;
+}
+
+/* ---------- Slide 11 · Personal AI / OPC market ---------- */
+#slide-11 .opc11{
+  left:72px !important;
+  right:72px !important;
+  top:184px !important;
+  height:622px !important;
+  grid-template-columns:500px minmax(0,1fr) !important;
+  gap:22px !important;
+}
+
+#slide-11 .opc11-left{
+  gap:14px !important;
+}
+
+#slide-11 .opc11-signals,
+#slide-11 .opc11-trend,
+#slide-11 .opc11-evolution,
+#slide-11 .opc11-policy{
+  border-top:0 !important;
+}
+
+#slide-11 .opc11-signals{
+  padding:16px 18px 12px !important;
+  background:#F7FAF9;
+  box-shadow:inset 0 0 0 1px #D9E4E1;
+}
+
+#slide-11 .opc11-signals h3,
+#slide-11 .opc11-trend-head h3{
+  margin-bottom:12px !important;
+  color:#14201E;
+  font-size:16px !important;
+}
+
+#slide-11 .opc11-signals article{
+  grid-template-columns:100px minmax(0,1fr) !important;
+  padding:10px 0 !important;
+}
+
+#slide-11 .opc11-signals small{
+  margin-bottom:3px !important;
+  color:#78908A !important;
+}
+
+#slide-11 .opc11-signals b{
+  font-size:28px !important;
+}
+
+#slide-11 .opc11-signals p{
+  font-size:11px !important;
+}
+
+#slide-11 .opc11-signals a,
+#slide-11 .opc11-policy article>a{
+  display:none !important;
+}
+
+#slide-11 .opc11-trend{
+  padding:16px 18px !important;
+  background:#FFFFFF;
+  box-shadow:inset 0 0 0 1px #D9E4E1;
+}
+
+#slide-11 .opc11-trend-grid{
+  border:0 !important;
+  gap:8px;
+}
+
+#slide-11 .opc11-trend-grid article{
+  align-items:flex-start !important;
+  border:0 !important;
+  background:#F1F7F5;
+  padding:13px 14px !important;
+}
+
+#slide-11 .opc11-trend-grid b{
+  font-size:27px !important;
+}
+
+#slide-11 .opc11-trend-grid span{
+  text-align:left !important;
+  font-size:10.5px !important;
+}
+
+#slide-11 .opc11-market{
+  display:grid !important;
+  grid-template-rows:166px 276px minmax(0,1fr);
+  gap:12px !important;
+}
+
+#slide-11 .opc11-tam{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:22px 28px !important;
+  border:0 !important;
+  background:#E2F0ED !important;
+  box-shadow:inset 0 0 0 1px rgba(35,135,123,.38);
+}
+
+#slide-11 .opc11-tam b{
+  margin-top:8px !important;
+  color:#101A18;
+  font-size:50px !important;
+}
+
+#slide-11 .opc11-tam em{
+  font-size:16px !important;
+}
+
+#slide-11 .opc11-tam p{
+  margin-top:12px !important;
+  font-size:12px !important;
+}
+
+#slide-11 .opc11-evolution{
+  padding:18px 0 0 !important;
+  box-shadow:inset 0 3px 0 var(--teal);
+}
+
+#slide-11 .opc11-evolution h3{
+  margin:0 0 14px !important;
+  font-size:16px !important;
+}
+
+#slide-11 .opc11-evo-flow{
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:10px;
+}
+
+#slide-11 .opc11-evo-flow i{
+  display:none !important;
+}
+
+#slide-11 .opc11-evo-flow article{
+  min-height:126px !important;
+  height:auto !important;
+  padding:35px 13px 14px !important;
+  background:#FFFFFF;
+}
+
+#slide-11 .opc11-evo-flow article:last-of-type{
+  background:#EAF5F2;
+  border-color:#92BEB6;
+}
+
+#slide-11 .opc11-evo-flow article>b{
+  margin-top:0 !important;
+  font-size:13px !important;
+}
+
+#slide-11 .opc11-evo-flow article>p{
+  font-size:11.5px !important;
+}
+
+#slide-11 .opc11-products{
+  grid-template-columns:150px 1fr 1fr !important;
+  height:50px !important;
+  margin-top:10px !important;
+  background:#FBFDFC;
+}
+
+#slide-11 .opc11-policy{
+  padding-top:0 !important;
+  border:0 !important;
+  background:#FFFFFF;
+  box-shadow:inset 0 0 0 1px #D9E4E1;
+}
+
+#slide-11 .opc11-policy h3{
+  margin:0 !important;
+  padding:12px 16px !important;
+  border-bottom:1px solid #D9E4E1;
+  font-size:13px !important;
+}
+
+#slide-11 .opc11-policy article{
+  min-height:54px !important;
+  padding:9px 16px 9px 86px !important;
+}
+
+#slide-11 .opc11-policy article>b{
+  left:16px !important;
+  top:12px !important;
+  font-size:10.5px !important;
+}
+
+#slide-11 .opc11-policy article>p{
+  font-size:11.5px !important;
+}
+
+/* ---------- Slide 13 · Competitive landscape ---------- */
+#slide-13 .comp13-v2{
+  left:72px !important;
+  right:72px !important;
+  top:184px !important;
+  height:622px !important;
+  grid-template-rows:116px minmax(0,1fr) 104px !important;
+  gap:12px !important;
+}
+
+#slide-13 .comp13-message{
+  grid-template-columns:360px minmax(0,1fr) !important;
+  border:0 !important;
+  background:#E5F2EF !important;
+  box-shadow:inset 0 0 0 1px rgba(35,135,123,.28), inset 0 4px 0 var(--teal);
+}
+
+#slide-13 .comp13-message>div{
+  padding:20px 24px !important;
+  border-right:1px solid rgba(35,135,123,.18) !important;
+}
+
+#slide-13 .comp13-message b{
+  color:#144D45 !important;
+  font-size:24px !important;
+  line-height:1.18;
+}
+
+#slide-13 .comp13-message p{
+  padding:0 30px !important;
+  font-size:16px !important;
+  line-height:1.55 !important;
+}
+
+#slide-13 .comp13-body{
+  grid-template-columns:330px minmax(0,1fr) !important;
+  gap:14px !important;
+}
+
+#slide-13 .comp13-category-map{
+  grid-template-rows:64px repeat(6,minmax(0,1fr)) !important;
+  border-top:3px solid var(--teal) !important;
+  border-left:0 !important;
+  background:#FFFFFF;
+  box-shadow:inset 0 0 0 1px #D9E4E1;
+}
+
+#slide-13 .comp13-category-map header{
+  padding:12px 15px !important;
+  border-right:0 !important;
+}
+
+#slide-13 .comp13-category-map header b{
+  font-size:15px !important;
+}
+
+#slide-13 .comp13-category-map article{
+  grid-template-columns:34px minmax(0,1fr) !important;
+  padding:8px 12px !important;
+  border-right:0 !important;
+}
+
+#slide-13 .comp13-category-map article>span{
+  display:none !important;
+}
+
+#slide-13 .comp13-category-map article.open>span{
+  display:none !important;
+}
+
+#slide-13 .comp13-category-map article b{
+  font-size:13.5px !important;
+}
+
+#slide-13 .comp13-category-map article p{
+  font-size:11.5px !important;
+}
+
+#slide-13 .comp13-message small{
+  font-size:10px !important;
+}
+
+#slide-13 .comp13-matrix{
+  border-top:3px solid var(--teal) !important;
+  border-left:0 !important;
+  background:#FFFFFF;
+  box-shadow:inset 0 0 0 1px #D9E4E1;
+}
+
+#slide-13 .comp13-row{
+  grid-template-columns:148px repeat(5,minmax(0,1fr)) !important;
+}
+
+#slide-13 .comp13-row>*{
+  padding:8px 10px !important;
+  font-size:12px !important;
+  line-height:1.35 !important;
+}
+
+#slide-13 .comp13-row>b{
+  font-size:12px !important;
+}
+
+#slide-13 .comp13-row.selected>*{
+  background:#DFF0EC !important;
+  color:#125C52 !important;
+  font-weight:800 !important;
+}
+
+#slide-13 .comp13-brand img{
+  width:28px !important;
+  height:28px !important;
+  margin-right:7px !important;
+  border-radius:5px;
+}
+
+#slide-13 .comp13-moats{
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  border-top:3px solid var(--teal) !important;
+  border-left:0 !important;
+  background:#FFFFFF;
+  box-shadow:inset 0 0 0 1px #D9E4E1;
+}
+
+#slide-13 .comp13-moats article{
+  padding:16px 14px 14px 44px !important;
+  border-bottom:0 !important;
+}
+
+#slide-13 .comp13-moats b{
+  font-size:14.5px !important;
+}
+
+#slide-13 .comp13-moats p{
+  margin-top:6px !important;
+  font-size:10.5px !important;
+  line-height:1.34 !important;
+}
+
+#slide-13 .comp13-moats .hardware{
+  background:#E5F2EF !important;
+}

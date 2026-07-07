@@ -1,0 +1,86 @@
+/* Slide 08 product evidence and entry links. */
+#slide-08 .product-jump{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  height:22px;
+  margin-top:7px;
+  padding:0 10px;
+  border:1px solid #AFCFC9;
+  background:#F5FAF9;
+  color:#146D63;
+  font-size:10px;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.08em;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:background .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease
+}
+
+#slide-08 .product-links{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-top:7px;
+}
+
+#slide-08 .product-links .product-jump{
+  margin-top:0;
+}
+#slide-08 .product-jump:after{
+  content:"↗";
+  margin-left:5px;
+  font-size:10px;
+  line-height:1
+}
+#slide-08 .product-jump:hover{
+  border-color:#23877B;
+  background:#23877B;
+  color:#fff;
+  box-shadow:0 5px 14px rgba(35,135,123,.16)
+}
+#slide-08 .product-link-screen{
+  display:block;
+  padding:5px;
+  border:1px solid #D5E2DF;
+  background:#fff;
+  text-decoration:none;
+  overflow:hidden;
+  transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease
+}
+#slide-08 .product-link-screen:hover{
+  border-color:#23877B;
+  box-shadow:0 8px 22px rgba(25,95,85,.13);
+  transform:translateY(-1px)
+}
+#slide-08 .product-link-screen img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center top
+}
+#slide-08 .csghub-early img{
+  object-position:left top
+}
+#slide-08 .csgclaw-early img{
+  object-fit:cover;
+  object-position:center 18%;
+}
+#slide-08 .live-product-screen,
+#slide-08 .live-product-iframe,
+#slide-08 .live-product-badge{
+  display:none!important
+}
+
+#slide-08 .edition-label em{
+  font-size:9.5px!important;
+}
+
+#slide-08 .product-meta span{
+  font-size:9.5px!important;
+  line-height:1.15!important;
+}

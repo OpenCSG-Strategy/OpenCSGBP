@@ -1,0 +1,56 @@
+/* =================================================================
+   Slide 01 · Cover: make AI sovereignty the visible promise.
+   ================================================================= */
+
+#slide-01 .cover-title{
+  width:660px !important;
+}
+
+#slide-01 .cover-title .label{
+  color:#1D6E64;
+  letter-spacing:.18em !important;
+}
+
+#slide-01 .cover-title h1{
+  margin-bottom:26px !important;
+}
+
+#slide-01 .cover-title h2{
+  max-width:650px !important;
+  margin-top:0 !important;
+  color:#101817;
+  font-size:46px !important;
+  line-height:1.08 !important;
+  font-weight:800 !important;
+  letter-spacing:-.045em !important;
+}
+
+#slide-01 .cover-sovereign-sub{
+  max-width:600px;
+  margin-top:22px;
+  color:#344844;
+  font-size:18px;
+  line-height:1.62;
+  font-weight:600;
+}
+
+#slide-01 .cover-title p{
+  margin-top:34px !important;
+  color:var(--teal);
+  font-size:13px !important;
+  line-height:1.25;
+  font-weight:800;
+  letter-spacing:.12em !important;
+  text-transform:uppercase;
+}
+
+#slide-01 .cover-meta{
+  gap:28px !important;
+  color:#52615E;
+  font-size:10.5px !important;
+}
+
+#slide-01 .cover-meta span:first-child{
+  color:var(--teal);
+  font-weight:800;
+}

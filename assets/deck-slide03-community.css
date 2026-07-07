@@ -391,6 +391,32 @@
   text-overflow:ellipsis;
   white-space:nowrap
 }
+#slide-03 .stage-community .evo3-stage-logos{
+  flex-wrap:wrap;
+  align-content:center;
+  gap:3px 4px
+}
+#slide-03 .stage-community .evo3-brand-chip{
+  height:18px;
+  gap:3px;
+  padding:2px 5px;
+  border-radius:4px
+}
+#slide-03 .stage-community .evo3-brand-chip img{
+  width:13px;
+  height:13px;
+  flex:0 0 13px
+}
+#slide-03 .stage-community .evo3-brand-chip b{
+  font-size:6.5px
+}
+#slide-03 .evo3-brand-chip.text-only{
+  border-color:#E7C39B;
+  background:#FFF8ED
+}
+#slide-03 .evo3-brand-chip.stack b{
+  color:#B55F12
+}
 #slide-03 .evo3-brand-chip.opencsg{
   border-color:#91C4BC;
   background:#FFFFFF

@@ -176,7 +176,12 @@
     translatePlaceholders(root, pack, lang);
   }
 
+  let currentPack = null;
+  let currentLang = DEFAULT;
+
   function apply(pack, lang){
+    currentPack = pack;
+    currentLang = lang;
     document.documentElement.setAttribute('lang', lang);
     // Only flip document direction for languages whose meta says so. We deliberately
     // avoid mirroring deck layout: the deck itself stays LTR and we only tag the
@@ -352,5 +357,10 @@
   });
 
   // Expose for legacy callers (deck-extra.js still does language toggling)
-  window.DeckI18n = { setLang, SUPPORTED, translateTree };
+  function t(en, zh){
+    if (!currentPack) return en || zh || '';
+    return phrase(currentPack, currentLang, zh || en, en);
+  }
+  window.DeckI18n = { setLang, SUPPORTED, translateTree, t, get lang(){ return currentLang; }, get pack(){ return currentPack; } };
+  window.__t = t;
 })();

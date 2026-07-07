@@ -19,8 +19,8 @@
   top:188px;
   bottom:78px;
   display:grid;
-  grid-template-columns:380px 1fr;
-  gap:48px;
+  grid-template-columns:360px 1fr;
+  gap:44px;
   min-height:0;
   align-items:stretch
 }
@@ -39,7 +39,7 @@
   position:relative;
   flex:0 0 auto;
   width:100%;
-  height:340px;
+  height:320px;
   background:#DDE5E3;
   overflow:hidden
 }
@@ -119,8 +119,8 @@
 /* ---- RIGHT: narrative ----------------------------------------------- */
 #slide-14 .founder14-right{
   display:grid;
-  grid-template-rows:auto auto auto auto auto auto;
-  gap:14px;
+  grid-template-rows:auto auto auto auto minmax(176px,1fr) auto;
+  gap:12px;
   min-height:0;
   min-width:0
 }
@@ -220,7 +220,7 @@
   height:9px;
   border-radius:50%;
   background:#fff;
-  border:2px solid #C7D1CF
+  border:2px solid #C7D1CF;
   flex-shrink:0;
 }
 #slide-14 .founder14-path li:first-child::before{
@@ -254,16 +254,22 @@
 
 /* Previous brand logos (single row, monochrome) */
 #slide-14 .founder14-brands{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  min-width:0
+  display:grid;
+  grid-template-columns:112px minmax(0,1fr);
+  gap:14px;
+  align-items:center;
+  min-width:0;
+  padding:9px 14px;
+  background:#F7FBFA;
+  border-top:1px solid #D8E2E0;
+  border-bottom:1px solid #D8E2E0
 }
 #slide-14 .founder14-brands small{
   color:#9AA6A4;
   font-size:9px;
   font-weight:700;
-  letter-spacing:.18em
+  letter-spacing:.18em;
+  white-space:nowrap
 }
 #slide-14 .founder14-brands ul{
   list-style:none;
@@ -271,20 +277,24 @@
   padding:0;
   display:flex;
   align-items:center;
-  gap:36px;
-  flex-wrap:wrap;
-  height:32px
+  justify-content:flex-end;
+  gap:24px;
+  flex-wrap:nowrap;
+  height:42px;
+  min-width:0
 }
 #slide-14 .founder14-brands li{
   display:flex;
   align-items:center;
-  height:32px
+  justify-content:center;
+  height:42px;
+  min-width:0
 }
 #slide-14 .founder14-brands img{
   display:block;
-  height:30px;
+  height:38px;
   width:auto;
-  max-width:110px;
+  max-width:130px;
   opacity:1;
   filter:contrast(.95);
   transition:opacity .2s ease, filter .2s ease;
@@ -295,33 +305,38 @@
   filter:none
 }
 
-/* Core team — horizontal 5-up grid */
+/* Core team — investor-facing operator matrix */
 #slide-14 .founder14-team{
   display:flex;
   flex-direction:column;
-  gap:12px;
-  min-height:0
+  gap:10px;
+  min-height:0;
+  padding:12px 14px 14px;
+  background:linear-gradient(180deg,#F7FBFA 0%,#FFFFFF 70%);
+  border:1px solid #D8E2E0;
+  border-top:4px solid var(--teal);
+  box-shadow:0 12px 28px rgba(28,57,51,.05)
 }
 #slide-14 .founder14-team header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  border-top:1px solid #D8E2E0;
-  padding-top:12px;
+  padding:0 0 10px;
+  border-bottom:1px solid #D8E2E0;
   gap:16px
 }
 #slide-14 .founder14-team header small{
   color:#0F2722;
-  font-size:11px;
+  font-size:13px;
   font-weight:700;
-  letter-spacing:.04em;
+  letter-spacing:.06em;
   flex-shrink:0
 }
 #slide-14 .founder14-team header span{
-  color:#9AA6A4;
-  font-size:9px;
+  color:#697472;
+  font-size:10px;
   font-weight:700;
-  letter-spacing:.14em;
+  letter-spacing:.12em;
   text-align:right
 }
 #slide-14 .founder14-team ul{
@@ -329,43 +344,73 @@
   margin:0;
   padding:0;
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:0;
-  min-height:0
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:10px;
+  min-height:0;
+  flex:1;
+  counter-reset:team
+}
+#slide-14 .founder14-team li:nth-child(1){grid-column:1/span 2}
+#slide-14 .founder14-team li:nth-child(2){grid-column:3/span 2}
+#slide-14 .founder14-team li:nth-child(3){grid-column:5/span 2}
+#slide-14 .founder14-team li:nth-child(4){grid-column:2/span 2}
+#slide-14 .founder14-team li:nth-child(5){grid-column:4/span 2}
+#slide-14 .founder14-team li::before{
+  content:"0" counter(team);
+  position:absolute;
+  right:12px;
+  top:10px;
+  color:#C9D6D3;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:-.03em;
+  font-family:'Inter','Helvetica Neue',Arial,sans-serif
 }
 #slide-14 .founder14-team li{
+  counter-increment:team;
+  position:relative;
   display:flex;
   flex-direction:column;
-  gap:6px;
-  padding:2px 14px 2px 0;
-  border-right:1px solid #E2E9E7;
-  padding-right:14px
+  justify-content:center;
+  gap:7px;
+  min-height:66px;
+  padding:12px 34px 12px 13px;
+  background:#FFFFFF;
+  border:1px solid #DDE7E4;
+  border-left:4px solid #BBD8D1;
+  box-shadow:0 6px 16px rgba(28,57,51,.035)
 }
-#slide-14 .founder14-team li:last-child{border-right:none}
 #slide-14 .founder14-team b{
-  color:#9AA6A4;
-  font-size:8px;
+  color:var(--teal2);
+  font-size:10px;
   font-weight:700;
-  letter-spacing:.16em
+  letter-spacing:.12em;
+  line-height:1.15
 }
 #slide-14 .founder14-team p{
   margin:0;
   display:flex;
   flex-direction:column;
-  gap:3px
+  gap:3px;
+  color:#0F2722;
+  font-size:17px;
+  font-weight:700;
+  line-height:1.1
 }
 #slide-14 .founder14-team p em{
   font-style:normal;
   color:#0F2722;
   font-size:13px;
-  font-weight:700;
-  line-height:1.2
+  font-weight:600;
+  line-height:1.15
 }
 #slide-14 .founder14-team p i{
   font-style:normal;
   color:#7C8785;
-  font-size:9.5px;
-  line-height:1.4
+  font-size:10.5px;
+  font-weight:500;
+  line-height:1.35
 }
 
 /* Tags — pill row */
@@ -398,7 +443,7 @@
   color:#3D4D49;
   font-size:10.5px;
   font-weight:500;
-  border-radius:999px;
+  border-radius:0;
   white-space:nowrap;
   letter-spacing:.01em;
   line-height:1.2
