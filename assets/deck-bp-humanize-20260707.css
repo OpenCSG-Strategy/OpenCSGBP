@@ -99,7 +99,7 @@
 #slide-10 .m10-layer span{display:block;margin-top:5px;color:#66736F;font-size:9px;letter-spacing:.06em}
 #slide-10 .layer-assets{left:16%;top:19%}
 #slide-10 .layer-govern{right:13%;top:25%}
-#slide-10 .layer-runtime{left:35%;bottom:11%}
+#slide-10 .layer-runtime{left:35%;bottom:26%;padding-top:8px;padding-bottom:8px}
 #slide-10 .m10-node{
   position:absolute;
   z-index:3;
@@ -115,8 +115,8 @@
 }
 #slide-10 .m10-node small{color:#7A8985;font-size:9px;font-weight:800}
 #slide-10 .m10-node b{margin-top:5px;color:#14201E;font-size:14px;line-height:1.25}
-#slide-10 .node-enterprise{left:6%;bottom:18%}
-#slide-10 .node-city{right:4%;bottom:21%}
+#slide-10 .node-enterprise{left:6%;bottom:26%}
+#slide-10 .node-city{right:4%;bottom:26%}
 #slide-10 .node-developer{right:22%;top:8%}
 #slide-10 .m10-pulse{
   position:absolute;
@@ -462,8 +462,16 @@
   grid-template-rows:96px 1fr!important;
   gap:14px!important
 }
+/* The flywheel bar is injected by deck-bp-humanize-20260707.js as the first
+   child of .open12-reframed. Re-declare the container as an explicit 3-row grid
+   (flywheel / content / boundary) so the injected bar gets its own row instead
+   of forcing an implicit row that collapses the edition-story cell. */
+#slide-12 .open12-reframed{
+  grid-template-rows:88px minmax(0,1fr) 86px!important;
+}
 #slide-12 .oc12-flywheel{
   grid-column:1/-1;
+  grid-row:1;
   display:grid;
   grid-template-columns:1fr 36px 1fr 36px 1fr;
   align-items:stretch;
@@ -471,6 +479,9 @@
   color:#fff;
   box-shadow:0 18px 40px rgba(19,65,58,.12)
 }
+#slide-12 .oc12-edition-story{grid-column:1!important;grid-row:2!important}
+#slide-12 .oc12-benchmarks{grid-column:2!important;grid-row:2!important}
+#slide-12 .oc12-boundary{grid-row:3!important}
 #slide-12 .oc12-flywheel i{
   display:flex;
   align-items:center;

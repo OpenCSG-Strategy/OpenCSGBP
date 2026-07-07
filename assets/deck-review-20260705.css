@@ -612,7 +612,7 @@
 /* Slide 09 — explicit asset-to-runtime connectors instead of unexplained arrows. */
 #slide-09 .a9-asset-flow{
   position:absolute;
-  top:279px;
+  top:297px;
   z-index:8;
   display:flex;
   flex-direction:column;
