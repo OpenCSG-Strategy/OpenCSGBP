@@ -320,7 +320,7 @@
       "CSGHub：统一管理模型、数据和 Agent 等关键 AI 资产",
       "CSGHub: unified management for models, data, agents and other critical AI assets", `
       <div class="app-stage app-product-layout">
-        <div class="app-product-visual"><img src="${A}slide-14-image-04.png" alt="CSGHub AI 大模型社区平台"></div>
+        <div class="app-product-visual app-abstract-visual"></div>
         <div>
           ${tx("以“资产管得好、模型迭代快、应用看得见”为核心，统一管理模型、数据集、代码和智能体资产。", "Built around well-governed assets, rapid model iteration and visible applications, CSGHub unifies models, datasets, code and agent assets.", "p", "app-lead")}
           <div class="app-feature-grid" style="margin-top:24px">

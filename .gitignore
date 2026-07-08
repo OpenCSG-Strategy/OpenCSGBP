@@ -1,3 +1,19 @@
+# Runtime / tool output directories
+.exports/
+.playwright-mcp/
+.shots/
+test-results/
+
+# Ad-hoc screenshots in project root
+check-*.png
+fix-*.png
+review-*.png
+preview-*.png
+slide*.png
+
+# Incomplete / leftover scripts
+scripts/i18n/patch-humanize-phrases.cjs
+
 # Build artefacts & PDF/PPTX exports
 *.pdf
 *.pptx

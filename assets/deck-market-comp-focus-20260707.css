@@ -93,10 +93,18 @@
 #slide-10 .m10-tag-tr{top:7% !important;right:2% !important}
 #slide-10 .m10-tag-bl{bottom:7% !important;left:2% !important}
 
-#slide-10 .source-note,
 #slide-11 .source-note,
 #slide-13 .source-note{
   bottom:58px !important;
+  color:#7D8986 !important;
+  opacity:.78;
+}
+
+/* Slide 10's .foot sits higher (bottom:38px, see deck-slide10-redesign.css)
+   than the other slides' shared .foot (bottom:26px), so its source-note
+   needs a taller offset to clear the footer row without overlapping it. */
+#slide-10 .source-note{
+  bottom:72px !important;
   color:#7D8986 !important;
   opacity:.78;
 }

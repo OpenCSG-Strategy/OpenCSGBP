@@ -92,8 +92,9 @@
   line-height:1.5
 }
 #slide-14 .founder14-meta{
-  margin-top:auto;
+  margin-top:26px;
   padding-top:14px;
+  border-top:1px solid #E2E9E7;
   display:flex;
   flex-direction:column;
   gap:10px
@@ -295,8 +296,8 @@
   height:38px;
   width:auto;
   max-width:130px;
-  opacity:1;
-  filter:contrast(.95);
+  opacity:.65;
+  filter:grayscale(1) contrast(1.15);
   transition:opacity .2s ease, filter .2s ease;
   object-fit:contain
 }

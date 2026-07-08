@@ -16,8 +16,8 @@
     html,body{margin:0;background:#DDE2E0;color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei"}
     body{overflow-y:auto;scroll-snap-type:y mandatory}
   </style>
-  <link rel="stylesheet" href="assets/deck-base.css?v=20260702a">
-  <link rel="stylesheet" href="assets/deck-appendix.css?v=20260630j">
+  <link rel="stylesheet" href="assets/deck-base.css?v=20260708a">
+  <link rel="stylesheet" href="assets/deck-appendix.css?v=20260708a">
   <link rel="stylesheet" href="assets/deck-refine.css?v=20260706wechat">
   <link rel="stylesheet" href="assets/deck-slide03-earliest.css?v=20260705g">
   <link rel="stylesheet" href="assets/deck-review-20260705.css?v=20260705l">
@@ -472,12 +472,12 @@
   <link rel="stylesheet" href="assets/deck-visual-polish-20260706.css?v=20260706g">
   <link rel="stylesheet" href="assets/deck-slide07-simplify.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide10-redesign.css?v=20260707c">
-  <link rel="stylesheet" href="assets/deck-slide14-founder.css?v=20260707b">
+  <link rel="stylesheet" href="assets/deck-slide14-founder.css?v=20260707c">
   <link rel="stylesheet" href="assets/deck-market-comp-focus-20260707.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-cover-sovereign-20260707.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide05-07-fixes-20260707.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide08-product-links-20260707.css?v=20260707a">
-  <link rel="stylesheet" href="assets/deck-bp-humanize-20260707.css?v=20260707b">
+  <link rel="stylesheet" href="assets/deck-bp-humanize-20260707.css?v=20260707d">
 
 </head>
 <body>
@@ -946,6 +946,18 @@
         <div class="edition-label"><em data-en="PERSONAL AI / OPC">PERSONAL AI / OPC</em><b><span data-en="Personal AI Work System">个人 AI 工作系统</span><br><span data-en="(OPC)">（OPC）</span></b><span>开发者、Solo Founder 与个人知识工作者</span></div>
         <div class="product"><div><h3>CSGHub-Lite</h3><div class="role">本地 AI 资产与运行底座</div><ul><li>一键启动本地模型，支持 GGUF 与 SafeTensors 转换</li><li>兼容 Ollama API 的 REST 服务与流式对话</li><li>模型下载、断点续传、持久化和跨平台运行</li><li>私有知识、长期记忆与本地开发工具接入</li><li data-en="Local search, plugins and quick workflows">本地搜索、插件与快捷工作流</li></ul><div class="product-meta"><span>Local-first</span><span>Offline</span><span>Cross-platform</span></div><div class="product-links"><a class="product-jump" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" data-en="Docs">文档</a><a class="product-jump" href="https://github.com/OpenCSGs/csghub" target="_blank" rel="noopener">GitHub</a></div></div><a class="screen has-image product-link-screen" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" aria-label="打开 CSGHub-Lite 使用指南"><img src="assets/product-lite.png" alt="CSGHub-Lite 产品界面"></a></div>
         <div class="product"><div><h3>CSGClaw</h3><div class="role">个人多 Agent 协同执行系统</div><ul><li>Manager–Worker 角色分工与并行任务拆解</li><li>Agent / Skill 发现、组合、调用与执行网络</li><li>本地权限、沙箱、人机确认和可回放过程</li><li>从一次性对话升级为长期运行的个人生产系统</li><li data-en="Task logs, replay and result archiving">任务日志、回放与结果归档</li></ul><div class="product-meta"><span>Multi-Agent</span><span>Skill Network</span><span>Human-in-loop</span></div><div class="product-links"><a class="product-jump" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" data-en="Docs">文档</a><a class="product-jump" href="https://github.com/OpenCSGs" target="_blank" rel="noopener">GitHub</a></div></div><a class="screen has-image product-link-screen csgclaw-early" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" aria-label="打开 CSGClaw 文档"><img src="assets/appendix/slide-13-image-01.png" alt="CSGClaw 多 Agent 协同架构"></a></div>
+      </div>
+      <div class="opc-journey">
+        <b data-en="OPC Growth Path">OPC 成长路径</b>
+        <div class="opc-journey-steps">
+          <span><em>①</em><strong>CSGHub-Lite</strong><small data-en="Data accumulation entry">数据积累入口</small></span>
+          <i>→</i>
+          <span><em>②</em><strong>CSGClaw</strong><small data-en="Agent experiments & small-model iteration">智能体实验 · 小模型迭代</small></span>
+          <i>→</i>
+          <span class="step-upgrade"><em>③</em><strong data-en="Org OPC">组织型 OPC</strong><small data-en="Hosted asset governance">服务端资产托管</small></span>
+          <i>→</i>
+          <span class="step-commerce"><em>④</em><strong>AgenticHub</strong><small data-en="Collaboration & monetization">协作共创 · 商业化</small></span>
+        </div>
       </div>
       <div class="shared-bottom"><div>统一用户与身份</div><div>统一资产协议</div><div>统一模型与网关</div><div>统一观测与评测</div><div>统一安全与审计</div><div>开放 API / MCP / SDK</div></div>
     </div>
@@ -1484,7 +1496,7 @@
     <div class="foot"><span data-en="One product foundation · Three revenue engines · Increasing recurring and ecosystem mix">同一产品底座 · 三类收入引擎 · 订阅与生态占比持续提升</span><span>15</span></div>
   </section></div>
 
-  <script src="assets/deck-appendix.js?v=20260706wechat"></script>
+  <script src="assets/deck-appendix.js?v=20260708a"></script>
   <script src="assets/deck-city-reframe.js?v=20260702c"></script>
   <script src="assets/deck-bp-humanize-20260707.js?v=20260707a"></script>
   <script src="assets/deck-slide03-replica.js?v=20260706f"></script>

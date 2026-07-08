@@ -83,7 +83,7 @@
             </svg>
           </div>
           <div class="opc11-product-ribbon">
-            <span>CSGHub-Lite</span><i>→</i><span>CSGClaw</span><i>→</i><span data-en="Personal AgenticOps">个人 AgenticOps</span>
+            <span><em>&#9312;</em><b>CSGHub-Lite</b><small data-en="Data accumulation entry">数据积累入口</small></span><i>&#8594;</i><span><em>&#9313;</em><b>CSGClaw</b><small data-en="Agent experiments">智能体实验</small></span><i>&#8594;</i><span class="step-org"><em>&#9314;</em><b data-en="Org OPC">组织型 OPC</b><small data-en="Hosted asset governance">资产托管治理</small></span><i>&#8594;</i><span class="step-hub"><em>&#9315;</em><b>AgenticHub</b><small data-en="Collaboration & monetization">协作商业化</small></span>
           </div>
         </div>
       </section>
@@ -358,7 +358,7 @@
       <section class="c37-shot-grid">
         <article class="c37-case-card yichang">
           <div class="c37-shot-slot">
-            <span>SCREENSHOT SLOT</span>
+            <span data-en="IMAGE PENDING">素材待替换</span>
             <b data-en="Yichang project / park / operation capture">宜昌截图位</b>
           </div>
           <small>01 · YICHANG</small>
@@ -367,7 +367,7 @@
         </article>
         <article class="c37-case-card dongfang">
           <div class="c37-shot-slot">
-            <span>SCREENSHOT SLOT</span>
+            <span data-en="IMAGE PENDING">素材待替换</span>
             <b data-en="Dongfang gateway / multilingual service capture">东方截图位</b>
           </div>
           <small>02 · DONGFANG</small>
@@ -376,7 +376,7 @@
         </article>
         <article class="c37-case-card longgang">
           <div class="c37-shot-slot">
-            <span>SCREENSHOT SLOT</span>
+            <span data-en="IMAGE PENDING">素材待替换</span>
             <b data-en="Longgang compute / architecture capture">龙岗截图位</b>
           </div>
           <small>03 · LONGGANG</small>
