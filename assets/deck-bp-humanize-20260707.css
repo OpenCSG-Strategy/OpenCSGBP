@@ -792,6 +792,164 @@
 #slide-14 .founder14-team li{grid-column:auto!important}
 #slide-14 .founder14-tags li:last-child{display:none}
 
+/* Appendix product pages: use product screenshots instead of abstract concept art. */
+.appendix-slide.product-shots-ready .product-shot-page{
+  top:245px!important;
+  height:520px!important;
+  bottom:auto!important;
+  display:grid!important;
+  grid-template-columns:470px minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,1fr) 82px!important;
+  gap:14px!important
+}
+.product-shot-main{
+  grid-row:1 / 3;
+  display:grid;
+  grid-template-rows:minmax(0,1fr) 112px;
+  min-height:0;
+  background:#fff;
+  border-top:4px solid var(--teal);
+  box-shadow:inset 0 0 0 1px #D9E7E4
+}
+.product-shot-main-img{
+  min-height:0;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#F8FBFA;
+  overflow:hidden
+}
+.product-shot-main-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain
+}
+.product-shot-main-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:18px 22px;
+  border-top:1px solid #D9E7E4
+}
+.product-shot-main-copy small{
+  color:#23877B;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.16em
+}
+.product-shot-main-copy b{
+  margin-top:8px;
+  color:#143B36;
+  font-size:18px;
+  line-height:1.42
+}
+.product-shot-grid{
+  grid-column:2;
+  grid-row:1;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:12px;
+  min-height:0
+}
+.product-shot-card{
+  position:relative;
+  min-height:0;
+  display:grid;
+  grid-template-rows:minmax(0,1fr) auto auto;
+  gap:7px;
+  padding:12px;
+  background:#fff;
+  border:1px solid #D9E7E4;
+  overflow:hidden
+}
+.product-shot-card img{
+  width:100%;
+  height:100%;
+  min-height:0;
+  object-fit:contain;
+  background:#F7FBFA;
+  border:1px solid #E2ECE9
+}
+.product-shot-card b{
+  color:#153D37;
+  font-size:15px;
+  line-height:1.2
+}
+.product-shot-card span{
+  color:#6A7975;
+  font-size:11px;
+  line-height:1.32
+}
+.product-shot-card.empty{
+  background:
+    linear-gradient(90deg,rgba(35,135,123,.08) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(35,135,123,.08) 1px,transparent 1px),
+    #F8FBFA;
+  background-size:28px 28px;
+  align-content:center;
+  justify-items:center;
+  text-align:center;
+  padding:20px
+}
+.product-shot-card.empty i{
+  width:42px;
+  height:32px;
+  border:2px solid #7FBDB5;
+  position:relative
+}
+.product-shot-card.empty i:after{
+  content:"";
+  position:absolute;
+  left:8px;
+  right:8px;
+  bottom:-9px;
+  height:7px;
+  border:2px solid #7FBDB5;
+  border-top:0
+}
+.product-proof-strip{
+  grid-column:2;
+  grid-row:2;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  background:#EAF5F2;
+  border-top:3px solid var(--teal);
+  box-shadow:inset 0 0 0 1px #D2E3DF
+}
+.product-proof-strip article{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:12px 16px;
+  border-right:1px solid #C9DDD8
+}
+.product-proof-strip article:last-child{border-right:0}
+.product-proof-strip b{
+  color:#155D54;
+  font-size:15px;
+  line-height:1.2
+}
+.product-proof-strip span{
+  margin-top:5px;
+  color:#5E716D;
+  font-size:11px;
+  line-height:1.3
+}
+
+#slide-25 .product-shot-main-img img,
+#slide-28 .product-shot-main-img img{
+  object-fit:contain
+}
+#slide-29 .product-shot-main-img img{
+  object-fit:contain;
+  object-position:center top
+}
+
+/* Remove the manufacturing architecture page per review. */
+#slide-26{display:none!important}
+
 /* Appendix 19 */
 #slide-19 .telecom-case{
   grid-template-rows:190px 328px 86px!important;
@@ -1260,6 +1418,252 @@
 #slide-33 .c33-platforms article{
   background:#F4FAF8!important
 }
+
+/* City 32: keep the system diagram inside the safe area and make small cards readable. */
+#slide-32.city32-rebuilt .city32-new{
+  grid-template-columns:360px minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,1fr)!important;
+  top:205px!important;
+  height:490px!important;
+  bottom:auto!important;
+  gap:16px!important
+}
+#slide-32 .c32-fragments{
+  padding:22px!important
+}
+#slide-32 .c32-fragments>b{
+  font-size:22px!important;
+  line-height:1.28!important
+}
+#slide-32 .c32-frag-grid{
+  gap:8px!important
+}
+#slide-32 .c32-frag-grid article{
+  min-height:104px!important;
+  padding:13px!important
+}
+#slide-32 .c32-frag-grid b{
+  font-size:15px!important;
+  margin-top:6px!important
+}
+#slide-32 .c32-frag-grid p{
+  font-size:12px!important;
+  line-height:1.42!important;
+  margin-top:6px!important
+}
+#slide-32 .c32-system-visual svg{
+  inset:22px!important;
+  width:calc(100% - 44px)!important;
+  height:calc(100% - 44px)!important
+}
+#slide-32 .c32-core{
+  left:46%!important;
+  width:238px!important;
+  height:132px!important;
+  padding:20px 24px!important
+}
+#slide-32 .c32-core b{
+  font-size:22px!important
+}
+#slide-32 .c32-outcome{
+  width:210px!important;
+  padding:14px 15px!important
+}
+#slide-32 .c32-outcome span{
+  font-size:12px!important;
+  line-height:1.35!important
+}
+#slide-32 .c32-outcome.o1{right:42px!important;top:52px!important}
+#slide-32 .c32-outcome.o2{right:72px!important;top:190px!important}
+#slide-32 .c32-outcome.o3{right:42px!important;bottom:48px!important}
+#slide-32 .c32-city-strip{display:none!important}
+
+/* City 33: replace dense architecture table with a symbolic city operating diagram. */
+#slide-33.city33-diagram-ready .city33-diagram{
+  top:218px!important;
+  height:508px!important;
+  bottom:auto!important;
+  display:grid!important;
+  grid-template-columns:330px minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,1fr) 62px!important;
+  gap:14px!important
+}
+#slide-33 .c33-left{
+  grid-row:1 / 3;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:20px;
+  background:#173F39;
+  color:#fff
+}
+#slide-33 .c33-left>small{
+  color:#8BD8CE;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.16em
+}
+#slide-33 .c33-left>b{
+  color:#fff;
+  font-size:21px;
+  line-height:1.34;
+  margin-bottom:8px
+}
+#slide-33 .c33-left article{
+  position:relative;
+  display:grid!important;
+  grid-template-columns:26px 1fr!important;
+  grid-template-rows:auto auto!important;
+  column-gap:10px!important;
+  row-gap:5px!important;
+  align-content:center!important;
+  min-height:72px!important;
+  padding:12px 14px!important;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16)
+}
+#slide-33 .c33-left article span{
+  position:static!important;
+  grid-column:1!important;
+  grid-row:1 / 3!important;
+  color:#8BD8CE;
+  font-size:10px;
+  font-weight:850;
+  line-height:1.2!important
+}
+#slide-33 .c33-left article b{
+  display:block;
+  grid-column:2!important;
+  grid-row:1!important;
+  color:#fff;
+  font-size:15px;
+  line-height:1.25
+}
+#slide-33 .c33-left article b span{
+  color:#fff!important;
+  font-size:15px!important;
+  font-weight:850!important
+}
+#slide-33 .c33-left article p{
+  grid-column:2!important;
+  grid-row:2!important;
+  margin:6px 0 0;
+  color:#DCEDE9;
+  font-size:12px;
+  line-height:1.36
+}
+#slide-33 .c33-left article p span{
+  color:#DCEDE9!important;
+  font-size:12px!important;
+  line-height:1.36!important
+}
+#slide-33 .c33-city-visual{
+  position:relative;
+  min-height:0;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(35,135,123,.08) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(35,135,123,.08) 1px,transparent 1px),
+    #F8FBFA;
+  background-size:42px 42px;
+  border:1px solid #D6E5E1
+}
+#slide-33 .c33-city-visual svg{
+  position:absolute;
+  inset:18px;
+  width:calc(100% - 36px);
+  height:calc(100% - 36px);
+  fill:none
+}
+#slide-33 .c33-line{
+  stroke:#70C8BE;
+  stroke-width:2.2;
+  stroke-dasharray:8 8
+}
+#slide-33 .c33-ring{
+  stroke:#23877B;
+  stroke-width:2.5;
+  fill:rgba(35,135,123,.035)
+}
+#slide-33 .c33-core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:285px;
+  min-height:132px;
+  transform:translate(-50%,-50%);
+  padding:22px 24px;
+  background:#23877B;
+  color:#fff;
+  box-shadow:0 22px 46px rgba(26,90,82,.22)
+}
+#slide-33 .c33-core small{
+  color:#BAE9E3;
+  font-size:9px;
+  font-weight:850;
+  letter-spacing:.16em
+}
+#slide-33 .c33-core b{
+  display:block;
+  margin-top:8px;
+  color:#fff;
+  font-size:24px;
+  line-height:1.12
+}
+#slide-33 .c33-core span{
+  display:block;
+  margin-top:10px;
+  color:#E1F3F0;
+  font-size:12px;
+  line-height:1.42
+}
+#slide-33 .c33-source,
+#slide-33 .c33-output{
+  position:absolute;
+  width:184px;
+  padding:13px 14px;
+  background:#fff;
+  border-left:4px solid var(--teal);
+  box-shadow:0 12px 26px rgba(20,75,68,.09)
+}
+#slide-33 .c33-source b,
+#slide-33 .c33-output b{
+  display:block;
+  color:#153D37;
+  font-size:14px
+}
+#slide-33 .c33-source span{
+  display:block;
+  margin-top:5px;
+  color:#687975;
+  font-size:11px;
+  line-height:1.32
+}
+#slide-33 .c33-source.s1{left:48px;top:54px}
+#slide-33 .c33-source.s2{left:46px;top:206px}
+#slide-33 .c33-source.s3{left:48px;bottom:54px}
+#slide-33 .c33-output.o1{right:56px;top:74px}
+#slide-33 .c33-output.o2{right:84px;top:218px}
+#slide-33 .c33-output.o3{right:56px;bottom:74px}
+#slide-33 .c33-bottom{
+  grid-column:2;
+  grid-row:2;
+  display:grid;
+  grid-template-columns:1fr 34px 1.2fr 34px 1fr;
+  align-items:center;
+  padding:0 18px;
+  background:#EAF5F2;
+  border-top:3px solid var(--teal);
+  color:#155D54;
+  font-size:14px;
+  font-weight:800
+}
+#slide-33 .c33-bottom i{
+  text-align:center;
+  color:#23877B;
+  font-style:normal
+}
+
 #slide-34 .c34-building-blueprint{
   background:
     linear-gradient(90deg,rgba(35,135,123,.09) 1px,transparent 1px),
@@ -1268,10 +1672,10 @@
   background-size:36px 36px,36px 36px,auto!important
 }
 #slide-34 .c34-tower{
-  left:38px!important;
-  bottom:8px!important;
-  width:170px!important;
-  height:352px!important;
+  left:86px!important;
+  bottom:22px!important;
+  width:190px!important;
+  height:330px!important;
   transform:none!important;
   filter:drop-shadow(16px 22px 24px rgba(22,83,75,.16))
 }
@@ -1283,11 +1687,11 @@
     repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 3px,transparent 3px 10px)!important;
   box-shadow:inset -18px 0 28px rgba(255,255,255,.18),inset 16px 0 22px rgba(7,73,65,.12)!important
 }
-#slide-34 .c34-tower .tower-cap{width:68px!important;height:32px!important;background-color:#1D766C!important}
-#slide-34 .c34-tower .tower-high{top:31px!important;width:92px!important;height:84px!important;background-color:#2B897E!important}
-#slide-34 .c34-tower .tower-mid{top:114px!important;width:118px!important;height:86px!important;background-color:#42998E!important}
-#slide-34 .c34-tower .tower-low{top:199px!important;width:144px!important;height:80px!important;background-color:#66ADA5!important}
-#slide-34 .c34-tower .tower-base{top:278px!important;width:166px!important;height:58px!important;background-color:#A1D0CA!important}
+#slide-34 .c34-tower .tower-cap{width:78px!important;height:30px!important;background-color:#1D766C!important}
+#slide-34 .c34-tower .tower-high{top:29px!important;width:104px!important;height:78px!important;background-color:#2B897E!important}
+#slide-34 .c34-tower .tower-mid{top:106px!important;width:132px!important;height:78px!important;background-color:#42998E!important}
+#slide-34 .c34-tower .tower-low{top:183px!important;width:162px!important;height:74px!important;background-color:#66ADA5!important}
+#slide-34 .c34-tower .tower-base{top:256px!important;width:188px!important;height:56px!important;background-color:#A1D0CA!important}
 #slide-34 .c34-tower:after{
   left:-14px!important;
   right:-24px!important;
@@ -1299,6 +1703,231 @@
 #slide-34 .c34-floor-label{
   background:rgba(255,255,255,.82)!important;
   box-shadow:0 10px 24px rgba(20,74,66,.08)!important
+}
+#slide-34 .c34-building-blueprint .c34-floor-label{
+  left:300px!important;
+  right:22px!important
+}
+
+/* Dongfang: merge the "why" and "how" pages into one evidence slide. */
+#slide-35.dongfang-merged-ready .dongfang-merged{
+  top:220px!important;
+  height:506px!important;
+  bottom:auto!important;
+  display:grid!important;
+  grid-template-columns:350px minmax(0,1fr) 330px!important;
+  grid-template-rows:minmax(0,1fr) 66px!important;
+  gap:14px!important
+}
+#slide-36{display:none!important}
+#slide-35 .df-thesis{
+  grid-column:1!important;
+  grid-row:1!important;
+  display:grid;
+  grid-template-rows:auto auto 78px minmax(0,1fr);
+  gap:14px;
+  min-height:0;
+  padding:20px;
+  background:#fff;
+  border-top:4px solid var(--teal);
+  box-shadow:inset 0 0 0 1px #D9E7E4
+}
+#slide-35 .df-thesis small,
+#slide-35 .df-map small{
+  color:#23877B;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.16em
+}
+#slide-35 .df-thesis>b{
+  color:#143D37;
+  font-size:20px;
+  line-height:1.42
+}
+#slide-35 .df-anchor{
+  display:grid;
+  grid-template-columns:126px 1fr;
+  align-items:center;
+  background:#EAF5F2
+}
+#slide-35 .df-anchor strong{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+  background:#23877B;
+  color:#fff;
+  font-size:24px
+}
+#slide-35 .df-anchor span{
+  padding:0 15px;
+  color:#245D54;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.35
+}
+#slide-35 .df-shot-slot{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:8px;
+  min-height:0;
+  background:
+    linear-gradient(90deg,rgba(35,135,123,.08) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(35,135,123,.08) 1px,transparent 1px),
+    #F8FBFA;
+  background-size:28px 28px;
+  border:1px solid #D9E7E4;
+  padding:18px
+}
+#slide-35 .df-shot-slot i{
+  width:54px;
+  height:38px;
+  border:2px solid #78BDB4
+}
+#slide-35 .df-shot-slot b{
+  color:#12473F;
+  font-size:17px
+}
+#slide-35 .df-shot-slot span{
+  color:#637570;
+  font-size:11.5px;
+  line-height:1.45
+}
+#slide-35 .df-map{
+  grid-column:2!important;
+  grid-row:1!important;
+  position:relative;
+  min-height:0;
+  grid-row:1;
+  background:#F8FBFA;
+  border:1px solid #D9E7E4;
+  overflow:hidden
+}
+#slide-35 .df-map svg{
+  position:absolute;
+  inset:28px 22px 82px;
+  width:calc(100% - 44px);
+  height:calc(100% - 110px);
+  fill:none
+}
+#slide-35 .df-sea{
+  stroke:#23877B;
+  stroke-width:3
+}
+#slide-35 .df-dash{
+  stroke:#74C7BE;
+  stroke-width:2;
+  stroke-dasharray:8 8
+}
+#slide-35 .df-node{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  width:76px;
+  height:76px;
+  background:#E8F5F2;
+  border:2px solid #23877B;
+  color:#14463F;
+  font-size:16px;
+  font-weight:850
+}
+#slide-35 .df-node small{
+  margin-top:4px;
+  font-size:9px;
+  letter-spacing:.08em
+}
+#slide-35 .df-node.main{
+  left:54px;
+  top:170px;
+  width:106px;
+  height:106px;
+  font-size:25px
+}
+#slide-35 .df-node.hk{left:260px;top:88px}
+#slide-35 .df-node.sg{right:44px;top:72px}
+#slide-35 .df-node.sea{right:44px;bottom:118px}
+#slide-35 .df-node.ftp{left:232px;bottom:78px;font-size:12px}
+#slide-35 .df-caption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:76px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 18px;
+  background:#EAF5F2;
+  border-top:1px solid #D2E3DF
+}
+#slide-35 .df-caption b{
+  margin-top:6px;
+  color:#245D54;
+  font-size:16px
+}
+#slide-35 .df-plan{
+  grid-column:3!important;
+  grid-row:1!important;
+  display:grid;
+  grid-template-rows:repeat(3,1fr);
+  background:#fff;
+  border-top:4px solid var(--teal);
+  box-shadow:inset 0 0 0 1px #D9E7E4
+}
+#slide-35 .df-plan article{
+  position:relative;
+  padding:26px 18px 18px 56px;
+  border-bottom:1px solid #D9E7E4
+}
+#slide-35 .df-plan article:last-child{border-bottom:0}
+#slide-35 .df-plan span{
+  position:absolute;
+  left:18px;
+  top:27px;
+  color:#23877B;
+  font-size:10px;
+  font-weight:850
+}
+#slide-35 .df-plan b{
+  color:#1D665C;
+  font-size:17px
+}
+#slide-35 .df-plan p{
+  margin:9px 0 0;
+  color:#63746F;
+  font-size:12px;
+  line-height:1.48
+}
+#slide-35 .df-revenue{
+  grid-row:2!important;
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:160px repeat(3,1fr);
+  align-items:center;
+  background:#EAF5F2;
+  border-top:3px solid var(--teal);
+  box-shadow:inset 0 0 0 1px #D2E3DF
+}
+#slide-35 .df-revenue b,
+#slide-35 .df-revenue span{
+  display:flex;
+  align-items:center;
+  height:100%;
+  padding:0 18px;
+  border-right:1px solid #C9DDD8;
+  color:#155D54;
+  font-size:13px;
+  font-weight:850
+}
+#slide-35 .df-revenue b{
+  background:#23877B;
+  color:#fff;
+  font-size:16px
 }
 
 #slide-37.city37-rebuilt .city37-visual{
@@ -1840,3 +2469,59 @@
 #slide-11 .opc11-product-ribbon>.step-hub b,
 #slide-11 .opc11-product-ribbon>.step-hub small{color:#fff}
 #slide-11 .opc11-product-ribbon>.step-hub small{opacity:.85}
+
+/* Slide 02 · Make AI sovereignty visceral through recent agent-risk cases. */
+#slide-02 .sovereign-cases{
+  position:absolute;
+  left:78px;
+  top:168px;
+  width:715px;
+  height:108px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px
+}
+#slide-02 .sovereign-cases article{
+  overflow:hidden;
+  padding:14px 14px 12px;
+  border-top:3px solid var(--teal);
+  border-bottom:1px solid var(--line);
+  background:#fff
+}
+#slide-02 .sovereign-cases em{
+  display:block;
+  margin-bottom:10px;
+  color:var(--teal);
+  font-style:normal;
+  font-size:9.5px;
+  line-height:1.1;
+  font-weight:850;
+  letter-spacing:.08em;
+  text-transform:uppercase
+}
+#slide-02 .sovereign-cases b{
+  display:block;
+  color:#15201E;
+  font-size:14px;
+  line-height:1.35
+}
+#slide-02 .thesis-grid{
+  top:296px!important;
+  height:486px!important;
+  gap:14px!important
+}
+#slide-02 .thesis-item{
+  justify-content:flex-start!important;
+  padding-top:18px!important;
+  padding-bottom:14px!important
+}
+#slide-02 .thesis-item .n{margin-bottom:14px!important}
+#slide-02 .thesis-item h3{
+  font-size:21px!important;
+  line-height:1.26!important;
+  margin-bottom:9px!important
+}
+#slide-02 .thesis-item p{
+  font-size:14.2px!important;
+  line-height:1.48!important
+}

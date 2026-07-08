@@ -340,6 +340,217 @@
       </section>`;
   };
 
+  const shotCard = (src, title, label, alt = "") => {
+    if (src) {
+      return `<article class="product-shot-card"><img src="${src}" alt="${alt || title}"><b>${title}</b><span>${label}</span></article>`;
+    }
+    return `<article class="product-shot-card empty"><i></i><b>${title}</b><span>${label}</span></article>`;
+  };
+
+  const rebuildProductAppendix = () => {
+    const hideSlide26 = document.querySelector("#slide-26")?.closest(".slide-wrap");
+    if (hideSlide26) {
+      hideSlide26.hidden = true;
+      hideSlide26.style.display = "none";
+      hideSlide26.setAttribute("data-section", "removed");
+    }
+
+    document.querySelectorAll(".slide").forEach(slide => {
+      slide.querySelectorAll("[data-en]").forEach(el => {
+        el.dataset.en = el.dataset.en.replaceAll("CSGHub-Lite", "CSGLite").replaceAll("CSGHub Lite", "CSGLite");
+      });
+      const walker = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        if (node.nodeValue.includes("CSGHub-Lite") || node.nodeValue.includes("CSGHub Lite")) {
+          node.nodeValue = node.nodeValue.replaceAll("CSGHub-Lite", "CSGLite").replaceAll("CSGHub Lite", "CSGLite");
+        }
+      }
+    });
+
+    const products = [
+      {
+        id: "slide-25",
+        title: ["AgenticHub：企业 Agent 构建、发布与运营工作台", "AgenticHub: enterprise agent build, release and operations workspace"],
+        lead: ["不要再用概念图讲产品；这一页直接展示 AgenticHub 的真实界面与待补截图位。", "Use product evidence, not concept art: real AgenticHub screenshots plus replacement slots."],
+        main: ["assets/product-agentichub.png", "AgenticHub 主界面", "AgenticHub UI"],
+        shots: [
+          ["assets/appendix/slide-10-image-01.png", "流程编排 / 工具调用", "Workflow & tool use"],
+          [null, "Agent 构建页面截图位", "Replace with builder screenshot"],
+          [null, "发布 / 运行监控截图位", "Replace with release and monitoring screenshot"],
+          [null, "企业工具接入截图位", "Replace with enterprise integration screenshot"]
+        ],
+        proof: [
+          ["双模式", "无代码拖拽 + 代码接口并存"],
+          ["全生命周期", "构建、测试、发布、监控和反馈回流"],
+          ["企业接入", "模型、工具、MCP 与业务系统统一管理"]
+        ]
+      },
+      {
+        id: "slide-27",
+        title: ["CSGLite：让模型、数据和 AI 工具在个人设备本地运行", "CSGLite: run models, data and AI tools locally on personal devices"],
+        lead: ["核心卖点是本地、轻量、开箱即用；版面改成多截图证据，而不是功能格子。", "Local, lightweight and ready-to-run; rebuilt as screenshot evidence instead of feature boxes."],
+        main: ["assets/product-lite.png", "CSGLite 本地运行界面", "CSGLite local runtime"],
+        shots: [
+          ["assets/appendix/slide-12-image-01.png", "本地模型运行", "Local model runtime"],
+          [null, "模型下载 / 断点续传截图位", "Replace with model download screenshot"],
+          [null, "REST API / 命令行截图位", "Replace with REST API or CLI screenshot"],
+          [null, "跨平台安装截图位", "Replace with installer screenshot"]
+        ],
+        proof: [
+          ["本地优先", "模型、数据与权限留在个人设备"],
+          ["OpenAI / Ollama 兼容", "用 REST API 接入个人工具链"],
+          ["跨平台", "macOS、Windows、Linux、ARM / x86"]
+        ]
+      },
+      {
+        id: "slide-28",
+        title: ["CSGClaw：让多个 AI Agent 像一支团队协同工作", "CSGClaw: coordinate multiple AI agents as one team"],
+        lead: ["这一页补足 CSGClaw 的产品感：协同执行架构 + 多个可替换界面截图位。", "Adds product evidence for CSGClaw: orchestration architecture plus replaceable UI slots."],
+        main: ["assets/product-claw.png", "CSGClaw 协同界面", "CSGClaw UI"],
+        shots: [
+          ["assets/appendix/slide-13-image-01.png", "Manager–Worker 架构", "Manager-worker architecture"],
+          ["assets/appendix/slide-13-image-02.png", "任务拆解 / 沙箱", "Task decomposition and sandbox"],
+          ["assets/appendix/slide-13-image-03.png", "协同执行流程", "Collaborative execution flow"],
+          [null, "聊天 / 任务面板截图位", "Replace with chat or task panel screenshot"]
+        ],
+        proof: [
+          ["Manager–Worker", "目标拆解、分工执行、结果合并"],
+          ["Human-in-loop", "关键节点确认、审计与回滚"],
+          ["个人 OPC", "把一次性对话变成长期执行系统"]
+        ]
+      },
+      {
+        id: "slide-29",
+        title: ["CSGHub：统一管理模型、数据和 Agent 等关键 AI 资产", "CSGHub: manage models, data and agents as critical AI assets"],
+        lead: ["去掉抽象海报图，直接用 CSGHub 产品截图展示资产管理、模型服务、应用空间和治理能力。", "Replaces abstract poster art with CSGHub screenshots for assets, model services, spaces and governance."],
+        main: ["assets/product-csghub.png", "CSGHub 资产管理界面", "CSGHub asset management"],
+        shots: [
+          ["assets/appendix/slide-14-image-01.png", "模型 / 数据资产", "Model and data assets"],
+          ["assets/appendix/slide-14-image-02.png", "模型评测 / 服务", "Model evaluation and services"],
+          ["assets/appendix/slide-14-image-03.png", "应用空间 / Agent", "Spaces and agents"],
+          ["assets/appendix/slide-14-image-04.png", "组织治理 / 权限", "Governance and access"]
+        ],
+        proof: [
+          ["资产目录", "模型、数据集、代码、Prompt 与 Agent"],
+          ["生产闭环", "推理、微调、评测、发布与回滚"],
+          ["企业治理", "组织、权限、审计、License 与私有化部署"]
+        ]
+      }
+    ];
+
+    products.forEach(item => {
+      const slide = document.querySelector(`#${item.id}`);
+      const stage = slide?.querySelector(".app-stage");
+      if (!slide || !stage || slide.classList.contains("product-shots-ready")) return;
+      slide.classList.add("product-shots-ready");
+      setText(`#${item.id} .title`, item.title[0], item.title[1]);
+      stage.className = `app-stage product-shot-page ${item.id}-shots`;
+      stage.innerHTML = `
+        <section class="product-shot-main">
+          <div class="product-shot-main-img"><img src="${item.main[0]}" alt="${item.main[1]}"></div>
+          <div class="product-shot-main-copy">
+            <small>PRODUCT EVIDENCE</small>
+            <b data-en="${item.lead[1]}">${item.lead[0]}</b>
+          </div>
+        </section>
+        <section class="product-shot-grid">
+          ${item.shots.map(([src, zh, en]) => shotCard(src, zh, en)).join("")}
+        </section>
+        <section class="product-proof-strip">
+          ${item.proof.map(([k, v]) => `<article><b>${k}</b><span>${v}</span></article>`).join("")}
+        </section>`;
+    });
+  };
+
+  const rebuildSlide33 = () => {
+    const slide = document.querySelector("#slide-33");
+    const stage = slide?.querySelector(".app-stage");
+    if (!stage || slide.classList.contains("city33-diagram-ready")) return;
+    slide.classList.add("city33-diagram-ready");
+    setText("#slide-33 .title",
+      "城市 AI 平台不是软件采购，而是“治理主体 + 开放底座 + 产业运营”的系统",
+      "A city AI platform is not software procurement; it combines governance, open foundation and industry operations");
+    stage.className = "app-stage city33-diagram";
+    stage.innerHTML = `
+      <section class="c33-left">
+        <small>WHO OWNS & OPERATES</small>
+        <b data-en="The city must own the operating rules, data boundaries and public service entry.">城市要掌握运行规则、数据边界与公共服务入口。</b>
+        <article><span>01</span><b>${tx("治理主体", "Governance body")}</b><p>${tx("政府、基金、园区与运营公司共同定义资产、规则、收益和责任。", "Government, funds, parks and operators define assets, rules, revenue and accountability.")}</p></article>
+        <article><span>02</span><b>${tx("开放底座", "Open foundation")}</b><p>${tx("CSGHub + AgenticOps 承接模型、数据、算力、Agent 和治理控制。", "CSGHub + AgenticOps carries models, data, compute, agents and governance controls.")}</p></article>
+        <article><span>03</span><b>${tx("产业运营", "Industry operations")}</b><p>${tx("招商、开发者、场景验证与企业服务形成长期循环。", "Attraction, developers, scenario validation and enterprise services create a long-term loop.")}</p></article>
+      </section>
+      <section class="c33-city-visual">
+        <svg viewBox="0 0 760 480" aria-hidden="true">
+          <path class="c33-line" d="M118 102 C270 72 334 150 382 236"/>
+          <path class="c33-line" d="M114 238 C238 238 305 238 382 238"/>
+          <path class="c33-line" d="M118 374 C270 404 334 326 382 240"/>
+          <path class="c33-ring" d="M382 238 C472 114 640 128 682 238 C632 366 470 366 382 238Z"/>
+        </svg>
+        <div class="c33-source s1"><b>${tx("治理与政策", "Governance & policy")}</b><span>${tx("规则、预算、公共入口", "Rules, budget, public entry")}</span></div>
+        <div class="c33-source s2"><b>${tx("资源底座", "Resource base")}</b><span>${tx("算力、数据、模型资产", "Compute, data, model assets")}</span></div>
+        <div class="c33-source s3"><b>${tx("场景与企业", "Scenarios & enterprises")}</b><span>${tx("行业需求、应用交付", "Industry demand, delivery")}</span></div>
+        <div class="c33-core"><small>OPEN CITY AI</small><b>CSGHub + AgenticOps</b><span>${tx("资产目录 · 权限审计 · Agent 生产 · 持续运营", "Asset catalog · audit · agent production · operations")}</span></div>
+        <div class="c33-output o1"><b>${tx("城市公共 AI 服务", "Public AI services")}</b></div>
+        <div class="c33-output o2"><b>${tx("企业私有化生产", "Enterprise private production")}</b></div>
+        <div class="c33-output o3"><b>${tx("招商与生态交易", "Attraction & ecosystem transactions")}</b></div>
+      </section>
+      <section class="c33-bottom">
+        <span>${tx("不是采购一个模型", "Not buying one model")}</span><i>→</i>
+        <span>${tx("而是建立城市 AI 资产与运营权", "Build city AI asset and operating rights")}</span><i>→</i>
+        <span>${tx("最终形成可持续产业服务收入", "Create sustainable industry-service revenue")}</span>
+      </section>`;
+  };
+
+  const rebuildDongfang = () => {
+    const slide = document.querySelector("#slide-35");
+    const stage = slide?.querySelector(".app-stage");
+    if (!stage || slide.classList.contains("dongfang-merged-ready")) return;
+    slide.classList.add("dongfang-merged-ready");
+    setText("#slide-35 .title",
+      "东方：用自贸港政策、开放 AI 底座和跨境服务，建设面向东南亚的数字接口",
+      "Dongfang: a Southeast Asia digital gateway built on free-trade policy, open AI foundation and cross-border services");
+    stage.className = "app-stage dongfang-merged";
+    stage.innerHTML = `
+      <section class="df-thesis">
+        <small>WHY DONGFANG</small>
+        <b data-en="Dongfang should not copy a generic park; it should turn policy, multilingual services and regional links into a digital gateway.">东方不应复制传统园区，而应把政策、多语言服务和区域连接变成数字接口。</b>
+        <div class="df-anchor"><strong>5 YEARS</strong><span>${tx("政策窗口 × 技术窗口 × 区域市场窗口叠加", "Policy window × technology window × regional market window")}</span></div>
+        <div class="df-shot-slot"><i></i><b>${tx("配图 / 截图位", "Image / screenshot slot")}</b><span>${tx("建议放：园区照片、门户页面、东南亚连接示意或多语言服务截图", "Recommended: park photo, portal page, SEA connection visual or multilingual service screenshot")}</span></div>
+      </section>
+      <section class="df-map">
+        <svg viewBox="0 0 640 430" aria-hidden="true">
+          <path class="df-sea" d="M122 215 C218 120 340 132 460 78"/>
+          <path class="df-sea" d="M122 218 C232 246 374 296 520 282"/>
+          <path class="df-dash" d="M184 155 C294 76 408 118 500 178"/>
+        </svg>
+        <div class="df-node main">东方<small>DONGFANG</small></div>
+        <div class="df-node hk">香港</div>
+        <div class="df-node sg">新加坡</div>
+        <div class="df-node sea">东南亚</div>
+        <div class="df-node ftp">海南自贸港</div>
+        <div class="df-caption"><small>NATIONAL DIGITAL GATEWAY</small><b>${tx("连接海南自贸港、香港、新加坡与东南亚", "Connect Hainan FTP, Hong Kong, Singapore and Southeast Asia")}</b></div>
+      </section>
+      <section class="df-plan">
+        <article><span>01</span><b>${tx("政府启动", "Government anchor")}</b><p>${tx("以开放 AI 底座承接政策、公共数据、园区服务和企业入驻。", "Use an open AI foundation to carry policy, public data, park services and enterprise onboarding.")}</p></article>
+        <article><span>02</span><b>${tx("产业运营", "Industry operations")}</b><p>${tx("围绕多语言模型、Agent 出海、跨境合规和企业服务形成运营项目。", "Operate around multilingual models, agent export, cross-border compliance and enterprise services.")}</p></article>
+        <article><span>03</span><b>${tx("区域放大", "Regional expansion")}</b><p>${tx("连接香港、新加坡和东南亚市场，输出数据、模型、应用和服务能力。", "Connect Hong Kong, Singapore and Southeast Asia, exporting data, models, applications and services.")}</p></article>
+      </section>
+      <section class="df-revenue">
+        <b>${tx("核心收入", "Core revenue")}</b>
+        <span>${tx("建设 / 年度 / 项目", "Deployment / annual / project")}</span>
+        <span>${tx("订阅 / 服务 / 运营", "Subscription / services / operations")}</span>
+        <span>${tx("加工 / 服务 / 出海", "Processing / services / outbound")}</span>
+      </section>`;
+
+    const slide36 = document.querySelector("#slide-36")?.closest(".slide-wrap");
+    if (slide36) {
+      slide36.hidden = true;
+      slide36.style.display = "none";
+      slide36.setAttribute("data-section", "removed");
+    }
+  };
+
   const rebuildSlide37 = () => {
     const slide = document.querySelector("#slide-37");
     const stage = slide?.querySelector(".app-stage");
@@ -468,7 +679,10 @@
   replaceSlide22();
   refineSlide23();
   reframeSlide13();
+  rebuildProductAppendix();
   rebuildSlide32();
+  rebuildSlide33();
+  rebuildDongfang();
   rebuildSlide37();
   enhanceSlide05Proofs();
 })();
