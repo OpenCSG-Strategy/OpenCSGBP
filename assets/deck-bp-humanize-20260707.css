@@ -947,9 +947,6 @@
   object-position:center top
 }
 
-/* Remove the manufacturing architecture page per review. */
-#slide-26{display:none!important}
-
 /* Appendix 19 */
 #slide-19 .telecom-case{
   grid-template-rows:190px 328px 86px!important;

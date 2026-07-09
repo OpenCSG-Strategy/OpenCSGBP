@@ -1,0 +1,499 @@
+/* ============================================================
+   Silicon Valley Polish - Professional Design System
+   消除 AI 感，提升专业度与精致度
+   ============================================================ */
+
+:root {
+  /* 优化色彩系统 - 更加精致的渐变 */
+  --teal-primary: #23877B;
+  --teal-hover: #1a6d63;
+  --teal-light: #2d9d8f;
+  --teal-subtle: #e8f5f3;
+  --teal-ultra-light: #f4faf9;
+
+  /* 灰度系统重新定义 */
+  --gray-900: #0f1614;
+  --gray-800: #1a211f;
+  --gray-700: #2d3836;
+  --gray-600: #4a5654;
+  --gray-500: #68736f;
+  --gray-400: #8a9591;
+  --gray-300: #b0bab7;
+  --gray-200: #d4dbd9;
+  --gray-100: #e8eeec;
+  --gray-50: #f5f8f7;
+
+  /* 功能色 */
+  --amber-accent: #d4972f;
+  --amber-light: #f5e6d3;
+
+  /* 阴影系统 */
+  --shadow-xs: 0 1px 2px rgba(15, 22, 20, 0.04);
+  --shadow-sm: 0 2px 4px rgba(15, 22, 20, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 22, 20, 0.08);
+  --shadow-lg: 0 8px 24px rgba(15, 22, 20, 0.10);
+  --shadow-xl: 0 16px 48px rgba(15, 22, 20, 0.12);
+}
+
+/* ============================================================
+   Typography Refinement - 字体层次优化
+   ============================================================ */
+
+/* 主标题 - 更加现代和优雅 */
+.title {
+  font-size: 38px !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.025em !important;
+  font-weight: 600 !important;
+  color: var(--gray-900) !important;
+  max-width: 1380px !important;
+}
+
+/* 副标题和正文 - 提升可读性 */
+.subtitle {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: var(--gray-600) !important;
+  font-weight: 400 !important;
+}
+
+/* Section 标签 - 更精致 */
+.section {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--teal-primary) !important;
+  opacity: 0.92;
+}
+
+.section-zh {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* ============================================================
+   Card & Panel System - 卡片系统优化
+   ============================================================ */
+
+/* 通用卡片增强 */
+.panel,
+.box,
+.company-right .box {
+  border: 1px solid var(--gray-200) !important;
+  background: #ffffff !important;
+  box-shadow: var(--shadow-xs) !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.panel:hover,
+.box:hover {
+  border-color: var(--gray-300) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* ============================================================
+   Sovereign Cases - Slide 02 优化
+   ============================================================ */
+
+.sovereign-cases {
+  gap: 16px !important;
+}
+
+.sovereign-cases article {
+  border-top: 2px solid var(--teal-primary) !important;
+  border-bottom: none !important;
+  border-left: 1px solid var(--gray-200) !important;
+  border-right: 1px solid var(--gray-200) !important;
+  background: #ffffff !important;
+  padding: 16px 14px 14px !important;
+  border-radius: 0 0 6px 6px !important;
+  box-shadow: var(--shadow-xs) !important;
+  transition: all 0.2s ease !important;
+}
+
+.sovereign-cases article:hover {
+  border-top-color: var(--teal-hover) !important;
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-2px) !important;
+}
+
+.sovereign-cases em {
+  font-size: 9.5px !important;
+  letter-spacing: 0.10em !important;
+  color: var(--teal-primary) !important;
+  margin-bottom: 8px !important;
+  font-weight: 700 !important;
+}
+
+.sovereign-cases b {
+  font-size: 13px !important;
+  line-height: 1.42 !important;
+  color: var(--gray-800) !important;
+  font-weight: 500 !important;
+}
+
+/* ============================================================
+   Thesis Grid - Investment Thesis 优化
+   ============================================================ */
+
+.thesis-item {
+  padding: 28px 28px 20px 0 !important;
+  border-top: 1px solid var(--gray-200) !important;
+}
+
+.thesis-item:nth-child(odd) {
+  padding-right: 40px !important;
+  border-right: 1px solid var(--gray-200) !important;
+}
+
+.thesis-item:nth-child(even) {
+  padding-left: 40px !important;
+}
+
+.thesis-item .n {
+  font-size: 13px !important;
+  color: var(--teal-primary) !important;
+  font-weight: 700 !important;
+  margin-bottom: 14px !important;
+  letter-spacing: 0.05em !important;
+}
+
+.thesis-item h3 {
+  font-size: 21px !important;
+  line-height: 1.32 !important;
+  font-weight: 600 !important;
+  color: var(--gray-900) !important;
+  margin: 0 0 11px !important;
+  letter-spacing: -0.015em !important;
+}
+
+.thesis-item p {
+  font-size: 14px !important;
+  line-height: 1.58 !important;
+  color: var(--gray-600) !important;
+  font-weight: 400 !important;
+}
+
+/* ============================================================
+   Flywheel - 商业飞轮优化
+   ============================================================ */
+
+.flywheel svg circle:nth-child(1) {
+  fill: var(--gray-50) !important;
+  stroke: var(--gray-200) !important;
+}
+
+.flywheel svg circle:nth-child(2) {
+  fill: var(--teal-subtle) !important;
+  stroke: var(--teal-light) !important;
+  stroke-width: 1.5 !important;
+}
+
+.flywheel svg circle:nth-child(3) {
+  fill: var(--teal-primary) !important;
+}
+
+.fly-label b {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--gray-900) !important;
+  margin-bottom: 6px !important;
+  letter-spacing: -0.01em !important;
+}
+
+.fly-label span {
+  font-size: 12.5px !important;
+  color: var(--gray-500) !important;
+  line-height: 1.5 !important;
+}
+
+/* ============================================================
+   Evolution Page - DevOps vs AgenticOps
+   ============================================================ */
+
+.paradigm-panel {
+  border: 1px solid var(--gray-200) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--shadow-sm) !important;
+  overflow: hidden !important;
+}
+
+.paradigm-panel header {
+  padding: 14px 18px !important;
+  background: var(--gray-50) !important;
+  border-bottom: 1px solid var(--gray-200) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  color: var(--gray-700) !important;
+}
+
+/* ============================================================
+   Company Timeline - 公司发展历程优化
+   ============================================================ */
+
+.timeline-axis {
+  background: linear-gradient(180deg, var(--teal-light) 0%, var(--teal-primary) 100%) !important;
+  width: 2px !important;
+  left: 42px !important;
+}
+
+.tl:before {
+  width: 10px !important;
+  height: 10px !important;
+  border: 3px solid var(--teal-primary) !important;
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 3px var(--teal-subtle) !important;
+}
+
+.tl .year {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--teal-primary) !important;
+  letter-spacing: 0.05em !important;
+}
+
+.tl b {
+  font-size: 15.5px !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+  color: var(--gray-900) !important;
+  display: block !important;
+  margin-bottom: 4px !important;
+}
+
+.tl span {
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  color: var(--gray-600) !important;
+  font-weight: 400 !important;
+}
+
+/* ============================================================
+   Company Stats - 公司数据指标
+   ============================================================ */
+
+.company-footprint {
+  border-top: 1px solid var(--gray-200) !important;
+  border-bottom: none !important;
+  background: var(--gray-50) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.company-footprint div {
+  padding: 22px 16px !important;
+  border-right: 1px solid var(--gray-200) !important;
+  text-align: center !important;
+}
+
+.company-footprint b {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: var(--teal-primary) !important;
+  letter-spacing: -0.02em !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.company-footprint span {
+  font-size: 12.5px !important;
+  color: var(--gray-600) !important;
+  font-weight: 500 !important;
+}
+
+/* ============================================================
+   Investor & Customer Proof
+   ============================================================ */
+
+.investor-proof,
+.customer-proof {
+  padding: 20px !important;
+}
+
+.proof-heading h4 {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--gray-900) !important;
+  margin: 0 0 6px !important;
+  letter-spacing: -0.01em !important;
+}
+
+.proof-heading span {
+  font-size: 12px !important;
+  color: var(--gray-500) !important;
+  line-height: 1.5 !important;
+  display: block !important;
+}
+
+/* ============================================================
+   Funding History
+   ============================================================ */
+
+.funding-record {
+  padding: 14px 16px !important;
+  border: 1px solid var(--gray-200) !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  transition: all 0.2s ease !important;
+}
+
+.funding-record:hover {
+  border-color: var(--teal-light) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.funding-record.highlight {
+  border: 2px solid var(--teal-primary) !important;
+  background: var(--teal-ultra-light) !important;
+}
+
+.funding-record span {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  color: var(--gray-500) !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.funding-record b {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--gray-900) !important;
+  display: block !important;
+  margin-bottom: 4px !important;
+}
+
+.funding-record em {
+  font-size: 10px !important;
+  font-style: normal !important;
+  color: var(--teal-primary) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* ============================================================
+   Honor Grid - 荣誉与认可
+   ============================================================ */
+
+.honor {
+  border: 1px solid var(--gray-200) !important;
+  border-top: 2px solid var(--teal-primary) !important;
+  border-radius: 0 0 8px 8px !important;
+  box-shadow: var(--shadow-xs) !important;
+  transition: all 0.25s ease !important;
+}
+
+.honor:hover {
+  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-4px) !important;
+  border-top-color: var(--teal-hover) !important;
+}
+
+.honor img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.honor .hc {
+  padding: 14px 16px !important;
+}
+
+.honor .hc b {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: var(--gray-900) !important;
+  display: block !important;
+  margin-bottom: 4px !important;
+  line-height: 1.35 !important;
+}
+
+.honor .hc span {
+  font-size: 11.5px !important;
+  color: var(--gray-500) !important;
+  line-height: 1.4 !important;
+  display: block !important;
+}
+
+/* ============================================================
+   Footer Enhancement
+   ============================================================ */
+
+.foot {
+  border-top: 1px solid var(--gray-200) !important;
+  padding-top: 14px !important;
+  color: var(--gray-500) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ============================================================
+   Topline Enhancement
+   ============================================================ */
+
+.topline {
+  background: linear-gradient(90deg,
+    var(--gray-200) 0%,
+    var(--gray-300) 50%,
+    var(--gray-200) 100%) !important;
+  height: 1px !important;
+}
+
+/* ============================================================
+   Logo & Brand
+   ============================================================ */
+
+.brand {
+  filter: saturate(1.1) brightness(0.98) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* ============================================================
+   Regional Map Enhancement
+   ============================================================ */
+
+.city-pin {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: var(--gray-700) !important;
+  padding: 4px 10px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--gray-300) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.2s ease !important;
+}
+
+.city-pin:hover {
+  background: var(--teal-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--teal-primary) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ============================================================
+   Responsive Refinement
+   ============================================================ */
+
+@media (max-width: 1920px) {
+  .title {
+    font-size: 36px !important;
+  }
+}
+
+@media print {
+  .panel,
+  .box,
+  .funding-record,
+  .honor {
+    box-shadow: none !important;
+  }
+}

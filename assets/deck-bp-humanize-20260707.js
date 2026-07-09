@@ -348,13 +348,6 @@
   };
 
   const rebuildProductAppendix = () => {
-    const hideSlide26 = document.querySelector("#slide-26")?.closest(".slide-wrap");
-    if (hideSlide26) {
-      hideSlide26.hidden = true;
-      hideSlide26.style.display = "none";
-      hideSlide26.setAttribute("data-section", "removed");
-    }
-
     document.querySelectorAll(".slide").forEach(slide => {
       slide.querySelectorAll("[data-en]").forEach(el => {
         el.dataset.en = el.dataset.en.replaceAll("CSGHub-Lite", "CSGLite").replaceAll("CSGHub Lite", "CSGLite");
@@ -662,8 +655,6 @@
       document.body.classList.remove("proof-modal-open");
     };
 
-    slide.querySelector(".region-map-restored")?.addEventListener("click", () => openModal("region"));
-    slide.querySelector(".customer-accounts")?.addEventListener("click", () => openModal("customer"));
     modal.querySelectorAll("[data-proof-close]").forEach(el => el.addEventListener("click", closeModal));
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && modal.classList.contains("open")) closeModal();

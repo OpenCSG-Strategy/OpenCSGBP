@@ -32,7 +32,7 @@
   min-height:0 !important;
   border:1px solid #D8E5E2 !important;
   background:#FBFCFC !important;
-  cursor:pointer !important;
+  cursor:default !important;
 }
 
 #slide-05 .customer-priority{
@@ -125,21 +125,22 @@
 
 #slide-05 .customer-wordmarks.logo-only{
   display:grid !important;
-  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
   grid-template-rows:repeat(2,minmax(0,1fr)) !important;
-  gap:6px !important;
-  padding:9px !important;
+  gap:5px !important;
+  padding:8px !important;
   border:0 !important;
   background:#FBFCFC !important;
 }
 
 #slide-05 .customer-wordmarks.logo-only>div{
   display:flex !important;
+  flex-direction:column !important;
   align-items:center !important;
   justify-content:center !important;
   min-width:0 !important;
   min-height:0 !important;
-  padding:7px !important;
+  padding:5px !important;
   overflow:hidden !important;
   border:1px solid #DCE6E3 !important;
   background:#FFFFFF !important;
@@ -148,8 +149,8 @@
 
 #slide-05 .customer-wordmarks.logo-only img{
   display:block !important;
-  max-width:74px !important;
-  max-height:23px !important;
+  max-width:64px !important;
+  max-height:21px !important;
   object-fit:contain !important;
   filter:none !important;
   opacity:.84 !important;
@@ -157,14 +158,33 @@
 
 #slide-05 .customer-wordmarks.logo-only b{
   color:#2F423E !important;
-  font-size:9px !important;
+  font-size:9.5px !important;
   line-height:1.08 !important;
   text-align:center !important;
 }
 
+#slide-05 .customer-wordmarks.logo-only .text-logo b{
+  color:#155F56 !important;
+  font-size:11px !important;
+  font-weight:850 !important;
+  letter-spacing:.01em !important;
+}
+
+#slide-05 .customer-wordmarks.logo-only .customer-bilibili b{
+  color:#1B78A5 !important;
+}
+
+#slide-05 .customer-wordmarks.logo-only .customer-shopee b{
+  color:#D85A22 !important;
+}
+
 #slide-05 .customer-wordmarks.logo-only span{
   margin-top:2px !important;
-  font-size:9px !important;
+  color:#7A8985 !important;
+  font-size:7.5px !important;
+  line-height:1 !important;
+  letter-spacing:.08em !important;
+  text-align:center !important;
 }
 
 #slide-05 .regional-network.region-map-restored{
@@ -178,24 +198,7 @@
   overflow:hidden !important;
   border:1px solid #CFE0DC !important;
   background:linear-gradient(180deg,#F6FAF9 0%,#FFFFFF 100%) !important;
-  cursor:pointer !important;
-}
-
-#slide-05 .customer-accounts:after,
-#slide-05 .regional-network.region-map-restored:after{
-  content:"点击查看详情" !important;
-  position:absolute !important;
-  right:10px !important;
-  top:10px !important;
-  z-index:6 !important;
-  padding:4px 7px !important;
-  border:1px solid #A9CCC6 !important;
-  background:rgba(255,255,255,.86) !important;
-  color:#156D63 !important;
-  font-size:9px !important;
-  font-weight:800 !important;
-  line-height:1 !important;
-  letter-spacing:.08em !important;
+  cursor:default !important;
 }
 
 #slide-05 .customer-accounts{
@@ -223,11 +226,24 @@
   position:absolute !important;
   z-index:2 !important;
   padding:3px 5px 3px 13px !important;
+  border:1px solid transparent !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.72) !important;
   color:#244E47 !important;
   font-size:10px !important;
   font-weight:800 !important;
   line-height:1 !important;
+  text-decoration:none !important;
   white-space:nowrap !important;
+  transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease !important;
+}
+
+#slide-05 .region-map-restored .city-pin:hover{
+  z-index:5 !important;
+  border-color:#90BDB6 !important;
+  background:#FFFFFF !important;
+  color:#155F56 !important;
+  transform:translateY(-1px) !important;
 }
 
 #slide-05 .region-map-restored .city-pin:before{
@@ -250,6 +266,7 @@
 #slide-05 .region-map-restored .city-pin.chongqing{left:45%;top:55%}
 #slide-05 .region-map-restored .city-pin.leshan{left:38%;top:63%}
 #slide-05 .region-map-restored .city-pin.dongfang{left:49%;top:79%}
+#slide-05 .region-map-restored .city-pin.longgang{left:64%;top:66%}
 #slide-05 .region-map-restored .city-pin.hongkong{left:61%;top:71%}
 #slide-05 .region-map-restored .city-pin.singapore{
   left:76%;

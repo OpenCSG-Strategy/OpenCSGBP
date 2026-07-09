@@ -477,7 +477,456 @@
   <link rel="stylesheet" href="assets/deck-cover-sovereign-20260707.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide05-07-fixes-20260707.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide08-product-links-20260707.css?v=20260707a">
-  <link rel="stylesheet" href="assets/deck-bp-humanize-20260707.css?v=20260707d">
+  <link rel="stylesheet" href="assets/deck-bp-humanize-20260707.css?v=20260709restore26">
+
+<style id="slide-08-user-journey-fix">
+  #slide-08 .product8-bridge {
+    top: 148px !important;
+    min-height: 30px !important;
+    font-size: 12.5px !important;
+  }
+
+  #slide-08 > .opc-journey {
+    position: absolute !important;
+    left: 78px !important;
+    right: 78px !important;
+    top: 190px !important;
+    height: 96px !important;
+    display: grid !important;
+    grid-template-columns: 148px minmax(0, 1fr) !important;
+    align-items: stretch !important;
+    overflow: hidden !important;
+    border: 1px solid #C7DCD8 !important;
+    border-top: 3px solid var(--teal) !important;
+    background: #FFFFFF !important;
+  }
+
+  #slide-08 > .opc-journey > b {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 16px !important;
+    border-right: 1px solid #C7DCD8 !important;
+    background: #EAF5F2 !important;
+    color: #17695F !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    font-weight: 850 !important;
+    letter-spacing: .04em !important;
+    text-align: center !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 26px minmax(0, 1fr) 26px minmax(0, 1fr) 26px minmax(0, 1fr) !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 13px 14px !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps > span {
+    display: grid !important;
+    grid-template-columns: 28px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    align-content: center !important;
+    column-gap: 9px !important;
+    row-gap: 3px !important;
+    min-width: 0 !important;
+    padding: 9px 12px !important;
+    border: 1px solid #D2E1DE !important;
+    border-radius: 0 !important;
+    background: #F8FBFA !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps > span em {
+    grid-row: 1 / 3 !important;
+    align-self: center !important;
+    color: #23877B !important;
+    font-style: normal !important;
+    font-size: 17px !important;
+    line-height: 1 !important;
+    font-weight: 900 !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps > span strong {
+    color: #173E38 !important;
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+    font-weight: 850 !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps > span small {
+    color: #536A65 !important;
+    font-size: 10px !important;
+    line-height: 1.32 !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps > i {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #7DAFA7 !important;
+    font-size: 17px !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps > .step-upgrade {
+    border-color: #9FCAC3 !important;
+    background: #E8F4F1 !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps > .step-commerce {
+    border-color: #23877B !important;
+    background: #23877B !important;
+  }
+
+  #slide-08 > .opc-journey .opc-journey-steps > .step-commerce em,
+  #slide-08 > .opc-journey .opc-journey-steps > .step-commerce strong,
+  #slide-08 > .opc-journey .opc-journey-steps > .step-commerce small {
+    color: #FFFFFF !important;
+  }
+
+  #slide-08 .product-shell {
+    top: 306px !important;
+    height: 500px !important;
+    overflow: hidden !important;
+  }
+
+  #slide-08 .shared-top {
+    height: 42px !important;
+    gap: 2px !important;
+  }
+
+  #slide-08 .shared-top b {
+    font-size: 14px !important;
+  }
+
+  #slide-08 .shared-top span {
+    font-size: 10px !important;
+  }
+
+  #slide-08 .edition {
+    height: 198px !important;
+    grid-template-columns: 172px minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  #slide-08 .edition-label {
+    padding: 15px 14px !important;
+  }
+
+  #slide-08 .edition-label em {
+    margin-bottom: 9px !important;
+    font-size: 7.8px !important;
+  }
+
+  #slide-08 .edition-label b {
+    font-size: 16px !important;
+    line-height: 1.18 !important;
+  }
+
+  #slide-08 .edition-label span {
+    margin-top: 7px !important;
+    font-size: 9.4px !important;
+    line-height: 1.35 !important;
+  }
+
+  #slide-08 .product {
+    grid-template-columns: minmax(0, 1fr) 168px !important;
+    gap: 9px !important;
+    padding: 9px 10px !important;
+  }
+
+  #slide-08 .product h3 {
+    font-size: 15.5px !important;
+    line-height: 1.12 !important;
+  }
+
+  #slide-08 .product .role {
+    margin: 3px 0 5px !important;
+    font-size: 9px !important;
+  }
+
+  #slide-08 .product ul {
+    padding-left: 14px !important;
+    font-size: 8.5px !important;
+    line-height: 1.22 !important;
+  }
+
+  #slide-08 .product li + li {
+    margin-top: 1px !important;
+  }
+
+  #slide-08 .product .screen {
+    height: 145px !important;
+  }
+
+  #slide-08 .product-links {
+    gap: 4px !important;
+    margin-top: 5px !important;
+  }
+
+  #slide-08 .product-jump {
+    height: 18px !important;
+    padding: 0 7px !important;
+    font-size: 8px !important;
+  }
+
+  #slide-08 .product-meta {
+    gap: 3px !important;
+    margin-top: 4px !important;
+  }
+
+  #slide-08 .product-meta span {
+    padding: 2px 4px !important;
+    font-size: 6.8px !important;
+  }
+
+  #slide-08 .shared-bottom {
+    height: 60px !important;
+  }
+
+  #slide-08 .shared-bottom div {
+    padding: 0 5px !important;
+    font-size: 9px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+</style>
+
+<style id="slide-12-opencore-capability-fix">
+  #slide-12 .open12-reframed {
+    grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr) !important;
+    grid-template-rows: 86px minmax(0, 1fr) 118px !important;
+    gap: 14px !important;
+  }
+
+  #slide-12 .oc12-flywheel {
+    grid-template-columns: 1fr 30px 1fr 30px 1fr !important;
+  }
+
+  #slide-12 .oc12-flywheel-step {
+    padding: 14px 18px !important;
+  }
+
+  #slide-12 .oc12-flywheel-step b {
+    font-size: 19px !important;
+  }
+
+  #slide-12 .oc12-edition-story > header {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 13px 16px 12px !important;
+  }
+
+  #slide-12 .oc12-edition-story > header small {
+    grid-column: auto !important;
+  }
+
+  #slide-12 .oc12-edition-story > header h3 {
+    font-size: 18px !important;
+  }
+
+  #slide-12 .oc12-edition-story > header p {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+
+  #slide-12 .oc12-editions {
+    grid-template-columns: 1fr 62px 1fr !important;
+    padding: 12px 13px 10px !important;
+  }
+
+  #slide-12 .oc12-editions article {
+    padding: 12px !important;
+  }
+
+  #slide-12 .oc12-edition-title {
+    gap: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  #slide-12 .oc12-edition-title > span {
+    width: 23px !important;
+    height: 23px !important;
+    font-size: 9px !important;
+  }
+
+  #slide-12 .oc12-edition-title b {
+    font-size: 16px !important;
+  }
+
+  #slide-12 .oc12-editions article > p {
+    min-height: 42px !important;
+    margin: 9px 0 7px !important;
+    font-size: 8.8px !important;
+    line-height: 1.35 !important;
+  }
+
+  #slide-12 .oc12-editions ul {
+    grid-template-columns: 1fr !important;
+    gap: 4px !important;
+  }
+
+  #slide-12 .oc12-editions li {
+    font-size: 8.4px !important;
+    line-height: 1.25 !important;
+  }
+
+  #slide-12 .oc12-shared {
+    margin: 0 13px 11px !important;
+    gap: 5px !important;
+  }
+
+  #slide-12 .oc12-shared span {
+    padding: 4px 6px !important;
+    font-size: 7px !important;
+  }
+
+  #slide-12 .oc12-capability-panel {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    display: grid !important;
+    grid-template-rows: auto minmax(0, 1fr) !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    border-top: 3px solid #23877B !important;
+    background: #FFFFFF !important;
+  }
+
+  #slide-12 .oc12-capability-panel > header {
+    display: grid !important;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr) !important;
+    align-items: end !important;
+    gap: 12px !important;
+    padding: 11px 12px 10px !important;
+    border-bottom: 1px solid #DCE5E3 !important;
+    background: #F5FAF9 !important;
+  }
+
+  #slide-12 .oc12-capability-panel header small {
+    color: #23877B !important;
+    font-size: 7px !important;
+    font-weight: 850 !important;
+    letter-spacing: .13em !important;
+  }
+
+  #slide-12 .oc12-capability-panel header h3 {
+    margin: 4px 0 0 !important;
+    color: #173E38 !important;
+    font-size: 16px !important;
+    line-height: 1.15 !important;
+  }
+
+  #slide-12 .oc12-capability-panel header p {
+    margin: 0 !important;
+    color: #5D6E69 !important;
+    font-size: 8.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  #slide-12 .oc12-capability-table {
+    display: grid !important;
+    grid-template-rows: 25px repeat(11, minmax(0, 1fr)) !important;
+    min-height: 0 !important;
+    padding: 8px 9px 9px !important;
+    background: #FFFFFF !important;
+  }
+
+  #slide-12 .oc12-capability-table > div {
+    display: grid !important;
+    grid-template-columns: 152px repeat(4, minmax(0, 1fr)) !important;
+    min-height: 0 !important;
+    border-left: 1px solid #D6E2DF !important;
+  }
+
+  #slide-12 .oc12-capability-table > div > * {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    padding: 0 6px !important;
+    border-right: 1px solid #D6E2DF !important;
+    border-bottom: 1px solid #D6E2DF !important;
+    color: #354B46 !important;
+    font-size: 8.4px !important;
+    line-height: 1.18 !important;
+    text-align: center !important;
+  }
+
+  #slide-12 .oc12-capability-table > div > span:first-child,
+  #slide-12 .oc12-capability-table > div > b:first-child {
+    justify-content: flex-start !important;
+    color: #17695F !important;
+    font-weight: 800 !important;
+    text-align: left !important;
+  }
+
+  #slide-12 .oc12-capability-table .cap-head > * {
+    background: #23877B !important;
+    color: #FFFFFF !important;
+    font-size: 8.8px !important;
+    font-weight: 850 !important;
+  }
+
+  #slide-12 .oc12-capability-table .cap-head > b:first-child {
+    background: #EAF5F2 !important;
+    color: #155F56 !important;
+  }
+
+  #slide-12 .oc12-capability-table em {
+    font-style: normal !important;
+    font-weight: 850 !important;
+  }
+
+  #slide-12 .oc12-capability-table .yes {
+    color: #28A842 !important;
+  }
+
+  #slide-12 .oc12-capability-table .no {
+    color: #EF7D22 !important;
+    font-size: 13px !important;
+  }
+
+  #slide-12 .oc12-capability-table .partial {
+    color: #4D5EAE !important;
+  }
+
+  #slide-12 .oc12-boundary {
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 30px repeat(3, minmax(0, 1fr)) !important;
+    height: 118px !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #slide-12 .oc12-boundary > div {
+    display: grid !important;
+    grid-template-columns: 170px repeat(4, minmax(0, 1fr)) !important;
+    min-height: 0 !important;
+  }
+
+  #slide-12 .oc12-boundary b,
+  #slide-12 .oc12-boundary span {
+    padding: 0 10px !important;
+    font-size: 8.5px !important;
+    line-height: 1.25 !important;
+  }
+
+  #slide-12 .oc12-boundary-head b,
+  #slide-12 .oc12-boundary-head span {
+    font-size: 9.3px !important;
+  }
+
+  #slide-12 .oc12-boundary > div:not(.oc12-boundary-head) > span:nth-child(n + 4) {
+    background: #F1F8F6 !important;
+    color: #174F48 !important;
+    font-weight: 700 !important;
+  }
+</style>
 
 </head>
 <body>
@@ -871,6 +1320,8 @@
                 <div><img src="assets/case-logos/image56.png" alt="中国电信"></div>
                 <div><img src="assets/case-logos/image57.png" alt="微软"></div>
                 <div><img src="assets/case-logos/image58.png" alt="渤海银行"></div>
+                <div class="text-logo customer-bilibili"><b data-en="Bilibili">B 站</b><span>BILIBILI</span></div>
+                <div class="text-logo customer-shopee"><b>Shopee</b><span>SEA E-COMMERCE</span></div>
                 <div><b data-en="Hong Kong Cyberport">香港数码港</b><span>CYBERPORT</span></div>
               </div>
             </div>
@@ -878,17 +1329,18 @@
           <div class="regional-network region-map-restored">
             <div class="regional-map">
              <img src="assets/china-blank-map.svg" alt="OpenCSG 区域节点与地区实践">
-              <span class="city-pin shanghai" data-en="Shanghai">上海</span>
-              <span class="city-pin yancheng" data-en="Yancheng">盐城</span>
-              <span class="city-pin yichang" data-en="Yichang">宜昌</span>
-              <span class="city-pin chongqing" data-en="Chongqing">重庆</span>
-              <span class="city-pin leshan" data-en="Leshan">乐山</span>
-              <span class="city-pin dongfang" data-en="Dongfang">东方</span>
-              <span class="city-pin hongkong" data-en="Hong Kong">香港</span>
-              <span class="city-pin singapore">Singapore</span>
+              <a class="city-pin shanghai" href="https://www.sh-italent.com/Article/202504/202504300010.shtml" target="_blank" rel="noopener" data-en="Shanghai">上海</a>
+              <a class="city-pin yancheng" href="https://www.yancheng.gov.cn/" target="_blank" rel="noopener" data-en="Yancheng">盐城</a>
+              <a class="city-pin yichang" href="https://sanxia.opencsg.com/" target="_blank" rel="noopener" data-en="Yichang">宜昌</a>
+              <a class="city-pin chongqing" href="https://www.cq.gov.cn/" target="_blank" rel="noopener" data-en="Chongqing">重庆</a>
+              <a class="city-pin leshan" href="https://www.leshan.gov.cn/" target="_blank" rel="noopener" data-en="Leshan">乐山</a>
+              <a class="city-pin dongfang" href="https://opencsg.com/blogs/142e66f5-f30d-4eec-98ba-7aa18c343ed4" target="_blank" rel="noopener" data-en="Dongfang">东方</a>
+              <a class="city-pin longgang" href="https://www.lg.gov.cn/xxgk/xwzx/zwdt/content/post_12401381.html" target="_blank" rel="noopener" data-en="Longgang">龙岗</a>
+              <a class="city-pin hongkong" href="https://www.cyberport.hk/" target="_blank" rel="noopener" data-en="Hong Kong">香港</a>
+              <a class="city-pin singapore" href="https://www.imda.gov.sg/" target="_blank" rel="noopener">Singapore</a>
             </div>
             <b data-en="Regional nodes and verified deployment areas">区域节点与已验证地区</b>
-            <p data-en="Yichang, Hong Kong Cyberport, Chongqing, Leshan, Shanghai, Yancheng and more connect government, industry, developers and capital into repeatable regional AI operations.">宜昌、香港数码港、重庆、乐山、上海、盐城等地区实践，连接政府、产业、开发者与资本，形成可复制的区域 AI 运营模式。</p>
+            <p data-en="Yichang, Hong Kong Cyberport, Shenzhen Longgang, Dongfang, Chongqing, Leshan, Shanghai, Yancheng and more connect government, industry, developers and capital into repeatable regional AI operations.">宜昌、香港数码港、深圳龙岗、东方、重庆、乐山、上海、盐城等地区实践，连接政府、产业、开发者与资本，形成可复制的区域 AI 运营模式。</p>
           </div>
         </div>
       </div>
@@ -949,6 +1401,18 @@
     <div class="section"><span class="section-zh" data-en="Unified Product System　">统一产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">Unified Product System</span></div>
     <h2 class="title">同一技术底座，服务组织生产与个人 AI 工作系统</h2>
     <p class="product8-bridge"><b data-en="One foundation, two work systems:">一套底座、两类工作系统：</b><span data-en="CSGHub and AgenticHub power organizational production, while CSGHub-Lite and CSGClaw keep personal AI running continuously.">CSGHub 与 AgenticHub 支撑组织生产，CSGHub-Lite 与 CSGClaw 支撑个人 AI 持续运行。</span></p>
+    <div class="opc-journey" aria-label="用户整体旅程与转化路径">
+      <b data-en="User Journey & Conversion Path">用户旅程<br>转化路径</b>
+      <div class="opc-journey-steps">
+        <span class="step-entry"><em>01</em><strong>CSGLite</strong><small data-en="Personal local entry · data and model accumulation">个人本地入口 · 数据与模型沉淀</small></span>
+        <i>→</i>
+        <span class="step-depth"><em>02</em><strong>CSGClaw</strong><small data-en="Agent execution · workflow and small-model iteration">Agent 执行 · 工作流与小模型迭代</small></span>
+        <i>→</i>
+        <span class="step-upgrade"><em>03</em><strong data-en="Org OPC">组织型 OPC</strong><small data-en="Hosted assets · governance and team reuse">资产托管 · 权限治理 · 团队复用</small></span>
+        <i>→</i>
+        <span class="step-commerce"><em>04</em><strong>AgenticHub</strong><small data-en="Collaborative production · release, operation and ecosystem transactions">协作生产 · 发布运营 · 生态交易</small></span>
+      </div>
+    </div>
     <div class="product-shell">
       <div class="shared-top"><b data-en="One shared AgenticOps control plane">一套共享 AgenticOps 控制平面</b><span data-en="Open assets · Identity and security · Runtime · Evaluation · Observability">开放资产生态 · 身份与安全 · 运行时 · 评测 · 可观测性</span></div>
       <div class="edition organization-edition">
@@ -960,18 +1424,6 @@
         <div class="edition-label"><em data-en="PERSONAL AI / OPC">PERSONAL AI / OPC</em><b><span data-en="Personal AI Work System">个人 AI 工作系统</span><br><span data-en="(OPC)">（OPC）</span></b><span>开发者、Solo Founder 与个人知识工作者</span></div>
         <div class="product"><div><h3>CSGHub-Lite</h3><div class="role">本地 AI 资产与运行底座</div><ul><li>一键启动本地模型，支持 GGUF 与 SafeTensors 转换</li><li>兼容 Ollama API 的 REST 服务与流式对话</li><li>模型下载、断点续传、持久化和跨平台运行</li><li>私有知识、长期记忆与本地开发工具接入</li><li data-en="Local search, plugins and quick workflows">本地搜索、插件与快捷工作流</li></ul><div class="product-meta"><span>Local-first</span><span>Offline</span><span>Cross-platform</span></div><div class="product-links"><a class="product-jump" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" data-en="Docs">文档</a><a class="product-jump" href="https://github.com/OpenCSGs/csghub" target="_blank" rel="noopener">GitHub</a></div></div><a class="screen has-image product-link-screen" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" aria-label="打开 CSGHub-Lite 使用指南"><img src="assets/product-lite.png" alt="CSGHub-Lite 产品界面"></a></div>
         <div class="product"><div><h3>CSGClaw</h3><div class="role">个人多 Agent 协同执行系统</div><ul><li>Manager–Worker 角色分工与并行任务拆解</li><li>Agent / Skill 发现、组合、调用与执行网络</li><li>本地权限、沙箱、人机确认和可回放过程</li><li>从一次性对话升级为长期运行的个人生产系统</li><li data-en="Task logs, replay and result archiving">任务日志、回放与结果归档</li></ul><div class="product-meta"><span>Multi-Agent</span><span>Skill Network</span><span>Human-in-loop</span></div><div class="product-links"><a class="product-jump" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" data-en="Docs">文档</a><a class="product-jump" href="https://github.com/OpenCSGs" target="_blank" rel="noopener">GitHub</a></div></div><a class="screen has-image product-link-screen csgclaw-early" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" aria-label="打开 CSGClaw 文档"><img src="assets/appendix/slide-13-image-01.png" alt="CSGClaw 多 Agent 协同架构"></a></div>
-      </div>
-      <div class="opc-journey">
-        <b data-en="OPC Growth Path">OPC 成长路径</b>
-        <div class="opc-journey-steps">
-          <span><em>①</em><strong>CSGHub-Lite</strong><small data-en="Data accumulation entry">数据积累入口</small></span>
-          <i>→</i>
-          <span><em>②</em><strong>CSGClaw</strong><small data-en="Agent experiments & small-model iteration">智能体实验 · 小模型迭代</small></span>
-          <i>→</i>
-          <span class="step-upgrade"><em>③</em><strong data-en="Org OPC">组织型 OPC</strong><small data-en="Hosted asset governance">服务端资产托管</small></span>
-          <i>→</i>
-          <span class="step-commerce"><em>④</em><strong>AgenticHub</strong><small data-en="Collaboration & monetization">协作共创 · 商业化</small></span>
-        </div>
       </div>
       <div class="shared-bottom"><div>统一用户与身份</div><div>统一资产协议</div><div>统一模型与网关</div><div>统一观测与评测</div><div>统一安全与审计</div><div>开放 API / MCP / SDK</div></div>
     </div>
@@ -1239,59 +1691,50 @@
   <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-12">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="OpenCore Business Model　">OpenCore 商业模式　</span><span style="font-size:13px;color:#697472;font-weight:400">OpenCore Business Model</span></div>
-    <h2 class="title" data-en="One open core drives adoption; enterprise capabilities and services create recurring revenue">同一开源内核建立采用，企业增强与服务形成持续收入</h2>
+    <h2 class="title" data-en="CSGLite and CE drive adoption; EE and SaaS convert production-grade demand into recurring revenue">CSGLite 与 CE 建立开放采用，EE 与 SaaS 承接企业级收入</h2>
     <div class="open12 open12-reframed">
       <section class="oc12-edition-story">
-        <header><small>ONE CODEBASE · TWO EDITIONS</small><h3 data-en="One product core, two clear editions">一套产品内核，两种清晰版本</h3><p data-en="Community builds adoption and trust; Enterprise adds production, governance and service assurance on the same code line.">Community 建立采用与信任，Enterprise 在同一代码线上补齐企业生产、治理与服务保障。</p></header>
+        <header><small>ONE CORE · FOUR DELIVERY FORMS</small><h3 data-en="One product core, four delivery forms">一套产品内核，四种交付形态</h3><p data-en="Local, community, enterprise and SaaS editions split adoption, governance and service assurance into clear commercial boundaries.">本地、社区、商业与云服务分层承接采用、治理与服务保障，形成清晰商业边界。</p></header>
         <div class="oc12-editions">
-          <article class="community">
-            <div class="oc12-edition-title"><span>01</span><div><small>FREE · OPEN SOURCE</small><b>Community</b></div></div>
-            <p data-en="The complete open core for organizational self-hosting, validation and customization.">完整开放核心能力，支持组织自托管、验证与二次开发。</p>
-            <ul><li data-en="Models / data / prompts / MCP">模型 / 数据 / Prompt / MCP</li><li data-en="Inference, fine-tuning, evaluation and data processing">推理、微调、评测与数据处理</li><li data-en="Docker / Kubernetes deployment">Docker / Kubernetes 部署</li><li data-en="Community releases and support">社区版本迭代与技术支持</li></ul>
-          </article>
-          <div class="oc12-upgrade"><i>→</i><b data-en="In-place upgrade">同代码升级</b><span data-en="No asset or workflow migration">资产与使用习惯不迁移</span></div>
-          <article class="enterprise">
-            <div class="oc12-edition-title"><span>02</span><div><small>PAID · PRODUCTION READY</small><b>Enterprise</b></div></div>
-            <p data-en="Everything in Community plus organizational control, reliability and professional services.">继承 Community 全部能力，增强组织控制、可靠性和专业服务。</p>
-            <ul><li data-en="Heterogeneous compute and production clusters">异构算力与高性能生产集群</li><li data-en="Multi-tenant / RBAC / SSO / audit">多租户 / RBAC / SSO / 审计</li><li data-en="High availability, disaster recovery and compliance">高可用、灾备与合规治理</li><li data-en="Implementation, upgrades, SLA and 24×7 support">实施、升级、SLA 与 7×24 支持</li></ul>
-          </article>
+              <article class="community">
+                <div class="oc12-edition-title"><span>01</span><div><small>ADOPTION · OPEN ENTRY</small><b>CSGLite / CE</b></div></div>
+                <p data-en="Personal local use and community self-hosting make the product easy to adopt, validate and extend.">个人本地使用与社区自托管降低采用门槛，支持验证、二次开发与口碑扩散。</p>
+                <ul><li data-en="Local assets and model runtime">本地资产与模型运行</li><li data-en="AI asset and model services">AI 资产与模型服务</li><li data-en="Data processing and evaluation">数据处理、评测与推理</li><li data-en="Open-source trust and community funnel">开源信任与社区漏斗</li></ul>
+              </article>
+              <div class="oc12-upgrade"><i>→</i><b data-en="Commercial upgrade">商业升级</b><span data-en="Same assets, stronger governance and service assurance">资产不迁移，治理与服务增强</span></div>
+              <article class="enterprise">
+                <div class="oc12-edition-title"><span>02</span><div><small>PAID · PRODUCTION READY</small><b>EE / SaaS</b></div></div>
+                <p data-en="Enterprise and SaaS packages turn production-grade compute, governance, compliance and support into recurring revenue.">商业版与云服务把生产级算力、治理、合规与服务保障转化为持续收入。</p>
+                <ul><li data-en="Heterogeneous compute and xNet acceleration">异构算力与 xNet 加速</li><li data-en="Enterprise gateway and agent runtime">企业级网关与 Agent 运行时</li><li data-en="SSO / LDAP / RBAC / audit">SSO / LDAP / RBAC / 审计</li><li data-en="SLA, platform assurance and 24×7 support">SLA、平台保障与 7×24 支持</li></ul>
+              </article>
         </div>
         <div class="oc12-shared"><b data-en="Shared product foundation">共享产品底座</b><span data-en="Asset graph">资产图谱</span><span data-en="Version &amp; lineage">版本与血缘</span><span>AgenticOps</span><span data-en="Open APIs">开放 API</span><span data-en="Self-hosting">自主部署</span></div>
       </section>
-      <section class="oc12-benchmarks">
-        <header><div><small>VALIDATED OPENCORE PATTERNS</small><h3 data-en="The pattern is widely validated">类似模式已经被广泛验证</h3></div><p data-en="An open entry drives adoption; enterprise capabilities and services monetize it.">开放入口获得采用，企业增强与专业服务形成收入。</p></header>
-        <div class="oc12-brand-grid">
-          <article><img src="assets/brand-logos/redhat.png" alt="Red Hat"><div><b>Red Hat</b><span data-en="Open infrastructure + enterprise subscription and support">开源基础设施 + 企业订阅与支持</span></div></article>
-          <article><img src="assets/brand-logos/gitlab.png" alt="GitLab"><div><b>GitLab</b><span data-en="Open core + enterprise governance">开源核心 + 企业治理能力</span></div></article>
-          <article><img src="assets/brand-logos/fit2cloud.png" alt="飞致云 Fit2Cloud"><div><b data-en="Fit2Cloud">飞致云 Fit2Cloud</b><span data-en="Open products + enterprise editions and services">开源产品 + 企业版与服务</span></div></article>
-          <article><img src="assets/brand-logos/dify.png" alt="Dify"><div><b>Dify</b><span data-en="Community adoption + enterprise platform capabilities">社区采用 + 企业平台能力</span></div></article>
-          <article><img src="assets/brand-logos/ragflow.png" alt="RAGFlow"><div><b>RAGFlow</b><span data-en="Open-source RAG + commercial enhancements">开源 RAG 产品 + 商业增强</span></div></article>
-          <article><img src="assets/brand-logos/grafana.svg" alt="Grafana"><div><b>Grafana</b><span data-en="OSS observability + Enterprise / Cloud">开源可观测 + Enterprise / Cloud</span></div></article>
-          <article><img src="assets/brand-logos/odoo.svg" alt="Odoo"><div><b>Odoo</b><span data-en="Community core + enterprise modules">Community 核心 + 企业模块</span></div></article>
-          <article><img src="assets/brand-logos/neo4j.svg" alt="Neo4j"><div><b>Neo4j</b><span data-en="Community graph DB + enterprise scale">社区图数据库 + 企业扩展</span></div></article>
-          <article><img src="assets/brand-logos/mattermost.svg" alt="Mattermost"><div><b>Mattermost</b><span data-en="Open collaboration + enterprise compliance">开源协作 + 企业合规</span></div></article>
-          <article><img src="assets/brand-logos/rocketchat.svg" alt="Rocket.Chat"><div><b>Rocket.Chat</b><span data-en="MIT community edition + enterprise edition">MIT 社区版 + 企业版</span></div></article>
-          <article><img src="assets/brand-logos/elastic.svg" alt="Elastic"><div><b>Elastic</b><span data-en="Open core + commercial subscriptions">开源内核 + 商业订阅</span></div></article>
-          <article><img src="assets/brand-logos/mongodb.svg" alt="MongoDB"><div><b>MongoDB</b><span data-en="Community + Enterprise / Atlas">Community + Enterprise / Atlas</span></div></article>
-          <article><img src="assets/brand-logos/confluent.svg" alt="Confluent"><div><b>Confluent</b><span data-en="Kafka core + enterprise platform / cloud">Kafka 核心 + 企业平台 / 云</span></div></article>
-          <article><img src="assets/brand-logos/redis.svg" alt="Redis"><div><b>Redis</b><span data-en="Open core + Enterprise / Cloud">开源核心 + Enterprise / Cloud</span></div></article>
-        </div>
-        <div class="oc12-proof-strip" aria-label="OpenCore commercial proof">
-          <a href="https://ir.gitlab.com/news/news-details/2026/GitLab-Reports-Fourth-Quarter-and-Full-Year-Fiscal-Year-2026-Financial-Results-Board-of-Directors-Authorizes-400-million-for-Share-Repurchase-Program/default.aspx" target="_blank" rel="noopener"><b>$220M</b><span data-en="GitLab FY26 adjusted FCF">GitLab FY26 调整后自由现金流</span></a>
-          <a href="https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-fourth-quarter-fiscal-2026-financial" target="_blank" rel="noopener"><b>$2.46B</b><span data-en="MongoDB FY26 revenue · +23%">MongoDB FY26 收入 · +23%</span></a>
-          <a href="https://grafana.com/press/2024/08/21/grafana-labs-soars-past-250m-arr-and-5000-customers-completes-270m-primary-and-secondary-transaction-and-named-a-leader-in-the-gartner-magic-quadrant-for-observability-platforms/" target="_blank" rel="noopener"><b>$6B+</b><span data-en="Grafana private valuation">Grafana 公司估值</span></a>
-          <a href="https://newsroom.ibm.com/2025-12-08-ibm-to-acquire-confluent-to-create-smart-data-platform-for-enterprise-generative-ai" target="_blank" rel="noopener"><b>$11B</b><span data-en="IBM acquisition of Confluent">IBM 收购 Confluent</span></a>
+      <section class="oc12-benchmarks oc12-capability-panel">
+        <header><div><small>OPENCSG OPENCORE MODEL</small><h3 data-en="Capability boundaries define monetization">核心能力边界决定商业化</h3></div><p data-en="CSGLite and CE create adoption; EE and SaaS package production-grade compute, governance, security and service assurance.">CSGLite 与 CE 负责开放采用，EE 与 SaaS 承接生产级算力、治理、安全与服务保障。</p></header>
+        <div class="oc12-capability-table" aria-label="OpenCSG OpenCore 核心能力对比">
+          <div class="cap-head"><b data-en="Capability">能力项</b><b>CSGLite</b><b data-en="CE">社区版 CE</b><b data-en="EE">商业版 EE</b><b>SaaS</b></div>
+          <div><span data-en="AI asset management">AI 资产管理</span><em class="partial" data-en="Basic">基础</em><em class="yes">✓</em><em class="yes">✓</em><em class="yes">✓</em></div>
+          <div><span data-en="Model services">模型服务</span><em class="partial" data-en="Basic">基础</em><em class="yes">✓</em><em class="yes">✓</em><em class="yes">✓</em></div>
+          <div><span data-en="Data processing">数据处理与清洗</span><em class="partial" data-en="Basic">基础</em><em class="yes">✓</em><em class="yes">✓</em><em class="yes">✓</em></div>
+          <div><span>AI Gateway</span><em class="partial" data-en="Basic">基础</em><em class="partial" data-en="Basic">基础</em><em class="yes" data-en="Enterprise">企业级</em><em class="yes" data-en="Enterprise">企业级</em></div>
+          <div><span data-en="Heterogeneous compute">异构算力与调度</span><em class="no">×</em><em class="no">×</em><em class="yes">✓</em><em class="yes">✓</em></div>
+          <div><span data-en="xNet transfer acceleration">xNet 并行加速</span><em class="no">×</em><em class="no">×</em><em class="yes">✓</em><em class="yes">✓</em></div>
+          <div><span data-en="Agent runtime">Agent 底座与运行时</span><em class="partial" data-en="Basic">基础</em><em class="no">×</em><em class="yes" data-en="Enterprise">企业级</em><em class="yes" data-en="Enterprise">企业级</em></div>
+          <div><span data-en="Security and compliance">安全合规</span><em class="no">×</em><em class="no">×</em><em class="yes" data-en="Enterprise">企业级</em><em class="yes" data-en="Platform-backed">平台保障</em></div>
+          <div><span data-en="Identity and RBAC">权限与身份</span><em class="no">×</em><em class="no">×</em><em class="yes">✓</em><em class="yes">✓</em></div>
+          <div><span data-en="Observability and audit">可观测与审计</span><em class="partial" data-en="Logs">日志</em><em class="no">×</em><em class="yes" data-en="Full chain">全链路</em><em class="yes" data-en="Full chain">全链路</em></div>
+          <div><span data-en="Support and SLA">商业支持与 SLA</span><em class="no">×</em><em data-en="Community">社区支持</em><em class="yes">7×24</em><em class="yes">✓</em></div>
         </div>
       </section>
       <section class="oc12-boundary">
-        <div class="oc12-boundary-head"><b data-en="Product boundary">产品边界</b><span>Community</span><span>Enterprise</span></div>
-        <div><b data-en="Core code">核心代码</b><span data-en="Complete open core">完整开源核心</span><span data-en="Inherits all Community capabilities">继承全部社区能力</span></div>
-        <div><b data-en="Deployment &amp; runtime">部署与运行</b><span data-en="Self-hosted · standard clusters">自托管 · 标准集群</span><span data-en="HA · DR · heterogeneous compute">高可用 · 灾备 · 异构算力</span></div>
-        <div><b data-en="Organization &amp; governance">组织治理</b><span data-en="Basic organization and access">基础组织与权限</span><span data-en="Multi-tenant · SSO · audit · compliance">多租户 · SSO · 审计 · 合规</span></div>
-        <div><b data-en="Service assurance">服务保障</b><span data-en="Community support">社区支持</span><span data-en="Implementation · upgrades · SLA · 24×7">实施 · 升级 · SLA · 7×24</span></div>
+        <div class="oc12-boundary-head"><b data-en="Delivery form">交付形态</b><span>CSGLite</span><span>CE</span><span>EE</span><span>SaaS</span></div>
+        <div><b data-en="Adoption entry">采用入口</b><span>OPC / 超级个体</span><span data-en="Personal / small-team validation">个人 / 小团队验证</span><span data-en="Mid-large enterprises and platforms">中大型企业 / 平台运营商</span><span data-en="Fast validation and lightweight deployment">快速验证 / 轻量部署</span></div>
+        <div><b data-en="Commercial boundary">商业边界</b><span data-en="Local use">本地使用</span><span data-en="Open-source trust">开源信任</span><span data-en="Enterprise governance and reliability">企业治理与可靠性</span><span data-en="Managed operations and platform assurance">托管运营与平台保障</span></div>
+        <div><b data-en="Revenue logic">收入逻辑</b><span data-en="Personal activation">个人激活</span><span data-en="Community funnel">社区漏斗</span><span>License / SLA / 交付</span><span data-en="Subscription and usage">订阅与用量</span></div>
       </section>
     </div>
-    <div class="foot"><span data-en="External examples validate the pattern; the focus remains OpenCSG's own OpenCore flywheel">外部案例只作证据，主角是 OpenCSG 自己的 OpenCore 飞轮</span><span>12</span></div>
+    <div class="foot"><span data-en="OpenCSG OpenCore: open adoption, paid production governance and managed service assurance">OpenCSG OpenCore：开放采用，生产级治理与托管服务付费</span><span>12</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L04" id="slide-13">
@@ -1512,7 +1955,7 @@
 
   <script src="assets/deck-appendix.js?v=20260708a"></script>
   <script src="assets/deck-city-reframe.js?v=20260702c"></script>
-  <script src="assets/deck-bp-humanize-20260707.js?v=20260707a"></script>
+  <script src="assets/deck-bp-humanize-20260707.js?v=20260709restore26"></script>
   <script src="assets/deck-slide03-replica.js?v=20260706f"></script>
   <script src="assets/deck-i18n.js?v=20260706i18n"></script>
   <script src="assets/deck-en-extra.js?v=20260706i18n"></script>
