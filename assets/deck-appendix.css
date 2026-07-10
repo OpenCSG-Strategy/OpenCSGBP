@@ -531,7 +531,7 @@
   padding:0;
   display:grid;
   grid-template-columns:1fr 1fr;
-  grid-template-rows:repeat(3,1fr);
+  grid-template-rows:repeat(3, minmax(0, 1fr));
   gap:10px 12px;
   flex:1;
   min-height:0;
@@ -651,8 +651,6 @@
   line-height:1.5;
   color:#3D4A47;
   margin:0 0 10px;
-  flex:1;
-  min-height:0;
   overflow:hidden;
   display:-webkit-box;
   -webkit-line-clamp:4;
@@ -661,6 +659,7 @@
 #slide-26 .scenario-card footer{
   border-top:1px dashed #D8E5E2;
   padding-top:8px;
+  margin-top:auto;
   display:flex;
   flex-direction:column;
   gap:2px
