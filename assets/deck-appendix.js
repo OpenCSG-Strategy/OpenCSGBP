@@ -688,32 +688,32 @@
   document.body.insertAdjacentHTML("beforeend", appendixSlides.join(""));
 
   const enterprise = [
-    { step: "Step 1 · AgenticHub", zh: "AI 原生", en: "AI Native", descZh: "理解用户意图，自动化执行任务", descEn: "Automate tasks by user intent" },
-    { step: "Step 1 · CSGShip", zh: "CodeSouler", en: "CodeSouler", descZh: "在 IDE 环境中输入提示词", descEn: "Enter prompts in the IDE" },
-    { step: "Step 2 · CSGShip", zh: "代码生成与审查", en: "Code Generation & Review", descZh: "调用模型进行代码生成、审阅与测试", descEn: "Generate, review and test code" },
-    { step: "Step 3 · CSGShip", zh: "Agent 构建", en: "Agent Builder", descZh: "构建 Agent 与 AI 应用", descEn: "Build agents and AI apps" },
-    { step: "Step 4 · CSGShip", zh: "Agent 测试", en: "Agent Testing", descZh: "在虚拟环境中评测 Agent", descEn: "Evaluate agents in a test environment" },
-    { step: "Step 5 · CSGShip", zh: "Agent 发布", en: "Agent Deployment", descZh: "将 Agent 发布到生产环境", descEn: "Release agents to production" },
-    { step: "Step 6 · CSGHub", zh: "推理实例 / 公共实例", en: "Endpoint / Serverless API", descZh: "部署模型推理实例", descEn: "Deploy model inference instances" },
-    { step: "Step 7 · AgenticHub", zh: "智能助手", en: "AI Assistant", descZh: "智能对话与自动化，持续收集反馈", descEn: "Conversational automation with continuous feedback" },
-    { step: "Step 7 · CSGHub", zh: "DataFlow", en: "DataFlow", descZh: "一站式数据处理与沉淀", descEn: "All-in-one data processing and accumulation" },
-    { step: "Step 8 · CSGHub", zh: "模型微调与评测", en: "Finetune & Evaluation", descZh: "迭代升级 AI 应用与 Agent", descEn: "Iterate and upgrade AI apps and agents" }
+    { step: "Step 0 · CSGHub", zh: "资产与上下文", en: "Assets & Context", descZh: "准备模型、数据、Prompt 与知识资产", descEn: "Prepare models, data, prompts and knowledge assets" },
+    { step: "Step 1 · AgenticHub", zh: "Agent 设计", en: "Agent Design", descZh: "理解意图并设计 Agent 与工作流", descEn: "Design agents and workflows from user intent" },
+    { step: "Step 2 · AgenticHub", zh: "工具与代码接入", en: "Tools & Code", descZh: "连接代码、工具、MCP 与业务系统", descEn: "Connect code, tools, MCP and business systems" },
+    { step: "Step 3 · AgenticHub", zh: "编排构建", en: "Build & Orchestrate", descZh: "组合 Agent、Skill 与 Workflow", descEn: "Compose agents, skills and workflows" },
+    { step: "Step 4 · AgenticHub", zh: "测试与评测", en: "Test & Evaluate", descZh: "在沙箱中验证效果、安全与成本", descEn: "Validate quality, safety and cost in sandboxes" },
+    { step: "Step 5 · CSGHub", zh: "版本发布与门禁", en: "Release Governance", descZh: "资产版本、审批与发布策略统一管理", descEn: "Govern versions, approvals and release policies" },
+    { step: "Step 6 · CSGHub", zh: "跨环境部署", en: "Deploy Anywhere", descZh: "部署到云、私有化、边缘与隔离环境", descEn: "Cloud · on-prem · edge · air-gapped" },
+    { step: "Step 7 · CSGClaw", zh: "多 Agent 协同运行", en: "Multi-Agent Operations", descZh: "任务分工、执行接管与团队协作", descEn: "Coordinate tasks, execution and human takeover" },
+    { step: "Step 7 · CSGHub", zh: "DataFlow 反馈回流", en: "DataFlow Feedback", descZh: "采集运行反馈并沉淀高质量数据", descEn: "Collect runtime feedback into governed data" },
+    { step: "Step 8 · CSGHub", zh: "持续优化", en: "Continuous Improvement", descZh: "用评测、数据与运营信号迭代系统", descEn: "Improve with evaluation, data and operational signals" }
   ];
   const opc = [
-    { step: "Step 1 · AgenticHub", zh: "组织型 AI 生产", en: "Organizational AI Production", descZh: "理解用户意图，自动执行任务", descEn: "Understand intent and execute tasks automatically" },
-    { step: "Step 1 · CSGClaw", zh: "Manager", en: "Manager", descZh: "在 OPC 房间中输入目标", descEn: "Enter goals in the OPC workspace" },
-    { step: "Step 2 · CSGClaw", zh: "Agent 生成与管理", en: "Agent Generation & Management", descZh: "按需创建 OPC Agent", descEn: "Create OPC agents on demand" },
-    { step: "Step 3 · CSGClaw", zh: "Agent 构建", en: "Agent Development", descZh: "构建 OPC Agent", descEn: "Build OPC agents" },
-    { step: "Step 4 · CSGClaw", zh: "Agent 测试", en: "Agent Testing", descZh: "在虚拟环境中测试 OPC Agent", descEn: "Test OPC agents in a virtual environment" },
-    { step: "Step 5 · CSGClaw", zh: "Agent 发布", en: "Agent Release", descZh: "将 OPC Agent 发布到生产环境", descEn: "Release OPC agents to production" },
-    { step: "Step 6 · CSGHub-Lite", zh: "资产管理", en: "Asset Management", descZh: "部署个人 OPC 推理实例", descEn: "Deploy personal OPC inference instances" },
-    { step: "Step 7 · CSGClaw", zh: "智能助手", en: "Intelligent Assistant", descZh: "持续对话、执行和收集数据", descEn: "Converse, execute and collect data continuously" },
-    { step: "Step 7 · CSGHub", zh: "组织型 DataFlow", en: "Organizational DataFlow", descZh: "持续沉淀企业数据资产", descEn: "Continuously accumulate enterprise data assets" },
-    { step: "Step 8 · CSGHub", zh: "组织模型持续优化", en: "Organizational Model Improvement", descZh: "迭代企业团队的 AI 应用和 Agent", descEn: "Improve AI apps and agents for enterprise teams" }
+    { step: "Step 0 · CSGLite", zh: "个人 AI 入口", en: "Personal AI Entry", descZh: "本地模型、私有知识与个人工具就绪", descEn: "Prepare local models, private knowledge and tools" },
+    { step: "Step 1 · CSGClaw", zh: "Manager", en: "Manager", descZh: "输入目标，创建个人 Agent 团队", descEn: "Set a goal and create a personal agent team" },
+    { step: "Step 2 · CSGClaw", zh: "Agent 管理", en: "Agent Management", descZh: "发现、创建并组织 OPC Agent", descEn: "Discover, create and organize OPC agents" },
+    { step: "Step 3 · CSGClaw", zh: "Skill 与流程构建", en: "Skills & Workflows", descZh: "组合 Skill、工具与执行流程", descEn: "Compose skills, tools and execution flows" },
+    { step: "Step 4 · CSGClaw", zh: "沙箱测试", en: "Sandbox Testing", descZh: "测试、评测并确认关键动作", descEn: "Test, evaluate and approve critical actions" },
+    { step: "Step 5 · CSGClaw", zh: "Agent 发布", en: "Agent Release", descZh: "将可复用 Agent 发布到个人工作系统", descEn: "Release reusable agents into the personal workspace" },
+    { step: "Step 6 · CSGLite", zh: "本地运行", en: "Local Runtime", descZh: "在个人设备部署模型与推理服务", descEn: "Run models and inference services on personal devices" },
+    { step: "Step 7 · CSGClaw", zh: "持续协同执行", en: "Continuous Execution", descZh: "多 Agent 长期运行、接管与回放", descEn: "Operate, supervise and replay multi-agent work" },
+    { step: "Step 7 · CSGHub", zh: "团队资产回流", en: "Team Asset Feedback", descZh: "把可共享成果沉淀到组织资产层", descEn: "Return shareable outcomes to the organization asset layer" },
+    { step: "Step 8 · AgenticHub", zh: "组织生产升级", en: "Scale to Production", descZh: "把个人验证升级为受治理的组织生产", descEn: "Scale validated workflows into governed production" }
   ];
   const products = [
     { id: "agentichub", name: "AgenticHub", zh: "智能体全生命周期统一管理", en: "Unified full-lifecycle agent management", tags: "TOOLS · WORKFLOW · ASSISTANT", art: "roadMap_card_autohub" },
-    { id: "csgship", name: "CSGShip", zh: "智能代码与 Agent 协作平台", en: "Intelligent code and agent collaboration", tags: "CODE · BUILD · TEST · RELEASE", art: "roadMap_card_starship" },
+    { id: "csgclaw", name: "CSGClaw", zh: "多 Agent 协同与执行网络", en: "Multi-agent collaboration and execution network", tags: "MANAGER · SKILL · SANDBOX", art: "roadMap_card_starship" },
     { id: "csghub", name: "CSGHub", zh: "开源可信的模型与 Agent 资产平台", en: "Open and trusted model and agent asset platform", tags: "ASSET · DEPLOY · DATA · RETRAIN", art: "roadMap_card_csghub" }
   ];
   const segmentToStep = [0, 2, 3, 4, 5, 6, 7, 9];

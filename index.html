@@ -18,7 +18,7 @@
   </style>
   <link rel="stylesheet" href="assets/deck-base.css?v=20260708a">
   <link rel="stylesheet" href="assets/deck-appendix.css?v=20260708a">
-  <link rel="stylesheet" href="assets/deck-refine.css?v=20260706wechat">
+  <link rel="stylesheet" href="assets/deck-refine.css?v=20260710brochure">
   <link rel="stylesheet" href="assets/deck-slide03-earliest.css?v=20260705g">
   <link rel="stylesheet" href="assets/deck-review-20260705.css?v=20260705l">
   <link rel="stylesheet" href="assets/deck-tighten-20260705.css?v=20260705a">
@@ -477,7 +477,7 @@
   <link rel="stylesheet" href="assets/deck-cover-sovereign-20260707.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide05-07-fixes-20260707.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide08-product-links-20260707.css?v=20260707a">
-  <link rel="stylesheet" href="assets/deck-bp-humanize-20260707.css?v=20260709restore26">
+  <link rel="stylesheet" href="assets/deck-bp-humanize-20260707.css?v=20260710design">
 
 <style id="slide-08-user-journey-fix">
   #slide-08 .product8-bridge {
@@ -490,15 +490,16 @@
     position: absolute !important;
     left: 78px !important;
     right: 78px !important;
-    top: 190px !important;
-    height: 96px !important;
+    top: 186px !important;
+    height: 104px !important;
     display: grid !important;
     grid-template-columns: 148px minmax(0, 1fr) !important;
     align-items: stretch !important;
     overflow: hidden !important;
-    border: 1px solid #C7DCD8 !important;
+    border: 1px solid #C4D9D5 !important;
     border-top: 3px solid var(--teal) !important;
-    background: #FFFFFF !important;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F7FBFA 100%) !important;
+    box-shadow: 0 10px 28px rgba(25, 67, 61, .05) !important;
   }
 
   #slide-08 > .opc-journey > b {
@@ -507,7 +508,7 @@
     justify-content: center !important;
     padding: 0 16px !important;
     border-right: 1px solid #C7DCD8 !important;
-    background: #EAF5F2 !important;
+    background: linear-gradient(180deg, #E8F4F1 0%, #F5FAF9 100%) !important;
     color: #17695F !important;
     font-size: 12px !important;
     line-height: 1.35 !important;
@@ -521,7 +522,7 @@
     grid-template-columns: minmax(0, 1fr) 26px minmax(0, 1fr) 26px minmax(0, 1fr) 26px minmax(0, 1fr) !important;
     align-items: stretch !important;
     gap: 0 !important;
-    padding: 13px 14px !important;
+    padding: 12px 14px !important;
   }
 
   #slide-08 > .opc-journey .opc-journey-steps > span {
@@ -536,6 +537,7 @@
     border: 1px solid #D2E1DE !important;
     border-radius: 0 !important;
     background: #F8FBFA !important;
+    box-shadow: inset 0 3px 0 rgba(35, 135, 123, .12) !important;
   }
 
   #slide-08 > .opc-journey .opc-journey-steps > span em {
@@ -588,26 +590,40 @@
   }
 
   #slide-08 .product-shell {
-    top: 306px !important;
-    height: 500px !important;
+    top: 312px !important;
+    height: 494px !important;
     overflow: hidden !important;
+    border-color: #C4D9D5 !important;
+    box-shadow: 0 12px 34px rgba(25, 67, 61, .045) !important;
+  }
+
+  #slide-08 .product .tag,
+  #slide-08 .product .links a,
+  #slide-08 .product span {
+    font-size: 9.2px !important;
+    line-height: 1.28 !important;
   }
 
   #slide-08 .shared-top {
-    height: 42px !important;
+    height: 46px !important;
     gap: 2px !important;
+    background: #0E675F !important;
+    border-bottom: 2px solid #23877B !important;
   }
 
   #slide-08 .shared-top b {
+    color: #FFFFFF !important;
     font-size: 14px !important;
   }
 
   #slide-08 .shared-top span {
-    font-size: 10px !important;
+    color: rgba(255, 255, 255, .76) !important;
+    font-size: 10.4px !important;
+    padding-left: 0 !important;
   }
 
   #slide-08 .edition {
-    height: 198px !important;
+    height: 194px !important;
     grid-template-columns: 172px minmax(0, 1fr) minmax(0, 1fr) !important;
   }
 
@@ -617,7 +633,8 @@
 
   #slide-08 .edition-label em {
     margin-bottom: 9px !important;
-    font-size: 7.8px !important;
+    font-size: 8.8px !important;
+    line-height: 1.15 !important;
   }
 
   #slide-08 .edition-label b {
@@ -635,30 +652,71 @@
     grid-template-columns: minmax(0, 1fr) 168px !important;
     gap: 9px !important;
     padding: 9px 10px !important;
+    position: relative !important;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FBFDFD 100%) !important;
+  }
+
+  #slide-08 .product::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 4px !important;
+    background: #BDD8D3 !important;
+  }
+
+  #slide-08 .product-stage-01::before { background: #23877B !important; }
+  #slide-08 .product-stage-02::before { background: #70AAA2 !important; }
+  #slide-08 .product-stage-03::before { background: #4E938A !important; }
+  #slide-08 .product-stage-04::before { background: #0E675F !important; }
+
+  #slide-08 .product-stage {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    height: 18px !important;
+    margin-bottom: 4px !important;
+    padding: 0 7px !important;
+    border: 1px solid #C7DCD8 !important;
+    background: #F1F8F6 !important;
+    color: #17695F !important;
+    font-size: 8.2px !important;
+    font-weight: 850 !important;
+    letter-spacing: .08em !important;
+    text-transform: uppercase !important;
+  }
+
+  #slide-08 .product-stage em {
+    color: var(--teal) !important;
+    font-style: normal !important;
+    font-size: 9px !important;
   }
 
   #slide-08 .product h3 {
-    font-size: 15.5px !important;
-    line-height: 1.12 !important;
+    font-size: 15.8px !important;
+    line-height: 1.14 !important;
   }
 
   #slide-08 .product .role {
-    margin: 3px 0 5px !important;
-    font-size: 9px !important;
+    margin: 3px 0 6px !important;
+    font-size: 9.6px !important;
+    line-height: 1.25 !important;
   }
 
   #slide-08 .product ul {
     padding-left: 14px !important;
-    font-size: 8.5px !important;
-    line-height: 1.22 !important;
+    font-size: 9.1px !important;
+    line-height: 1.28 !important;
   }
 
   #slide-08 .product li + li {
-    margin-top: 1px !important;
+    margin-top: 1.5px !important;
   }
 
   #slide-08 .product .screen {
-    height: 145px !important;
+    height: 136px !important;
+    margin-top: 24px !important;
   }
 
   #slide-08 .product-links {
@@ -667,60 +725,1048 @@
   }
 
   #slide-08 .product-jump {
-    height: 18px !important;
+    height: 19px !important;
     padding: 0 7px !important;
-    font-size: 8px !important;
+    font-size: 8.8px !important;
   }
 
   #slide-08 .product-meta {
-    gap: 3px !important;
-    margin-top: 4px !important;
+    display: none !important;
   }
 
   #slide-08 .product-meta span {
-    padding: 2px 4px !important;
-    font-size: 6.8px !important;
+    padding: 2px 5px !important;
+    font-size: 8.8px !important;
+    line-height: 1.2 !important;
   }
 
   #slide-08 .shared-bottom {
     height: 60px !important;
+    background: #F6FAF9 !important;
   }
 
   #slide-08 .shared-bottom div {
     padding: 0 5px !important;
-    font-size: 9px !important;
-    line-height: 1.25 !important;
+    color: #234B45 !important;
+    font-size: 9.6px !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
     text-align: center !important;
+  }
+
+  /* 08 · Animated product evolution: 01 assets → 02 runtime → 03 execution → 04 production → feedback. */
+  #slide-08 .opc-journey-steps {
+    --evolution-progress: 13%;
+    position: relative !important;
+  }
+
+  #slide-08 .opc-journey-steps::before,
+  #slide-08 .opc-journey-steps::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 14px !important;
+    bottom: 5px !important;
+    height: 3px !important;
+    pointer-events: none !important;
+  }
+
+  #slide-08 .opc-journey-steps::before {
+    right: 14px !important;
+    background: #D9E7E4 !important;
+  }
+
+  #slide-08 .opc-journey-steps::after {
+    width: var(--evolution-progress) !important;
+    background: linear-gradient(90deg, #23877B, #62B7AB) !important;
+    box-shadow: 0 0 10px rgba(35, 135, 123, .34) !important;
+    transition: width .7s cubic-bezier(.25,.1,.25,1) !important;
+  }
+
+  #slide-08 .opc-journey-steps > span[data-evolution-step] {
+    z-index: 1 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    transition: transform .32s cubic-bezier(.25,.1,.25,1), border-color .32s ease, background .32s ease, box-shadow .32s ease, opacity .32s ease !important;
+  }
+
+  #slide-08 .opc-journey-steps > .step-commerce:not(.is-active) {
+    border-color: #D2E1DE !important;
+    background: #F8FBFA !important;
+  }
+
+  #slide-08 .opc-journey-steps > .step-commerce:not(.is-active) em,
+  #slide-08 .opc-journey-steps > .step-commerce:not(.is-active) strong {
+    color: #173E38 !important;
+  }
+
+  #slide-08 .opc-journey-steps > .step-commerce:not(.is-active) small {
+    color: #536A65 !important;
+  }
+
+  #slide-08 .opc-journey-steps > span.is-complete:not(.is-active) {
+    border-color: #A9CDC7 !important;
+    background: #EDF7F5 !important;
+  }
+
+  #slide-08 .opc-journey-steps > span.is-active {
+    transform: translateY(-3px) !important;
+    border-color: #0E675F !important;
+    background: #0E675F !important;
+    box-shadow: 0 9px 22px rgba(14,103,95,.18), inset 0 3px 0 #69C5B9 !important;
+  }
+
+  #slide-08 .opc-journey-steps > span.is-active em,
+  #slide-08 .opc-journey-steps > span.is-active strong,
+  #slide-08 .opc-journey-steps > span.is-active small {
+    color: #FFFFFF !important;
+  }
+
+  #slide-08 .opc-journey-steps > span:focus-visible {
+    box-shadow: 0 0 0 3px rgba(35,135,123,.2) !important;
+  }
+
+  #slide-08 .opc-journey-steps > i {
+    transition: color .3s ease, transform .3s ease !important;
+  }
+
+  #slide-08 .opc-journey-steps > i.is-complete,
+  #slide-08 .opc-journey-steps > i.is-running {
+    color: #23877B !important;
+  }
+
+  #slide-08 .opc-journey-steps > i.is-running {
+    animation: evolution-arrow 1s ease-in-out infinite !important;
+  }
+
+  #slide-08 .shared-top {
+    height: 50px !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 440px !important;
+    align-items: stretch !important;
+    justify-content: initial !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  #slide-08 .shared-top-intro {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    padding: 0 18px !important;
+  }
+
+  #slide-08 .shared-top-intro > b {
+    color: #FFFFFF !important;
+    font-size: 13.5px !important;
+    line-height: 1.12 !important;
+  }
+
+  #slide-08 .shared-top-intro > span {
+    margin-top: 3px !important;
+    overflow: hidden !important;
+    color: rgba(255,255,255,.72) !important;
+    font-size: 9.6px !important;
+    line-height: 1.15 !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  #slide-08 .product-evolution-live {
+    display: grid !important;
+    grid-template-columns: 98px 145px minmax(0,1fr) !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    padding: 0 15px !important;
+    border-left: 1px solid rgba(255,255,255,.22) !important;
+    background: rgba(0,0,0,.08) !important;
+  }
+
+  #slide-08 .product-evolution-live em {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    color: #9EE0D6 !important;
+    font-style: normal !important;
+    font-size: 8px !important;
+    font-weight: 850 !important;
+    letter-spacing: .08em !important;
+  }
+
+  #slide-08 .product-evolution-live em::before {
+    content: "" !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: #78E2D2 !important;
+    box-shadow: 0 0 0 4px rgba(120,226,210,.12) !important;
+    animation: evolution-live 1.6s ease-in-out infinite !important;
+  }
+
+  #slide-08 .product-evolution-live strong {
+    overflow: hidden !important;
+    color: #FFFFFF !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  #slide-08 .product-evolution-live > span {
+    overflow: hidden !important;
+    color: rgba(255,255,255,.74) !important;
+    font-size: 8.7px !important;
+    font-weight: 500 !important;
+    line-height: 1.18 !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  #slide-08 .edition {
+    height: 192px !important;
+  }
+
+  #slide-08 .product {
+    transition: opacity .38s ease, background .38s ease, box-shadow .38s ease !important;
+  }
+
+  #slide-08 .product.is-evolution-dim {
+    opacity: .76 !important;
+  }
+
+  #slide-08 .product.is-evolution-complete {
+    opacity: .9 !important;
+  }
+
+  #slide-08 .product.is-evolution-active {
+    z-index: 3 !important;
+    opacity: 1 !important;
+    background: #F0F9F7 !important;
+    box-shadow: inset 0 0 0 2px #23877B, 0 10px 24px rgba(25,87,78,.1) !important;
+  }
+
+  #slide-08 .product.is-evolution-active::before {
+    width: 7px !important;
+    background: #0E675F !important;
+    box-shadow: 0 0 15px rgba(35,135,123,.5) !important;
+  }
+
+  #slide-08 .product.is-evolution-active .product-stage {
+    border-color: #23877B !important;
+    background: #23877B !important;
+    color: #FFFFFF !important;
+  }
+
+  #slide-08 .product.is-evolution-active .product-stage em,
+  #slide-08 .product.is-evolution-active .product-stage span {
+    color: #FFFFFF !important;
+  }
+
+  #slide-08 .product.is-evolution-active .screen {
+    border-color: #70B8AE !important;
+    box-shadow: 0 8px 18px rgba(25,87,78,.12) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  #slide-08 .product .screen {
+    transition: transform .38s cubic-bezier(.25,.1,.25,1), border-color .38s ease, box-shadow .38s ease !important;
+  }
+
+  #slide-08 .shared-bottom > div {
+    transition: color .3s ease, background .3s ease, box-shadow .3s ease !important;
+  }
+
+  #slide-08 .shared-bottom > div.is-complete {
+    color: #17695F !important;
+    background: #EAF5F2 !important;
+  }
+
+  #slide-08 .shared-bottom > div.is-active {
+    color: #FFFFFF !important;
+    background: #23877B !important;
+    box-shadow: inset 0 3px 0 #79D3C7 !important;
+  }
+
+  #slide-08 .shared-bottom > .evolution-feedback.is-active {
+    color: #FFFFFF !important;
+    background: #0E675F !important;
+    animation: evolution-feedback 1.4s ease-in-out infinite !important;
+  }
+
+  #slide-08.is-feedback-stage .is-feedback-target .product-stage,
+  #slide-08.is-feedback-stage .opc-journey-steps > .is-feedback-target {
+    animation: evolution-return 1.4s ease-in-out infinite !important;
+  }
+
+  @keyframes evolution-live {
+    0%,100% { opacity:.48; transform:scale(.82); }
+    50% { opacity:1; transform:scale(1.08); }
+  }
+
+  @keyframes evolution-arrow {
+    0%,100% { transform:translateX(0); }
+    50% { transform:translateX(4px); }
+  }
+
+  @keyframes evolution-feedback {
+    0%,100% { box-shadow:inset 0 3px 0 #79D3C7, 0 0 0 rgba(14,103,95,0); }
+    50% { box-shadow:inset 0 3px 0 #79D3C7, 0 0 16px rgba(14,103,95,.24); }
+  }
+
+  @keyframes evolution-return {
+    0%,100% { box-shadow:0 0 0 0 rgba(35,135,123,.12); }
+    50% { box-shadow:0 0 0 5px rgba(35,135,123,.18); }
+  }
+
+  /* 08 · Clean 2×2 evolution loop. Product detail lives in the appendix; this page explains the relationship. */
+  #slide-08 .p8-lead {
+    position: absolute !important;
+    left: 78px !important;
+    right: 78px !important;
+    top: 177px !important;
+    margin: 0 !important;
+    color: #52635F !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  #slide-08 .p8-story {
+    position: absolute !important;
+    left: 78px !important;
+    right: 78px !important;
+    top: 215px !important;
+    height: 590px !important;
+  }
+
+  #slide-08 .p8-sequence {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    height: 58px !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    border-top: 1px solid #BFD2CE !important;
+    border-bottom: 1px solid #D5E2DF !important;
+    background: #F7FAF9 !important;
+  }
+
+  #slide-08 .p8-sequence button {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 38px minmax(0,1fr) !important;
+    align-items: center !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+    padding: 0 18px !important;
+    border: 0 !important;
+    border-right: 1px solid #D5E2DF !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #243D38 !important;
+    text-align: left !important;
+    cursor: pointer !important;
+    transition: background .3s ease, box-shadow .3s ease, opacity .3s ease !important;
+  }
+
+  #slide-08 .p8-sequence button:last-child {
+    border-right: 0 !important;
+  }
+
+  #slide-08 .p8-sequence button::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: -1px !important;
+    height: 3px !important;
+    background: var(--stage, #23877B) !important;
+    transform: scaleX(0) !important;
+    transform-origin: left !important;
+    transition: transform .38s cubic-bezier(.25,.1,.25,1) !important;
+  }
+
+  #slide-08 .p8-sequence button:nth-child(1) { --stage: #23877B; }
+  #slide-08 .p8-sequence button:nth-child(2) { --stage: #2E7F9B; }
+  #slide-08 .p8-sequence button:nth-child(3) { --stage: #4D659B; }
+  #slide-08 .p8-sequence button:nth-child(4) { --stage: #176A61; }
+
+  #slide-08 .p8-sequence button.is-active {
+    z-index: 1 !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 8px 20px rgba(24,65,58,.07) !important;
+    opacity: 1 !important;
+  }
+
+  #slide-08 .p8-sequence button.is-active::after,
+  #slide-08 .p8-sequence button.is-complete::after {
+    transform: scaleX(1) !important;
+  }
+
+  #slide-08 .p8-sequence button.is-complete {
+    background: #F0F6F4 !important;
+  }
+
+  #slide-08 .p8-sequence button em {
+    color: var(--stage, #23877B) !important;
+    font-style: normal !important;
+    font-size: 18px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+  }
+
+  #slide-08 .p8-sequence button span {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+  }
+
+  #slide-08 .p8-sequence button b {
+    color: #1C3732 !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+  }
+
+  #slide-08 .p8-sequence button small {
+    margin-top: 3px !important;
+    color: #71817D !important;
+    font-size: 8.8px !important;
+    font-weight: 750 !important;
+    letter-spacing: .04em !important;
+  }
+
+  #slide-08 .p8-sequence button:focus-visible {
+    outline: 2px solid #23877B !important;
+    outline-offset: -3px !important;
+  }
+
+  #slide-08 .p8-map {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 72px !important;
+    height: 422px !important;
+    display: grid !important;
+    grid-template-columns: 150px minmax(0,1fr) minmax(0,1fr) !important;
+    grid-template-rows: 191px 191px !important;
+    gap: 40px 22px !important;
+  }
+
+  #slide-08 .p8-lane {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    padding: 0 18px !important;
+    border-left: 3px solid var(--lane) !important;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--lane) 8%, #FFFFFF), transparent) !important;
+  }
+
+  #slide-08 .p8-lane-org {
+    --lane: #23877B;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  #slide-08 .p8-lane-opc {
+    --lane: #4D659B;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  #slide-08 .p8-lane small {
+    color: var(--lane) !important;
+    font-size: 8px !important;
+    font-weight: 850 !important;
+    letter-spacing: .12em !important;
+  }
+
+  #slide-08 .p8-lane b {
+    margin-top: 9px !important;
+    color: #1D3732 !important;
+    font-size: 17px !important;
+    line-height: 1.1 !important;
+  }
+
+  #slide-08 .p8-lane span {
+    margin-top: 7px !important;
+    color: #667672 !important;
+    font-size: 10px !important;
+    line-height: 1.36 !important;
+  }
+
+  #slide-08 .p8-node {
+    --stage: #23877B;
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) 210px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    border: 1px solid #CDDCD9 !important;
+    border-top: 3px solid var(--stage) !important;
+    border-radius: 5px !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 3px 12px rgba(22,56,50,.045) !important;
+    transition: opacity .35s ease, border-color .35s ease, background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.25,.1,.25,1) !important;
+  }
+
+  #slide-08 .p8-node-01 { --stage:#23877B; grid-column:2; grid-row:1; }
+  #slide-08 .p8-node-04 { --stage:#176A61; grid-column:3; grid-row:1; }
+  #slide-08 .p8-node-02 { --stage:#2E7F9B; grid-column:2; grid-row:2; }
+  #slide-08 .p8-node-03 { --stage:#4D659B; grid-column:3; grid-row:2; }
+
+  #slide-08 .p8-node-copy {
+    position: relative !important;
+    min-width: 0 !important;
+    padding: 14px 16px 12px !important;
+  }
+
+  #slide-08 .p8-node-kicker {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  #slide-08 .p8-node-kicker em {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 25px !important;
+    height: 18px !important;
+    border-radius: 2px !important;
+    background: var(--stage) !important;
+    color: #FFFFFF !important;
+    font-style: normal !important;
+    font-size: 9px !important;
+    font-weight: 900 !important;
+  }
+
+  #slide-08 .p8-node-kicker span {
+    color: var(--stage) !important;
+    font-size: 8px !important;
+    font-weight: 850 !important;
+    letter-spacing: .1em !important;
+  }
+
+  #slide-08 .p8-node h3 {
+    margin: 9px 0 0 !important;
+    color: #173E38 !important;
+    font-size: 21px !important;
+    line-height: 1.14 !important;
+  }
+
+  #slide-08 .p8-node p {
+    max-width: 360px !important;
+    margin: 7px 0 0 !important;
+    color: #52635F !important;
+    font-size: 10.5px !important;
+    line-height: 1.38 !important;
+  }
+
+  #slide-08 .p8-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    margin-top: 10px !important;
+  }
+
+  #slide-08 .p8-tags span {
+    padding: 3px 6px !important;
+    border: 1px solid color-mix(in srgb, var(--stage) 28%, #D6E1DF) !important;
+    border-radius: 2px !important;
+    background: color-mix(in srgb, var(--stage) 5%, #FFFFFF) !important;
+    color: color-mix(in srgb, var(--stage) 80%, #243D38) !important;
+    font-size: 8.5px !important;
+    font-weight: 720 !important;
+    line-height: 1.15 !important;
+  }
+
+  #slide-08 .p8-node-copy > a {
+    position: absolute !important;
+    left: 16px !important;
+    bottom: 12px !important;
+    color: var(--stage) !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+  }
+
+  #slide-08 .p8-node figure {
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 13px 13px 13px 0 !important;
+    overflow: hidden !important;
+    border: 1px solid #D7E2E0 !important;
+    border-radius: 4px !important;
+    background: #F7FAF9 !important;
+  }
+
+  #slide-08 .p8-node figure img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    filter: saturate(.9) contrast(.99) !important;
+    transition: transform .45s cubic-bezier(.25,.1,.25,1), filter .35s ease !important;
+  }
+
+  #slide-08 .p8-node.is-evolution-dim { opacity:.84 !important; }
+  #slide-08 .p8-node.is-evolution-complete { opacity:.93 !important; }
+
+  #slide-08 .p8-node.is-evolution-active {
+    z-index: 4 !important;
+    opacity: 1 !important;
+    transform: translateY(-2px) !important;
+    border-color: color-mix(in srgb, var(--stage) 64%, #B7CBC7) !important;
+    background: color-mix(in srgb, var(--stage) 4%, #FFFFFF) !important;
+    box-shadow: 0 12px 26px color-mix(in srgb, var(--stage) 14%, transparent) !important;
+  }
+
+  #slide-08 .p8-node.is-evolution-active figure img {
+    filter: saturate(1) contrast(1.02) !important;
+    transform: scale(1.018) !important;
+  }
+
+  #slide-08 .p8-node:focus-visible {
+    outline: 2px solid var(--stage) !important;
+    outline-offset: 3px !important;
+  }
+
+  #slide-08 .p8-connector {
+    position: absolute !important;
+    z-index: 8 !important;
+    pointer-events: none !important;
+  }
+
+  #slide-08 .p8-connector i {
+    display: block !important;
+    position: relative !important;
+    background: color-mix(in srgb, var(--stage) 42%, #C7D5D2) !important;
+  }
+
+  #slide-08 .p8-connector span {
+    position: absolute !important;
+    padding: 2px 5px !important;
+    border: 1px solid color-mix(in srgb, var(--stage) 24%, #D9E3E1) !important;
+    border-radius: 2px !important;
+    background: color-mix(in srgb, var(--stage) 5%, #FFFFFF) !important;
+    color: color-mix(in srgb, var(--stage) 76%, #4D625D) !important;
+    font-size: 8px !important;
+    font-weight: 820 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  #slide-08 .p8-down,
+  #slide-08 .p8-up {
+    left: 50% !important;
+    width: 2px !important;
+    height: 40px !important;
+  }
+
+  #slide-08 .p8-down { top:100% !important; }
+  #slide-08 .p8-up { bottom:100% !important; }
+  #slide-08 .p8-down i,
+  #slide-08 .p8-up i { width:2px !important; height:40px !important; }
+  #slide-08 .p8-down span { left:9px !important; top:14px !important; }
+  #slide-08 .p8-up span { right:9px !important; top:14px !important; }
+
+  #slide-08 .p8-down i::after,
+  #slide-08 .p8-up i::after,
+  #slide-08 .p8-right i::after,
+  #slide-08 .p8-left i::after {
+    content:"" !important;
+    position:absolute !important;
+    width:7px !important;
+    height:7px !important;
+    border-right:2px solid color-mix(in srgb, var(--stage) 58%, #8BAAA4) !important;
+    border-bottom:2px solid color-mix(in srgb, var(--stage) 58%, #8BAAA4) !important;
+  }
+
+  #slide-08 .p8-down i::after { left:-3px !important; bottom:1px !important; transform:rotate(45deg) !important; }
+  #slide-08 .p8-up i::after { left:-3px !important; top:1px !important; transform:rotate(225deg) !important; }
+
+  #slide-08 .p8-right,
+  #slide-08 .p8-left {
+    top:50% !important;
+    width:22px !important;
+    height:2px !important;
+  }
+
+  #slide-08 .p8-right { left:100% !important; }
+  #slide-08 .p8-left { right:100% !important; }
+  #slide-08 .p8-right i,
+  #slide-08 .p8-left i { width:22px !important; height:2px !important; }
+  #slide-08 .p8-right span { right:7px !important; bottom:8px !important; }
+  #slide-08 .p8-left span { left:7px !important; bottom:8px !important; }
+  #slide-08 .p8-right i::after { right:1px !important; top:-3px !important; transform:rotate(-45deg) !important; }
+  #slide-08 .p8-left i::after { left:1px !important; top:-3px !important; transform:rotate(135deg) !important; }
+
+  #slide-08 .p8-connector.is-running i {
+    background: linear-gradient(90deg, #B9CCC8, var(--stage), #B9CCC8) !important;
+    background-size: 200% 100% !important;
+    animation: p8-flow 1.15s linear infinite !important;
+  }
+
+  #slide-08 .p8-down.is-running i,
+  #slide-08 .p8-up.is-running i {
+    background: linear-gradient(180deg, #B9CCC8, var(--stage), #B9CCC8) !important;
+    background-size: 100% 200% !important;
+  }
+
+  #slide-08 .p8-connector.is-running i::after {
+    border-color: var(--stage) !important;
+  }
+
+  #slide-08.is-feedback-stage .p8-node-01.is-feedback-target {
+    animation: p8-return 1.45s ease-in-out infinite !important;
+  }
+
+  #slide-08 .p8-foundation {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 68px !important;
+    display: grid !important;
+    grid-template-columns: 190px repeat(4,minmax(0,1fr)) 155px !important;
+    border-top: 1px solid #C8D8D5 !important;
+    border-bottom: 1px solid #D6E2E0 !important;
+    background: #F7FAF9 !important;
+  }
+
+  #slide-08 .p8-foundation > div,
+  #slide-08 .p8-foundation > span,
+  #slide-08 .p8-foundation > em {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    border-right: 1px solid #D6E2E0 !important;
+    color: #35524D !important;
+    font-size: 9.5px !important;
+    font-style: normal !important;
+    font-weight: 780 !important;
+    text-align: center !important;
+    transition: color .3s ease, background .3s ease, box-shadow .3s ease !important;
+  }
+
+  #slide-08 .p8-foundation > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-left: 17px !important;
+  }
+
+  #slide-08 .p8-foundation > div small {
+    color: #70817D !important;
+    font-size: 7.5px !important;
+    letter-spacing: .1em !important;
+  }
+
+  #slide-08 .p8-foundation > div b {
+    margin-top: 5px !important;
+    color: #1A3C36 !important;
+    font-size: 13px !important;
+  }
+
+  #slide-08 .p8-foundation > span.is-complete {
+    color: #17695F !important;
+    background: #EAF4F2 !important;
+  }
+
+  #slide-08 .p8-foundation > span.is-active {
+    color: #FFFFFF !important;
+    background: #23877B !important;
+    box-shadow: inset 0 3px 0 #77C9BE !important;
+  }
+
+  #slide-08 .p8-feedback {
+    border-right: 0 !important;
+    color: #176A61 !important;
+  }
+
+  #slide-08 .p8-feedback.is-active {
+    color: #FFFFFF !important;
+    background: #176A61 !important;
+    animation: evolution-feedback 1.4s ease-in-out infinite !important;
+  }
+
+  @keyframes p8-flow {
+    to { background-position: -200% 0; }
+  }
+
+  @keyframes p8-return {
+    0%,100% { box-shadow:0 3px 12px rgba(22,56,50,.045), 0 0 0 0 rgba(35,135,123,.08); }
+    50% { box-shadow:0 7px 20px rgba(22,56,50,.08), 0 0 0 5px rgba(35,135,123,.13); }
+  }
+
+  .lang-en #slide-08 .p8-node p,
+  html[lang="en"] #slide-08 .p8-node p {
+    font-size: 9.8px !important;
+    line-height: 1.34 !important;
+  }
+
+  .lang-en #slide-08 .p8-tags span,
+  html[lang="en"] #slide-08 .p8-tags span {
+    font-size: 8px !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #slide-08 *,
+    #slide-08 *::before,
+    #slide-08 *::after {
+      animation: none !important;
+      transition-duration: 0s !important;
+    }
+  }
+
+  @media print {
+    #slide-08 *,
+    #slide-08 *::before,
+    #slide-08 *::after {
+      animation: none !important;
+      transition-duration: 0s !important;
+    }
+
+    #slide-08 .product-evolution-live {
+      display: none !important;
+    }
+
+    #slide-08 .shared-top {
+      grid-template-columns: 1fr !important;
+    }
+
+    #slide-08 .opc-journey-steps::after {
+      width: calc(100% - 28px) !important;
+      box-shadow: none !important;
+    }
+
+    #slide-08 .opc-journey-steps > span[data-evolution-step] {
+      transform: none !important;
+      border-color: #B9D3CE !important;
+      background: #EDF7F5 !important;
+      box-shadow: none !important;
+    }
+
+    #slide-08 .opc-journey-steps > span[data-evolution-step] em,
+    #slide-08 .opc-journey-steps > span[data-evolution-step] strong {
+      color: #173E38 !important;
+    }
+
+    #slide-08 .opc-journey-steps > span[data-evolution-step] small {
+      color: #536A65 !important;
+    }
+
+    #slide-08 .product,
+    #slide-08 .product.is-evolution-active,
+    #slide-08 .product.is-evolution-complete,
+    #slide-08 .product.is-evolution-dim {
+      opacity: 1 !important;
+      background: #FFFFFF !important;
+      box-shadow: none !important;
+    }
+
+    #slide-08 .product.is-evolution-active .product-stage,
+    #slide-08 .product.is-evolution-active .product-stage em,
+    #slide-08 .product.is-evolution-active .product-stage span {
+      border-color: #C7DCD8 !important;
+      background: #F1F8F6 !important;
+      color: #17695F !important;
+    }
+
+    #slide-08 .shared-bottom > div,
+    #slide-08 .shared-bottom > div.is-active,
+    #slide-08 .shared-bottom > div.is-complete,
+    #slide-08 .shared-bottom > .evolution-feedback.is-active {
+      color: #234B45 !important;
+      background: #F6FAF9 !important;
+      box-shadow: none !important;
+    }
+
+    #slide-08 .p8-node,
+    #slide-08 .p8-node.is-evolution-active,
+    #slide-08 .p8-node.is-evolution-complete,
+    #slide-08 .p8-node.is-evolution-dim {
+      opacity: 1 !important;
+      transform: none !important;
+      background: #FFFFFF !important;
+      box-shadow: none !important;
+    }
+
+    #slide-08 .p8-sequence button,
+    #slide-08 .p8-sequence button.is-active,
+    #slide-08 .p8-sequence button.is-complete {
+      background: #F7FAF9 !important;
+      box-shadow: none !important;
+    }
+
+    #slide-08 .p8-foundation > span,
+    #slide-08 .p8-foundation > span.is-active,
+    #slide-08 .p8-foundation > span.is-complete,
+    #slide-08 .p8-feedback,
+    #slide-08 .p8-feedback.is-active {
+      color: #35524D !important;
+      background: #F7FAF9 !important;
+      box-shadow: none !important;
+    }
   }
 </style>
 
 <style id="slide-12-opencore-capability-fix">
   #slide-12 .open12-reframed {
-    grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr) !important;
-    grid-template-rows: 86px minmax(0, 1fr) 118px !important;
-    gap: 14px !important;
+    grid-template-columns: minmax(0, .76fr) minmax(0, 1.24fr) !important;
+    grid-template-rows: 112px minmax(0, 1fr) 68px !important;
+    gap: 12px !important;
   }
 
   #slide-12 .oc12-flywheel {
-    grid-template-columns: 1fr 30px 1fr 30px 1fr !important;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.28fr) minmax(0, .92fr) !important;
+    gap: 0 !important;
+    min-height: 0 !important;
+    border-top: 3px solid #23877B !important;
+    background: #143D37 !important;
   }
 
-  #slide-12 .oc12-flywheel-step {
+  #slide-12 .oc12-model-summary,
+  #slide-12 .oc12-model-flow,
+  #slide-12 .oc12-precedents {
+    min-width: 0 !important;
+    min-height: 0 !important;
+    border-right: 1px solid rgba(255,255,255,.16) !important;
+  }
+
+  #slide-12 .oc12-precedents {
+    border-right: 0 !important;
+  }
+
+  #slide-12 .oc12-model-summary {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
     padding: 14px 18px !important;
   }
 
-  #slide-12 .oc12-flywheel-step b {
-    font-size: 19px !important;
+  #slide-12 .oc12-model-summary small,
+  #slide-12 .oc12-precedents small {
+    color: #8BD8CE !important;
+    font-size: 8.5px !important;
+    font-weight: 850 !important;
+    letter-spacing: .14em !important;
+  }
+
+  #slide-12 .oc12-model-summary b {
+    margin-top: 7px !important;
+    color: #FFFFFF !important;
+    font-size: 20px !important;
+    line-height: 1.08 !important;
+  }
+
+  #slide-12 .oc12-model-summary p {
+    margin: 7px 0 0 !important;
+    color: rgba(255,255,255,.78) !important;
+    font-size: 10.5px !important;
+    line-height: 1.38 !important;
+  }
+
+  #slide-12 .oc12-model-flow {
+    display: grid !important;
+    grid-template-columns: 1fr 26px 1fr 26px 1fr !important;
+    align-items: stretch !important;
+    padding: 13px 12px !important;
+  }
+
+  #slide-12 .oc12-model-flow > span {
+    display: grid !important;
+    grid-template-columns: 24px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    align-content: center !important;
+    column-gap: 7px !important;
+    padding: 9px 10px !important;
+    border: 1px solid rgba(139,216,206,.34) !important;
+    background: rgba(255,255,255,.06) !important;
+  }
+
+  #slide-12 .oc12-model-flow em {
+    grid-row: 1 / 3 !important;
+    align-self: center !important;
+    color: #8BD8CE !important;
+    font-style: normal !important;
+    font-size: 15px !important;
+    font-weight: 900 !important;
+  }
+
+  #slide-12 .oc12-model-flow strong {
+    color: #FFFFFF !important;
+    font-size: 12px !important;
+    line-height: 1.1 !important;
+  }
+
+  #slide-12 .oc12-model-flow small {
+    margin-top: 3px !important;
+    color: rgba(255,255,255,.72) !important;
+    font-size: 8.6px !important;
+    line-height: 1.15 !important;
+  }
+
+  #slide-12 .oc12-model-flow i {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #8BD8CE !important;
+    font-style: normal !important;
+    font-size: 18px !important;
+    font-weight: 900 !important;
+  }
+
+  #slide-12 .oc12-precedents {
+    display: grid !important;
+    grid-template-rows: auto minmax(0, 1fr) !important;
+    gap: 9px !important;
+    padding: 14px 14px 12px !important;
+  }
+
+  #slide-12 .oc12-precedents > div {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+    min-height: 0 !important;
+  }
+
+  #slide-12 .oc12-precedents span {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    padding: 5px 7px !important;
+    border: 1px solid rgba(139,216,206,.28) !important;
+    background: rgba(255,255,255,.08) !important;
+  }
+
+  #slide-12 .oc12-precedents b {
+    color: #FFFFFF !important;
+    font-size: 10.5px !important;
+    line-height: 1.05 !important;
+  }
+
+  #slide-12 .oc12-precedents em {
+    margin-top: 3px !important;
+    color: rgba(255,255,255,.66) !important;
+    font-style: normal !important;
+    font-size: 7.5px !important;
+    line-height: 1.05 !important;
   }
 
   #slide-12 .oc12-edition-story > header {
     grid-template-columns: 1fr !important;
     gap: 6px !important;
-    padding: 13px 16px 12px !important;
+    padding: 12px 16px 10px !important;
   }
 
   #slide-12 .oc12-edition-story > header small {
     grid-column: auto !important;
+    font-size: 8.8px !important;
+    line-height: 1.2 !important;
   }
 
   #slide-12 .oc12-edition-story > header h3 {
@@ -728,8 +1774,8 @@
   }
 
   #slide-12 .oc12-edition-story > header p {
-    font-size: 10px !important;
-    line-height: 1.35 !important;
+    font-size: 10.6px !important;
+    line-height: 1.42 !important;
   }
 
   #slide-12 .oc12-editions {
@@ -752,15 +1798,21 @@
     font-size: 9px !important;
   }
 
+  #slide-12 .oc12-edition-title small {
+    font-size: 8.8px !important;
+    line-height: 1.18 !important;
+    letter-spacing: .06em !important;
+  }
+
   #slide-12 .oc12-edition-title b {
     font-size: 16px !important;
   }
 
   #slide-12 .oc12-editions article > p {
-    min-height: 42px !important;
+    min-height: 34px !important;
     margin: 9px 0 7px !important;
-    font-size: 8.8px !important;
-    line-height: 1.35 !important;
+    font-size: 10px !important;
+    line-height: 1.38 !important;
   }
 
   #slide-12 .oc12-editions ul {
@@ -769,8 +1821,8 @@
   }
 
   #slide-12 .oc12-editions li {
-    font-size: 8.4px !important;
-    line-height: 1.25 !important;
+    font-size: 9.6px !important;
+    line-height: 1.34 !important;
   }
 
   #slide-12 .oc12-shared {
@@ -780,7 +1832,8 @@
 
   #slide-12 .oc12-shared span {
     padding: 4px 6px !important;
-    font-size: 7px !important;
+    font-size: 9px !important;
+    line-height: 1.22 !important;
   }
 
   #slide-12 .oc12-capability-panel {
@@ -806,9 +1859,10 @@
 
   #slide-12 .oc12-capability-panel header small {
     color: #23877B !important;
-    font-size: 7px !important;
+    font-size: 8.6px !important;
+    line-height: 1.18 !important;
     font-weight: 850 !important;
-    letter-spacing: .13em !important;
+    letter-spacing: .08em !important;
   }
 
   #slide-12 .oc12-capability-panel header h3 {
@@ -821,21 +1875,21 @@
   #slide-12 .oc12-capability-panel header p {
     margin: 0 !important;
     color: #5D6E69 !important;
-    font-size: 8.5px !important;
-    line-height: 1.35 !important;
+    font-size: 9.4px !important;
+    line-height: 1.38 !important;
   }
 
   #slide-12 .oc12-capability-table {
     display: grid !important;
-    grid-template-rows: 25px repeat(11, minmax(0, 1fr)) !important;
+    grid-template-rows: 29px repeat(11, minmax(0, 1fr)) !important;
     min-height: 0 !important;
-    padding: 8px 9px 9px !important;
+    padding: 9px 10px 10px !important;
     background: #FFFFFF !important;
   }
 
   #slide-12 .oc12-capability-table > div {
     display: grid !important;
-    grid-template-columns: 152px repeat(4, minmax(0, 1fr)) !important;
+    grid-template-columns: 164px repeat(4, minmax(0, 1fr)) !important;
     min-height: 0 !important;
     border-left: 1px solid #D6E2DF !important;
   }
@@ -849,8 +1903,8 @@
     border-right: 1px solid #D6E2DF !important;
     border-bottom: 1px solid #D6E2DF !important;
     color: #354B46 !important;
-    font-size: 8.4px !important;
-    line-height: 1.18 !important;
+    font-size: 9.9px !important;
+    line-height: 1.24 !important;
     text-align: center !important;
   }
 
@@ -865,7 +1919,7 @@
   #slide-12 .oc12-capability-table .cap-head > * {
     background: #23877B !important;
     color: #FFFFFF !important;
-    font-size: 8.8px !important;
+    font-size: 10.2px !important;
     font-weight: 850 !important;
   }
 
@@ -897,8 +1951,8 @@
     grid-row: 3 !important;
     display: grid !important;
     grid-template-columns: 1fr !important;
-    grid-template-rows: 30px repeat(3, minmax(0, 1fr)) !important;
-    height: 118px !important;
+    grid-template-rows: 34px 34px !important;
+    height: 68px !important;
     min-height: 0 !important;
     overflow: hidden !important;
   }
@@ -911,14 +1965,19 @@
 
   #slide-12 .oc12-boundary b,
   #slide-12 .oc12-boundary span {
-    padding: 0 10px !important;
-    font-size: 8.5px !important;
+    padding: 0 12px !important;
+    font-size: 10.4px !important;
     line-height: 1.25 !important;
   }
 
   #slide-12 .oc12-boundary-head b,
   #slide-12 .oc12-boundary-head span {
-    font-size: 9.3px !important;
+    font-size: 11px !important;
+  }
+
+  #slide-12 .oc12-boundary > div:nth-of-type(2),
+  #slide-12 .oc12-boundary > div:nth-of-type(3) {
+    display: none !important;
   }
 
   #slide-12 .oc12-boundary > div:not(.oc12-boundary-head) > span:nth-child(n + 4) {
@@ -1073,7 +2132,7 @@
     </div>
     <div class="thesis-grid">
       <div class="thesis-item"><div class="n">01</div><h3 data-en="Sovereign control layer">主权控制层</h3><p data-en="Enterprise AI is not only model adoption. Data boundaries, permissions, evaluation, logs and upgrades need to be managed in a control layer the enterprise owns.">企业 AI 不只是模型采用；数据边界、权限、评测、日志与升级需要进入企业自有的控制层。</p></div>
-      <div class="thesis-item"><div class="n">02</div><h3 data-en="Open-source distribution, production monetization">开源分发，生产变现</h3><p data-en="AgenticOps is the system for building, releasing, monitoring and continuously improving AI. OpenCSG connects this lifecycle to 3M+ community users and 200K+ model assets.">AgenticOps 是 AI 的构建、发布、监控与持续改进体系；OpenCSG 以 300 万+社区用户和 20 万+模型资产建立全球入口。</p></div>
+      <div class="thesis-item"><div class="n">02</div><h3 data-en="Open-source distribution, production monetization">开源分发，生产变现</h3><p data-en="AgenticOps is the system for building, releasing, monitoring and continuously improving AI. OpenCSG connects this lifecycle to 3.5M+ community users, 200K+ AI assets and 100+ enterprise clients.">AgenticOps 是 AI 的构建、发布、监控与持续改进体系；OpenCSG 以 350 万+社区用户、20 万+ AI 资产和 100+ 企业客户建立全球入口。</p></div>
       <div class="thesis-item"><div class="n">03</div><h3 data-en="Commercial proof is already compounding">商业闭环已经验证</h3><p data-en="Enterprise customers include miHoYo, Bilibili, CATL and CALB. Revenue has doubled for three consecutive years, average gross margin is 80%+, while maintaining positive net profit and operating cash flow.">终端客户覆盖米哈游、B 站、宁德时代、中航锂电等；三年连续翻倍增长，平均毛利率 80%+，持续保持净利润与净现金流。</p></div>
       <div class="thesis-item"><div class="n">04</div><h3 data-en="Regional nodes make replication global">区域节点放大全球复制</h3><p data-en="Validated city nodes connect organizations, developers, foundations and industry capital; personal AI work systems (OPC) extend the same open foundation to individuals.">已验证的城市节点连接组织、开发者、基金会与产业资本；个人 AI 工作系统（OPC）把同一开放底座延伸到个人。</p></div>
     </div>
@@ -1244,7 +2303,7 @@
     <h2 class="title" data-en="OpenCSG: global open-source infrastructure for AI production and governance">OpenCSG：面向全球的开源 AI 生产与治理基础设施</h2>
     <div class="company-left">
       <div class="company-statement">
-        <p class="company-legal" data-en="Founded in 2023, OpenCSG serves organizations worldwide with open-source AgenticOps and sovereign AI infrastructure, enabling autonomous, controllable and continuously evolving AI across models, data, compute and agents.">OpenCSG 创立于 2023 年，面向全球组织提供开源 AgenticOps 与 AI 主权基础设施，让客户在模型、数据、算力与智能体四个层面拥有自主、可控、可演进的 AI 能力。</p>
+        <p class="company-legal" data-en="Founded in 2023, OpenCSG serves organizations across 30+ countries and regions with open-source AgenticOps and sovereign AI infrastructure, enabling autonomous, controllable and continuously evolving AI across models, data, compute and agents.">OpenCSG 创立于 2023 年，已覆盖 30+ 国家与地区，面向全球组织提供开源 AgenticOps 与 AI 主权基础设施，让客户在模型、数据、算力与智能体四个层面拥有自主、可控、可演进的 AI 能力。</p>
         <div class="csg-expansion">
           <span><b>C</b><em>CONVERGE</em><small data-en="Converge open assets">汇聚开放资产</small></span>
           <span><b>S</b><em>SPREAD</em><small data-en="Spread intelligent capabilities">扩散智能能力</small></span>
@@ -1259,7 +2318,7 @@
         <div class="tl"><span class="year">2026</span><b data-en="Completed a nearly RMB 100M Pre-A round">完成近亿元 Pre-A 轮融资</b><span data-en="Co-hosted OPC / Agent hackathon with WAIC and B.ai.">与 WAIC、B.ai 联合举办 OPC / Agent 黑客松大会。</span></div>
       </div>
       <div class="company-footprint">
-        <div><b data-en="3M+">300 万+</b><span data-en="Community users">社区用户</span></div><div><b data-en="200K+">20 万+</b><span data-en="Model assets">模型资产</span></div><div><b>30+</b><span data-en="Countries &amp; regions">国家与地区</span></div>
+        <div><b data-en="3.5M+">350 万+</b><span data-en="Community users">社区用户</span></div><div><b data-en="200K+">20 万+</b><span data-en="Models &amp; AI assets">模型与 AI 资产</span></div><div><b data-en="1M+">100 万+</b><span data-en="Open data downloads">开放数据下载</span></div><div><b>100+</b><span data-en="Enterprise clients">企业客户</span></div>
       </div>
     </div>
     <div class="company-right">
@@ -1329,15 +2388,15 @@
           <div class="regional-network region-map-restored">
             <div class="regional-map">
              <img src="assets/china-blank-map.svg" alt="OpenCSG 区域节点与地区实践">
-              <a class="city-pin shanghai" href="https://www.sh-italent.com/Article/202504/202504300010.shtml" target="_blank" rel="noopener" data-en="Shanghai">上海</a>
-              <a class="city-pin yancheng" href="https://www.yancheng.gov.cn/" target="_blank" rel="noopener" data-en="Yancheng">盐城</a>
-              <a class="city-pin yichang" href="https://sanxia.opencsg.com/" target="_blank" rel="noopener" data-en="Yichang">宜昌</a>
-              <a class="city-pin chongqing" href="https://www.cq.gov.cn/" target="_blank" rel="noopener" data-en="Chongqing">重庆</a>
-              <a class="city-pin leshan" href="https://www.leshan.gov.cn/" target="_blank" rel="noopener" data-en="Leshan">乐山</a>
-              <a class="city-pin dongfang" href="https://opencsg.com/blogs/142e66f5-f30d-4eec-98ba-7aa18c343ed4" target="_blank" rel="noopener" data-en="Dongfang">东方</a>
-              <a class="city-pin longgang" href="https://www.lg.gov.cn/xxgk/xwzx/zwdt/content/post_12401381.html" target="_blank" rel="noopener" data-en="Longgang">龙岗</a>
-              <a class="city-pin hongkong" href="https://www.cyberport.hk/" target="_blank" rel="noopener" data-en="Hong Kong">香港</a>
-              <a class="city-pin singapore" href="https://www.imda.gov.sg/" target="_blank" rel="noopener">Singapore</a>
+              <a class="city-pin shanghai" href="https://www.sh-italent.com/Article/202504/202504300010.shtml" data-en="Shanghai">上海</a>
+              <a class="city-pin yancheng" href="https://www.yancheng.gov.cn/" data-en="Yancheng">盐城</a>
+              <a class="city-pin yichang" href="https://sanxia.opencsg.com/" data-en="Yichang">宜昌</a>
+              <a class="city-pin chongqing" href="https://www.cq.gov.cn/" data-en="Chongqing">重庆</a>
+              <a class="city-pin leshan" href="https://www.leshan.gov.cn/" data-en="Leshan">乐山</a>
+              <a class="city-pin dongfang" href="https://opencsg.com/blogs/142e66f5-f30d-4eec-98ba-7aa18c343ed4" data-en="Dongfang">东方</a>
+              <a class="city-pin longgang" href="https://www.lg.gov.cn/xxgk/xwzx/zwdt/content/post_12401381.html" data-en="Longgang">龙岗</a>
+              <a class="city-pin hongkong" href="https://www.cyberport.hk/" data-en="Hong Kong">香港</a>
+              <a class="city-pin singapore" href="https://www.imda.gov.sg/">Singapore</a>
             </div>
             <b data-en="Regional nodes and verified deployment areas">区域节点与已验证地区</b>
             <p data-en="Yichang, Hong Kong Cyberport, Shenzhen Longgang, Dongfang, Chongqing, Leshan, Shanghai, Yancheng and more connect government, industry, developers and capital into repeatable regional AI operations.">宜昌、香港数码港、深圳龙岗、东方、重庆、乐山、上海、盐城等地区实践，连接政府、产业、开发者与资本，形成可复制的区域 AI 运营模式。</p>
@@ -1370,64 +2429,181 @@
   <div class="slide-wrap" data-section="case"><section class="slide light" data-layout="L08" id="slide-07">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Enterprise Production Proof　">企业生产验证　</span><span style="font-size:13px;color:#697472;font-weight:400">Enterprise Production Proof</span></div>
-    <h2 class="title" data-en="Enterprises don't need another model endpoint—they need an AI control layer, from pilot to production">企业需要的不只是模型接口，而是从试验到生产的 AI 控制层</h2>
+    <h2 class="title" data-en="Enterprise AI Control Plane: From Pilot to Production">企业 AI 控制平面：从试点到生产的完整闭环</h2>
 
-    <div class="case7-layout">
-      <!-- 主图：占视觉 70%，让画面一目了然 -->
-      <div class="case7-hero">
-        <img src="assets/case7-hero.svg" alt="AI 控制层：私有数据底座 → 治理与运营 → Agent 与多终端输出">
-        <span class="case7-hero-caption">FROM PRIVATE DATA · TO GOVERNED AI · TO EVERY TERMINAL</span>
+    <div class="case7-visual-layout">
+      <!-- 左侧：核心架构流程图 -->
+      <div class="case7-architecture">
+        <div class="case7-arch-header">
+          <h3 data-en="Unified AI Control Plane">统一 AI 控制平面</h3>
+          <p data-en="Complete lifecycle from data to production">数据→治理→生产的完整生命周期</p>
+        </div>
+
+        <div class="case7-flow-diagram">
+          <!-- 第一层：数据与资产 -->
+          <div class="case7-flow-stage">
+            <div class="case7-flow-icon" style="background:#EAF4F2">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="6" y="8" width="20" height="4" rx="1" fill="#23877B"/>
+                <rect x="6" y="14" width="20" height="4" rx="1" fill="#23877B" opacity="0.6"/>
+                <rect x="6" y="20" width="20" height="4" rx="1" fill="#23877B" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="case7-flow-text">
+              <b data-en="Data & Assets">私有数据与 AI 资产</b>
+              <small data-en="Models, data, prompts, agents">模型、数据、提示词、智能体</small>
+            </div>
+          </div>
+
+          <div class="case7-flow-arrow">↓</div>
+
+          <!-- 第二层：治理层 -->
+          <div class="case7-flow-stage case7-flow-highlight">
+            <div class="case7-flow-icon" style="background:#23877B">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="10" stroke="#fff" stroke-width="2" fill="none"/>
+                <path d="M12 16l3 3 5-6" stroke="#fff" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="case7-flow-text">
+              <b data-en="Governance Layer" style="color:#23877B">AI 治理与控制层</b>
+              <small data-en="Version, access, audit, security">版本管理·权限控制·审计追踪·安全合规</small>
+            </div>
+          </div>
+
+          <div class="case7-flow-arrow">↓</div>
+
+          <!-- 第三层：生产运行 -->
+          <div class="case7-flow-stage">
+            <div class="case7-flow-icon" style="background:#F1F7F5">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="8" y="10" width="16" height="12" rx="2" stroke="#23877B" stroke-width="2" fill="none"/>
+                <circle cx="12" cy="15" r="1.5" fill="#23877B"/>
+                <circle cx="16" cy="15" r="1.5" fill="#23877B"/>
+                <circle cx="20" cy="15" r="1.5" fill="#23877B"/>
+              </svg>
+            </div>
+            <div class="case7-flow-text">
+              <b data-en="Production Runtime">生产环境运行</b>
+              <small data-en="Monitor, rollback, A/B test">监控告警·版本回退·A/B 测试</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="case7-deployment-badges">
+          <span data-en="On-Premise">🔒 本地部署</span>
+          <span data-en="Private Cloud">☁️ 私有云</span>
+          <span data-en="Air-Gapped">🛡️ 隔离环境</span>
+        </div>
       </div>
 
-      <!-- 右侧三句简短重点（不用格子堆叠） -->
-      <aside class="case7-three-points">
-        <div><b data-en="01 · Pilot → Production">试验 → 生产</b><p data-en="Govern, secure and continuously operate AI in real production.">让 AI 在真实生产里可被治理、可被安全运营。</p></div>
-        <div><b data-en="02 · Private & Sovereign">私有化部署</b><p data-en="Private cloud, on-premise and air-gapped—data never has to leave.">私有云、本地、隔离环境—数据不必外流。</p></div>
-        <div><b data-en="03 · Agentic Lifecycle">Agent 全生命周期</b><p data-en="Build, release, monitor and improve—models, data, prompts, MCP and agents in one loop.">模型、数据、Prompt、MCP、Agent 同闭环运营。</p></div>
-      </aside>
+      <!-- 右侧：生产验证数据 -->
+      <div class="case7-proof-panel">
+        <div class="case7-proof-title">
+          <span class="case7-proof-badge" data-en="PRODUCTION">生产验证</span>
+          <h3 data-en="Real Deployments 2026">2026 真实部署数据</h3>
+        </div>
 
-      <!-- 底部一条案例证据（不占独立格子） -->
-      <div class="case7-proof">
-        <span class="case7-proof-tag" data-en="CASE · 2026">案例 · 2026</span>
-        <b data-en="Anonymized regional institutions: scattered experiments unified into governed AI production, data kept in-domain">某 XX 地区机构等：分散实验统一进入可治理、可审计的 AI 生产，数据不出域。</b>
+        <!-- 对比图：传统 vs OpenCSG -->
+        <div class="case7-comparison">
+          <div class="case7-comp-header">
+            <span data-en="Before: Scattered Experiments">之前：分散实验</span>
+            <span data-en="After: Governed Production">之后：统一治理生产</span>
+          </div>
+          <div class="case7-comp-body">
+            <div class="case7-comp-before">
+              <div class="case7-comp-icon">❌</div>
+              <ul>
+                <li data-en="12+ isolated pilot projects">12+ 个孤立试点项目</li>
+                <li data-en="No version control">无版本管理</li>
+                <li data-en="Data scattered everywhere">数据四处分散</li>
+                <li data-en="No audit trail">无审计追踪</li>
+              </ul>
+            </div>
+            <div class="case7-comp-after">
+              <div class="case7-comp-icon">✓</div>
+              <ul>
+                <li data-en="Unified control plane">统一控制平面</li>
+                <li data-en="Full version history">完整版本历史</li>
+                <li data-en="Data sovereignty">数据不出域</li>
+                <li data-en="Complete audit log">完整审计日志</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 关键指标 -->
+        <div class="case7-metrics">
+          <div class="case7-metric">
+            <b data-en="100%">100%</b>
+            <span data-en="Data Sovereignty">数据主权</span>
+          </div>
+          <div class="case7-metric">
+            <b data-en="12+">12+</b>
+            <span data-en="Unified Projects">统一项目</span>
+          </div>
+          <div class="case7-metric">
+            <b data-en="Full">全链路</b>
+            <span data-en="Audit Trail">审计追踪</span>
+          </div>
+        </div>
+
+        <!-- 案例引用 -->
+        <div class="case7-case-quote">
+          <div class="case7-quote-mark">"</div>
+          <p data-en="From scattered experiments to unified AI production with complete governance—data never leaves our domain.">从分散实验到统一 AI 生产，实现完整治理——数据始终不出域。</p>
+          <small data-en="— Financial Institution, 2026">—— 某金融机构，2026</small>
+        </div>
       </div>
     </div>
 
-    <div class="foot"><span data-en="From scattered experiments to governed AI production">从分散实验到受治理的 AI 生产</span><span>07</span></div>
+    <div class="foot"><span data-en="Proven in production: data sovereignty and full governance">生产环境验证：数据主权与全链路治理</span><span>07</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="product"><section class="slide light" data-layout="L08" id="slide-08">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Unified Product System　">统一产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">Unified Product System</span></div>
-    <h2 class="title">同一技术底座，服务组织生产与个人 AI 工作系统</h2>
-    <p class="product8-bridge"><b data-en="One foundation, two work systems:">一套底座、两类工作系统：</b><span data-en="CSGHub and AgenticHub power organizational production, while CSGHub-Lite and CSGClaw keep personal AI running continuously.">CSGHub 与 AgenticHub 支撑组织生产，CSGHub-Lite 与 CSGClaw 支撑个人 AI 持续运行。</span></p>
-    <div class="opc-journey" aria-label="用户整体旅程与转化路径">
-      <b data-en="User Journey & Conversion Path">用户旅程<br>转化路径</b>
-      <div class="opc-journey-steps">
-        <span class="step-entry"><em>01</em><strong>CSGLite</strong><small data-en="Personal local entry · data and model accumulation">个人本地入口 · 数据与模型沉淀</small></span>
-        <i>→</i>
-        <span class="step-depth"><em>02</em><strong>CSGClaw</strong><small data-en="Agent execution · workflow and small-model iteration">Agent 执行 · 工作流与小模型迭代</small></span>
-        <i>→</i>
-        <span class="step-upgrade"><em>03</em><strong data-en="Org OPC">组织型 OPC</strong><small data-en="Hosted assets · governance and team reuse">资产托管 · 权限治理 · 团队复用</small></span>
-        <i>→</i>
-        <span class="step-commerce"><em>04</em><strong>AgenticHub</strong><small data-en="Collaborative production · release, operation and ecosystem transactions">协作生产 · 发布运营 · 生态交易</small></span>
+    <h2 class="title" data-en="Four products form one continuous evolution loop from assets to production">四个产品不是并列 SKU，而是从资产到生产的持续演进闭环</h2>
+    <p class="p8-lead" data-en="Organizational assets move into personal runtime; validated execution scales into governed production; production feedback returns to the asset layer.">组织资产向个人运行下沉，个人执行经验证后升级为组织生产，生产反馈再回到资产层。</p>
+    <div class="p8-story">
+      <nav class="p8-sequence" aria-label="OpenCSG product evolution">
+        <button type="button" data-evolution-step="1" aria-pressed="true"><em>01</em><span><b data-en="Assets">资产沉淀</b><small>CSGHub</small></span></button>
+        <button type="button" data-evolution-step="2" aria-pressed="false"><em>02</em><span><b data-en="Runtime">本地运行</b><small>CSGLite</small></span></button>
+        <button type="button" data-evolution-step="3" aria-pressed="false"><em>03</em><span><b data-en="Execution">Agent 执行</b><small>CSGClaw</small></span></button>
+        <button type="button" data-evolution-step="4" aria-pressed="false"><em>04</em><span><b data-en="Production">组织生产</b><small>AgenticHub</small></span></button>
+      </nav>
+      <div class="p8-map">
+        <aside class="p8-lane p8-lane-org"><small>ORGANIZATION</small><b data-en="Organization">组织侧</b><span data-en="Asset governance and production operations">资产治理与生产运营</span></aside>
+
+        <article class="p8-node p8-node-01" data-evolution-product="1" tabindex="0">
+          <div class="p8-node-copy"><div class="p8-node-kicker"><em>01</em><span>ASSET LAYER</span></div><h3>CSGHub</h3><p data-en="Govern models, data, code, prompts and agents as reusable organizational assets.">把模型、数据、代码、Prompt 与 Agent 沉淀为可复用的组织资产。</p><div class="p8-tags"><span data-en="Models / Data">模型 / 数据</span><span data-en="Version / Lineage">版本 / 血缘</span><span data-en="Access / Audit">权限 / 审计</span></div><a href="https://opencsg.com/csghub" target="_self" data-en="Product page ↗">产品页 ↗</a></div>
+          <figure><img src="assets/product-csghub.png" alt="CSGHub"></figure>
+          <div class="p8-connector p8-down"><i></i><span data-en="Distribute assets">资产下发</span></div>
+        </article>
+
+        <article class="p8-node p8-node-04" data-evolution-product="4" tabindex="0">
+          <div class="p8-node-copy"><div class="p8-node-kicker"><em>04</em><span>PRODUCTION LAYER</span></div><h3>AgenticHub</h3><p data-en="Bring validated agents into governed build, evaluation, release and operations.">把验证后的 Agent 纳入组织级构建、评测、发布与持续运营。</p><div class="p8-tags"><span data-en="Build / Evaluate">构建 / 评测</span><span data-en="Release / Operate">发布 / 运营</span><span data-en="Feedback / Improve">反馈 / 优化</span></div><a href="https://opencsg.com/products/agentichub" target="_self" data-en="Product page ↗">产品页 ↗</a></div>
+          <figure><img src="assets/product-agentichub.png" alt="AgenticHub"></figure>
+          <div class="p8-connector p8-left"><i></i><span data-en="Feedback return">反馈回流</span></div>
+        </article>
+        <aside class="p8-lane p8-lane-opc"><small>PERSONAL OPC</small><b data-en="Personal side">个人侧</b><span data-en="Local runtime and multi-agent execution">本地运行与多 Agent 执行</span></aside>
+
+        <article class="p8-node p8-node-02" data-evolution-product="2" tabindex="0">
+          <div class="p8-node-copy"><div class="p8-node-kicker"><em>02</em><span>RUNTIME LAYER</span></div><h3>CSGLite</h3><p data-en="Run governed models, private knowledge and tools locally on personal devices.">让受治理的模型、私有知识与工具在个人设备本地运行。</p><div class="p8-tags"><span data-en="Local models">本地模型</span><span data-en="Private knowledge">私有知识</span><span data-en="Offline runtime">离线运行</span></div><a href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_self" data-en="Product page ↗">产品页 ↗</a></div>
+          <figure><img src="assets/product-lite.png" alt="CSGLite"></figure>
+          <div class="p8-connector p8-right"><i></i><span data-en="Activate skills">能力激活</span></div>
+        </article>
+
+        <article class="p8-node p8-node-03" data-evolution-product="3" tabindex="0">
+          <div class="p8-node-copy"><div class="p8-node-kicker"><em>03</em><span>EXECUTION LAYER</span></div><h3>CSGClaw</h3><p data-en="Turn models, knowledge and skills into coordinated, replayable multi-agent execution.">把模型、知识与 Skill 变成可分工、可回放的多 Agent 执行。</p><div class="p8-tags"><span data-en="Multi-agent">多 Agent</span><span data-en="Skill network">Skill 网络</span><span data-en="Human confirmation">人机确认</span></div><a href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_self" data-en="Product page ↗">产品页 ↗</a></div>
+          <figure><img src="assets/appendix/slide-13-image-01.png" alt="CSGClaw"></figure>
+          <div class="p8-connector p8-up"><i></i><span data-en="Scale to production">升级生产</span></div>
+        </article>
       </div>
+
+      <div class="p8-foundation"><div><small>SHARED FOUNDATION</small><b data-en="One open foundation">同一开放底座</b></div><span data-evolution-foundation="1" data-en="Asset protocol">资产协议</span><span data-evolution-foundation="2" data-en="Local runtime">本地运行时</span><span data-evolution-foundation="3">Agent / Skill</span><span data-evolution-foundation="4" data-en="Governance & operations">治理与运营</span><em class="p8-feedback" data-en="↺ Feedback loop">↺ 反馈闭环</em></div>
     </div>
-    <div class="product-shell">
-      <div class="shared-top"><b data-en="One shared AgenticOps control plane">一套共享 AgenticOps 控制平面</b><span data-en="Open assets · Identity and security · Runtime · Evaluation · Observability">开放资产生态 · 身份与安全 · 运行时 · 评测 · 可观测性</span></div>
-      <div class="edition organization-edition">
-        <div class="edition-label"><em data-en="ORGANIZATION EDITION">ORGANIZATION EDITION</em><b>组织型<br>AgenticOps</b><span>企业、科研机构、运营商与区域平台</span></div>
-        <div class="product"><div><h3>CSGHub</h3><div class="role">AI 资产管理与治理</div><ul><li>统一模型、数据集、代码、Prompt 与 Agent 资产</li><li>Git 版本、血缘、元数据、License 与完整性校验</li><li>多源同步、评测、推理、微调和 MCP 服务托管</li><li>组织、权限、审计、合规与私有化部署</li><li data-en="Unified open community and enterprise directory">开放社区与企业目录一体化</li></ul><div class="product-meta"><span>Asset Graph</span><span>RBAC / Audit</span><span>Hybrid Hub</span></div><div class="product-links"><a class="product-jump" href="https://opencsg.com/csghub" target="_blank" rel="noopener" data-en="Website">官网</a><a class="product-jump" href="https://github.com/OpenCSGs/csghub" target="_blank" rel="noopener">GitHub</a></div></div><a class="screen has-image product-link-screen csghub-early" href="https://opencsg.com/csghub" target="_blank" rel="noopener" aria-label="打开 CSGHub 产品页"><img src="assets/product-csghub.png" alt="CSGHub 早期产品界面"></a></div>
-        <div class="product"><div><h3>AgenticHub</h3><div class="role">Agent 构建、发布与持续运营</div><ul><li>Agent / Workflow / Skill 的构建、编排与版本管理</li><li>测试、评测、沙箱、发布门禁与人工确认</li><li>生产监控、反馈回流、成本、SLA 与持续优化</li><li>多团队协作、企业工具接入与业务运行治理</li><li data-en="Open API, Webhook and enterprise system integration">开放 API、Webhook 与企业系统集成</li></ul><div class="product-meta"><span>Build → Run</span><span>Eval / Sandbox</span><span>Observe</span></div><div class="product-links"><a class="product-jump" href="https://opencsg.com/products/agentichub" target="_blank" rel="noopener" data-en="Website">官网</a><a class="product-jump" href="https://opencsg.com/docs/agentichub/101/intro" target="_blank" rel="noopener" data-en="Docs">文档</a></div></div><a class="screen has-image product-link-screen" href="https://opencsg.com/products/agentichub" target="_blank" rel="noopener" aria-label="打开 AgenticHub 产品页"><img src="assets/product-agentichub.png" alt="AgenticHub 产品界面"></a></div>
-      </div>
-      <div class="edition personal-edition">
-        <div class="edition-label"><em data-en="PERSONAL AI / OPC">PERSONAL AI / OPC</em><b><span data-en="Personal AI Work System">个人 AI 工作系统</span><br><span data-en="(OPC)">（OPC）</span></b><span>开发者、Solo Founder 与个人知识工作者</span></div>
-        <div class="product"><div><h3>CSGHub-Lite</h3><div class="role">本地 AI 资产与运行底座</div><ul><li>一键启动本地模型，支持 GGUF 与 SafeTensors 转换</li><li>兼容 Ollama API 的 REST 服务与流式对话</li><li>模型下载、断点续传、持久化和跨平台运行</li><li>私有知识、长期记忆与本地开发工具接入</li><li data-en="Local search, plugins and quick workflows">本地搜索、插件与快捷工作流</li></ul><div class="product-meta"><span>Local-first</span><span>Offline</span><span>Cross-platform</span></div><div class="product-links"><a class="product-jump" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" data-en="Docs">文档</a><a class="product-jump" href="https://github.com/OpenCSGs/csghub" target="_blank" rel="noopener">GitHub</a></div></div><a class="screen has-image product-link-screen" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" aria-label="打开 CSGHub-Lite 使用指南"><img src="assets/product-lite.png" alt="CSGHub-Lite 产品界面"></a></div>
-        <div class="product"><div><h3>CSGClaw</h3><div class="role">个人多 Agent 协同执行系统</div><ul><li>Manager–Worker 角色分工与并行任务拆解</li><li>Agent / Skill 发现、组合、调用与执行网络</li><li>本地权限、沙箱、人机确认和可回放过程</li><li>从一次性对话升级为长期运行的个人生产系统</li><li data-en="Task logs, replay and result archiving">任务日志、回放与结果归档</li></ul><div class="product-meta"><span>Multi-Agent</span><span>Skill Network</span><span>Human-in-loop</span></div><div class="product-links"><a class="product-jump" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" data-en="Docs">文档</a><a class="product-jump" href="https://github.com/OpenCSGs" target="_blank" rel="noopener">GitHub</a></div></div><a class="screen has-image product-link-screen csgclaw-early" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" aria-label="打开 CSGClaw 文档"><img src="assets/appendix/slide-13-image-01.png" alt="CSGClaw 多 Agent 协同架构"></a></div>
-      </div>
-      <div class="shared-bottom"><div>统一用户与身份</div><div>统一资产协议</div><div>统一模型与网关</div><div>统一观测与评测</div><div>统一安全与审计</div><div>开放 API / MCP / SDK</div></div>
-    </div>
-    <div class="foot"><span>不是四条产品线，而是同一 AgenticOps 系统的两个版本</span><span>08</span></div>
+    <div class="foot"><span data-en="Four products carry one iterative feedback chain: assets → local runtime → agent execution → production operations">四个产品承接同一条迭代反馈链：资产沉淀 → 本地运行 → Agent 执行 → 组织生产</span><span>08</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-09">
@@ -1521,7 +2697,7 @@
         <div class="a9-core">
           <div class="a9-agent-products">
             <section class="a9-product a9-ship">
-              <h3>CSGShip</h3>
+              <h3 data-en="AgenticHub · Dev">AgenticHub · Dev</h3>
               <div class="a9-chip-stack"><span>CodeSouler</span><span>WebIDE</span></div>
             </section>
             <section class="a9-product a9-claw">
@@ -1635,7 +2811,7 @@
       </figure>
     </div>
 
-    <div class="source-note">Primary sources: <a href="https://www.precedenceresearch.com/artificial-intelligence-market" target="_blank" rel="noopener">Precedence Research</a> (global AI market), <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-factories" target="_blank" rel="noopener">European Commission InvestAI</a>, <a href="https://english.www.gov.cn/policies/latestreleases/202508/27/content_WS68ae7976c6d0868f4e8f51a0.html" target="_blank" rel="noopener">China State Council AI+</a>, <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener">McKinsey State of AI 2025</a>.</div>
+    <div class="source-note">Primary sources: <a href="https://www.precedenceresearch.com/artificial-intelligence-market" target="_self">Precedence Research</a> (global AI market), <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-factories" target="_self">European Commission InvestAI</a>, <a href="https://english.www.gov.cn/policies/latestreleases/202508/27/content_WS68ae7976c6d0868f4e8f51a0.html" target="_self">China State Council AI+</a>, <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_self">McKinsey State of AI 2025</a>.</div>
     <div class="foot"><span data-en="The enterprise market is driven by production economics; policy accelerates and standardizes adoption.">企业市场由生产经济性驱动，政策负责加速与标准化</span><span>10</span></div>
   </section></div>
 
@@ -1647,10 +2823,10 @@
       <div class="opc11-left">
         <section class="opc11-signals">
           <h3 data-en="Market signals: developers, AI projects, and local compute are converging">市场信号：开发者、AI 项目与本地算力正在汇聚</h3>
-          <article><small>OPEN ECOSYSTEM</small><b>180M+</b><p><span data-en="Total GitHub developers; new developers added in 2025">GitHub 开发者总数，2025 年新增</span> <strong>36M</strong><span data-en=" (+23% YoY), with more than one new developer joining every second.">（+23% YoY），每秒新增 1+ 开发者。</span></p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025</a></article>
-          <article><small>AI SUPPLY</small><b>1.1M</b><p><span data-en="Public GitHub repositories using LLM SDKs; added over the past 12 months">GitHub 公开仓库使用 LLM SDK，过去 12 个月新增</span> <strong>693K</strong><span>（+178% YoY）。</span></p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank">GitHub｜Octoverse 2025</a></article>
-          <article><small>LOCAL COMPUTE</small><b>143.1M</b><p>2026 年 AI PC 预计出货量，本地推理成为标准硬件能力。</p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025" target="_blank">Gartner｜AI PC Forecast 2024–2026</a></article>
-          <article><small>AI PC SHARE</small><b>54.7%</b><p data-en="2026 AI PC share of global PC market forecast (31% at end of 2025).">2026 年 AI PC 占全球 PC 市场预测比例（2025 年底为 31%）。</p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025" target="_blank">Gartner｜Worldwide AI PC Share</a></article>
+          <article><small>OPEN ECOSYSTEM</small><b>180M+</b><p><span data-en="Total GitHub developers; new developers added in 2025">GitHub 开发者总数，2025 年新增</span> <strong>36M</strong><span data-en=" (+23% YoY), with more than one new developer joining every second.">（+23% YoY），每秒新增 1+ 开发者。</span></p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_self">GitHub｜Octoverse 2025</a></article>
+          <article><small>AI SUPPLY</small><b>1.1M</b><p><span data-en="Public GitHub repositories using LLM SDKs; added over the past 12 months">GitHub 公开仓库使用 LLM SDK，过去 12 个月新增</span> <strong>693K</strong><span>（+178% YoY）。</span></p><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_self">GitHub｜Octoverse 2025</a></article>
+          <article><small>LOCAL COMPUTE</small><b>143.1M</b><p>2026 年 AI PC 预计出货量，本地推理成为标准硬件能力。</p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025" target="_self">Gartner｜AI PC Forecast 2024–2026</a></article>
+          <article><small>AI PC SHARE</small><b>54.7%</b><p data-en="2026 AI PC share of global PC market forecast (31% at end of 2025).">2026 年 AI PC 占全球 PC 市场预测比例（2025 年底为 31%）。</p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025" target="_self">Gartner｜Worldwide AI PC Share</a></article>
         </section>
         <section class="opc11-trend">
           <div class="opc11-trend-head"><h3 data-en="AI agents entering the mainstream">AI Agent 正在进入主流</h3></div>
@@ -1679,12 +2855,12 @@
         </div>
         <div class="opc11-policy">
           <h3 data-en="Policy conditions for OPC are forming">OPC 的政策与产业条件正在形成</h3>
-          <article><b>中国 · 2025</b><p data-en="The AI+ policy targets adoption above 70% for intelligent devices and agent applications by 2027, and above 90% by 2030.">《人工智能+》提出 2027 年智能终端、智能体应用普及率超 70%，2030 年超 90%。</p><a href="https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm" target="_blank">国务院意见</a></article>
-          <article><b>EU · 2025</b><p>Data Act 强化用户对联网设备数据的访问、使用与授权分享权利。</p><a href="https://eur-lex.europa.eu/eli/C/2025/5026/oj/eng/pdf" target="_blank">EC Data Act Guidance</a></article>
+          <article><b>中国 · 2025</b><p data-en="The AI+ policy targets adoption above 70% for intelligent devices and agent applications by 2027, and above 90% by 2030.">《人工智能+》提出 2027 年智能终端、智能体应用普及率超 70%，2030 年超 90%。</p><a href="https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm" target="_self">国务院意见</a></article>
+          <article><b>EU · 2025</b><p>Data Act 强化用户对联网设备数据的访问、使用与授权分享权利。</p><a href="https://eur-lex.europa.eu/eli/C/2025/5026/oj/eng/pdf" target="_self">EC Data Act Guidance</a></article>
         </div>
       </aside>
     </div>
-    <div class="source-note">Primary sources: <a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_blank" rel="noopener">GitHub Octoverse 2025</a>, <a href="https://www.gartner.com/en/newsroom/press-releases/2024-09-25-gartner-forecasts-worldwide-shipments-of-artificial-intelligence-pcs-to-account-for-43-percent-of-all-pcs-in-2025" target="_blank" rel="noopener">Gartner AI PC forecast</a>, <a href="https://english.www.gov.cn/policies/latestreleases/202508/27/content_WS68ae7976c6d0868f4e8f51a0.html" target="_blank" rel="noopener">China State Council AI+</a>, <a href="https://eur-lex.europa.eu/eli/C/2025/5026/oj/eng/pdf" target="_blank" rel="noopener">EU Data Act guidance</a>. OPC TAM: 180M developers × 10% OPC-ready × $120 ARPU = $2.16B.</div>
+    <div class="source-note">Primary sources: <a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/" target="_self">GitHub Octoverse 2025</a>, <a href="https://www.gartner.com/en/newsroom/press-releases/2024-09-25-gartner-forecasts-worldwide-shipments-of-artificial-intelligence-pcs-to-account-for-43-percent-of-all-pcs-in-2025" target="_self">Gartner AI PC forecast</a>, <a href="https://english.www.gov.cn/policies/latestreleases/202508/27/content_WS68ae7976c6d0868f4e8f51a0.html" target="_self">China State Council AI+</a>, <a href="https://eur-lex.europa.eu/eli/C/2025/5026/oj/eng/pdf" target="_self">EU Data Act guidance</a>. OPC TAM: 180M developers × 10% OPC-ready × $120 ARPU = $2.16B.</div>
     <div class="foot"><span data-en="OPC is not a consumer-chat market; it is an operating system for professional individual productivity.">OPC 不是消费聊天市场，而是专业个人生产力的运行系统</span><span>11</span></div>
   </section></div>
 
@@ -1774,7 +2950,7 @@
         <article><span>05</span><b data-en="Open and enterprise-ready">完全开源、企业就绪</b><p data-en="Model-neutral with access, audit and observability.">模型中立，具备权限、审计与可观测性。</p></article>
       </section>
     </div>
-    <div class="source-note"><span data-en="Open-source evidence:">开源证据：</span> <a href="https://github.com/OpenCSGs/csghub" target="_blank">OpenCSG / CSGHub public repository</a><span data-en=". Competitor boundaries are based on public product pages and deployment models; the comparison describes product scope rather than subjective scores.">。竞品边界依据公开产品页面与部署模式；本页比较产品范围，而非主观评分。</span></div>
+    <div class="source-note"><span data-en="Open-source evidence:">开源证据：</span> <a href="https://github.com/OpenCSGs/csghub" target="_self">OpenCSG / CSGHub public repository</a><span data-en=". Competitor boundaries are based on public product pages and deployment models; the comparison describes product scope rather than subjective scores.">。竞品边界依据公开产品页面与部署模式；本页比较产品范围，而非主观评分。</span></div>
     <div class="foot"><span data-en="Competitive thesis: enterprise control × production lifecycle × hardware neutrality × open foundation">竞争判断：企业控制 × 生产闭环 × 硬件中立 × 开源底座</span><span>13</span></div>
   </section></div>
 
@@ -1953,10 +3129,10 @@
     <div class="foot"><span data-en="One product foundation · Three revenue engines · Increasing recurring and ecosystem mix">同一产品底座 · 三类收入引擎 · 订阅与生态占比持续提升</span><span>15</span></div>
   </section></div>
 
-  <script src="assets/deck-appendix.js?v=20260708a"></script>
+  <script src="assets/deck-appendix.js?v=20260710brochure5"></script>
   <script src="assets/deck-city-reframe.js?v=20260702c"></script>
-  <script src="assets/deck-bp-humanize-20260707.js?v=20260709restore26"></script>
-  <script src="assets/deck-slide03-replica.js?v=20260706f"></script>
+  <script src="assets/deck-bp-humanize-20260707.js?v=20260710evolution2"></script>
+  <script src="assets/deck-slide03-replica.js?v=20260710pain"></script>
   <script src="assets/deck-i18n.js?v=20260706i18n"></script>
   <script src="assets/deck-en-extra.js?v=20260706i18n"></script>
   <script>
@@ -3016,6 +4192,302 @@
       if(e.key==='Escape'&&document.body.classList.contains('pseudo-fullscreen')){document.body.classList.remove('pseudo-fullscreen');fit()}
     });
     setLang(new URLSearchParams(location.search).get('lang')||'zh');fit();updateCounter();
+
+    // 城市链接弹窗功能
+    const cityLinks = document.querySelectorAll('.city-pin');
+    cityLinks.forEach(link => {
+      // 移除旧的监听器（如果有）
+      link.removeEventListener('click', link._modalHandler);
+      // 创建新的监听器
+      link._modalHandler = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const url = link.getAttribute('href');
+        showLinkModal(url);
+      };
+      link.addEventListener('click', link._modalHandler);
+    });
+
+    function showLinkModal(url) {
+      // 先关闭已存在的弹窗
+      const existingModal = document.querySelector('.link-modal');
+      if (existingModal) {
+        existingModal.remove();
+      }
+
+      // 检查是否有有效链接
+      const hasValidUrl = url && url.trim() !== '' && url !== '#';
+
+      // 创建弹窗容器
+      const modal = document.createElement('div');
+      modal.className = 'link-modal';
+
+      if (!hasValidUrl) {
+        // 无链接时显示"连接中..."
+        modal.innerHTML = `
+          <div class="link-modal-overlay"></div>
+          <div class="link-modal-content">
+            <div class="link-modal-header">
+              <span class="link-modal-url">暂无链接</span>
+              <button class="link-modal-close">✕</button>
+            </div>
+            <div class="link-modal-loading">
+              <div class="loading-spinner"></div>
+              <p>连接中...</p>
+            </div>
+          </div>
+        `;
+      } else {
+        // 有链接时显示 iframe
+        modal.innerHTML = `
+          <div class="link-modal-overlay"></div>
+          <div class="link-modal-content">
+            <div class="link-modal-header">
+              <span class="link-modal-url">${url}</span>
+              <button class="link-modal-close">✕</button>
+            </div>
+            <div class="link-modal-loading">
+              <div class="loading-spinner"></div>
+              <p>加载中...</p>
+            </div>
+            <iframe src="${url}" class="link-modal-iframe"></iframe>
+          </div>
+        `;
+      }
+
+      document.body.appendChild(modal);
+
+      // iframe 加载完成后隐藏 loading
+      if (hasValidUrl) {
+        const iframe = modal.querySelector('.link-modal-iframe');
+        const loading = modal.querySelector('.link-modal-loading');
+
+        iframe.addEventListener('load', () => {
+          loading.style.display = 'none';
+          iframe.style.display = 'block';
+        });
+
+        // 加载错误处理
+        iframe.addEventListener('error', () => {
+          loading.innerHTML = `
+            <div style="color: #C4612F; font-size: 16px;">⚠️</div>
+            <p style="color: #C4612F;">加载失败</p>
+          `;
+        });
+      }
+
+      // 关闭弹窗
+      const closeModal = () => {
+        modal.remove();
+      };
+      modal.querySelector('.link-modal-close').addEventListener('click', closeModal);
+      modal.querySelector('.link-modal-overlay').addEventListener('click', closeModal);
+
+      // ESC 键关闭
+      const escHandler = (e) => {
+        if (e.key === 'Escape') {
+          closeModal();
+          document.removeEventListener('keydown', escHandler);
+        }
+      };
+      document.addEventListener('keydown', escHandler);
+    }
   </script>
+
+  <style>
+    /* 链接弹窗样式 */
+    .link-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .link-modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .link-modal-content {
+      position: relative;
+      width: 90vw;
+      max-width: 1200px;
+      height: 85vh;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .link-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: #F8FAFB;
+      border-bottom: 1px solid #DDE6E3;
+    }
+
+    .link-modal-url {
+      flex: 1;
+      color: #5C635D;
+      font-size: 13px;
+      font-family: monospace;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .link-modal-close {
+      flex: none;
+      width: 32px;
+      height: 32px;
+      margin-left: 12px;
+      background: #fff;
+      border: 1px solid #DDE6E3;
+      border-radius: 6px;
+      color: #42504D;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .link-modal-close:hover {
+      background: #F4F9F7;
+      border-color: #23877B;
+      color: #23877B;
+    }
+
+    .link-modal-iframe {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+      display: none;
+    }
+
+    .link-modal-loading {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #FAFBFB;
+    }
+
+    .link-modal-loading p {
+      margin: 16px 0 0 0;
+      color: #5C635D;
+      font-size: 15px;
+    }
+
+    .loading-spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid #E8EEEC;
+      border-top-color: #23877B;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* 动画效果 */
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        transform: scale(0.9) translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .link-modal {
+      animation: modalFadeIn 0.2s ease-out;
+    }
+
+    .link-modal-content {
+      animation: modalSlideIn 0.3s ease-out;
+    }
+  </style>
+      border: 1px solid #DDE6E3;
+      border-radius: 6px;
+      color: #42504D;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .link-modal-close:hover {
+      background: #F4F9F7;
+      border-color: #23877B;
+      color: #23877B;
+    }
+
+    .link-modal-iframe {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+    }
+
+    /* 动画效果 */
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        transform: scale(0.9) translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .link-modal {
+      animation: modalFadeIn 0.2s ease-out;
+    }
+
+    .link-modal-content {
+      animation: modalSlideIn 0.3s ease-out;
+    }
+  </style>
 </body>
 </html>

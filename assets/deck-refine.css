@@ -1113,13 +1113,62 @@ body.pseudo-fullscreen .toolbar:hover{opacity:1}
 .future-caption text{text-anchor:middle;fill:#66807B;font:700 9px var(--body-font);letter-spacing:.18em}
 .future-caption text:last-child{fill:#23877B}
 
-/* 03 · Six complete production constraints, with larger text and even row occupation. */
-#slide-03 .pain-visual{width:610px}
-#slide-03 .pain-list{width:900px;grid-template-rows:repeat(3,1fr)}
-#slide-03 .pain-item{display:flex;flex-direction:column;justify-content:center;padding:25px 25px 22px 74px}
-#slide-03 .pain-item .pn{left:21px;top:28px;font-size:15px}
-#slide-03 .pain-item h3{font-size:22px;line-height:1.28;margin-bottom:10px}
-#slide-03 .pain-item p{font-size:15px;line-height:1.48}
+/* 03 · Keep the industry-pain slide focused on the six production constraints. */
+#slide-03.slide03-pain-points .pain-visual{display:none}
+#slide-03.slide03-pain-points .pain-list{
+  left:78px;
+  right:78px;
+  top:236px;
+  width:auto;
+  height:550px;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,1fr);
+  column-gap:0;
+  row-gap:0;
+  border-bottom:1px solid var(--line);
+}
+#slide-03.slide03-pain-points .pain-item{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  padding:30px 34px 28px 86px;
+  border-top:3px solid var(--teal);
+  border-right:1px solid var(--line);
+  background:#fff;
+}
+#slide-03.slide03-pain-points .pain-item:nth-child(odd){border-right:1px solid var(--line)}
+#slide-03.slide03-pain-points .pain-item:nth-child(3n){border-right:0}
+#slide-03.slide03-pain-points .pain-item .pn{
+  left:30px;
+  top:32px;
+  font-size:16px;
+  letter-spacing:.03em;
+}
+#slide-03.slide03-pain-points .pain-item h3{
+  font-size:23px;
+  line-height:1.28;
+  margin-bottom:12px;
+}
+#slide-03.slide03-pain-points .pain-item p{
+  font-size:16px;
+  line-height:1.52;
+}
+html[lang="en"] #slide-03.slide03-pain-points .pain-item,
+.lang-en #slide-03.slide03-pain-points .pain-item{
+  padding:26px 30px 24px 80px;
+}
+html[lang="en"] #slide-03.slide03-pain-points .pain-item h3,
+.lang-en #slide-03.slide03-pain-points .pain-item h3{
+  font-size:21px;
+  line-height:1.26;
+  margin-bottom:12px;
+}
+html[lang="en"] #slide-03.slide03-pain-points .pain-item p,
+.lang-en #slide-03.slide03-pain-points .pain-item p{
+  font-size:14px;
+  line-height:1.48;
+}
 
 /* 05 · Updated milestones remain readable without compressing the company story. */
 #slide-05 .timeline{top:214px;height:392px;gap:6px}
@@ -1260,6 +1309,7 @@ body.pseudo-fullscreen .toolbar:hover{opacity:1}
 #slide-05 .company-footprint{
   bottom:0;
   height:62px;
+  grid-template-columns:repeat(4,minmax(0,1fr));
   background:#F7FAF9
 }
 #slide-05 .company-footprint div{
@@ -1268,8 +1318,8 @@ body.pseudo-fullscreen .toolbar:hover{opacity:1}
   justify-content:center;
   padding:8px 12px
 }
-#slide-05 .company-footprint b{font-size:23px;line-height:1}
-#slide-05 .company-footprint span{margin-top:5px;font-size:10.5px}
+#slide-05 .company-footprint b{font-size:21px;line-height:1}
+#slide-05 .company-footprint span{margin-top:5px;font-size:9.5px;line-height:1.15}
 #slide-05 .company-right{
   right:78px;
   top:226px;

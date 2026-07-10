@@ -130,11 +130,28 @@
     if (!open || open.querySelector(".oc12-flywheel")) return;
     open.insertAdjacentHTML("afterbegin", `
       <section class="oc12-flywheel">
-        <div class="oc12-flywheel-step open"><small>01</small><b>Open Core</b><span data-en="Free adoption and trust">免费采用与信任</span></div>
-        <i>→</i>
-        <div class="oc12-flywheel-step enterprise"><small>02</small><b>Enterprise</b><span data-en="Governance, reliability and services">治理、可靠性与服务</span></div>
-        <i>→</i>
-        <div class="oc12-flywheel-step recurring"><small>03</small><b data-en="Recurring Revenue">持续收入</b><span data-en="License, subscription and operations">License、订阅与运营</span></div>
+        <article class="oc12-model-summary">
+          <small>WHAT IS OPENCORE</small>
+          <b data-en="Open adoption, paid production boundaries">开放采用，生产边界付费</b>
+          <p data-en="OpenCore keeps the core product open so developers can adopt and validate it, while enterprises pay for governance, scale, security, SLA and managed operations.">OpenCore 用开放核心建立开发者采用与信任，企业为治理、规模化、安全、SLA 与托管运营付费。</p>
+        </article>
+        <div class="oc12-model-flow">
+          <span><em>01</em><strong data-en="Open core">开放核心</strong><small data-en="Trust and distribution">信任与分发</small></span>
+          <i>→</i>
+          <span><em>02</em><strong data-en="Enterprise boundary">企业边界</strong><small data-en="Governance and reliability">治理与可靠性</small></span>
+          <i>→</i>
+          <span><em>03</em><strong data-en="Recurring revenue">持续收入</strong><small data-en="License, SaaS and services">License、SaaS 与服务</small></span>
+        </div>
+        <aside class="oc12-precedents" aria-label="OpenCore precedent examples">
+          <small data-en="PROVEN PRECEDENTS">成功先例</small>
+          <div>
+            <span><b>GitLab</b><em>DevOps</em></span>
+            <span><b>MongoDB</b><em>Database</em></span>
+            <span><b>Elastic</b><em>Search</em></span>
+            <span><b>Confluent</b><em>Streaming</em></span>
+            <span><b>HashiCorp</b><em>Cloud Infra</em></span>
+          </div>
+        </aside>
       </section>`);
   };
 
@@ -344,7 +361,7 @@
     if (src) {
       return `<article class="product-shot-card"><img src="${src}" alt="${alt || title}"><b>${title}</b><span>${label}</span></article>`;
     }
-    return `<article class="product-shot-card empty"><i></i><b>${title}</b><span>${label}</span></article>`;
+    return `<article class="product-shot-card capability"><i></i><b>${title}</b><span>${label}</span></article>`;
   };
 
   const rebuildProductAppendix = () => {
@@ -365,13 +382,13 @@
       {
         id: "slide-25",
         title: ["AgenticHub：企业 Agent 构建、发布与运营工作台", "AgenticHub: enterprise agent build, release and operations workspace"],
-        lead: ["不要再用概念图讲产品；这一页直接展示 AgenticHub 的真实界面与待补截图位。", "Use product evidence, not concept art: real AgenticHub screenshots plus replacement slots."],
+        lead: ["企业 Agent 从构建、测试、发布到运行反馈，放在同一个工作台里闭环管理。", "Enterprise agents are managed in one workspace from build, test and release to runtime feedback."],
         main: ["assets/product-agentichub.png", "AgenticHub 主界面", "AgenticHub UI"],
         shots: [
           ["assets/appendix/slide-10-image-01.png", "流程编排 / 工具调用", "Workflow & tool use"],
-          [null, "Agent 构建页面截图位", "Replace with builder screenshot"],
-          [null, "发布 / 运行监控截图位", "Replace with release and monitoring screenshot"],
-          [null, "企业工具接入截图位", "Replace with enterprise integration screenshot"]
+          [null, "Agent 构建", "可视化配置、提示词、工具和代码脚本统一编排"],
+          [null, "发布 / 运行监控", "版本发布、运行状态、反馈回流与持续优化"],
+          [null, "企业工具接入", "通过 API、Webhook 与 MCP 连接业务系统"]
         ],
         proof: [
           ["双模式", "无代码拖拽 + 代码接口并存"],
@@ -382,13 +399,13 @@
       {
         id: "slide-27",
         title: ["CSGLite：让模型、数据和 AI 工具在个人设备本地运行", "CSGLite: run models, data and AI tools locally on personal devices"],
-        lead: ["核心卖点是本地、轻量、开箱即用；版面改成多截图证据，而不是功能格子。", "Local, lightweight and ready-to-run; rebuilt as screenshot evidence instead of feature boxes."],
+        lead: ["个人设备上完成模型运行、数据处理和 API 服务，把个人 AI 工作系统留在本地。", "Run models, data processing and API services on personal devices while keeping the personal AI work system local."],
         main: ["assets/product-lite.png", "CSGLite 本地运行界面", "CSGLite local runtime"],
         shots: [
           ["assets/appendix/slide-12-image-01.png", "本地模型运行", "Local model runtime"],
-          [null, "模型下载 / 断点续传截图位", "Replace with model download screenshot"],
-          [null, "REST API / 命令行截图位", "Replace with REST API or CLI screenshot"],
-          [null, "跨平台安装截图位", "Replace with installer screenshot"]
+          [null, "模型下载 / 断点续传", "面向大模型文件的可靠下载、鉴权和恢复能力"],
+          [null, "REST API / 命令行", "兼容本地脚本、开发工具和个人自动化流程"],
+          [null, "跨平台安装", "覆盖 macOS、Windows、Linux、ARM / x86 环境"]
         ],
         proof: [
           ["本地优先", "模型、数据与权限留在个人设备"],
@@ -399,13 +416,13 @@
       {
         id: "slide-28",
         title: ["CSGClaw：让多个 AI Agent 像一支团队协同工作", "CSGClaw: coordinate multiple AI agents as one team"],
-        lead: ["这一页补足 CSGClaw 的产品感：协同执行架构 + 多个可替换界面截图位。", "Adds product evidence for CSGClaw: orchestration architecture plus replaceable UI slots."],
+        lead: ["把一次性对话变成可分工、可审计、可回滚的多 Agent 协同执行系统。", "Turn one-off chats into multi-agent execution that supports division of labor, audit and rollback."],
         main: ["assets/product-claw.png", "CSGClaw 协同界面", "CSGClaw UI"],
         shots: [
           ["assets/appendix/slide-13-image-01.png", "Manager–Worker 架构", "Manager-worker architecture"],
           ["assets/appendix/slide-13-image-02.png", "任务拆解 / 沙箱", "Task decomposition and sandbox"],
           ["assets/appendix/slide-13-image-03.png", "协同执行流程", "Collaborative execution flow"],
-          [null, "聊天 / 任务面板截图位", "Replace with chat or task panel screenshot"]
+          [null, "聊天 / 任务面板", "在 IM 或任务界面中调度、追踪和接管执行过程"]
         ],
         proof: [
           ["Manager–Worker", "目标拆解、分工执行、结果合并"],
@@ -416,7 +433,7 @@
       {
         id: "slide-29",
         title: ["CSGHub：统一管理模型、数据和 Agent 等关键 AI 资产", "CSGHub: manage models, data and agents as critical AI assets"],
-        lead: ["去掉抽象海报图，直接用 CSGHub 产品截图展示资产管理、模型服务、应用空间和治理能力。", "Replaces abstract poster art with CSGHub screenshots for assets, model services, spaces and governance."],
+        lead: ["把模型、数据集、代码、应用空间和治理能力组织为可生产运行的 AI 资产目录。", "Organize models, datasets, code, spaces and governance as a production-ready AI asset catalog."],
         main: ["assets/product-csghub.png", "CSGHub 资产管理界面", "CSGHub asset management"],
         shots: [
           ["assets/appendix/slide-14-image-01.png", "模型 / 数据资产", "Model and data assets"],
@@ -509,7 +526,7 @@
         <small>WHY DONGFANG</small>
         <b data-en="Dongfang should not copy a generic park; it should turn policy, multilingual services and regional links into a digital gateway.">东方不应复制传统园区，而应把政策、多语言服务和区域连接变成数字接口。</b>
         <div class="df-anchor"><strong>5 YEARS</strong><span>${tx("政策窗口 × 技术窗口 × 区域市场窗口叠加", "Policy window × technology window × regional market window")}</span></div>
-        <div class="df-shot-slot"><i></i><b>${tx("配图 / 截图位", "Image / screenshot slot")}</b><span>${tx("建议放：园区照片、门户页面、东南亚连接示意或多语言服务截图", "Recommended: park photo, portal page, SEA connection visual or multilingual service screenshot")}</span></div>
+        <div class="df-shot-slot"><i></i><b>${tx("项目证据模块", "Project evidence module")}</b><span>${tx("园区服务、门户入口、东南亚连接和多语言服务共同构成可落地的区域接口。", "Park services, portal entry, Southeast Asia connectivity and multilingual services form a practical regional gateway.")}</span></div>
       </section>
       <section class="df-map">
         <svg viewBox="0 0 640 430" aria-hidden="true">
@@ -562,8 +579,8 @@
       <section class="c37-shot-grid">
         <article class="c37-case-card yichang">
           <div class="c37-shot-slot">
-            <span data-en="IMAGE PENDING">素材待替换</span>
-            <b data-en="Yichang project / park / operation capture">宜昌截图位</b>
+            <span data-en="PROJECT EVIDENCE">项目证据</span>
+            <b data-en="Yichang industry hub evidence">宜昌产业载体</b>
           </div>
           <small>01 · YICHANG</small>
           <h3 data-en="Industry hub and long-term operations">产业载体与长期运营</h3>
@@ -571,8 +588,8 @@
         </article>
         <article class="c37-case-card dongfang">
           <div class="c37-shot-slot">
-            <span data-en="IMAGE PENDING">素材待替换</span>
-            <b data-en="Dongfang gateway / multilingual service capture">东方截图位</b>
+            <span data-en="PROJECT EVIDENCE">项目证据</span>
+            <b data-en="Dongfang regional gateway evidence">东方区域接口</b>
           </div>
           <small>02 · DONGFANG</small>
           <h3 data-en="Regional gateway to Southeast Asia">面向东南亚的数字接口</h3>
@@ -580,8 +597,8 @@
         </article>
         <article class="c37-case-card longgang">
           <div class="c37-shot-slot">
-            <span data-en="IMAGE PENDING">素材待替换</span>
-            <b data-en="Longgang compute / architecture capture">龙岗截图位</b>
+            <span data-en="PROJECT EVIDENCE">项目证据</span>
+            <b data-en="Longgang compute adaptation evidence">龙岗算力适配</b>
           </div>
           <small>03 · LONGGANG</small>
           <h3 data-en="Domestic heterogeneous compute adaptation">国产异构算力适配</h3>
@@ -603,9 +620,178 @@
       </section>`;
   };
 
+  const enhanceSlide08Evolution = () => {
+    const slide = document.querySelector("#slide-08");
+    if (!slide || slide.classList.contains("evolution-ready")) return;
+    slide.classList.add("evolution-ready");
+
+    const steps = [...slide.querySelectorAll("[data-evolution-step]")];
+    const products = [...slide.querySelectorAll("[data-evolution-product]")];
+    const foundations = [...slide.querySelectorAll("[data-evolution-foundation]")];
+    const feedback = slide.querySelector(".p8-feedback");
+    if (steps.length !== 4 || products.length !== 4) return;
+
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+    let active = 1;
+    let visible = false;
+    let timer = 0;
+    let pausedUntil = 0;
+
+    const schedule = () => {
+      clearTimeout(timer);
+      if (!visible || reducedMotion.matches || document.hidden) return;
+      const delay = Math.max(active === 4 ? 3600 : 2700, pausedUntil - Date.now());
+      timer = window.setTimeout(() => {
+        if (Date.now() < pausedUntil) return schedule();
+        setStage(active === 4 ? 1 : active + 1);
+      }, Math.max(500, delay));
+    };
+    const setStage = (next, manual = false) => {
+      active = Math.max(1, Math.min(4, Number(next) || 1));
+      slide.dataset.evolutionStage = String(active);
+      steps.forEach((step, index) => {
+        const stage = index + 1;
+        step.classList.toggle("is-active", stage === active);
+        step.classList.toggle("is-complete", stage < active);
+        step.classList.toggle("is-feedback-target", active === 4 && stage === 1);
+        step.setAttribute("aria-pressed", stage === active ? "true" : "false");
+      });
+      products.forEach(product => {
+        const stage = Number(product.dataset.evolutionProduct);
+        product.classList.toggle("is-evolution-active", stage === active);
+        product.classList.toggle("is-evolution-complete", stage < active);
+        product.classList.toggle("is-evolution-dim", stage !== active);
+        product.classList.toggle("is-feedback-target", active === 4 && stage === 1);
+        product.setAttribute("aria-current", stage === active ? "step" : "false");
+        product.querySelector(".p8-connector")?.classList.toggle("is-running", stage === active);
+      });
+      foundations.forEach(item => {
+        const stage = Number(item.dataset.evolutionFoundation);
+        item.classList.toggle("is-active", stage === active);
+        item.classList.toggle("is-complete", stage < active);
+      });
+      feedback?.classList.toggle("is-active", active === 4);
+      slide.classList.toggle("is-feedback-stage", active === 4);
+      if (manual) pausedUntil = Date.now() + 6500;
+      schedule();
+    };
+
+    steps.forEach(step => {
+      const select = () => setStage(step.dataset.evolutionStep, true);
+      step.addEventListener("click", select);
+    });
+    products.forEach(product => {
+      product.addEventListener("pointerenter", () => setStage(product.dataset.evolutionProduct));
+      product.addEventListener("focusin", () => setStage(product.dataset.evolutionProduct, true));
+    });
+    document.addEventListener("visibilitychange", schedule);
+    reducedMotion.addEventListener?.("change", schedule);
+
+    const observer = new IntersectionObserver(entries => {
+      visible = entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= .42);
+      if (!visible) clearTimeout(timer);
+      else schedule();
+    }, { threshold: [0, .42, .8] });
+    observer.observe(slide);
+    setStage(1);
+  };
+
   const enhanceSlide05Proofs = () => {
     const slide = document.querySelector("#slide-05");
     if (!slide || document.querySelector(".deck-proof-modal")) return;
+
+    const siteDetails = {
+      shanghai: {
+        zh: "上海",
+        en: "Shanghai",
+        kind: "Talent and innovation ecosystem",
+        zhKind: "人才与创新生态",
+        zhSummary: "上海节点代表长三角人才、产业服务与 AI 创新资源连接，适合承接企业服务、人才活动与生态合作。",
+        enSummary: "The Shanghai node connects Yangtze River Delta talent, industry services and AI innovation resources for enterprise service and ecosystem cooperation.",
+        tags: ["长三角", "人才服务", "创新生态"],
+        enTags: ["Yangtze Delta", "Talent", "Innovation"]
+      },
+      yancheng: {
+        zh: "盐城",
+        en: "Yancheng",
+        kind: "Regional services and scenario replication",
+        zhKind: "区域服务与场景复制",
+        zhSummary: "盐城节点用于承接区域产业场景、企业服务与公共技术平台复制，形成可扩展的城市服务入口。",
+        enSummary: "The Yancheng node supports regional industry scenarios, enterprise services and public AI platform replication.",
+        tags: ["区域平台", "产业场景", "企业服务"],
+        enTags: ["Regional platform", "Industry scenarios", "Enterprise service"]
+      },
+      yichang: {
+        zh: "宜昌",
+        en: "Yichang",
+        kind: "Industry hub and long-term operations",
+        zhKind: "产业载体与长期运营",
+        zhSummary: "宜昌节点验证了城市级 AI 平台从一次性建设转向持续运营的路径，连接算力、企业、开发者和产业服务。",
+        enSummary: "The Yichang node validates a city-level AI platform moving from one-off build-out to continuous operations.",
+        tags: ["产业平台", "持续运营", "开发者生态"],
+        enTags: ["Industry hub", "Operations", "Developers"]
+      },
+      chongqing: {
+        zh: "重庆",
+        en: "Chongqing",
+        kind: "Western China regional node",
+        zhKind: "西部区域节点",
+        zhSummary: "重庆节点承接西部地区产业、政企服务与开发者生态连接，适合作为区域复制和服务网络的枢纽。",
+        enSummary: "The Chongqing node connects western-region industry, public-sector services and developer ecosystems as a replication hub.",
+        tags: ["西部节点", "政企服务", "生态连接"],
+        enTags: ["Western node", "Gov-enterprise", "Ecosystem"]
+      },
+      leshan: {
+        zh: "乐山",
+        en: "Leshan",
+        kind: "Regional public service scenarios",
+        zhKind: "区域公共服务场景",
+        zhSummary: "乐山节点用于承接区域公共服务、产业数字化与 AI 应用场景验证，补足区域网络的纵深。",
+        enSummary: "The Leshan node supports public-service, industrial digitization and AI application scenarios within the regional network.",
+        tags: ["公共服务", "产业数字化", "场景验证"],
+        enTags: ["Public service", "Digitization", "Validation"]
+      },
+      dongfang: {
+        zh: "东方",
+        en: "Dongfang",
+        kind: "Free-trade-port gateway",
+        zhKind: "自贸港区域接口",
+        zhSummary: "东方节点面向海南自贸港和东南亚连接，验证区域平台、跨境数字服务和多语言能力的组合价值。",
+        enSummary: "The Dongfang node connects the Hainan free-trade-port context with Southeast Asia through regional platform and multilingual services.",
+        tags: ["海南自贸港", "东南亚接口", "跨境服务"],
+        enTags: ["Hainan FTP", "Southeast Asia", "Cross-border"]
+      },
+      longgang: {
+        zh: "龙岗",
+        en: "Longgang",
+        kind: "Domestic heterogeneous compute adaptation",
+        zhKind: "国产异构算力适配",
+        zhSummary: "龙岗节点验证国产算力、模型资产、公共服务与 Agent 开发环境的组合，适合形成可复制的技术模块。",
+        enSummary: "The Longgang node validates domestic compute, model assets, public services and agent development environments as a reusable module.",
+        tags: ["国产算力", "模型资产", "Agent 开发"],
+        enTags: ["Domestic compute", "Model assets", "Agent dev"]
+      },
+      hongkong: {
+        zh: "香港",
+        en: "Hong Kong",
+        kind: "International ecosystem connection",
+        zhKind: "国际生态连接",
+        zhSummary: "香港数码港节点连接国际开源生态、金融科技与跨境产业资源，是 OpenCSG 全球化叙事的重要支点。",
+        enSummary: "The Hong Kong Cyberport node connects global open-source, fintech and cross-border industry resources.",
+        tags: ["数码港", "国际生态", "跨境资源"],
+        enTags: ["Cyberport", "Global ecosystem", "Cross-border"]
+      },
+      singapore: {
+        zh: "Singapore",
+        en: "Singapore",
+        kind: "Southeast Asia innovation bridge",
+        zhKind: "东南亚创新连接",
+        zhSummary: "新加坡节点代表东南亚创新、监管与产业合作接口，支撑 OpenCSG 面向国际市场的连接能力。",
+        enSummary: "The Singapore node represents a Southeast Asia innovation, regulatory and industry-cooperation bridge for international expansion.",
+        tags: ["东南亚", "国际合作", "创新生态"],
+        enTags: ["Southeast Asia", "Global cooperation", "Innovation"]
+      }
+    };
 
     const modal = document.createElement("div");
     modal.className = "deck-proof-modal";
@@ -619,23 +805,47 @@
     document.body.appendChild(modal);
 
     const content = modal.querySelector(".deck-proof-content");
-    const openModal = (kind) => {
-      const isRegion = kind === "region";
-      content.innerHTML = isRegion ? `
-        <header><small>REGIONAL PROOF</small><h3 data-en="Regional nodes and verified deployment areas">区域节点与已验证地区</h3><p data-en="A city-level AI platform is not a static display page; it connects government, industry, developers and capital into repeatable operations.">城市级 AI 平台不是静态展示页，而是把政府、产业、开发者与资本连接成可复制运营。</p></header>
-        <div class="proof-region-detail">
-          <div class="proof-map-large">
-            <img src="assets/china-blank-map.svg" alt="OpenCSG regional nodes">
-            <span class="pin shanghai" data-en="Shanghai">上海</span><span class="pin yancheng" data-en="Yancheng">盐城</span><span class="pin yichang" data-en="Yichang">宜昌</span><span class="pin chongqing" data-en="Chongqing">重庆</span><span class="pin leshan" data-en="Leshan">乐山</span><span class="pin dongfang" data-en="Dongfang">东方</span><span class="pin hongkong" data-en="Hong Kong">香港</span><span class="pin singapore">Singapore</span>
-          </div>
-          <div class="proof-region-list">
-            <article><b data-en="Yichang">宜昌</b><span data-en="Industry hub and long-term operations">产业载体与长期运营</span></article>
-            <article><b data-en="Hong Kong Cyberport">香港数码港</b><span data-en="International open-source ecosystem connection">国际开源生态连接</span></article>
-            <article><b data-en="Dongfang">东方</b><span data-en="Free-trade-port gateway to Southeast Asia">自贸港面向东南亚接口</span></article>
-            <article><b data-en="Longgang">龙岗</b><span data-en="Domestic heterogeneous compute adaptation">国产异构算力适配</span></article>
-            <article><b data-en="Yancheng / Chongqing / Leshan">盐城 / 重庆 / 乐山</b><span data-en="Scenario replication and regional services">场景复制与区域服务</span></article>
-          </div>
-        </div>` : `
+    const renderSiteModal = (pin) => {
+      const cityKey = [...pin.classList].find(cls => siteDetails[cls]) || "yichang";
+      const detail = siteDetails[cityKey];
+      const url = pin.href;
+      const tags = detail.tags.map((tag, index) =>
+        `<span data-en="${esc(detail.enTags[index] || tag)}">${esc(tag)}</span>`).join("");
+      return `
+        <header class="proof-site-header">
+          <small>REGIONAL NODE</small>
+          <h3 data-en="${esc(detail.en)}">${esc(detail.zh)}</h3>
+          <p data-en="${esc(detail.kind)}">${esc(detail.zhKind)}</p>
+        </header>
+        <div class="proof-site-layout">
+          <aside class="proof-site-meta">
+            <div class="proof-site-eyebrow" data-en="Verified deployment area">已验证地区</div>
+            <b data-en="${esc(detail.en)}">${esc(detail.zh)}</b>
+            <p data-en="${esc(detail.enSummary)}">${esc(detail.zhSummary)}</p>
+            <div class="proof-site-tags">${tags}</div>
+            <a class="proof-site-source" href="${esc(url)}" target="_blank" rel="noopener">
+              <span data-en="Open source site">打开来源站点</span>
+              <em>${esc(new URL(url).hostname)}</em>
+            </a>
+          </aside>
+          <section class="proof-site-browser" aria-label="Site preview">
+            <div class="proof-browser-bar">
+              <i></i><i></i><i></i>
+              <span>${esc(url)}</span>
+            </div>
+            <div class="proof-iframe-wrap">
+              <iframe class="proof-site-iframe" src="${esc(url)}" title="${esc(detail.zh)} site preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <div class="proof-iframe-note" data-en="Some official sites may block embedded preview; use the source button if the preview does not load.">部分官方站点可能限制内嵌预览；若未加载，可使用来源按钮。</div>
+            </div>
+          </section>
+        </div>`;
+    };
+
+    const openModal = (kind, pin = null) => {
+      if (pin) {
+        content.innerHTML = renderSiteModal(pin);
+      } else {
+        content.innerHTML = `
         <header><small>CUSTOMER PROOF</small><h3 data-en="Key customers and national-level industry connections">重点客户与国家级产业连接</h3><p data-en="The proof is not a logo wall; it shows national institutions, central SOEs, industrial leaders and ecosystem partners already connected to OpenCSG.">这不是商标墙，而是国家机构、央企、产业龙头与生态伙伴已经连接到 OpenCSG 的证明。</p></header>
         <div class="proof-customer-detail">
           <article><small>NATIONAL INSTITUTION</small><b data-en="MIIT">工业和信息化部</b><span data-en="National industry connection">国家级产业连接</span></article>
@@ -643,21 +853,32 @@
           <article><small>INDUSTRIAL LEADERS</small><b>CATL / CALB</b><span data-en="New-energy manufacturing and industrial AI scenarios">新能源制造与产业 AI 场景</span></article>
           <article><small>ECOSYSTEM</small><b data-en="Cambricon, Muxi, Lenovo, Inspur and more">寒武纪、沐曦、联想、浪潮等</b><span data-en="Compute, hardware and enterprise software ecosystem">算力、硬件与企业软件生态</span></article>
         </div>`;
+      }
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("proof-modal-open");
-      if (window.__opencsgI18n?.apply) window.__opencsgI18n.apply();
+      if (window.DeckI18n?.translateTree) window.DeckI18n.translateTree(content, window.DeckI18n.pack, window.DeckI18n.lang);
     };
 
     const closeModal = () => {
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("proof-modal-open");
+      content.querySelectorAll("iframe").forEach(frame => frame.removeAttribute("src"));
     };
 
     modal.querySelectorAll("[data-proof-close]").forEach(el => el.addEventListener("click", closeModal));
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+    slide.querySelectorAll(".region-map-restored .city-pin").forEach(pin => {
+      pin.removeAttribute("target");
+      pin.addEventListener("click", (event) => {
+        event.preventDefault();
+        slide.querySelectorAll(".region-map-restored .city-pin").forEach(item => item.classList.remove("active"));
+        pin.classList.add("active");
+        openModal("site", pin);
+      });
     });
   };
 
@@ -675,5 +896,6 @@
   rebuildSlide33();
   rebuildDongfang();
   rebuildSlide37();
+  enhanceSlide08Evolution();
   enhanceSlide05Proofs();
 })();
