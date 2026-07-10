@@ -2559,6 +2559,20 @@
     "Executive Program": "エグゼクティブ プログラム",
     "Beihang": "北京航空航天大学",
     "B.Eng.": "工学士",
-    "BUILT AT": "これまでの経歴"
+    "BUILT AT": "これまでの経歴",
+    "Distributed systems": "分散システム",
+    "Kubernetes": "Kubernetes",
+    "xNet / HPC": "xNet / ヘテロジニアス",
+    "Delivery": "デリバリ",
+    "SRE / 7x24": "SRE / 7×24",
+    "Finance · Energy": "金融 · エネルギー",
+    "LLM training": "LLM 訓練",
+    "Eval / Compliance": "評価 · コンプライアンス",
+    "Private deploy": "プライベート展開",
+    "Product strategy": "プロダクト戦略",
+    "OPC · Enterprise": "OPC · エンタープライズ",
+    "City · Industry": "都市 · 産業",
+    "Capital strategy": "資本戦略",
+    "LP network": "LP ネットワーク"
   }
 }

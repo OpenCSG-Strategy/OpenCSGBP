@@ -2560,6 +2560,20 @@
     "Executive Program": "高管项目",
     "Beihang": "北航",
     "B.Eng.": "工学学士",
-    "BUILT AT": "过往经历"
+    "BUILT AT": "过往经历",
+    "Distributed systems": "分布式系统",
+    "Kubernetes": "Kubernetes",
+    "xNet / HPC": "xNet / 异构",
+    "Delivery": "工程交付",
+    "SRE / 7x24": "SRE / 7×24",
+    "Finance · Energy": "金融 · 能源",
+    "LLM training": "大模型训练",
+    "Eval / Compliance": "评测 · 合规",
+    "Private deploy": "私有化部署",
+    "Product strategy": "产品策略",
+    "OPC · Enterprise": "OPC · 企业",
+    "City · Industry": "城市 · 产业",
+    "Capital strategy": "资本战略",
+    "LP network": "LP 生态"
   }
 }

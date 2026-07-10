@@ -2541,6 +2541,20 @@
     "Executive Program": "Программа для руководителей",
     "Beihang": "Бэйхан",
     "B.Eng.": "Бакалавр инженерии",
-    "BUILT AT": "ПРЕДЫДУЩИЙ ОПЫТ"
+    "BUILT AT": "ПРЕДЫДУЩИЙ ОПЫТ",
+    "Distributed systems": "Распределённые системы",
+    "Kubernetes": "Kubernetes",
+    "xNet / HPC": "xNet / гетерогенные",
+    "Delivery": "Поставка",
+    "SRE / 7x24": "SRE / 7×24",
+    "Finance · Energy": "Финансы · Энергетика",
+    "LLM training": "Обучение LLM",
+    "Eval / Compliance": "Оценка / комплаенс",
+    "Private deploy": "Приватное развёртывание",
+    "Product strategy": "Продуктовая стратегия",
+    "OPC · Enterprise": "OPC · Корпоративный",
+    "City · Industry": "Город · Индустрия",
+    "Capital strategy": "Капитальная стратегия",
+    "LP network": "LP-сеть"
   }
 }

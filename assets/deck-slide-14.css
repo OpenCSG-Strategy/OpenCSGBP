@@ -305,7 +305,8 @@
   grid-template-columns:repeat(5,1fr);
   gap:8px;
   min-height:0;
-  flex:1
+  flex:1;
+  align-items:stretch
 }
 #slide-14 .founder14-team li{
   display:flex;
@@ -319,6 +320,28 @@
   min-height:0;
   overflow:hidden;
   justify-content:flex-start
+}
+
+/* Focus / domain chips at the bottom of each team card */
+#slide-14 .team-focus{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+  margin-top:auto;
+  padding-top:6px;
+  border-top:1px dashed #E2E9E7
+}
+#slide-14 .team-focus span{
+  display:inline-block;
+  padding:2px 7px;
+  background:#EAF4F2;
+  color:#0E675F;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.02em;
+  border:1px solid #C8DDD8;
+  line-height:1.3;
+  white-space:nowrap
 }
 #slide-14 .founder14-team b{
   color:var(--teal2);

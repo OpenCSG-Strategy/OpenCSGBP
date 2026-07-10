@@ -2541,6 +2541,20 @@
     "Executive Program": "Programa para executivos",
     "Beihang": "Beihang",
     "B.Eng.": "Bacharelado em Engenharia",
-    "BUILT AT": "TRAJETÓRIA ANTERIOR"
+    "BUILT AT": "TRAJETÓRIA ANTERIOR",
+    "Distributed systems": "Sistemas distribuídos",
+    "Kubernetes": "Kubernetes",
+    "xNet / HPC": "xNet / heterogêneo",
+    "Delivery": "Entrega",
+    "SRE / 7x24": "SRE / 7×24",
+    "Finance · Energy": "Finanças · Energia",
+    "LLM training": "Treinamento de LLMs",
+    "Eval / Compliance": "Avaliação / conformidade",
+    "Private deploy": "Implantação privada",
+    "Product strategy": "Estratégia de produto",
+    "OPC · Enterprise": "OPC · Enterprise",
+    "City · Industry": "Cidade · Indústria",
+    "Capital strategy": "Estratégia de capital",
+    "LP network": "Rede de LP"
   }
 }

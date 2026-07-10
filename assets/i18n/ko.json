@@ -2559,6 +2559,20 @@
     "Executive Program": "임원 프로그램",
     "Beihang": "베이항",
     "B.Eng.": "공학사",
-    "BUILT AT": "이전 경력"
+    "BUILT AT": "이전 경력",
+    "Distributed systems": "분산 시스템",
+    "Kubernetes": "Kubernetes",
+    "xNet / HPC": "xNet / 이종",
+    "Delivery": "딜리버리",
+    "SRE / 7x24": "SRE / 7×24",
+    "Finance · Energy": "금융 · 에너지",
+    "LLM training": "LLM 학습",
+    "Eval / Compliance": "평가 · 컴플라이언스",
+    "Private deploy": "프라이빗 배포",
+    "Product strategy": "제품 전략",
+    "OPC · Enterprise": "OPC · 엔터프라이즈",
+    "City · Industry": "도시 · 산업",
+    "Capital strategy": "자본 전략",
+    "LP network": "LP 네트워크"
   }
 }

@@ -2541,6 +2541,20 @@
     "Executive Program": "Führungskräfte-Programm",
     "Beihang": "Beihang",
     "B.Eng.": "B.Eng.",
-    "BUILT AT": "VORHERIGE STATIONEN"
+    "BUILT AT": "VORHERIGE STATIONEN",
+    "Distributed systems": "Verteilte Systeme",
+    "Kubernetes": "Kubernetes",
+    "xNet / HPC": "xNet / heterogen",
+    "Delivery": "Lieferung",
+    "SRE / 7x24": "SRE / 7×24",
+    "Finance · Energy": "Finanzen · Energie",
+    "LLM training": "LLM-Training",
+    "Eval / Compliance": "Eval / Compliance",
+    "Private deploy": "Private Bereitstellung",
+    "Product strategy": "Produktstrategie",
+    "OPC · Enterprise": "OPC · Enterprise",
+    "City · Industry": "Stadt · Industrie",
+    "Capital strategy": "Kapitalstrategie",
+    "LP network": "LP-Netzwerk"
   }
 }

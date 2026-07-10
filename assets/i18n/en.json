@@ -2578,6 +2578,20 @@
     "Executive Program": "Executive Program",
     "Beihang": "Beihang",
     "B.Eng.": "B.Eng.",
-    "BUILT AT": "BUILT AT"
+    "BUILT AT": "BUILT AT",
+    "Distributed systems": "Distributed systems",
+    "Kubernetes": "Kubernetes",
+    "xNet / HPC": "xNet / HPC",
+    "Delivery": "Delivery",
+    "SRE / 7x24": "SRE / 7x24",
+    "Finance · Energy": "Finance · Energy",
+    "LLM training": "LLM training",
+    "Eval / Compliance": "Eval / Compliance",
+    "Private deploy": "Private deploy",
+    "Product strategy": "Product strategy",
+    "OPC · Enterprise": "OPC · Enterprise",
+    "City · Industry": "City · Industry",
+    "Capital strategy": "Capital strategy",
+    "LP network": "LP network"
   }
 }

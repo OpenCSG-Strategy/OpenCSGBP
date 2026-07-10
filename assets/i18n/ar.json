@@ -2541,6 +2541,20 @@
     "Executive Program": "البرنامج التنفيذي",
     "Beihang": "بيهانغ",
     "B.Eng.": "بكالوريوس هندسة",
-    "BUILT AT": "شغل سابقاً في"
+    "BUILT AT": "شغل سابقاً في",
+    "Distributed systems": "الأنظمة الموزعة",
+    "Kubernetes": "Kubernetes",
+    "xNet / HPC": "xNet / غير متجانس",
+    "Delivery": "التسليم",
+    "SRE / 7x24": "SRE / 7×24",
+    "Finance · Energy": "التمويل · الطاقة",
+    "LLM training": "تدريب النماذج اللغوية الكبيرة",
+    "Eval / Compliance": "التقييم / الامتثال",
+    "Private deploy": "النشر الخاص",
+    "Product strategy": "استراتيجية المنتج",
+    "OPC · Enterprise": "OPC · المؤسسات",
+    "City · Industry": "المدينة · الصناعة",
+    "Capital strategy": "استراتيجية رأس المال",
+    "LP network": "شبكة LP"
   }
 }
