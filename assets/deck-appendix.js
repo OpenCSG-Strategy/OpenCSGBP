@@ -821,8 +821,8 @@
     { step: "Step 5 · CSGHub", zh: "版本发布与门禁", en: "Release Governance", descZh: "资产版本、审批与发布策略统一管理", descEn: "Govern versions, approvals and release policies" },
     { step: "Step 6 · CSGHub", zh: "跨环境部署", en: "Deploy Anywhere", descZh: "部署到云、私有化、边缘与隔离环境", descEn: "Cloud · on-prem · edge · air-gapped" },
     { step: "Step 7 · CSGClaw", zh: "多 Agent 协同运行", en: "Multi-Agent Operations", descZh: "任务分工、执行接管与团队协作", descEn: "Coordinate tasks, execution and human takeover" },
-    { step: "Step 7 · CSGHub", zh: "DataFlow 反馈回流", en: "DataFlow Feedback", descZh: "采集运行反馈并沉淀高质量数据", descEn: "Collect runtime feedback into governed data" },
-    { step: "Step 8 · CSGHub", zh: "持续优化", en: "Continuous Improvement", descZh: "用评测、数据与运营信号迭代系统", descEn: "Improve with evaluation, data and operational signals" }
+    { step: "Step 8 · CSGHub", zh: "DataFlow 反馈回流", en: "DataFlow Feedback", descZh: "采集运行反馈并沉淀高质量数据", descEn: "Collect runtime feedback into governed data" },
+    { step: "Step 9 · CSGHub", zh: "持续优化", en: "Continuous Improvement", descZh: "用评测、数据与运营信号迭代系统", descEn: "Improve with evaluation, data and operational signals" }
   ];
   const opc = [
     { step: "Step 0 · CSGLite", zh: "个人 AI 入口", en: "Personal AI Entry", descZh: "本地模型、私有知识与个人工具就绪", descEn: "Prepare local models, private knowledge and tools" },
@@ -833,8 +833,8 @@
     { step: "Step 5 · CSGClaw", zh: "Agent 发布", en: "Agent Release", descZh: "将可复用 Agent 发布到个人工作系统", descEn: "Release reusable agents into the personal workspace" },
     { step: "Step 6 · CSGLite", zh: "本地运行", en: "Local Runtime", descZh: "在个人设备部署模型与推理服务", descEn: "Run models and inference services on personal devices" },
     { step: "Step 7 · CSGClaw", zh: "持续协同执行", en: "Continuous Execution", descZh: "多 Agent 长期运行、接管与回放", descEn: "Operate, supervise and replay multi-agent work" },
-    { step: "Step 7 · CSGHub", zh: "团队资产回流", en: "Team Asset Feedback", descZh: "把可共享成果沉淀到组织资产层", descEn: "Return shareable outcomes to the organization asset layer" },
-    { step: "Step 8 · AgenticHub", zh: "组织生产升级", en: "Scale to Production", descZh: "把个人验证升级为受治理的组织生产", descEn: "Scale validated workflows into governed production" }
+    { step: "Step 8 · CSGHub", zh: "团队资产回流", en: "Team Asset Feedback", descZh: "把可共享成果沉淀到组织资产层", descEn: "Return shareable outcomes to the organization asset layer" },
+    { step: "Step 9 · AgenticHub", zh: "组织生产升级", en: "Scale to Production", descZh: "把个人验证升级为受治理的组织生产", descEn: "Scale validated workflows into governed production" }
   ];
   const products = [
     { id: "agentichub", name: "AgenticHub", zh: "智能体全生命周期统一管理", en: "Unified full-lifecycle agent management", tags: "TOOLS · WORKFLOW · ASSISTANT", art: "roadMap_card_autohub" },
