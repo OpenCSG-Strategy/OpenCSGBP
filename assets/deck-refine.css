@@ -2184,14 +2184,7 @@ html[lang="en"] #slide-03.slide03-pain-points .pain-item p,
 #slide-13 .moat-proof em{margin-top:auto}
 
 /* 14–15 · The founder and scale pages also use the full presentation canvas. */
-#slide-14 .ceo-story{display:flex;flex-direction:column}
-#slide-14 .ceo-story .leadline{flex:0 0 auto;margin-bottom:20px}
-#slide-14 .ceo-story .story-grid{height:386px;grid-template-rows:1fr 1fr}
-#slide-14 .story-cell{height:auto;padding:20px}
-#slide-14 .story-cell b{font-size:16px}
-#slide-14 .story-cell p{font-size:15px;line-height:1.52}
-#slide-14 .support-strip b{font-size:15px}
-#slide-14 .support-strip span{font-size:13px;line-height:1.4}
+/* Slide 14 — see assets/deck-slide-14.css for the canonical layout. */
 #slide-15 .finance h3,#slide-15 .routes h3,#slide-15 .roadmap h3{font-size:20px}
 #slide-15 .route b{font-size:16px}
 #slide-15 .route-flow span{font-size:13px}
@@ -3112,40 +3105,6 @@ html[lang="en"] #slide-03.slide03-pain-points .pain-item p,
 #slide-13 .comp13-proof span{position:absolute;left:14px;top:12px;color:var(--teal);font-size:9px;font-weight:800}
 #slide-13 .comp13-proof b{font-size:12px}
 #slide-13 .comp13-proof p{margin:9px 0 0;color:#5F6D69;font-size:10.5px;line-height:1.45}
-
-/* 14 · Founder-led, but the operating team has visible ownership. */
-#slide-14 .team-layout{
-  left:78px;
-  right:78px;
-  top:226px;
-  height:575px;
-  grid-template-columns:430px 1fr;
-  gap:24px
-}
-#slide-14 .ceo-photo{border-top:3px solid var(--teal)}
-#slide-14 .ceo-photo img{object-position:50% center}
-#slide-14 .ceo-photo:after{height:142px}
-#slide-14 .ceo-photo .photo-label{left:24px;bottom:44px}
-#slide-14 .ceo-photo .photo-label b{font-size:31px}
-#slide-14 .ceo-photo .photo-label span{font-size:13px}
-#slide-14 .ceo-photo .photo-label small{display:block;margin-top:10px;color:#BFD2CE;font-size:8px;letter-spacing:.09em}
-#slide-14 .founder-tags{position:absolute;left:20px;right:20px;top:20px;z-index:2;display:flex;gap:7px}
-#slide-14 .founder-tags span{padding:6px 8px;border:1px solid rgba(255,255,255,.72);background:rgba(31,49,45,.52);color:#fff;font-size:8px;letter-spacing:.04em}
-#slide-14 .ceo-story{display:flex;flex-direction:column;padding-top:16px}
-#slide-14 .ceo-story .leadline{margin:0 0 14px;font-size:24px;line-height:1.3}
-#slide-14 .ceo-credentials{border-top:1px solid var(--line)}
-#slide-14 .ceo-credentials article{position:relative;display:grid;grid-template-columns:210px 1fr;align-items:center;min-height:83px;padding:10px 12px 10px 48px;border-bottom:1px solid var(--line)}
-#slide-14 .ceo-credentials article>span{position:absolute;left:12px;color:var(--teal);font-size:9px;font-weight:800}
-#slide-14 .ceo-credentials b{font-size:14px;color:#285A52}
-#slide-14 .ceo-credentials p{margin:0;color:#5F6D69;font-size:12px;line-height:1.45}
-#slide-14 .team-member-head{display:flex;align-items:center;justify-content:space-between;height:52px;margin-top:13px;border-top:2px solid var(--teal);border-bottom:1px solid var(--line)}
-#slide-14 .team-member-head b{font-size:16px}
-#slide-14 .team-member-head span{color:#6F7D79;font-size:10px}
-#slide-14 .team-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);flex:1;border-left:1px solid var(--line)}
-#slide-14 .team-grid article{position:relative;display:flex;flex-direction:column;justify-content:center;padding:18px 18px 15px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-#slide-14 .team-grid article>span{color:#7D8A87;font-size:8px;letter-spacing:.1em}
-#slide-14 .team-grid b{margin-top:8px;color:var(--teal);font-size:17px}
-#slide-14 .team-grid p{margin:8px 0 0;color:#5C6A66;font-size:11.5px;line-height:1.45}
 
 /* Compact landscape / square browser windows: preserve the full 16:9 slide without a fake 100vh letterbox. */
 body.compact-stage{scroll-snap-type:y proximity;background:#E8ECEB}
@@ -4673,11 +4632,6 @@ body.overview-mode .mobile-reader{display:none!important}
 #slide-12 .open12-product .pc-row>*{font-size:10.5px;line-height:1.34}
 #slide-12 .open12-product .pricing-foot span{font-size:10.5px;line-height:1.4}
 
-#slide-14 .ceo-credentials b{font-size:15px}
-#slide-14 .ceo-credentials p{font-size:13px;line-height:1.48}
-#slide-14 .team-member-head span{font-size:11px}
-#slide-14 .team-grid article>span{font-size:9px}
-#slide-14 .team-grid p{font-size:13px;line-height:1.48}
 
 #slide-27 .app-product-layout,
 #slide-30 .app-product-layout{grid-template-columns:560px minmax(0,1fr)}
@@ -5939,11 +5893,6 @@ body.overview-mode .mobile-reader{display:none!important}
 #slide-12 .open12-product .pricing-foot{height:42px;margin-top:6px}
 #slide-12 .open12-product .pricing-foot span{padding:7px 9px;font-size:8.5px;line-height:1.25}
 
-#slide-14 .team-layout>*{height:100%;min-height:0}
-#slide-14 .ceo-story{overflow:hidden}
-#slide-14 .team-grid{min-height:0;grid-template-rows:repeat(2,minmax(0,1fr))}
-#slide-14 .team-grid article{min-height:0;padding:12px 15px}
-#slide-14 .team-grid p{margin-top:5px;font-size:11.5px;line-height:1.35}
 
 #slide-16 .profit15{grid-template-rows:240px minmax(0,1fr);gap:14px}
 #slide-16 .p15-engine{padding:14px 16px 12px}
@@ -7550,3 +7499,66 @@ html[lang="en"] #slide-03.slide03-replica>.title{
 #slide-40 .foot-wechat-pop img{
   margin:0;
 }
+
+/* =================================================================
+   2026-07-10 · Slide 04 — clean up card / phase-label overlap and
+   align the dashed pointers so each card clearly points to its
+   lifecycle phase. The previous layout stacked the small labels
+   at the same Y as the bottom cards, which made TEST, RELEASE and
+   RETRAIN collide with the Step 4/5/9 cards. We move the bottom
+   labels up into the artwork (above the cards) and the top labels
+   down (below the cards), and re-center every label on the arrow
+   position of its corresponding card. The dashed :after lines and
+   their triangle heads are also re-aimed so they end at the new
+   label positions.
+   ================================================================= */
+#slide-04 .official-phase{
+  z-index:5
+}
+/* Top labels: pushed down to sit just below the top row of cards,
+   centered under the arrow of each card (or between two cards that
+   share a phase, e.g. PROMPT for Step 0 and Step 1). */
+#slide-04 .official-phase.phase-0{left:51%;right:auto;top:115px;bottom:auto}
+#slide-04 .official-phase.phase-1{left:24%;right:auto;top:115px;bottom:auto}
+#slide-04 .official-phase.phase-5{left:auto;right:18%;top:115px;bottom:auto}
+/* Middle labels: BUILD and OPERATE sit beside the left/right edge
+   cards, near the actual section of the infinity artwork. They stay
+   far enough from the side cards (Step 3, Step 7/8) to avoid overlap. */
+#slide-04 .official-phase.phase-2{left:20%;right:auto;top:221px;bottom:auto}
+#slide-04 .official-phase.phase-6{left:auto;right:18%;top:221px;bottom:auto}
+/* Bottom labels: lifted up to sit just above the bottom row of cards,
+   centered on the arrow position of each card. */
+#slide-04 .official-phase.phase-3{left:19%;right:auto;top:auto;bottom:115px}
+#slide-04 .official-phase.phase-4{left:38%;right:auto;top:auto;bottom:115px}
+#slide-04 .official-phase.phase-7{left:auto;right:33%;top:auto;bottom:115px}
+
+/* Re-aim the dashed pointer lines so they actually reach the labels
+   after the labels moved. */
+#slide-04 .official-step-card.pos-0:after,
+#slide-04 .official-step-card.pos-1:after,
+#slide-04 .official-step-card.pos-2:after,
+#slide-04 .official-step-card.pos-6:after{
+  top:100%;bottom:auto;
+  height:22px
+}
+#slide-04 .official-step-card.pos-0:before,
+#slide-04 .official-step-card.pos-1:before,
+#slide-04 .official-step-card.pos-2:before,
+#slide-04 .official-step-card.pos-6:before{
+  top:calc(100% + 18px);
+  border-top:5px solid var(--phase)
+}
+#slide-04 .official-step-card.pos-4:after,
+#slide-04 .official-step-card.pos-5:after,
+#slide-04 .official-step-card.pos-9:after{
+  top:auto;bottom:100%;
+  height:22px
+}
+#slide-04 .official-step-card.pos-4:before,
+#slide-04 .official-step-card.pos-5:before,
+#slide-04 .official-step-card.pos-9:before{
+  bottom:calc(100% + 18px);
+  border-bottom:5px solid var(--phase)
+}
+/* Left/right cards already line up with BUILD/OPERATE — keep them. */
+

@@ -1,47 +1,49 @@
 /* ====================================================================
    Slide 14 — Founder & Team
    Clean Silicon Valley / Sequoia / a16z-style founder page.
-   White background, generous whitespace, big typography, one accent rule.
+   Three full-width bands: founder hero (portrait + bio) / career
+   timeline / core team (5 cards with bios).
    ==================================================================== */
 
-/* ---- Override slide-14 title size for one-liner --------------------- */
+/* ---- Override slide-14 title size -------------------------------- */
 #slide-14 .title{
-  font-size:30px;
+  font-size:26px;
   line-height:1.2;
-  max-width:1100px
+  max-width:1280px;
+  margin-bottom:14px
 }
 
-/* ---- Page layout shell ----------------------------------------------- */
+/* ---- Page layout shell: vertical stack of 3 bands ------------------ */
 #slide-14 .founder14-layout{
   position:absolute;
   left:78px;
   right:78px;
-  top:188px;
-  bottom:78px;
-  display:grid;
-  grid-template-columns:360px 1fr;
-  gap:44px;
-  min-height:0;
-  align-items:stretch
-}
-
-/* ---- LEFT: founder hero --------------------------------------------- */
-#slide-14 .founder14-hero{
+  top:170px;
+  bottom:60px;
   display:flex;
   flex-direction:column;
-  min-height:0;
+  gap:14px;
+  min-height:0
+}
+
+/* ---- Band 1: founder hero (portrait + bio) ------------------------- */
+#slide-14 .founder14-hero{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:24px;
+  align-items:stretch;
   border-top:3px solid var(--teal);
-  padding-top:18px;
-  position:relative
+  padding-top:14px;
+  min-height:0
 }
 
 #slide-14 .founder14-portrait{
   position:relative;
-  flex:0 0 auto;
-  width:100%;
-  height:320px;
+  width:200px;
+  height:200px;
   background:#DDE5E3;
-  overflow:hidden
+  overflow:hidden;
+  flex-shrink:0
 }
 #slide-14 .founder14-portrait img{
   display:block;
@@ -55,133 +57,59 @@
 #slide-14 .founder14-id{
   display:flex;
   flex-direction:column;
-  padding:18px 0 0;
-  min-height:0;
-  flex:1
+  gap:8px;
+  min-height:0
+}
+#slide-14 .founder14-idhead{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding-bottom:8px;
+  border-bottom:1px solid #E2E9E7
 }
 #slide-14 .founder14-name{
-  display:block;
   color:#0F2722;
-  font-size:30px;
+  font-size:24px;
   font-weight:700;
   letter-spacing:-.025em;
   line-height:1.1
 }
 #slide-14 .founder14-name em{
-  display:inline-block;
-  margin-left:10px;
+  margin-left:8px;
   font-style:normal;
   font-weight:500;
-  font-size:16px;
+  font-size:14px;
   color:#7C8785;
   letter-spacing:0
 }
 #slide-14 .founder14-role{
-  display:block;
-  margin-top:6px;
   color:var(--teal2);
-  font-size:12px;
+  font-size:11px;
   font-weight:700;
   letter-spacing:.04em
 }
 #slide-14 .founder14-prev{
-  display:block;
-  margin-top:3px;
   color:#677570;
   font-size:11px;
-  line-height:1.5
+  line-height:1.4
 }
-#slide-14 .founder14-meta{
-  margin-top:26px;
-  padding-top:14px;
-  border-top:1px solid #E2E9E7;
-  display:flex;
-  flex-direction:column;
-  gap:10px
-}
-#slide-14 .founder14-meta > div{
-  display:flex;
-  flex-direction:column;
-  gap:4px
-}
-#slide-14 .founder14-meta small{
-  color:#9AA6A4;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.18em
-}
-#slide-14 .founder14-meta b{
+
+#slide-14 .founder14-bio{
+  margin:0;
   color:#1A2E2A;
-  font-size:12px;
-  font-weight:600;
-  line-height:1.45
+  font-size:12.5px;
+  line-height:1.65;
+  font-weight:400;
+  letter-spacing:-.005em;
+  text-align:justify;
+  text-justify:inter-character
 }
 
-/* ---- RIGHT: narrative ----------------------------------------------- */
-#slide-14 .founder14-right{
-  display:grid;
-  grid-template-rows:auto auto auto auto minmax(176px,1fr) auto;
-  gap:12px;
-  min-height:0;
-  min-width:0
-}
-
-/* Lead paragraph */
-#slide-14 .founder14-lead{
-  display:flex;
-  align-items:flex-start;
-  padding:2px 0 14px;
-  border-bottom:1px solid #D8E2E0;
-  border-left:0;
-  margin-left:0;
-  min-height:0
-}
-#slide-14 .founder14-lead b{
-  display:block;
-  color:#0F2722;
-  font-size:17px;
-  font-weight:500;
-  line-height:1.5;
-  letter-spacing:-.01em;
-  padding-left:0
-}
-
-/* Big stat row */
-#slide-14 .founder14-stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:0;
-  border-top:1px solid #D8E2E0;
-  border-bottom:1px solid #D8E2E0
-}
-#slide-14 .founder14-stats > div{
-  display:flex;
-  flex-direction:column;
-  padding:14px 16px 12px;
-  border-right:1px solid #D8E2E0
-}
-#slide-14 .founder14-stats > div:last-child{border-right:none}
-#slide-14 .founder14-stats strong{
-  color:#0F2722;
-  font-size:30px;
-  font-weight:700;
-  letter-spacing:-.03em;
-  line-height:1;
-  font-family:'Inter','Helvetica Neue',Arial,sans-serif;
-  font-variant-numeric:tabular-nums
-}
-#slide-14 .founder14-stats span{
-  margin-top:6px;
-  color:#677570;
-  font-size:11px;
-  line-height:1.45
-}
-
-/* Career path (horizontal step list) */
+/* ---- Band 2: career path (horizontal step list) ------------------- */
 #slide-14 .founder14-path{
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:6px;
   min-width:0
 }
 #slide-14 .founder14-path small{
@@ -203,7 +131,7 @@
 #slide-14 .founder14-path li{
   display:flex;
   flex-direction:column;
-  gap:4px;
+  gap:2px;
   padding:4px 14px 4px 18px;
   border-left:1px solid #E2E9E7;
   position:relative;
@@ -219,123 +147,59 @@
   top:8px;
   width:9px;
   height:9px;
-  border-radius:50%;
-  background:#fff;
-  border:2px solid #C7D1CF;
-  flex-shrink:0;
+  background:#FFFFFF;
+  border:2px solid #BBD8D1;
+  border-radius:50%
 }
-#slide-14 .founder14-path li:first-child::before{
-  background:#0F2722;
-  border-color:#0F2722
+#slide-14 .founder14-path li.hi::before{
+  background:var(--teal);
+  border-color:var(--teal)
+}
+#slide-14 .founder14-path li.now::before{
+  background:var(--amber);
+  border-color:var(--amber)
 }
 #slide-14 .founder14-path li b{
   color:#0F2722;
   font-size:13px;
   font-weight:700;
-  line-height:1.2;
-  white-space:nowrap
+  line-height:1.2
+}
+#slide-14 .founder14-path li.hi b,
+#slide-14 .founder14-path li.now b{
+  color:var(--teal2)
 }
 #slide-14 .founder14-path li span{
-  color:#7C8785;
-  font-size:10px;
-  line-height:1.4;
-  white-space:nowrap
-}
-#slide-14 .founder14-path li.hi b{color:var(--teal2)}
-#slide-14 .founder14-path li.hi::before{
-  background:var(--teal);
-  border-color:var(--teal)
-}
-#slide-14 .founder14-path li.now b{color:#0F2722}
-#slide-14 .founder14-path li.now::before{
-  background:#fff;
-  border:2px solid var(--teal);
-  box-shadow:0 0 0 3px #EDF7F5
+  color:#677570;
+  font-size:10.5px;
+  line-height:1.35
 }
 
-/* Previous brand logos (single row, monochrome) */
-#slide-14 .founder14-brands{
-  display:grid;
-  grid-template-columns:112px minmax(0,1fr);
-  gap:14px;
-  align-items:center;
-  min-width:0;
-  padding:9px 14px;
-  background:#F7FBFA;
-  border-top:1px solid #D8E2E0;
-  border-bottom:1px solid #D8E2E0
-}
-#slide-14 .founder14-brands small{
-  color:#9AA6A4;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.18em;
-  white-space:nowrap
-}
-#slide-14 .founder14-brands ul{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:24px;
-  flex-wrap:nowrap;
-  height:42px;
-  min-width:0
-}
-#slide-14 .founder14-brands li{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:42px;
-  min-width:0
-}
-#slide-14 .founder14-brands img{
-  display:block;
-  height:38px;
-  width:auto;
-  max-width:130px;
-  opacity:.65;
-  filter:grayscale(1) contrast(1.15);
-  transition:opacity .2s ease, filter .2s ease;
-  object-fit:contain
-}
-#slide-14 .founder14-brands img:hover{
-  opacity:1;
-  filter:none
-}
-
-/* Core team — investor-facing operator matrix */
+/* ---- Band 3: core team — 5 equal cards with bio paragraphs -------- */
 #slide-14 .founder14-team{
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:8px;
   min-height:0;
-  padding:12px 14px 14px;
-  background:linear-gradient(180deg,#F7FBFA 0%,#FFFFFF 70%);
-  border:1px solid #D8E2E0;
-  border-top:4px solid var(--teal);
-  box-shadow:0 12px 28px rgba(28,57,51,.05)
+  flex:1
 }
 #slide-14 .founder14-team header{
   display:flex;
-  align-items:center;
+  align-items:baseline;
   justify-content:space-between;
-  padding:0 0 10px;
+  padding:0 0 4px;
   border-bottom:1px solid #D8E2E0;
   gap:16px
 }
 #slide-14 .founder14-team header small{
   color:#0F2722;
-  font-size:13px;
+  font-size:11px;
   font-weight:700;
-  letter-spacing:.06em;
-  flex-shrink:0
+  letter-spacing:.06em
 }
 #slide-14 .founder14-team header span{
   color:#697472;
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
   letter-spacing:.12em;
   text-align:right
@@ -345,46 +209,27 @@
   margin:0;
   padding:0;
   display:grid;
-  grid-template-columns:repeat(6,minmax(0,1fr));
-  grid-template-rows:repeat(2,minmax(0,1fr));
+  grid-template-columns:repeat(5,1fr);
   gap:10px;
   min-height:0;
-  flex:1;
-  counter-reset:team
-}
-#slide-14 .founder14-team li:nth-child(1){grid-column:1/span 2}
-#slide-14 .founder14-team li:nth-child(2){grid-column:3/span 2}
-#slide-14 .founder14-team li:nth-child(3){grid-column:5/span 2}
-#slide-14 .founder14-team li:nth-child(4){grid-column:2/span 2}
-#slide-14 .founder14-team li:nth-child(5){grid-column:4/span 2}
-#slide-14 .founder14-team li::before{
-  content:"0" counter(team);
-  position:absolute;
-  right:12px;
-  top:10px;
-  color:#C9D6D3;
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:-.03em;
-  font-family:'Inter','Helvetica Neue',Arial,sans-serif
+  flex:1
 }
 #slide-14 .founder14-team li{
-  counter-increment:team;
-  position:relative;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  gap:7px;
-  min-height:66px;
-  padding:12px 34px 12px 13px;
+  gap:5px;
+  padding:10px 12px 11px;
   background:#FFFFFF;
   border:1px solid #DDE7E4;
-  border-left:4px solid #BBD8D1;
-  box-shadow:0 6px 16px rgba(28,57,51,.035)
+  border-left:3px solid var(--teal);
+  box-shadow:0 4px 12px rgba(28,57,51,.04);
+  min-height:0;
+  overflow:hidden;
+  justify-content:flex-start
 }
 #slide-14 .founder14-team b{
   color:var(--teal2);
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
   letter-spacing:.12em;
   line-height:1.15
@@ -392,75 +237,36 @@
 #slide-14 .founder14-team p{
   margin:0;
   display:flex;
-  flex-direction:column;
-  gap:3px;
+  flex-direction:row;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:6px;
   color:#0F2722;
-  font-size:17px;
+  font-size:14px;
   font-weight:700;
-  line-height:1.1
+  line-height:1.2
 }
 #slide-14 .founder14-team p em{
   font-style:normal;
-  color:#0F2722;
-  font-size:13px;
-  font-weight:600;
-  line-height:1.15
-}
-#slide-14 .founder14-team p i{
-  font-style:normal;
   color:#7C8785;
-  font-size:10.5px;
-  font-weight:500;
-  line-height:1.35
-}
-
-/* Tags — pill row */
-#slide-14 .founder14-tags{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  min-height:0;
-  padding-top:4px
-}
-#slide-14 .founder14-tags small{
-  color:#9AA6A4;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.18em
-}
-#slide-14 .founder14-tags ul{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px
-}
-#slide-14 .founder14-tags li{
-  display:inline-block;
-  padding:5px 11px;
-  background:#F2F5F4;
-  border:1px solid #D8E2E0;
-  color:#3D4D49;
-  font-size:10.5px;
-  font-weight:500;
-  border-radius:0;
-  white-space:nowrap;
-  letter-spacing:.01em;
-  line-height:1.2
-}
-#slide-14 .founder14-tags li:hover{
-  background:#EDF7F5;
-  border-color:var(--teal);
-  color:var(--teal2)
-}
-#slide-14 .founder14-tags-tagline{
-  display:block;
-  margin:4px 0 0;
-  font-style:normal;
-  font-size:10.5px;
-  line-height:1.45;
-  color:#3D4D49;
-  letter-spacing:.01em;
+  font-size:11px;
   font-weight:500
+}
+#slide-14 .founder14-team i{
+  font-style:normal;
+  color:#677570;
+  font-size:10px;
+  font-weight:500;
+  line-height:1.3
+}
+#slide-14 .team-bio{
+  margin:4px 0 0;
+  padding-top:6px;
+  border-top:1px dashed #E2E9E7;
+  color:#3D4D49;
+  font-size:10.5px;
+  line-height:1.5;
+  font-weight:400;
+  text-align:justify;
+  text-justify:inter-character
 }

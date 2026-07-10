@@ -758,39 +758,7 @@
   font-style:normal
 }
 
-/* Slide 14 */
-#slide-14 .founder14-layout{
-  grid-template-columns:390px minmax(0,1fr)!important;
-  gap:34px!important
-}
-#slide-14 .founder14-hero{
-  padding:0!important;
-  border-top:5px solid var(--teal)!important;
-  background:#F5FAF8;
-  box-shadow:inset 0 0 0 1px #DCE8E5,0 20px 44px rgba(26,64,58,.08)!important
-}
-#slide-14 .founder14-portrait{
-  height:400px!important
-}
-#slide-14 .founder14-id{padding:22px 24px!important}
-#slide-14 .founder14-right{
-  display:grid!important;
-  grid-template-rows:auto 92px 82px 62px minmax(0,1fr) 46px!important;
-  gap:10px!important
-}
-#slide-14 .founder14-lead{
-  background:#173F39!important;
-  color:#fff!important;
-  padding:18px 22px!important;
-  border:0!important
-}
-#slide-14 .founder14-lead b{color:#fff!important;font-size:18px!important}
-#slide-14 .founder14-team ul{
-  grid-template-columns:repeat(5,1fr)!important;
-  grid-template-rows:1fr!important
-}
-#slide-14 .founder14-team li{grid-column:auto!important}
-/* founder14-tags: all 7 tags now show, plus a tagline below */
+/* Slide 14 — see assets/deck-slide-14.css for the canonical layout. */
 
 /* Appendix product pages: use product screenshots instead of abstract concept art. */
 .appendix-slide.product-shots-ready .product-shot-page{

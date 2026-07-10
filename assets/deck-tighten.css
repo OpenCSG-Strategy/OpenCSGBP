@@ -114,13 +114,7 @@
 }
 
 /* ---------- 14. Slide 14 · Founder + team ---------- */
-#slide-14 .ceo-story{
-  top:170px!important;
-  gap:12px!important
-}
-#slide-14 .ceo-story .leadline{
-  margin-bottom:14px!important
-}
+/* Slide 14 — see assets/deck-slide-14.css for the canonical layout. */
 
 /* ---------- 15. Slide 15 · Profit model (target slide) ---------- */
 #slide-16 .profit15{
