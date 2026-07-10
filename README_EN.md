@@ -1,34 +1,114 @@
 <div align="center">
 
 # OpenCSG Investor Deck 2026
-> Global Open Source · AgenticOps · AI Sovereignty · Investor Materials
-> 全球开源 · AgenticOps · AI 主权 · 投资人路演材料
 
-![OpenCSG Investor Deck](./docs/assets/cover.png)
+**Empowering everyone with large models · 让大模型赋能每一个人**
 
-![Version](https://img.shields.io/badge/Version-2026.07.1-blue?style=flat-square)
-![Pages](https://img.shields.io/badge/Slides-40-teal?style=flat-square)
-![Languages](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)
-![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)
+> Investor pitch deck · 40 slides · 10 languages · single HTML file
 
-[Overview](#-overview) · [Quick Start](#-quick-start) · [Features](#-features) · [Repo Layout](#-repo-layout) · [Scripts](#-scripts) · [i18n](#-i18n) · [Export PDF / PPTX](#-export-pdf--pptx) · [FAQ](#-faq)
-
-[简体中文](./README.md) | __English__
+[![Version](https://img.shields.io/badge/Version-2026.07.1-blue?style=flat-square)](#)
+[![Slides](https://img.shields.io/badge/Slides-40-teal?style=flat-square)](#)
+[![i18n](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)](#)
+[![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)](#)
 
 </div>
 
-> **Recent updates (2026-07)**:
-> - **Cover copy** — Main title updated to "Empowering every person with large models"; 4 bottom tags updated to "Core open source · Hybrid · Agentic-driven · Sovereign AI" (per IR reference)
-> - **Appendix polish** — slide 25 capability cards equalized; slide 26 scenario descriptions aligned with footer
-> - **10-language coverage** — 4 new cover tags translated for all 8 non-EN/non-ZH locales (no more English fallback)
+---
+
+<div align="center">
+
+### 🌐 Language / 语言
+
+| [🇨🇳 简体中文](./README.md) | [🇺🇸 English](./README_EN.md) |
+
+> GitHub renders whichever README matches the viewer's account/browser language. The two files cross-link at the top and bottom.
+
+</div>
 
 ---
 
-## Overview
+## ⚡ 30-Second Start
+
+Pick the path that fits you:
+
+| You are | Use this | Time |
+| --- | --- | --- |
+| Developer / want to edit locally | [Path A · Local Node setup](#-path-a--local-node-setup) | ~2 min |
+| **AI Coding Agent user** (Codex / Claude Code / Cursor / Workbuddy / CSGLite) | [Path B · Hand it to an AI agent](#-path-b--hand-it-to-an-ai-coding-agent) | ~30 s |
+| Just want to view, no install | [Path C · GitHub Pages live demo](#-path-c--github-pages-live-demo) | 0 s |
+
+---
+
+## 🅰️ Path A · Local Node setup
+
+Requirements: **Node.js ≥ 18**, **npm ≥ 9**, GitHub access.
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/OpenCSG-Strategy/OpenCSGBP.git
+cd OpenCSGBP
+
+# 2. Install dependencies (Playwright auto-downloads Chromium)
+npm install
+
+# 3. Start the local server (default 127.0.0.1:4173)
+npm run serve
+```
+
+Open **http://127.0.0.1:4173** in your browser.
+
+> Port already taken? `PORT=4180 npm run serve` to pick another.
+> Playwright download slow? `PLAYWRIGHT_DOWNLOAD_HOST=https://npmmirror.com/mirrators/playwright npm install`.
+
+## 🅱️ Path B · Hand it to an AI Coding Agent
+
+Paste this prompt block into your AI agent (Codex / Claude Code / Cursor Composer / Workbuddy / CSGLite / etc.) and the agent will clone + install + start + open the deck for you:
+
+```text
+Please boot the OpenCSG investor pitch deck for me:
+
+  git clone https://github.com/OpenCSG-Strategy/OpenCSGBP.git
+  cd OpenCSGBP
+  npm install
+  npm run serve
+
+Once it's running, open http://127.0.0.1:4173 in a browser tab.
+Default language is Chinese. Use the language pill in the top-right
+toolbar to switch to English / 日本語 / 한국어 / العربية / Русский /
+Français / Deutsch / Español / Português.
+
+If anything blocks you, first read AGENTS.md at the repo root and
+docs/CONTRIBUTING-i18n.md — they describe the project's intent,
+how to start it, and the hard rule that any text change must ship
+with 10-language translations.
+```
+
+**Per-agent entry points:**
+
+| Agent | Recommended entry |
+| --- | --- |
+| **Codex CLI / Cursor Composer / Continue.dev** | Paste the prompt block above directly into the chat; long-context friendly |
+| **Claude Code / Workbuddy / CSGLite** | `@repo` the GitHub URL first, then paste the prompt; supports in-place repo edits |
+| **OpenCode / Aider / Devin / Gemini CLI** | `clone` the repo — the tool will auto-load `AGENTS.md` and understand the project |
+| **Generic web AI** (ChatGPT, Gemini App, etc.) | Paste the prompt; they won't actually clone, but will walk you through the steps |
+
+> 📌 **Why this works**: the repo root has an `AGENTS.md` following the [agents.md spec](https://agents.md/). Codex / Claude Code / Cursor / Devin / Gemini CLI / OpenCode all auto-load it. So even if you only say *"boot this repo"* to the AI, it will read AGENTS.md and know exactly what to do.
+
+## 🅲️ Path C · GitHub Pages live demo
+
+GitHub Pages is enabled on this repo. Just visit:
+
+> 🌐 **<https://OpenCSG-Strategy.github.io/OpenCSGBP/>**
+
+Zero install. Full feature parity with the local build (PDF export is supported, PPTX export is local-only because it bundles images).
+
+---
+
+## 📖 Overview
 
 This repository hosts the **OpenCSG 2026 investor pitch deck as a single self-contained HTML file** — 40 slides, designed at 1600×900 (16:9), with on-screen navigation, PDF / PPTX export, language switching, keyboard controls, thumbnail overview mode, and inline QR codes.
 
-The deck is plain HTML / CSS / vanilla JS — no front-end framework, no build step. A small set of Node scripts covers the operational side:
+The deck is plain HTML / CSS / vanilla JS — **no front-end framework, no build step**. A small set of Node scripts covers the operational side:
 
 - Local static server with an export API (`npm run serve`)
 - Headless PDF rendering (`npm run export:pdf`)
@@ -39,33 +119,7 @@ Built for **investor-facing scenarios where content, typography, and cross-local
 
 ![AgenticOps methodology](./docs/assets/agentic-ops.png)
 
-## Quick Start
-
-### Requirements
-
-| Tool | Version | Used for |
-| --- | --- | --- |
-| Node.js | ≥ 18 | Running scripts |
-| npm | ≥ 9 | Dependency install |
-| Google Chrome / Chromium | latest | Headless renderer for PDF / PPTX |
-| Playwright | 1.61+ | Bundled via `devDependencies` |
-
-### 3-step setup
-
-```bash
-# 1. Clone & install
-git clone git@github.com:frankfika/OpenCSG_BP_HTML_2026.git
-cd OpenCSG_BP_HTML_2026
-npm install
-
-# 2. Start the local server (defaults to 127.0.0.1:4173)
-npm run serve
-# Open http://127.0.0.1:4173 in a browser
-```
-
-> Port already in use? Pick another one: `PORT=4174 npm run serve`
-
-## Features
+## ✨ Features
 
 ![Platform overview](./docs/assets/platform.png)
 
@@ -89,21 +143,21 @@ More slide previews:
 | --- | --- | --- |
 | ![Community](./docs/assets/community.png) | ![Business model](./docs/assets/business.png) | ![Founders](./docs/assets/team.png) |
 
-## Repo Layout
+## 📁 Repo Layout
 
 ```
-OpenCSG_BP_HTML_2026/
+OpenCSGBP/
 ├── index.html                # Entry — all 40 slides live here
+├── AGENTS.md                 # AI Coding Agent entrypoint (agents.md spec)
+├── CLAUDE.md                 # Claude Code specific (mirrors AGENTS.md)
 ├── assets/
 │   ├── deck-*.css / .js      # Slide styles & behaviour
 │   ├── i18n/                 # 10-language translation packs
 │   ├── brand-logos/          # Open-source / vendor brand marks
-│   ├── case-logos/           # Customer case logos
-│   ├── customer-logos/       # Enterprise customer logos
 │   ├── founder-logos/        # Founder background logos
+│   ├── cases/                # Case-study reference imagery
 │   ├── roadmap/              # Roadmap & OPC visual assets
 │   ├── appendix/             # Appendix illustrations
-│   ├── cases/                # Case-study reference imagery
 │   └── *.png / *.jpg / *.svg # Shared imagery
 ├── scripts/
 │   ├── serve-deck.cjs        # Static server + export API
@@ -113,11 +167,12 @@ OpenCSG_BP_HTML_2026/
 │   ├── capture-readme-screenshots.mjs
 │   └── i18n/                 # Translation audit / gen / apply
 ├── docs/
+│   ├── CONTRIBUTING-i18n.md  # Hard rules for text changes
 │   └── assets/               # Real screenshots used by this README
 └── package.json
 ```
 
-## Scripts
+## 🛠 Scripts
 
 | Command | Description |
 | --- | --- |
@@ -127,6 +182,8 @@ OpenCSG_BP_HTML_2026/
 | `npm run export:pptx` | Export image-based PPTX |
 | `npm run export:pptx-bilingual` | Export the bilingual (zh + en) PPTX bundle in one shot |
 | `node scripts/capture-readme-screenshots.mjs` | Pull README screenshots from `127.0.0.1:4173` into `docs/assets/` |
+| `bash scripts/i18n/run-all.sh audit` | Check 10-language translation coverage |
+| `bash scripts/i18n/run-all.sh apply` | Write hand translations into the 8 other language packs |
 
 ### Export flags
 
@@ -149,13 +206,17 @@ Supported sections: `cover` `main` `case` `product` `appendix`
 > `POST http://127.0.0.1:4173/api/export` with a JSON body
 > `{ lang, ratio, format, scope, sections, watermarkEnabled, watermarkText, filename, disposition }`.
 
-## i18n
+## 🌍 i18n
 
 ![UI toolbar](./docs/assets/ui-toolbar.png)
 
 - 10 translation packs live in `assets/i18n/*.json`; `zh.json` is the source of truth.
 - HTML elements are marked with `data-en` / `data-i18n`; the runtime swaps text based on the current language.
 - Missing translations fall back to English, never to a blank string.
+
+> **🚨 Read this before changing any copy**: [`docs/CONTRIBUTING-i18n.md`](./docs/CONTRIBUTING-i18n.md)
+> These are **hard rules**: change Chinese → update `data-en` → append 8-language translations to `translation-pack.json` → `apply` → `audit` 100% before merge.
+> PRs that violate the rule are sent back. No "merge now, translate later".
 
 Workflow for adding or updating a phrase:
 
@@ -167,9 +228,9 @@ bash scripts/i18n/run-all.sh apply
 bash scripts/i18n/run-all.sh audit
 ```
 
-See [`assets/i18n/README.md`](./assets/i18n/README.md) for the full conventions.
+See [`assets/i18n/README.md`](./assets/i18n/README.md) for full conventions and [`docs/CONTRIBUTING-i18n.md`](./docs/CONTRIBUTING-i18n.md) for the 3 ironclad rules + common pitfalls + brand-name whitelist.
 
-## Export PDF / PPTX
+## 📤 Export PDF / PPTX
 
 ### In-browser export
 
@@ -190,7 +251,7 @@ node scripts/export-pptx.cjs --lang=zh --watermark="DRAFT"
 
 The PPTX is **fully image-based** — every slide is rendered to a 1600×900 PNG by Playwright, then packaged with `pptxgenjs`. The trade-off: layout is preserved 100% across platforms, but text is not editable inside PowerPoint. To change copy, edit `index.html` and re-export.
 
-## Design Tokens
+## 🎨 Design Tokens
 
 | Token | Value | Role |
 | --- | --- | --- |
@@ -204,13 +265,13 @@ The PPTX is **fully image-based** — every slide is rendered to a 1600×900 PNG
 
 > Tokens are centralized in the `:root` block of `assets/deck-base.css`; changing them once propagates everywhere.
 
-## FAQ
+## ❓ FAQ
 
 <details>
 <summary><b>Q1. The page is blank after starting the server.</b></summary>
 
-- Confirm `npm install` finished (Playwright bundles a browser that needs to download).
-- Check the terminal log. 80% of the time the error is `EADDRINUSE` — pick a different port with `PORT=4180 npm run serve`.
+- Confirm <code>npm install</code> finished (Playwright bundles a browser that needs to download).
+- Check the terminal log. 80% of the time the error is <code>EADDRINUSE</code> — pick a different port with <code>PORT=4180 npm run serve</code>.
 </details>
 
 <details>
@@ -235,22 +296,47 @@ localStorage.removeItem('opencsg.deck.lang');
 location.reload();
 ```
 
-Or force a language via the URL: `?lang=zh`.
+Or force a language via the URL: <code>?lang=zh</code>.
 </details>
 
 <details>
 <summary><b>Q5. I want to add a new slide.</b></summary>
 
-1. Duplicate an existing `<section class="slide-wrap" data-section="main">…</section>` and rewrite the copy.
-2. Wrap every key phrase with `data-en="English source text"` and append the phrase to `scripts/i18n/translation-pack.json`.
-3. `bash scripts/i18n/run-all.sh apply && bash scripts/i18n/run-all.sh audit`.
-4. `node scripts/capture-readme-screenshots.mjs` to refresh README screenshots.
+1. Duplicate an existing <code>&lt;section class="slide-wrap" data-section="main"&gt;…&lt;/section&gt;</code> and rewrite the copy.
+2. Wrap every key phrase with <code>data-en="English source text"</code> and append the phrase to <code>scripts/i18n/translation-pack.json</code>.
+3. <code>bash scripts/i18n/run-all.sh apply &amp;&amp; bash scripts/i18n/run-all.sh audit</code>.
+4. <code>node scripts/capture-readme-screenshots.mjs</code> to refresh README screenshots.
 </details>
 
-## Maintainers
+<details>
+<summary><b>Q6. Best way to use an AI agent (Codex / Claude / Workbuddy / CSGLite) to edit this repo?</b></summary>
 
-- Repo: [github.com/frankfika/OpenCSG_BP_HTML_2026](https://github.com/frankfika/OpenCSG_BP_HTML_2026)
-- Screenshot script: `scripts/capture-readme-screenshots.mjs`
+The repo root ships an <a href="./AGENTS.md"><code>AGENTS.md</code></a> following the <a href="https://agents.md/">agents.md spec</a> that all major AI Coding Agents auto-load.
+Just hand the agent a plain-English instruction, e.g.:
+<ul>
+<li><i>"Translate the founder bio on slide 14 into all 8 other languages."</i></li>
+<li><i>"Change the cover headline to XXX and update all 10 language packs."</i></li>
+<li><i>"Export the current deck to a bilingual PDF under <code>.exports/</code>."</i></li>
+</ul>
+The agent will read <code>AGENTS.md</code> + <code>docs/CONTRIBUTING-i18n.md</code> first, then follow the rules — including the 10-language coverage gate.
+</details>
+
+## 🛡 Maintainers
+
+- Repo: [github.com/OpenCSG-Strategy/OpenCSGBP](https://github.com/OpenCSG-Strategy/OpenCSGBP)
+- AI Agent entry: [`AGENTS.md`](./AGENTS.md)
+- i18n rules: [`docs/CONTRIBUTING-i18n.md`](./docs/CONTRIBUTING-i18n.md)
 - i18n tooling: `scripts/i18n/run-all.sh {audit|gen|apply|all}`
+- Screenshot script: `scripts/capture-readme-screenshots.mjs`
+
+---
+
+<div align="center">
+
+🇨🇳 [简体中文](./README.md) · 🇺🇸 [English](./README_EN.md)
+
+Made with ☕ for OpenCSG investor relations.
+
+</div>
 
 > This repository is currently distributed as **internal investor material**. For external use, please contact the OpenCSG brand team for licensing.
