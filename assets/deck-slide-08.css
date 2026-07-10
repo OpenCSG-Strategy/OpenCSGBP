@@ -63,6 +63,18 @@
   object-fit:contain;
   object-position:center top
 }
+/* When the link wraps an img inside figure, drop the duplicated border/padding/background. */
+#slide-08 .p8-node figure .product-link-screen{
+  padding:0;
+  border:0;
+  background:transparent;
+}
+#slide-08 .p8-node figure .product-link-screen:hover{
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  transform:none;
+}
 #slide-08 .csghub-early img{
   object-position:left top
 }

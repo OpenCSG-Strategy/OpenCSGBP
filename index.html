@@ -515,14 +515,15 @@
 </style>
 
   <link rel="stylesheet" href="assets/deck-visual-polish.css?v=20260706g">
-  <link rel="stylesheet" href="assets/deck-slide-07.css?v=20260707a">
+  <link rel="stylesheet" href="assets/deck-slide-07.css?v=20260710sovereignty6">
   <link rel="stylesheet" href="assets/deck-slide-10.css?v=20260707c">
   <link rel="stylesheet" href="assets/deck-slide-14.css?v=20260707c">
   <link rel="stylesheet" href="assets/deck-market.css?v=20260707a">
-  <link rel="stylesheet" href="assets/deck-cover.css?v=20260707a">
+  <link rel="stylesheet" href="assets/deck-cover.css?v=20260710brand2">
   <link rel="stylesheet" href="assets/deck-slide-05-07.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide-08.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-bp-humanize.css?v=20260710design2">
+  <link rel="stylesheet" href="assets/deck-community-links.css?v=20260710a">
 
   <style id="slide-12-opencore-story-restore">
     /* Keep the page's logic visible at a glance: mechanism → editions → proof. */
@@ -1398,15 +1399,15 @@
     overflow: hidden !important;
     border: 1px solid #D7E2E0 !important;
     border-radius: 4px !important;
-    background: #F7FAF9 !important;
+    background: linear-gradient(135deg, #EAF4F2 0%, #F8FBFA 62%, #F1F2FC 100%) !important;
   }
 
   #slide-08 .p8-node figure img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: center top !important;
-    filter: saturate(.9) contrast(.99) !important;
+    filter: saturate(1.24) contrast(1.08) !important;
     transition: transform .45s cubic-bezier(.25,.1,.25,1), filter .35s ease !important;
   }
 
@@ -1956,6 +1957,33 @@
     overflow: hidden !important;
   }
 
+  /* Keep the upgrade rails inside their grid tracks. The previous 14px
+     tracks forced the copy to overflow vertically into adjacent product cards. */
+  #slide-08 .p8-map {
+    grid-template-columns: minmax(0,1fr) 52px minmax(0,1fr) 52px minmax(0,1fr) 52px minmax(0,1fr) !important;
+    overflow: hidden !important;
+  }
+
+  #slide-08 .p8-evolve-gap {
+    overflow: hidden !important;
+  }
+
+  #slide-08 .p8-evolve-arrow {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  #slide-08 .p8-evolve-arrow b {
+    writing-mode: horizontal-tb !important;
+    white-space: nowrap !important;
+    font-size: 7px !important;
+  }
+
+  #slide-08 .p8-evolve-copy {
+    display: none !important;
+  }
+
   .lang-en #slide-08 .p8-evolve-copy b,
   html[lang="en"] #slide-08 .p8-evolve-copy b {
     font-size: 7px !important;
@@ -1964,6 +1992,167 @@
   .lang-en #slide-08 .p8-evolve-copy span,
   html[lang="en"] #slide-08 .p8-evolve-copy span {
     font-size: 6.5px !important;
+  }
+
+  /* 08 · Progression pass: make each stage output visibly feed the next stage. */
+  #slide-08 .p8-sequence > div:nth-child(-n+2) {
+    background: #F5F9FA !important;
+  }
+
+  #slide-08 .p8-sequence > div:nth-child(n+3) {
+    background: #F2F8F6 !important;
+  }
+
+  #slide-08 .p8-sequence > div:not(:last-child)::before {
+    content: "→" !important;
+    position: absolute !important;
+    z-index: 3 !important;
+    right: -10px !important;
+    top: 50% !important;
+    width: 19px !important;
+    height: 19px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #BCD2CE !important;
+    border-radius: 50% !important;
+    background: #FFFFFF !important;
+    color: #43877D !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    transform: translateY(-50%) !important;
+  }
+
+  #slide-08 .p8-sequence > div b {
+    font-size: 12.5px !important;
+  }
+
+  #slide-08 .p8-sequence > div small {
+    font-size: 8.2px !important;
+    letter-spacing: .02em !important;
+  }
+
+  #slide-08 .p8-map {
+    grid-template-columns: minmax(0,1fr) 104px minmax(0,1fr) 104px minmax(0,1fr) 104px minmax(0,1fr) !important;
+    padding: 0 38px !important;
+  }
+
+  #slide-08 .p8-node-copy {
+    padding: 16px 14px 11px !important;
+  }
+
+  #slide-08 .p8-node h3 {
+    margin-top: 10px !important;
+    font-size: 22px !important;
+  }
+
+  #slide-08 .p8-node p {
+    margin-top: 8px !important;
+    font-size: 10.7px !important;
+    line-height: 1.42 !important;
+  }
+
+  #slide-08 .p8-detail {
+    gap: 3px !important;
+    margin-top: 8px !important;
+    font-size: 8.7px !important;
+    line-height: 1.22 !important;
+  }
+
+  #slide-08 .p8-tags {
+    padding-top: 11px !important;
+  }
+
+  #slide-08 .p8-node-copy > a {
+    margin-top: 10px !important;
+  }
+
+  #slide-08 .p8-node figure {
+    flex-basis: 118px !important;
+    height: 118px !important;
+  }
+
+  #slide-08 .p8-evolve-gap {
+    position: relative !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    padding: 0 7px !important;
+    overflow: visible !important;
+  }
+
+  #slide-08 .p8-evolve-arrow {
+    position: relative !important;
+    width: 100% !important;
+    height: 24px !important;
+    justify-content: center !important;
+  }
+
+  #slide-08 .p8-evolve-arrow i {
+    width: 100% !important;
+    height: 2px !important;
+    border-radius: 0 !important;
+    background: linear-gradient(90deg, color-mix(in srgb,var(--ev-color) 18%,#D5E1DE), var(--ev-color)) !important;
+    opacity: 1 !important;
+  }
+
+  #slide-08 .p8-evolve-arrow i::after {
+    content: "" !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 7px !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-right: 2px solid var(--ev-color) !important;
+    border-bottom: 2px solid var(--ev-color) !important;
+    transform: rotate(-45deg) !important;
+  }
+
+  #slide-08 .p8-evolve-arrow b {
+    position: absolute !important;
+    left: 50% !important;
+    top: -13px !important;
+    padding: 3px 6px !important;
+    border: 1px solid color-mix(in srgb,var(--ev-color) 28%,#D5E1DE) !important;
+    border-radius: 999px !important;
+    background: #FFFFFF !important;
+    color: var(--ev-color) !important;
+    font-size: 7.4px !important;
+    letter-spacing: .06em !important;
+    transform: translateX(-50%) !important;
+  }
+
+  #slide-08 .p8-evolve-copy {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    min-height: 108px !important;
+    justify-content: flex-start !important;
+    gap: 7px !important;
+    padding: 12px 3px 0 !important;
+    border-top: 1px dashed color-mix(in srgb,var(--ev-color) 30%,#D5E1DE) !important;
+    text-align: center !important;
+  }
+
+  #slide-08 .p8-evolve-copy b,
+  .lang-en #slide-08 .p8-evolve-copy b,
+  html[lang="en"] #slide-08 .p8-evolve-copy b {
+    color: color-mix(in srgb,var(--ev-color) 78%,#183D37) !important;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+  }
+
+  #slide-08 .p8-evolve-copy span,
+  .lang-en #slide-08 .p8-evolve-copy span,
+  html[lang="en"] #slide-08 .p8-evolve-copy span {
+    display: block !important;
+    color: #5A6D69 !important;
+    font-size: 8.6px !important;
+    line-height: 1.38 !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+
+  #slide-08 .p8-foundation p {
+    font-size: 10.9px !important;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -2518,6 +2707,374 @@
   }
 </style>
 
+<style id="slide-12-opencore-visual-polish">
+  #slide-12 .open12-reframed{
+    grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)!important;
+    grid-template-rows:158px minmax(0,1fr) 62px!important;
+    gap:14px!important;
+  }
+
+  /* OpenCore flywheel: light narrative rail, not a dark dashboard banner. */
+  #slide-12 .oc12-flywheel{
+    grid-template-columns:300px minmax(0,1fr) 350px!important;
+    border-top:2px solid #23877B!important;
+    border-bottom:1px solid #C8DAD6!important;
+    background:linear-gradient(90deg,#F7FAF9 0%,#EFF7F5 52%,#F8FAF9 100%)!important;
+  }
+  #slide-12 .oc12-model-summary,
+  #slide-12 .oc12-model-flow,
+  #slide-12 .oc12-precedents{
+    border-right:1px solid #D5E3E0!important;
+  }
+  #slide-12 .oc12-precedents{border-right:0!important}
+  #slide-12 .oc12-model-summary{padding:16px 20px!important}
+  #slide-12 .oc12-model-summary small,
+  #slide-12 .oc12-precedents>small{
+    color:#23877B!important;
+    font-size:9px!important;
+    letter-spacing:.14em!important;
+  }
+  #slide-12 .oc12-model-summary b{
+    color:#173E38!important;
+    font-size:21px!important;
+    letter-spacing:-.025em!important;
+  }
+  #slide-12 .oc12-model-summary p{
+    color:#5C6F6A!important;
+    font-size:10.5px!important;
+    line-height:1.42!important;
+  }
+  #slide-12 .oc12-model-flow{padding:20px 10px!important}
+  #slide-12 .oc12-model-flow>span{
+    position:relative!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+    padding:10px 11px 10px 34px!important;
+    border:0!important;
+    border-left:1px solid #C9DAD6!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-model-flow>span:first-child{border-left:0!important}
+  #slide-12 .oc12-model-flow em{
+    position:absolute!important;
+    left:10px!important;
+    top:50%!important;
+    grid-row:auto!important;
+    transform:translateY(-50%)!important;
+    color:#23877B!important;
+    font-size:13px!important;
+  }
+  #slide-12 .oc12-model-flow strong{color:#1C403A!important;font-size:11px!important}
+  #slide-12 .oc12-model-flow small{color:#6C7C78!important;font-size:8.5px!important;line-height:1.25!important}
+  #slide-12 .oc12-precedents{padding:17px 16px!important;gap:8px!important}
+  #slide-12 .oc12-precedents>div{grid-template-columns:repeat(3,1fr)!important;gap:4px 10px!important}
+  #slide-12 .oc12-precedents span{
+    padding:4px 0!important;
+    border:0!important;
+    border-bottom:1px solid #D7E4E1!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-precedents b{color:#264A43!important;font-size:12px!important}
+  #slide-12 .oc12-precedents em{color:#71807C!important;font-size:8px!important;line-height:1.2!important}
+
+  /* Edition story: two editorial columns with one restrained paid highlight. */
+  #slide-12 .oc12-edition-story{
+    border:0!important;
+    border-top:2px solid #9ABCB6!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-edition-story>header{
+    padding:12px 0 10px!important;
+    border-bottom:1px solid #D5E3E0!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-edition-story>header h3{font-size:19px!important}
+  #slide-12 .oc12-edition-story>header p{max-width:500px;font-size:10px!important}
+  #slide-12 .oc12-editions{grid-template-columns:1fr 54px 1fr!important;padding:11px 0 8px!important}
+  #slide-12 .oc12-editions article{
+    padding:10px 12px!important;
+    border:0!important;
+    border-left:2px solid #9EC6BF!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-editions article.enterprise{
+    border:0!important;
+    border-left:3px solid #23877B!important;
+    background:linear-gradient(90deg,#EDF7F5 0%,rgba(237,247,245,.35) 100%)!important;
+  }
+  #slide-12 .oc12-edition-title{border-bottom:0!important;padding-bottom:5px!important}
+  #slide-12 .oc12-edition-title>span{
+    width:auto!important;height:auto!important;
+    background:transparent!important;color:#23877B!important;
+    font-size:10px!important;
+  }
+  #slide-12 .oc12-edition-title b{font-size:17px!important}
+  #slide-12 .oc12-editions article>p{min-height:0!important;margin:7px 0!important;font-size:9.6px!important}
+  #slide-12 .oc12-editions li{font-size:9.2px!important}
+  #slide-12 .oc12-upgrade i{font-size:22px!important}
+  #slide-12 .oc12-upgrade b{font-size:8.5px!important}
+  #slide-12 .oc12-shared{margin:0!important;padding-top:8px!important}
+  #slide-12 .oc12-shared span{
+    padding:0!important;border:0!important;color:#61736E!important;font-size:8.5px!important;
+  }
+  #slide-12 .oc12-shared span+span:before{content:"·";margin-right:6px;color:#8AA9A3}
+
+  /* Capability boundary: remove spreadsheet chrome; softly mark paid columns only. */
+  #slide-12 .oc12-capability-panel{
+    border:0!important;
+    border-top:2px solid #23877B!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-capability-panel>header{
+    padding:11px 0 10px!important;
+    border-bottom:1px solid #D5E3E0!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-capability-panel header h3{font-size:17px!important}
+  #slide-12 .oc12-capability-panel header p{font-size:9.5px!important}
+  #slide-12 .oc12-capability-table{padding:7px 0 0!important;background:transparent!important}
+  #slide-12 .oc12-capability-table>div{border:0!important;border-bottom:1px solid #E2EAE8!important}
+  #slide-12 .oc12-capability-table>div>*{
+    border:0!important;
+    background:transparent!important;
+    color:#4A5E59!important;
+    font-size:9.5px!important;
+  }
+  #slide-12 .oc12-capability-table>div>*:first-child{
+    padding-left:2px!important;
+    color:#315B53!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-capability-table>div>*:nth-child(4),
+  #slide-12 .oc12-capability-table>div>*:nth-child(5){background:rgba(234,245,242,.72)!important}
+  #slide-12 .oc12-capability-table .cap-head>*{
+    color:#657772!important;
+    background:transparent!important;
+    font-size:9.5px!important;
+  }
+  #slide-12 .oc12-capability-table .cap-head>*:nth-child(4),
+  #slide-12 .oc12-capability-table .cap-head>*:nth-child(5){
+    color:#17695F!important;
+    border-top:2px solid #23877B!important;
+    font-weight:850!important;
+  }
+  #slide-12 .oc12-capability-table .yes{color:#23877B!important}
+  #slide-12 .oc12-capability-table .no{color:#A0AAA7!important;font-size:11px!important}
+  #slide-12 .oc12-capability-table .partial{color:#617A75!important}
+
+  /* Bottom boundary: a quiet commercial summary, not another table. */
+  #slide-12 .oc12-boundary{
+    height:62px!important;
+    border-top:1px solid #9DBEB8!important;
+    border-bottom:1px solid #D5E3E0!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-boundary>div{grid-template-columns:170px repeat(4,1fr)!important}
+  #slide-12 .oc12-boundary b,
+  #slide-12 .oc12-boundary span{
+    border:0!important;
+    background:transparent!important;
+    color:#58706A!important;
+  }
+  #slide-12 .oc12-boundary>div>*:nth-child(4),
+  #slide-12 .oc12-boundary>div>*:nth-child(5){background:#EDF7F5!important;color:#17695F!important}
+
+  /* Final editorial pass: asymmetry, whitespace and hierarchy replace card/table chrome. */
+  #slide-12 .open12-reframed{
+    grid-template-columns:minmax(0,.74fr) minmax(0,1.26fr)!important;
+    grid-template-rows:150px minmax(0,1fr) 58px!important;
+    gap:14px 16px!important;
+  }
+  #slide-12 .oc12-flywheel{
+    grid-template-columns:286px minmax(0,1fr) 314px!important;
+    border:0!important;
+    border-top:2px solid #23877B!important;
+    background:#FFFFFF!important;
+    box-shadow:0 7px 24px rgba(25,78,69,.055)!important;
+  }
+  #slide-12 .oc12-model-summary{
+    padding:15px 20px!important;
+    border:0!important;
+    background:linear-gradient(135deg,#EDF7F5 0%,#F7FBFA 100%)!important;
+  }
+  #slide-12 .oc12-model-summary b{font-size:22px!important}
+  #slide-12 .oc12-model-summary p{font-size:10.2px!important}
+  #slide-12 .oc12-model-flow{
+    position:relative!important;
+    padding:20px 4px!important;
+    border:0!important;
+    background:#FFFFFF!important;
+  }
+  #slide-12 .oc12-model-flow:before{
+    content:"";
+    position:absolute;
+    left:9%;right:9%;top:50%;height:1px;
+    background:#A8C8C2;
+  }
+  #slide-12 .oc12-model-flow>span{
+    z-index:1!important;
+    align-items:flex-start!important;
+    justify-content:center!important;
+    padding:12px 8px 12px 28px!important;
+    border:0!important;
+    background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.92) 100%)!important;
+  }
+  #slide-12 .oc12-model-flow em{
+    left:7px!important;
+    width:17px;height:17px;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    border:1px solid #75ADA4;
+    border-radius:50%;
+    background:#FFFFFF;
+    font-size:8px!important;
+  }
+  #slide-12 .oc12-model-flow strong{font-size:10.6px!important}
+  #slide-12 .oc12-model-flow small{font-size:7.9px!important}
+  #slide-12 .oc12-precedents{
+    padding:15px 18px!important;
+    border:0!important;
+    background:#F8FAF9!important;
+  }
+  #slide-12 .oc12-precedents>div{gap:2px 12px!important}
+  #slide-12 .oc12-precedents span{border-bottom:1px solid #E1E9E7!important}
+  #slide-12 .oc12-precedents b{font-size:11.5px!important}
+  #slide-12 .oc12-precedents em{font-size:7.6px!important}
+
+  #slide-12 .oc12-edition-story{border-top:0!important}
+  #slide-12 .oc12-edition-story>header{
+    padding:4px 0 9px!important;
+    border-bottom:0!important;
+    align-items:stretch!important;
+    text-align:left!important;
+  }
+  #slide-12 .oc12-edition-story>header h3{font-size:20px!important}
+  #slide-12 .oc12-edition-story>header p{font-size:9.8px!important;line-height:1.34!important}
+  #slide-12 .oc12-editions{
+    grid-template-columns:1fr!important;
+    grid-template-rows:minmax(0,1fr) 27px minmax(0,1fr)!important;
+    gap:0!important;
+    padding:3px 0 5px!important;
+    border-top:1px solid #BFD4D0;
+  }
+  #slide-12 .oc12-editions article{
+    display:grid!important;
+    grid-template-columns:145px minmax(0,1fr)!important;
+    grid-template-rows:auto minmax(0,1fr)!important;
+    column-gap:12px!important;
+    padding:10px 8px!important;
+    border:0!important;
+    border-bottom:1px solid #DCE7E4!important;
+    background:transparent!important;
+  }
+  #slide-12 .oc12-editions article.enterprise{
+    border:0!important;
+    border-bottom:0!important;
+    background:linear-gradient(90deg,#EDF7F5 0%,rgba(237,247,245,.24) 78%,transparent 100%)!important;
+  }
+  #slide-12 .oc12-edition-title{grid-column:1;grid-row:1;padding:0!important}
+  #slide-12 .oc12-edition-title b{font-size:16px!important}
+  #slide-12 .oc12-edition-title small{font-size:7.8px!important}
+  #slide-12 .oc12-editions article>p{
+    grid-column:1;grid-row:2;
+    margin:5px 0 0!important;
+    font-size:8.8px!important;
+    line-height:1.34!important;
+  }
+  #slide-12 .oc12-editions ul{
+    grid-column:2;grid-row:1 / 3;
+    grid-template-columns:1fr 1fr!important;
+    align-content:center!important;
+    gap:7px 10px!important;
+  }
+  #slide-12 .oc12-editions li{font-size:8.8px!important;line-height:1.22!important}
+  #slide-12 .oc12-upgrade{
+    flex-direction:row!important;
+    justify-content:flex-start!important;
+    gap:8px!important;
+    padding-left:8px!important;
+    color:#23877B!important;
+  }
+  #slide-12 .oc12-upgrade i{transform:rotate(90deg);font-size:17px!important}
+  #slide-12 .oc12-upgrade b{font-size:8px!important;letter-spacing:.1em!important}
+  #slide-12 .oc12-upgrade span{display:none!important}
+  #slide-12 .oc12-shared{padding-top:7px!important;border-top:1px solid #D8E5E2!important}
+
+  #slide-12 .oc12-capability-panel{border-top:0!important}
+  #slide-12 .oc12-capability-panel>header{
+    padding:3px 0 8px!important;
+    border-bottom:0!important;
+    grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;
+  }
+  #slide-12 .oc12-capability-panel header h3{font-size:18px!important}
+  #slide-12 .oc12-capability-panel header p{font-size:9.2px!important;line-height:1.32!important}
+  #slide-12 .oc12-capability-table{
+    grid-template-rows:27px repeat(11,minmax(0,1fr))!important;
+    gap:2px!important;
+    padding:4px 0 0!important;
+    border-top:1px solid #BFD4D0;
+  }
+  #slide-12 .oc12-capability-table .cap-head{background:transparent!important}
+  #slide-12 .oc12-capability-table>div{
+    grid-template-columns:174px repeat(4,minmax(0,1fr))!important;
+    border:0!important;
+    border-radius:2px;
+  }
+  #slide-12 .oc12-capability-table>div:nth-child(n+2):nth-child(-n+4),
+  #slide-12 .oc12-capability-table>div:nth-child(n+9){background:#F7FAF9!important}
+  #slide-12 .oc12-capability-table>div>*{
+    padding:0 7px!important;
+    border:0!important;
+    background:transparent!important;
+    font-size:9.5px!important;
+  }
+  #slide-12 .oc12-capability-table>div>*:first-child{
+    padding-left:10px!important;
+    color:#315B53!important;
+    font-size:9.8px!important;
+    font-weight:720!important;
+  }
+  #slide-12 .oc12-capability-table .cap-head>*{
+    border-bottom:1px solid #C8DAD6!important;
+    color:#62756F!important;
+    font-size:9px!important;
+  }
+  #slide-12 .oc12-capability-table .cap-head>*:first-child{padding-left:10px!important;color:#23877B!important}
+  #slide-12 .oc12-capability-table .cap-head>*:nth-child(4),
+  #slide-12 .oc12-capability-table .cap-head>*:nth-child(5){
+    border-top:0!important;
+    border-bottom:2px solid #23877B!important;
+    background:#EDF7F5!important;
+  }
+  #slide-12 .oc12-capability-table>div>*:nth-child(4),
+  #slide-12 .oc12-capability-table>div>*:nth-child(5){background:transparent!important}
+  #slide-12 .oc12-capability-table em.yes{
+    justify-self:center!important;
+    width:calc(100% - 18px)!important;
+    min-height:15px!important;
+    border-radius:8px!important;
+    background:#E7F4F1!important;
+    color:#17695F!important;
+  }
+  #slide-12 .oc12-capability-table em.no{font-size:0!important;color:transparent!important}
+  #slide-12 .oc12-capability-table em.no:after{content:"—";color:#AEB9B6;font-size:10px}
+  #slide-12 .oc12-capability-table em.partial{color:#6E7D79!important;font-weight:650!important}
+
+  #slide-12 .oc12-boundary{
+    height:58px!important;
+    grid-template-rows:25px 33px!important;
+    border-top:1px solid #9ABEB7!important;
+    border-bottom:0!important;
+  }
+  #slide-12 .oc12-boundary .oc12-boundary-head{background:transparent!important}
+  #slide-12 .oc12-boundary b,
+  #slide-12 .oc12-boundary span{padding:0 9px!important;font-size:9.5px!important}
+  #slide-12 .oc12-boundary-head b,
+  #slide-12 .oc12-boundary-head span{font-size:8.6px!important;letter-spacing:.06em!important;color:#75847F!important}
+  #slide-12 .oc12-boundary>div>*:nth-child(4),
+  #slide-12 .oc12-boundary>div>*:nth-child(5){background:transparent!important;color:#17695F!important;font-weight:800!important}
+</style>
+
 </head>
 <body>
   <div class="toolbar">
@@ -2629,15 +3186,14 @@
     <div class="grid-bg"></div>
     <img class="cover-brand" src="assets/logo-opencsg.png" alt="OpenCSG">
     <div class="cover-wordmark">OpenCSG</div>
-    <div class="cover-bp"><b>BUSINESS PLAN</b><span>2026 · INVESTOR MATERIALS</span></div>
+    <div class="cover-bp"><b data-en="BUSINESS PLAN">商业计划书</b><span data-en="2026 · INVESTOR MATERIALS">2026 · 投资人材料</span></div>
     <div class="cover-title">
-      <div class="label">GLOBAL OPEN SOURCE · AGENTICOPS · AI SOVEREIGNTY</div>
+      <div class="label" data-en="OPENCSG · OPEN AI INFRASTRUCTURE">OPENCSG · 开放式 AI 基础设施</div>
       <h1>OpenCSG</h1>
-      <h2 data-en="Empowering Everyone<br>with the Power of Large Models">让大模型的强大力量<br>赋能每一个人</h2>
-      <div class="cover-sovereign-sub" data-en="Sovereign AI starts with an open foundation: models can be sourced globally, but production control, evaluation, audit and runtime must remain in your hands.">AI 主权，从开放底座开始：模型可以全球选择，但生产控制权、评测权、审计权与运行权必须掌握在自己手里。</div>
-      <p data-en="Open by design. Secure by control.">OPEN BY DESIGN. SECURE BY CONTROL.</p>
+      <h2><span data-en="Empowering Everyone">让每一个人</span><br><span data-en="with the Power of Large Models">都拥有大模型的力量</span></h2>
+      <div class="cover-sovereignty-mark"><span data-en="AI SOVEREIGNTY">AI 主权</span><b data-en="CHOICE · CONTROL · AUDIT · EVOLUTION">选择 · 控制 · 审计 · 演进</b></div>
     </div>
-    <div class="cover-meta"><span>AI SOVEREIGNTY</span><span>OPEN SOURCE AGENTICOPS</span><span>ENTERPRISE + PERSONAL AI</span></div>
+    <div class="cover-meta"><span data-en="OPEN SOURCE">开源</span><span data-en="HYBRID SOLUTIONS">混合解决方案</span><span data-en="AGENTIC-DRIVEN">智能体驱动</span><span data-en="AI-NATIVE">AI 原生</span></div>
     <div class="cover-visual">
       <img src="assets/sovereign-ai-cover-v3.png" alt="AI 主权开放基础设施：连接城市、企业与个人智能节点">
     </div>
@@ -2907,16 +3463,17 @@
              <img src="assets/china-blank-map.svg" alt="OpenCSG 区域节点与地区实践">
               <a class="city-pin shanghai" href="https://www.sh-italent.com/Article/202504/202504300010.shtml" data-en="Shanghai">上海</a>
               <a class="city-pin yancheng" href="https://www.yancheng.gov.cn/" data-en="Yancheng">盐城</a>
-              <a class="city-pin yichang" href="https://sanxia.opencsg.com/" data-en="Yichang">宜昌</a>
+              <a class="city-pin yichang" href="https://sanxia.opencsg.com/" data-community-key="yichang" title="三峡（宜昌）社区" data-en="Yichang">宜昌</a>
               <a class="city-pin chongqing" href="https://www.cq.gov.cn/" data-en="Chongqing">重庆</a>
               <a class="city-pin leshan" href="https://www.leshan.gov.cn/" data-en="Leshan">乐山</a>
-              <a class="city-pin dongfang" href="https://opencsg.com/blogs/142e66f5-f30d-4eec-98ba-7aa18c343ed4" data-en="Dongfang">东方</a>
-              <a class="city-pin longgang" href="https://www.lg.gov.cn/xxgk/xwzx/zwdt/content/post_12401381.html" data-en="Longgang">龙岗</a>
-              <a class="city-pin hongkong" href="https://www.cyberport.hk/" data-en="Hong Kong">香港</a>
-              <a class="city-pin singapore" href="https://www.imda.gov.sg/">Singapore</a>
+              <a class="city-pin dongfang" href="https://openeast.opencsg.com/" data-community-key="dongfang" title="海南东方市社区" data-en="Dongfang">东方</a>
+              <a class="city-pin longgang" href="https://modelhub.lgdg.cc/" data-community-key="longgang" title="深圳龙岗社区" data-en="Longgang">龙岗</a>
+              <a class="city-pin hongkong" href="https://occ.opencsg.hk/" data-community-key="hongkong" title="香港社区" data-en="Hong Kong">香港</a>
+              <a class="city-pin caict" href="https://aihub.caict.ac.cn/" data-community-key="caict" title="工信部 · 中国信通院社区" data-en="MIIT / CAICT">工信部</a>
+              <a class="city-pin singapore" href="https://sg.opencsg.com/" data-community-key="singapore" title="新加坡社区" data-en="Singapore">新加坡</a>
             </div>
-            <b data-en="Regional nodes and verified deployment areas">区域节点与已验证地区</b>
-            <p data-en="Yichang, Hong Kong Cyberport, Shenzhen Longgang, Dongfang, Chongqing, Leshan, Shanghai, Yancheng and more connect government, industry, developers and capital into repeatable regional AI operations.">宜昌、香港数码港、深圳龙岗、东方、重庆、乐山、上海、盐城等地区实践，连接政府、产业、开发者与资本，形成可复制的区域 AI 运营模式。</p>
+            <b data-en="Community nodes and verified deployment areas">社区节点与已验证地区</b>
+            <p data-en="Sanxia / Yichang, Shenzhen Longgang, Hainan Dongfang, Hong Kong, MIIT / CAICT and Singapore communities—together with Chongqing, Leshan, Shanghai and Yancheng deployments—connect government, industry, developers and capital into repeatable regional AI operations.">三峡（宜昌）、深圳龙岗、海南东方、香港、工信部（中国信通院）、新加坡等社区节点，与重庆、乐山、上海、盐城等地区实践，共同连接政府、产业、开发者与资本，形成可复制的区域 AI 运营模式。</p>
           </div>
         </div>
       </div>
@@ -2946,11 +3503,13 @@
   <div class="slide-wrap" data-section="case"><section class="slide light" data-layout="L08" id="slide-07">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="AI Sovereignty & Product System　">AI 主权与产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">AI Sovereignty & Product System</span></div>
-    <h2 class="title" data-en="AI Sovereignty means real choice, real governance, real evolution—OpenCSG turns it into product">AI 主权 = 真正的选择权、治理权、演进权，OpenCSG 用产品把它变成现实</h2>
+    <h2 class="title" data-en="When AI becomes production, sovereignty decides who controls the outcome">当 AI 进入生产，主权决定结果由谁掌握</h2>
 
     <!-- 顶部一句核心定义 -->
-    <div class="sv7-equation" data-en="Sovereignty  =  Choice  +  Governance  +  Evolution">
-      <b>AI 主权</b><span class="op">=</span><span class="piece">选择权</span><span class="op">+</span><span class="piece">治理权</span><span class="op">+</span><span class="piece">演进权</span>
+    <div class="sv7-equation" data-en="AI sovereignty is not building everything yourself. It is keeping the critical controls in your own hands.">
+      <span>AI SOVEREIGNTY</span>
+      <b>不是自研一切，而是关键环节始终掌握在自己手里。</b>
+      <p>可选择<span class="dot">·</span>可控制<span class="dot">·</span>可审计<span class="dot">·</span>可演进</p>
     </div>
 
     <div class="sv7-grid">
@@ -2958,7 +3517,7 @@
       <section class="sv7-why">
         <header class="sv7-block-head">
           <span class="sv7-tag sv7-tag-why" data-en="WHY · THE MEANING">意义 · 主权为什么重要</span>
-          <h3 data-en="In the AI era, the question is no longer whether to use a model, but who owns production.">在 AI 时代，问题不再是"用不用模型"，而是"生产掌握在谁手里"。</h3>
+          <h3 data-en="AI is no longer a tool at the edge. It is moving into the core of production.">AI 不再只是边缘工具，它正在进入生产核心。</h3>
         </header>
 
         <div class="sv7-meaning-cards">
@@ -2966,121 +3525,104 @@
             <div class="sv7-meaning-mark">01</div>
             <div class="sv7-meaning-body">
               <b data-en="Choice of models & compute">模型与算力的选择权</b>
-              <p data-en="Models and compute stay swappable—never locked to a single vendor, chip or region.">模型与算力全球可选、可替换——不绑定任何一家厂商、一款芯片、一个区域。</p>
+              <p data-en="Do not let one vendor, chip or region become an irreversible dependency.">不能被单一厂商、芯片或区域锁定。</p>
             </div>
           </article>
           <article class="sv7-meaning">
             <div class="sv7-meaning-mark">02</div>
             <div class="sv7-meaning-body">
               <b data-en="Governance of data & assets">数据与资产的治理权</b>
-              <p data-en="Prompts, datasets, models and agents stay versioned, auditable, permissioned and on your side of the firewall.">Prompt、数据、模型与 Agent 全部可版本、可审计、可授权，始终留在你自己的边界内。</p>
+              <p data-en="Your data, prompts, models and agents must remain inside your organizational boundary.">数据、Prompt、模型与 Agent 必须留在组织自己的边界内。</p>
             </div>
           </article>
           <article class="sv7-meaning">
             <div class="sv7-meaning-mark">03</div>
             <div class="sv7-meaning-body">
               <b data-en="Evolution & feedback loop">演进权与持续迭代</b>
-              <p data-en="Production feedback flows back, so models and agents grow with your business—not against it.">生产反馈持续回流，模型与 Agent 跟随业务一同成长，而非被锁定在某一版本上。</p>
+              <p data-en="Production feedback should improve your system—not disappear into an external black box.">生产反馈应回流到自己的系统，而不是消失在外部黑箱里。</p>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- 右半：主权的实现路径 — How，映射到四个产品 -->
+      <!-- 右半：AI 主权是什么 -->
       <section class="sv7-how">
         <header class="sv7-block-head">
-          <span class="sv7-tag sv7-tag-how" data-en="HOW · THE PATH">路径 · 主权如何落地</span>
-          <h3 data-en="Four products, one sovereignty path—from local assets to ecosystem scale.">四个产品，对应主权实现的四步路径。</h3>
+          <span class="sv7-tag sv7-tag-how" data-en="WHAT · AI SOVEREIGNTY">定义 · AI 主权是什么</span>
+          <h3 data-en="It is not owning every model; it is owning the decisions that matter in production.">不是拥有所有模型，而是掌握生产中真正重要的决定权。</h3>
         </header>
 
-        <ol class="sv7-path">
-          <li>
-            <span class="sv7-step"><b>01</b><i data-en="Foundation">底座</i></span>
-            <div class="sv7-step-body">
-              <b class="sv7-product" data-en="CSGHub · Foundation">CSGHub · 主权底座</b>
-              <p data-en="Host models, datasets, prompts and agents in one governed foundation—your choice, your compute, your rules.">把模型、数据集、Prompt 与 Agent 全部托管到统一底座——算力可选、版本可追溯、权限可治理。</p>
-            </div>
-          </li>
-          <li>
-            <span class="sv7-step"><b>02</b><i data-en="Governance">治理</i></span>
-            <div class="sv7-step-body">
-              <b class="sv7-product" data-en="AgenticHub · Governance">AgenticHub · 主权治理</b>
-              <p data-en="Build, release, monitor and audit agents at production scale, with people-in-the-loop and full audit logs.">在生产规模上构建、发布、监控与审计 Agent，全流程可观测、可审计、含人机协同。</p>
-            </div>
-          </li>
-          <li>
-            <span class="sv7-step"><b>03</b><i data-en="Collaboration">协同</i></span>
-            <div class="sv7-step-body">
-              <b class="sv7-product" data-en="CSGClaw · Evolution">CSGClaw · 主权协同</b>
-              <p data-en="Multi-agent collaboration that turns every workflow into real feedback—feeding the next iteration.">多 Agent 协同将每个工作流变成真实反馈，让下一次迭代天然从生产里长出来。</p>
-            </div>
-          </li>
-          <li>
-            <span class="sv7-step"><b>04</b><i data-en="Personal Start">起点</i></span>
-            <div class="sv7-step-body">
-              <b class="sv7-product" data-en="CSGLite · Personal Sovereign Start">CSGLite · 个人主权起点</b>
-              <p data-en="Run foundation models locally, accumulate private data, and grow your personal sovereignty into organizational one.">在本地跑基础模型、沉淀私域数据，让个人主权自然成长为组织主权。</p>
-            </div>
-          </li>
-        </ol>
+        <div class="sv7-control-map" aria-label="AI sovereignty control plane">
+          <svg class="sv7-control-lines" viewBox="0 0 760 340" preserveAspectRatio="none" aria-hidden="true">
+            <ellipse cx="380" cy="170" rx="250" ry="116"></ellipse>
+            <ellipse cx="380" cy="170" rx="170" ry="78"></ellipse>
+            <path d="M380 170 L182 88 M380 170 L584 88 M380 170 L182 250 M380 170 L584 250"></path>
+          </svg>
+          <div class="sv7-control-core"><small>AI SOVEREIGNTY</small><b>主权<br>控制面</b><span data-en="Your rules · your boundary">你的规则 · 你的边界</span></div>
+          <article class="sv7-control-node node-choice"><i>01</i><b data-en="Choice">可选择</b><span data-en="Models · compute">模型 · 算力</span></article>
+          <article class="sv7-control-node node-assets"><i>02</i><b data-en="Control">可掌控</b><span data-en="Data · assets">数据 · 资产</span></article>
+          <article class="sv7-control-node node-audit"><i>03</i><b data-en="Audit">可审计</b><span data-en="Evaluation · logs">评测 · 日志</span></article>
+          <article class="sv7-control-node node-evolve"><i>04</i><b data-en="Evolution">可演进</b><span data-en="Feedback · upgrade">反馈 · 升级</span></article>
+          <div class="sv7-control-caption" data-en="AI sovereignty is the ability to own the decisions, assets and learning loop of production.">AI 主权，就是掌握生产中的决策权、资产权与学习闭环。</div>
+        </div>
       </section>
     </div>
 
-    <div class="foot"><span data-en="AI Sovereignty is not a slogan—it is a product-by-product path. Next: the full product matrix.">AI 主权不是口号，是一步步走出来的产品路径。下一页：完整产品矩阵。</span><span>07</span></div>
+    <div class="foot"><span data-en="AI sovereignty means keeping the choices, controls, evidence and evolution of production in your hands.">AI 主权，就是把生产中的选择、控制、证据与演进掌握在自己手里。</span><span>07</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="product"><section class="slide light" data-layout="L08" id="slide-08">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Unified Product System　">统一产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">Unified Product System</span></div>
-    <h2 class="title" data-en="Four products build one OPC growth path from local data to ecosystem monetization">四个产品，组成一条从本地数据到生态变现的 OPC 成长路径</h2>
-    <p class="p8-lead" data-en="Whether serving an individual or an organization, the path starts with local data, deepens through agent iteration, becomes organizational assets and expands into ecosystem collaboration.">不管服务个人还是组织，路径都从本地数据开始，经由 Agent 迭代沉淀为组织资产，再扩展到产业生态协作。</p>
+    <h2 class="title" data-en="Personal and organizational OPCs share one growth path from local data to ecosystem monetization">个人 OPC 与组织型 OPC，共享一条从本地数据到产业变现的成长路径</h2>
+    <p class="p8-lead" data-en="Every OPC starts with CSGLite data accumulation, advances through CSGClaw agent and small-model iteration, upgrades into server-hosted organizational assets, and scales through AgenticHub collaboration and commercialization.">所有主体都先以 CSGLite 积累高质量数据，再用 CSGClaw 尝试智能体并迭代小模型；升级为组织型 OPC 后托管企业 AI 资产，最终通过 AgenticHub 协作共创并实现产业商业化。</p>
     <div class="p8-story">
       <div class="p8-sequence" aria-label="OpenCSG OPC growth path">
-        <div data-evolution-step="1"><em>01</em><span><b data-en="Accumulate data">数据积累</b><small>CSGLite</small></span></div>
-        <div data-evolution-step="2"><em>02</em><span><b data-en="Iterate agents">Agent 迭代</b><small>CSGClaw</small></span></div>
-        <div data-evolution-step="3"><em>03</em><span><b data-en="Build organizational assets">组织资产</b><small>CSGHub</small></span></div>
-        <div data-evolution-step="4"><em>04</em><span><b data-en="Collaborate and monetize">协作变现</b><small>AgenticHub</small></span></div>
+        <div data-evolution-step="1"><em>01</em><span><b data-en="Shared data starting point">共同数据起点</b><small data-en="CSGLite · HIGH-QUALITY DATA">CSGLite · 高质量数据</small></span></div>
+        <div data-evolution-step="2"><em>02</em><span><b data-en="Agent intelligence iteration">智能体迭代</b><small data-en="CSGCLAW · AGENTS + SMALL MODELS">CSGClaw · Agent + 小模型</small></span></div>
+        <div data-evolution-step="3"><em>03</em><span><b data-en="Organizational OPC upgrade">组织型 OPC 升级</b><small data-en="CSGHUB · SERVER-HOSTED ASSETS">CSGHub · 服务端资产托管</small></span></div>
+        <div data-evolution-step="4"><em>04</em><span><b data-en="Ecosystem commercialization">生态商业化</b><small data-en="AGENTICHUB · COLLABORATE + CO-CREATE">AgenticHub · 协作共创</small></span></div>
       </div>
       <div class="p8-map">
-        <aside class="p8-lane p8-lane-org"><small>START</small><b data-en="Personal start">个人起点</b><span data-en="Local data accumulation">本地数据积累</span></aside>
+        <aside class="p8-lane p8-lane-org"><small>START</small><b data-en="Shared starting point">共同起点</b><span data-en="Every OPC starts here">所有 OPC 从这里开始</span></aside>
         <article class="p8-node p8-node-02" data-evolution-product="1" tabindex="0">
-          <div class="p8-node-copy"><div class="p8-node-kicker"><em>01</em><span>PERSONAL RUNTIME</span></div><h3>CSGLite</h3><p data-en="A personal AI workspace for running local foundation models, managing knowledge and tools, and accumulating high-quality data through real work.">个人 AI 工作空间：本地运行基础模型，管理知识与工具，在真实任务中积累高质量数据。</p><ul class="p8-detail"><li data-en="Run local foundation models and inference services">本地运行基础模型与推理服务</li><li data-en="Local inference, prompt templates and knowledge management">本地推理、Prompt 模板与知识管理</li><li data-en="Feedback optimization, debugging tools and lightweight deployment">反馈优化、调试工具与轻量部署</li><li data-en="WebIDE, agent development, testing and Docker support">WebIDE、Agent 开发测试与 Docker 支持</li></ul><div class="p8-tags"><span data-en="Local models">本地模型</span><span data-en="Knowledge management">知识管理</span><span data-en="Data accumulation">数据沉淀</span></div><a href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_self" data-en="Product page ↗">产品页 ↗</a></div><figure><img src="assets/product-lite.png" alt="CSGLite 产品界面"></figure>
+          <div class="p8-node-copy"><div class="p8-node-kicker"><em>01</em><span>PERSONAL RUNTIME</span></div><h3>CSGLite</h3><p data-en="A personal AI workspace for running local foundation models, managing knowledge and tools, and accumulating high-quality data through real work.">个人 AI 工作空间：本地运行基础模型，管理知识与工具，在真实任务中积累高质量数据。</p><ul class="p8-detail"><li data-en="Run local foundation models and inference services">本地运行基础模型与推理服务</li><li data-en="Local inference, prompt templates and knowledge management">本地推理、Prompt 模板与知识管理</li><li data-en="Feedback optimization, debugging tools and lightweight deployment">反馈优化、调试工具与轻量部署</li><li data-en="WebIDE, agent development, testing and Docker support">WebIDE、Agent 开发测试与 Docker 支持</li></ul><div class="p8-tags"><span data-en="Local models">本地模型</span><span data-en="Knowledge management">知识管理</span><span data-en="Data accumulation">数据沉淀</span></div><a class="product-jump" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" data-en="Product page ↗">产品页 ↗</a></div><figure><a class="product-link-screen" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" aria-label="CSGHub Lite 产品页"><img src="assets/product-lite.jpg" alt="CSGHub Lite 产品界面"></a></figure>
         </article>
         <div class="p8-evolve-item p8-evolve-gap" data-evolve="1">
           <div class="p8-evolve-arrow"><i></i><b data-en="Why upgrade">为何升级</b></div>
           <div class="p8-evolve-copy">
-            <b data-en="From data → agent iteration">从数据积累 → Agent 迭代</b>
-            <span data-en="Local data accumulates first, then agents iterate through real workflow feedback.">先在 CSGLite 沉淀高质量数据，再用 CSGClaw 通过真实任务反馈持续迭代 Agent 与小模型。</span>
+            <b data-en="Data becomes learning fuel">数据成为学习燃料</b>
+            <span data-en="Real-task feedback drives continuous agent and small-model iteration.">真实任务反馈，驱动 Agent 与小模型持续迭代</span>
           </div>
         </div>
         <article class="p8-node p8-node-03" data-evolution-product="2" tabindex="0">
-          <div class="p8-node-copy"><div class="p8-node-kicker"><em>02</em><span>AGENT ITERATION</span></div><h3>CSGClaw</h3><p data-en="A multi-agent collaboration platform for task orchestration, workflow automation and real feedback-driven iteration of agents and small models.">多 Agent 协同平台：编排任务、自动化 Workflow，并用真实反馈持续迭代 Agent 与小模型。</p><ul class="p8-detail"><li data-en="Task orchestration and workflow automation">任务编排与 Workflow 自动化</li><li data-en="Intelligent collaboration and team knowledge sharing">智能协作与团队知识共享</li><li data-en="Agent lifecycle management and secure collaboration">Agent 生命周期管理与安全协同</li><li data-en="Enterprise IM integration, monitoring and optimization">企业 IM 接入、监控与优化</li></ul><div class="p8-tags"><span data-en="Task orchestration">任务编排</span><span data-en="Multi-agent">多 Agent</span><span data-en="Small-model iteration">小模型迭代</span></div><a href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_self" data-en="Product page ↗">产品页 ↗</a></div><figure><img src="assets/product-claw.png" alt="CSGClaw 多 Agent 协同界面"></figure>
+          <div class="p8-node-copy"><div class="p8-node-kicker"><em>02</em><span>AGENT ITERATION</span></div><h3>CSGClaw</h3><p data-en="A multi-agent collaboration platform for task orchestration, workflow automation and real feedback-driven iteration of agents and small models.">多 Agent 协同平台：编排任务、自动化 Workflow，并用真实反馈持续迭代 Agent 与小模型。</p><ul class="p8-detail"><li data-en="Task orchestration and workflow automation">任务编排与 Workflow 自动化</li><li data-en="Intelligent collaboration and team knowledge sharing">智能协作与团队知识共享</li><li data-en="Agent lifecycle management and secure collaboration">Agent 生命周期管理与安全协同</li><li data-en="Enterprise IM integration, monitoring and optimization">企业 IM 接入、监控与优化</li></ul><div class="p8-tags"><span data-en="Task orchestration">任务编排</span><span data-en="Multi-agent">多 Agent</span><span data-en="Small-model iteration">小模型迭代</span></div><a class="product-jump" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" data-en="Product page ↗">产品页 ↗</a></div><figure><a class="product-link-screen csgclaw-early" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" aria-label="CSGClaw 多 Agent 协同产品页"><img src="assets/product-claw.png" alt="CSGClaw 多 Agent 协同界面"></a></figure>
         </article>
         <div class="p8-evolve-item p8-evolve-gap" data-evolve="2">
           <div class="p8-evolve-arrow"><i></i><b data-en="Why upgrade">为何升级</b></div>
           <div class="p8-evolve-copy">
-            <b data-en="From agents → organizational OPC">从 Agent → 组织型 OPC 资产</b>
-            <span data-en="Validated capabilities are hosted server-side, becoming governed organizational OPC core assets.">把验证后的能力托管到服务端，形成可治理、可复用的组织型 OPC 核心竞争力。</span>
+            <b data-en="Validated capabilities become organizational assets">验证能力变成组织资产</b>
+            <span data-en="Server hosting adds permissions, versions, auditability and reuse.">服务端托管，形成权限、版本、审计与复用能力</span>
           </div>
         </div>
         <article class="p8-node p8-node-01" data-evolution-product="3" tabindex="0">
-          <div class="p8-node-copy"><div class="p8-node-kicker"><em>03</em><span>ORGANIZATIONAL ASSETS</span></div><h3>CSGHub</h3><p data-en="An enterprise AI asset lifecycle platform that hosts validated capabilities on the server and turns them into governed organizational OPC assets.">企业 AI 资产全生命周期平台：将验证后的能力托管到服务端，沉淀为可治理、可复用的组织型 OPC 资产。</p><ul class="p8-detail"><li data-en="Prompt, model, dataset, code and agent asset management">Prompt、模型、数据集、代码与 Agent 统一管理</li><li data-en="Versioning, lineage, sharing, License and integrity checks">版本、血缘、共享、License 与完整性校验</li><li data-en="Asset publishing, distribution, evaluation, training and serving">资产发布、分发、评测、训练与服务托管</li><li data-en="Visibility, audit logging, permissions and organizational governance">可见性、审计日志、权限与组织治理</li></ul><div class="p8-tags"><span data-en="Asset lifecycle">资产全生命周期</span><span data-en="Hosted governance">服务端治理</span><span data-en="Enterprise AI assets">企业 AI 资产</span></div><a href="https://opencsg.com/csghub" target="_self" data-en="Product page ↗">产品页 ↗</a></div><figure><img src="assets/product-csghub.png" alt="CSGHub 产品界面"></figure>
+          <div class="p8-node-copy"><div class="p8-node-kicker"><em>03</em><span>ORGANIZATIONAL ASSETS</span></div><h3>CSGHub</h3><p data-en="An enterprise AI asset lifecycle platform that hosts validated capabilities on the server and turns them into governed organizational OPC assets.">企业 AI 资产全生命周期平台：将验证后的能力托管到服务端，沉淀为可治理、可复用的组织型 OPC 资产。</p><ul class="p8-detail"><li data-en="Prompt, model, dataset, code and agent asset management">Prompt、模型、数据集、代码与 Agent 统一管理</li><li data-en="Versioning, lineage, sharing, License and integrity checks">版本、血缘、共享、License 与完整性校验</li><li data-en="Asset publishing, distribution, evaluation, training and serving">资产发布、分发、评测、训练与服务托管</li><li data-en="Visibility, audit logging, permissions and organizational governance">可见性、审计日志、权限与组织治理</li></ul><div class="p8-tags"><span data-en="Asset lifecycle">资产全生命周期</span><span data-en="Hosted governance">服务端治理</span><span data-en="Enterprise AI assets">企业 AI 资产</span></div><a class="product-jump" href="https://opencsg.com/csghub" target="_blank" rel="noopener" data-en="Product page ↗">产品页 ↗</a></div><figure><a class="product-link-screen csghub-early" href="https://opencsg.com/csghub" target="_blank" rel="noopener" aria-label="CSGHub 企业 AI 资产产品页"><img src="assets/product-csghub.png" alt="CSGHub 产品界面"></a></figure>
         </article>
         <div class="p8-evolve-item p8-evolve-gap" data-evolve="3">
           <div class="p8-evolve-arrow"><i></i><b data-en="Why upgrade">为何升级</b></div>
           <div class="p8-evolve-copy">
-            <b data-en="From OPC → ecosystem monetization">从组织型 OPC → 生态变现</b>
-            <span data-en="Organizational OPCs collaborate via AgenticHub, joining industry ecosystem for commercial scale.">组织型 OPC 通过 AgenticHub 协作共创，融入产业与生态，形成巨大商业变现。</span>
+            <b data-en="Organizational assets enter a collaboration network">组织资产进入协作网络</b>
+            <span data-en="Cross-organization co-creation connects industry ecosystems and commercial scale.">跨组织协作共创，连接产业生态与规模化商业变现</span>
           </div>
         </div>
         <article class="p8-node p8-node-04" data-evolution-product="4" tabindex="0">
-          <div class="p8-node-copy"><div class="p8-node-kicker"><em>04</em><span>ECOSYSTEM &amp; SCALE</span></div><h3>AgenticHub</h3><p data-en="An enterprise agent platform for design, development, collaboration, evaluation and operations—connecting organizational OPCs to industry and ecosystem monetization.">企业 Agent 平台：覆盖设计、开发、协作、评测与运营，让组织型 OPC 融入产业生态并形成商业变现。</p><ul class="p8-detail"><li data-en="Intelligent agent design, development tools and multi-agent orchestration">智能体设计、开发工具与多 Agent 编排</li><li data-en="Workflow collaboration and team knowledge sharing">Workflow 协作与团队知识共享</li><li data-en="Simulation, evaluation, secure testing and release gates">模拟、评测、安全测试与发布门禁</li><li data-en="Permissions, operational monitoring, diagnostics and analytics">权限、安全、运行监控与诊断分析</li></ul><div class="p8-tags"><span data-en="Agent development">Agent 开发</span><span data-en="Collaboration &amp; workflow">协作与 Workflow</span><span data-en="Commercial scale">商业变现</span></div><a href="https://opencsg.com/products/agentichub" target="_self" data-en="Product page ↗">产品页 ↗</a></div><figure><img src="assets/product-agentichub.png" alt="AgenticHub 产品界面"></figure>
+          <div class="p8-node-copy"><div class="p8-node-kicker"><em>04</em><span>ECOSYSTEM &amp; SCALE</span></div><h3>AgenticHub</h3><p data-en="An enterprise agent platform for design, development, collaboration, evaluation and operations—connecting organizational OPCs to industry and ecosystem monetization.">企业 Agent 平台：覆盖设计、开发、协作、评测与运营，让组织型 OPC 融入产业生态并形成商业变现。</p><ul class="p8-detail"><li data-en="Intelligent agent design, development tools and multi-agent orchestration">智能体设计、开发工具与多 Agent 编排</li><li data-en="Workflow collaboration and team knowledge sharing">Workflow 协作与团队知识共享</li><li data-en="Simulation, evaluation, secure testing and release gates">模拟、评测、安全测试与发布门禁</li><li data-en="Permissions, operational monitoring, diagnostics and analytics">权限、安全、运行监控与诊断分析</li></ul><div class="p8-tags"><span data-en="Agent development">Agent 开发</span><span data-en="Collaboration &amp; workflow">协作与 Workflow</span><span data-en="Commercial scale">商业变现</span></div><a class="product-jump" href="https://opencsg.com/products/agentichub" target="_blank" rel="noopener" data-en="Product page ↗">产品页 ↗</a></div><figure><a class="product-link-screen" href="https://opencsg.com/products/agentichub" target="_blank" rel="noopener" aria-label="AgenticHub 企业 Agent 平台产品页"><img src="assets/product-agentichub.png" alt="AgenticHub 产品界面"></a></figure>
         </article>
-        <aside class="p8-lane p8-lane-opc"><small>SCALE</small><b data-en="Commercial scale">商业变现</b><span data-en="Industry and ecosystem">产业与生态</span></aside>
+        <aside class="p8-lane p8-lane-opc"><small>SCALE</small><b data-en="Industry monetization">产业变现</b><span data-en="Organizational OPC ecosystem">组织型 OPC 生态</span></aside>
       </div>
-      <div class="p8-foundation"><p data-en="Feedback from collaboration returns to data, agents and organizational assets, keeping the OPC path iterative.">协作产生的反馈回到数据、Agent 与组织资产层，让 OPC 持续迭代。</p><div class="p8-foundation-tags"><span data-en="Feedback-driven">反馈驱动</span><span data-en="Personal → organizational OPC">个人 → 组织型 OPC</span></div></div>
+      <div class="p8-foundation"><p data-en="The path is progressive and cyclical: ecosystem feedback returns to CSGLite data, CSGClaw agents and organizational assets, strengthening the next round of growth.">这不是一次性漏斗，而是递进飞轮：生态反馈持续回流到 CSGLite 数据、CSGClaw 智能体与组织资产，推动下一轮增长。</p><div class="p8-foundation-tags"><span data-en="Previous output → next input">前一步产出 → 后一步输入</span><span data-en="Individual OPC → organizational OPC">个人 OPC → 组织型 OPC</span></div></div>
     </div>
-    <div class="foot"><span data-en="CSGLite → CSGClaw → CSGHub → AgenticHub: from local data accumulation to agent iteration, organizational assets and ecosystem monetization.">CSGLite → CSGClaw → CSGHub → AgenticHub：从本地数据积累，到 Agent 迭代、组织资产与生态变现。</span><span>08</span></div>
+    <div class="foot"><span data-en="CSGLite → CSGClaw → CSGHub → AgenticHub: data accumulation → intelligence iteration → organizational assets → ecosystem monetization.">CSGLite → CSGClaw → CSGHub → AgenticHub：数据积累 → 智能迭代 → 组织资产 → 生态变现。</span><span>08</span></div>
   </section></div>
 
   <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-09">
@@ -3548,7 +4090,7 @@
       <section class="p15c-group">
         <header class="p15c-group-head"><b data-en="National &amp; industry infrastructure">国家级与产业基础设施</b></header>
         <div class="p15c-group-body">
-      <div class="p15c-cell" title="CAICT 中国信通院"><img src="assets/partners/caict.svg" alt="CAICT 中国信通院"></div>
+      <a class="p15c-cell" href="https://aihub.caict.ac.cn/" data-community-key="caict" title="工信部 · 中国信通院社区"><img src="assets/partners/caict.svg" alt="CAICT 中国信通院"></a>
       <div class="p15c-cell" title="China Mobile 中国移动"><img src="assets/partners/china-mobile.svg" alt="中国移动"></div>
       <div class="p15c-cell" title="China Unicom 中国联通"><img src="assets/partners/china-unicom.svg" alt="中国联通"></div>
       <div class="p15c-cell" title="China Telecom 中国电信"><img src="assets/partners/china-telecom.svg" alt="中国电信"></div>
@@ -3647,7 +4189,7 @@
           <h3 data-en="Regional Platform Build &amp; Operations">区域平台建设与运营</h3>
           <p data-en="Construction, annual operations, compute, model and Agent services monetize the full lifecycle.">建设费、年度运营，以及算力、模型与 Agent 服务贯穿全生命周期。</p>
           <div class="p15-engine-tags"><span data-en="Platform build">平台建设</span><span data-en="Annual operations">年度运营</span><span data-en="Service sharing">服务分成</span></div>
-          <small data-en="Examples: Yichang · Chongqing · Shanghai · Shenzhen Longgang · Dongfang">典型项目：宜昌 · 重庆 · 上海 · 深圳龙岗 · 海南东方</small>
+          <small data-en="Examples: Sanxia / Yichang · Chongqing · Shanghai · Shenzhen Longgang · Hainan Dongfang">典型项目：三峡（宜昌）· 重庆 · 上海 · 深圳龙岗 · 海南东方</small>
         </article>
         <article class="p15-engine">
           <div class="p15-engine-meta"><span>03</span><em data-en="LONG-TERM UPSIDE">长期上限</em></div>
@@ -3699,10 +4241,12 @@
     <div class="foot"><span data-en="One product foundation · Three revenue engines · Increasing recurring and ecosystem mix">同一产品底座 · 三类收入引擎 · 订阅与生态占比持续提升</span><span>16</span></div>
   </section></div>
 
-  <script src="assets/deck-appendix.js?v=20260710slide16fix"></script>
-  <script src="assets/deck-city.js?v=20260702c"></script>
-  <script src="assets/deck-bp-humanize.js?v=20260710evolution4"></script>
+  <script src="assets/deck-community-links.js?v=20260710a"></script>
+  <script src="assets/deck-appendix.js?v=20260710community1"></script>
+  <script src="assets/deck-city.js?v=20260710community1"></script>
+  <script src="assets/deck-bp-humanize.js?v=20260710community1"></script>
   <script src="assets/deck-slide-03.js?v=20260710pain"></script>
+  <script>window.OpenCSGCommunity?.apply(document);</script>
   <script src="assets/deck-i18n.js?v=20260706i18n"></script>
   <script src="assets/deck-en-extra.js?v=20260706i18n"></script>
   <script>

@@ -6,6 +6,7 @@
     .replaceAll(">", "&gt;");
   const tx = (zh, en, tag = "span", cls = "") =>
     `<${tag}${cls ? ` class="${cls}"` : ""} data-en="${esc(en)}">${zh}</${tag}>`;
+  const communityHref = key => window.OpenCSGCommunity?.href(key) || "#";
   const render = (num, kickerZh, kickerEn, titleZh, titleEn, body, footZh, footEn) => {
     const section = document.getElementById(`slide-${String(num).padStart(2, "0")}`);
     if (!section) return;
@@ -19,7 +20,7 @@
       <div class="foot">${tx(footZh, footEn)}<span>${String(num).padStart(2, "0")}</span></div>`;
   };
 
-  render(32,
+  render(34,
     "城市级方案 · 为什么建", "City Solution · Why Build",
     "城市不是缺项目，而是缺一套持续运营的 AI 公共生产系统",
     "Cities do not lack projects; they lack an operating public AI production system", `
@@ -56,9 +57,9 @@
       </div>
       <div class="c32-nodes">
         <div class="c32-node-label"><small>VALIDATED CITY NEEDS</small><b>${tx("同一底座，适配不同城市任务", "One foundation, adapted to different city missions")}</b></div>
-        <article><b>${tx("宜昌", "Yichang")}</b><span>${tx("产业载体与长期运营", "Industry hub & operations")}</span></article>
-        <article><b>${tx("东方", "Dongfang")}</b><span>${tx("自贸港与东南亚接口", "Free-trade gateway")}</span></article>
-        <article><b>${tx("深圳龙岗", "Shenzhen Longgang")}</b><span>${tx("国产异构算力平台", "Domestic heterogeneous compute")}</span></article>
+        <article><b><a class="city-community-inline" href="${communityHref("yichang")}" data-community-key="yichang" data-en="Yichang">宜昌</a></b><span>${tx("产业载体与长期运营", "Industry hub & operations")}</span></article>
+        <article><b><a class="city-community-inline" href="${communityHref("dongfang")}" data-community-key="dongfang" data-en="Dongfang">东方</a></b><span>${tx("自贸港与东南亚接口", "Free-trade gateway")}</span></article>
+        <article><b><a class="city-community-inline" href="${communityHref("longgang")}" data-community-key="longgang" data-en="Shenzhen Longgang">深圳龙岗</a></b><span>${tx("国产异构算力平台", "Domestic heterogeneous compute")}</span></article>
         <article><b>${tx("盐城", "Yancheng")}</b><span>${tx("产业算力与场景集群", "Compute & industry scenarios")}</span></article>
         <article><b>${tx("重庆", "Chongqing")}</b><span>${tx("区域节点与开发者生态", "Regional node & developers")}</span></article>
         <article><b>${tx("四川 · 乐山", "Sichuan · Leshan")}</b><span>${tx("特色产业与城市服务", "Sector AI & city services")}</span></article>
@@ -67,7 +68,7 @@
     "建设逻辑：从资源投入升级为可持续运营的 AI 生产与产业系统",
     "Construction thesis: move from resource spending to an operating AI production and industry system");
 
-  render(33,
+  render(35,
     "城市级方案 · 建什么", "City Solution · What to Build",
     "城市 AI 平台由治理主体、资源底座、开放控制层与产业服务共同构成",
     "A city AI platform combines an operator, resource foundation, open control plane and industry services", `
@@ -124,7 +125,7 @@
     "交付物：城市运营主体、异构资源底座、开放 AgenticOps 控制层与持续产业服务",
     "Deliverables: a city operator, heterogeneous resources, an open AgenticOps control plane and continuous industry services");
 
-  render(34,
+  render(36,
     "城市级方案 · 怎么建", "City Solution · How to Build",
     "城市载体不是一栋办公楼，而是“技术底座 + 企业服务 + 生态运营”的产业中枢",
     "The physical hub is an industry center combining technology, enterprise services and ecosystem operations", `
@@ -132,6 +133,7 @@
       <div class="c34-goals">
         <div class="app-kicker">WHAT THE HUB CONVERTS</div>
         ${tx("把线上平台的资产与流量，转化为企业入驻、场景验证、人才服务和区域品牌。", "Convert online platform assets and traffic into company residency, scenario validation, talent services and a regional brand.", "p", "app-lead")}
+        <a class="c34-community-link" href="${communityHref("yichang")}" data-community-key="yichang" data-en="Visit Sanxia / Yichang Community ↗">访问三峡（宜昌）社区 ↗</a>
         <div class="c34-goal-list">
           <article><span>01</span><div><b>${tx("产业空间", "Industry space")}</b><p>${tx("承载模型、Agent、开发工具企业与公共服务。", "Host model, agent and developer-tool companies and public services.")}</p></div></article>
           <article><span>02</span><div><b>${tx("创新策源", "Innovation engine")}</b><p>${tx("联合科研、企业与基金持续形成成果。", "Connect research, enterprises and funds to create outcomes.")}</p></div></article>
@@ -201,7 +203,7 @@
     "参考：宜昌点军 AI 宜居城市项目；建筑素材来自原方案，功能与组织关系均为独立 HTML 元素",
     "Reference: Yichang Dianjun plan; the building image comes from the source plan and all functional relationships are native HTML");
 
-  render(35,
+  render(37,
     "城市级方案 · 东方为什么", "City Solution · Why Dongfang",
     "东方：从自贸港通道城市，升级为面向东南亚的国家级数字接口",
     "Dongfang: from a free-trade corridor to a national digital gateway for Southeast Asia", `
@@ -209,6 +211,7 @@
       <div class="c35-window">
         <div class="app-kicker">HAINAN FREE TRADE PORT × SOUTHEAST ASIA</div>
         ${tx("东方的机会不在复制传统园区，而在抓住政策、技术与区域市场同时打开的五年窗口。", "Dongfang should not replicate a traditional park. Its opportunity is the five-year window created by policy, technology and regional markets.", "p", "app-lead")}
+        <a class="c34-community-link" href="${communityHref("dongfang")}" data-community-key="dongfang" data-en="Visit Hainan Dongfang Community ↗">访问海南东方市社区 ↗</a>
         <div class="c35-window-number"><b>5 YEARS</b><span>${tx("政策 × 技术 × 区域市场的叠加窗口", "Converging window of policy, technology and regional markets")}</span></div>
         <div class="c35-triangle">
           <article><span>01</span><b>${tx("政策窗口", "Policy window")}</b><p>${tx("海南自贸港为数据流通、数字贸易和制度创新提供试验空间。", "The Hainan Free Trade Port enables experimentation in data circulation, digital trade and institutional innovation.")}</p></article>
@@ -248,7 +251,7 @@
     "资料来源：《打造“东方新加坡”的国家级数字枢纽工程》",
     "Source: National Digital Hub — Building the “Dongfang Singapore” plan");
 
-  render(36,
+  render(38,
     "城市级方案 · 东方怎么做", "City Solution · How Dongfang Works",
     "三阶段建设、三类核心收入：让城市 AI 平台从“政府启动”走向“自我造血”",
     "Three phases and three core revenue streams move the platform from public launch to self-sustaining growth", `
@@ -279,7 +282,7 @@
     "核心判断：城市平台的价值不只在技术交付，而在持续运营权与区域网络效应",
     "Core insight: value comes from operating rights and regional network effects, not only technology delivery");
 
-  render(37,
+  render(39,
     "城市级方案 · 案例与复制", "City Solution · Cases & Replication",
     "同一开放底座，服务三种城市任务：产业载体、区域接口与国产算力适配",
     "One open foundation serves three city missions: industry hub, regional gateway and domestic compute adaptation", `
@@ -302,9 +305,9 @@
       </div>
       <div class="c37-network">
         <div class="c37-network-head"><small>REGIONAL REPLICATION NETWORK</small><b>${tx("复制技术底座与运营方法，不复制城市定位", "Repeat the foundation and operating method, not the city's positioning")}</b></div>
-        <article class="validated"><span>${tx("实践", "LIVE")}</span><b>${tx("宜昌", "Yichang")}</b><small>${tx("产业载体型", "Industry hub")}</small></article>
-        <article class="planned"><span>${tx("方案", "PLAN")}</span><b>${tx("东方", "Dongfang")}</b><small>${tx("区域接口型", "Regional gateway")}</small></article>
-        <article class="planned"><span>${tx("可研", "STUDY")}</span><b>${tx("深圳龙岗", "Shenzhen Longgang")}</b><small>${tx("技术底座型", "Technology foundation")}</small></article>
+        <article class="validated"><span>${tx("实践", "LIVE")}</span><b><a class="city-community-inline" href="${communityHref("yichang")}" data-community-key="yichang" data-en="Yichang">宜昌</a></b><small>${tx("产业载体型", "Industry hub")}</small></article>
+        <article class="planned"><span>${tx("方案", "PLAN")}</span><b><a class="city-community-inline" href="${communityHref("dongfang")}" data-community-key="dongfang" data-en="Dongfang">东方</a></b><small>${tx("区域接口型", "Regional gateway")}</small></article>
+        <article class="planned"><span>${tx("可研", "STUDY")}</span><b><a class="city-community-inline" href="${communityHref("longgang")}" data-community-key="longgang" data-en="Shenzhen Longgang">深圳龙岗</a></b><small>${tx("技术底座型", "Technology foundation")}</small></article>
         <article><span>${tx("节点", "NODE")}</span><b>${tx("盐城", "Yancheng")}</b><small>${tx("产业算力型", "Industry compute")}</small></article>
         <article><span>${tx("节点", "NODE")}</span><b>${tx("重庆", "Chongqing")}</b><small>${tx("开发者生态型", "Developer ecosystem")}</small></article>
         <article><span>${tx("节点", "NODE")}</span><b>${tx("四川 · 乐山", "Sichuan · Leshan")}</b><small>${tx("特色产业型", "Sector-specific AI")}</small></article>

@@ -7,7 +7,7 @@
 ![OpenCSG Investor Deck](./docs/assets/cover.png)
 
 ![Version](https://img.shields.io/badge/Version-2026.07-blue?style=flat-square)
-![Pages](https://img.shields.io/badge/Slides-38-teal?style=flat-square)
+![Pages](https://img.shields.io/badge/Slides-40-teal?style=flat-square)
 ![Languages](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)
 ![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)
 
@@ -21,7 +21,7 @@ __简体中文__ | [English](./README_EN.md)
 
 ## 项目简介
 
-这是一个 **单 HTML 文件的 OpenCSG 投资人路演材料**，共 38 页、1600×900 16:9 设计稿，支持在线演示、导出 PDF / PPTX（图片式）、多语言切换、键盘翻页、缩略图概览、嵌入式二维码等。
+这是一个 **单 HTML 文件的 OpenCSG 投资人路演材料**，共 40 页、1600×900 16:9 设计稿，支持在线演示、导出 PDF / PPTX（图片式）、多语言切换、键盘翻页、缩略图概览、嵌入式二维码等。
 
 整个 deck 由纯 HTML / CSS / 原生 JS 组成，不依赖任何前端框架。配套 Node 脚本负责：
 
@@ -66,7 +66,7 @@ npm run serve
 
 | 模块 | 关键能力 |
 | --- | --- |
-| 📑 **多页幻灯** | 38 页，cover / main / case / product / appendix 五大分节，每节可独立导出 |
+| 📑 **多页幻灯** | 40 页，cover / main / case / product / appendix 五大分节，每节可独立导出 |
 | 🌍 **10 国语言** | 中文 / 英文 / 日文 / 韩文 / 阿拉伯（RTL）/ 俄文 / 法文 / 德文 / 西班牙文 / 葡萄牙文 |
 | ⌨️ **键盘 & 触控** | ← → 翻页、↑↓ 跳节、Home / End 头尾、Esc 退出全屏、Space / F 全屏 |
 | 🧭 **顶栏胶囊** | 语言切换、页面计数、查看 PDF、PPT 已就绪、回到顶部 |
@@ -88,7 +88,7 @@ npm run serve
 
 ```
 OpenCSG_BP_HTML_2026/
-├── index.html                # 入口页面，38 张 slide 全部写在这里
+├── index.html                # 入口页面，40 张 slide 全部写在这里
 ├── assets/
 │   ├── deck-*.css / .js      # 幻灯样式与脚本
 │   ├── i18n/                 # 10 国翻译包

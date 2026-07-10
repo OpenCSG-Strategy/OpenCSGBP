@@ -34,6 +34,31 @@
   font-weight:600;
 }
 
+#slide-01 .cover-sovereignty-mark{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  align-items:center;
+  width:610px;
+  margin-top:28px;
+  padding:12px 0;
+  border-top:1px solid #9FC3BD;
+  border-bottom:1px solid #D3E2DF;
+}
+#slide-01 .cover-sovereignty-mark span{
+  color:#23877B;
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.15em;
+}
+#slide-01 .cover-sovereignty-mark b{
+  padding-left:20px;
+  border-left:1px solid #C6DAD6;
+  color:#3E5954;
+  font-size:11px;
+  font-weight:750;
+  letter-spacing:.09em;
+}
+
 #slide-01 .cover-title p{
   margin-top:28px !important;
   color:var(--teal);
@@ -45,12 +70,20 @@
 }
 
 #slide-01 .cover-meta{
-  gap:28px !important;
+  gap:0 !important;
   color:#52615E;
   font-size:10.5px !important;
+  font-weight:750;
+  letter-spacing:.11em;
 }
 
+#slide-01 .cover-meta span{
+  padding:0 22px;
+  border-right:1px solid #CBDAD7;
+}
 #slide-01 .cover-meta span:first-child{
+  padding-left:0;
   color:var(--teal);
   font-weight:800;
 }
+#slide-01 .cover-meta span:last-child{border-right:0}

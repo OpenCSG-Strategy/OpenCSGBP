@@ -2,6 +2,7 @@
   const A = "assets/appendix/";
   const esc = (s = "") => s.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   const tx = (zh, en, tag = "span", cls = "") => `<${tag}${cls ? ` class="${cls}"` : ""} data-en="${esc(en)}">${zh}</${tag}>`;
+  const communityHref = key => window.OpenCSGCommunity?.href(key) || "#";
   const header = (num, kickerZh, kickerEn, titleZh, titleEn, footZh = "OPENCSG · APPENDIX", footEn = "OPENCSG · APPENDIX") => `
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
     <div class="section">${tx(kickerZh, kickerEn, "span", "section-zh")}</div>
@@ -40,6 +41,7 @@
         <div class="case-narrative">
           ${tx("案例简介", "Case summary", "div", "app-kicker")}
           ${tx("OpenCSG 基于 CSGHub 打造“三峡传神社区”，连接异构算力、模型、数据集、Agent 应用与开发者生态。", "Built on CSGHub, the Three Gorges AI Community connects heterogeneous compute, models, datasets, agents and developers.", "p", "app-lead")}
+          <a class="app-community-link" href="${communityHref("yichang")}" data-community-key="yichang" data-en="Visit Sanxia / Yichang Community ↗">访问三峡（宜昌）社区 ↗</a>
           <div class="case-brief-grid">
             <div class="app-card">
               ${tx("客户需求", "Customer need", "h3")}
@@ -73,6 +75,7 @@
         <div class="case-narrative case-narrative-cyberport">
           ${tx("案例简介", "Case summary", "div", "app-kicker")}
           ${tx("以本地开发者和创作者为核心，构建融合 AI 模型仓库、开源开发工具、Web3 基础设施与创作者经济的社区型平台。", "A community platform for local developers and creators, combining an AI model hub, open development tools, Web3 infrastructure and a creator economy.", "p", "app-lead")}
+          <a class="app-community-link" href="${communityHref("hongkong")}" data-community-key="hongkong" data-en="Visit Hong Kong Community ↗">访问香港社区 ↗</a>
           <div class="case-brief-grid">
             <div class="app-card">${tx("客户需求", "Customer need", "h3")}${tx("形成面向香港与国际开发者的开放 AI 资产入口，并把模型、工具、创作者和跨境协作连接起来。", "Create an open AI asset gateway for Hong Kong and global developers, connecting models, tools, creators and cross-border collaboration.", "p")}</div>
             <div class="app-card">${tx("原始问题", "Original problem", "h3")}${tx("开发者资源分散，AI 资产难沉淀，Web3 与 AI 社区彼此割裂，活动结束后无法形成长期网络。", "Developer resources were fragmented, AI assets were not retained, and Web3 and AI communities remained disconnected after events.", "p")}</div>
@@ -161,25 +164,6 @@
         </div>
       </div>`, "数据飞轮形成不可复制的企业 AI 智能资产", "The data flywheel creates proprietary enterprise AI assets"),
 
-    slide(22, "客户案例 · 区域 AI 基础设施", "Customer Case · Regional AI Infrastructure",
-      "开放龙数社区：兼容异构算力的区域 AI 生产平台",
-      "Open Longshu Community: a regional AI production platform across heterogeneous compute", `
-      <div class="app-stage">
-        <div class="app-two-media" style="height:390px;grid-template-columns:1fr 1fr">
-          <div class="app-media contain"><img src="${A}slide-07-image-01.png" alt="开放龙数生态架构"></div>
-          <div class="app-media contain"><img src="${A}slide-07-image-02.png" alt="龙数产业生态服务平台"></div>
-        </div>
-        <div class="longshu-story">
-          <div class="app-card">${tx("客户需求", "Customer need", "h3")}${tx("为深圳本地企业与科研机构提供可自主部署、兼容国产算力和开源模型的公共 AI 生产平台。", "Provide Shenzhen enterprises and research institutions with a self-hosted public AI production platform compatible with domestic compute and open models.", "p")}</div>
-          <div class="app-card">${tx("原始问题", "Original problem", "h3")}${tx("算力、模型仓库、训推工具和产业应用分属不同系统；企业需要重复集成，资产无法复用，项目交付周期长。", "Compute, model repositories, training tools and applications lived in separate systems, forcing repeated integration and slow delivery.", "p")}</div>
-          <div class="app-card">${tx("OpenCSG 方案", "OpenCSG solution", "h3")}${tx("以 CSGHub 统一模型与数据资产，连接算力调度、训推评测、API 服务和行业应用，形成一体化信创 AI 底座。", "Use CSGHub to unify model and data assets and connect compute scheduling, training, evaluation, APIs and industry applications.", "p")}</div>
-          <div class="app-card">${tx("客户价值", "Customer value", "h3")}${tx("企业获得即开即用的国产 AI 工具链；区域运营方获得可持续承载客户、资产与场景的技术平台。", "Enterprises gain a ready-to-use domestic AI toolchain; the regional operator gains a platform that continuously hosts customers, assets and scenarios.", "p")}</div>
-          <div class="longshu-capabilities">
-            <span>${tx("统一算力调度", "Unified compute scheduling")}</span><span>${tx("模型资产复用", "Reusable model assets")}</span><span>${tx("训推评测闭环", "Training and evaluation loop")}</span><span>${tx("产业应用交付", "Industry application delivery")}</span>
-          </div>
-        </div>
-      </div>`, "区域级验证：算力、模型、工具链与产业应用必须一体化运营", "Regional proof: compute, models, toolchains and applications must operate as one system"),
-
     slide(23, "客户案例 · 科研机构", "Customer Case · Research Institution",
       "广东智能研究院：统一数据、模型服务与科研协同工作空间",
       "Guangdong Institute of Intelligence: unified data, model services and research collaboration", `
@@ -218,16 +202,157 @@
       ${tx("产品与技术方案", "Products & Technical Solutions", "div", "app-name")}
       <div class="app-rule"></div>
       <div class="app-list">
-        <div><b>01</b>${tx("AgenticHub 企业级智能体平台", "AgenticHub enterprise agent platform", "span")}</div>
-        <div><b>02</b>${tx("AgenticOps 制造业全链路架构", "Manufacturing AgenticOps architecture", "span")}</div>
-        <div><b>03–05</b>${tx("CSGHub-Lite · CSGClaw · CSGHub", "CSGHub-Lite · CSGClaw · CSGHub", "span")}</div>
-        <div><b>06</b>${tx("技术文档与试用入口", "Documentation & trial access", "span")}</div>
+        <div><b>01</b>${tx("能力对比 & 为什么选择 OpenCSG", "Capability comparison & why OpenCSG", "span")}</div>
+        <div><b>02</b>${tx("场景化推荐 · 个人/企业/城市/行业", "Scenario recommendations · Individual / Enterprise / City / Industry", "span")}</div>
+        <div><b>03</b>${tx("AgenticHub 企业级智能体平台", "AgenticHub enterprise agent platform", "span")}</div>
+        <div><b>04</b>${tx("AgenticOps 制造业全链路架构", "Manufacturing AgenticOps architecture", "span")}</div>
+        <div><b>05–07</b>${tx("CSGHub-Lite · CSGClaw · CSGHub", "CSGHub-Lite · CSGClaw · CSGHub", "span")}</div>
+        <div><b>08</b>${tx("技术文档与试用入口", "Documentation & trial access", "span")}</div>
       </div>
       <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
       <div class="foot"><span>OPENCSG · PRODUCT & TECHNOLOGY</span><span>24</span></div>
     </section></div>`,
 
-    slide(25, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
+    slide(25, "产品体系 · 能力对比", "Product System · Capability Comparison",
+      "Hybrid HuggingFace+ 加企业级私有化：一张表看清 OpenCSG 的能力边界",
+      "Hybrid HuggingFace+ for the enterprise: one table to see the OpenCSG capability boundary", `
+      <div class="app-stage cap-overview">
+        <section class="cap-table-panel">
+          <header class="cap-table-head">
+            <div class="app-kicker">CAPABILITY COMPARISON</div>
+            <b>${tx("CSGLite · 社区版 CE · 商业版 EE · 云服务 SaaS", "CSGLite · Community (CE) · Enterprise (EE) · SaaS")}</b>
+            <span>${tx("类 HuggingFace 体验 + 可私有化部署，覆盖从个人 OPC 到企业平台的完整边界", "HuggingFace-class experience with private deployment, from individual OPC to enterprise platforms")}</span>
+          </header>
+          <div class="cap-matrix" role="table" aria-label="OpenCSG capability comparison">
+            <div class="cap-row cap-row-head">
+              <b>${tx("能力项", "Capability")}</b>
+              <b>CSGLite</b>
+              <b>${tx("社区版 CE", "Community (CE)")}</b>
+              <b>${tx("商业版 EE", "Enterprise (EE)")}</b>
+              <b>SaaS</b>
+            </div>
+            <div class="cap-row"><span>${tx("资产托管（模型/数据集/代码/Prompt/MCP/Skills/Spaces）", "Asset hub (models / datasets / code / Prompt / MCP / Skills / Spaces)")}</span><em class="partial">${tx("下载", "Download")}</em><em class="yes">✓</em><em class="yes">✓</em><em class="yes">✓</em></div>
+            <div class="cap-row"><span>${tx("端到端 LLMOps（Notebook/微调/评测/推理/发布）", "End-to-end LLMOps (Notebook / fine-tune / evaluation / inference / deploy)")}</span><em class="partial">${tx("推理", "Inference")}</em><em class="yes">✓</em><em class="yes">✓</em><em class="yes">✓</em></div>
+            <div class="cap-row"><span>${tx("数据处理（清洗/去重/标注/转换，DataFlow）", "Data processing (clean / dedupe / label / transform, DataFlow)")}</span><em class="no">×</em><em class="yes">✓</em><em class="yes">✓</em><em class="yes">✓</em></div>
+            <div class="cap-row"><span>AI Gateway<br><small>${tx("OpenAI 协议 + 内容安全", "OpenAI-compatible + content safety")}</small></span><em class="no">${tx("—", "—")}</em><em class="partial">${tx("基础", "Basic")}</em><em class="yes">${tx("企业级", "Enterprise")}</em><em class="yes">${tx("企业级", "Enterprise")}</em></div>
+            <div class="cap-row"><span>${tx("多智能体运行时（Sandbox / Manager-Worker）", "Multi-agent runtime (Sandbox / Manager-Worker)")}</span><em class="partial">${tx("单机", "Local")}</em><em class="no">×</em><em class="yes">${tx("企业级", "Enterprise")}</em><em class="yes">${tx("企业级", "Enterprise")}</em></div>
+            <div class="cap-row"><span>${tx("XNet 智能块加速（去重/秒级增量/并行）", "XNet intelligent chunking (dedupe / second-level delta / parallel)")}</span><em class="yes">${tx("下载", "Download")}</em><em class="yes">✓</em><em class="yes">✓</em><em class="yes">✓</em></div>
+            <div class="cap-row"><span>${tx("多源同步（MultiSync，断点续传/远端仓库）", "MultiSync (resumable / remote-to-private mirroring)")}</span><em class="no">×</em><em class="yes">✓</em><em class="yes">✓</em><em class="yes">✓</em></div>
+            <div class="cap-row"><span>${tx("安全与审计（高可用/内容安全/审计日志）", "Security & audit (HA / content safety / audit log)")}</span><em class="no">×</em><em class="no">×</em><em class="yes">${tx("企业级", "Enterprise")}</em><em class="yes">${tx("平台保障", "Platform-backed")}</em></div>
+            <div class="cap-row"><span>${tx("身份与权限（SSO/LDAP/Casdoor/细粒度 RBAC）", "Identity & RBAC (SSO / LDAP / Casdoor / fine-grained)")}</span><em class="no">×</em><em class="partial">${tx("基础", "Basic")}</em><em class="yes">✓</em><em class="yes">✓</em></div>
+            <div class="cap-row"><span>${tx("可观测与全链路日志", "Observability & full-chain logs")}</span><em class="partial">${tx("本地", "Local")}</em><em class="no">×</em><em class="yes">${tx("全链路", "Full chain")}</em><em class="yes">${tx("全链路", "Full chain")}</em></div>
+            <div class="cap-row"><span>${tx("商业支持与 SLA", "Commercial support & SLA")}</span><em class="no">×</em><em class="partial">${tx("社区", "Community")}</em><em class="yes">7×24</em><em class="yes">✓</em></div>
+            <div class="cap-row cap-row-foot">
+              <b>${tx("适用场景", "Best for")}</b>
+              <span>${tx("个人 / 超级个体", "Individual / power user")}</span>
+              <span>${tx("小团队 / 社区自托管", "Small team / community self-host")}</span>
+              <span>${tx("中大型企业 / 私有化", "Mid-large enterprise / private")}</span>
+              <span>${tx("快速验证 / 轻量部署", "Fast validation / lightweight")}</span>
+            </div>
+          </div>
+        </section>
+        <aside class="cap-why">
+          <div class="app-kicker">WHY OPENCSG</div>
+          <b>${tx("六大差异化能力，对齐 OpenCSG 官方文档定位", "Six differentiators aligned with the official OpenCSG docs")}</b>
+          <ul class="cap-why-list">
+            <li>
+              <i>01</i>
+              <div><b>${tx("Hybrid HuggingFace+ 体验", "Hybrid HuggingFace+ experience")}</b><p>${tx("类 HuggingFace 的资产托管体验，同时支持一键私有化部署与 SSO 接入，对应 GitLab 管理代码、Glance 管理镜像、Harbor 管理容器的资产范式。", "HuggingFace-style asset UX with one-click private deployment and SSO integration, following the GitLab/Glance/Harbor asset pattern.", "span")}</p></div>
+            </li>
+            <li>
+              <i>02</i>
+              <div><b>${tx("Prompt / MCP / Skills 原生资产", "Native Prompt / MCP / Skills assets")}</b><p>${tx("业内首批把 Prompt 仓库、MCP 协议与 Skills 技能市场做成一等公民资产，与模型/数据集/代码统一治理、可视化追溯。", "One of the first to treat Prompt, MCP and Skills as first-class assets—governed and traced together with models, datasets and code.", "span")}</p></div>
+            </li>
+            <li>
+              <i>03</i>
+              <div><b>${tx("一站式 LLMOps", "End-to-end LLMOps")}</b><p>${tx("Notebook 交互开发、LLaMA-Factory / MS-SWIFT 微调、OpenCompass / EvalScope 评测、一键发布为公共 API 或专属推理服务。", "Notebooks, LLaMA-Factory / MS-SWIFT fine-tuning, OpenCompass / EvalScope evaluation, one-click publish to public API or dedicated inference.", "span")}</p></div>
+            </li>
+            <li>
+              <i>04</i>
+              <div><b>${tx("XNet 智能块加速", "XNet intelligent block acceleration")}</b><p>${tx("自研 XNet 存储后端：加密哈希 + 智能切块，去重率高、秒级增量更新、并行下载，告别 Git LFS 整文件重传。", "Self-developed XNet: encrypted hashing + chunk-level dedupe for second-level incremental updates and parallel download, replacing whole-file Git LFS transfers.", "span")}</p></div>
+            </li>
+            <li>
+              <i>05</i>
+              <div><b>${tx("沙箱隔离的多智能体协作", "Sandbox-isolated multi-agent collaboration")}</b><p>${tx("CSGClaw（Your Personal AI Team）以 Manager 拆解、Worker 沙箱执行，AgenticHub 提供企业级智能体运行时，长期记忆与定时任务可持续演进。", "CSGClaw (Your Personal AI Team) runs Manager-Worker in isolated sandboxes; AgenticHub adds enterprise runtime, long-term memory and scheduled tasks.", "span")}</p></div>
+            </li>
+            <li>
+              <i>06</i>
+              <div><b>${tx("OpenAI 兼容 AI Gateway", "OpenAI-compatible AI Gateway")}</b><p>${tx("统一接入自建与外部模型，文本/Embedding/图像/视频/语音/MCP/Agent 全场景覆盖；企业版提供内容安全守卫与 MCP Gateway 控制面。", "One gateway for self-hosted and external models across text/embedding/image/video/voice/MCP/Agent; EE adds content-safety guard and MCP Gateway control plane.", "span")}</p></div>
+            </li>
+          </ul>
+        </aside>
+      </div>`, "官方文档为基线：开源 + 全栈 LLMOps + 智能体运行时 + AI Gateway", "Anchored to official docs: open source + full LLMOps + agent runtime + AI Gateway"),
+
+    slide(26, "典型场景 · 来自官方 Use Case", "Typical Scenarios · From Official Use Cases",
+      "CSGHub 官方 11 大典型场景中最具代表性、复用度最高的 4 类：选对组合比选对模型更重要",
+      "Four of the most representative, high-reuse scenarios from CSGHub's 11 official use cases: pick the right combination, not just the right model", `
+      <div class="app-stage scenario-stage">
+        <header class="scenario-intro">
+          <div class="app-kicker">SCENARIO-BASED RECOMMENDATIONS</div>
+          <b>${tx("从个人开发到企业治理到行业智能体，每个场景都有明确的产品组合与官方文档依据", "From individual development to enterprise governance to vertical agents, each scenario has a clear product combination backed by official docs")}</b>
+          <span>${tx("全部场景源自 docs.opencsg.com 的典型应用场景一览，参考链接已附在脚注", "All scenarios come from docs.opencsg.com typical scenarios; reference links in the footer")}</span>
+        </header>
+        <div class="scenario-grid">
+          <article class="scenario-card s1">
+            <header>
+              <span class="scenario-tag">${tx("开发者", "DEVELOPER")}</span>
+              <b>${tx("开发者本地 AI 助手", "Developer local AI assistant")}</b>
+            </header>
+            <div class="scenario-products">
+              <span>CSGLite</span>
+            </div>
+            <p>${tx("单二进制、一条命令在笔记本上拉起大模型：模型下载 + 本地推理（llama.cpp，GGUF / SafeTensors 自动转换）+ 兼容 Ollama/OpenAI 的 REST API + Web UI。Claude Code、Codex、OpenClaw、Dify 等开发工具一键安装，离线可用。", "Single binary, one command: download + local inference (llama.cpp with auto GGUF/SafeTensors conversion) + Ollama/OpenAI-compatible REST API + Web UI. One-click install of Claude Code, Codex, OpenClaw and Dify; works fully offline.", "span")}</p>
+            <footer>
+              <small>${tx("典型用户", "Typical users")}</small>
+              <span>${tx("个人开发者 / 极客 / 学生", "Individual developers / power users / students")}</span>
+            </footer>
+          </article>
+          <article class="scenario-card s2">
+            <header>
+              <span class="scenario-tag">${tx("资产", "ASSETS")}</span>
+              <b>${tx("企业 AI 资产统一管理", "Unified enterprise AI asset management")}</b>
+            </header>
+            <div class="scenario-products">
+              <span>CSGHub</span>
+            </div>
+            <p>${tx("一站式托管模型、数据集、代码、Prompt、MCP、Skills 与应用空间；可视化模型树 + 资产关联图支持依赖追溯。XNet 智能切块 + 多源同步，让私有仓库的版本与远端开源资产秒级同步。无公网依赖一键私有化，对接企业 SSO。", "Centrally host models, datasets, code, Prompt, MCP, Skills and Spaces; visual model tree and asset graph for lineage. XNet chunking + MultiSync mirror remote open-source assets to a private repo in seconds. One-click private deployment without internet; SSO ready.", "span")}</p>
+            <footer>
+              <small>${tx("典型客户", "Typical customers")}</small>
+              <span>${tx("央国企 / 金融 / 新能源 / 高校", "Central SOEs / finance / new energy / universities")}</span>
+            </footer>
+          </article>
+          <article class="scenario-card s3">
+            <header>
+              <span class="scenario-tag">${tx("治理", "GOVERNANCE")}</span>
+              <b>${tx("企业 AI 服务统一治理", "Unified enterprise AI governance")}</b>
+            </header>
+            <div class="scenario-products">
+              <span>AI Gateway</span><i>+</i><span>CSGHub EE</span>
+            </div>
+            <p>${tx("用 AI Gateway 统一管控全公司的大模型调用：自建模型 + 外部模型一站式接入，统一鉴权、额度、权限、内容安全与故障切换；覆盖文本、Embedding、文生图、文生视频、语音转文字、MCP 与 Agent 多场景。CSGHub EE 还提供 LLM 内容安全守卫和 MCP Gateway 控制面。", "Use AI Gateway as the single control plane for all LLM calls: one unified entry for self-hosted and external models with auth, quota, permission, content safety and auto-failover; covers text, embedding, image, video, STT, MCP and Agent. CSGHub EE adds the LLM content-safety guard and the MCP Gateway control plane.", "span")}</p>
+            <footer>
+              <small>${tx("典型客户", "Typical customers")}</small>
+              <span>${tx("中大型企业 / 平台团队 / 央企总部", "Mid-large enterprises / platform teams / central HQ")}</span>
+            </footer>
+          </article>
+          <article class="scenario-card s4">
+            <header>
+              <span class="scenario-tag">${tx("智能体", "AGENTS")}</span>
+              <b>${tx("HR / 研发 / 销售 智能体落地", "HR / R&D / Sales agent deployment")}</b>
+            </header>
+            <div class="scenario-products">
+              <span>AgenticHub</span><i>+</i><span>CSGClaw</span>
+            </div>
+            <p>${tx("双模式开发（无代码拖拽 + 代码扩展）+ Skills 技能市场 + MCP 工具接入 + 长期记忆 + 定时任务；OpenClaw 把智能体推送到飞书、微信。三大官方典型场景：HR 简历筛选（多轮一致的口径）、研发项目周报与里程碑、销售跟进与提案草稿。", "Dual-mode (no-code drag-and-drop + code extension) + Skills marketplace + MCP tool access + long-term memory + scheduled tasks; OpenClaw pushes agents to Feishu and WeChat. Three official flagship scenarios: HR resume screening (consistent multi-round rubric), R&D weekly reports and milestones, sales follow-up and proposal drafting.", "span")}</p>
+            <footer>
+              <small>${tx("典型场景", "Typical scenarios")}</small>
+              <span>${tx("简历筛选 / 周报里程碑 / 销售跟进 / 客服台账", "Resume screening / weekly milestones / sales follow-up / service desk")}</span>
+            </footer>
+          </article>
+        </div>
+      </div>`, "源自 docs.opencsg.com/csghub/101/function/usecase 全部 11 个典型场景", "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios"),
+
+    slide(27, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
       "AgenticHub：让企业安全构建、发布和运营 AI Agent",
       "AgenticHub: securely build, release and operate enterprise AI agents", `
       <div class="app-stage app-product-layout">
@@ -242,7 +367,7 @@
         </div>
       </div>`, "方法论：数据治理 → 模型管理 → Agent 调度 → 应用反馈", "Methodology: data governance → model management → agent operations → feedback"),
 
-    slide(26, "技术架构 · 制造业", "Architecture · Manufacturing",
+    slide(28, "技术架构 · 制造业", "Architecture · Manufacturing",
       "AgenticOps 全链路架构：AI 驱动的制造协同体系",
       "Full-stack AgenticOps architecture for AI-driven manufacturing collaboration", `
       <div class="app-stage app-architecture">
@@ -270,7 +395,7 @@
         </div>
       </div>`, "跨系统、高移动性、低时延、高安全的制造 AgenticOps", "Cross-system, mobile, low-latency and secure manufacturing AgenticOps"),
 
-    slide(27, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
+    slide(29, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
       "CSGHub-Lite：让模型、数据和 AI 工具在个人设备本地运行",
       "CSGHub-Lite: run models, data and AI tools locally on personal devices", `
       <div class="app-stage">
@@ -299,7 +424,7 @@
         </div>
       </div>`, "设计理念：能自动就不手动，能本地就不外传", "Design principle: automate by default; keep data local by default"),
 
-    slide(28, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
+    slide(30, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
       "CSGClaw：让多个 AI Agent 像一支团队协同工作",
       "CSGClaw: orchestrate multiple AI agents as one coordinated team", `
       <div class="app-stage app-product-layout">
@@ -316,7 +441,7 @@
         </div>
       </div>`, "Manager–Worker · Sandbox · Human Approval · IM Integration", "Manager–Worker · Sandbox · Human Approval · IM Integration"),
 
-    slide(29, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
+    slide(31, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
       "CSGHub：统一管理模型、数据和 Agent 等关键 AI 资产",
       "CSGHub: unified management for models, data, agents and other critical AI assets", `
       <div class="app-stage app-product-layout">
@@ -337,7 +462,7 @@
         </div>
       </div>`, "开放集成：标准 API · 开源信任：opencsg.com/models", "Open integration: standard APIs · Open trust: opencsg.com/models"),
 
-    slide(30, "技术资料与试用", "Documentation & Trial Access",
+    slide(32, "技术资料与试用", "Documentation & Trial Access",
       "技术文档、开源仓库与产品试用入口",
       "Documentation, open-source repositories and product trial access", `
       <div class="app-stage app-docs">
@@ -364,7 +489,7 @@
         </div>
       </div>`, "文档、开源仓库与试用入口，均可公开访问与验证", "Documentation, open-source repositories and trials—all openly accessible to verify"),
 
-    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider city-divider" data-layout="APP-DIVIDER" id="slide-31">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider city-divider" data-layout="APP-DIVIDER" id="slide-33">
       <div class="app-index">APPENDIX · 03</div>
       <div class="app-big">03</div>
       ${tx("城市级 AI 基础设施", "City-scale AI Infrastructure", "div", "app-name")}
@@ -376,10 +501,10 @@
         <div><b>06</b>${tx("已有工作、阶段结果与复制验证", "Work completed, stage results and repeatability", "span")}</div>
       </div>
       <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
-      <div class="foot"><span>OPENCSG · CITY-SCALE AI</span><span>31</span></div>
+      <div class="foot"><span>OPENCSG · CITY-SCALE AI</span><span>33</span></div>
     </section></div>`,
 
-    slide(32, "城市级方案 · 建设背景", "City Solution · Background & Rationale",
+    slide(34, "城市级方案 · 建设背景", "City Solution · Background & Rationale",
       "为什么城市现在必须建设自己的 AI 公共基础设施",
       "Why cities must build their own AI public infrastructure now", `
       <div class="app-stage city-why">
@@ -420,7 +545,7 @@
         </div>
       </div>`, "建设逻辑：从“资源投入”升级为“城市可持续运营的 AI 生产与产业系统”", "Construction thesis: move from resource spending to an operating AI production and industry system"),
 
-    slide(33, "城市级方案 · 建设全景", "City Solution · Construction Blueprint",
+    slide(35, "城市级方案 · 建设全景", "City Solution · Construction Blueprint",
       "一座城市真正要建设的，是“治理主体 + 开放底座 + 产业运营”的 AI 公共基础设施",
       "A city must build an AI public infrastructure combining governance, an open foundation and industry operations", `
       <div class="app-stage city-system-overview">
@@ -458,7 +583,7 @@
         </div>
       </div>`, "城市级平台的交付物：公共控制层、运营主体、产业服务与长期生态，而不只是软件", "Deliverables: a public control plane, an operator, industry services and a durable ecosystem - not just software"),
 
-    slide(34, "城市级方案 · 产业载体", "City Solution · Industry Hub",
+    slide(36, "城市级方案 · 产业载体", "City Solution · Industry Hub",
       "城市载体不是一栋办公楼，而是 AI 产业的运营中枢",
       "The physical hub is not an office building; it is the operating center of the city AI industry", `
       <div class="app-stage city-building-plan">
@@ -502,7 +627,7 @@
         </div>
       </div>`, "参考：宜昌点军 AI 宜居城市项目规划；大楼为方案原始视觉", "Reference: Yichang Dianjun AI Livable City plan; building visual from the original proposal"),
 
-    slide(35, "城市级方案 · 东方定位", "City Solution · Dongfang Positioning",
+    slide(37, "城市级方案 · 东方定位", "City Solution · Dongfang Positioning",
       "东方：从自贸港通道城市，升级为面向东南亚的国家级数字接口",
       "Dongfang: from a free-trade corridor to a national digital gateway for Southeast Asia", `
       <div class="app-stage dongfang-position">
@@ -547,7 +672,7 @@
         </div>
       </div>`, "资料来源：《打造“东方新加坡”的国家级数字枢纽工程》方案测算", "Source: National Digital Hub — Building the “Dongfang Singapore” plan"),
 
-    slide(36, "城市级方案 · 东方实施", "City Solution · Dongfang Delivery",
+    slide(38, "城市级方案 · 东方实施", "City Solution · Dongfang Delivery",
       "三阶段建设，五类收入引擎：让城市 AI 平台从“建成”走向“自增长”",
       "Three phases and five revenue engines move a city platform from delivery to self-growth", `
       <div class="app-stage dongfang-roadmap">
@@ -572,7 +697,7 @@
         <div class="city-fiscal-line"><span>${tx("建设", "BUILD")}</span><i></i><span>${tx("运营", "OPERATE")}</span><i></i><span>${tx("聚集", "CLUSTER")}</span><i></i><span>${tx("交易", "TRANSACT")}</span><i></i><span>${tx("财政正循环", "FISCAL LOOP")}</span></div>
       </div>`, "核心判断：城市平台的价值不只在技术交付，而在持续运营权与区域网络效应", "Core insight: value comes from operating rights and regional network effects, not only technology delivery"),
 
-    slide(37, "城市级方案 · 阶段结果", "City Solution · Stage Results",
+    slide(39, "城市级方案 · 阶段结果", "City Solution · Stage Results",
       "OpenCSG 已形成三类城市方案与阶段性结果",
       "OpenCSG has developed three city models with tangible stage results", `
       <div class="app-stage city-case-templates">
@@ -619,7 +744,7 @@
         </div>
       </div>`, "可复制的不是一张软件清单，而是“技术底座 + 城市运营 + 产业生态”的完整方法", "What repeats is not a software checklist, but the full method: technology foundation + city operations + industry ecosystem"),
 
-    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide app-closing closing-hero" data-layout="APP-CLOSING" id="slide-38">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide app-closing closing-hero" data-layout="APP-CLOSING" id="slide-40">
       <div class="closing-grid">
         <div class="closing-left">
           <div class="label">OPENCSG · AI SOVEREIGNTY</div>
@@ -645,7 +770,7 @@
             <b>AI YOU<br>TRUST.</b>
             <p>OPEN ASSETS IN.<br>SOVEREIGN INTELLIGENCE OUT.</p>
           </div>
-          <div class="closing-page">38</div>
+          <div class="closing-page">40</div>
         </div>
       </div>
       <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
@@ -788,7 +913,7 @@
   }
 
   // WeChat QR pop: click on touch devices, click-outside to close.
-  document.querySelectorAll("#slide-38 .foot-wechat").forEach(btn => {
+  document.querySelectorAll("#slide-40 .foot-wechat").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
       btn.classList.toggle("is-open");
@@ -802,7 +927,7 @@
     });
   });
   document.addEventListener("click", (e) => {
-    document.querySelectorAll("#slide-38 .foot-wechat.is-open").forEach(btn => {
+    document.querySelectorAll("#slide-40 .foot-wechat.is-open").forEach(btn => {
       if (!btn.contains(e.target)) {
         btn.classList.remove("is-open");
         btn.setAttribute("aria-expanded", "false");

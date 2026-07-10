@@ -207,6 +207,80 @@
   background:linear-gradient(180deg,#C4612F 0%,rgba(196,97,47,.25) 100%);
   z-index:1;
 }
+
+/* ===== Minimal definition diagram ===== */
+#slide-07 .sv7-definition-line{
+  position:relative;
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  min-height:0;
+  padding:30px 8px 8px;
+}
+#slide-07 .sv7-line-track{
+  position:absolute;
+  left:42px;
+  right:42px;
+  top:65px;
+  height:2px;
+  background:linear-gradient(90deg,#D8B49B,#C4612F 45%,#23877B);
+  z-index:0;
+}
+#slide-07 .sv7-line-track i{
+  position:absolute;
+  top:-5px;
+  width:12px;
+  height:12px;
+  border:3px solid #fff;
+  border-radius:50%;
+  background:#C4612F;
+  box-shadow:0 0 0 1px #C4612F;
+}
+#slide-07 .sv7-line-track i:nth-child(1){left:0}
+#slide-07 .sv7-line-track i:nth-child(2){left:33.33%}
+#slide-07 .sv7-line-track i:nth-child(3){left:66.66%}
+#slide-07 .sv7-line-track i:nth-child(4){right:0;background:#23877B;box-shadow:0 0 0 1px #23877B}
+#slide-07 .sv7-definition-line article{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  min-width:0;
+  padding:58px 14px 16px;
+  border:1px solid #E3EAE8;
+  border-top:3px solid #C4612F;
+  background:#FAFBFB;
+}
+#slide-07 .sv7-definition-line article:nth-of-type(4){border-top-color:#23877B;background:#F2F8F6}
+#slide-07 .sv7-definition-line article>b{
+  color:#A45B36;
+  font-size:10px;
+  letter-spacing:.14em;
+}
+#slide-07 .sv7-definition-line article:nth-of-type(4)>b{color:#23877B}
+#slide-07 .sv7-definition-line article strong{
+  margin-top:9px;
+  color:#155247;
+  font-size:24px;
+  line-height:1.1;
+}
+#slide-07 .sv7-definition-line article span{
+  margin-top:9px;
+  color:#66736F;
+  font-size:11px;
+  line-height:1.45;
+}
+#slide-07 .sv7-definition-note{
+  margin:12px 0 0;
+  padding:12px 14px;
+  border-left:3px solid #23877B;
+  background:#EFF7F5;
+  color:#275D54;
+  font-size:12px;
+  line-height:1.4;
+}
 #slide-07 .sv7-step{
   display:flex;
   flex-direction:column;
@@ -291,4 +365,279 @@
 #slide-07 .case7-capabilities,
 #slide-07 .case7-production-proof{
   display:none!important;
+}
+
+/* Final BP treatment: editorial whitespace and one continuous sovereignty line,
+   instead of a collection of dashboard cards. */
+#slide-07 .sv7-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px}
+#slide-07 .sv7-why,
+#slide-07 .sv7-how{
+  padding:10px 0 0;
+  background:transparent;
+  border:0;
+  border-top:1px solid #C9DAD6;
+  border-radius:0;
+  overflow:visible;
+}
+#slide-07 .sv7-block-head{margin-bottom:18px}
+#slide-07 .sv7-block-head h3{max-width:520px;font-size:18px;line-height:1.35}
+#slide-07 .sv7-meaning-cards{gap:0}
+#slide-07 .sv7-meaning{
+  grid-template-columns:42px 1fr;
+  gap:16px;
+  padding:18px 0;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid #DCE7E4;
+  border-radius:0;
+}
+#slide-07 .sv7-meaning:first-child{border-top:1px solid #DCE7E4}
+#slide-07 .sv7-meaning-mark{
+  width:32px;height:32px;align-self:start;
+  background:transparent;border:1px solid #9DC7BF;border-radius:50%;font-size:16px
+}
+#slide-07 .sv7-meaning-body{justify-content:flex-start}
+#slide-07 .sv7-meaning-body b{font-size:16px}
+#slide-07 .sv7-meaning-body p{max-width:500px;font-size:12px;line-height:1.5}
+#slide-07 .sv7-definition-line{margin-top:16px;padding:34px 0 0;gap:0}
+#slide-07 .sv7-line-track{left:20px;right:20px;top:48px}
+#slide-07 .sv7-definition-line article{
+  padding:42px 18px 14px;
+  border:0;border-left:1px solid #DCE7E4;background:transparent
+}
+#slide-07 .sv7-definition-line article:first-of-type{border-left:0}
+#slide-07 .sv7-definition-line article:nth-of-type(4){background:transparent}
+#slide-07 .sv7-definition-line article strong{font-size:28px}
+#slide-07 .sv7-definition-line article span{font-size:10.5px;line-height:1.35}
+#slide-07 .sv7-definition-note{
+  margin-top:22px;padding:14px 0 0;border-left:0;border-top:1px solid #9DC7BF;
+  background:transparent;color:#42655E;font-size:12px
+}
+
+/* Editorial BP composition — a point of view, not a dashboard. */
+#slide-07 .sv7-equation{
+  top:172px;
+  display:grid;
+  grid-template-columns:168px minmax(0,1fr) 320px;
+  align-items:center;
+  column-gap:26px;
+  row-gap:10px;
+  min-height:104px;
+  padding:18px 0 16px;
+  border-radius:0;
+  border-top:2px solid #1D5E54;
+  border-bottom:1px solid #C9DAD6;
+  background:transparent;
+  box-shadow:none;
+  color:inherit;
+}
+#slide-07 .sv7-equation>span{
+  color:#23877B;
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:.18em;
+  padding-right:18px;
+  border-right:1px solid #C9DAD6;
+  align-self:center;
+  white-space:nowrap;
+}
+#slide-07 .sv7-equation>b{
+  color:#173E38;
+  font-size:22px;
+  font-weight:700;
+  line-height:1.45;
+  letter-spacing:-.005em;
+  text-wrap:balance;
+  word-break:break-word;
+}
+#slide-07 .sv7-equation>p{
+  margin:0;
+  padding-left:22px;
+  border-left:1px solid #C9DAD6;
+  color:#56706B;
+  font-size:12.5px;
+  font-weight:600;
+  line-height:1.55;
+  letter-spacing:.01em;
+  white-space:nowrap;
+}
+#slide-07 .sv7-equation>p .dot{
+  display:inline-block;
+  margin:0 8px;
+  color:#23877B;
+  font-weight:700;
+  transform:translateY(-1px);
+}
+#slide-07 .sv7-grid{
+  top:310px;
+  bottom:74px;
+  grid-template-columns:430px minmax(0,1fr);
+  gap:88px;
+}
+#slide-07 .sv7-tag{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  font-size:11px;
+  letter-spacing:.17em;
+}
+#slide-07 .sv7-tag-why{color:#23877B}
+#slide-07 .sv7-tag-how{color:#A25934}
+#slide-07 .sv7-block-head h3{
+  max-width:none;
+  margin-top:8px;
+  color:#1B3934;
+  font-size:23px;
+  font-weight:720;
+  line-height:1.35;
+  letter-spacing:-.025em;
+}
+#slide-07 .sv7-why,
+#slide-07 .sv7-how{border-top:0;padding-top:0}
+#slide-07 .sv7-meaning{grid-template-columns:42px 1fr;gap:16px;padding:24px 0}
+#slide-07 .sv7-meaning:first-child{border-top:0}
+#slide-07 .sv7-meaning-mark{
+  width:34px;height:34px;
+  color:#23877B;
+  border-color:#A9CFC8;
+  font-size:16px;
+}
+#slide-07 .sv7-meaning-body b{font-size:19px;line-height:1.2}
+#slide-07 .sv7-meaning-body p{margin-top:7px;font-size:14px;line-height:1.48}
+#slide-07 .sv7-definition-line{
+  position:relative;
+  align-items:start;
+  min-height:214px;
+  margin-top:28px;
+  padding:0;
+}
+#slide-07 .sv7-line-track{
+  left:11px;right:11px;top:56px;
+  height:1px;
+  background:#7DAFA7;
+}
+#slide-07 .sv7-line-track i{
+  top:-6px;
+  width:13px;height:13px;
+  border:3px solid #FBFCFC;
+  background:#23877B;
+  box-shadow:0 0 0 1px #23877B;
+}
+#slide-07 .sv7-definition-line article,
+#slide-07 .sv7-definition-line article:nth-of-type(4){
+  padding:78px 14px 0;
+  border:0;
+  background:transparent;
+}
+#slide-07 .sv7-definition-line article>b{font-size:9px;color:#7A928D;letter-spacing:.14em}
+#slide-07 .sv7-definition-line article:nth-of-type(4)>b{color:#23877B}
+#slide-07 .sv7-definition-line article strong{
+  margin-top:9px;
+  color:#163D37;
+  font-size:27px;
+  font-weight:760;
+  line-height:1;
+}
+#slide-07 .sv7-definition-line article span{margin-top:8px;font-size:10.5px;line-height:1.35}
+#slide-07 .sv7-definition-note{
+  margin-top:auto;
+  padding-top:15px;
+  color:#315D55;
+  font-size:13px;
+  font-weight:650;
+}
+
+/* Sovereignty control-plane diagram. */
+#slide-07 .sv7-control-map{
+  position:relative;
+  flex:1;
+  min-height:0;
+  margin-top:14px;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(35,135,123,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(35,135,123,.045) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+#slide-07 .sv7-control-lines{
+  position:absolute;
+  inset:12px 22px 36px;
+  width:calc(100% - 44px);
+  height:calc(100% - 48px);
+}
+#slide-07 .sv7-control-lines ellipse{
+  fill:none;
+  stroke:#A5C9C2;
+  stroke-width:1;
+  stroke-dasharray:4 5;
+}
+#slide-07 .sv7-control-lines ellipse:nth-child(2){stroke:#6DAA9F;stroke-dasharray:2 4}
+#slide-07 .sv7-control-lines path{
+  fill:none;
+  stroke:#8EB9B1;
+  stroke-width:1.25;
+}
+#slide-07 .sv7-control-core{
+  position:absolute;
+  left:50%;top:48%;
+  width:178px;height:132px;
+  transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:#23877B;
+  color:#fff;
+  box-shadow:0 14px 28px rgba(20,92,82,.18);
+}
+#slide-07 .sv7-control-core:before,
+#slide-07 .sv7-control-core:after{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  border:1px solid rgba(35,135,123,.28);
+}
+#slide-07 .sv7-control-core:after{inset:-25px;border-color:rgba(35,135,123,.13)}
+#slide-07 .sv7-control-core small{font-size:8px;font-weight:800;letter-spacing:.18em;opacity:.72}
+#slide-07 .sv7-control-core b{margin-top:8px;font-size:32px;line-height:1.04;text-align:center;letter-spacing:-.045em}
+#slide-07 .sv7-control-core span{margin-top:9px;font-size:11px;letter-spacing:.07em;opacity:.85}
+#slide-07 .sv7-control-node{
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  min-width:148px;
+  padding:10px 12px 11px 17px;
+  border-left:3px solid #23877B;
+  background:rgba(255,255,255,.86);
+  box-shadow:0 5px 16px rgba(24,71,63,.06);
+}
+#slide-07 .sv7-control-node:before{
+  content:"";
+  position:absolute;
+  left:-7px;top:50%;
+  width:10px;height:10px;
+  transform:translateY(-50%);
+  border:2px solid #23877B;
+  border-radius:50%;
+  background:#fff;
+}
+#slide-07 .sv7-control-node i{color:#7C938E;font-size:10px;font-style:normal;font-weight:800;letter-spacing:.12em}
+#slide-07 .sv7-control-node b{margin-top:6px;color:#173E38;font-size:22px;line-height:1.1}
+#slide-07 .sv7-control-node span{margin-top:6px;color:#64746F;font-size:12px;letter-spacing:.04em}
+#slide-07 .sv7-control-node.node-choice{left:4%;top:13%}
+#slide-07 .sv7-control-node.node-assets{right:4%;top:13%}
+#slide-07 .sv7-control-node.node-audit{left:4%;bottom:19%;border-left-color:#8A765D}
+#slide-07 .sv7-control-node.node-audit:before{border-color:#8A765D}
+#slide-07 .sv7-control-node.node-evolve{right:4%;bottom:19%;border-left-color:#176A61}
+#slide-07 .sv7-control-node.node-evolve:before{border-color:#176A61}
+#slide-07 .sv7-control-caption{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:10px 0 0;
+  border-top:1px solid rgba(35,135,123,.38);
+  color:#315E56;
+  font-size:14px;
+  font-weight:700;
+  text-align:center;
 }

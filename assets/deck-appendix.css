@@ -380,3 +380,315 @@
 .lang-en .appendix-slide .title{font-size:27px}
 .lang-en .app-feature b{font-size:15px}
 .lang-en .app-feature p{font-size:11px}
+
+/* ====================================================================
+ * Slide 25 · Capability comparison + Why OpenCSG
+ * 12-row table on the left, 6-card "Why" stack on the right
+ * ==================================================================== */
+#slide-25 .app-stage.cap-overview{
+  display:grid;
+  grid-template-columns:1.45fr 1fr;
+  gap:22px;
+  height:688px
+}
+#slide-25 .cap-table-panel{
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  background:#fff;
+  border:1px solid var(--line)
+}
+#slide-25 .cap-table-head{
+  padding:16px 20px 12px;
+  border-bottom:1px solid var(--line);
+  background:var(--mint)
+}
+#slide-25 .cap-table-head b{
+  display:block;
+  font-size:14px;
+  color:var(--teal);
+  margin:4px 0 3px;
+  letter-spacing:.01em
+}
+#slide-25 .cap-table-head span{
+  display:block;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.45
+}
+#slide-25 .cap-matrix{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  min-height:0;
+  overflow:hidden
+}
+#slide-25 .cap-row{
+  display:grid;
+  grid-template-columns:1.4fr repeat(4,1fr);
+  min-height:0;
+  border-bottom:1px solid #E8EEEC
+}
+#slide-25 .cap-row:last-child{border-bottom:0}
+#slide-25 .cap-row-head{
+  background:#23877B;
+  min-height:34px
+}
+#slide-25 .cap-row-head b{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  border-right:1px solid rgba(255,255,255,.25);
+  padding:0 4px
+}
+#slide-25 .cap-row-head b:first-child{
+  background:#EAF5F2;
+  color:#155F56;
+  justify-content:flex-start;
+  padding-left:12px
+}
+#slide-25 .cap-row-head b:last-child{border-right:0}
+#slide-25 .cap-row > span{
+  display:flex;
+  align-items:center;
+  padding:6px 10px;
+  color:#17695F;
+  font-size:10.5px;
+  font-weight:600;
+  background:#F5FAF9;
+  border-right:1px solid #E0E8E5;
+  line-height:1.35
+}
+#slide-25 .cap-row > span small{
+  display:block;
+  font-weight:400;
+  color:#4D5A57;
+  font-size:9.5px;
+  margin-top:2px
+}
+#slide-25 .cap-row > em{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10.5px;
+  font-style:normal;
+  border-right:1px solid #E0E8E5;
+  color:#354B46
+}
+#slide-25 .cap-row > em:last-child{border-right:0}
+#slide-25 .cap-row .yes{color:#1F8A3A;font-weight:700}
+#slide-25 .cap-row .no{color:#C95A1E;font-weight:600}
+#slide-25 .cap-row .partial{color:#3B5BB8}
+#slide-25 .cap-row-foot{
+  background:#F9FCFB;
+  border-top:1px solid #D6E5E1
+}
+#slide-25 .cap-row-foot b{
+  display:flex;
+  align-items:center;
+  padding:8px 10px;
+  color:#155F56;
+  font-size:10.5px;
+  background:#EAF5F2;
+  border-right:1px solid #E0E8E5
+}
+#slide-25 .cap-row-foot span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:8px 6px;
+  font-size:9.5px;
+  color:#354B46;
+  border-right:1px solid #E0E8E5;
+  line-height:1.35;
+  background:transparent
+}
+#slide-25 .cap-row-foot span:last-child{border-right:0}
+#slide-25 .cap-why{
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:16px 18px 14px
+}
+#slide-25 .cap-why > b{
+  display:block;
+  font-size:13px;
+  line-height:1.4;
+  color:#155F56;
+  margin:6px 0 12px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--line)
+}
+#slide-25 .cap-why-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:repeat(3,1fr);
+  gap:10px 12px;
+  flex:1;
+  min-height:0;
+  overflow:hidden
+}
+#slide-25 .cap-why-list li{
+  display:grid;
+  grid-template-columns:24px 1fr;
+  gap:8px;
+  border-top:2px solid var(--teal);
+  border-bottom:1px solid var(--line);
+  padding:9px 10px 8px 8px;
+  min-height:0
+}
+#slide-25 .cap-why-list li > i{
+  font-style:normal;
+  font-size:10px;
+  color:#A8BDB9;
+  font-weight:700;
+  letter-spacing:.06em
+}
+#slide-25 .cap-why-list li b{
+  display:block;
+  font-size:11.5px;
+  color:var(--teal);
+  line-height:1.3
+}
+#slide-25 .cap-why-list li p,
+#slide-25 .cap-why-list li span{
+  display:block;
+  font-size:9.5px;
+  color:#4D5A57;
+  line-height:1.45;
+  margin-top:4px
+}
+
+/* ====================================================================
+ * Slide 26 · Scenario-based recommendations (4 cards)
+ * ==================================================================== */
+#slide-26 .app-stage.scenario-stage{
+  display:flex;
+  flex-direction:column;
+  height:688px
+}
+#slide-26 .scenario-intro{
+  padding:0 0 14px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:16px
+}
+#slide-26 .scenario-intro b{
+  display:block;
+  font-size:18px;
+  line-height:1.35;
+  color:#155F56;
+  margin:5px 0 4px;
+  font-weight:700
+}
+#slide-26 .scenario-intro span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.45
+}
+#slide-26 .scenario-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  grid-template-rows:repeat(2,1fr);
+  gap:14px;
+  flex:1;
+  min-height:0
+}
+#slide-26 .scenario-card{
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-top:3px solid var(--teal);
+  padding:14px 18px 12px;
+  position:relative;
+  overflow:hidden
+}
+#slide-26 .scenario-card header{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  margin-bottom:8px
+}
+#slide-26 .scenario-tag{
+  font-size:9.5px;
+  letter-spacing:.16em;
+  color:var(--teal);
+  font-weight:700
+}
+#slide-26 .scenario-card header b{
+  font-size:15px;
+  line-height:1.3;
+  color:#155F56;
+  font-weight:700
+}
+#slide-26 .scenario-products{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:6px 0 8px;
+  font-size:12px;
+  color:var(--teal);
+  font-weight:700
+}
+#slide-26 .scenario-products i{
+  font-style:normal;
+  color:var(--muted);
+  font-weight:400
+}
+#slide-26 .scenario-card p{
+  font-size:11.5px;
+  line-height:1.5;
+  color:#3D4A47;
+  margin:0 0 10px;
+  flex:1;
+  min-height:0;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical
+}
+#slide-26 .scenario-card footer{
+  border-top:1px dashed #D8E5E2;
+  padding-top:8px;
+  display:flex;
+  flex-direction:column;
+  gap:2px
+}
+#slide-26 .scenario-card footer small{
+  font-size:9.5px;
+  letter-spacing:.1em;
+  color:var(--muted);
+  font-weight:700
+}
+#slide-26 .scenario-card footer span{
+  font-size:11px;
+  color:#17695F;
+  line-height:1.4
+}
+
+/* Tag accent for each scenario card (top-bar hue) */
+#slide-26 .scenario-card.s1{border-top-color:#23877B}
+#slide-26 .scenario-card.s2{border-top-color:#0E675F}
+#slide-26 .scenario-card.s3{border-top-color:#C88A2B}
+#slide-26 .scenario-card.s4{border-top-color:#1A5D8F}
+
+/* English type-size tuning for the two new slides */
+.lang-en #slide-25 .cap-row > span{font-size:9.5px}
+.lang-en #slide-25 .cap-row > em{font-size:9.5px}
+.lang-en #slide-25 .cap-row-head b{font-size:10px}
+.lang-en #slide-25 .cap-why-list li b{font-size:10.5px}
+.lang-en #slide-25 .cap-why-list li p,
+.lang-en #slide-25 .cap-why-list li span{font-size:9px}
+.lang-en #slide-26 .scenario-card header b{font-size:13.5px}
+.lang-en #slide-26 .scenario-card p{font-size:10.5px;line-height:1.5}

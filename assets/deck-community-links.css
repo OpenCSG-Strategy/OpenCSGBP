@@ -1,0 +1,83 @@
+/* Shared treatment for official OpenCSG regional community links. */
+a[data-community-key]{text-decoration:none}
+
+#slide-05 .region-map-restored .city-pin.caict{
+  left:82%!important;
+  top:37%!important;
+  color:#17695F!important;
+}
+
+#slide-15 .p15c-cell[data-community-key]{
+  position:relative;
+  color:inherit;
+  text-decoration:none;
+}
+#slide-15 .p15c-cell[data-community-key]::after{
+  content:"↗";
+  position:absolute;
+  right:6px;
+  top:5px;
+  color:#23877B;
+  font-size:8px;
+  font-weight:900;
+  opacity:.7;
+}
+
+.app-community-link,
+.c34-community-link,
+.c37-community-link,
+.proof-community-link{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  padding:5px 9px;
+  border:1px solid #BBD5D0;
+  border-radius:999px;
+  background:#F4F9F8;
+  color:#17695F!important;
+  font-size:9px;
+  font-weight:800;
+  line-height:1;
+  text-decoration:none!important;
+}
+.app-community-link{margin:9px 0 2px}
+.app-community-link:hover,
+.c34-community-link:hover,
+.c37-community-link:hover,
+.proof-community-link:hover{border-color:#23877B;background:#EAF5F2}
+
+.proof-community-link{margin-top:11px}
+
+.city-community-inline{
+  color:inherit!important;
+  text-decoration:underline!important;
+  text-decoration-color:#79AFA7!important;
+  text-decoration-thickness:1px!important;
+  text-underline-offset:3px!important;
+}
+.city-community-inline::after{content:" ↗";color:#23877B;font-size:.72em}
+
+#slide-36 .c34-community-link,
+#slide-37 .c34-community-link{margin-top:8px}
+
+#slide-37 .df-node[data-community-key]{
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+}
+#slide-37 .df-node[data-community-key]::after{
+  content:"↗";
+  position:absolute;
+  right:-8px;
+  top:-8px;
+  color:#23877B;
+  font-size:9px;
+  font-weight:900;
+}
+
+#slide-39 .c37-community-link{
+  margin-top:auto;
+  padding:4px 7px;
+  font-size:8px;
+}

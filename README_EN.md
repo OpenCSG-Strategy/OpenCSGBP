@@ -7,7 +7,7 @@
 ![OpenCSG Investor Deck](./docs/assets/cover.png)
 
 ![Version](https://img.shields.io/badge/Version-2026.07-blue?style=flat-square)
-![Pages](https://img.shields.io/badge/Slides-38-teal?style=flat-square)
+![Pages](https://img.shields.io/badge/Slides-40-teal?style=flat-square)
 ![Languages](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)
 ![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)
 
@@ -21,7 +21,7 @@
 
 ## Overview
 
-This repository hosts the **OpenCSG 2026 investor pitch deck as a single self-contained HTML file** — 38 slides, designed at 1600×900 (16:9), with on-screen navigation, PDF / PPTX export, language switching, keyboard controls, thumbnail overview mode, and inline QR codes.
+This repository hosts the **OpenCSG 2026 investor pitch deck as a single self-contained HTML file** — 40 slides, designed at 1600×900 (16:9), with on-screen navigation, PDF / PPTX export, language switching, keyboard controls, thumbnail overview mode, and inline QR codes.
 
 The deck is plain HTML / CSS / vanilla JS — no front-end framework, no build step. A small set of Node scripts covers the operational side:
 
@@ -66,7 +66,7 @@ npm run serve
 
 | Module | Highlights |
 | --- | --- |
-| 📑 **Multi-section deck** | 38 slides in 5 sections — `cover` / `main` / `case` / `product` / `appendix`; each is exportable on its own |
+| 📑 **Multi-section deck** | 40 slides in 5 sections — `cover` / `main` / `case` / `product` / `appendix`; each is exportable on its own |
 | 🌍 **10 languages** | zh / en / ja / ko / ar (RTL) / ru / fr / de / es / pt |
 | ⌨️ **Keyboard & touch** | `←` `→` to page, `↑` `↓` to jump section, `Home` / `End` to first/last, `Esc` to leave fullscreen, `Space` / `F` for fullscreen |
 | 🧭 **Top toolbar** | Language switcher, page counter, "View PDF", PPT-ready pill, jump-to-top |
@@ -88,7 +88,7 @@ More slide previews:
 
 ```
 OpenCSG_BP_HTML_2026/
-├── index.html                # Entry — all 38 slides live here
+├── index.html                # Entry — all 40 slides live here
 ├── assets/
 │   ├── deck-*.css / .js      # Slide styles & behaviour
 │   ├── i18n/                 # 10-language translation packs

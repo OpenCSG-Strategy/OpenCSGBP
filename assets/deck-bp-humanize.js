@@ -6,6 +6,7 @@
     .replaceAll(">", "&gt;");
   const tx = (zh, en, tag = "span", cls = "") =>
     `<${tag}${cls ? ` class="${cls}"` : ""} data-en="${esc(en)}">${zh}</${tag}>`;
+  const communityHref = key => window.OpenCSGCommunity?.href(key) || "#";
 
   const setText = (selector, zh, en) => {
     const el = document.querySelector(selector);
@@ -198,41 +199,6 @@
     }
   };
 
-  const replaceSlide22 = () => {
-    const slide = document.querySelector("#slide-22");
-    if (!slide || slide.classList.contains("regional-merged")) return;
-    slide.classList.add("regional-merged");
-    setText("#slide-22 .section-zh", "客户案例 · 区域平台合并视图", "Customer Cases · Regional Platform Synthesis");
-    setText("#slide-22 .title",
-      "同一 AI 公共底座，适配宜昌、数码港与龙岗三类区域任务",
-      "One public AI foundation adapts to Yichang, Cyberport and Longgang");
-    const stage = slide.querySelector(".app-stage");
-    if (!stage) return;
-    stage.innerHTML = `
-      <div class="regional-merge-lead">
-        <small>REPEATABLE PLAYBOOK</small>
-        <b data-en="The difference is not the software stack, but the city mission: industry operations, global ecosystem, or heterogeneous compute.">差异不在软件栈，而在城市任务：产业运营、国际生态或异构算力。</b>
-      </div>
-      <div class="regional-merge-map" aria-hidden="true">
-        <div class="rm-orbit"></div>
-        <div class="rm-core"><b>CSGHub</b><span>AgenticOps</span></div>
-        <div class="rm-node yichang"><small>01</small><b>${tx("宜昌", "Yichang")}</b><span>${tx("产业载体与长期运营", "Industry hub & long-term operations")}</span></div>
-        <div class="rm-node cyberport"><small>02</small><b>${tx("香港数码港", "Hong Kong Cyberport")}</b><span>${tx("国际开源生态入口", "Global open-source ecosystem gateway")}</span></div>
-        <div class="rm-node longgang"><small>03</small><b>${tx("深圳龙岗", "Shenzhen Longgang")}</b><span>${tx("国产异构算力适配", "Domestic heterogeneous compute")}</span></div>
-      </div>
-      <div class="regional-merge-cards">
-        <article><small>YICHANG</small><b>${tx("把城市空间变成运营型产业中枢", "Turn city space into an operating industry hub")}</b><p>${tx("用同一底座承载算力服务、数据语料、算法调用与企业服务，形成可持续招商与产业运营。", "Use one foundation for compute, data, model APIs and enterprise services, creating continuous attraction and operations.")}</p></article>
-        <article><small>CYBERPORT</small><b>${tx("把开发者与全球开源资产连接起来", "Connect developers with global open assets")}</b><p>${tx("围绕模型、工具、创作者和 Web3 伙伴形成开放社区，不止是一次性活动。", "Build an open community around models, tools, creators and Web3 partners, not one-off events.")}</p></article>
-        <article><small>LONGGANG</small><b>${tx("把国产算力变成企业可用的生产平台", "Turn domestic compute into an enterprise production platform")}</b><p>${tx("围绕国产芯片、模型资产、公共服务、Agent 开发与行业验证建设实验平台。", "Build around domestic accelerators, model assets, public services, agent development and industry validation.")}</p></article>
-      </div>
-      <div class="regional-merge-bottom">
-        <span>${tx("统一资产目录", "Unified asset catalog")}</span>
-        <span>${tx("异构算力调度", "Heterogeneous compute scheduling")}</span>
-        <span>${tx("AgenticOps 控制层", "AgenticOps control plane")}</span>
-        <span>${tx("持续运营服务", "Continuous operations")}</span>
-      </div>`;
-  };
-
   const refineSlide23 = () => {
     const slide = document.querySelector("#slide-23");
     if (!slide || slide.querySelector(".research-flow-visual")) return;
@@ -322,7 +288,7 @@
   };
 
   const rebuildSlide32 = () => {
-    const slide = document.querySelector("#slide-32");
+    const slide = document.querySelector("#slide-34");
     const stage = slide?.querySelector(".app-stage");
     if (!stage || slide.classList.contains("city32-rebuilt")) return;
     slide.classList.add("city32-rebuilt");
@@ -387,7 +353,7 @@
 
     const products = [
       {
-        id: "slide-25",
+        id: "slide-27",
         title: ["AgenticHub：企业 Agent 构建、发布与运营工作台", "AgenticHub: enterprise agent build, release and operations workspace"],
         lead: ["企业 Agent 从构建、测试、发布到运行反馈，放在同一个工作台里闭环管理。", "Enterprise agents are managed in one workspace from build, test and release to runtime feedback."],
         main: ["assets/product-agentichub.png", "AgenticHub 主界面", "AgenticHub UI"],
@@ -404,10 +370,10 @@
         ]
       },
       {
-        id: "slide-27",
+        id: "slide-29",
         title: ["CSGLite：让模型、数据和 AI 工具在个人设备本地运行", "CSGLite: run models, data and AI tools locally on personal devices"],
         lead: ["个人设备上完成模型运行、数据处理和 API 服务，把个人 AI 工作系统留在本地。", "Run models, data processing and API services on personal devices while keeping the personal AI work system local."],
-        main: ["assets/product-lite.png", "CSGLite 本地运行界面", "CSGLite local runtime"],
+        main: ["assets/product-lite.jpg", "CSGLite 本地运行界面", "CSGLite local runtime"],
         shots: [
           ["assets/appendix/slide-12-image-01.png", "本地模型运行", "Local model runtime"],
           [null, "模型下载 / 断点续传", "面向大模型文件的可靠下载、鉴权和恢复能力"],
@@ -421,7 +387,7 @@
         ]
       },
       {
-        id: "slide-28",
+        id: "slide-30",
         title: ["CSGClaw：让多个 AI Agent 像一支团队协同工作", "CSGClaw: coordinate multiple AI agents as one team"],
         lead: ["把一次性对话变成可分工、可审计、可回滚的多 Agent 协同执行系统。", "Turn one-off chats into multi-agent execution that supports division of labor, audit and rollback."],
         main: ["assets/product-claw.png", "CSGClaw 协同界面", "CSGClaw UI"],
@@ -438,7 +404,7 @@
         ]
       },
       {
-        id: "slide-29",
+        id: "slide-31",
         title: ["CSGHub：统一管理模型、数据和 Agent 等关键 AI 资产", "CSGHub: manage models, data and agents as critical AI assets"],
         lead: ["把模型、数据集、代码、应用空间和治理能力组织为可生产运行的 AI 资产目录。", "Organize models, datasets, code, spaces and governance as a production-ready AI asset catalog."],
         main: ["assets/product-csghub.png", "CSGHub 资产管理界面", "CSGHub asset management"],
@@ -481,11 +447,11 @@
   };
 
   const rebuildSlide33 = () => {
-    const slide = document.querySelector("#slide-33");
+    const slide = document.querySelector("#slide-35");
     const stage = slide?.querySelector(".app-stage");
     if (!stage || slide.classList.contains("city33-diagram-ready")) return;
     slide.classList.add("city33-diagram-ready");
-    setText("#slide-33 .title",
+    setText("#slide-35 .title",
       "城市 AI 平台不是软件采购，而是“治理主体 + 开放底座 + 产业运营”的系统",
       "A city AI platform is not software procurement; it combines governance, open foundation and industry operations");
     stage.className = "app-stage city33-diagram";
@@ -520,11 +486,11 @@
   };
 
   const rebuildDongfang = () => {
-    const slide = document.querySelector("#slide-35");
+    const slide = document.querySelector("#slide-37");
     const stage = slide?.querySelector(".app-stage");
     if (!stage || slide.classList.contains("dongfang-merged-ready")) return;
     slide.classList.add("dongfang-merged-ready");
-    setText("#slide-35 .title",
+    setText("#slide-37 .title",
       "东方：用自贸港政策、开放 AI 底座和跨境服务，建设面向东南亚的数字接口",
       "Dongfang: a Southeast Asia digital gateway built on free-trade policy, open AI foundation and cross-border services");
     stage.className = "app-stage dongfang-merged";
@@ -541,9 +507,9 @@
           <path class="df-sea" d="M122 218 C232 246 374 296 520 282"/>
           <path class="df-dash" d="M184 155 C294 76 408 118 500 178"/>
         </svg>
-        <div class="df-node main">东方<small>DONGFANG</small></div>
-        <div class="df-node hk">香港</div>
-        <div class="df-node sg">新加坡</div>
+        <a class="df-node main" href="${communityHref("dongfang")}" data-community-key="dongfang"><span data-en="Dongfang">东方</span><small>DONGFANG</small></a>
+        <a class="df-node hk" href="${communityHref("hongkong")}" data-community-key="hongkong" data-en="Hong Kong">香港</a>
+        <a class="df-node sg" href="${communityHref("singapore")}" data-community-key="singapore" data-en="Singapore">新加坡</a>
         <div class="df-node sea">东南亚</div>
         <div class="df-node ftp">海南自贸港</div>
         <div class="df-caption"><small>NATIONAL DIGITAL GATEWAY</small><b>${tx("连接海南自贸港、香港、新加坡与东南亚", "Connect Hainan FTP, Hong Kong, Singapore and Southeast Asia")}</b></div>
@@ -563,11 +529,11 @@
   };
 
   const rebuildSlide37 = () => {
-    const slide = document.querySelector("#slide-37");
+    const slide = document.querySelector("#slide-39");
     const stage = slide?.querySelector(".app-stage");
     if (!stage || slide.classList.contains("city37-rebuilt")) return;
     slide.classList.add("city37-rebuilt");
-    setText("#slide-37 .title",
+    setText("#slide-39 .title",
       "三类城市任务，一套开放底座；用项目证据完成复制",
       "Three city missions, one open foundation, replicated with project evidence");
     stage.className = "app-stage city37-visual";
@@ -586,6 +552,7 @@
           <small>01 · YICHANG</small>
           <h3 data-en="Industry hub and long-term operations">产业载体与长期运营</h3>
           <p data-en="City space, compute, enterprise services and developers are organized into an operating industry hub.">把城市空间、算力、企业服务和开发者生态组织为持续运营的产业中枢。</p>
+          <a class="c37-community-link" href="${communityHref("yichang")}" data-community-key="yichang" data-en="Visit community ↗">访问社区 ↗</a>
         </article>
         <article class="c37-case-card dongfang">
           <div class="c37-shot-slot">
@@ -595,6 +562,7 @@
           <small>02 · DONGFANG</small>
           <h3 data-en="Regional gateway to Southeast Asia">面向东南亚的数字接口</h3>
           <p data-en="Free-trade policy, an open AI foundation and cross-border digital services create regional connection capacity.">以自贸港制度、开放 AI 底座和跨境数字服务形成区域连接能力。</p>
+          <a class="c37-community-link" href="${communityHref("dongfang")}" data-community-key="dongfang" data-en="Visit community ↗">访问社区 ↗</a>
         </article>
         <article class="c37-case-card longgang">
           <div class="c37-shot-slot">
@@ -604,6 +572,7 @@
           <small>03 · LONGGANG</small>
           <h3 data-en="Domestic heterogeneous compute adaptation">国产异构算力适配</h3>
           <p data-en="A feasibility path around domestic compute, model assets, public services, Agent development and industry validation.">围绕国产算力、模型资产、公共服务、Agent 开发与行业验证建设实验平台。</p>
+          <a class="c37-community-link" href="${communityHref("longgang")}" data-community-key="longgang" data-en="Visit community ↗">访问社区 ↗</a>
         </article>
       </section>
       <section class="c37-replication-path">
@@ -672,7 +641,7 @@
         enTags: ["Regional platform", "Industry scenarios", "Enterprise service"]
       },
       yichang: {
-        zh: "宜昌",
+        zh: "三峡（宜昌）",
         en: "Yichang",
         kind: "Industry hub and long-term operations",
         zhKind: "产业载体与长期运营",
@@ -702,7 +671,7 @@
         enTags: ["Public service", "Digitization", "Validation"]
       },
       dongfang: {
-        zh: "东方",
+        zh: "海南东方",
         en: "Dongfang",
         kind: "Free-trade-port gateway",
         zhKind: "自贸港区域接口",
@@ -712,7 +681,7 @@
         enTags: ["Hainan FTP", "Southeast Asia", "Cross-border"]
       },
       longgang: {
-        zh: "龙岗",
+        zh: "深圳龙岗",
         en: "Longgang",
         kind: "Domestic heterogeneous compute adaptation",
         zhKind: "国产异构算力适配",
@@ -732,7 +701,7 @@
         enTags: ["Cyberport", "Global ecosystem", "Cross-border"]
       },
       singapore: {
-        zh: "Singapore",
+        zh: "新加坡",
         en: "Singapore",
         kind: "Southeast Asia innovation bridge",
         zhKind: "东南亚创新连接",
@@ -740,6 +709,16 @@
         enSummary: "The Singapore node represents a Southeast Asia innovation, regulatory and industry-cooperation bridge for international expansion.",
         tags: ["东南亚", "国际合作", "创新生态"],
         enTags: ["Southeast Asia", "Global cooperation", "Innovation"]
+      },
+      caict: {
+        zh: "工信部 · 中国信通院",
+        en: "MIIT · CAICT AI Hub",
+        kind: "National AI open community",
+        zhKind: "国家级 AI 开放社区",
+        zhSummary: "工信部与中国信通院社区连接国家级产业资源、标准研究、开发者与人工智能资产服务。",
+        enSummary: "The MIIT and CAICT AI Hub connects national industry resources, standards research, developers and AI asset services.",
+        tags: ["国家级社区", "产业标准", "AI 资产"],
+        enTags: ["National hub", "Industry standards", "AI assets"]
       }
     };
 
@@ -780,7 +759,7 @@
         content.innerHTML = `
         <header><small>CUSTOMER PROOF</small><h3 data-en="Key customers and national-level industry connections">重点客户与国家级产业连接</h3><p data-en="The proof is not a logo wall; it shows national institutions, central SOEs, industrial leaders and ecosystem partners already connected to OpenCSG.">这不是商标墙，而是国家机构、央企、产业龙头与生态伙伴已经连接到 OpenCSG 的证明。</p></header>
         <div class="proof-customer-detail">
-          <article><small>NATIONAL INSTITUTION</small><b data-en="MIIT">工业和信息化部</b><span data-en="National industry connection">国家级产业连接</span></article>
+          <article><small>NATIONAL INSTITUTION</small><b data-en="MIIT">工业和信息化部</b><span data-en="National industry connection">国家级产业连接</span><a class="proof-community-link" href="${communityHref("caict")}" data-community-key="caict" data-en="Visit MIIT / CAICT AI Hub ↗">访问工信部社区 ↗</a></article>
           <article><small>CENTRAL SOE</small><b data-en="China Mobile / China Unicom">中国移动 / 中国联通</b><span data-en="Carrier production and sovereign deployment boundary">运营商生产与自主可控边界</span></article>
           <article><small>INDUSTRIAL LEADERS</small><b>CATL / CALB</b><span data-en="New-energy manufacturing and industrial AI scenarios">新能源制造与产业 AI 场景</span></article>
           <article><small>ECOSYSTEM</small><b data-en="Cambricon, Muxi, Lenovo, Inspur and more">寒武纪、沐曦、联想、浪潮等</b><span data-en="Compute, hardware and enterprise software ecosystem">算力、硬件与企业软件生态</span></article>
@@ -789,6 +768,7 @@
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("proof-modal-open");
+      window.OpenCSGCommunity?.apply(content);
       if (window.DeckI18n?.translateTree) window.DeckI18n.translateTree(content, window.DeckI18n.pack, window.DeckI18n.lang);
     };
 
@@ -820,7 +800,6 @@
   refineSlide12();
   refineSlide20();
   refineSlide21();
-  replaceSlide22();
   refineSlide23();
   reframeSlide13();
   rebuildProductAppendix();

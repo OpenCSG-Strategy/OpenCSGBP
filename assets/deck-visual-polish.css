@@ -436,12 +436,12 @@ body.stacked-stage .nav{
 /* --------------------------------------------------------------------------
    Slides 32–37: use more of the stage and lift the smallest repeated labels.
    -------------------------------------------------------------------------- */
-#slide-32 .city32,
-#slide-33 .city33,
-#slide-34 .city34,
-#slide-35 .city35,
-#slide-36 .city36,
-#slide-37 .city37{
+#slide-34 .city32,
+#slide-35 .city33,
+#slide-36 .city34,
+#slide-37 .city35,
+#slide-38 .city36,
+#slide-39 .city37{
   top:198px!important;
   height:603px!important;
 }
@@ -451,24 +451,24 @@ body.stacked-stage .nav{
 .city-reframe :is(article>span,article>small){
   font-size:max(9px,1em);
 }
-#slide-36 .city36{
+#slide-38 .city36{
   grid-template-rows:84px 196px 50px 186px 55px;
 }
-#slide-37 .city37{
+#slide-39 .city37{
   grid-template-rows:166px 170px 178px 65px;
 }
-#slide-32 .c32-blockers article,
-#slide-33 .c33-partners article,
-#slide-33 .c33-outcomes article,
-#slide-35 .c35-triangle article,
-#slide-35 .c35-services article{
+#slide-34 .c32-blockers article,
+#slide-35 .c33-partners article,
+#slide-35 .c33-outcomes article,
+#slide-37 .c35-triangle article,
+#slide-37 .c35-services article{
   justify-content:center;
 }
 
 /* --------------------------------------------------------------------------
    Slide 38: keep the brand out of the dark panel and clear the headline rule.
    -------------------------------------------------------------------------- */
-#slide-38>.brand{
+#slide-40>.brand{
   left:72px!important;
   right:auto!important;
   top:48px!important;
@@ -477,25 +477,25 @@ body.stacked-stage .nav{
   height:auto!important;
   z-index:6!important;
 }
-#slide-38 .closing-left:after{
+#slide-40 .closing-left:after{
   top:204px;
   z-index:0;
 }
-#slide-38 .closing-left :is(.label,h2,.closing-lead,.closing-pillars,.closing-contact){
+#slide-40 .closing-left :is(.label,h2,.closing-lead,.closing-pillars,.closing-contact){
   position:relative;
   z-index:1;
 }
-#slide-38 .closing-ai-ghost{
+#slide-40 .closing-ai-ghost{
   right:22px;
   top:70px;
   font-size:250px;
   letter-spacing:-.08em;
 }
-#slide-38 .closing-command-tags{
+#slide-40 .closing-command-tags{
   top:58px;
   z-index:2;
 }
-#slide-38 .foot-wechat-pop{
+#slide-40 .foot-wechat-pop{
   z-index:20;
 }
 

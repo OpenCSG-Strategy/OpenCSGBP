@@ -1,7 +1,8 @@
 {
   "_meta": {
     "purpose": "为 8 国语言补全 65 个真正缺的短语。key=英文源文（已 decode），value=对应语言翻译。",
-    "note": "对每条短语我们保留品牌名不译（OpenCSG、CSGHub、CSGHub-Lite、CSGClaw、AgenticHub、AgenticOps、OPC、OpenCore、DevOps、GitLab、Mesosphere、IBM、HP、EleutherAI、YC、Beihang、Wharton、Stanford、MIIT、CAICT、CALB、CATL、miHoYo、Bilibili、D2iQ、Kunlun、Amazon、Letv、Tencent、WuXi AppTec、Kaya Medical、Paradise Ventures、Fanta、Wharton MBA 等）"
+    "note": "对每条短语我们保留品牌名不译（OpenCSG、CSGHub、CSGHub-Lite、CSGClaw、AgenticHub、AgenticOps、OPC、OpenCore、DevOps、GitLab、Mesosphere、IBM、HP、EleutherAI、YC、Beihang、Wharton、Stanford、MIIT、CAICT、CALB、CATL、miHoYo、Bilibili、D2iQ、Kunlun、Amazon、Letv、Tencent、WuXi AppTec、Kaya Medical、Paradise Ventures、Fanta、Wharton MBA 等）",
+    "count": 86
   },
   "TRANSLATIONS": {
     "DOWNLOAD WATERMARKED PDF": {
@@ -643,6 +644,226 @@
       "de": "Grundlage und Betriebsmethode reproduzieren – nicht die Stadt",
       "es": "Reproducir la base y el método operativo, no la ciudad",
       "pt": "Reproduzir a base e o método de operação, não a cidade"
+    },
+    "Hybrid HuggingFace+ for the enterprise: one table to see the OpenCSG capability boundary": {
+      "ja": "エンタープライズ向け Hybrid HuggingFace+：OpenCSG の能力境界が一目でわかる一枚",
+      "ko": "엔터프라이즈를 위한 Hybrid HuggingFace+: OpenCSG의 역량 경계를 한눈에 보여주는 한 장",
+      "ar": "Hybrid HuggingFace+ للمؤسسات: جدول واحد يوضح حدود قدرات OpenCSG",
+      "ru": "Hybrid HuggingFace+ для предприятий: одна таблица показывает границы возможностей OpenCSG",
+      "fr": "Hybrid HuggingFace+ pour l'entreprise : un tableau révèle la limite des capacités d'OpenCSG",
+      "de": "Hybrid HuggingFace+ für Unternehmen: eine Tabelle zeigt die Leistungsgrenzen von OpenCSG",
+      "es": "Hybrid HuggingFace+ para la empresa: una tabla muestra el límite de capacidades de OpenCSG",
+      "pt": "Hybrid HuggingFace+ para empresas: uma tabela revela o limite de capacidades do OpenCSG"
+    },
+    "HuggingFace-class experience with private deployment, from individual OPC to enterprise platforms": {
+      "ja": "HuggingFace クラスの体験とプライベートデプロイを両立、個人 OPC からエンタープライズプラットフォームまでカバー",
+      "ko": "HuggingFace 급의 사용 경험과 프라이빗 배포를 양립, 개인 OPC부터 엔터프라이즈 플랫폼까지 커버",
+      "ar": "تجربة بمستوى HuggingFace مع النشر الخاص، من OPC الفردي إلى منصات المؤسسات",
+      "ru": "Опыт уровня HuggingFace с частным развёртыванием, от индивидуального OPC до корпоративных платформ",
+      "fr": "Expérience de classe HuggingFace avec déploiement privé, de l'OPC individuel aux plateformes d'entreprise",
+      "de": "HuggingFace-Klasse-Erlebnis mit privater Bereitstellung, vom individuellen OPC bis zu Unternehmensplattformen",
+      "es": "Experiencia de clase HuggingFace con despliegue privado, desde OPC individual hasta plataformas empresariales",
+      "pt": "Experiência de classe HuggingFace com implantação privada, do OPC individual às plataformas empresariais"
+    },
+    "Six differentiators aligned with the official OpenCSG docs": {
+      "ja": "公式 OpenCSG ドキュメントに準拠した 6 つの差別化要素",
+      "ko": "공식 OpenCSG 문서에 맞춘 6가지 차별화 요소",
+      "ar": "ست ميزات تمييزية متوافقة مع وثائق OpenCSG الرسمية",
+      "ru": "Шесть отличительных преимуществ, согласованных с официальной документацией OpenCSG",
+      "fr": "Six différenciateurs alignés sur la documentation officielle d'OpenCSG",
+      "de": "Sechs Unterscheidungsmerkmale, abgestimmt mit der offiziellen OpenCSG-Dokumentation",
+      "es": "Seis diferenciadores alineados con la documentación oficial de OpenCSG",
+      "pt": "Seis diferenciadores alinhados com a documentação oficial do OpenCSG"
+    },
+    "Hybrid HuggingFace+ experience": {
+      "ja": "Hybrid HuggingFace+ 体験",
+      "ko": "Hybrid HuggingFace+ 경험",
+      "ar": "تجربة Hybrid HuggingFace+",
+      "ru": "Опыт Hybrid HuggingFace+",
+      "fr": "Expérience Hybrid HuggingFace+",
+      "de": "Hybrid-HuggingFace+-Erlebnis",
+      "es": "Experiencia Hybrid HuggingFace+",
+      "pt": "Experiência Hybrid HuggingFace+"
+    },
+    "Native Prompt / MCP / Skills assets": {
+      "ja": "ネイティブ Prompt / MCP / Skills 資産",
+      "ko": "네이티브 Prompt / MCP / Skills 자산",
+      "ar": "أصول Prompt / MCP / Skills الأصلية",
+      "ru": "Нативные активы Prompt / MCP / Skills",
+      "fr": "Actifs natifs Prompt / MCP / Skills",
+      "de": "Native Prompt / MCP / Skills-Assets",
+      "es": "Activos nativos de Prompt / MCP / Skills",
+      "pt": "Ativos nativos Prompt / MCP / Skills"
+    },
+    "End-to-end LLMOps": {
+      "ja": "エンドツーエンド LLMOps",
+      "ko": "엔드 투 엔드 LLMOps",
+      "ar": "LLMOps من البداية إلى النهاية",
+      "ru": "Сквозной LLMOps",
+      "fr": "LLMOps de bout en bout",
+      "de": "End-to-End-LLMOps",
+      "es": "LLMOps de extremo a extremo",
+      "pt": "LLMOps de ponta a ponta"
+    },
+    "XNet intelligent block acceleration": {
+      "ja": "XNet インテリジェントブロック高速化",
+      "ko": "XNet 지능형 블록 가속",
+      "ar": "تسريع الكتل الذكي عبر XNet",
+      "ru": "Интеллектуальное блочное ускорение XNet",
+      "fr": "Accélération intelligente par blocs XNet",
+      "de": "Intelligente Blockbeschleunigung mit XNet",
+      "es": "Aceleración inteligente por bloques con XNet",
+      "pt": "Aceleração inteligente por blocos com XNet"
+    },
+    "Sandbox-isolated multi-agent collaboration": {
+      "ja": "サンドボックス分離のマルチエージェント連携",
+      "ko": "샌드박스 격리 멀티 에이전트 협업",
+      "ar": "تعاون متعدد الوكلاء معزول في صناديق رمل",
+      "ru": "Изолированная песочницей совместная работа мульти-агентов",
+      "fr": "Collaboration multi-agents isolée en bac à sable",
+      "de": "Sandbox-isolierte Multi-Agenten-Zusammenarbeit",
+      "es": "Colaboración multiagente aislada por sandbox",
+      "pt": "Colaboração multiagente isolada por sandbox"
+    },
+    "OpenAI-compatible AI Gateway": {
+      "ja": "OpenAI 互換 AI ゲートウェイ",
+      "ko": "OpenAI 호환 AI 게이트웨이",
+      "ar": "بوابة AI متوافقة مع OpenAI",
+      "ru": "OpenAI-совместимый AI-шлюз",
+      "fr": "Passerelle IA compatible OpenAI",
+      "de": "OpenAI-kompatibles KI-Gateway",
+      "es": "Puerta de enlace de IA compatible con OpenAI",
+      "pt": "Gateway de IA compatível com OpenAI"
+    },
+    "Four of the most representative, high-reuse scenarios from CSGHub's 11 official use cases: pick the right combination, not just the right model": {
+      "ja": "CSGHub 公式 11 のユースケースから最も代表的で再利用度の高い 4 つ：適切な組み合わせを選ぶことが、適切なモデル選びよりも重要",
+      "ko": "CSGHub 공식 11가지 사용 사례 중 가장 대표적이고 재사용성이 높은 4가지: 올바른 모델보다 올바른 조합을 선택하세요",
+      "ar": "أربعة من أكثر السيناريوهات تمثيلاً وقابلية لإعادة الاستخدام من 11 حالة استخدام رسمية لـ CSGHub: اختر التركيبة الصحيحة وليس فقط النموذج الصحيح",
+      "ru": "Четыре наиболее показательных и повторно используемых сценария из 11 официальных примеров использования CSGHub: выберите правильную комбинацию, а не только правильную модель",
+      "fr": "Quatre des scénarios les plus représentatifs et réutilisables parmi les 11 cas d'usage officiels de CSGHub : choisir la bonne combinaison compte plus que choisir le bon modèle",
+      "de": "Vier der repräsentativsten und wiederverwendbarsten Szenarien aus den 11 offiziellen Anwendungsfällen von CSGHub: die richtige Kombination wählen, nicht nur das richtige Modell",
+      "es": "Cuatro de los escenarios más representativos y reutilizables de los 11 casos de uso oficiales de CSGHub: elija la combinación correcta, no solo el modelo correcto",
+      "pt": "Quatro dos cenários mais representativos e reutilizáveis dos 11 casos de uso oficiais do CSGHub: escolha a combinação certa, não apenas o modelo certo"
+    },
+    "From individual development to enterprise governance to vertical agents, each scenario has a clear product combination backed by official docs": {
+      "ja": "個人開発から企業ガバナンス、業界特化エージェントまで、各シナリオは公式ドキュメントに裏付けられた明確な製品組み合わせを持ちます",
+      "ko": "개인 개발부터 엔터프라이즈 거버넌스, 산업별 에이전트까지 각 시나리오는 공식 문서로 뒷받침되는 명확한 제품 조합을 갖추고 있습니다",
+      "ar": "من التطوير الفردي إلى حوكمة المؤسسات إلى الوكلاء المتخصصين، كل سيناريو له تركيبة منتجات واضحة مدعومة بالوثائق الرسمية",
+      "ru": "От индивидуальной разработки до корпоративного управления и отраслевых агентов: каждый сценарий имеет чёткую комбинацию продуктов, подкреплённую официальной документацией",
+      "fr": "Du développement individuel à la gouvernance d'entreprise et aux agents verticaux, chaque scénario s'appuie sur une combinaison de produits claire étayée par la documentation officielle",
+      "de": "Von der individuellen Entwicklung über die Unternehmenssteuerung bis zu vertikalen Agenten: jedes Szenario hat eine klare, offiziell dokumentierte Produktkombination",
+      "es": "Desde el desarrollo individual hasta la gobernanza empresarial y los agentes verticales, cada escenario tiene una combinación de productos clara respaldada por la documentación oficial",
+      "pt": "Do desenvolvimento individual à governança empresarial e aos agentes verticais, cada cenário tem uma combinação de produtos clara respaldada pela documentação oficial"
+    },
+    "All scenarios come from docs.opencsg.com typical scenarios; reference links in the footer": {
+      "ja": "すべてのシナリオは docs.opencsg.com の典型的なシナリオ一覧より、フッターに参考リンクを添付",
+      "ko": "모든 시나리오는 docs.opencsg.com의 일반적인 시나리오에서 가져왔으며, 푸터에 참고 링크 첨부",
+      "ar": "جميع السيناريوهات مستمدة من سيناريوهات docs.opencsg.com النموذجية، روابط المرجع في التذييل",
+      "ru": "Все сценарии взяты из типовых сценариев на docs.opencsg.com, справочные ссылки в нижнем колонтитуле",
+      "fr": "Tous les scénarios proviennent des cas d'usage types de docs.opencsg.com, liens de référence en pied de page",
+      "de": "Alle Szenarien stammen aus den typischen Anwendungsfällen auf docs.opencsg.com, Referenzlinks in der Fußzeile",
+      "es": "Todos los escenarios provienen de los casos típicos de docs.opencsg.com, enlaces de referencia en el pie",
+      "pt": "Todos os cenários vêm dos casos típicos em docs.opencsg.com, links de referência no rodapé"
+    },
+    "Developer local AI assistant": {
+      "ja": "開発者向けローカル AI アシスタント",
+      "ko": "개발자용 로컬 AI 어시스턴트",
+      "ar": "مساعد ذكاء اصطناعي محلي للمطورين",
+      "ru": "Локальный ИИ-ассистент для разработчиков",
+      "fr": "Assistant IA local pour développeurs",
+      "de": "Lokaler KI-Assistent für Entwickler",
+      "es": "Asistente de IA local para desarrolladores",
+      "pt": "Assistente de IA local para desenvolvedores"
+    },
+    "Unified enterprise AI asset management": {
+      "ja": "エンタープライズ AI 資産の統合管理",
+      "ko": "엔터프라이즈 AI 자산 통합 관리",
+      "ar": "إدارة موحدة لأصول الذكاء الاصطناعي للمؤسسات",
+      "ru": "Единое управление ИИ-активами предприятия",
+      "fr": "Gestion unifiée des actifs IA d'entreprise",
+      "de": "Einheitliche Verwaltung von KI-Assets im Unternehmen",
+      "es": "Gestión unificada de activos de IA empresarial",
+      "pt": "Gestão unificada de ativos de IA empresarial"
+    },
+    "Unified enterprise AI governance": {
+      "ja": "エンタープライズ AI サービスの統合ガバナンス",
+      "ko": "엔터프라이즈 AI 서비스 통합 거버넌스",
+      "ar": "حوكمة موحدة لخدمات الذكاء الاصطناعي للمؤسسات",
+      "ru": "Единое управление ИИ-сервисами предприятия",
+      "fr": "Gouvernance unifiée des services IA d'entreprise",
+      "de": "Einheitliche KI-Service-Governance im Unternehmen",
+      "es": "Gobernanza unificada de servicios de IA empresarial",
+      "pt": "Governança unificada de serviços de IA empresarial"
+    },
+    "HR / R&D / Sales agent deployment": {
+      "ja": "人事 / 研发 / 営業 エージェントの展開",
+      "ko": "HR / R&D / 영업 에이전트 배포",
+      "ar": "نشر وكلاء الموارد البشرية / البحث والتطوير / المبيعات",
+      "ru": "Развёртывание агентов HR / R&D / продаж",
+      "fr": "Déploiement d'agents RH / R&D / ventes",
+      "de": "HR / F&E / Vertriebs-Agent-Bereitstellung",
+      "es": "Despliegue de agentes de RR. HH. / I+D / ventas",
+      "pt": "Implantação de agentes de RH / P&D / vendas"
+    },
+    "DEVELOPER": {
+      "ja": "開発者",
+      "ko": "개발자",
+      "ar": "المطور",
+      "ru": "Разработчик",
+      "fr": "Développeur",
+      "de": "Entwickler",
+      "es": "Desarrollador",
+      "pt": "Desenvolvedor"
+    },
+    "ASSETS": {
+      "ja": "資産",
+      "ko": "자산",
+      "ar": "الأصول",
+      "ru": "Активы",
+      "fr": "Actifs",
+      "de": "Assets",
+      "es": "Activos",
+      "pt": "Ativos"
+    },
+    "GOVERNANCE": {
+      "ja": "ガバナンス",
+      "ko": "거버넌스",
+      "ar": "الحوكمة",
+      "ru": "Управление",
+      "fr": "Gouvernance",
+      "de": "Governance",
+      "es": "Gobernanza",
+      "pt": "Governança"
+    },
+    "AGENTS": {
+      "ja": "エージェント",
+      "ko": "에이전트",
+      "ar": "الوكلاء",
+      "ru": "Агенты",
+      "fr": "Agents",
+      "de": "Agenten",
+      "es": "Agentes",
+      "pt": "Agentes"
+    },
+    "Anchored to official docs: open source + full LLMOps + agent runtime + AI Gateway": {
+      "ja": "公式ドキュメントに準拠：オープンソース + フル LLMOps + エージェントランタイム + AI ゲートウェイ",
+      "ko": "공식 문서 기준: 오픈소스 + 풀스택 LLMOps + 에이전트 런타임 + AI 게이트웨이",
+      "ar": "مرتكزة على الوثائق الرسمية: مفتوح المصدر + LLMOps كامل + وقت تشغيل الوكلاء + بوابة AI",
+      "ru": "На основе официальной документации: открытый исходный код + полный LLMOps + среда выполнения агентов + AI-шлюз",
+      "fr": "Ancré sur la documentation officielle : open source + LLMOps complet + runtime d'agents + passerelle IA",
+      "de": "Verankert in der offiziellen Dokumentation: Open Source + vollständige LLMOps + Agent-Runtime + KI-Gateway",
+      "es": "Anclado a la documentación oficial: código abierto + LLMOps completo + runtime de agentes + pasarela de IA",
+      "pt": "Ancorado na documentação oficial: código aberto + LLMOps completo + runtime de agentes + gateway de IA"
+    },
+    "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios": {
+      "ja": "出典：docs.opencsg.com/csghub/101/function/usecase — 公式 11 シナリオ一覧",
+      "ko": "출처: docs.opencsg.com/csghub/101/function/usecase — 공식 11가지 시나리오 전체",
+      "ar": "المصدر: docs.opencsg.com/csghub/101/function/usecase — جميع السيناريوهات الرسمية الـ 11",
+      "ru": "Источник: docs.opencsg.com/csghub/101/function/usecase — все 11 официальных сценариев",
+      "fr": "Source : docs.opencsg.com/csghub/101/function/usecase — les 11 scénarios officiels",
+      "de": "Quelle: docs.opencsg.com/csghub/101/function/usecase — alle 11 offiziellen Szenarien",
+      "es": "Fuente: docs.opencsg.com/csghub/101/function/usecase — los 11 escenarios oficiales",
+      "pt": "Fonte: docs.opencsg.com/csghub/101/function/usecase — todos os 11 cenários oficiais"
     }
   }
 }
