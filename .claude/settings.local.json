@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "Bash(xargs -I{} sh -c 'echo {}: $\\(wc -l < {}\\)')",
+      "Bash(node *)",
+      "Bash(bash scripts/i18n/run-all.sh audit)",
+      "Read(//private/tmp/i18n-audit/**)"
+    ]
+  }
+}

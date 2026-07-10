@@ -6,7 +6,7 @@
 
 ![OpenCSG Investor Deck](./docs/assets/cover.png)
 
-![Version](https://img.shields.io/badge/Version-2026.07-blue?style=flat-square)
+![Version](https://img.shields.io/badge/Version-2026.07.1-blue?style=flat-square)
 ![Pages](https://img.shields.io/badge/Slides-40-teal?style=flat-square)
 ![Languages](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)
 ![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)
@@ -16,6 +16,11 @@
 __简体中文__ | [English](./README_EN.md)
 
 </div>
+
+> **最新更新 (2026-07)**:
+> - **封面文案** — 主标题改为"让大模型赋能每一个人",底部标签改为"核心开源 · 混合方案 · Agentic驱动 · 主权AI"(per IR 参考)
+> - **附录页修复** — slide 25 能力对比卡高度统一;slide 26 场景卡描述与底部对齐
+> - **10 国语言** — 封面 4 个新 tag 全部翻译到位(ja/ko/ar/ru/fr/de/es/pt 不再回退到英文)
 
 ---
 
@@ -49,7 +54,7 @@ __简体中文__ | [English](./README_EN.md)
 
 ```bash
 # 1. 克隆 & 安装
-git clone git@github.com:frankfika/OpenCSG_BP_HTML_2026.git
+git clone git@github.com:OpenCSG-Strategy/OpenCSGBP.git
 cd OpenCSG_BP_HTML_2026
 npm install
 
@@ -244,7 +249,7 @@ location.reload();
 
 ## 维护者
 
-- 项目主页：[github.com/frankfika/OpenCSG_BP_HTML_2026](https://github.com/frankfika/OpenCSG_BP_HTML_2026)
+- 项目主页：[github.com/OpenCSG-Strategy/OpenCSGBP](https://github.com/OpenCSG-Strategy/OpenCSGBP)
 - 截图脚本：`scripts/capture-readme-screenshots.mjs`
 - i18n 工具：`scripts/i18n/run-all.sh {audit|gen|apply|all}`
 

@@ -6,7 +6,7 @@
 
 ![OpenCSG Investor Deck](./docs/assets/cover.png)
 
-![Version](https://img.shields.io/badge/Version-2026.07-blue?style=flat-square)
+![Version](https://img.shields.io/badge/Version-2026.07.1-blue?style=flat-square)
 ![Pages](https://img.shields.io/badge/Slides-40-teal?style=flat-square)
 ![Languages](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)
 ![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)
@@ -16,6 +16,11 @@
 [简体中文](./README.md) | __English__
 
 </div>
+
+> **Recent updates (2026-07)**:
+> - **Cover copy** — Main title updated to "Empowering every person with large models"; 4 bottom tags updated to "Core open source · Hybrid · Agentic-driven · Sovereign AI" (per IR reference)
+> - **Appendix polish** — slide 25 capability cards equalized; slide 26 scenario descriptions aligned with footer
+> - **10-language coverage** — 4 new cover tags translated for all 8 non-EN/non-ZH locales (no more English fallback)
 
 ---
 
