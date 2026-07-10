@@ -2227,6 +2227,10 @@
     "GOVERNANCE": "거버넌스",
     "AGENTS": "에이전트",
     "Anchored to official docs: open source + full LLMOps + agent runtime + AI Gateway": "공식 문서 기준: 오픈소스 + 풀스택 LLMOps + 에이전트 런타임 + AI 게이트웨이",
-    "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios": "출처: docs.opencsg.com/csghub/101/function/usecase — 공식 11가지 시나리오 전체"
+    "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios": "출처: docs.opencsg.com/csghub/101/function/usecase — 공식 11가지 시나리오 전체",
+    "Empowering every person with large models": "대규모 모델로 모든 사람에게 힘을 실어주다",
+    "CORE OPEN SOURCE": "핵심 오픈소스",
+    "HYBRID": "하이브리드",
+    "SOVEREIGN AI": "주권 AI"
   }
 }

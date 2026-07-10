@@ -2209,6 +2209,10 @@
     "GOVERNANCE": "Управление",
     "AGENTS": "Агенты",
     "Anchored to official docs: open source + full LLMOps + agent runtime + AI Gateway": "На основе официальной документации: открытый исходный код + полный LLMOps + среда выполнения агентов + AI-шлюз",
-    "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios": "Источник: docs.opencsg.com/csghub/101/function/usecase — все 11 официальных сценариев"
+    "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios": "Источник: docs.opencsg.com/csghub/101/function/usecase — все 11 официальных сценариев",
+    "Empowering every person with large models": "Большие модели дают возможности каждому человеку",
+    "CORE OPEN SOURCE": "Основной открытый исходный код",
+    "HYBRID": "Гибридный",
+    "SOVEREIGN AI": "Суверенный ИИ"
   }
 }

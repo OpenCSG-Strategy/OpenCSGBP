@@ -864,6 +864,46 @@
       "de": "Quelle: docs.opencsg.com/csghub/101/function/usecase — alle 11 offiziellen Szenarien",
       "es": "Fuente: docs.opencsg.com/csghub/101/function/usecase — los 11 escenarios oficiales",
       "pt": "Fonte: docs.opencsg.com/csghub/101/function/usecase — todos os 11 cenários oficiais"
+    },
+    "Empowering every person with large models": {
+      "ja": "大規模モデルで全ての人をエンパワーする",
+      "ko": "대규모 모델로 모든 사람에게 힘을 실어주다",
+      "ar": "نماذج كبيرة تُمكّن كل شخص",
+      "ru": "Большие модели дают возможности каждому человеку",
+      "fr": "Les grands modèles donnent du pouvoir à chacun",
+      "de": "Große Modelle ermächtigen jeden Menschen",
+      "es": "Los modelos grandes empoderan a cada persona",
+      "pt": "Modelos grandes capacitam cada pessoa"
+    },
+    "CORE OPEN SOURCE": {
+      "ja": "中核オープンソース",
+      "ko": "핵심 오픈소스",
+      "ar": "المصدر المفتوح الأساسي",
+      "ru": "Основной открытый исходный код",
+      "fr": "Open source fondamental",
+      "de": "Kern-Open-Source",
+      "es": "Código abierto principal",
+      "pt": "Código aberto principal"
+    },
+    "HYBRID": {
+      "ja": "ハイブリッド",
+      "ko": "하이브리드",
+      "ar": "هجين",
+      "ru": "Гибридный",
+      "fr": "Hybride",
+      "de": "Hybrid",
+      "es": "Híbrido",
+      "pt": "Híbrido"
+    },
+    "SOVEREIGN AI": {
+      "ja": "ソブリン AI",
+      "ko": "주권 AI",
+      "ar": "الذكاء الاصطناعي السيادي",
+      "ru": "Суверенный ИИ",
+      "fr": "IA souveraine",
+      "de": "Souveräne KI",
+      "es": "IA soberana",
+      "pt": "IA soberana"
     }
   }
 }
