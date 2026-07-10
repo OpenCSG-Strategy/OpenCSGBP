@@ -55,7 +55,7 @@ __简体中文__ | [English](./README_EN.md)
 ```bash
 # 1. 克隆 & 安装
 git clone git@github.com:OpenCSG-Strategy/OpenCSGBP.git
-cd OpenCSG_BP_HTML_2026
+cd OpenCSGBP
 npm install
 
 # 2. 启动本地预览（默认 127.0.0.1:4173）
@@ -92,7 +92,7 @@ npm run serve
 ## 目录结构
 
 ```
-OpenCSG_BP_HTML_2026/
+OpenCSGBP/
 ├── index.html                # 入口页面，40 张 slide 全部写在这里
 ├── assets/
 │   ├── deck-*.css / .js      # 幻灯样式与脚本
