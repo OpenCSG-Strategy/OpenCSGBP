@@ -1,16 +1,16 @@
 /* ====================================================================
    Slide 14 — Founder & Team
-   Clean Silicon Valley / Sequoia / a16z-style founder page.
-   Three full-width bands: founder hero (portrait + bio) / career
-   timeline / core team (5 cards with bios).
+   Three full-width bands: founder hero (portrait + bio + education +
+   career logos) / career timeline / core team (5 cards with bios).
    ==================================================================== */
 
 /* ---- Override slide-14 title size -------------------------------- */
 #slide-14 .title{
-  font-size:26px;
+  font-size:24px;
   line-height:1.2;
   max-width:1280px;
-  margin-bottom:14px
+  margin-bottom:12px;
+  font-weight:600
 }
 
 /* ---- Page layout shell: vertical stack of 3 bands ------------------ */
@@ -18,39 +18,44 @@
   position:absolute;
   left:78px;
   right:78px;
-  top:170px;
-  bottom:60px;
+  top:158px;
+  bottom:54px;
   display:flex;
   flex-direction:column;
-  gap:14px;
+  gap:12px;
   min-height:0
 }
 
-/* ---- Band 1: founder hero (portrait + bio) ------------------------- */
+/* ====================================================================
+   Band 1 · Founder hero
+   ==================================================================== */
 #slide-14 .founder14-hero{
   display:grid;
-  grid-template-columns:200px 1fr;
-  gap:24px;
+  grid-template-columns:240px 1fr;
+  gap:28px;
   align-items:stretch;
   border-top:3px solid var(--teal);
-  padding-top:14px;
+  padding:16px 20px 18px;
+  background:linear-gradient(180deg,#F7FBFA 0%,#FFFFFF 60%);
+  box-shadow:inset 0 0 0 1px #DCE8E5;
   min-height:0
 }
 
 #slide-14 .founder14-portrait{
   position:relative;
-  width:200px;
-  height:200px;
+  width:240px;
+  height:280px;
   background:#DDE5E3;
   overflow:hidden;
-  flex-shrink:0
+  flex-shrink:0;
+  border:1px solid #C8D6D3
 }
 #slide-14 .founder14-portrait img{
   display:block;
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:50% 30%;
+  object-position:50% 28%;
   filter:grayscale(.04) contrast(1.02)
 }
 
@@ -69,7 +74,7 @@
 }
 #slide-14 .founder14-name{
   color:#0F2722;
-  font-size:24px;
+  font-size:26px;
   font-weight:700;
   letter-spacing:-.025em;
   line-height:1.1
@@ -78,7 +83,7 @@
   margin-left:8px;
   font-style:normal;
   font-weight:500;
-  font-size:14px;
+  font-size:15px;
   color:#7C8785;
   letter-spacing:0
 }
@@ -90,14 +95,14 @@
 }
 #slide-14 .founder14-prev{
   color:#677570;
-  font-size:11px;
+  font-size:10.5px;
   line-height:1.4
 }
 
 #slide-14 .founder14-bio{
   margin:0;
   color:#1A2E2A;
-  font-size:12.5px;
+  font-size:12px;
   line-height:1.65;
   font-weight:400;
   letter-spacing:-.005em;
@@ -105,7 +110,93 @@
   text-justify:inter-character
 }
 
-/* ---- Band 2: career path (horizontal step list) ------------------- */
+/* ---- Education row (highlighted) ---------------------------------- */
+#slide-14 .founder14-edu{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:8px 0 0
+}
+#slide-14 .founder14-edu small{
+  flex:0 0 auto;
+  color:#9AA6A4;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em
+}
+#slide-14 .founder14-edu ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap
+}
+#slide-14 .founder14-edu li{
+  display:inline-flex;
+  align-items:baseline;
+  gap:6px;
+  padding:5px 11px;
+  background:#0E2926;
+  color:#FFFFFF;
+  font-size:11px;
+  line-height:1.2;
+  border-radius:2px;
+  white-space:nowrap
+}
+#slide-14 .founder14-edu-school{
+  font-weight:700;
+  letter-spacing:.01em
+}
+#slide-14 .founder14-edu-deg{
+  color:#C8DDD8;
+  font-weight:500;
+  font-size:10px
+}
+
+/* ---- Career logos row --------------------------------------------- */
+#slide-14 .founder14-logos{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding-top:6px
+}
+#slide-14 .founder14-logos small{
+  flex:0 0 auto;
+  color:#9AA6A4;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em
+}
+#slide-14 .founder14-logos ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:10px;
+  align-items:center
+}
+#slide-14 .founder14-logos li{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:64px;
+  height:36px;
+  background:#FFFFFF;
+  border:1px solid #D8E2E0;
+  border-radius:2px;
+  filter:grayscale(.1)
+}
+#slide-14 .founder14-logos img{
+  max-width:48px;
+  max-height:22px;
+  object-fit:contain;
+  display:block
+}
+
+/* ====================================================================
+   Band 2 · Career path
+   ==================================================================== */
 #slide-14 .founder14-path{
   display:flex;
   flex-direction:column;
@@ -175,11 +266,13 @@
   line-height:1.35
 }
 
-/* ---- Band 3: core team — 5 equal cards with bio paragraphs -------- */
+/* ====================================================================
+   Band 3 · Core team — 5 equal cards with bio paragraphs
+   ==================================================================== */
 #slide-14 .founder14-team{
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap:6px;
   min-height:0;
   flex:1
 }
@@ -210,7 +303,7 @@
   padding:0;
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:10px;
+  gap:8px;
   min-height:0;
   flex:1
 }
@@ -242,7 +335,7 @@
   align-items:baseline;
   gap:6px;
   color:#0F2722;
-  font-size:14px;
+  font-size:13.5px;
   font-weight:700;
   line-height:1.2
 }
