@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+# pre-commit hook · i18n audit gate
+#
+# 安装:
+#   ln -s ../../scripts/i18n/pre-commit .git/hooks/pre-commit
+#   chmod +x .git/hooks/pre-commit
+#
+# 作用:在 commit 前自动跑 i18n audit,任何 html/js 改动若让 8 国覆盖率掉到
+#      99.8% 以下,直接 abort commit。
+
+set -e
+
+# 只在改到 index.html / assets/*.js 时跑
+CHANGED=$(git diff --cached --name-only | grep -E '^(index\.html|assets/.*\.(js|html))$' || true)
+if [ -z "$CHANGED" ]; then
+  exit 0
+fi
+
+echo "[i18n] 检测到文案相关改动,跑 audit..."
+
+ROOT=$(cd "$(dirname "$0")/../.." && pwd)
+cd "$ROOT"
+
+# 1. 先把 dynamic html 里的中文源文扫进 zh.json、en.json(动态 HTML 是常见漏网之鱼)
+node /tmp/zh-patch-v2.cjs >/dev/null 2>&1 || true
+node /tmp/en-patch.cjs >/dev/null 2>&1 || true
+
+# 2. 把 HTML entity bug 修了(保证 key 标准化)
+node /tmp/decode-fix.cjs >/dev/null 2>&1 || true
+
+# 3. 体检
+node scripts/i18n/audit.js > /tmp/i18n-audit/report.txt
+
+# 4. 解析 8 国覆盖率
+FAIL=0
+for L in ja ko ar ru fr de es pt; do
+  PCT=$(grep "^  $L.json:" /tmp/i18n-audit/report.txt | head -1 | sed -E 's/.*\(([0-9.]+)%\).*/\1/')
+  if [ -z "$PCT" ]; then
+    echo "  ❌ $L: 解析覆盖率失败"
+    FAIL=1
+    continue
+  fi
+  # 用 awk 比较浮点
+  OK=$(awk -v p="$PCT" 'BEGIN { print (p+0 >= 99.79) ? 1 : 0 }')
+  if [ "$OK" != "1" ]; then
+    echo "  ❌ $L 覆盖率 $PCT% < 99.8%"
+    FAIL=1
+  else
+    echo "  ✅ $L 覆盖率 $PCT%"
+  fi
+done
+
+# 5. zh / en 必须 100%
+for L in zh en; do
+  PCT=$(grep "^  $L.json:" /tmp/i18n-audit/report.txt | head -1 | sed -E 's/.*\(([0-9.]+)%\).*/\1/')
+  OK=$(awk -v p="$PCT" 'BEGIN { print (p+0 >= 99.99) ? 1 : 0 }')
+  if [ "$OK" != "1" ]; then
+    echo "  ❌ $L 覆盖率 $PCT% < 100%"
+    FAIL=1
+  else
+    echo "  ✅ $L 覆盖率 $PCT%"
+  fi
+done
+
+if [ "$FAIL" = "1" ]; then
+  echo ""
+  echo "🚫 i18n audit 失败,禁止 commit。"
+  echo "   缺失清单见 /tmp/i18n-audit/miss.*.txt"
+  echo "   处理流程见 docs/CONTRIBUTING-i18n.md"
+  exit 1
+fi
+
+echo "✅ i18n audit 通过,可以 commit"

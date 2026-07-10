@@ -156,6 +156,10 @@ node scripts/export-pdf.cjs --from=1 --to=10 --watermark="CONFIDENTIAL" --out=dr
 - HTML 元素用 `data-en` / `data-i18n` 标注源文，i18n 框架自动按当前语言替换。
 - 缺翻译时回退到英文，不会出现空白。
 
+> **🚨 修改任何文案前必读**：[`docs/CONTRIBUTING-i18n.md`](./docs/CONTRIBUTING-i18n.md)
+> 这份规范是**硬性要求**:改一个中文字 → 改 `data-en` → 8 国翻译补到 `translation-pack.json` → `apply` → `audit` 100% 才准合并。
+> 违反规则的 PR 直接打回,不接受"先合了再补翻译"。
+
 新增 / 修改翻译的工作流：
 
 ```bash
@@ -166,7 +170,7 @@ bash scripts/i18n/run-all.sh apply
 bash scripts/i18n/run-all.sh audit
 ```
 
-详细约定见 [`assets/i18n/README.md`](./assets/i18n/README.md)。
+详细字典约定见 [`assets/i18n/README.md`](./assets/i18n/README.md)；铁律 / 常见错误 / 批量翻译 / 品牌白名单见 [`docs/CONTRIBUTING-i18n.md`](./docs/CONTRIBUTING-i18n.md)。
 
 ## 导出 PDF / PPTX
 
