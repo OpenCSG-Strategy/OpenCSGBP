@@ -790,7 +790,7 @@
   grid-template-rows:1fr!important
 }
 #slide-14 .founder14-team li{grid-column:auto!important}
-#slide-14 .founder14-tags li:last-child{display:none}
+/* founder14-tags: all 7 tags now show, plus a tagline below */
 
 /* Appendix product pages: use product screenshots instead of abstract concept art. */
 .appendix-slide.product-shots-ready .product-shot-page{

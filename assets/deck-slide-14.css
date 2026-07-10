@@ -454,3 +454,13 @@
   border-color:var(--teal);
   color:var(--teal2)
 }
+#slide-14 .founder14-tags-tagline{
+  display:block;
+  margin:4px 0 0;
+  font-style:normal;
+  font-size:10.5px;
+  line-height:1.45;
+  color:#3D4D49;
+  letter-spacing:.01em;
+  font-weight:500
+}
