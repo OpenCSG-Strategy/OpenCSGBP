@@ -62,7 +62,7 @@
     "CANCEL": "CANCEL",
     "GENERATE & DOWNLOAD": "GENERATE & DOWNLOAD",
     "↑ ↓ Navigate · O Overview": "↑ ↓ Navigate · O Overview",
-    "Empowering everyone with large models.": "Empowering everyone with large models.",
+    "Empowering Everyone<br>with the Power of Large Models": "Empowering Everyone<br>with the Power of Large Models",
     "Open-source distribution, enterprise monetization and global replication form one growth engine": "Open-source distribution, enterprise monetization and global replication form one growth engine",
     "Continuous iteration, private deployment and deep workflow integration are now essential": "Continuous iteration, private deployment and deep workflow integration are now essential",
     "Models improve daily. Enterprises need continuous upgrades inside their own data and compute boundaries while agents enter real workflows without interrupting production.": "Models improve daily. Enterprises need continuous upgrades inside their own data and compute boundaries while agents enter real workflows without interrupting production.",
@@ -111,12 +111,10 @@
     "Generate sustained value": "Generate sustained value",
     "Founded; launched open-source community and CSGHub R&D": "Founded; launched open-source community and CSGHub R&D",
     "Completed angel round; began operations in October.": "Completed angel round; began operations in October.",
-    "Joined ModelScope Space as a founding tenant": "Joined ModelScope Space as a founding tenant",
     "Enterprise privatization, access control, evaluation and governance entered production.": "Enterprise privatization, access control, evaluation and governance entered production.",
     "City-level AI deployments launched; completed Angel+ round": "City-level AI deployments launched; completed Angel+ round",
     "Validated regional platform and continuous-operations model in Yichang, Hong Kong Cyberport and more.": "Validated regional platform and continuous-operations model in Yichang, Hong Kong Cyberport and more.",
     "Completed Pre-A round exceeding RMB 100M; expanded OPC ecosystem": "Completed Pre-A round exceeding RMB 100M; expanded OPC ecosystem",
-    "Co-hosted OPC / Agent hackathon with WAIC and B.ai.": "Co-hosted OPC / Agent hackathon with WAIC and B.ai.",
     "3M+": "3M+",
     "Community users": "Community users",
     "200K+": "200K+",
@@ -293,7 +291,6 @@
     "INVESTMENT LOGIC": "INVESTMENT LOGIC",
     "From global AI demand to sovereign build-out, the market is being shaped by three forces: enterprise adoption, national AI factories and policy acceleration.": "From global AI demand to sovereign build-out, the market is being shaped by three forces: enterprise adoption, national AI factories and policy acceleration.",
     "Global AI market by 2035": "Global AI market by 2035",
-    "of orgs already use AI in production": "of orgs already use AI in production",
     "regions are building sovereign AI": "regions are building sovereign AI",
     "OPENCSG 2026 BASE-CASE TAM": "OPENCSG 2026 BASE-CASE TAM",
     "≈ RMB 54B": "≈ RMB 54B",
@@ -1489,6 +1486,12 @@
     "Honors & Recognition": "Honors & Recognition",
     "Unified Product System": "Unified Product System",
     "Personal AI / OPC Market": "Personal AI / OPC Market",
-    "OpenCore Business Model": "OpenCore Business Model"
+    "OpenCore Business Model": "OpenCore Business Model",
+    "Partners & Customers": "Partners & Customers",
+    "OUR PARTNERS & CUSTOMERS": "OUR PARTNERS & CUSTOMERS",
+    "A representative selection · 48 organizations across central SOEs, finance, new energy, mobility, technology and academia": "A representative selection · 48 organizations across central SOEs, finance, new energy, mobility, technology and academia",
+    "covering central SOEs, finance, new energy, mobility, internet, cloud, semiconductors, universities and international bodies": "covering central SOEs, finance, new energy, mobility, internet, cloud, semiconductors, universities and international bodies",
+    "48 organizations": "48 organizations",
+    "Indicative only · Not an exhaustive list": "Indicative only · Not an exhaustive list"
   }
 }

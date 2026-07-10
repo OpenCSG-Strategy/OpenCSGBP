@@ -11,7 +11,7 @@
     `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide ${extra}" data-layout="APP-${num}" id="slide-${String(num).padStart(2, "0")}">${header(num, kickerZh, kickerEn, titleZh, titleEn)}${body}</section></div>`;
 
   const appendixSlides = [
-    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider" data-layout="APP-DIVIDER" id="slide-16">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider" data-layout="APP-DIVIDER" id="slide-16-appendix">
       <div class="app-index">APPENDIX · 01</div>
       <div class="app-big">01</div>
       ${tx("重点客户与生产验证", "Key Customers & Production Validation", "div", "app-name")}
@@ -362,7 +362,7 @@
             <a href="https://opencsg.com/education" target="_blank">${tx("高校版方案：教学、科研与校内 AI 资产平台", "Education edition: teaching, research and campus AI assets")}</a>
           </div>
         </div>
-      </div>`, "所有链接均为独立可点击 HTML 元素", "Every link is an independent clickable HTML element"),
+      </div>`, "文档、开源仓库与试用入口，均可公开访问与验证", "Documentation, open-source repositories and trials—all openly accessible to verify"),
 
     `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider city-divider" data-layout="APP-DIVIDER" id="slide-31">
       <div class="app-index">APPENDIX · 03</div>
@@ -750,7 +750,7 @@
     ).join("");
     app.querySelectorAll(".roadmap-tabs button").forEach(b => b.classList.toggle("active", b.dataset.roadMode === mode));
     const mobileMap = app.querySelector(".official-map-mobile");
-    if (mobileMap) mobileMap.src = `assets/roadmap/${mode === "opc" ? "roadMap_opc_mobile_bg.png" : "roadMap_mobile_bg.png"}`;
+    if (mobileMap) mobileMap.src = "assets/roadmap/roadmap-mobile-bg.png";
     const productsLayer = app.querySelector(".roadmap-products");
     if (productsLayer) {
       productsLayer.innerHTML = products.map((product) => `

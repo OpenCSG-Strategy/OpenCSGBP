@@ -49,7 +49,7 @@ extra.replace(/window\.OPENCSG_EN_EXTRA\s*=\s*\{([\s\S]*?)\n\};/, (_, body) => {
 const enExtraEn = new Set(Object.values(EN_EXTRA));
 
 // 4) 收集所有 deck-*.js / *.js 中的 data-en 和 tx() 第二参数 -----------
-const jsFiles = ['deck-appendix.js','deck-city-reframe.js','deck-slide03-replica.js','deck-bp-humanize-20260707.js'];
+const jsFiles = ['deck-appendix.js','deck-city.js','deck-slide-03.js','deck-bp-humanize.js'];
 const dataEnFromJs = new Set();
 const txEn = new Set();
 jsFiles.forEach(name => {

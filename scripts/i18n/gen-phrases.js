@@ -31,7 +31,7 @@ const S1 = new Set();
 });
 
 // deck-*.js 里的 data-en / tx() 第二参数
-const jsFiles = ['deck-appendix.js','deck-city-reframe.js','deck-slide03-replica.js'];
+const jsFiles = ['deck-appendix.js','deck-city.js','deck-slide-03.js'];
 jsFiles.forEach(name => {
   const src = fs.readFileSync(path.join(ROOT,'assets',name),'utf8');
   [...src.matchAll(/data-en="([^"]+)"/g)].forEach(m => {

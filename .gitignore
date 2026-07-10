@@ -2,6 +2,7 @@
 .exports/
 .playwright-mcp/
 .shots/
+.uploads/
 test-results/
 
 # Ad-hoc screenshots in project root
