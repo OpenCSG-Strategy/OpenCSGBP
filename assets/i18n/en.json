@@ -72,7 +72,6 @@
     "CANCEL": "CANCEL",
     "GENERATE & DOWNLOAD": "GENERATE & DOWNLOAD",
     "↑ ↓ Navigate · O Overview": "↑ ↓ Navigate · O Overview",
-    "Empowering every person with large models": "Empowering every person with large models",
     "Open-source distribution, enterprise monetization and global replication form one growth engine": "Open-source distribution, enterprise monetization and global replication form one growth engine",
     "Continuous iteration, private deployment and deep workflow integration are now essential": "Continuous iteration, private deployment and deep workflow integration are now essential",
     "Models improve daily. Enterprises need continuous upgrades inside their own data and compute boundaries while agents enter real workflows without interrupting production.": "Models improve daily. Enterprises need continuous upgrades inside their own data and compute boundaries while agents enter real workflows without interrupting production.",
@@ -2477,6 +2476,21 @@
     "AGENTS": "AGENTS",
     "HR / R&D / Sales agent deployment": "HR / R&D / Sales agent deployment",
     "Dual-mode (no-code drag-and-drop + code extension) + Skills marketplace + MCP tool access + long-term memory + scheduled tasks; OpenClaw pushes agents to Feishu and WeChat. Three official flagship scenarios: HR resume screening (consistent multi-round rubric), R&D weekly reports and milestones, sales follow-up and proposal drafting.": "Dual-mode (no-code drag-and-drop + code extension) + Skills marketplace + MCP tool access + long-term memory + scheduled tasks; OpenClaw pushes agents to Feishu and WeChat. Three official flagship scenarios: HR resume screening (consistent multi-round rubric), R&D weekly reports and milestones, sales follow-up and proposal drafting.",
-    "Resume screening / weekly milestones / sales follow-up / service desk": "Resume screening / weekly milestones / sales follow-up / service desk"
+    "Resume screening / weekly milestones / sales follow-up / service desk": "Resume screening / weekly milestones / sales follow-up / service desk",
+    "Sovereign Infrastructure": "Sovereign Infrastructure",
+    "Open Ecosystem": "Open Ecosystem",
+    "Governed AI": "Governed AI",
+    "Trusted Outcomes": "Trusted Outcomes",
+    "Empowering Everyone": "Empowering Everyone",
+    "with the Power of Large Models": "with the Power of Large Models",
+    "HYBRID SOLUTIONS": "HYBRID SOLUTIONS",
+    "AI-NATIVE": "AI-NATIVE",
+    "Empowering Everyone<br>with the Power of Large Models": "Empowering Everyone<br>with the Power of Large Models",
+    "Empowering everyone with large models.": "Empowering everyone with large models.",
+    "of orgs already use AI in production": "of orgs already use AI in production",
+    "Hybrid HuggingFace+ for the enterprise: one table to see the OpenCSG capability boundary": "Hybrid HuggingFace+ for the enterprise: one table to see the OpenCSG capability boundary",
+    "Four of the most representative, high-reuse scenarios from CSGHub's 11 official use cases: pick the right combination, not just the right model": "Four of the most representative, high-reuse scenarios from CSGHub's 11 official use cases: pick the right combination, not just the right model",
+    "Anchored to official docs: open source + full LLMOps + agent runtime + AI Gateway": "Anchored to official docs: open source + full LLMOps + agent runtime + AI Gateway",
+    "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios": "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios"
   }
 }

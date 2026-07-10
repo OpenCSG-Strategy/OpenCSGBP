@@ -1288,7 +1288,6 @@
     "${item.en}": "",
     "${item.enBody}": "",
     "A universal production requirement, not a single-industry or policy-only demand": "",
-    "Empowering every person with large models": "让大模型赋能每一个人",
     "Open-source distribution, enterprise monetization and global replication form one growth engine": "",
     "Continuous iteration, private deployment and deep workflow integration are now essential": "",
     "Models improve daily. Enterprises need continuous upgrades inside their own data and compute boundaries while agents enter real workflows without interrupting production.": "",
@@ -2459,6 +2458,21 @@
     "AGENTS": "",
     "HR / R&D / Sales agent deployment": "",
     "Dual-mode (no-code drag-and-drop + code extension) + Skills marketplace + MCP tool access + long-term memory + scheduled tasks; OpenClaw pushes agents to Feishu and WeChat. Three official flagship scenarios: HR resume screening (consistent multi-round rubric), R&D weekly reports and milestones, sales follow-up and proposal drafting.": "",
-    "Resume screening / weekly milestones / sales follow-up / service desk": ""
+    "Resume screening / weekly milestones / sales follow-up / service desk": "",
+    "Sovereign Infrastructure": "",
+    "Open Ecosystem": "",
+    "Governed AI": "",
+    "Trusted Outcomes": "",
+    "Empowering Everyone": "",
+    "with the Power of Large Models": "",
+    "HYBRID SOLUTIONS": "",
+    "AI-NATIVE": "",
+    "Empowering Everyone<br>with the Power of Large Models": "",
+    "Empowering everyone with large models.": "",
+    "of orgs already use AI in production": "",
+    "Hybrid HuggingFace+ for the enterprise: one table to see the OpenCSG capability boundary": "",
+    "Four of the most representative, high-reuse scenarios from CSGHub's 11 official use cases: pick the right combination, not just the right model": "",
+    "Anchored to official docs: open source + full LLMOps + agent runtime + AI Gateway": "",
+    "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios": ""
   }
 }

@@ -4566,6 +4566,12 @@
     let pdfWarmState='idle';
     let pdfWarmTimer=0;
     let pdfWarmPromise=null;
+    function isGithubPages(){
+      return /^https?:\/\/opencsg-strategy\.github\.io\//.test(location.href);
+    }
+    if(isGithubPages()){
+      pdfWarmState='github-pages';
+    }
     if(new URLSearchParams(location.search).get('watermark'))document.body.classList.add('watermark');
     function walkText(root,fn){for(const n of root.childNodes){if(n.nodeType===3)fn(n);else if(n.nodeType===1&&!['SCRIPT','STYLE'].includes(n.tagName))walkText(n,fn)}}
     wraps.forEach(w=>walkText(w,n=>{n.__zh=n.nodeValue}));
@@ -5012,6 +5018,9 @@
       }else if(pdfWarmState==='error'){
         button.title=__t('PDF will be generated when opened','打开时将重新生成 PDF');
         if(status) status.textContent=__t('Will generate on open','打开时生成');
+      }else if(pdfWarmState==='github-pages'){
+        button.title=__t('PDF export requires local server. Run npm run serve and use http://127.0.0.1:4173','PDF 导出需在本地服务器使用。请运行 npm run serve，访问 http://127.0.0.1:4173');
+        if(status) status.textContent=__t('Local only','需本地');
       }else{
         button.removeAttribute('title');
         if(status) status.textContent='';
@@ -5060,6 +5069,7 @@
       setTimeout(()=>overlay.classList.remove('active'),delay);
     }
     async function warmPdf(){
+      if(pdfWarmState==='github-pages') return {ok:false,githubPages:true};
       if(pdfWarmState==='ready') return {ok:true,cached:true};
       if(pdfWarmPromise) return pdfWarmPromise;
       pdfWarmState='warming';
@@ -5083,7 +5093,7 @@
       return pdfWarmPromise;
     }
     function resetPdfWarm(delay=300){
-      pdfWarmState='idle';
+      pdfWarmState=isGithubPages()?'github-pages':'idle';
       updatePdfButtonState();
       clearTimeout(pdfWarmTimer);
       pdfWarmTimer=setTimeout(warmPdf,delay);
@@ -5227,6 +5237,10 @@
       fit();
     }
     async function previewPdf(){
+      if(pdfWarmState==='github-pages'){
+        showExportNotice(__t('PDF export is not available on GitHub Pages. Please run npm run serve locally and use http://127.0.0.1:4173 to export PDF.','GitHub Pages 上无法导出 PDF。请在本地运行 npm run serve，访问 http://127.0.0.1:4173 使用 PDF 导出功能。'),true);
+        return;
+      }
       const url=pdfUrl('view');
       if(pdfWarmState!=='ready'){
         pdfWarmState='opening';
