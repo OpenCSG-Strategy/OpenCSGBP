@@ -1767,7 +1767,6 @@
   grid-template-rows:minmax(0,1fr) 66px!important;
   gap:14px!important
 }
-#slide-36{display:none!important}
 #slide-35 .df-thesis{
   grid-column:1!important;
   grid-row:1!important;

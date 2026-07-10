@@ -560,12 +560,6 @@
         <span>${tx("加工 / 服务 / 出海", "Processing / services / outbound")}</span>
       </section>`;
 
-    const slide36 = document.querySelector("#slide-36")?.closest(".slide-wrap");
-    if (slide36) {
-      slide36.hidden = true;
-      slide36.style.display = "none";
-      slide36.setAttribute("data-section", "removed");
-    }
   };
 
   const rebuildSlide37 = () => {
