@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70">
-<rect width="200" height="70" fill="white"/>
-<text x="100" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="800" fill="#0066CC" letter-spacing="-1">D<tspan font-size="28" baseline-shift="2">2</tspan>iQ</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- D2iQ wordmark. Blue + a stacked "2" inside D. -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(20,15)" font-family="Helvetica, Arial, sans-serif" font-weight="800">
+    <text x="0" y="34" font-size="40" fill="#0064B0" letter-spacing="-2">D</text>
+    <text x="32" y="34" font-size="22" fill="#0064B0">2</text>
+    <text x="48" y="34" font-size="40" fill="#0064B0" letter-spacing="-2">iQ</text>
+  </g>
 </svg>

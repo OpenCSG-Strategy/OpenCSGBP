@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- Fanta Tech 范特科技: stylized F + wordmark -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(20,12)">
+    <!-- F glyph block -->
+    <rect x="0" y="0" width="28" height="40" fill="#0066B2"/>
+    <rect x="6" y="6" width="16" height="6" fill="#FFFFFF"/>
+    <rect x="6" y="16" width="12" height="5" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(60,30)" font-family="'PingFang SC','Hiragino Sans GB',sans-serif" font-weight="700">
+    <text x="0" y="0" font-size="18" fill="#0066B2" letter-spacing="1">范特科技</text>
+  </g>
+  <g transform="translate(60,46)" font-family="Helvetica, Arial, sans-serif" font-weight="700">
+    <text x="0" y="0" font-size="9" fill="#0066B2" letter-spacing="0.6">FANTA TECH</text>
+  </g>
+</svg>

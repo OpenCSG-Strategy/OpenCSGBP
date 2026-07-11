@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- Amazon: smile arrow + wordmark -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(20,12)" font-family="Helvetica, Arial, sans-serif" font-weight="700">
+    <text x="0" y="28" font-size="26" fill="#232F3E" letter-spacing="-1">amazon</text>
+    <!-- smile arrow under the wordmark -->
+    <path d="M5 35 Q60 50 130 35" stroke="#FF9900" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <polygon points="125,32 138,33 130,40" fill="#FF9900"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- Y Combinator wordmark. Orange "Y" + "COMBINATOR" text. -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(14,12)">
+    <text x="0" y="42" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="44" fill="#F26522" font-style="italic">Y</text>
+    <text x="28" y="38" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="16" fill="#F26522" letter-spacing="1.5">COMBINATOR</text>
+  </g>
+</svg>

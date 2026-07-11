@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- Letv (乐视) wordmark. "Le" stylized + "TV" superscript -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(20,18)" font-family="Helvetica, Arial, sans-serif">
+    <text x="0" y="36" font-size="42" font-weight="800" fill="#E60012" letter-spacing="-2">Le</text>
+    <text x="55" y="18" font-size="14" font-weight="700" fill="#E60012">TV</text>
+    <text x="55" y="36" font-size="22" font-weight="500" fill="#1A1A1A" letter-spacing="2">乐视</text>
+  </g>
+</svg>

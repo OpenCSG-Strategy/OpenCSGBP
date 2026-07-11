@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- Kaya Medical 科亚医疗 wordmark. Pulse line + wordmark -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <!-- pulse/ECG glyph -->
+  <g transform="translate(14,20)" stroke="#00A19A" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M0 16 L10 16 L14 4 L20 28 L26 8 L32 16 L40 16"/>
+  </g>
+  <g transform="translate(64,38)" font-family="'PingFang SC','Hiragino Sans GB',sans-serif" font-weight="700">
+    <text x="0" y="0" font-size="20" fill="#00A19A" letter-spacing="1">科亚医疗</text>
+  </g>
+  <g transform="translate(160,40)" font-family="Helvetica, Arial, sans-serif" font-weight="700">
+    <text x="0" y="0" font-size="9" fill="#00A19A" letter-spacing="0.5">KAYA</text>
+  </g>
+</svg>

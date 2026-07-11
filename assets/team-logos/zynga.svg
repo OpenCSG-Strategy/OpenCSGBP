@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- Zynga: "Z" dog-tag glyph + wordmark -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(20,12)">
+    <!-- dog-tag with "Z" -->
+    <path d="M0 6 L26 6 L32 12 L32 36 L6 36 L0 30 Z" fill="#E10000"/>
+    <text x="16" y="30" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="22" fill="#FFFFFF" text-anchor="middle">Z</text>
+  </g>
+  <g transform="translate(64,40)" font-family="Helvetica, Arial, sans-serif" font-weight="700">
+    <text x="0" y="0" font-size="22" fill="#1A1A1A" letter-spacing="-0.5">Zynga</text>
+  </g>
+</svg>

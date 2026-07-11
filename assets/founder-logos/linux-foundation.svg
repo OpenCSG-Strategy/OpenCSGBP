@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- Linux Foundation: tux-style mark + LF text. -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <!-- tux silhouette (simplified) -->
+  <g transform="translate(20,12)" fill="#1A1A1A">
+    <ellipse cx="22" cy="18" rx="14" ry="15"/>
+    <path d="M8 18 Q8 5 22 5 Q36 5 36 18 Q36 32 22 32 Q8 32 8 18 Z"/>
+    <!-- white face -->
+    <ellipse cx="22" cy="20" rx="9" ry="11" fill="#FFFFFF"/>
+    <!-- eyes -->
+    <ellipse cx="19" cy="17" rx="1.6" ry="2" fill="#1A1A1A"/>
+    <ellipse cx="25" cy="17" rx="1.6" ry="2" fill="#1A1A1A"/>
+    <!-- beak -->
+    <path d="M20 21 L24 21 L22 25 Z" fill="#F5A623"/>
+    <!-- feet -->
+    <ellipse cx="16" cy="42" rx="6" ry="2.5"/>
+    <ellipse cx="28" cy="42" rx="6" ry="2.5"/>
+  </g>
+  <text x="68" y="30" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="14" fill="#003366" letter-spacing="0.3">LINUX</text>
+  <text x="68" y="50" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="13" fill="#003366" letter-spacing="2">FOUNDATION</text>
+</svg>

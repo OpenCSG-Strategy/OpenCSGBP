@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- CNCF: a Kubernetes-style helm + CNCF text. -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(18,14)">
+    <!-- helm/wheel mark in CNCF blue -->
+    <polygon points="22,2 38,12 38,30 22,40 6,30 6,12" fill="none" stroke="#326CE5" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="22" cy="21" r="6" fill="none" stroke="#326CE5" stroke-width="2.5"/>
+    <line x1="22" y1="15" x2="22" y2="27" stroke="#326CE5" stroke-width="2.5"/>
+    <line x1="16" y1="18" x2="28" y2="24" stroke="#326CE5" stroke-width="2.5"/>
+    <line x1="16" y1="24" x2="28" y2="18" stroke="#326CE5" stroke-width="2.5"/>
+  </g>
+  <text x="70" y="32" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="20" fill="#326CE5" letter-spacing="1">CNCF</text>
+  <text x="70" y="48" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="8.5" fill="#326CE5" letter-spacing="0.6">CLOUD NATIVE COMPUTING</text>
+</svg>

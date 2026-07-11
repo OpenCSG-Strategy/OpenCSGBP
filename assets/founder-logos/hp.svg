@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70">
-<rect width="200" height="70" fill="white"/>
-<g transform="translate(60,35)">
-<circle cx="0" cy="0" r="20" fill="#0096D6"/>
-<circle cx="0" cy="0" r="20" fill="none" stroke="#0096D6" stroke-width="1"/>
-</g>
-<g transform="translate(140,35)">
-<circle cx="0" cy="0" r="20" fill="none" stroke="#0096D6" stroke-width="8"/>
-<circle cx="0" cy="0" r="6" fill="#0096D6"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- HP modern circle logo: solid blue circle with white italic "hp" -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(100,35)">
+    <circle r="26" fill="#0096D6"/>
+    <!-- h: vertical stem + arch; p: vertical stem + bowl -->
+    <g fill="#FFFFFF" font-family="Helvetica, Arial, sans-serif" font-style="italic" font-weight="700" text-anchor="middle">
+      <text x="0" y="10" font-size="34" letter-spacing="-2">hp</text>
+    </g>
+  </g>
 </svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- Lizhi FM 荔枝 FM wordmark. Speaker / sound glyph + wordmark -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(16,18)">
+    <!-- speaker glyph -->
+    <path d="M0 12 L8 12 L16 4 L16 32 L8 24 L0 24 Z" fill="#FF334B"/>
+    <path d="M20 8 Q26 18 20 28" stroke="#FF334B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M25 4 Q33 18 25 32" stroke="#FF334B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(58,38)" font-family="'PingFang SC','Hiragino Sans GB',sans-serif" font-weight="700">
+    <text x="0" y="0" font-size="18" fill="#1A1A1A" letter-spacing="1">荔枝FM</text>
+  </g>
+  <g transform="translate(140,40)" font-family="Helvetica, Arial, sans-serif" font-weight="600">
+    <text x="0" y="0" font-size="9" fill="#FF334B" letter-spacing="1">LIZHI</text>
+  </g>
+</svg>

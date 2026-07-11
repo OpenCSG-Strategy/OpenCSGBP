@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const url = 'http://127.0.0.1:4173/?lang=en#slide-14';
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ viewport: { width: 1600, height: 900 } });
+const page = await ctx.newPage();
+await page.goto(url, { waitUntil: 'networkidle' });
+await page.waitForTimeout(1500);
+await page.screenshot({ path: '/tmp/slide14.png', fullPage: false });
+await browser.close();
+console.log('OK');

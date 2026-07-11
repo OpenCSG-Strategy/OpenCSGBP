@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
+  <!-- JiHu GitLab 极狐 GitLab: tanuki + bilingual wordmark. Domestic Chinese version. -->
+  <rect width="200" height="70" fill="#FFFFFF"/>
+  <g transform="translate(40,40)">
+    <polygon points="0,-22 -16,18 -8,18 0,4 8,18 16,18" fill="#E24329"/>
+    <polygon points="0,-22 -16,18 -32,18 -8,-10" fill="#FC6D26"/>
+    <polygon points="0,-22 16,18 32,18 8,-10" fill="#FC6D26"/>
+    <polygon points="-32,18 32,18 16,18 0,4 -16,18" fill="#FCA326"/>
+  </g>
+  <g transform="translate(80,28)" font-family="'PingFang SC','Hiragino Sans GB',Helvetica,sans-serif" font-weight="700">
+    <text x="0" y="0" font-size="16" fill="#380D6A">极狐 GitLab</text>
+  </g>
+</svg>
