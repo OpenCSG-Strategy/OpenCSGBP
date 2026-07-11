@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ viewport: { width: 2000, height: 1300 }, deviceScaleFactor: 2 });
+const page = await ctx.newPage();
+await page.goto('http://127.0.0.1:4173/#/14', { waitUntil: 'networkidle' });
+await page.waitForTimeout(800);
+const el = await page.locator('.founder14-logos').first();
+await el.screenshot({ path: '/tmp/founder-logos-zoom.png' });
+await browser.close();
+console.log('OK');

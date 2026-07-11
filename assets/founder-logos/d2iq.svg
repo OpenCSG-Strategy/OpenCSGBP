@@ -1,9 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
-  <!-- D2iQ wordmark. Blue + a stacked "2" inside D. -->
+  <!-- D2iQ wordmark. Bold dark navy "D2iQ" with a bright cyan Q-tail accent. -->
   <rect width="200" height="70" fill="#FFFFFF"/>
-  <g transform="translate(20,15)" font-family="Helvetica, Arial, sans-serif" font-weight="800">
-    <text x="0" y="34" font-size="40" fill="#0064B0" letter-spacing="-2">D</text>
-    <text x="32" y="34" font-size="22" fill="#0064B0">2</text>
-    <text x="48" y="34" font-size="40" fill="#0064B0" letter-spacing="-2">iQ</text>
+  <g transform="translate(20,18)" font-family="Helvetica, Arial, sans-serif" font-weight="800" letter-spacing="-1.5">
+    <text x="0"  y="32" font-size="36" fill="#0E1A2B">D</text>
+    <text x="30" y="32" font-size="22" fill="#0E1A2B">2</text>
+    <text x="48" y="32" font-size="36" fill="#0E1A2B">i</text>
+    <text x="64" y="32" font-size="36" fill="#00B5E2">Q</text>
   </g>
+  <!-- subtle underline accent -->
+  <rect x="20" y="55" width="86" height="2" fill="#00B5E2"/>
 </svg>

@@ -1,14 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
-  <!-- CNCF: a Kubernetes-style helm + CNCF text. -->
+  <!-- CNCF: clean Kubernetes-style helm in CNCF blue, with bold "CNCF" wordmark. -->
   <rect width="200" height="70" fill="#FFFFFF"/>
-  <g transform="translate(18,14)">
-    <!-- helm/wheel mark in CNCF blue -->
-    <polygon points="22,2 38,12 38,30 22,40 6,30 6,12" fill="none" stroke="#326CE5" stroke-width="2.5" stroke-linejoin="round"/>
-    <circle cx="22" cy="21" r="6" fill="none" stroke="#326CE5" stroke-width="2.5"/>
-    <line x1="22" y1="15" x2="22" y2="27" stroke="#326CE5" stroke-width="2.5"/>
-    <line x1="16" y1="18" x2="28" y2="24" stroke="#326CE5" stroke-width="2.5"/>
-    <line x1="16" y1="24" x2="28" y2="18" stroke="#326CE5" stroke-width="2.5"/>
+  <g transform="translate(20,12)">
+    <!-- helm (heptagon) -->
+    <polygon points="23,2 41,11 41,32 23,42 5,32 5,11"
+             fill="#FFFFFF" stroke="#326CE5" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- inner heptagon (filled) -->
+    <polygon points="23,8 36,15 36,28 23,36 10,28 10,15"
+             fill="#326CE5" opacity="0.15"/>
+    <!-- helm central hub -->
+    <circle cx="23" cy="22" r="4.5" fill="none" stroke="#326CE5" stroke-width="2.2"/>
+    <!-- 6 spokes -->
+    <g stroke="#326CE5" stroke-width="2.2" stroke-linecap="round">
+      <line x1="23" y1="17.5" x2="23" y2="11"/>
+      <line x1="23" y1="26.5" x2="23" y2="33"/>
+      <line x1="18.7" y1="19.2" x2="13.5" y2="16.5"/>
+      <line x1="27.3" y1="19.2" x2="32.5" y2="16.5"/>
+      <line x1="18.7" y1="24.8" x2="13.5" y2="27.5"/>
+      <line x1="27.3" y1="24.8" x2="32.5" y2="27.5"/>
+    </g>
   </g>
-  <text x="70" y="32" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="20" fill="#326CE5" letter-spacing="1">CNCF</text>
-  <text x="70" y="48" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="8.5" fill="#326CE5" letter-spacing="0.6">CLOUD NATIVE COMPUTING</text>
+  <text x="76" y="32" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="24" fill="#326CE5" letter-spacing="2">CNCF</text>
+  <text x="76" y="50" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="7.5" fill="#326CE5" letter-spacing="1">CLOUD NATIVE COMPUTING</text>
 </svg>

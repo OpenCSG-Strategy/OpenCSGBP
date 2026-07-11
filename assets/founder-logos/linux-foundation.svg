@@ -1,21 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" preserveAspectRatio="xMidYMid meet">
-  <!-- Linux Foundation: tux-style mark + LF text. -->
+  <!-- Linux Foundation: clean tux silhouette in a navy circle, "LINUX FOUNDATION" text. -->
   <rect width="200" height="70" fill="#FFFFFF"/>
-  <!-- tux silhouette (simplified) -->
-  <g transform="translate(20,12)" fill="#1A1A1A">
-    <ellipse cx="22" cy="18" rx="14" ry="15"/>
-    <path d="M8 18 Q8 5 22 5 Q36 5 36 18 Q36 32 22 32 Q8 32 8 18 Z"/>
-    <!-- white face -->
-    <ellipse cx="22" cy="20" rx="9" ry="11" fill="#FFFFFF"/>
-    <!-- eyes -->
-    <ellipse cx="19" cy="17" rx="1.6" ry="2" fill="#1A1A1A"/>
-    <ellipse cx="25" cy="17" rx="1.6" ry="2" fill="#1A1A1A"/>
+  <!-- tux-in-circle emblem -->
+  <g transform="translate(20,8)">
+    <circle cx="26" cy="27" r="25" fill="#003366"/>
+    <!-- tux body -->
+    <ellipse cx="26" cy="34" rx="11" ry="13" fill="#FFFFFF"/>
+    <!-- tux head -->
+    <ellipse cx="26" cy="20" rx="10" ry="10" fill="#FFFFFF"/>
+    <!-- eyes (left bigger, right smaller - classic tux) -->
+    <ellipse cx="22" cy="20" rx="2" ry="2.6" fill="#003366"/>
+    <ellipse cx="30" cy="20" rx="1.6" ry="2" fill="#003366"/>
     <!-- beak -->
-    <path d="M20 21 L24 21 L22 25 Z" fill="#F5A623"/>
-    <!-- feet -->
-    <ellipse cx="16" cy="42" rx="6" ry="2.5"/>
-    <ellipse cx="28" cy="42" rx="6" ry="2.5"/>
+    <path d="M22 23 L30 23 L26 27 Z" fill="#F5A623"/>
+    <!-- left flipper -->
+    <ellipse cx="14" cy="34" rx="3.5" ry="9" fill="#FFFFFF"/>
+    <!-- right flipper -->
+    <ellipse cx="38" cy="34" rx="3.5" ry="9" fill="#FFFFFF"/>
   </g>
-  <text x="68" y="30" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="14" fill="#003366" letter-spacing="0.3">LINUX</text>
-  <text x="68" y="50" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="13" fill="#003366" letter-spacing="2">FOUNDATION</text>
+  <!-- text block -->
+  <text x="78" y="30" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="15" fill="#003366" letter-spacing="0.5">THE LINUX</text>
+  <text x="78" y="50" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="13" fill="#003366" letter-spacing="1.5">FOUNDATION</text>
 </svg>
