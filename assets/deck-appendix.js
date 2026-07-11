@@ -164,7 +164,7 @@
         </div>
       </div>`, "数据飞轮形成不可复制的企业 AI 智能资产", "The data flywheel creates proprietary enterprise AI assets"),
 
-    slide(23, "客户案例 · 科研机构", "Customer Case · Research Institution",
+    slide(22, "客户案例 · 科研机构", "Customer Case · Research Institution",
       "广东智能研究院：统一数据、模型服务与科研协同工作空间",
       "Guangdong Institute of Intelligence: unified data, model services and research collaboration", `
       <div class="app-stage app-solution-grid">
@@ -196,7 +196,7 @@
         </div>
       </div>`, "科研机构需要的不是单个模型，而是可复用、可审计的研究生产系统", "Research institutions need a reusable, auditable production system—not a single model"),
 
-    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider" data-layout="APP-DIVIDER" id="slide-24">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider" data-layout="APP-DIVIDER" id="slide-23">
       <div class="app-index">APPENDIX · 02</div>
       <div class="app-big">02</div>
       ${tx("产品与技术方案", "Products & Technical Solutions", "div", "app-name")}
@@ -213,7 +213,7 @@
       <div class="foot"><span>OPENCSG · PRODUCT & TECHNOLOGY</span><span>24</span></div>
     </section></div>`,
 
-    slide(25, "产品体系 · 能力对比", "Product System · Capability Comparison",
+    slide(24, "产品体系 · 能力对比", "Product System · Capability Comparison",
       "Hybrid HuggingFace+ 加企业级私有化：一张表看清 OpenCSG 的能力边界",
       "Hybrid HuggingFace+ for the enterprise: one table to see the OpenCSG capability boundary", `
       <div class="app-stage cap-overview">
@@ -283,7 +283,7 @@
         </aside>
       </div>`, "官方文档为基线：开源 + 全栈 LLMOps + 智能体运行时 + AI Gateway", "Anchored to official docs: open source + full LLMOps + agent runtime + AI Gateway"),
 
-    slide(26, "典型场景 · 来自官方 Use Case", "Typical Scenarios · From Official Use Cases",
+    slide(25, "典型场景 · 来自官方 Use Case", "Typical Scenarios · From Official Use Cases",
       "CSGHub 官方 11 大典型场景中最具代表性、复用度最高的 4 类：选对组合比选对模型更重要",
       "Four of the most representative, high-reuse scenarios from CSGHub's 11 official use cases: pick the right combination, not just the right model", `
       <div class="app-stage scenario-stage">
@@ -352,7 +352,7 @@
         </div>
       </div>`, "源自 docs.opencsg.com/csghub/101/function/usecase 全部 11 个典型场景", "Source: docs.opencsg.com/csghub/101/function/usecase — all 11 official scenarios"),
 
-    slide(27, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
+    slide(26, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
       "AgenticHub：让企业安全构建、发布和运营 AI Agent",
       "AgenticHub: securely build, release and operate enterprise AI agents", `
       <div class="app-stage app-product-layout">
@@ -367,35 +367,7 @@
         </div>
       </div>`, "方法论：数据治理 → 模型管理 → Agent 调度 → 应用反馈", "Methodology: data governance → model management → agent operations → feedback"),
 
-    slide(28, "技术架构 · 制造业", "Architecture · Manufacturing",
-      "AgenticOps 全链路架构：AI 驱动的制造协同体系",
-      "Full-stack AgenticOps architecture for AI-driven manufacturing collaboration", `
-      <div class="app-stage app-architecture">
-        <div class="app-arch-notes">
-          <div>${tx("双飞轮构建", "Dual flywheels", "b")}${tx("业务反馈与模型能力相互强化", "Business feedback and model capability reinforce each other", "span")}</div>
-          <div>${tx("全链路动态优化", "End-to-end optimization", "b")}${tx("从云端模型到边缘设备持续优化", "Continuous optimization from cloud models to edge devices", "span")}</div>
-          <div>${tx("预测性闭环管理", "Predictive closed loop", "b")}${tx("状态、异常、决策和执行形成闭环", "Connect status, exceptions, decisions and execution", "span")}</div>
-          <div>${tx("低门槛场景适配", "Low-barrier adaptation", "b")}${tx("通过 Agent、数据与协议适配多元产线", "Adapt diverse production lines through agents, data and protocols", "span")}</div>
-          <div style="height:250px;border:1px solid var(--line);padding:15px;display:grid;grid-template-rows:repeat(3,1fr)">
-            <div style="display:grid;grid-template-columns:92px 1fr;border-bottom:1px solid var(--line);align-items:center"><b style="color:var(--teal)">CLOUD</b>${tx("模型训推 · Agent 运营 · 远程运维", "Model training · Agent operations · Remote O&M")}</div>
-            <div style="display:grid;grid-template-columns:92px 1fr;border-bottom:1px solid var(--line);align-items:center"><b style="color:var(--teal)">EDGE</b>${tx("本地推理 · 实时控制 · 数据管理", "Local inference · Real-time control · Data management")}</div>
-            <div style="display:grid;grid-template-columns:92px 1fr;align-items:center"><b style="color:var(--teal)">DEVICE</b>${tx("工业网关 · PLC · CNC · Robot · Sensor", "Gateway · PLC · CNC · Robot · Sensor")}</div>
-          </div>
-        </div>
-        <div class="factory-map">
-          <div class="factory-layer" style="top:24px"><div class="fl-name">${tx("云端智能", "Cloud intelligence")}</div><div class="fl-cells"><span>CSGHub</span><span>AgenticHub</span>${tx("模型训推", "Model training")}${tx("远程运维", "Remote operations")}</div></div>
-          <div class="factory-link" style="top:106px"></div>
-          <div class="factory-layer" style="top:128px"><div class="fl-name">${tx("边缘算力", "Edge computing")}</div><div class="fl-cells"><span>5G / Wi-Fi</span>${tx("边缘推理", "Edge inference")}${tx("数据管理", "Data management")}${tx("实时控制", "Real-time control")}</div></div>
-          <div class="factory-link" style="top:210px"></div>
-          <div class="factory-layer" style="top:232px"><div class="fl-name">${tx("工业连接", "Industrial connectivity")}</div><div class="fl-cells"><span>DTU</span>${tx("工业网关", "Industrial gateway")}${tx("逻辑控制器", "PLC")}${tx("数控网关", "CNC gateway")}</div></div>
-          <div class="factory-link" style="top:314px"></div>
-          <div class="factory-layer" style="top:336px"><div class="fl-name">${tx("设备与场景", "Devices & scenarios")}</div><div class="fl-cells">${tx("CNC / Robot", "CNC / Robot")}${tx("AGV / 视觉", "AGV / Vision")}${tx("传感 / DAQ", "Sensors / DAQ")}${tx("OA / 知识库", "OA / Knowledge")}</div></div>
-          <div class="factory-link" style="top:418px"></div>
-          <div class="factory-layer" style="top:440px"><div class="fl-name">${tx("数据闭环", "Data loop")}</div><div class="fl-cells">${tx("采集", "Collect")}${tx("清洗", "Clean")}${tx("分析", "Analyze")}${tx("反馈进化", "Feedback & evolve")}</div></div>
-        </div>
-      </div>`, "跨系统、高移动性、低时延、高安全的制造 AgenticOps", "Cross-system, mobile, low-latency and secure manufacturing AgenticOps"),
-
-    slide(29, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
+    slide(27, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
       "CSGHub-Lite：让模型、数据和 AI 工具在个人设备本地运行",
       "CSGHub-Lite: run models, data and AI tools locally on personal devices", `
       <div class="app-stage">
@@ -424,7 +396,7 @@
         </div>
       </div>`, "设计理念：能自动就不手动，能本地就不外传", "Design principle: automate by default; keep data local by default"),
 
-    slide(30, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
+    slide(28, "产品方案 · 个人 AI / OPC", "Product · Personal AI / OPC",
       "CSGClaw：让多个 AI Agent 像一支团队协同工作",
       "CSGClaw: orchestrate multiple AI agents as one coordinated team", `
       <div class="app-stage app-product-layout">
@@ -441,7 +413,7 @@
         </div>
       </div>`, "Manager–Worker · Sandbox · Human Approval · IM Integration", "Manager–Worker · Sandbox · Human Approval · IM Integration"),
 
-    slide(31, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
+    slide(29, "产品方案 · 组织型 AgenticOps", "Product · Organizational AgenticOps",
       "CSGHub：统一管理模型、数据和 Agent 等关键 AI 资产",
       "CSGHub: unified management for models, data, agents and other critical AI assets", `
       <div class="app-stage app-product-layout">
@@ -462,7 +434,7 @@
         </div>
       </div>`, "开放集成：标准 API · 开源信任：opencsg.com/models", "Open integration: standard APIs · Open trust: opencsg.com/models"),
 
-    slide(32, "技术资料与试用", "Documentation & Trial Access",
+    slide(30, "技术资料与试用", "Documentation & Trial Access",
       "技术文档、开源仓库与产品试用入口",
       "Documentation, open-source repositories and product trial access", `
       <div class="app-stage app-docs">
@@ -489,7 +461,7 @@
         </div>
       </div>`, "文档、开源仓库与试用入口，均可公开访问与验证", "Documentation, open-source repositories and trials—all openly accessible to verify"),
 
-    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider city-divider" data-layout="APP-DIVIDER" id="slide-33">
+    `<div class="slide-wrap" data-section="appendix"><section class="slide light appendix-slide appendix-divider city-divider" data-layout="APP-DIVIDER" id="slide-31">
       <div class="app-index">APPENDIX · 03</div>
       <div class="app-big">03</div>
       ${tx("城市级 AI 基础设施", "City-scale AI Infrastructure", "div", "app-name")}
@@ -504,7 +476,7 @@
       <div class="foot"><span>OPENCSG · CITY-SCALE AI</span><span>33</span></div>
     </section></div>`,
 
-    slide(34, "城市级方案 · 建设背景", "City Solution · Background & Rationale",
+    slide(32, "城市级方案 · 建设背景", "City Solution · Background & Rationale",
       "为什么城市现在必须建设自己的 AI 公共基础设施",
       "Why cities must build their own AI public infrastructure now", `
       <div class="app-stage city-why">
@@ -545,7 +517,7 @@
         </div>
       </div>`, "建设逻辑：从“资源投入”升级为“城市可持续运营的 AI 生产与产业系统”", "Construction thesis: move from resource spending to an operating AI production and industry system"),
 
-    slide(35, "城市级方案 · 建设全景", "City Solution · Construction Blueprint",
+    slide(33, "城市级方案 · 建设全景", "City Solution · Construction Blueprint",
       "一座城市真正要建设的，是“治理主体 + 开放底座 + 产业运营”的 AI 公共基础设施",
       "A city must build an AI public infrastructure combining governance, an open foundation and industry operations", `
       <div class="app-stage city-system-overview">
@@ -583,7 +555,7 @@
         </div>
       </div>`, "城市级平台的交付物：公共控制层、运营主体、产业服务与长期生态，而不只是软件", "Deliverables: a public control plane, an operator, industry services and a durable ecosystem - not just software"),
 
-    slide(36, "城市级方案 · 产业载体", "City Solution · Industry Hub",
+    slide(34, "城市级方案 · 产业载体", "City Solution · Industry Hub",
       "城市载体不是一栋办公楼，而是 AI 产业的运营中枢",
       "The physical hub is not an office building; it is the operating center of the city AI industry", `
       <div class="app-stage city-building-plan">
@@ -627,7 +599,7 @@
         </div>
       </div>`, "参考：宜昌点军 AI 宜居城市项目规划；大楼为方案原始视觉", "Reference: Yichang Dianjun AI Livable City plan; building visual from the original proposal"),
 
-    slide(37, "城市级方案 · 东方定位", "City Solution · Dongfang Positioning",
+    slide(35, "城市级方案 · 东方定位", "City Solution · Dongfang Positioning",
       "东方：从自贸港通道城市，升级为面向东南亚的国家级数字接口",
       "Dongfang: from a free-trade corridor to a national digital gateway for Southeast Asia", `
       <div class="app-stage dongfang-position">
@@ -672,7 +644,7 @@
         </div>
       </div>`, "资料来源：《打造“东方新加坡”的国家级数字枢纽工程》方案测算", "Source: National Digital Hub — Building the “Dongfang Singapore” plan"),
 
-    slide(38, "城市级方案 · 东方实施", "City Solution · Dongfang Delivery",
+    slide(36, "城市级方案 · 东方实施", "City Solution · Dongfang Delivery",
       "三阶段建设，五类收入引擎：让城市 AI 平台从“建成”走向“自增长”",
       "Three phases and five revenue engines move a city platform from delivery to self-growth", `
       <div class="app-stage dongfang-roadmap">
@@ -697,7 +669,7 @@
         <div class="city-fiscal-line"><span>${tx("建设", "BUILD")}</span><i></i><span>${tx("运营", "OPERATE")}</span><i></i><span>${tx("聚集", "CLUSTER")}</span><i></i><span>${tx("交易", "TRANSACT")}</span><i></i><span>${tx("财政正循环", "FISCAL LOOP")}</span></div>
       </div>`, "核心判断：城市平台的价值不只在技术交付，而在持续运营权与区域网络效应", "Core insight: value comes from operating rights and regional network effects, not only technology delivery"),
 
-    slide(39, "城市级方案 · 阶段结果", "City Solution · Stage Results",
+    slide(37, "城市级方案 · 阶段结果", "City Solution · Stage Results",
       "OpenCSG 已形成三类城市方案与阶段性结果",
       "OpenCSG has developed three city models with tangible stage results", `
       <div class="app-stage city-case-templates">

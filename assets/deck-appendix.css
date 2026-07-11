@@ -205,20 +205,20 @@
 #slide-20 .app-building>.app-media>img{object-position:center center}
 
 /* Research case: reserve an explicit outcome band and use the upper field as a true 2-column story. */
-#slide-23 .app-solution-grid{
+#slide-22 .app-solution-grid{
   height:575px;
   grid-template-columns:1.08fr .92fr;
   gap:26px
 }
-#slide-23 .app-problem{height:548px;padding:20px 24px 0 0}
-#slide-23 .app-problem .app-lead{font-size:22px;line-height:1.42}
-#slide-23 .app-problem li{
+#slide-22 .app-problem{height:548px;padding:20px 24px 0 0}
+#slide-22 .app-problem .app-lead{font-size:22px;line-height:1.42}
+#slide-22 .app-problem li{
   position:relative;
   padding:20px 18px 20px 54px;
   font-size:15px;
   line-height:1.45
 }
-#slide-23 .app-problem li:before{
+#slide-22 .app-problem li:before{
   content:"";
   position:absolute;
   left:8px;
@@ -227,30 +227,30 @@
   height:1px;
   background:var(--teal)
 }
-#slide-23 .app-solution{
+#slide-22 .app-solution{
   height:548px;
   grid-template-rows:repeat(3,minmax(0,1fr));
   gap:14px
 }
-#slide-23 .app-sol{
+#slide-22 .app-sol{
   min-height:0;
   padding:24px 26px;
   display:flex;
   flex-direction:column;
   justify-content:center
 }
-#slide-23 .app-sol b{font-size:17px}
-#slide-23 .app-sol p{font-size:13px;line-height:1.55;margin-top:12px}
-#slide-23 .app-outcomes{
+#slide-22 .app-sol b{font-size:17px}
+#slide-22 .app-sol p{font-size:13px;line-height:1.55;margin-top:12px}
+#slide-22 .app-outcomes{
   left:0;
   right:0;
   bottom:0;
   height:104px;
   z-index:3
 }
-#slide-23 .app-outcomes div{padding:20px 24px}
-#slide-23 .app-outcomes b{font-size:15px}
-#slide-23 .app-outcomes span{font-size:12px;margin-top:8px}
+#slide-22 .app-outcomes div{padding:20px 24px}
+#slide-22 .app-outcomes b{font-size:15px}
+#slide-22 .app-outcomes span{font-size:12px;margin-top:8px}
 
 /* Product pages: numbered capability modules, larger type and hard height constraints. */
 .app-product-layout{
@@ -293,7 +293,7 @@
 }
 .app-feature b{font-size:17px;line-height:1.3}
 .app-feature p{font-size:13px;line-height:1.55;margin-top:11px}
-#slide-25 .app-feature-grid{grid-template-rows:repeat(3,minmax(0,1fr))}
+#slide-24 .app-feature-grid{grid-template-rows:repeat(3,minmax(0,1fr))}
 #slide-28 .app-feature-grid{grid-template-rows:repeat(3,minmax(0,1fr))}
 #slide-28 .app-feature:last-child{
   display:flex;
@@ -301,15 +301,15 @@
   justify-content:center;
   padding-left:86px
 }
-#slide-29 .app-feature-grid{
+#slide-27 .app-feature-grid{
   grid-template-rows:repeat(2,112px);
   height:236px
 }
-#slide-29 .app-feature{padding-top:17px;padding-bottom:14px}
-#slide-29 .app-feature:before{top:17px}
-#slide-29 .app-feature b{font-size:15px}
-#slide-29 .app-feature p{font-size:11px;line-height:1.45;margin-top:7px}
-#slide-29 .app-product-visual img{object-fit:cover;object-position:center top}
+#slide-27 .app-feature{padding-top:17px;padding-bottom:14px}
+#slide-27 .app-feature:before{top:17px}
+#slide-27 .app-feature b{font-size:15px}
+#slide-27 .app-feature p{font-size:11px;line-height:1.45;margin-top:7px}
+#slide-27 .app-product-visual img{object-fit:cover;object-position:center top}
 
 /* Manufacturing architecture: fix nested-grid overflow and distribute the five layers over the canvas. */
 .app-arch-notes>div{height:96px}
@@ -385,56 +385,56 @@
  * Slide 25 · Capability comparison + Why OpenCSG
  * 12-row table on the left, 6-card "Why" stack on the right
  * ==================================================================== */
-#slide-25 .app-stage.cap-overview{
+#slide-24 .app-stage.cap-overview{
   display:grid;
   grid-template-columns:1.45fr 1fr;
   gap:22px;
   height:688px
 }
-#slide-25 .cap-table-panel{
+#slide-24 .cap-table-panel{
   display:flex;
   flex-direction:column;
   min-height:0;
   background:#fff;
   border:1px solid var(--line)
 }
-#slide-25 .cap-table-head{
+#slide-24 .cap-table-head{
   padding:16px 20px 12px;
   border-bottom:1px solid var(--line);
   background:var(--mint)
 }
-#slide-25 .cap-table-head b{
+#slide-24 .cap-table-head b{
   display:block;
   font-size:14px;
   color:var(--teal);
   margin:4px 0 3px;
   letter-spacing:.01em
 }
-#slide-25 .cap-table-head span{
+#slide-24 .cap-table-head span{
   display:block;
   font-size:10.5px;
   color:var(--muted);
   line-height:1.45
 }
-#slide-25 .cap-matrix{
+#slide-24 .cap-matrix{
   display:flex;
   flex-direction:column;
   flex:1;
   min-height:0;
   overflow:hidden
 }
-#slide-25 .cap-row{
+#slide-24 .cap-row{
   display:grid;
   grid-template-columns:1.4fr repeat(4,1fr);
   min-height:0;
   border-bottom:1px solid #E8EEEC
 }
-#slide-25 .cap-row:last-child{border-bottom:0}
-#slide-25 .cap-row-head{
+#slide-24 .cap-row:last-child{border-bottom:0}
+#slide-24 .cap-row-head{
   background:#23877B;
   min-height:34px
 }
-#slide-25 .cap-row-head b{
+#slide-24 .cap-row-head b{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -444,14 +444,14 @@
   border-right:1px solid rgba(255,255,255,.25);
   padding:0 4px
 }
-#slide-25 .cap-row-head b:first-child{
+#slide-24 .cap-row-head b:first-child{
   background:#EAF5F2;
   color:#155F56;
   justify-content:flex-start;
   padding-left:12px
 }
-#slide-25 .cap-row-head b:last-child{border-right:0}
-#slide-25 .cap-row > span{
+#slide-24 .cap-row-head b:last-child{border-right:0}
+#slide-24 .cap-row > span{
   display:flex;
   align-items:center;
   padding:6px 10px;
@@ -462,14 +462,14 @@
   border-right:1px solid #E0E8E5;
   line-height:1.35
 }
-#slide-25 .cap-row > span small{
+#slide-24 .cap-row > span small{
   display:block;
   font-weight:400;
   color:#4D5A57;
   font-size:9.5px;
   margin-top:2px
 }
-#slide-25 .cap-row > em{
+#slide-24 .cap-row > em{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -478,15 +478,15 @@
   border-right:1px solid #E0E8E5;
   color:#354B46
 }
-#slide-25 .cap-row > em:last-child{border-right:0}
-#slide-25 .cap-row .yes{color:#1F8A3A;font-weight:700}
-#slide-25 .cap-row .no{color:#C95A1E;font-weight:600}
-#slide-25 .cap-row .partial{color:#3B5BB8}
-#slide-25 .cap-row-foot{
+#slide-24 .cap-row > em:last-child{border-right:0}
+#slide-24 .cap-row .yes{color:#1F8A3A;font-weight:700}
+#slide-24 .cap-row .no{color:#C95A1E;font-weight:600}
+#slide-24 .cap-row .partial{color:#3B5BB8}
+#slide-24 .cap-row-foot{
   background:#F9FCFB;
   border-top:1px solid #D6E5E1
 }
-#slide-25 .cap-row-foot b{
+#slide-24 .cap-row-foot b{
   display:flex;
   align-items:center;
   padding:8px 10px;
@@ -495,7 +495,7 @@
   background:#EAF5F2;
   border-right:1px solid #E0E8E5
 }
-#slide-25 .cap-row-foot span{
+#slide-24 .cap-row-foot span{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -507,8 +507,8 @@
   line-height:1.35;
   background:transparent
 }
-#slide-25 .cap-row-foot span:last-child{border-right:0}
-#slide-25 .cap-why{
+#slide-24 .cap-row-foot span:last-child{border-right:0}
+#slide-24 .cap-why{
   display:flex;
   flex-direction:column;
   min-height:0;
@@ -516,7 +516,7 @@
   border:1px solid var(--line);
   padding:16px 18px 14px
 }
-#slide-25 .cap-why > b{
+#slide-24 .cap-why > b{
   display:block;
   font-size:13px;
   line-height:1.4;
@@ -525,7 +525,7 @@
   padding-bottom:10px;
   border-bottom:1px solid var(--line)
 }
-#slide-25 .cap-why-list{
+#slide-24 .cap-why-list{
   list-style:none;
   margin:0;
   padding:0;
@@ -537,7 +537,7 @@
   min-height:0;
   overflow:hidden
 }
-#slide-25 .cap-why-list li{
+#slide-24 .cap-why-list li{
   display:grid;
   grid-template-columns:24px 1fr;
   gap:8px;
@@ -546,21 +546,21 @@
   padding:9px 10px 8px 8px;
   min-height:0
 }
-#slide-25 .cap-why-list li > i{
+#slide-24 .cap-why-list li > i{
   font-style:normal;
   font-size:10px;
   color:#A8BDB9;
   font-weight:700;
   letter-spacing:.06em
 }
-#slide-25 .cap-why-list li b{
+#slide-24 .cap-why-list li b{
   display:block;
   font-size:11.5px;
   color:var(--teal);
   line-height:1.3
 }
-#slide-25 .cap-why-list li p,
-#slide-25 .cap-why-list li span{
+#slide-24 .cap-why-list li p,
+#slide-24 .cap-why-list li span{
   display:block;
   font-size:9.5px;
   color:#4D5A57;
@@ -571,17 +571,17 @@
 /* ====================================================================
  * Slide 26 · Scenario-based recommendations (4 cards)
  * ==================================================================== */
-#slide-26 .app-stage.scenario-stage{
+#slide-25 .app-stage.scenario-stage{
   display:flex;
   flex-direction:column;
   height:688px
 }
-#slide-26 .scenario-intro{
+#slide-25 .scenario-intro{
   padding:0 0 14px;
   border-bottom:1px solid var(--line);
   margin-bottom:16px
 }
-#slide-26 .scenario-intro b{
+#slide-25 .scenario-intro b{
   display:block;
   font-size:18px;
   line-height:1.35;
@@ -589,13 +589,13 @@
   margin:5px 0 4px;
   font-weight:700
 }
-#slide-26 .scenario-intro span{
+#slide-25 .scenario-intro span{
   display:block;
   font-size:12px;
   color:var(--muted);
   line-height:1.45
 }
-#slide-26 .scenario-grid{
+#slide-25 .scenario-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   grid-template-rows:repeat(2,1fr);
@@ -603,7 +603,7 @@
   flex:1;
   min-height:0
 }
-#slide-26 .scenario-card{
+#slide-25 .scenario-card{
   display:flex;
   flex-direction:column;
   min-height:0;
@@ -614,25 +614,25 @@
   position:relative;
   overflow:hidden
 }
-#slide-26 .scenario-card header{
+#slide-25 .scenario-card header{
   display:flex;
   flex-direction:column;
   gap:4px;
   margin-bottom:8px
 }
-#slide-26 .scenario-tag{
+#slide-25 .scenario-tag{
   font-size:9.5px;
   letter-spacing:.16em;
   color:var(--teal);
   font-weight:700
 }
-#slide-26 .scenario-card header b{
+#slide-25 .scenario-card header b{
   font-size:15px;
   line-height:1.3;
   color:#155F56;
   font-weight:700
 }
-#slide-26 .scenario-products{
+#slide-25 .scenario-products{
   display:flex;
   align-items:center;
   gap:8px;
@@ -641,12 +641,12 @@
   color:var(--teal);
   font-weight:700
 }
-#slide-26 .scenario-products i{
+#slide-25 .scenario-products i{
   font-style:normal;
   color:var(--muted);
   font-weight:400
 }
-#slide-26 .scenario-card p{
+#slide-25 .scenario-card p{
   font-size:11.5px;
   line-height:1.5;
   color:#3D4A47;
@@ -656,7 +656,7 @@
   -webkit-line-clamp:4;
   -webkit-box-orient:vertical
 }
-#slide-26 .scenario-card footer{
+#slide-25 .scenario-card footer{
   border-top:1px dashed #D8E5E2;
   padding-top:8px;
   margin-top:auto;
@@ -664,30 +664,30 @@
   flex-direction:column;
   gap:2px
 }
-#slide-26 .scenario-card footer small{
+#slide-25 .scenario-card footer small{
   font-size:9.5px;
   letter-spacing:.1em;
   color:var(--muted);
   font-weight:700
 }
-#slide-26 .scenario-card footer span{
+#slide-25 .scenario-card footer span{
   font-size:11px;
   color:#17695F;
   line-height:1.4
 }
 
 /* Tag accent for each scenario card (top-bar hue) */
-#slide-26 .scenario-card.s1{border-top-color:#23877B}
-#slide-26 .scenario-card.s2{border-top-color:#0E675F}
-#slide-26 .scenario-card.s3{border-top-color:#C88A2B}
-#slide-26 .scenario-card.s4{border-top-color:#1A5D8F}
+#slide-25 .scenario-card.s1{border-top-color:#23877B}
+#slide-25 .scenario-card.s2{border-top-color:#0E675F}
+#slide-25 .scenario-card.s3{border-top-color:#C88A2B}
+#slide-25 .scenario-card.s4{border-top-color:#1A5D8F}
 
 /* English type-size tuning for the two new slides */
-.lang-en #slide-25 .cap-row > span{font-size:9.5px}
-.lang-en #slide-25 .cap-row > em{font-size:9.5px}
-.lang-en #slide-25 .cap-row-head b{font-size:10px}
-.lang-en #slide-25 .cap-why-list li b{font-size:10.5px}
-.lang-en #slide-25 .cap-why-list li p,
-.lang-en #slide-25 .cap-why-list li span{font-size:9px}
-.lang-en #slide-26 .scenario-card header b{font-size:13.5px}
-.lang-en #slide-26 .scenario-card p{font-size:10.5px;line-height:1.5}
+.lang-en #slide-24 .cap-row > span{font-size:9.5px}
+.lang-en #slide-24 .cap-row > em{font-size:9.5px}
+.lang-en #slide-24 .cap-row-head b{font-size:10px}
+.lang-en #slide-24 .cap-why-list li b{font-size:10.5px}
+.lang-en #slide-24 .cap-why-list li p,
+.lang-en #slide-24 .cap-why-list li span{font-size:9px}
+.lang-en #slide-25 .scenario-card header b{font-size:13.5px}
+.lang-en #slide-25 .scenario-card p{font-size:10.5px;line-height:1.5}

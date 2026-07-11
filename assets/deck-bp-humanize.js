@@ -200,7 +200,7 @@
   };
 
   const refineSlide23 = () => {
-    const slide = document.querySelector("#slide-23");
+    const slide = document.querySelector("#slide-22");
     if (!slide || slide.querySelector(".research-flow-visual")) return;
     const solution = slide.querySelector(".app-solution");
     solution?.insertAdjacentHTML("afterbegin", `
@@ -288,7 +288,7 @@
   };
 
   const rebuildSlide32 = () => {
-    const slide = document.querySelector("#slide-34");
+    const slide = document.querySelector("#slide-32");
     const stage = slide?.querySelector(".app-stage");
     if (!stage || slide.classList.contains("city32-rebuilt")) return;
     slide.classList.add("city32-rebuilt");
@@ -353,7 +353,7 @@
 
     const products = [
       {
-        id: "slide-27",
+        id: "slide-26",
         title: ["AgenticHub：企业 Agent 构建、发布与运营工作台", "AgenticHub: enterprise agent build, release and operations workspace"],
         lead: ["企业 Agent 从构建、测试、发布到运行反馈，放在同一个工作台里闭环管理。", "Enterprise agents are managed in one workspace from build, test and release to runtime feedback."],
         main: ["assets/product-agentichub.png", "AgenticHub 主界面", "AgenticHub UI"],
@@ -370,7 +370,7 @@
         ]
       },
       {
-        id: "slide-29",
+        id: "slide-27",
         title: ["CSGLite：让模型、数据和 AI 工具在个人设备本地运行", "CSGLite: run models, data and AI tools locally on personal devices"],
         lead: ["个人设备上完成模型运行、数据处理和 API 服务，把个人 AI 工作系统留在本地。", "Run models, data processing and API services on personal devices while keeping the personal AI work system local."],
         main: ["assets/product-lite.jpg", "CSGLite 本地运行界面", "CSGLite local runtime"],
@@ -387,7 +387,7 @@
         ]
       },
       {
-        id: "slide-30",
+        id: "slide-28",
         title: ["CSGClaw：让多个 AI Agent 像一支团队协同工作", "CSGClaw: coordinate multiple AI agents as one team"],
         lead: ["把一次性对话变成可分工、可审计、可回滚的多 Agent 协同执行系统。", "Turn one-off chats into multi-agent execution that supports division of labor, audit and rollback."],
         main: ["assets/product-claw.png", "CSGClaw 协同界面", "CSGClaw UI"],
@@ -404,7 +404,7 @@
         ]
       },
       {
-        id: "slide-31",
+        id: "slide-29",
         title: ["CSGHub：统一管理模型、数据和 Agent 等关键 AI 资产", "CSGHub: manage models, data and agents as critical AI assets"],
         lead: ["把模型、数据集、代码、应用空间和治理能力组织为可生产运行的 AI 资产目录。", "Organize models, datasets, code, spaces and governance as a production-ready AI asset catalog."],
         main: ["assets/product-csghub.png", "CSGHub 资产管理界面", "CSGHub asset management"],
@@ -447,11 +447,11 @@
   };
 
   const rebuildSlide33 = () => {
-    const slide = document.querySelector("#slide-35");
+    const slide = document.querySelector("#slide-33");
     const stage = slide?.querySelector(".app-stage");
     if (!stage || slide.classList.contains("city33-diagram-ready")) return;
     slide.classList.add("city33-diagram-ready");
-    setText("#slide-35 .title",
+    setText("#slide-33 .title",
       "城市 AI 平台不是软件采购，而是“治理主体 + 开放底座 + 产业运营”的系统",
       "A city AI platform is not software procurement; it combines governance, open foundation and industry operations");
     stage.className = "app-stage city33-diagram";
@@ -486,11 +486,11 @@
   };
 
   const rebuildDongfang = () => {
-    const slide = document.querySelector("#slide-37");
+    const slide = document.querySelector("#slide-35");
     const stage = slide?.querySelector(".app-stage");
     if (!stage || slide.classList.contains("dongfang-merged-ready")) return;
     slide.classList.add("dongfang-merged-ready");
-    setText("#slide-37 .title",
+    setText("#slide-35 .title",
       "东方：用自贸港政策、开放 AI 底座和跨境服务，建设面向东南亚的数字接口",
       "Dongfang: a Southeast Asia digital gateway built on free-trade policy, open AI foundation and cross-border services");
     stage.className = "app-stage dongfang-merged";
@@ -529,11 +529,11 @@
   };
 
   const rebuildSlide37 = () => {
-    const slide = document.querySelector("#slide-39");
+    const slide = document.querySelector("#slide-37");
     const stage = slide?.querySelector(".app-stage");
     if (!stage || slide.classList.contains("city37-rebuilt")) return;
     slide.classList.add("city37-rebuilt");
-    setText("#slide-39 .title",
+    setText("#slide-37 .title",
       "三类城市任务，一套开放底座；用项目证据完成复制",
       "Three city missions, one open foundation, replicated with project evidence");
     stage.className = "app-stage city37-visual";

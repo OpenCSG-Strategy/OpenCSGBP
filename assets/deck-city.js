@@ -20,7 +20,7 @@
       <div class="foot">${tx(footZh, footEn)}<span>${String(num).padStart(2, "0")}</span></div>`;
   };
 
-  render(34,
+  render(32,
     "城市级方案 · 为什么建", "City Solution · Why Build",
     "城市不是缺项目，而是缺一套持续运营的 AI 公共生产系统",
     "Cities do not lack projects; they lack an operating public AI production system", `
@@ -68,7 +68,7 @@
     "建设逻辑：从资源投入升级为可持续运营的 AI 生产与产业系统",
     "Construction thesis: move from resource spending to an operating AI production and industry system");
 
-  render(35,
+  render(33,
     "城市级方案 · 建什么", "City Solution · What to Build",
     "城市 AI 平台由治理主体、资源底座、开放控制层与产业服务共同构成",
     "A city AI platform combines an operator, resource foundation, open control plane and industry services", `
@@ -125,7 +125,7 @@
     "交付物：城市运营主体、异构资源底座、开放 AgenticOps 控制层与持续产业服务",
     "Deliverables: a city operator, heterogeneous resources, an open AgenticOps control plane and continuous industry services");
 
-  render(36,
+  render(34,
     "城市级方案 · 怎么建", "City Solution · How to Build",
     "城市载体不是一栋办公楼，而是“技术底座 + 企业服务 + 生态运营”的产业中枢",
     "The physical hub is an industry center combining technology, enterprise services and ecosystem operations", `
@@ -203,7 +203,7 @@
     "参考：宜昌点军 AI 宜居城市项目；建筑素材来自原方案，功能与组织关系均为独立 HTML 元素",
     "Reference: Yichang Dianjun plan; the building image comes from the source plan and all functional relationships are native HTML");
 
-  render(37,
+  render(35,
     "城市级方案 · 东方为什么", "City Solution · Why Dongfang",
     "东方：从自贸港通道城市，升级为面向东南亚的国家级数字接口",
     "Dongfang: from a free-trade corridor to a national digital gateway for Southeast Asia", `
@@ -251,7 +251,7 @@
     "资料来源：《打造“东方新加坡”的国家级数字枢纽工程》",
     "Source: National Digital Hub — Building the “Dongfang Singapore” plan");
 
-  render(38,
+  render(36,
     "城市级方案 · 东方怎么做", "City Solution · How Dongfang Works",
     "三阶段建设、三类核心收入：让城市 AI 平台从“政府启动”走向“自我造血”",
     "Three phases and three core revenue streams move the platform from public launch to self-sustaining growth", `
@@ -282,7 +282,7 @@
     "核心判断：城市平台的价值不只在技术交付，而在持续运营权与区域网络效应",
     "Core insight: value comes from operating rights and regional network effects, not only technology delivery");
 
-  render(39,
+  render(37,
     "城市级方案 · 案例与复制", "City Solution · Cases & Replication",
     "同一开放底座，服务三种城市任务：产业载体、区域接口与国产算力适配",
     "One open foundation serves three city missions: industry hub, regional gateway and domestic compute adaptation", `

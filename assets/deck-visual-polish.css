@@ -346,23 +346,23 @@ body.stacked-stage .nav{
 /* --------------------------------------------------------------------------
    Slide 23: vertically balance short copy inside fixed-height cards.
    -------------------------------------------------------------------------- */
-#slide-23 .app-stage{
+#slide-22 .app-stage{
   top:190px!important;
   height:604px!important;
 }
-#slide-23 .app-sol{
+#slide-22 .app-sol{
   display:flex;
   flex-direction:column;
   justify-content:center;
   padding:20px 24px;
 }
-#slide-23 .app-sol b{
+#slide-22 .app-sol b{
   font-size:19px;
 }
-#slide-23 .app-sol p{
+#slide-22 .app-sol p{
   font-size:14px;
 }
-#slide-23 .app-outcomes div{
+#slide-22 .app-outcomes div{
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -371,12 +371,12 @@ body.stacked-stage .nav{
 /* --------------------------------------------------------------------------
    Slides 32–37: use more of the stage and lift the smallest repeated labels.
    -------------------------------------------------------------------------- */
-#slide-34 .city32,
-#slide-35 .city33,
-#slide-36 .city34,
-#slide-37 .city35,
-#slide-38 .city36,
-#slide-39 .city37{
+#slide-32 .city32,
+#slide-33 .city33,
+#slide-34 .city34,
+#slide-35 .city35,
+#slide-36 .city36,
+#slide-37 .city37{
   top:198px!important;
   height:603px!important;
 }
@@ -386,17 +386,17 @@ body.stacked-stage .nav{
 .city-reframe :is(article>span,article>small){
   font-size:max(9px,1em);
 }
-#slide-38 .city36{
+#slide-36 .city36{
   grid-template-rows:84px 196px 50px 186px 55px;
 }
-#slide-39 .city37{
+#slide-37 .city37{
   grid-template-rows:166px 170px 178px 65px;
 }
-#slide-34 .c32-blockers article,
-#slide-35 .c33-partners article,
-#slide-35 .c33-outcomes article,
-#slide-37 .c35-triangle article,
-#slide-37 .c35-services article{
+#slide-32 .c32-blockers article,
+#slide-33 .c33-partners article,
+#slide-33 .c33-outcomes article,
+#slide-35 .c35-triangle article,
+#slide-35 .c35-services article{
   justify-content:center;
 }
 

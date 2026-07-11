@@ -58,15 +58,15 @@ a[data-community-key]{text-decoration:none}
 }
 .city-community-inline::after{content:" ↗";color:#23877B;font-size:.72em}
 
-#slide-36 .c34-community-link,
-#slide-37 .c34-community-link{margin-top:8px}
+#slide-34 .c34-community-link,
+#slide-35 .c34-community-link{margin-top:8px}
 
-#slide-37 .df-node[data-community-key]{
+#slide-35 .df-node[data-community-key]{
   color:inherit;
   text-decoration:none;
   cursor:pointer;
 }
-#slide-37 .df-node[data-community-key]::after{
+#slide-35 .df-node[data-community-key]::after{
   content:"↗";
   position:absolute;
   right:-8px;
@@ -76,7 +76,7 @@ a[data-community-key]{text-decoration:none}
   font-weight:900;
 }
 
-#slide-39 .c37-community-link{
+#slide-37 .c37-community-link{
   margin-top:auto;
   padding:4px 7px;
   font-size:8px;
