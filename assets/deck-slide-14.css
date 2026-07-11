@@ -373,6 +373,22 @@
   object-fit:contain;
   display:block
 }
+/*   anonymized company badge (e.g. "AI UNICORN" for unnamed past employer) */
+#slide-14 .team-logos li.team-logos-anon{
+  background:#0E1A2B;
+  border-color:#0E1A2B;
+  width:auto;
+  padding:1.5px 5px;
+  filter:none
+}
+#slide-14 .team-logos li.team-logos-anon span{
+  font-family:var(--body-font);
+  font-size:8.5px;
+  font-weight:800;
+  letter-spacing:.05em;
+  color:#FFFFFF;
+  line-height:1
+}
 #slide-14 .team-focus span{
   display:inline-block;
   padding:3px 8px;
