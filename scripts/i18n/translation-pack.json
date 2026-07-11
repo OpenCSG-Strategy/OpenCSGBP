@@ -2,9 +2,179 @@
   "_meta": {
     "purpose": "为 8 国语言补全 65 个真正缺的短语。key=英文源文（已 decode），value=对应语言翻译。",
     "note": "对每条短语我们保留品牌名不译（OpenCSG、CSGHub、CSGHub-Lite、CSGClaw、AgenticHub、AgenticOps、OPC、OpenCore、DevOps、GitLab、Mesosphere、IBM、HP、EleutherAI、YC、Beihang、Wharton、Stanford、MIIT、CAICT、CALB、CATL、miHoYo、Bilibili、D2iQ、Kunlun、Amazon、Letv、Tencent、WuXi AppTec、Kaya Medical、Paradise Ventures、Fanta、Wharton MBA 等）",
-    "count": 105
+    "count": 120
   },
   "TRANSLATIONS": {
+    "Collection": {
+      "ja": "収集",
+      "ko": "수집",
+      "ar": "جمع",
+      "ru": "Сбор данных",
+      "fr": "Collecte",
+      "de": "Sammlung",
+      "es": "Recopilación",
+      "pt": "Coleta"
+    },
+    "Auditable": {
+      "ja": "監査可能",
+      "ko": "감사 가능",
+      "ar": "قابل للتدقيق",
+      "ru": "Проверяемый",
+      "fr": "Auditable",
+      "de": "Überprüfbar",
+      "es": "Auditable",
+      "pt": "Auditável"
+    },
+    "Deployment environments": {
+      "ja": "デプロイ環境",
+      "ko": "배포 환경",
+      "ar": "بيئات النشر",
+      "ru": "Среды развертывания",
+      "fr": "Environnements de déploiement",
+      "de": "Bereitstellungsumgebungen",
+      "es": "Entornos de implementación",
+      "pt": "Ambientes de implantação"
+    },
+    "Full-stack Architecture": {
+      "ja": "フルスタックアーキテクチャ",
+      "ko": "풀스택 아키텍처",
+      "ar": "بنية كاملة الحزمة",
+      "ru": "Полностековая архитектура",
+      "fr": "Architecture full-stack",
+      "de": "Fullstack-Architektur",
+      "es": "Arquitectura full-stack",
+      "pt": "Arquitetura full-stack"
+    },
+    "Private deployment": {
+      "ja": "プライベート展開",
+      "ko": "프라이빗 배포",
+      "ar": "نشر خاص",
+      "ru": "Частное развертывание",
+      "fr": "Déploiement privé",
+      "de": "Private Bereitstellung",
+      "es": "Implementación privada",
+      "pt": "Implantação privada"
+    },
+    "Partial enterprise capability": {
+      "ja": "限定的なエンタープライズ機能",
+      "ko": "제한적인 엔터프라이즈 기능",
+      "ar": "قدرات مؤسسية جزئية",
+      "ru": "Частичные корпоративные возможности",
+      "fr": "Capacités d'entreprise partielles",
+      "de": "Teilweise Enterprise-Fähigkeit",
+      "es": "Capacidad empresarial parcial",
+      "pt": "Capacidade empresarial parcial"
+    },
+    "Regional replication": {
+      "ja": "地域レプリケーション",
+      "ko": "지역 복제",
+      "ar": "التكرار الإقليمي",
+      "ru": "Региональная репликация",
+      "fr": "Réplication régionale",
+      "de": "Regionale Replikation",
+      "es": "Replicación regional",
+      "pt": "Replicação regional"
+    },
+    "Platform services": {
+      "ja": "プラットフォームサービス",
+      "ko": "플랫폼 서비스",
+      "ar": "خدمات المنصة",
+      "ru": "Сервисы платформы",
+      "fr": "Services de plateforme",
+      "de": "Plattformdienste",
+      "es": "Servicios de plataforma",
+      "pt": "Serviços de plataforma"
+    },
+    "Generate sustained value": {
+      "ja": "持続的な価値を生成",
+      "ko": "지속 가능한 가치 생성",
+      "ar": "توليد قيمة مستدامة",
+      "ru": "Создание устойчивой ценности",
+      "fr": "Générer de la valeur durable",
+      "de": "Nachhaltigen Wert erzeugen",
+      "es": "Generar valor sostenido",
+      "pt": "Gerar valor sustentado"
+    },
+    "AI Asset Hub": {
+      "ja": "AI 資産ハブ",
+      "ko": "AI 자산 허브",
+      "ar": "مركز أصول الذكاء الاصطناعي",
+      "ru": "Хаб ИИ-активов",
+      "fr": "Hub d'actifs IA",
+      "de": "KI-Asset-Hub",
+      "es": "Hub de activos de IA",
+      "pt": "Hub de ativos de IA"
+    },
+    "Private & sovereign": {
+      "ja": "プライベート & 主権",
+      "ko": "프라이빗 & 주권",
+      "ar": "خاص وسيادي",
+      "ru": "Частный и суверенный",
+      "fr": "Privé et souverain",
+      "de": "Privat und souverän",
+      "es": "Privado y soberano",
+      "pt": "Privado e soberano"
+    },
+    "Sovereign AI Control Layer": {
+      "ja": "主権 AI コントロールレイヤー",
+      "ko": "주권 AI 제어 계층",
+      "ar": "طبقة تحكم الذكاء الاصطناعي السيادية",
+      "ru": "Суверенный контрольный слой ИИ",
+      "fr": "Couche de contrôle IA souveraine",
+      "de": "Souveräne KI-Kontrollschicht",
+      "es": "Capa de control de IA soberana",
+      "pt": "Camada de controle de IA soberana"
+    },
+    "Sovereignty": {
+      "ja": "主権",
+      "ko": "주권",
+      "ar": "السيادة",
+      "ru": "Суверенитет",
+      "fr": "Souveraineté",
+      "de": "Souveränität",
+      "es": "Soberanía",
+      "pt": "Soberania"
+    },
+    "Control Layer": {
+      "ja": "コントロールレイヤー",
+      "ko": "제어 계층",
+      "ar": "طبقة التحكم",
+      "ru": "Контрольный слой",
+      "fr": "Couche de contrôle",
+      "de": "Kontrollschicht",
+      "es": "Capa de control",
+      "pt": "Camada de controle"
+    },
+    "AI Sovereignty & Product System": {
+      "ja": "AI 主権と製品システム",
+      "ko": "AI 주권과 제품 시스템",
+      "ar": "سيادة الذكاء الاصطناعي ونظام المنتجات",
+      "ru": "Суверенитет ИИ и продуктовая система",
+      "fr": "Souveraineté de l'IA et système produit",
+      "de": "KI-Souveränität und Produktsystem",
+      "es": "Soberanía de IA y sistema de producto",
+      "pt": "Soberania de IA e sistema de produto"
+    },
+    "Industry Pain Points": {
+      "ja": "業界の課題",
+      "ko": "업계 과제",
+      "ar": "نقاط ألم الصناعة",
+      "ru": "Болевые точки отрасли",
+      "fr": "Points de friction du secteur",
+      "de": "Branchenschmerzen",
+      "es": "Puntos de dolor del sector",
+      "pt": "Pontos de dor do setor"
+    },
+    "M.S. in Business & Management, SSE. Board secretary & strategy director at Fanta Tech (IPO). Ex-investment director at Paradise Ventures (JiHu GitLab, ArcSoft). Author of 'Hands-on AI Agents'.": {
+      "ja": "ストックホルム経済学院（SSE）経営管理修士。江蘇范特科技（IPO 準備中）の取締役会秘書兼戦略ディレクター。元パラダイス・ベンチャーズ投資ディレクター（極狐 GitLab、ArcSoft 等を担当）。『Hands-on AI Agents（手を動かして学ぶ AI Agent）』の著者。",
+      "ko": "스톡홀름 경제대학(SSE) 경영학 석사. Jiangsu Fanta Tech(IPO 준비 중) 이사회 비서 겸 전략 디렉터. 전 Paradise Ventures 투자 디렉터(JiHu GitLab, ArcSoft 등 담당). 'Hands-on AI Agents' 저자.",
+      "ar": "ماجستير في إدارة الأعمال من كلية ستوكهولم للاقتصاد. أمين سر مجلس الإدارة ومدير الاستراتيجية في Fanta Tech بمقاطعة جيانغسو (تجهيز للاكتتاب العام). مدير استثمار سابق في Paradise Ventures (مسؤول عن JiHu GitLab وArcSoft). مؤلف كتاب 'Hands-on AI Agents'.",
+      "ru": "Магистр делового администрирования Стокгольмской школы экономики. Секретарь совета директоров и директор по стратегии Fanta Tech (провинция Цзянсу), готовит IPO. Бывший директор по инвестициям Paradise Ventures (JiHu GitLab, ArcSoft). Автор книги «Hands-on AI Agents».",
+      "fr": "Master en gestion et administration de la Stockholm School of Economics. Secrétaire du conseil d'administration et directrice de la stratégie chez Fanta Tech (Jiangsu), en préparation d'IPO. Ancienne directrice d'investissement chez Paradise Ventures (JiHu GitLab, ArcSoft). Auteure de « Hands-on AI Agents ».",
+      "de": "M.Sc. in BWL der Stockholm School of Economics. Vorstandssekretärin und Strategiedirektorin bei Fanta Tech (Jiangsu), bereitet IPO vor. Ehemalige Investment Director bei Paradise Ventures (JiHu GitLab, ArcSoft). Autorin von »Hands-on AI Agents«.",
+      "es": "Máster en Administración de Empresas por la Stockholm School of Economics. Secretaria del consejo y directora de estrategia en Fanta Tech (Jiangsu), preparando salida a bolsa. Ex directora de inversiones en Paradise Ventures (JiHu GitLab, ArcSoft). Autora de 'Hands-on AI Agents'.",
+      "pt": "Mestrado em Administração de Empresas pela Stockholm School of Economics. Secretária do conselho e diretora de estratégia da Fanta Tech (Jiangsu), preparando IPO. Ex-diretora de investimentos da Paradise Ventures (JiHu GitLab, ArcSoft). Autora de 'Hands-on AI Agents'."
+    },
     "DOWNLOAD WATERMARKED PDF": {
       "ja": "ウォーターマーク付き PDF をダウンロード",
       "ko": "워터마크 PDF 다운로드",
@@ -1054,6 +1224,26 @@
       "de": "Ex-Paradise Ventures · Fanta Tech",
       "es": "Ex-Paradise Ventures · Fanta Tech",
       "pt": "Ex-Paradise Ventures · Fanta Tech"
+    },
+    "Sovereignty": {
+      "ja": "主権",
+      "ko": "주권",
+      "ar": "السيادة",
+      "ru": "Суверенитет",
+      "fr": "Souveraineté",
+      "de": "Souveränität",
+      "es": "Soberanía",
+      "pt": "Soberania"
+    },
+    "Control Plane": {
+      "ja": "コントロールプレーン",
+      "ko": "제어 영역",
+      "ar": "مستوى التحكم",
+      "ru": "Плоскость управления",
+      "fr": "Plan de contrôle",
+      "de": "Steuerungsebene",
+      "es": "Plano de control",
+      "pt": "Plano de controle"
     }
   }
 }

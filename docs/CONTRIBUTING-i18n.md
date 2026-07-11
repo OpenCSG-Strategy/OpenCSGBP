@@ -68,15 +68,23 @@ bash scripts/i18n/run-all.sh audit
 期望输出:
 
 ```
-== 必须翻译 key (U) 覆盖情况 ==
+== 必须翻译 key (U) 覆盖情况 (key 存在 + value 非空) ==
   zh.json: <N>/<N> (100.0%)
   en.json: <N>/<N> (100.0%)
   ja.json: <N>-4/<N> (99.8%)  ← 8 国只能差 ≤4 条 JS 模板占位符
   ko.json: ...
   ...
+
+===== 术语一致性体检 =====
+✅ 全部中文术语对应唯一英文，无冲突。
 ```
 
-任何一行不是 100% / 99.8%,**禁止 commit**。
+两段都过才算 clean。**任何一行不是 100% / 99.8%,或术语一致性报冲突,禁止 commit。**
+
+> **术语一致性**(`term-consistency.js`)会扫出"同一个中文在不同地方被映射到不同英文"的一词多译
+> 情况(典型 bug:`主权控制面` 既是 `Sovereign control plane` 又是 `Sovereign control layer`)。
+> 这类问题会让日文 / 韩文用户看到错位翻译,因为 8 国翻译是按英文 key 查的,
+> 英文源文一旦分裂,翻译就分裂。**改文案前先确认同一中文术语在 deck 里只对应一个英文**。
 
 ---
 
@@ -204,6 +212,7 @@ OpenCSG、CSGHub、CSGHub-Lite、CSGClaw、AgenticHub、AgenticOps、CSGLite、O
 把这一段贴到 PR 描述里,逐条打勾:
 
 - [ ] 新增 / 修改的文案都有 `data-en` 或 `tx(zh, en)`
+- [ ] `data-en` 放在**叶子节点**上,不是放在有子元素的结构化父元素上(见 §6 错误 F)
 - [ ] `scripts/i18n/translation-pack.json` 已追加 8 国翻译
 - [ ] 已跑 `bash scripts/i18n/run-all.sh apply`
 - [ ] 已跑 `bash scripts/i18n/run-all.sh audit`,zh/en 是 100%,8 国 ≥ 99.8%
@@ -212,6 +221,7 @@ OpenCSG、CSGHub、CSGHub-Lite、CSGClaw、AgenticHub、AgenticOps、CSGLite、O
 - [ ] 没有改 `data-en` 的值而忘了改 8 国翻译(会让旧翻译持续命中,误导海外投资人)
 - [ ] 没有把品牌名翻译成当地语言(违反 §4 白名单)
 - [ ] 中英文模式下没有出现回退 / 空白 / 错位
+- [ ] 任何新引入的字体声明都用 `var(--body-font)` / `var(--display-font)`,没用孤儿字体(Arial / Playfair / serif / italic)
 
 ---
 
@@ -272,6 +282,41 @@ OpenCSG、CSGHub、CSGHub-Lite、CSGClaw、AgenticHub、AgenticOps、CSGLite、O
 引号会破坏 JSON 解析,换行会破坏 CSS 单行布局。
 
 修正:翻译里禁止双引号 `"`、禁止换行 `\n`、禁止 `</...>` HTML 标签。
+
+### 错误 F · `data-en` 放在有子节点的父元素上,会把子元素吞掉
+
+`translateLegacyElements()` 的实现是 `el.textContent = value` —— **整段子节点会被清空**。如果父元素是 `<div class="grid-3">` 之类的结构,切到非中文模式后,子元素会全部消失,父元素的 textContent 被替换成一坨长文本,直接挤成多行 / 折叠。
+
+```html
+<!-- 反例:data-en 在父元素,内部有 3 个子元素要分列展示 -->
+<div class="sv7-equation" data-en="AI sovereignty is not building everything yourself. It is keeping the critical controls in your own hands.">
+  <span>AI SOVEREIGNTY</span>
+  <b>不是自研一切,而是关键环节始终掌握在自己手里。</b>
+  <p>可选择·可控制·可审计·可演进</p>
+</div>
+<!-- 切到英文后:<b> 和 <p> 都被 textContent 覆盖,只显示一坨长文本 -->
+
+<!-- 正例 1:把 data-en 下移到真正要翻译的子元素 -->
+<div class="sv7-equation">
+  <span>AI SOVEREIGNTY</span>
+  <b data-en="AI sovereignty is not building everything yourself. It is keeping the critical controls in your own hands.">不是自研一切...</b>
+  <p>
+    <span data-en="Choice">可选择</span><i>·</i>
+    <span data-en="Control">可控制</span><i>·</i>
+    <span data-en="Audit">可审计</span><i>·</i>
+    <span data-en="Evolution">可演进</span>
+  </p>
+</div>
+
+<!-- 正例 2:如果父元素只有 1 个文本节点,放在父元素上是 OK 的 -->
+<b data-en="Some headline">某标题</b>  <!-- 没有子元素,textContent 替换安全 -->
+```
+
+**判断规则**:父元素能否放 `data-en`,看 `element.children.length`。`> 0` → 拆到叶子;`=== 0` → 可以放。
+
+**实战场景**:中央"主权控制面"之前 `<b>主权<br>控制面</b>` 没 `data-en`,所以英文下也显示中文。改成 `<b><span data-en="Sovereignty">主权</span><br><span data-en="Control Plane">控制面</span></b>`。`<br>` 在父元素没 `data-en` 时不会被清掉。
+
+修正:**禁止** 把 `data-en` 放在有子元素的结构化父元素上。每个要翻译的叶子节点单独带 `data-en`,9 国翻译也按叶子粒度补全。
 
 ---
 

@@ -4,10 +4,10 @@
 
 **Empowering everyone with large models · 让大模型赋能每一个人**
 
-> Investor pitch deck · 40 slides · 10 languages · single HTML file
+> Investor pitch deck · 39 slides · 10 languages · single HTML file
 
 [![Version](https://img.shields.io/badge/Version-2026.07.1-blue?style=flat-square)](#)
-[![Slides](https://img.shields.io/badge/Slides-40-teal?style=flat-square)](#)
+[![Slides](https://img.shields.io/badge/Slides-39-teal?style=flat-square)](#)
 [![i18n](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)](#)
 [![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)](#)
 
@@ -106,7 +106,7 @@ Zero install. Full feature parity with the local build (PDF export is supported,
 
 ## 📖 Overview
 
-This repository hosts the **OpenCSG 2026 investor pitch deck as a single self-contained HTML file** — 40 slides, designed at 1600×900 (16:9), with on-screen navigation, PDF / PPTX export, language switching, keyboard controls, thumbnail overview mode, and inline QR codes.
+This repository hosts the **OpenCSG 2026 investor pitch deck as a single self-contained HTML file** — 39 slides, designed at 1600×900 (16:9), with on-screen navigation, PDF / PPTX export, language switching, keyboard controls, thumbnail overview mode, and inline QR codes.
 
 The deck is plain HTML / CSS / vanilla JS — **no front-end framework, no build step**. A small set of Node scripts covers the operational side:
 
@@ -125,7 +125,7 @@ Built for **investor-facing scenarios where content, typography, and cross-local
 
 | Module | Highlights |
 | --- | --- |
-| 📑 **Multi-section deck** | 40 slides in 5 sections — `cover` / `main` / `case` / `product` / `appendix`; each is exportable on its own |
+| 📑 **Multi-section deck** | 39 slides in 5 sections — `cover` / `main` / `case` / `product` / `appendix`; each is exportable on its own |
 | 🌍 **10 languages** | zh / en / ja / ko / ar (RTL) / ru / fr / de / es / pt |
 | ⌨️ **Keyboard & touch** | `←` `→` to page, `↑` `↓` to jump section, `Home` / `End` to first/last, `Esc` to leave fullscreen, `Space` / `F` for fullscreen |
 | 🧭 **Top toolbar** | Language switcher, page counter, "View PDF", PPT-ready pill, jump-to-top |
@@ -147,7 +147,7 @@ More slide previews:
 
 ```
 OpenCSGBP/
-├── index.html                # Entry — all 40 slides live here
+├── index.html                # Entry — all 39 slides live here
 ├── AGENTS.md                 # AI Coding Agent entrypoint (agents.md spec)
 ├── CLAUDE.md                 # Claude Code specific (mirrors AGENTS.md)
 ├── assets/

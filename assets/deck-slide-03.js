@@ -52,7 +52,7 @@
   section.innerHTML = `
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
     <div class="topline"></div>
-    <div class="section"><span class="section-zh" data-en="Industry Pain Points　">行业痛点　</span><span style="font-size:13px;color:#697472;font-weight:400">AI Production Pain Points</span></div>
+    <div class="section"><span class="section-zh" data-en="Industry Pain Points">行业痛点</span><span style="font-size:13px;color:#697472;font-weight:400">AI Production Pain Points</span></div>
     <h2 class="title" data-en="Enterprise AI production is blocked by runtime, governance and cost problems">企业 AI 生产化，卡在运行、治理与成本的系统性难题</h2>
 
     <div class="pain-list">

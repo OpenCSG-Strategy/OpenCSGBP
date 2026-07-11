@@ -19,12 +19,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = '/Users/fangchen/Baidu/GitHub/OpenCSG_BP_HTML_2026';
+const ROOT = path.resolve(__dirname, '../..');
 const LANG_DIR = path.join(ROOT, 'assets/i18n');
 const LANGS = ['zh','en','ja','ko','ar','ru','fr','de','es','pt'];
 
 // 收集 S1
 const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+const app = fs.readFileSync(path.join(ROOT, 'assets/deck-app.js'), 'utf8');
 const S1 = new Set();
 [...html.matchAll(/data-en="([^"]+)"/g)].forEach(m => {
   if (!m[1].includes('${esc(')) S1.add(m[1]);
@@ -46,10 +47,10 @@ LANGS.forEach(code => {
   Object.keys(j.phrases || {}).forEach(k => S1.add(k));
 });
 
-// index.html 内的 EN 字典 en 值
-const enStart = html.indexOf('const EN={');
-const enEnd = html.indexOf('    };', enStart);
-const enDictSrc = html.slice(enStart + 'const EN={'.length, enEnd);
+// deck-app.js 内的 EN 字典 en 值
+const enStart = app.indexOf('const EN={');
+const enEnd = app.indexOf('    };', enStart);
+const enDictSrc = app.slice(enStart + 'const EN={'.length, enEnd);
 enDictSrc.split('\n').forEach(line => {
   const m = line.match(/^\s*"([^"]+)":"([^"]*)"\s*,?\s*$/);
   if (m) S1.add(m[2]);

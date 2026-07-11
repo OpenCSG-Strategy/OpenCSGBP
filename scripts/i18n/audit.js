@@ -12,7 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = '/Users/fangchen/Baidu/GitHub/OpenCSG_BP_HTML_2026';
+const ROOT = path.resolve(__dirname, '../..');
 const OUT  = '/tmp/i18n-audit';
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -22,19 +22,26 @@ const LANGS = ['zh','en','ja','ko','ar','ru','fr','de','es','pt'];
 // 1) 收集 [data-en] 属性 -----------------------------------------------
 const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 const dataEnAttrs = [...html.matchAll(/data-en="([^"]*)"/g)].map(m => m[1]);
-const dataEn = [...new Set(dataEnAttrs)].filter(s => !s.includes('${esc(') && s.trim());
+//   过滤 JS 模板变量（${xxx}）和空字符串——它们不是真要翻译的文本
+function isTemplateOrEmpty(s){
+  if (!s || !s.trim()) return true;
+  if (/\$\{[^}]+\}/.test(s)) return true;  // 含 ${...} 的都是模板
+  return false;
+}
+const dataEn = [...new Set(dataEnAttrs)].filter(s => !isTemplateOrEmpty(s));
 
-// 2) 收集 index.html 内的 OPENCSG_EN 字典（const EN={...}）--------------
-const enStart = html.indexOf('const EN={');
+// 2) 收集 deck-app.js 内的 OPENCSG_EN 字典（const EN={...}）------------
+const app = fs.readFileSync(path.join(ROOT, 'assets/deck-app.js'), 'utf8');
+const enStart = app.indexOf('const EN={');
 const enEndMarker = '    };';
-let enEnd = html.indexOf(enEndMarker, enStart);
-const enDictSrc = html.slice(enStart + 'const EN={'.length, enEnd);
+let enEnd = app.indexOf(enEndMarker, enStart);
+const enDictSrc = app.slice(enStart + 'const EN={'.length, enEnd);
 const EN_DICT = {};
 enDictSrc.split('\n').forEach(line => {
   const m = line.match(/^[\s]*"([^"]+)":"([^"]*)"[\s,]*$/);
   if (m) EN_DICT[m[1]] = m[2];
 });
-const enDictEn = new Set(Object.values(EN_DICT));
+const enDictEn = new Set(Object.values(EN_DICT).filter(v => !isTemplateOrEmpty(v)));
 
 // 3) 收集 OPENCSG_EN_EXTRA (deck-en-extra.js) -------------------------
 const extraPath = path.join(ROOT, 'assets/deck-en-extra.js');
@@ -46,7 +53,7 @@ extra.replace(/window\.OPENCSG_EN_EXTRA\s*=\s*\{([\s\S]*?)\n\};/, (_, body) => {
     if (m) EN_EXTRA[m[1]] = m[2];
   });
 });
-const enExtraEn = new Set(Object.values(EN_EXTRA));
+const enExtraEn = new Set(Object.values(EN_EXTRA).filter(v => !isTemplateOrEmpty(v)));
 
 // 4) 收集所有 deck-*.js / *.js 中的 data-en 和 tx() 第二参数 -----------
 const jsFiles = ['deck-appendix.js','deck-city.js','deck-slide-03.js','deck-bp-humanize.js'];
@@ -58,12 +65,14 @@ jsFiles.forEach(name => {
   const src = fs.readFileSync(p, 'utf8');
   // data-en
   [...src.matchAll(/data-en="([^"]+)"/g)].forEach(m => {
-    if (!m[1].includes('${esc(')) dataEnFromJs.add(m[1]);
+    if (!isTemplateOrEmpty(m[1])) dataEnFromJs.add(m[1]);
   });
   // tx(zh, en[, ...]) 第二参数（字符串字面量）
   // 容忍单引号 / 双引号 / 多行
   const txRe = /tx\(\s*['"]([^'"]*)['"]\s*,\s*['"]([^'"]*)['"]/g;
-  [...src.matchAll(txRe)].forEach(m => txEn.add(m[2]));
+  [...src.matchAll(txRe)].forEach(m => {
+    if (!isTemplateOrEmpty(m[2])) txEn.add(m[2]);
+  });
 });
 
 // 5) 汇总 S1 (HTML data-en) ∪ S1_js ∪ tx ∪ en dict (en 值) ∪ en extra (en 值)
@@ -71,17 +80,40 @@ const S1 = new Set([...dataEn, ...dataEnFromJs]);
 const TX = txEn;
 const EN_VALS = new Set([...enDictEn, ...enExtraEn]);
 
-// 6) 读取 8 国语言包的 phrases keys ------------------------------------
+// 6) 读取 8 国语言包的 phrases (key → value) ----------------------------
+//   改用 Map：audit 不只要看 key 在不在，还要看 value 是不是空字符串。
+//   (之前只看 key 存在，导致 "Sovereign control plane" 这种 zh.json 留
+//   空值的死 key 漏过 audit。)
 const packPhrases = {};
 LANGS.forEach(code => {
   const json = JSON.parse(fs.readFileSync(path.join(LANG_DIR, `${code}.json`), 'utf8'));
-  packPhrases[code] = new Set(Object.keys(json.phrases || {}));
+  const m = new Map();
+  Object.entries(json.phrases || {}).forEach(([k, v]) => m.set(k, v));
+  packPhrases[code] = m;
 });
 
+function hasNonEmptyValue(map, key){
+  if (map.has(key)){
+    const v = map.get(key);
+    return typeof v === 'string' && v.length > 0;
+  }
+  return false;
+}
+function hasNonEmptyValueNorm(map, key){
+  if (hasNonEmptyValue(map, key)) return true;
+  const kk = key.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/\u3000/g,' ').trim();
+  return hasNonEmptyValue(map, kk);
+}
+
 // 7) 计算 U = 所有需要翻译的英文源文 ∪ phrases 中已有的 key
-const U = new Set([...S1, ...TX, ...EN_VALS, ...packPhrases.zh, ...packPhrases.en]);
+//   排除掉 JS 模板变量（${...}）和空字符串——它们不是真要翻译的文本
+const U = new Set([...S1, ...TX, ...EN_VALS, ...packPhrases.zh.keys(), ...packPhrases.en.keys()]);
 // 也加入非中文包里的 keys（确保覆盖）
-LANGS.forEach(code => { if (code !== 'zh' && code !== 'en') packPhrases[code].forEach(k => U.add(k)); });
+LANGS.forEach(code => { if (code !== 'zh' && code !== 'en') packPhrases[code].forEach((_, k) => {
+  if (!isTemplateOrEmpty(k)) U.add(k);
+}); });
+// 再次过滤 U 本身（防止 en.json 含模板）
+[...U].forEach(k => { if (isTemplateOrEmpty(k)) U.delete(k); });
 
 // 8) 输出报告 --------------------------------------------------------
 function fmtSet(s, max=10) {
@@ -103,22 +135,23 @@ log('');
 
 log('== 语言包 phrases 规模 ==');
 LANGS.forEach(code => {
-  log(`  ${code}.json: ${packPhrases[code].size} 个 phrases`);
+  let total = 0, empty = 0;
+  packPhrases[code].forEach(v => { total++; if (typeof v !== 'string' || v.length === 0) empty++; });
+  log(`  ${code}.json: ${total} 个 phrases (空 value: ${empty})`);
 });
 log('');
 
-log('== 必须翻译 key (U) 覆盖情况 ==');
+log('== 必须翻译 key (U) 覆盖情况 (key 存在 + value 非空) ==');
 log(`  U 总大小: ${U.size}`);
+const missEmptyByLang = {};  // for follow-up reporting
 LANGS.forEach(code => {
   let hit = 0;
+  const miss = [];
   U.forEach(k => {
-    if (packPhrases[code].has(k)) hit++;
-    else {
-      // 归一化后再试一次：i18n 框架里 normalizeKey() 会做 HTML 实体 decode + 全角空格折叠 + trim
-      const kk = k.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/\u3000/g,' ').trim();
-      if (packPhrases[code].has(kk)) hit++;
-    }
+    if (hasNonEmptyValueNorm(packPhrases[code], k)) hit++;
+    else miss.push(k);
   });
+  missEmptyByLang[code] = miss;
   log(`  ${code}.json: ${hit}/${U.size} (${(hit/U.size*100).toFixed(1)}%)`);
 });
 log('');
@@ -156,7 +189,7 @@ const criticalReport = {};
   if (!U.has(en)) return;
   criticalReport[en] = {};
   LANGS.forEach(code => {
-    criticalReport[en][code] = packPhrases[code].has(en);
+    criticalReport[en][code] = hasNonEmptyValue(packPhrases[code], en);
   });
 });
 const criticalLines = ['en_key\t' + LANGS.join('\t')];
@@ -166,7 +199,7 @@ const criticalLines = ['en_key\t' + LANGS.join('\t')];
 });
 fs.writeFileSync(path.join(OUT, 'critical.csv'), criticalLines.join('\n'));
 
-// U \ 各语言 phrases = 该语言缺失清单（用归一化后的 key 找）
+// U \ 各语言 phrases = 该语言缺失清单（key 不存在 OR value 为空）
 function normalize(s){
   return s.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/\u3000/g,' ').trim();
 }
@@ -174,7 +207,7 @@ const normMap = new Map();
 U.forEach(k => normMap.set(k, normalize(k)));
 const missPerLang = {};
 LANGS.forEach(code => {
-  missPerLang[code] = [...U].filter(k => !packPhrases[code].has(k) && !packPhrases[code].has(normMap.get(k)));
+  missPerLang[code] = [...U].filter(k => !hasNonEmptyValueNorm(packPhrases[code], k));
   fs.writeFileSync(path.join(OUT, `miss.${code}.txt`), missPerLang[code].join('\n'));
 });
 

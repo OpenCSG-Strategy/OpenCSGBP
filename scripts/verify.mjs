@@ -1,12 +1,13 @@
 import { chromium } from 'playwright';
 const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
 try {
+  const baseUrl = (process.env.DECK_BASE_URL || 'http://127.0.0.1:4173').replace(/\/$/, '');
   const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
   const page = await ctx.newPage();
-  await page.goto('http://127.0.0.1:4173/?lang=zh', { waitUntil: 'networkidle' });
+  await page.goto(`${baseUrl}/?lang=zh`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(3000);
   const data = await page.evaluate(() => {
-    const ids = Array.from(document.querySelectorAll('[id^="slide-"]')).map(e => e.id);
+    const ids = Array.from(document.querySelectorAll('.slide[id]')).map(e => e.id);
     return {
       ids: ids.sort(),
       total: document.querySelectorAll('.slide-wrap').length,

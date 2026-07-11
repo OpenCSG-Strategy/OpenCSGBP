@@ -2528,7 +2528,7 @@
   white-space:nowrap;
   color:#5C6D69;
   font-size:11px;
-  font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif
+  font-family:var(--body-font)
 }
 .proof-iframe-wrap{
   position:relative;

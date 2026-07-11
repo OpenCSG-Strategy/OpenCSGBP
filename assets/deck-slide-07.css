@@ -138,10 +138,11 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  font-family:'Playfair Display',serif;
-  font-style:italic;
+  font-family:var(--body-font);
+  font-style:normal;
   font-size:28px;
   font-weight:700;
+  letter-spacing:.01em;
   color:var(--teal);
   background:#EAF4F2;
   border-radius:6px;
@@ -297,8 +298,8 @@
   border:2px solid #C4612F;
   border-radius:6px;
   color:#9A4A22;
-  font-family:'Playfair Display',serif;
-  font-style:italic;
+  font-family:var(--body-font);
+  font-style:normal;
   font-size:20px;
   font-weight:700;
   line-height:1;

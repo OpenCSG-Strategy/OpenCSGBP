@@ -2,7 +2,7 @@
 # 一键体检 + 修复 i18n phrases 字典
 #
 # 使用：
-#   bash scripts/i18n/run-all.sh audit        # 只体检
+#   bash scripts/i18n/run-all.sh audit        # 只体检（audit + term-consistency）
 #   bash scripts/i18n/run-all.sh gen          # 生成 zh/en 的 phrases 字段
 #   bash scripts/i18n/run-all.sh apply        # 把 translation-pack 写进 8 国
 #   bash scripts/i18n/run-all.sh all          # 上述全部
@@ -15,6 +15,8 @@ cmd=${1:-audit}
 case $cmd in
   audit)
     node scripts/i18n/audit.js
+    echo ""
+    node scripts/i18n/term-consistency.js
     ;;
   gen)
     node scripts/i18n/gen-phrases.js
@@ -25,10 +27,12 @@ case $cmd in
     ;;
   all)
     node scripts/i18n/audit.js
+    node scripts/i18n/term-consistency.js
     node scripts/i18n/gen-phrases.js
     node scripts/i18n/gen-en-phrases.js
     node scripts/i18n/apply-translations.js
     node scripts/i18n/audit.js
+    node scripts/i18n/term-consistency.js
     ;;
   *)
     echo "用法: $0 {audit|gen|apply|all}"

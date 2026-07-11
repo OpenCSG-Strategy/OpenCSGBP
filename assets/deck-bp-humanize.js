@@ -35,7 +35,7 @@
         <div class="m10-globe-ring"></div>
         <div class="m10-stack-core">
           <small>OPENCSG</small>
-          <b data-en="Sovereign AI Control Plane">主权 AI 控制层</b>
+          <b data-en="Sovereign AI Control Layer">主权 AI 控制层</b>
           <span data-en="Models · Data · Compute · Agents">模型 · 数据 · 算力 · Agent</span>
         </div>
         <div class="m10-layer layer-assets"><b data-en="AI Assets">AI 资产</b><span>Models / Data / MCP</span></div>
@@ -231,7 +231,7 @@
         </article>
         <article class="comp13-bp-player p-ms">
           <img src="assets/brand-logos/modelscope.png" alt="">
-          <b data-en="ModelScope">魔搭 / 始智</b>
+          <b data-en="ModelScope / Shizhi">魔搭 / 始智</b>
           <span data-en="Model community">模型社区</span>
         </article>
         <article class="comp13-bp-player p-dify">
@@ -264,7 +264,7 @@
         </article>
         <article>
           <small>02</small>
-          <b data-en="Sovereign deployment">私有化与主权部署</b>
+          <b data-en="Private &amp; sovereign">私有化与主权部署</b>
           <span data-en="Cloud, private cloud, on-prem and air-gapped deployments keep data in-domain.">云、私有云、本地与隔离环境部署，数据不出域。</span>
         </article>
         <article>
@@ -517,7 +517,7 @@
       <section class="df-plan">
         <article><span>01</span><b>${tx("政府启动", "Government anchor")}</b><p>${tx("以开放 AI 底座承接政策、公共数据、园区服务和企业入驻。", "Use an open AI foundation to carry policy, public data, park services and enterprise onboarding.")}</p></article>
         <article><span>02</span><b>${tx("产业运营", "Industry operations")}</b><p>${tx("围绕多语言模型、Agent 出海、跨境合规和企业服务形成运营项目。", "Operate around multilingual models, agent export, cross-border compliance and enterprise services.")}</p></article>
-        <article><span>03</span><b>${tx("区域放大", "Regional expansion")}</b><p>${tx("连接香港、新加坡和东南亚市场，输出数据、模型、应用和服务能力。", "Connect Hong Kong, Singapore and Southeast Asia, exporting data, models, applications and services.")}</p></article>
+        <article><span>03</span><b>${tx("区域放大", "Regional replication")}</b><p>${tx("连接香港、新加坡和东南亚市场，输出数据、模型、应用和服务能力。", "Connect Hong Kong, Singapore and Southeast Asia, exporting data, models, applications and services.")}</p></article>
       </section>
       <section class="df-revenue">
         <b>${tx("核心收入", "Core revenue")}</b>
@@ -583,7 +583,7 @@
         <i>→</i>
         <span data-en="Project evidence">项目证据</span>
         <i>→</i>
-        <span data-en="Regional expansion">区域复制</span>
+        <span data-en="Regional replication">区域复制</span>
       </section>
       <section class="c37-method-strip">
         <b data-en="Longgang 1 + 5 + 2 becomes a reusable module: infrastructure, assets, services, scheduling, agents, sandbox and industry zones.">龙岗“1 + 5 + 2”可以作为可复制模块：基础设施、资产、服务、调度、Agent、沙箱与行业专区。</b>

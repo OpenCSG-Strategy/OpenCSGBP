@@ -12,7 +12,7 @@
 ## 1. What this repo is
 
 **OpenCSG Investor Deck 2026** — a single self-contained HTML file
-(`index.html`) that renders 40 slides of a 1600×900 (16:9) investor pitch
+(`index.html`) that renders 39 slides of a 1600×900 (16:9) investor pitch
 deck for OpenCSG. Supports 10 languages, on-screen navigation, PDF/PPTX
 export, keyboard control, and thumbnail overview.
 
@@ -28,7 +28,7 @@ Typography, brand color, and cross-locale consistency are sacred.
 
 ```
 OpenCSGBP/
-├── index.html                # THE deck. 40 slides, ~5k lines.
+├── index.html                # THE deck. 39 slides, ~5k lines.
 ├── assets/
 │   ├── deck-*.css / .js      # Per-slide styles and behaviour
 │   ├── i18n/*.json           # 10 language packs (zh/en/ja/ko/ar/ru/fr/de/es/pt)
@@ -96,6 +96,13 @@ If port 4173 is taken: `PORT=4180 npm run serve`.
 - **Brand colors are tokens.** All colors live as CSS custom properties at
   the top of `assets/deck-base.css`. To rebrand, change tokens — never
   inline a hex code in slide markup.
+- **Fonts are tokens, too.** All font-family declarations must use
+  `var(--body-font)` (sans body) or `var(--display-font)` (display
+  headings) defined in `assets/deck-refine.css` §root. Never inline
+  `font-family: 'Playfair Display', serif`, `font-family: Arial`, or
+  any other orphan font. The full deck is meant to read as one
+  type system; a single Playfair italic digit on slide 07 broke that
+  (and forced 9-language retranslation). See §8 below.
 - **HTML entity discipline.** Phrase keys in `assets/i18n/*.json` MUST NOT
   contain `&amp;`, `&lt;`, etc. — they are stored literally. The i18n
   framework's `normalizeKey()` decodes entities at lookup time. Storing
@@ -177,6 +184,23 @@ A content task (new slide, layout change) is "done" when:
 - **Editing `data-en` without updating the 8-language phrases leaves
   the old translation in place.** This is the #1 way to ship "looks
   fine in English, broken in Japanese" bugs.
+- **`data-en` on a parent that has child nodes silently nukes the
+  children.** The legacy i18n path (`translateLegacyElements`) replaces
+  `el.textContent` — that clears every descendant. Symptom: in non-zh
+  modes a grid cell shows one long wrapped string instead of three
+  distinct columns; the central card shows 中文 like "主权控制面"
+  in English. Fix: never put `data-en` on a wrapping `<div>` /
+  `<section>` that has structured children. Put `data-en` on each
+  *leaf* that actually needs translation, and on layout elements that
+  have only one text node it's fine. See `docs/CONTRIBUTING-i18n.md`
+  §6F for the full rule.
+- **Orphan serif / Arial fonts break the type system.** Any
+  `font-family: '…Display', serif`, `font-family: Arial`, or
+  `font-style: italic` introduced on a numeric or accent element
+  looks "off" against the surrounding Inter. Audit by:
+  `grep -rn "font-family.*serif\|font-family.*Arial\|font-style.*italic" assets/*.css`.
+  Anything that matches and isn't on a known pull-quote (`#slide-10 .m10-jensen q`)
+  is a regression.
 
 ## 9. Quick reference
 

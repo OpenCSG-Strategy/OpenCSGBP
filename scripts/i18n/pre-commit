@@ -5,13 +5,17 @@
 #   ln -s ../../scripts/i18n/pre-commit .git/hooks/pre-commit
 #   chmod +x .git/hooks/pre-commit
 #
-# 作用:在 commit 前自动跑 i18n audit,任何 html/js 改动若让 8 国覆盖率掉到
-#      99.8% 以下,直接 abort commit。
+# 作用:commit 前跑 i18n 体检。三道闸:
+#   1) 8 国覆盖率 ≥ 99.8% (硬阈值,防翻译退化)
+#   2) zh / en 100% (硬阈值,防源语言丢失)
+#   3) 术语一致性 (term-consistency.js --strict,防"一词多译")
+#   4) 增量回归 (staged 改动是否引入新的空 value/新缺失,vs HEAD)
+# 任何一道不过,直接 abort。
 
 set -e
 
-# 只在改到 index.html / assets/*.js 时跑
-CHANGED=$(git diff --cached --name-only | grep -E '^(index\.html|assets/.*\.(js|html))$' || true)
+# 只在改到 index.html / assets/*.{js,html,css} / assets/i18n/*.{json,js} / scripts/i18n/* 时跑
+CHANGED=$(git diff --cached --name-only | grep -E '^(index\.html|assets/.*\.(js|html|css)|assets/i18n/.*\.(json|js)|scripts/i18n/.*)$' || true)
 if [ -z "$CHANGED" ]; then
   exit 0
 fi
@@ -28,19 +32,21 @@ node /tmp/en-patch.cjs >/dev/null 2>&1 || true
 # 2. 把 HTML entity bug 修了(保证 key 标准化)
 node /tmp/decode-fix.cjs >/dev/null 2>&1 || true
 
-# 3. 体检
+# 3. 体检(audit + term-consistency)
 node scripts/i18n/audit.js > /tmp/i18n-audit/report.txt
+node scripts/i18n/term-consistency.js > /tmp/i18n-audit/term-consistency.txt 2>&1
 
-# 4. 解析 8 国覆盖率
 FAIL=0
+
+# 4. 解析 8 国覆盖率(硬阈值)
+#   注：audit 现在输出两行：phrases 规模行 + 覆盖率行。这里用覆盖率行（带 % 的那行）。
 for L in ja ko ar ru fr de es pt; do
-  PCT=$(grep "^  $L.json:" /tmp/i18n-audit/report.txt | head -1 | sed -E 's/.*\(([0-9.]+)%\).*/\1/')
+  PCT=$(grep "^  $L.json:.*%" /tmp/i18n-audit/report.txt | head -1 | sed -E 's/.*\(([0-9.]+)%\).*/\1/')
   if [ -z "$PCT" ]; then
     echo "  ❌ $L: 解析覆盖率失败"
     FAIL=1
     continue
   fi
-  # 用 awk 比较浮点
   OK=$(awk -v p="$PCT" 'BEGIN { print (p+0 >= 99.79) ? 1 : 0 }')
   if [ "$OK" != "1" ]; then
     echo "  ❌ $L 覆盖率 $PCT% < 99.8%"
@@ -52,7 +58,7 @@ done
 
 # 5. zh / en 必须 100%
 for L in zh en; do
-  PCT=$(grep "^  $L.json:" /tmp/i18n-audit/report.txt | head -1 | sed -E 's/.*\(([0-9.]+)%\).*/\1/')
+  PCT=$(grep "^  $L.json:.*%" /tmp/i18n-audit/report.txt | head -1 | sed -E 's/.*\(([0-9.]+)%\).*/\1/')
   OK=$(awk -v p="$PCT" 'BEGIN { print (p+0 >= 99.99) ? 1 : 0 }')
   if [ "$OK" != "1" ]; then
     echo "  ❌ $L 覆盖率 $PCT% < 100%"
@@ -62,12 +68,63 @@ for L in zh en; do
   fi
 done
 
+# 6. 术语一致性(--strict:有冲突就 fail)
+if ! node scripts/i18n/term-consistency.js --strict >/dev/null 2>&1; then
+  echo "  ❌ 术语一致性:发现 '一词多译' 冲突 (见 /tmp/i18n-audit/term-consistency.txt)"
+  FAIL=1
+else
+  echo "  ✅ 术语一致性:clean"
+fi
+
+# 7. 增量回归:staged 改动中是否有新引入的空 value / 新缺失的 key
+#    (这条不阻塞 pre-existing 的 793 个空 value,只挡"新增的 bug")
+REGRESSION=0
+for f in $(git diff --cached --name-only | grep -E '^assets/i18n/.*\.json$' || true); do
+  # 对 staged 文件,提取被改动的 key + 改后的 value
+  python3 - "$f" <<'PY' || REGRESSION=1
+import json, subprocess, sys
+path = sys.argv[1]
+# HEAD 里的旧值
+try:
+    old = json.loads(subprocess.check_output(['git','show',f'HEAD:{path}']))
+    old_phrases = old.get('phrases', {})
+except subprocess.CalledProcessError:
+    old_phrases = {}
+# staged 后的新值
+diff = subprocess.check_output(['git','diff','--cached','--',path]).decode('utf-8')
+# 解析 diff:对每个 +/- 行,识别 "key": "value" 或 "key": ""
+import re
+new_added_empty = []
+for line in diff.splitlines():
+    if not line.startswith('+') or line.startswith('+++'): continue
+    m = re.match(r'\+\s*"([^"]+)"\s*:\s*"((?:[^"\\]|\\.)*)"\s*,?', line)
+    if not m: continue
+    key, val = m.group(1), m.group(2)
+    if val == '' and old_phrases.get(key, '') != '':
+        # 新增的空 value,或原来非空被改成空
+        new_added_empty.append(key)
+if new_added_empty:
+    print(f'  ❌ {path}: 引入 {len(new_added_empty)} 个新空 value:')
+    for k in new_added_empty[:5]:
+        print(f'      - {k[:80]}')
+    if len(new_added_empty) > 5:
+        print(f'      ... (+{len(new_added_empty)-5} more)')
+    sys.exit(1)
+PY
+done
+if [ "$REGRESSION" = "1" ]; then
+  FAIL=1
+else
+  echo "  ✅ 增量回归:无新增空 value / 翻译缺失"
+fi
+
 if [ "$FAIL" = "1" ]; then
   echo ""
-  echo "🚫 i18n audit 失败,禁止 commit。"
-  echo "   缺失清单见 /tmp/i18n-audit/miss.*.txt"
-  echo "   处理流程见 docs/CONTRIBUTING-i18n.md"
+  echo "🚫 i18n 体检失败,禁止 commit。"
+  echo "   - 缺失清单见 /tmp/i18n-audit/miss.*.txt"
+  echo "   - 术语冲突见 /tmp/i18n-audit/term-consistency.txt"
+  echo "   - 处理流程见 docs/CONTRIBUTING-i18n.md"
   exit 1
 fi
 
-echo "✅ i18n audit 通过,可以 commit"
+echo "✅ i18n 体检通过,可以 commit"

@@ -3,7 +3,7 @@ window.OPENCSG_EN_EXTRA = {
   "↑ ↓ 翻页 O 总览":"↑ ↓ Navigate · O Overview",
   "汇聚开放资产":"Converge open assets",
   "扩散智能能力":"Spread intelligent capabilities",
-  "生成持续价值":"Generate enduring value",
+  "生成持续价值":"Generate sustained value",
   "完成天使轮融资，同年 10 月正式运营。":"Completed the Angel round and began formal operations in October.",
   "完成近亿元 Pre-A 轮融资":"Completed a nearly RMB 100M Pre-A round",
   "与 WAIC、B.ai 联合举办 OPC / Agent 黑客松大会。":"Co-hosted OPC and Agent hackathons with WAIC and B.ai.",
@@ -130,7 +130,7 @@ window.OPENCSG_EN_EXTRA = {
   "区域平台运营 · OPC 订阅 · Agent / Skill 生态":"Regional platform operations · OPC subscriptions · Agent/Skill ecosystem",
   "技术品类，而不是主观坐标":"Technology categories, not subjective coordinates",
   "每类产品解决不同问题；OpenCSG 的边界是跨层生命周期":"Each category solves a different problem; OpenCSG spans the cross-layer lifecycle",
-  "AI 资产社区":"AI asset community",
+  "AI 资产社区":"AI Asset Hub",
   "模型、数据集、发现与分发":"Models, datasets, discovery and distribution",
   "Hugging Face · 魔搭 · 始智":"Hugging Face · ModelScope · Shizhi",
   "模型 API、推理服务与性能":"Model APIs, inference services and performance",
@@ -147,7 +147,7 @@ window.OPENCSG_EN_EXTRA = {
   "私有治理":"Private governance",
   "完全开源":"Fully open source",
   "推理 / Spaces":"Inference / Spaces",
-  "平台服务":"Platform service",
+  "平台服务":"Platform services",
   "平台化部署":"Platform deployment",
   "应用资产":"Application assets",
   "Builder 强项":"Builder strength",
@@ -179,5 +179,5 @@ window.OPENCSG_EN_EXTRA = {
   "腾讯产品经历":"Tencent product experience",
   "投资与 AI 产业经验":"Investment and AI industry experience",
   "研发人员占比 70%+；CEO 定义主线，骨干推动产品化与规模化交付":"70%+ of the team is in R&D; the CEO defines the product thesis and core leaders drive productization and scaled delivery.",
-  "盈利模式与三年预测":"Profit model and three-year forecast"
+  "盈利模式与三年预测":"Profit Model & 3-Year Forecast"
 };
