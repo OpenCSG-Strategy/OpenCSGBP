@@ -1244,6 +1244,230 @@
       "de": "Steuerungsebene",
       "es": "Plano de control",
       "pt": "Plano de controle"
-    }
+    },
+    "Agentic-AI — controlled, auditable agents operating in production.": {
+      "ja": "Agentic-AI — 制御可能で監査可能なエージェントを本番環境で運用",
+      "ko": "Agentic-AI — 통제 가능하고 감사 가능한 에이전트를 프로덕션에서 운영",
+      "ar": "Agentic-AI — وكلاء مضبوطون وقابلون للتدقيق يعملون في الإنتاج",
+      "ru": "Agentic-AI — управляемые и проверяемые агенты в рабочей среде",
+      "fr": "Agentic-AI — des agents contrôlés et auditables en production",
+      "de": "Agentic-AI — kontrollierte und prüfbare Agenten im Produktivbetrieb",
+      "es": "Agentic-AI — agentes controlados y auditables operando en producción",
+      "pt": "Agentic-AI — agentes controlados e auditáveis operando em produção"
+    },
+    "Open foundation": {
+      "ja": "オープンな基盤",
+      "ko": "오픈 기반",
+      "ar": "أساس مفتوح",
+      "ru": "Открытая основа",
+      "fr": "Fondation ouverte",
+      "de": "Offene Grundlage",
+      "es": "Base abierta",
+      "pt": "Base aberta"
+    },
+    "Open-source foundation · Portable runtime · Production governance": {
+      "ja": "オープンソース基盤 · ポータブルなランタイム · 本番ガバナンス",
+      "ko": "오픈소스 기반 · 이식 가능한 런타임 · 프로덕션 거버넌스",
+      "ar": "أساس مفتوح المصدر · بيئة تشغيل محمولة · حوكمة الإنتاج",
+      "ru": "Основа с открытым исходным кодом · переносимый рантайм · управление продакшеном",
+      "fr": "Fondation open source · runtime portable · gouvernance de production",
+      "de": "Open-Source-Grundlage · portabler Runtime · Produktions-Governance",
+      "es": "Base de código abierto · runtime portátil · gobernanza de producción",
+      "pt": "Base open source · runtime portátil · governação da produção"
+    },
+    "The control layer for agents that matter.": {
+      "ja": "重要なエージェントのための制御レイヤー",
+      "ko": "중요한 에이전트를 위한 제어 계층",
+      "ar": "طبقة التحكم للوكلاء المؤثرين",
+      "ru": "Уровень управления для значимых агентов",
+      "fr": "La couche de contrôle des agents qui comptent",
+      "de": "Die Kontrollebene für relevante Agenten",
+      "es": "La capa de control para los agentes que importan",
+      "pt": "A camada de controlo para agentes que fazem a diferença"
+    },
+    "OPEN-SOURCE REACH": {
+      "ja": "オープンソースのリーチ",
+      "ko": "오픈소스 도달 범위",
+      "ar": "وصول المصدر المفتوح",
+      "ru": "Охват открытого исходного кода",
+      "fr": "Portée open source",
+      "de": "Open-Source-Reichweite",
+      "es": "Alcance del código abierto",
+      "pt": "Alcance open source"
+    },
+    "Community, assets and developer distribution": {
+      "ja": "コミュニティ、アセット、開発者への展開",
+      "ko": "커뮤니티, 자산 및 개발자 배포",
+      "ar": "المجتمع والأصول وتوزيع المطورين",
+      "ru": "Сообщество, активы и распространение среди разработчиков",
+      "fr": "Communauté, actifs et distribution aux développeurs",
+      "de": "Community, Assets und Distribution an Entwickler",
+      "es": "Comunidad, activos y distribución a desarrolladores",
+      "pt": "Comunidade, ativos e distribuição para desenvolvedores"
+    },
+    "ENTERPRISE PROOF": {
+      "ja": "エンタープライズの実証",
+      "ko": "엔터프라이즈 검증",
+      "ar": "إثبات مؤسسي",
+      "ru": "Подтверждение для предприятий",
+      "fr": "Preuve entreprise",
+      "de": "Unternehmensnachweis",
+      "es": "Prueba empresarial",
+      "pt": "Prova empresarial"
+    },
+    "Production customers across critical industries": {
+      "ja": "重要産業の本番顧客",
+      "ko": "핵심 산업의 프로덕션 고객",
+      "ar": "عملاء الإنتاج في الصناعات الحيوية",
+      "ru": "Клиенты в продакшене в ключевых отраслях",
+      "fr": "Clients en production dans des secteurs critiques",
+      "de": "Produktivkunden in kritischen Branchen",
+      "es": "Clientes en producción en sectores críticos",
+      "pt": "Clientes em produção em setores críticos"
+    },
+    "REGIONAL IMPACT": {
+      "ja": "地域へのインパクト",
+      "ko": "지역 영향력",
+      "ar": "التأثير الإقليمي",
+      "ru": "Региональное влияние",
+      "fr": "Impact régional",
+      "de": "Regionale Wirkung",
+      "es": "Impacto regional",
+      "pt": "Impacto regional"
+    },
+    "Partners, universities and global corridors": {
+      "ja": "パートナー、高等教育機関、グローバルな連携回廊",
+      "ko": "파트너, 대학 및 글로벌 협력 회랑",
+      "ar": "الشركاء والجامعات والممرات العالمية",
+      "ru": "Партнёры, университеты и глобальные коридоры",
+      "fr": "Partenaires, universités et corridors mondiaux",
+      "de": "Partner, Universitäten und globale Korridore",
+      "es": "Socios, universidades y corredores globales",
+      "pt": "Parceiros, universidades e corredores globais"
+    },
+    "From the GitHub era to the Agentic era: open collaboration now needs production control": {
+      "ja": "GitHub時代からAgentic時代へ：オープンな協働には本番環境の制御が必要",
+      "ko": "GitHub 시대에서 Agentic 시대로: 오픈 협업에는 이제 프로덕션 제어가 필요합니다",
+      "ar": "من عصر GitHub إلى عصر Agentic: التعاون المفتوح يحتاج الآن إلى تحكم في الإنتاج",
+      "ru": "От эпохи GitHub к эпохе Agentic: открытому сотрудничеству теперь нужен контроль в продакшене",
+      "fr": "De l’ère GitHub à l’ère Agentic : la collaboration ouverte a besoin d’un contrôle de production",
+      "de": "Vom GitHub-Zeitalter zum Agentic-Zeitalter: Offene Zusammenarbeit braucht Produktionskontrolle",
+      "es": "De la era GitHub a la era Agentic: la colaboración abierta necesita control en producción",
+      "pt": "Da era GitHub à era Agentic: a colaboração aberta precisa agora de controlo em produção"
+    },
+    "GitHub made software collaboration open; AgenticOps makes agents accountable in production": {
+      "ja": "GitHubはソフトウェア協働をオープンにし、AgenticOpsは本番環境でエージェントに説明責任を持たせる",
+      "ko": "GitHub는 소프트웨어 협업을 개방했고, AgenticOps는 프로덕션에서 에이전트에 책임성을 부여합니다",
+      "ar": "جعل GitHub التعاون البرمجي مفتوحاً؛ وتجعل AgenticOps الوكلاء مسؤولين في الإنتاج",
+      "ru": "GitHub открыл программное сотрудничество, а AgenticOps делает агентов ответственными в продакшене",
+      "fr": "GitHub a ouvert la collaboration logicielle ; AgenticOps rend les agents responsables en production",
+      "de": "GitHub machte Softwarezusammenarbeit offen; AgenticOps macht Agenten im Produktivbetrieb verantwortbar",
+      "es": "GitHub abrió la colaboración de software; AgenticOps hace responsables a los agentes en producción",
+      "pt": "O GitHub tornou aberta a colaboração de software; o AgenticOps responsabiliza os agentes em produção"
+    },
+    "Countries and regions": {
+      "ja": "国と地域",
+      "ko": "국가 및 지역",
+      "ar": "الدول والمناطق",
+      "ru": "Страны и регионы",
+      "fr": "Pays et régions",
+      "de": "Länder und Regionen",
+      "es": "Países y regiones",
+      "pt": "Países e regiões"
+    },
+    "Open source × production control × global reach": {
+      "ja": "オープンソース × 本番制御 × グローバルリーチ",
+      "ko": "오픈소스 × 프로덕션 제어 × 글로벌 확장",
+      "ar": "المصدر المفتوح × تحكم الإنتاج × الوصول العالمي",
+      "ru": "Открытый исходный код × контроль в продакшене × глобальный охват",
+      "fr": "Open source × contrôle de production × portée mondiale",
+      "de": "Open Source × Produktionskontrolle × globale Reichweite",
+      "es": "Código abierto × control de producción × alcance global",
+      "pt": "Open source × controlo de produção × alcance global"
+    },
+    "Founder Profile　": {
+      "ja": "創業者プロフィール　",
+      "ko": "창업자 프로필　",
+      "ar": "نبذة عن المؤسس　",
+      "ru": "Профиль основателя　",
+      "fr": "Profil du fondateur　",
+      "de": "Gründerprofil　",
+      "es": "Perfil del fundador　",
+      "pt": "Perfil do fundador　"
+    },
+    "Sam Chen: an open-source founder building the control layer for Agentic-AI production.": {
+      "ja": "Sam Chen：Agentic-AI本番環境の制御レイヤーを構築するオープンソース創業者",
+      "ko": "Sam Chen: Agentic-AI 프로덕션을 위한 제어 계층을 구축하는 오픈소스 창업자",
+      "ar": "Sam Chen: مؤسس في المصدر المفتوح يبني طبقة التحكم لإنتاج Agentic-AI",
+      "ru": "Sam Chen: основатель открытых проектов, создающий уровень управления для Agentic-AI в продакшене",
+      "fr": "Sam Chen : fondateur open source qui construit la couche de contrôle de l’Agentic-AI en production",
+      "de": "Sam Chen: Open-Source-Gründer der Kontrollebene für Agentic-AI im Produktivbetrieb",
+      "es": "Sam Chen: fundador de código abierto que construye la capa de control para Agentic-AI en producción",
+      "pt": "Sam Chen: fundador open source que constrói a camada de controlo para Agentic-AI em produção"
+    },
+    "From open-source infrastructure to Agentic-AI production control": {
+      "ja": "オープンソース基盤からAgentic-AI本番制御へ",
+      "ko": "오픈소스 인프라에서 Agentic-AI 프로덕션 제어로",
+      "ar": "من البنية التحتية مفتوحة المصدر إلى التحكم في إنتاج Agentic-AI",
+      "ru": "От инфраструктуры с открытым исходным кодом к контролю Agentic-AI в продакшене",
+      "fr": "De l’infrastructure open source au contrôle de production de l’Agentic-AI",
+      "de": "Von Open-Source-Infrastruktur zur Produktionskontrolle für Agentic-AI",
+      "es": "De la infraestructura de código abierto al control de producción de Agentic-AI",
+      "pt": "Da infraestrutura open source ao controlo de produção do Agentic-AI"
+    },
+    "OpenCSG builds the open control layer for Agentic-AI in production.": {
+      "ja": "OpenCSGはAgentic-AI本番環境のオープンな制御レイヤーを構築します。",
+      "ko": "OpenCSG는 프로덕션 Agentic-AI를 위한 오픈 제어 계층을 구축합니다.",
+      "ar": "تبني OpenCSG طبقة التحكم المفتوحة لـ Agentic-AI في الإنتاج.",
+      "ru": "OpenCSG создаёт открытый уровень управления Agentic-AI в продакшене.",
+      "fr": "OpenCSG construit la couche de contrôle ouverte de l’Agentic-AI en production.",
+      "de": "OpenCSG entwickelt die offene Kontrollebene für Agentic-AI im Produktivbetrieb.",
+      "es": "OpenCSG construye la capa de control abierta para Agentic-AI en producción.",
+      "pt": "A OpenCSG constrói a camada de controlo aberta para Agentic-AI em produção."
+    },
+    "We bring models, data, agents and enterprise operations into one portable, auditable lifecycle — helping organizations move from experimentation to reliable AI systems without locking into a single model, cloud or hardware vendor.": {
+      "ja": "モデル、データ、エージェント、企業運用をポータブルで監査可能なライフサイクルに統合し、単一ベンダーへのロックインなしに実験から信頼できるAIシステムへ移行できるようにします。",
+      "ko": "모델, 데이터, 에이전트와 기업 운영을 이식 가능하고 감사 가능한 하나의 라이프사이클로 통합해 특정 모델·클라우드·하드웨어 종속 없이 실험에서 신뢰할 수 있는 AI 시스템으로 전환합니다.",
+      "ar": "نجمع النماذج والبيانات والوكلاء وعمليات المؤسسات في دورة حياة محمولة وقابلة للتدقيق، لمساعدة المؤسسات على الانتقال من التجربة إلى أنظمة ذكاء اصطناعي موثوقة دون الارتباط بمورّد واحد.",
+      "ru": "Мы объединяем модели, данные, агентов и корпоративные операции в переносимый и проверяемый жизненный цикл, помогая переходить от экспериментов к надёжным системам ИИ без привязки к одному поставщику.",
+      "fr": "Nous réunissons modèles, données, agents et opérations d’entreprise dans un cycle portable et auditable, pour passer de l’expérimentation à des systèmes d’IA fiables sans dépendre d’un seul fournisseur.",
+      "de": "Wir verbinden Modelle, Daten, Agenten und Unternehmensbetrieb zu einem portablen, prüfbaren Lebenszyklus — für den Weg von Experimenten zu zuverlässigen KI-Systemen ohne Bindung an einen Anbieter.",
+      "es": "Unimos modelos, datos, agentes y operaciones empresariales en un ciclo portable y auditable para pasar de la experimentación a sistemas de IA fiables sin depender de un único proveedor.",
+      "pt": "Reunimos modelos, dados, agentes e operações empresariais num ciclo de vida portátil e auditável, ajudando a passar da experimentação a sistemas de IA fiáveis sem dependência de um único fornecedor."
+    },
+    "OPEN BY DEFAULT": {"ja":"オープンを標準に","ko":"기본은 오픈","ar":"مفتوح افتراضياً","ru":"Открыто по умолчанию","fr":"Ouvert par défaut","de":"Standardmäßig offen","es":"Abierto por defecto","pt":"Aberto por defeito"},
+    "Open-source assets and developer distribution": {"ja":"オープンソース資産と開発者への展開","ko":"오픈소스 자산과 개발자 배포","ar":"أصول مفتوحة المصدر وتوزيع للمطورين","ru":"Открытые активы и распространение среди разработчиков","fr":"Actifs open source et distribution aux développeurs","de":"Open-Source-Assets und Entwicklerdistribution","es":"Activos de código abierto y distribución a desarrolladores","pt":"Ativos open source e distribuição para desenvolvedores"},
+    "PORTABLE BY DESIGN": {"ja":"ポータブル設計","ko":"이식성을 기본으로","ar":"قابل للنقل حسب التصميم","ru":"Переносимость по замыслу","fr":"Portable par conception","de":"Portabel konzipiert","es":"Portable por diseño","pt":"Portátil por design"},
+    "Cloud, private, edge and air-gapped": {"ja":"クラウド、プライベート、エッジ、隔離環境","ko":"클라우드, 프라이빗, 엣지 및 망분리 환경","ar":"السحابة والخاص والحافة والبيئات المعزولة","ru":"Облако, частная среда, edge и изолированные контуры","fr":"Cloud, privé, edge et environnements isolés","de":"Cloud, privat, Edge und air-gapped","es":"Nube, privado, edge y entornos aislados","pt":"Cloud, privado, edge e ambientes isolados"},
+    "AUDITABLE IN PRODUCTION": {"ja":"本番環境で監査可能","ko":"프로덕션에서 감사 가능","ar":"قابل للتدقيق في الإنتاج","ru":"Проверяемо в продакшене","fr":"Auditable en production","de":"Im Produktivbetrieb prüfbar","es":"Auditable en producción","pt":"Auditável em produção"},
+    "Policy, evidence and continuous improvement": {"ja":"ポリシー、証拠、継続的改善","ko":"정책, 증거 및 지속적 개선","ar":"السياسات والأدلة والتحسين المستمر","ru":"Политики, доказательства и постоянное улучшение","fr":"Politiques, preuves et amélioration continue","de":"Richtlinien, Nachweise und kontinuierliche Verbesserung","es":"Políticas, evidencia y mejora continua","pt":"Políticas, evidência e melhoria contínua"},
+    "SINGAPORE · INTERNATIONAL VALIDATION": {"ja":"シンガポール · 国際的な実証","ko":"싱가포르 · 국제적 검증","ar":"سنغافورة · تحقق دولي","ru":"Сингапур · Международное подтверждение","fr":"Singapour · Validation internationale","de":"Singapur · Internationale Validierung","es":"Singapur · Validación internacional","pt":"Singapura · Validação internacional"},
+    "Selected for the IMDA SPARK programme": {"ja":"IMDA SPARKプログラムに選出","ko":"IMDA SPARK 프로그램 선정","ar":"تم اختياره لبرنامج IMDA SPARK","ru":"Отобран для программы IMDA SPARK","fr":"Sélectionné pour le programme IMDA SPARK","de":"Für das IMDA-SPARK-Programm ausgewählt","es":"Seleccionado para el programa IMDA SPARK","pt":"Selecionado para o programa IMDA SPARK"},
+    "A Singapore launchpad for open, trusted and production-ready AI infrastructure.": {"ja":"オープンで信頼でき、本番対応のAI基盤を世界へ届けるシンガポールの起点。","ko":"개방적이고 신뢰할 수 있는 프로덕션용 AI 인프라의 싱가포르 출발점입니다.","ar":"منصة انطلاق سنغافورية لبنية ذكاء اصطناعي مفتوحة وموثوقة وجاهزة للإنتاج.","ru":"Сингапурская стартовая площадка для открытой, надёжной и готовой к продакшену ИИ-инфраструктуры.","fr":"Une base singapourienne pour une infrastructure IA ouverte, fiable et prête pour la production.","de":"Singapur als Ausgangspunkt für offene, vertrauenswürdige und produktionsreife KI-Infrastruktur.","es":"Una plataforma de lanzamiento en Singapur para infraestructura de IA abierta, fiable y lista para producción.","pt":"Uma plataforma de lançamento em Singapura para infraestrutura de IA aberta, confiável e pronta para produção."}
+    ,"OPEN-SOURCE TRACK":{"ja":"オープンソースの歩み","ko":"오픈소스 경로","ar":"مسار المصدر المفتوح","ru":"Путь открытого исходного кода","fr":"Parcours open source","de":"Open-Source-Weg","es":"Trayectoria open source","pt":"Percurso open source"}
+    ,"From Mesosphere to JiHu GitLab to OpenCSG":{"ja":"MesosphereからJiHu GitLab、そしてOpenCSGへ","ko":"Mesosphere에서 JiHu GitLab, OpenCSG로","ar":"من Mesosphere إلى JiHu GitLab ثم OpenCSG","ru":"От Mesosphere к JiHu GitLab и OpenCSG","fr":"De Mesosphere à JiHu GitLab puis OpenCSG","de":"Von Mesosphere über JiHu GitLab zu OpenCSG","es":"De Mesosphere a JiHu GitLab y OpenCSG","pt":"Da Mesosphere à JiHu GitLab e à OpenCSG"}
+    ,"A founder’s track record across open infrastructure, developer ecosystems and AI platforms.":{"ja":"オープン基盤、開発者エコシステム、AIプラットフォームにまたがる実績。","ko":"오픈 인프라, 개발자 생태계 및 AI 플랫폼을 아우르는 창업자 경험입니다.","ar":"خبرة مؤسس عبر البنية المفتوحة ومجتمعات المطورين ومنصات الذكاء الاصطناعي.","ru":"Опыт основателя в открытой инфраструктуре, экосистемах разработчиков и AI-платформах.","fr":"Un parcours de fondateur dans l’infrastructure ouverte, les écosystèmes développeurs et les plateformes IA.","de":"Erfahrung in offener Infrastruktur, Entwicklerökosystemen und KI-Plattformen.","es":"Trayectoria en infraestructura abierta, ecosistemas de desarrolladores y plataformas de IA.","pt":"Experiência em infraestrutura aberta, ecossistemas de desenvolvedores e plataformas de IA."}
+    ,"PRODUCT MISSION":{"ja":"プロダクトの使命","ko":"제품 미션","ar":"مهمة المنتج","ru":"Миссия продукта","fr":"Mission produit","de":"Produktmission","es":"Misión del producto","pt":"Missão do produto"}
+    ,"Make agents accountable in production":{"ja":"本番環境でエージェントに説明責任を持たせる","ko":"프로덕션에서 에이전트에 책임성을 부여","ar":"جعل الوكلاء مسؤولين في الإنتاج","ru":"Сделать агентов ответственными в продакшене","fr":"Rendre les agents responsables en production","de":"Agenten im Produktivbetrieb verantwortbar machen","es":"Hacer responsables a los agentes en producción","pt":"Responsabilizar os agentes em produção"}
+    ,"Open-source distribution paired with enterprise-grade control.":{"ja":"オープンソース配布とエンタープライズ級の制御を組み合わせる。","ko":"오픈소스 배포와 엔터프라이즈급 제어를 결합합니다.","ar":"الجمع بين التوزيع مفتوح المصدر والتحكم المؤسسي.","ru":"Открытое распространение в сочетании с корпоративным контролем.","fr":"Distribution open source et contrôle de niveau entreprise.","de":"Open-Source-Distribution mit Enterprise-Kontrolle.","es":"Distribución de código abierto junto con control empresarial.","pt":"Distribuição open source combinada com controlo empresarial."}
+    ,"GLOBAL ECOSYSTEM":{"ja":"グローバルエコシステム","ko":"글로벌 생태계","ar":"النظام البيئي العالمي","ru":"Глобальная экосистема","fr":"Écosystème mondial","de":"Globales Ökosystem","es":"Ecosistema global","pt":"Ecossistema global"}
+    ,"Bridge builders, operators and institutions":{"ja":"ビルダー、運用者、機関をつなぐ","ko":"빌더, 운영자 및 기관 연결","ar":"ربط البنّائين والمشغلين والمؤسسات","ru":"Объединять разработчиков, операторов и институты","fr":"Relier builders, opérateurs et institutions","de":"Builder, Betreiber und Institutionen verbinden","es":"Conectar builders, operadores e instituciones","pt":"Ligar builders, operadores e instituições"}
+    ,"A global open-source network designed to move AI into real work.":{"ja":"AIを実際の仕事へ移すためのグローバルなオープンソースネットワーク。","ko":"AI를 실제 업무로 옮기도록 설계된 글로벌 오픈소스 네트워크입니다.","ar":"شبكة عالمية مفتوحة المصدر مصممة لنقل الذكاء الاصطناعي إلى العمل الحقيقي.","ru":"Глобальная открытая сеть, созданная для внедрения ИИ в реальную работу.","fr":"Un réseau open source mondial conçu pour intégrer l’IA au travail réel.","de":"Ein globales Open-Source-Netzwerk, das KI in echte Arbeit bringt.","es":"Una red global de código abierto para llevar la IA al trabajo real.","pt":"Uma rede global open source concebida para levar a IA ao trabalho real."}
+    ,"SELECTED GLOBAL ECOSYSTEM":{"ja":"厳選グローバルエコシステム","ko":"선정된 글로벌 생태계","ar":"نخبة النظام البيئي العالمي","ru":"Избранная глобальная экосистема","fr":"Écosystème mondial sélectionné","de":"Ausgewähltes globales Ökosystem","es":"Ecosistema global seleccionado","pt":"Ecossistema global selecionado"}
+    ,"Open Source. Real Value. Real Impact.":{"ja":"オープンソース。真の価値。真のインパクト。","ko":"오픈소스. 실제 가치. 실제 임팩트.","ar":"مصدر مفتوح. قيمة حقيقية. تأثير حقيقي.","ru":"Открытый исходный код. Реальная ценность. Реальное влияние.","fr":"Open source. Valeur réelle. Impact réel.","de":"Open Source. Echter Wert. Echte Wirkung.","es":"Código abierto. Valor real. Impacto real.","pt":"Open source. Valor real. Impacto real."}
+    ,"Open-source distribution":{"ja":"オープンソース配布","ko":"오픈소스 배포","ar":"توزيع مفتوح المصدر","ru":"Распространение открытого кода","fr":"Distribution open source","de":"Open-Source-Distribution","es":"Distribución de código abierto","pt":"Distribuição open source"}
+    ,"Enterprise governance":{"ja":"エンタープライズガバナンス","ko":"엔터프라이즈 거버넌스","ar":"حوكمة المؤسسات","ru":"Корпоративное управление","fr":"Gouvernance d’entreprise","de":"Enterprise-Governance","es":"Gobernanza empresarial","pt":"Governança empresarial"}
+    ,"Regional AI platforms":{"ja":"地域AIプラットフォーム","ko":"지역 AI 플랫폼","ar":"منصات الذكاء الاصطناعي الإقليمية","ru":"Региональные AI-платформы","fr":"Plateformes IA régionales","de":"Regionale KI-Plattformen","es":"Plataformas regionales de IA","pt":"Plataformas regionais de IA"}
+    ,"OpenCore monetization":{"ja":"OpenCoreの収益化","ko":"OpenCore 수익화","ar":"تحقيق الدخل من OpenCore","ru":"Монетизация OpenCore","fr":"Monétisation d’OpenCore","de":"OpenCore-Monetarisierung","es":"Monetización de OpenCore","pt":"Monetização do OpenCore"}
+    ,"OPENCSG · AGENTIC-AI":{"ja":"OPENCSG · AGENTIC-AI","ko":"OPENCSG · AGENTIC-AI","ar":"OPENCSG · AGENTIC-AI","ru":"OPENCSG · AGENTIC-AI","fr":"OPENCSG · AGENTIC-AI","de":"OPENCSG · AGENTIC-AI","es":"OPENCSG · AGENTIC-AI","pt":"OPENCSG · AGENTIC-AI"}
+    ,"Agentic-AI":{"ja":"Agentic-AI","ko":"Agentic-AI","ar":"Agentic-AI","ru":"Agentic-AI","fr":"Agentic-AI","de":"Agentic-AI","es":"Agentic-AI","pt":"Agentic-AI"}
+    ,"Enterprise AI must be sovereign, controllable and secure — integrated with the systems that run the business.":{"ja":"企業AIは主権性、制御性、安全性を備え、事業を動かすシステムと統合されなければならない。","ko":"엔터프라이즈 AI는 주권적이고 통제 가능하며 안전해야 하며, 비즈니스를 운영하는 시스템과 통합되어야 합니다.","ar":"يجب أن يكون الذكاء الاصطناعي المؤسسي سيادياً وقابلاً للتحكم وآمناً، ومتكاملاً مع الأنظمة التي تدير الأعمال.","ru":"Корпоративный ИИ должен быть суверенным, управляемым и безопасным, интегрированным с системами, на которых работает бизнес.","fr":"L’IA d’entreprise doit être souveraine, contrôlable et sécurisée, intégrée aux systèmes qui font fonctionner l’entreprise.","de":"Unternehmens-KI muss souverän, kontrollierbar und sicher sein – integriert in die Systeme, die das Geschäft betreiben.","es":"La IA empresarial debe ser soberana, controlable y segura, integrada con los sistemas que hacen funcionar el negocio.","pt":"A IA empresarial deve ser soberana, controlável e segura, integrada nos sistemas que fazem o negócio funcionar."}
+    ,"Agentic-AI — controlled, auditable agents operating in production.":{"ja":"Agentic-AI — 本番環境で稼働する、制御可能で監査可能なエージェント。","ko":"Agentic-AI — 프로덕션에서 운영되는 통제 가능하고 감사 가능한 에이전트.","ar":"Agentic-AI — وكلاء مضبوطون وقابلون للتدقيق يعملون في بيئة الإنتاج.","ru":"Agentic-AI — управляемые и проверяемые агенты, работающие в продакшене.","fr":"Agentic-AI — des agents contrôlés et auditables en production.","de":"Agentic-AI – kontrollierbare und prüfbare Agenten im Produktivbetrieb.","es":"Agentic-AI: agentes controlados y auditables operando en producción.","pt":"Agentic-AI — agentes controlados e auditáveis a operar em produção."}
+    ,"OPEN-SOURCE PROOF":{"ja":"オープンソースの証拠","ko":"오픈소스 증거","ar":"دليل المصدر المفتوح","ru":"Подтверждение открытого кода","fr":"Preuve open source","de":"Open-Source-Nachweis","es":"Prueba de código abierto","pt":"Prova open source"}
+    ,"A living developer community around OpenCSG and CSGHub.":{"ja":"OpenCSGとCSGHubを中心とする活発な開発者コミュニティ。","ko":"OpenCSG와 CSGHub를 중심으로 한 실제 개발자 커뮤니티입니다.","ar":"مجتمع مطورين حي حول OpenCSG وCSGHub.","ru":"Живое сообщество разработчиков вокруг OpenCSG и CSGHub.","fr":"Une communauté de développeurs active autour d’OpenCSG et CSGHub.","de":"Eine lebendige Entwicklergemeinschaft rund um OpenCSG und CSGHub.","es":"Una comunidad activa de desarrolladores en torno a OpenCSG y CSGHub.","pt":"Uma comunidade ativa de desenvolvedores em torno da OpenCSG e do CSGHub."}
+    ,"Open repositories, developer tooling and community-led iteration turn open source into a production advantage.":{"ja":"オープンなリポジトリ、開発者ツール、コミュニティ主導の反復が、オープンソースを本番環境の強みに変えます。","ko":"오픈 저장소, 개발자 도구 및 커뮤니티 주도 반복이 오픈소스를 프로덕션의 강점으로 만듭니다.","ar":"تحوّل المستودعات المفتوحة وأدوات المطورين والتكرار بقيادة المجتمع المصدر المفتوح إلى ميزة إنتاجية.","ru":"Открытые репозитории, инструменты разработчиков и итерации сообщества превращают open source в преимущество для продакшена.","fr":"Les dépôts ouverts, les outils développeurs et l’itération communautaire font de l’open source un avantage en production.","de":"Offene Repositories, Entwickler-Tools und gemeinschaftliche Iteration machen Open Source zum Produktionsvorteil.","es":"Los repositorios abiertos, las herramientas para desarrolladores y la iteración comunitaria convierten el código abierto en una ventaja de producción.","pt":"Repositórios abertos, ferramentas para developers e iteração conduzida pela comunidade transformam o open source numa vantagem de produção."}
+    ,"OPEN SOURCE · GLOBAL BY DESIGN":{"ja":"オープンソース · グローバル設計","ko":"오픈소스 · 글로벌 설계","ar":"مصدر مفتوح · تصميم عالمي","ru":"Открытый исходный код · Глобальный дизайн","fr":"Open source · Conçu pour le monde","de":"Open Source · Global konzipiert","es":"Código abierto · Diseño global","pt":"Open source · Concebido para o mundo"}
+    ,"OpenCSG makes agentic systems ready for the environments where trust, evidence and performance are the product.":{"ja":"OpenCSGは、信頼・証拠・性能が価値となる環境でエージェントシステムを実運用可能にします。","ko":"OpenCSG는 신뢰, 증거, 성능이 제품의 핵심인 환경에서 에이전트 시스템을 운영 가능하게 만듭니다.","ar":"تجعل OpenCSG أنظمة الوكلاء جاهزة للبيئات التي تكون فيها الثقة والأدلة والأداء جوهر المنتج.","ru":"OpenCSG готовит агентные системы к средам, где доверие, доказательства и производительность являются продуктом.","fr":"OpenCSG rend les systèmes agentiques prêts pour les environnements où la confiance, les preuves et la performance sont le produit.","de":"OpenCSG macht agentische Systeme bereit für Umgebungen, in denen Vertrauen, Nachweise und Leistung das Produkt sind.","es":"OpenCSG prepara sistemas agénticos para entornos donde la confianza, la evidencia y el rendimiento son el producto.","pt":"A OpenCSG prepara sistemas agentivos para ambientes onde confiança, evidência e desempenho são o próprio produto."}
+    ,"Singapore · Global · Open source":{"ja":"シンガポール · グローバル · オープンソース","ko":"싱가포르 · 글로벌 · 오픈소스","ar":"سنغافورة · عالمي · مصدر مفتوح","ru":"Сингапур · Глобальный · Открытый исходный код","fr":"Singapour · Mondial · Open source","de":"Singapur · Global · Open Source","es":"Singapur · Global · Código abierto","pt":"Singapura · Global · Open source"}
   }
 }

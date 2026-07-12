@@ -195,7 +195,7 @@ function buildPrintStyle({ width, height, designW, designH }) {
     transform: translateZ(0) !important;
   }
   .slide-wrap:last-of-type { page-break-after: auto !important; break-after: auto !important; }
-  .slide-wrap[style*="display: none"] { display: none !important; }
+  .slide-wrap[style*="display: none"], .slide-wrap.short-hidden, .slide-wrap[data-section="appendix"]:not(:has(#slide-40)) { display: none !important; }
   /* Keep the 1600x900 design canvas centered inside the new ratio even
      when the page is no longer 16:9. Use translate(-50%,-50%) to center
      before scaling so the design stays anchored to the page center. */
@@ -231,7 +231,7 @@ async function exportDeck(browser, options) {
   // Wait for i18n to finish loading AND for the i18n 'ready' event before
   // we attempt to take a snapshot, otherwise English / non-zh exports will
   // be missing translated copy and fall back to Chinese placeholders.
-  await page.waitForFunction(() => document.querySelectorAll('.slide-wrap').length >= 15);
+  await page.waitForFunction(() => document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)').length >= 1);
   await page.waitForFunction(() => Boolean(window.__i18nReady || document.documentElement.lang), null, { timeout: 10000 }).catch(() => {});
   await page.waitForTimeout(400);
 
@@ -267,7 +267,7 @@ async function exportDeck(browser, options) {
   const visibleIndexes = await page.evaluate(({ sections, pages, from, to }) => {
     const allow = new Set(sections && sections.length ? sections
       : ['cover','main','case','product','appendix']);
-    const wraps = [...document.querySelectorAll('.slide-wrap')];
+    const wraps = [...document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)')];
     let indexes = wraps.map((w, i) => ({
       i: i + 1,
       section: w.getAttribute('data-section') || 'main'
@@ -314,7 +314,7 @@ async function exportDeck(browser, options) {
 
   // Hide non-selected slides.
   await page.evaluate((indexes) => {
-    const wrapList = [...document.querySelectorAll('.slide-wrap')];
+    const wrapList = [...document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)')];
     wrapList.forEach((w, i) => {
       w.style.display = indexes.includes(i + 1) ? '' : 'none';
     });
@@ -335,7 +335,7 @@ async function exportDeck(browser, options) {
         const idx = visibleIndexes[k];
         // Reveal only the k-th visible slide.
         await page.evaluate((targetIdx) => {
-          const wrapList = [...document.querySelectorAll('.slide-wrap')];
+          const wrapList = [...document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)')];
           wrapList.forEach((w, i) => {
             w.style.display = (i + 1) === targetIdx ? '' : 'none';
           });
@@ -350,7 +350,7 @@ async function exportDeck(browser, options) {
 
       // Restore all selected slides for a clean shutdown.
       await page.evaluate((indexes) => {
-        const wrapList = [...document.querySelectorAll('.slide-wrap')];
+        const wrapList = [...document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)')];
         wrapList.forEach((w, i) => {
           w.style.display = indexes.includes(i + 1) ? '' : 'none';
         });

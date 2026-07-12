@@ -53,7 +53,7 @@
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG">
     <div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Industry Pain Points">行业痛点</span><span style="font-size:13px;color:#697472;font-weight:400">AI Production Pain Points</span></div>
-    <h2 class="title" data-en="Enterprise AI production is blocked by runtime, governance and cost problems">企业 AI 生产化，卡在运行、治理与成本的系统性难题</h2>
+    <h2 class="title" data-en="Enterprise AI must be sovereign, controllable and secure — integrated with the systems that run the business.">企业 AI 必须主权、可控、安全，并与真正运行业务的系统结合。</h2>
 
     <div class="pain-list">
       ${pains.map(item => `
@@ -64,7 +64,7 @@
         </div>`).join("")}
     </div>
 
-    <div class="foot"><span data-en="A universal production requirement, not a single-industry or policy-only demand">通用生产需求，而非单一行业或单一政策需求</span><span>03</span></div>`;
+    <div class="foot"><span data-en="GitHub made software collaboration open; AgenticOps makes agents accountable in production">GitHub 让软件协作开放，AgenticOps 让智能体在生产中可控、可审计、可持续进化</span><span>03</span></div>`;
 
   window.DeckI18n?.translateTree?.(section);
 })();

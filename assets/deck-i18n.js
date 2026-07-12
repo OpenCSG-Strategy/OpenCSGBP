@@ -1,18 +1,12 @@
 /* OpenCSG Deck · i18n core */
 (function(){
-  const SUPPORTED = ['zh','en','ja','ko','ar','ru','fr','de','es','pt'];
-  const DEFAULT = 'zh';
+  // SGVersion/IMDA is distributed as an English-only investor deck.
+  const SUPPORTED = ['en'];
+  const DEFAULT = 'en';
   const STORAGE_KEY = 'opencsg.deck.lang';
   const I18N_DIR = 'assets/i18n/';
 
   function detectLang(){
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored && SUPPORTED.includes(stored)) return stored;
-    const qs = new URLSearchParams(location.search);
-    const q = qs.get('lang');
-    if (q && SUPPORTED.includes(q)) return q;
-    const nav = (navigator.language || '').slice(0,2).toLowerCase();
-    if (SUPPORTED.includes(nav)) return nav;
     return DEFAULT;
   }
 

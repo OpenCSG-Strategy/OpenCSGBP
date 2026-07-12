@@ -1,14 +1,14 @@
 <div align="center">
 
-# OpenCSG Investor Deck 2026
+# OpenCSG SGVersion / IMDA · International Investor Deck 2026
 
-**让大模型赋能每一个人 · Empowering everyone with large models**
+**Agentic-AI — controlled, auditable agents operating in production.**
 
-> 投资人路演材料 · 39 张 slide · 10 国语言 · 单 HTML 文件
+> 国际化投资人短版 · 9 张 slide · English-only · 单 HTML 文件
 
-[![Version](https://img.shields.io/badge/Version-2026.07.1-blue?style=flat-square)](#)
-[![Slides](https://img.shields.io/badge/Slides-39-teal?style=flat-square)](#)
-[![i18n](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)](#)
+[![Version](https://img.shields.io/badge/Version-SGVersion%2FIMDA-blue?style=flat-square)](#)
+[![Slides](https://img.shields.io/badge/Slides-9-teal?style=flat-square)](#)
+[![Language](https://img.shields.io/badge/Language-English--only-23877B?style=flat-square)](#)
 [![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)](#)
 
 </div>
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | 开发者 / 想本地改 | [方式 A · 本地 Node 启动](#-方式-a--本地-node-启动) | ~2 min |
 | **AI Coding Agent 用户**(Codex / Claude Code / Cursor / Workbuddy / CSGLite) | [方式 B · 丢给 AI 启动](#-方式-b--丢给-ai-coding-agent-启动) | ~30 s |
-| 只想看,不想装环境 | [方式 C · GitHub Pages 在线版](#-方式-c--github-pages-在线版) | 0 s |
+| 只想看,不想装环境 | [方式 C · Vercel 在线版](#-方式-c--vercel-在线版) | 0 s |
 
 ---
 
@@ -73,12 +73,10 @@ npm run serve
   npm run serve
 
 启动后,在浏览器里打开 http://127.0.0.1:4173,
-默认进入中文模式。顶栏右上角有语言切换胶囊,
-可以切到 English / 日本語 / 한국어 / العربية / Русский /
-Français / Deutsch / Español / Português。
+当前 SGVersion/IMDA 版本固定使用 English,不显示语言切换入口。
 
 如果遇到问题,请先阅读仓库根目录的 AGENTS.md 和 docs/CONTRIBUTING-i18n.md,
-它们描述了项目意图、启动方式、以及改文案时必须同步 10 国翻译的硬性要求。
+它们描述了项目意图、启动方式、以及改文案时的内容与资源同步要求。
 ```
 
 **不同 AI 工具的入口:**
@@ -92,19 +90,19 @@ Français / Deutsch / Español / Português。
 
 > 📌 **为什么这样设计**:仓库根目录的 `AGENTS.md` 是 [agents.md 规范](https://agents.md/),Codex / Claude Code / Cursor / Devin / Gemini CLI / OpenCode 等工具都会自动加载它。所以即使你只给 AI 一句"启动这个 repo",它读了 AGENTS.md 也能立刻知道该做什么。
 
-## 🅲️ 方式 C · GitHub Pages 在线版
+## 🅲️ 方式 C · Vercel 在线版
 
-仓库开启了 GitHub Pages,直接访问:
+当前 SGVersion/IMDA 英文短版已部署到 Vercel,直接访问:
 
-> 🌐 **<https://OpenCSG-Strategy.github.io/OpenCSGBP/>**
+> 🌐 **<https://opencsg-sgversion-imda.vercel.app>**
 
-打开即用,不用装 Node。功能与本地版一致(导出 PDF 需要等下载,导出 PPTX 不在 Pages 上提供)。
+打开即用,不用装 Node。页面固定为英文单语版本。
 
 ---
 
 ## 📖 项目简介
 
-这是一个 **单 HTML 文件的 OpenCSG 投资人路演材料**,共 39 页、1600×900 16:9 设计稿,支持在线演示、导出 PDF / PPTX(图片式)、多语言切换、键盘翻页、缩略图概览、嵌入式二维码等。
+这是一个 **单 HTML 文件的 OpenCSG 国际化投资人短版**,共 9 页、1600×900 16:9 设计稿,聚焦 Agentic-AI 生产控制、Company Overview、GitHub 开源证明、IMDA SPARK、OpenCore 商业模式、客户伙伴与海外联系方式。
 
 整个 deck 由纯 HTML / CSS / 原生 JS 组成,**不依赖任何前端框架**。配套 Node 脚本负责:
 
@@ -123,10 +121,10 @@ Français / Deutsch / Español / Português。
 
 | 模块 | 关键能力 |
 | --- | --- |
-| 📑 **多页幻灯** | 39 页,cover / main / case / product / appendix 五大分节,每节可独立导出 |
-| 🌍 **10 国语言** | 中文 / 英文 / 日文 / 韩文 / 阿拉伯(RTL)/ 俄文 / 法文 / 德文 / 西班牙文 / 葡萄牙文 |
+| 📑 **国际化短版** | 9 页,cover / pain points / company / product / OpenCore / customers / closing |
+| 🇬🇧 **英文单语** | 页面与导出固定使用 English,不显示语言切换入口 |
 | ⌨️ **键盘 & 触控** | ← → 翻页、↑↓ 跳节、Home / End 头尾、Esc 退出全屏、Space / F 全屏 |
-| 🧭 **顶栏胶囊** | 语言切换、页面计数、查看 PDF、PPT 已就绪、回到顶部 |
+| 🧭 **顶栏胶囊** | 页面计数、查看 PDF、PPT 已就绪、回到顶部 |
 | 🔍 **缩略图概览** | 顶栏"概览"按钮进入全部页面缩略图网格 |
 | 🌐 **RTL 支持** | 阿拉伯语自动整页 RTL 切换 |
 | 💧 **水印** | 导出 PDF / PPTX 时可叠加对角线水印 |
@@ -145,12 +143,12 @@ Français / Deutsch / Español / Português。
 
 ```
 OpenCSGBP/
-├── index.html                # 入口页面,39 张 slide 全部写在这里
+├── index.html                # 入口页面,9 张 SGVersion/IMDA slide 全部写在这里
 ├── AGENTS.md                 # 给 AI Coding Agent 读的入口(agents.md 规范)
 ├── CLAUDE.md                 # Claude Code 专用(等同 AGENTS.md)
 ├── assets/
 │   ├── deck-*.css / .js      # 幻灯样式与脚本
-│   ├── i18n/                 # 10 国翻译包(zh/en/ja/ko/ar/ru/fr/de/es/pt)
+│   ├── i18n/                 # 与 main branch 兼容的翻译资源
 │   ├── brand-logos/          # 品牌 logo
 │   ├── founder-logos/        # 创始人履历 logo
 │   ├── cases/                # 案例参考图
@@ -180,7 +178,7 @@ OpenCSGBP/
 | `npm run export:pptx` | 导出图片式 PPTX |
 | `npm run export:pptx-bilingual` | 一次性导出中英双语 PPTX 包 |
 | `node scripts/capture-readme-screenshots.mjs` | 从本地 `127.0.0.1:4173` 抓 README 截图到 `docs/assets/` |
-| `bash scripts/i18n/run-all.sh audit` | 检查 10 国翻译覆盖率 |
+| `bash scripts/i18n/run-all.sh audit` | 检查翻译资源覆盖率 |
 | `bash scripts/i18n/run-all.sh apply` | 把手工翻译写进 8 国语言包 |
 
 ### 导出参数
@@ -196,20 +194,20 @@ node scripts/export-pdf.cjs --lang=zh --pages=1,3,5-8
 node scripts/export-pdf.cjs --from=1 --to=10 --watermark="CONFIDENTIAL" --out=draft.pdf
 ```
 
-支持的语言:`zh` `en` `ja` `ko` `ar` `ru` `fr` `de` `es` `pt`
+当前线上版本固定语言:`en`
 支持的比例:`16:9` `4:3` `a4-portrait` `a4-landscape` `letter-landscape`
 支持的节:`cover` `main` `case` `product` `appendix`
 
 > 也可以直接调 REST 接口:
 > `POST http://127.0.0.1:4173/api/export`,body 是 `{ lang, ratio, format, scope, sections, watermarkEnabled, watermarkText, filename, disposition }`。
 
-## 🌍 多语言
+## 🌍 语言资源说明
 
 ![UI toolbar](./docs/assets/ui-toolbar.png)
 
-- 10 国语言包位于 `assets/i18n/*.json`,`zh.json` 是 source of truth。
-- HTML 元素用 `data-en` / `data-i18n` 标注源文,i18n 框架自动按当前语言替换。
-- 缺翻译时回退到英文,不会出现空白。
+- 当前 SGVersion/IMDA 运行版固定使用 English,并隐藏语言切换入口。
+- 仓库仍保留 `assets/i18n/*.json` 语言资源,便于与 main branch 的源代码和审计工具保持兼容。
+- 修改可见文案时仍建议保留 `data-en` 标注,并运行 i18n audit 检查资源完整性。
 
 > **🚨 修改任何文案前必读**:[`docs/CONTRIBUTING-i18n.md`](./docs/CONTRIBUTING-i18n.md)
 > 这份规范是**硬性要求**:改一个中文字 → 改 `data-en` → 8 国翻译补到 `translation-pack.json` → `apply` → `audit` 100% 才准合并。
@@ -313,7 +311,7 @@ location.reload();
 直接给 AI 一句自然语言指令,例如:
 <ul>
 <li><i>"把 slide 14 的 founder bio 翻译到 8 国语言"</i></li>
-<li><i>"封面主标题换成 XXX,同时更新 10 国翻译"</i></li>
+<li><i>"封面主标题换成 XXX,同步更新英文源文案与相关资源"</i></li>
 <li><i>"导出当前 deck 的中英双语 PDF 到 <code>.exports/</code>"</i></li>
 </ul>
 AI 会先读 <code>AGENTS.md</code> + <code>docs/CONTRIBUTING-i18n.md</code>,然后按规范操作,不会乱改 8 国翻译。
@@ -322,6 +320,7 @@ AI 会先读 <code>AGENTS.md</code> + <code>docs/CONTRIBUTING-i18n.md</code>,然
 ## 🛡 维护者
 
 - 项目主页:[github.com/OpenCSG-Strategy/OpenCSGBP](https://github.com/OpenCSG-Strategy/OpenCSGBP)
+- SGVersion/IMDA 在线版:[opencsg-sgversion-imda.vercel.app](https://opencsg-sgversion-imda.vercel.app)
 - AI Agent 入口:[`AGENTS.md`](./AGENTS.md)
 - i18n 规范:[`docs/CONTRIBUTING-i18n.md`](./docs/CONTRIBUTING-i18n.md)
 - i18n 工具:`scripts/i18n/run-all.sh {audit|gen|apply|all}`

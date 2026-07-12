@@ -1,0 +1,16 @@
+node_modules
+.git
+.vercel
+.playwright-mcp
+.shots
+.exports
+.uploads
+tmp
+test-results
+docs
+scripts
+*.pdf
+*.pptx
+README*
+AGENTS.md
+CLAUDE.md
