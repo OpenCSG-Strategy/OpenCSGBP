@@ -69,7 +69,7 @@ async function selectSlides(page, options) {
       ? sections
       : ['cover','main','case','product','appendix']);
 
-    const wraps = [...document.querySelectorAll('.slide-wrap')];
+    const wraps = [...document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)')];
     let indexes = wraps.map((w, i) => ({
       i: i + 1,
       section: w.getAttribute('data-section') || 'main'
@@ -121,7 +121,7 @@ async function captureSlides(browser, options) {
   if (options.watermark) params.set('watermark', options.watermark);
 
   await page.goto(`${htmlUrl}?${params.toString()}`, { waitUntil: 'networkidle' });
-  await page.waitForFunction(() => document.querySelectorAll('.slide-wrap').length >= 15);
+  await page.waitForFunction(() => document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)').length >= 1);
 
   await page.evaluate(async () => {
     await document.fonts.ready;
@@ -152,6 +152,7 @@ async function captureSlides(browser, options) {
       }
       .toolbar, .nav, .mobile-reader { display: none !important; }
       .slide-wrap { display: none !important; }
+      .slide-wrap.short-hidden, .slide-wrap[data-section="appendix"]:not(:has(#slide-40)) { display: none !important; }
       .slide-wrap[data-export-target="true"] {
         display: block !important;
         position: fixed !important;
@@ -188,7 +189,7 @@ async function captureSlides(browser, options) {
 
   for (const idx of indexes) {
     await page.evaluate((target) => {
-      const wrapList = [...document.querySelectorAll('.slide-wrap')];
+      const wrapList = [...document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)')];
       wrapList.forEach((wrap, index) => {
         if (index + 1 === target) wrap.setAttribute('data-export-target', 'true');
         else wrap.removeAttribute('data-export-target');

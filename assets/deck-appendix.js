@@ -720,17 +720,25 @@
       <div class="closing-grid">
         <div class="closing-left">
           <div class="label">OPENCSG · AI SOVEREIGNTY</div>
-          <h2>${tx("未来的 AI，", "The future of AI", "span")}${tx("必须掌握在自己手中。", "must be yours to control.", "strong")}</h2>
-          ${tx("OpenCSG 让国家与区域、全球企业和个人 AI 工作系统（OPC），都拥有自主、可控、可演进的 AI。", "OpenCSG gives sovereign regions, global enterprises and personal AI work systems (OPC) autonomous, controllable and continuously evolving AI.", "p", "closing-lead")}
-          <div class="closing-pillars">
-            ${tx("开源", "OPEN SOURCE", "span")}<i></i>
-            ${tx("开放", "OPEN", "span")}<i></i>
-            ${tx("自主", "AUTONOMOUS", "span")}<i></i>
-            ${tx("可信", "TRUSTED", "span")}
+          <h2><span>The future of AI</span><strong>must be yours to control.</strong></h2>
+          <p class="closing-partnership-intro">Partnering to Accelerate Singapore's AI Ecosystem</p>
+          <div class="closing-partnership-grid">
+            <article>
+              <h3>Enterprise Adoption</h3>
+              <p>Accelerate sovereign AI deployment across enterprises and the public sector.</p>
+            </article>
+            <article>
+              <h3>Ecosystem &amp; Partners</h3>
+              <p>Collaborate with system integrators, cloud providers, technology partners and startups to build an open AI ecosystem.</p>
+            </article>
+            <article>
+              <h3>Capability Development</h3>
+              <p>Support AI skills, industry projects, research collaborations and talent development with Singapore's universities and institutes—while contributing as a pioneering company in the IMDA ecosystem.</p>
+            </article>
           </div>
           <div class="closing-contact">
             <a class="closing-contact-link primary" href="https://opencsg.com" target="_blank" rel="noopener">opencsg.com</a>
-            <a class="closing-contact-link primary" href="mailto:ir@opencsg.com">ir@opencsg.com</a>
+            <a class="closing-contact-link primary" href="mailto:sales@opencsg.io">sales@opencsg.io</a>
           </div>
         </div>
         <div class="closing-command">
@@ -777,7 +785,6 @@
             </span>
           </button>
         </span>
-        <span class="foot-meta">INVESTOR PRESENTATION · 2026</span>
       </div>
     </section></div>`
   ];

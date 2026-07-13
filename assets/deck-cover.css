@@ -12,6 +12,8 @@
 }
 
 #slide-01 .cover-title h1{
+  /* Preserve the title baseline after removing the former eyebrow label. */
+  margin-top:22px !important;
   margin-bottom:26px !important;
 }
 
@@ -32,6 +34,84 @@
   font-size:17px;
   line-height:1.58;
   font-weight:600;
+}
+
+#slide-01 .cover-positioning{
+  display:grid;
+  grid-template-columns:max-content max-content;
+  width:650px;
+  margin-top:34px!important;
+  gap:10px;
+}
+
+#slide-01 .cover-positioning span{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  transition:color .2s ease,transform .2s ease;
+}
+
+#slide-01 .cover-positioning span::before{
+  content:none;
+}
+
+#slide-01 .cover-positioning span::after{
+  content:none;
+}
+
+#slide-01 .cover-positioning span:first-child{
+  width:auto;
+  min-height:42px;
+  padding:0 12px;
+  border:1px solid #B9D8D2;
+  border-radius:999px;
+  color:#36534D;
+  background:rgba(255,255,255,.82);
+  font-family:var(--display-font);
+  font-size:17px;
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1;
+}
+
+#slide-01 .cover-positioning span:not(:first-child){
+  min-height:42px;
+  padding:0 12px;
+  border:1px solid #B9D8D2;
+  border-radius:999px;
+  color:#36534D;
+  background:rgba(255,255,255,.82);
+  font-family:var(--display-font);
+  font-size:17px;
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1;
+  text-transform:none;
+}
+
+#slide-01 .cover-positioning span:not(:first-child)::before{
+  display:block;
+  width:5px;
+  height:5px;
+  margin-right:8px;
+  border-radius:50%;
+  background:#55A79B;
+  content:"";
+}
+
+#slide-01 .cover-positioning span:first-child::before{
+  display:block;
+  width:5px;
+  height:5px;
+  margin-right:8px;
+  border-radius:50%;
+  background:#55A79B;
+  content:"";
+}
+
+#slide-01 .cover-positioning span:hover{
+  color:var(--teal);
+  transform:translateX(5px);
 }
 
 #slide-01 .cover-sovereignty-mark{

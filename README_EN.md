@@ -1,14 +1,14 @@
 <div align="center">
 
-# OpenCSG Investor Deck 2026
+# OpenCSG SGVersion / IMDA · International Investor Deck 2026
 
-**Empowering everyone with large models · 让大模型赋能每一个人**
+**Agentic-AI — controlled, auditable agents operating in production.**
 
-> Investor pitch deck · 39 slides · 10 languages · single HTML file
+> International investor short deck · 9 slides · English-only · single HTML file
 
-[![Version](https://img.shields.io/badge/Version-2026.07.1-blue?style=flat-square)](#)
-[![Slides](https://img.shields.io/badge/Slides-39-teal?style=flat-square)](#)
-[![i18n](https://img.shields.io/badge/i18n-10%20languages-23877B?style=flat-square)](#)
+[![Version](https://img.shields.io/badge/Version-SGVersion%2FIMDA-blue?style=flat-square)](#)
+[![Slides](https://img.shields.io/badge/Slides-9-teal?style=flat-square)](#)
+[![Language](https://img.shields.io/badge/Language-English--only-23877B?style=flat-square)](#)
 [![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)](#)
 
 </div>
@@ -35,7 +35,7 @@ Pick the path that fits you:
 | --- | --- | --- |
 | Developer / want to edit locally | [Path A · Local Node setup](#-path-a--local-node-setup) | ~2 min |
 | **AI Coding Agent user** (Codex / Claude Code / Cursor / Workbuddy / CSGLite) | [Path B · Hand it to an AI agent](#-path-b--hand-it-to-an-ai-coding-agent) | ~30 s |
-| Just want to view, no install | [Path C · GitHub Pages live demo](#-path-c--github-pages-live-demo) | 0 s |
+| Just want to view, no install | [Path C · Vercel live demo](#-path-c--vercel-live-demo) | 0 s |
 
 ---
 
@@ -73,14 +73,13 @@ Please boot the OpenCSG investor pitch deck for me:
   npm run serve
 
 Once it's running, open http://127.0.0.1:4173 in a browser tab.
-Default language is Chinese. Use the language pill in the top-right
-toolbar to switch to English / 日本語 / 한국어 / العربية / Русский /
-Français / Deutsch / Español / Português.
+The SGVersion/IMDA runtime is fixed to English and does not show a
+language switcher.
 
 If anything blocks you, first read AGENTS.md at the repo root and
 docs/CONTRIBUTING-i18n.md — they describe the project's intent,
 how to start it, and the hard rule that any text change must ship
-with 10-language translations.
+with the required source-text and resource updates.
 ```
 
 **Per-agent entry points:**
@@ -94,19 +93,19 @@ with 10-language translations.
 
 > 📌 **Why this works**: the repo root has an `AGENTS.md` following the [agents.md spec](https://agents.md/). Codex / Claude Code / Cursor / Devin / Gemini CLI / OpenCode all auto-load it. So even if you only say *"boot this repo"* to the AI, it will read AGENTS.md and know exactly what to do.
 
-## 🅲️ Path C · GitHub Pages live demo
+## 🅲️ Path C · Vercel live demo
 
-GitHub Pages is enabled on this repo. Just visit:
+The current SGVersion/IMDA English short deck is deployed on Vercel:
 
-> 🌐 **<https://OpenCSG-Strategy.github.io/OpenCSGBP/>**
+> 🌐 **<https://opencsg-sgversion-imda.vercel.app>**
 
-Zero install. Full feature parity with the local build (PDF export is supported, PPTX export is local-only because it bundles images).
+Zero install. This deployment is fixed to the English-only presentation.
 
 ---
 
 ## 📖 Overview
 
-This repository hosts the **OpenCSG 2026 investor pitch deck as a single self-contained HTML file** — 39 slides, designed at 1600×900 (16:9), with on-screen navigation, PDF / PPTX export, language switching, keyboard controls, thumbnail overview mode, and inline QR codes.
+This branch hosts the **OpenCSG SGVersion/IMDA international investor short deck as a single self-contained HTML file** — 9 slides, designed at 1600×900 (16:9), focused on Agentic-AI production control, open-source proof, IMDA SPARK validation, the OpenCore business model, customers and partners, and international contact details.
 
 The deck is plain HTML / CSS / vanilla JS — **no front-end framework, no build step**. A small set of Node scripts covers the operational side:
 
@@ -125,8 +124,8 @@ Built for **investor-facing scenarios where content, typography, and cross-local
 
 | Module | Highlights |
 | --- | --- |
-| 📑 **Multi-section deck** | 39 slides in 5 sections — `cover` / `main` / `case` / `product` / `appendix`; each is exportable on its own |
-| 🌍 **10 languages** | zh / en / ja / ko / ar (RTL) / ru / fr / de / es / pt |
+| 📑 **International short deck** | 9 slides covering `cover` / `pain points` / `company` / `product` / `OpenCore` / `customers` / `closing` |
+| 🇬🇧 **English-only runtime** | English presentation and exports; language switching is hidden |
 | ⌨️ **Keyboard & touch** | `←` `→` to page, `↑` `↓` to jump section, `Home` / `End` to first/last, `Esc` to leave fullscreen, `Space` / `F` for fullscreen |
 | 🧭 **Top toolbar** | Language switcher, page counter, "View PDF", PPT-ready pill, jump-to-top |
 | 🔍 **Overview grid** | Top-bar "Overview" button opens a thumbnail grid of every slide |
@@ -147,12 +146,12 @@ More slide previews:
 
 ```
 OpenCSGBP/
-├── index.html                # Entry — all 39 slides live here
+├── index.html                # Entry — the 9-slide SGVersion/IMDA deck
 ├── AGENTS.md                 # AI Coding Agent entrypoint (agents.md spec)
 ├── CLAUDE.md                 # Claude Code specific (mirrors AGENTS.md)
 ├── assets/
 │   ├── deck-*.css / .js      # Slide styles & behaviour
-│   ├── i18n/                 # 10-language translation packs
+│   ├── i18n/                 # Translation packs retained for source compatibility
 │   ├── brand-logos/          # Open-source / vendor brand marks
 │   ├── founder-logos/        # Founder background logos
 │   ├── cases/                # Case-study reference imagery
@@ -182,7 +181,7 @@ OpenCSGBP/
 | `npm run export:pptx` | Export image-based PPTX |
 | `npm run export:pptx-bilingual` | Export the bilingual (zh + en) PPTX bundle in one shot |
 | `node scripts/capture-readme-screenshots.mjs` | Pull README screenshots from `127.0.0.1:4173` into `docs/assets/` |
-| `bash scripts/i18n/run-all.sh audit` | Check 10-language translation coverage |
+| `bash scripts/i18n/run-all.sh audit` | Check translation-resource coverage |
 | `bash scripts/i18n/run-all.sh apply` | Write hand translations into the 8 other language packs |
 
 ### Export flags
@@ -318,12 +317,13 @@ Just hand the agent a plain-English instruction, e.g.:
 <li><i>"Change the cover headline to XXX and update all 10 language packs."</i></li>
 <li><i>"Export the current deck to a bilingual PDF under <code>.exports/</code>."</i></li>
 </ul>
-The agent will read <code>AGENTS.md</code> + <code>docs/CONTRIBUTING-i18n.md</code> first, then follow the rules — including the 10-language coverage gate.
+The agent will read <code>AGENTS.md</code> + <code>docs/CONTRIBUTING-i18n.md</code> first, then follow the source-text and resource update rules.
 </details>
 
 ## 🛡 Maintainers
 
 - Repo: [github.com/OpenCSG-Strategy/OpenCSGBP](https://github.com/OpenCSG-Strategy/OpenCSGBP)
+- SGVersion/IMDA live deck: [opencsg-sgversion-imda.vercel.app](https://opencsg-sgversion-imda.vercel.app)
 - AI Agent entry: [`AGENTS.md`](./AGENTS.md)
 - i18n rules: [`docs/CONTRIBUTING-i18n.md`](./docs/CONTRIBUTING-i18n.md)
 - i18n tooling: `scripts/i18n/run-all.sh {audit|gen|apply|all}`
