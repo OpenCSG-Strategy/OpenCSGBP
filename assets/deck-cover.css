@@ -12,6 +12,8 @@
 }
 
 #slide-01 .cover-title h1{
+  /* Preserve the title baseline after removing the former eyebrow label. */
+  margin-top:22px !important;
   margin-bottom:26px !important;
 }
 
