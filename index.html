@@ -586,7 +586,7 @@
   <link rel="stylesheet" href="assets/deck-cover.css?v=20260710brand2">
   <link rel="stylesheet" href="assets/deck-slide-05-07.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide-08.css?v=20260707a">
-  <link rel="stylesheet" href="assets/deck-bp-humanize.css?v=20260713s08scale">
+  <link rel="stylesheet" href="assets/deck-bp-humanize.css?v=20260713s08scale2">
   <link rel="stylesheet" href="assets/deck-community-links.css?v=20260710a">
 
   <style id="slide-12-opencore-story-restore">
@@ -3170,6 +3170,18 @@
   #slide-12 .oc12-boundary-head span{font-size:8.6px!important;letter-spacing:.06em!important;color:#75847F!important}
   #slide-12 .oc12-boundary>div>*:nth-child(4),
   #slide-12 .oc12-boundary>div>*:nth-child(5){background:transparent!important;color:#17695F!important;font-weight:800!important}
+
+  /* Page 06: restore presentation-distance type after the compact table pass. */
+  #slide-12 .oc12-capability-panel header h3{font-size:21px!important}
+  #slide-12 .oc12-capability-panel header p{font-size:12px!important;line-height:1.35!important}
+  #slide-12 .oc12-capability-table>div>*{font-size:12px!important}
+  #slide-12 .oc12-capability-table>div>*:first-child{font-size:12.5px!important}
+  #slide-12 .oc12-capability-table .cap-head>*{font-size:11.5px!important}
+  #slide-12 .oc12-capability-table em.no:after{font-size:12px!important}
+  #slide-12 .oc12-boundary b,
+  #slide-12 .oc12-boundary span{font-size:11.5px!important}
+  #slide-12 .oc12-linear b{font-size:16px!important}
+  #slide-12 .oc12-linear span{font-size:12px!important}
 </style>
 
 </head>
@@ -3280,12 +3292,10 @@
       <h1>OpenCSG</h1>
       <h2 class="cover-positioning">
         <span data-en="Sovereign Infrastructure.">主权基础设施。</span>
+        <span data-en="Open Ecosystem.">开放生态。</span>
+        <span data-en="Governed Agentic AI.">受治理的 Agentic AI。</span>
+        <span data-en="Trusted Impact.">可信影响力。</span>
       </h2>
-    </div>
-    <div class="cover-meta">
-      <span data-en="Open Ecosystem.">开放生态。</span>
-      <span data-en="Governed Agentic AI.">受治理的 Agentic AI。</span>
-      <span data-en="Trusted Impact.">可信影响力。</span>
     </div>
     <div class="cover-visual">
       <img src="assets/sovereign-ai-cover-v3.png" alt="AI 主权开放基础设施：连接城市、企业与个人智能节点">
@@ -4968,6 +4978,9 @@
       const params=new URLSearchParams({lang});
       const watermark=currentPdfWatermarkText();
       if(watermark) params.set('watermark',watermark);
+      // Always give the viewer a fresh URL. The server still de-duplicates
+      // identical PDFs, while the browser cannot reuse a stale inline tab.
+      if(kind==='view') params.set('revision',String(Date.now()));
       return `${pdfBaseUrl()}${path}?${params.toString()}`;
     }
     function updatePdfButtonState(){

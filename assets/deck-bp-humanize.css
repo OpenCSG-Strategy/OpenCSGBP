@@ -2982,6 +2982,18 @@
   }
 }
 
+/* Slide 12 / deck page 06: presentation-distance type scale. */
+#slide-12 .oc12-capability-panel header h3{font-size:21px!important}
+#slide-12 .oc12-capability-panel header p{font-size:12px!important;line-height:1.35!important}
+#slide-12 .oc12-capability-table>div>*{font-size:12px!important}
+#slide-12 .oc12-capability-table>div>*:first-child{font-size:12.5px!important}
+#slide-12 .oc12-capability-table .cap-head>*{font-size:11.5px!important}
+#slide-12 .oc12-capability-table em.no:after{font-size:12px!important}
+#slide-12 .oc12-boundary b,
+#slide-12 .oc12-boundary span{font-size:11.5px!important}
+#slide-12 .oc12-linear b{font-size:16px!important}
+#slide-12 .oc12-linear span{font-size:12px!important}
+
 /* Slide 12: give the OpenCore narrative rail a deliberate break before the
    capability matrix, so the two ideas read as separate layers. */
 #slide-12 .open12-reframed{
@@ -3810,3 +3822,15 @@ html[lang="en"] #slide-08 .p8-node p{margin-top:10px!important;font-size:11px!im
 #slide-08 .p8-progress i::after{content:""!important;position:absolute!important;right:0!important;top:-5px!important;width:10px!important;height:10px!important;border-top:3px solid #23877B!important;border-right:3px solid #23877B!important;transform:rotate(45deg)!important}
 #slide-08 .p8-progress b{display:block!important;margin-top:15px!important;color:#1D4C44!important;font-size:15px!important;font-weight:850!important;line-height:1.15!important;letter-spacing:-.01em!important}
 #slide-08 .p8-progress span{display:block!important;margin-top:7px!important;color:#5C716C!important;font-size:10.5px!important;line-height:1.32!important}
+
+/* Slide 12 / deck page 06: presentation-distance type scale. */
+#slide-12 .oc12-capability-panel header h3{font-size:21px!important}
+#slide-12 .oc12-capability-panel header p{font-size:12px!important;line-height:1.35!important}
+#slide-12 .oc12-capability-table>div>*{font-size:12px!important}
+#slide-12 .oc12-capability-table>div>*:first-child{font-size:12.5px!important}
+#slide-12 .oc12-capability-table .cap-head>*{font-size:11.5px!important}
+#slide-12 .oc12-capability-table em.no:after{font-size:12px!important}
+#slide-12 .oc12-boundary b,
+#slide-12 .oc12-boundary span{font-size:11.5px!important}
+#slide-12 .oc12-linear b{font-size:16px!important}
+#slide-12 .oc12-linear span{font-size:12px!important}

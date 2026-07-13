@@ -460,6 +460,35 @@ body.stacked-stage .nav{
 }
 
 #slide-40 .closing-contact{ margin-top:22px!important; }
+#slide-40 .closing-partnership-intro{
+  margin:24px 0 14px;
+  font-size:26px;
+  line-height:1.22;
+}
+#slide-40 .closing-partnership-grid{
+  width:850px;
+}
+#slide-40 .closing-partnership-grid article{
+  grid-template-columns:230px minmax(0,1fr);
+  gap:22px;
+  padding:14px 0;
+}
+#slide-40 .closing-partnership-grid h3{
+  font-size:19px;
+  line-height:1.3;
+}
+#slide-40 .closing-partnership-grid p{
+  font-size:18px;
+  line-height:1.36;
+}
+#slide-40 .closing-contact{
+  gap:26px 34px;
+  margin-top:22px!important;
+  font-size:20px;
+}
+#slide-40 .closing-contact-link{padding-bottom:4px;}
+#slide-40 .closing-left h2{font-size:68px;}
+
 #slide-40 .closing-ai-ghost{
   right:22px;
   top:70px;

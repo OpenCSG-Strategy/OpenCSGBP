@@ -216,7 +216,14 @@ async function exportDeck(browser, options) {
   const { width, height, designW, designH } = ratio;
   // We always render at the *design* resolution so the slide canvas is 1:1
   // and never sub-pixel. The output PDF still uses the requested ratio.
-  const page = await browser.newPage({ viewport: { width: designW, height: designH } });
+  // Render at 2× device resolution before embedding the PNG in the PDF.
+  // The PDF remains the requested physical size, but text and fine diagrams
+  // retain enough pixels for high-DPI displays and zoomed PDF viewing.
+  const context = await browser.newContext({
+    viewport: { width: designW, height: designH },
+    deviceScaleFactor: 2
+  });
+  const page = await context.newPage();
 
   const params = new URLSearchParams();
   params.set('lang', options.lang);
@@ -308,7 +315,7 @@ async function exportDeck(browser, options) {
   });
 
   if (visibleIndexes.length === 0) {
-    await page.close();
+    await context.close();
     throw new Error('当前过滤条件没有匹配的幻灯片，请调整 sections / pages / from / to 参数。');
   }
 
@@ -382,7 +389,7 @@ async function exportDeck(browser, options) {
     });
   }
 
-  await page.close();
+  await context.close();
   return { output, pages: visibleIndexes.length, ratio: options.ratio };
 }
 
