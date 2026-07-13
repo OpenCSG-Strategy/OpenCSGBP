@@ -5,6 +5,146 @@
     "count": 120
   },
   "TRANSLATIONS": {
+    "OPC / Super Individuals": {
+      "ja": "OPC / スーパー個人",
+      "ko": "OPC / 슈퍼 개인",
+      "ar": "OPC / الأفراد الفائقون",
+      "ru": "OPC / супер-индивидуалы",
+      "fr": "OPC / super-individus",
+      "de": "OPC / Super-Individuen",
+      "es": "OPC / superindividuos",
+      "pt": "OPC / superindivíduos"
+    },
+    "Open community": {
+      "ja": "オープンコミュニティ",
+      "ko": "오픈 커뮤니티",
+      "ar": "المجتمع المفتوح",
+      "ru": "Открытое сообщество",
+      "fr": "Communauté ouverte",
+      "de": "Offene Community",
+      "es": "Comunidad abierta",
+      "pt": "Comunidade aberta"
+    },
+    "Security": {
+      "ja": "セキュリティ",
+      "ko": "보안",
+      "ar": "الأمان",
+      "ru": "Безопасность",
+      "fr": "Sécurité",
+      "de": "Sicherheit",
+      "es": "Seguridad",
+      "pt": "Segurança"
+    },
+    "Service": {
+      "ja": "サービス",
+      "ko": "서비스",
+      "ar": "الخدمة",
+      "ru": "Сервис",
+      "fr": "Service",
+      "de": "Service",
+      "es": "Servicio",
+      "pt": "Serviço"
+    },
+    "Partnering to Accelerate Singapore": {
+      "ja": "シンガポールの発展を加速するパートナーシップ",
+      "ko": "싱가포르의 성장을 가속하는 파트너십",
+      "ar": "شراكة لتسريع نمو سنغافورة",
+      "ru": "Партнерство для ускорения развития Сингапура",
+      "fr": "Partenariat pour accélérer le développement de Singapour",
+      "de": "Partnerschaft zur Beschleunigung der Entwicklung Singapurs",
+      "es": "Alianza para acelerar el desarrollo de Singapur",
+      "pt": "Parceria para acelerar o desenvolvimento de Singapura"
+    },
+    "Support AI skills, industry projects, research collaborations and talent development with Singapore": {
+      "ja": "AIスキル、業界プロジェクト、研究連携、シンガポールでの人材育成を支援",
+      "ko": "싱가포르와 함께 AI 역량, 산업 프로젝트, 연구 협력 및 인재 양성을 지원",
+      "ar": "دعم مهارات AI والمشاريع الصناعية والتعاون البحثي وتنمية المواهب في سنغافورة",
+      "ru": "Поддержка AI-навыков, отраслевых проектов, исследовательских партнерств и развития талантов в Сингапуре",
+      "fr": "Soutenir les compétences en IA, les projets sectoriels, les collaborations de recherche et le développement des talents à Singapour",
+      "de": "KI-Kompetenzen, Branchenprojekte, Forschungskooperationen und Talententwicklung in Singapur fördern",
+      "es": "Impulsar las capacidades de IA, proyectos sectoriales, colaboraciones de investigación y talento en Singapur",
+      "pt": "Apoiar competências em IA, projetos setoriais, colaborações de pesquisa e desenvolvimento de talentos em Singapura"
+    },
+    "License / SLA / Delivery": {
+      "ja": "ライセンス / SLA / 導入",
+      "ko": "라이선스 / SLA / 구축",
+      "ar": "الترخيص / SLA / التسليم",
+      "ru": "Лицензия / SLA / внедрение",
+      "fr": "Licence / SLA / livraison",
+      "de": "Lizenz / SLA / Bereitstellung",
+      "es": "Licencia / SLA / entrega",
+      "pt": "Licença / SLA / entrega"
+    },
+    "WHAT ENTERPRISES PAY FOR": {
+      "ja": "企業が支払う価値",
+      "ko": "기업이 비용을 지불하는 이유",
+      "ar": "ما الذي تدفع الشركات مقابله",
+      "ru": "За что платят предприятия",
+      "fr": "Ce que les entreprises paient",
+      "de": "Wofür Unternehmen zahlen",
+      "es": "Por qué pagan las empresas",
+      "pt": "Pelo que as empresas pagam"
+    },
+    "The paid layer makes OpenCore production-ready": {
+      "ja": "有償レイヤーがOpenCoreをエンタープライズ本番対応にする",
+      "ko": "유료 계층이 OpenCore를 엔터프라이즈 프로덕션 환경에 맞게 만듭니다",
+      "ar": "الطبقة المدفوعة تجعل OpenCore جاهزاً للإنتاج المؤسسي",
+      "ru": "Платный уровень делает OpenCore готовым к корпоративной эксплуатации",
+      "fr": "La couche payante rend OpenCore prêt pour la production en entreprise",
+      "de": "Die kostenpflichtige Ebene macht OpenCore produktionsreif für Unternehmen",
+      "es": "La capa de pago prepara OpenCore para producción empresarial",
+      "pt": "A camada paga torna o OpenCore pronto para produção empresarial"
+    },
+    "Identity, permissions and audit": {
+      "ja": "ID、権限、監査",
+      "ko": "ID, 권한 및 감사",
+      "ar": "الهوية والصلاحيات والتدقيق",
+      "ru": "Идентификация, права доступа и аудит",
+      "fr": "Identité, autorisations et audit",
+      "de": "Identität, Berechtigungen und Audit",
+      "es": "Identidad, permisos y auditoría",
+      "pt": "Identidade, permissões e auditoria"
+    },
+    "Scale": {
+      "ja": "スケール",
+      "ko": "확장성",
+      "ar": "التوسع",
+      "ru": "Масштабирование",
+      "fr": "Passage à l'échelle",
+      "de": "Skalierung",
+      "es": "Escalabilidad",
+      "pt": "Escala"
+    },
+    "Compute, runtime and reliability": {
+      "ja": "コンピュート、ランタイム、信頼性",
+      "ko": "컴퓨팅, 런타임 및 안정성",
+      "ar": "الحوسبة وبيئة التشغيل والموثوقية",
+      "ru": "Вычисления, среда выполнения и надежность",
+      "fr": "Calcul, runtime et fiabilité",
+      "de": "Rechenleistung, Runtime und Zuverlässigkeit",
+      "es": "Cómputo, runtime y fiabilidad",
+      "pt": "Computação, runtime e confiabilidade"
+    },
+    "Private deployment and compliance": {
+      "ja": "プライベート導入とコンプライアンス",
+      "ko": "프라이빗 배포 및 컴플라이언스",
+      "ar": "النشر الخاص والامتثال",
+      "ru": "Частное развертывание и соответствие требованиям",
+      "fr": "Déploiement privé et conformité",
+      "de": "Private Bereitstellung und Compliance",
+      "es": "Implementación privada y cumplimiento",
+      "pt": "Implantação privada e conformidade"
+    },
+    "SLA, delivery and managed operations": {
+      "ja": "SLA、導入、マネージド運用",
+      "ko": "SLA, 구축 및 관리형 운영",
+      "ar": "اتفاقية مستوى الخدمة والتسليم والعمليات المُدارة",
+      "ru": "SLA, внедрение и управляемая эксплуатация",
+      "fr": "SLA, livraison et opérations gérées",
+      "de": "SLA, Bereitstellung und Managed Operations",
+      "es": "SLA, entrega y operaciones gestionadas",
+      "pt": "SLA, entrega e operações gerenciadas"
+    },
     "Collection": {
       "ja": "収集",
       "ko": "수집",
@@ -34,16 +174,6 @@
       "de": "Bereitstellungsumgebungen",
       "es": "Entornos de implementación",
       "pt": "Ambientes de implantação"
-    },
-    "Full-stack Architecture": {
-      "ja": "フルスタックアーキテクチャ",
-      "ko": "풀스택 아키텍처",
-      "ar": "بنية كاملة الحزمة",
-      "ru": "Полностековая архитектура",
-      "fr": "Architecture full-stack",
-      "de": "Fullstack-Architektur",
-      "es": "Arquitectura full-stack",
-      "pt": "Arquitetura full-stack"
     },
     "Private deployment": {
       "ja": "プライベート展開",
@@ -1255,6 +1385,116 @@
       "es": "Agentic-AI — agentes controlados y auditables operando en producción",
       "pt": "Agentic-AI — agentes controlados e auditáveis operando em produção"
     },
+    "Partnering to Accelerate Singapore’s AI Ecosystem": {
+      "ja": "シンガポールの AI エコシステムを加速するパートナーシップ",
+      "ko": "싱가포르 AI 생태계 가속화를 위한 파트너십",
+      "ar": "شراكة لتسريع منظومة الذكاء الاصطناعي في سنغافورة",
+      "ru": "Партнёрство для ускорения AI-экосистемы Сингапура",
+      "fr": "Un partenariat pour accélérer l’écosystème IA de Singapour",
+      "de": "Partnerschaft zur Beschleunigung des KI-Ökosystems Singapurs",
+      "es": "Alianza para acelerar el ecosistema de IA de Singapur",
+      "pt": "Parceria para acelerar o ecossistema de IA de Singapura"
+    },
+    "Enterprise Adoption": {
+      "ja": "企業導入",
+      "ko": "기업 도입",
+      "ar": "تبنّي المؤسسات",
+      "ru": "Корпоративное внедрение",
+      "fr": "Adoption en entreprise",
+      "de": "Unternehmenseinführung",
+      "es": "Adopción empresarial",
+      "pt": "Adoção empresarial"
+    },
+    "Accelerate sovereign AI deployment across enterprises and the public sector.": {
+      "ja": "企業と公共部門における主権 AI の導入を加速します。",
+      "ko": "기업과 공공 부문 전반에서 주권 AI 배포를 가속합니다.",
+      "ar": "تسريع نشر الذكاء الاصطناعي السيادي عبر المؤسسات والقطاع العام.",
+      "ru": "Ускорять внедрение суверенного ИИ в компаниях и государственном секторе.",
+      "fr": "Accélérer le déploiement d’une IA souveraine dans les entreprises et le secteur public.",
+      "de": "Den Einsatz souveräner KI in Unternehmen und im öffentlichen Sektor beschleunigen.",
+      "es": "Acelerar el despliegue de IA soberana en empresas y el sector público.",
+      "pt": "Acelerar a implantação de IA soberana nas empresas e no setor público."
+    },
+    "Ecosystem & Partners": {
+      "ja": "エコシステムとパートナー",
+      "ko": "생태계 및 파트너",
+      "ar": "النظام البيئي والشركاء",
+      "ru": "Экосистема и партнёры",
+      "fr": "Écosystème et partenaires",
+      "de": "Ökosystem und Partner",
+      "es": "Ecosistema y socios",
+      "pt": "Ecossistema e parceiros"
+    },
+    "Collaborate with system integrators, cloud providers, technology partners and startups to build an open AI ecosystem.": {
+      "ja": "システムインテグレーター、クラウド事業者、技術パートナー、スタートアップと協力し、オープンな AI エコシステムを構築します。",
+      "ko": "시스템 통합업체, 클라우드 제공업체, 기술 파트너 및 스타트업과 협력해 개방형 AI 생태계를 구축합니다.",
+      "ar": "التعاون مع مدمجي الأنظمة ومزودي السحابة والشركاء التقنيين والشركات الناشئة لبناء منظومة ذكاء اصطناعي مفتوحة.",
+      "ru": "Сотрудничать с системными интеграторами, облачными провайдерами, технологическими партнёрами и стартапами для создания открытой AI-экосистемы.",
+      "fr": "Collaborer avec des intégrateurs de systèmes, des fournisseurs cloud, des partenaires technologiques et des startups pour bâtir un écosystème IA ouvert.",
+      "de": "Mit Systemintegratoren, Cloud-Anbietern, Technologiepartnern und Start-ups zusammenarbeiten, um ein offenes KI-Ökosystem aufzubauen.",
+      "es": "Colaborar con integradores de sistemas, proveedores de nube, socios tecnológicos y startups para crear un ecosistema de IA abierto.",
+      "pt": "Colaborar com integradores de sistemas, provedores de nuvem, parceiros de tecnologia e startups para construir um ecossistema de IA aberto."
+    },
+    "Capability Development": {
+      "ja": "能力開発",
+      "ko": "역량 개발",
+      "ar": "تطوير القدرات",
+      "ru": "Развитие компетенций",
+      "fr": "Développement des capacités",
+      "de": "Kompetenzentwicklung",
+      "es": "Desarrollo de capacidades",
+      "pt": "Desenvolvimento de capacidades"
+    },
+    "Support AI skills, industry projects, research collaborations and talent development with Singapore’s universities and institutes—while contributing as a pioneering company in the IMDA ecosystem.": {
+      "ja": "シンガポールの大学・研究機関とともに、AI スキル、産業プロジェクト、研究連携、人材育成を支援し、IMDA エコシステムの先駆的企業として貢献します。",
+      "ko": "싱가포르의 대학 및 연구기관과 함께 AI 역량, 산업 프로젝트, 연구 협력 및 인재 육성을 지원하고 IMDA 생태계의 선도 기업으로 기여합니다.",
+      "ar": "دعم مهارات الذكاء الاصطناعي والمشاريع الصناعية والتعاون البحثي وتنمية المواهب مع جامعات ومعاهد سنغافورة، مع المساهمة كشركة رائدة في منظومة IMDA.",
+      "ru": "Поддерживать AI-навыки, отраслевые проекты, исследовательское сотрудничество и развитие талантов вместе с университетами и институтами Сингапура, участвуя как компания-первопроходец в экосистеме IMDA.",
+      "fr": "Soutenir les compétences en IA, les projets industriels, les collaborations de recherche et le développement des talents avec les universités et instituts de Singapour, en contribuant comme entreprise pionnière de l’écosystème IMDA.",
+      "de": "KI-Kompetenzen, Branchenprojekte, Forschungskooperationen und Talententwicklung mit Singapurs Universitäten und Instituten unterstützen und als Pionierunternehmen im IMDA-Ökosystem beitragen.",
+      "es": "Apoyar las competencias de IA, los proyectos sectoriales, las colaboraciones de investigación y el desarrollo de talento con las universidades e institutos de Singapur, contribuyendo como empresa pionera del ecosistema IMDA.",
+      "pt": "Apoiar competências em IA, projetos setoriais, colaborações de pesquisa e desenvolvimento de talentos com as universidades e institutos de Singapura, contribuindo como empresa pioneira no ecossistema da IMDA."
+    },
+    "Sovereign Infrastructure.": {
+      "ja": "主権インフラ。",
+      "ko": "주권 인프라.",
+      "ar": "بنية تحتية سيادية.",
+      "ru": "Суверенная инфраструктура.",
+      "fr": "Infrastructure souveraine.",
+      "de": "Souveräne Infrastruktur.",
+      "es": "Infraestructura soberana.",
+      "pt": "Infraestrutura soberana."
+    },
+    "Open Ecosystem.": {
+      "ja": "開かれたエコシステム。",
+      "ko": "개방형 생태계.",
+      "ar": "نظام بيئي مفتوح.",
+      "ru": "Открытая экосистема.",
+      "fr": "Écosystème ouvert.",
+      "de": "Offenes Ökosystem.",
+      "es": "Ecosistema abierto.",
+      "pt": "Ecossistema aberto."
+    },
+    "Governed Agentic AI.": {
+      "ja": "ガバナンスされた Agentic AI。",
+      "ko": "거버넌스된 Agentic AI.",
+      "ar": "ذكاء Agentic AI محكوم.",
+      "ru": "Управляемый агентный ИИ.",
+      "fr": "IA agentique gouvernée.",
+      "de": "Gesteuerte Agenten-KI.",
+      "es": "IA agéntica gobernada.",
+      "pt": "IA agêntica governada."
+    },
+    "Trusted Impact.": {
+      "ja": "信頼されるインパクト。",
+      "ko": "신뢰할 수 있는 영향력.",
+      "ar": "أثر موثوق.",
+      "ru": "Надёжный эффект.",
+      "fr": "Impact de confiance.",
+      "de": "Vertrauenswürdige Wirkung.",
+      "es": "Impacto confiable.",
+      "pt": "Impacto confiável."
+    },
     "Open foundation": {
       "ja": "オープンな基盤",
       "ko": "오픈 기반",
@@ -1469,5 +1709,14 @@
     ,"OPEN SOURCE · GLOBAL BY DESIGN":{"ja":"オープンソース · グローバル設計","ko":"오픈소스 · 글로벌 설계","ar":"مصدر مفتوح · تصميم عالمي","ru":"Открытый исходный код · Глобальный дизайн","fr":"Open source · Conçu pour le monde","de":"Open Source · Global konzipiert","es":"Código abierto · Diseño global","pt":"Open source · Concebido para o mundo"}
     ,"OpenCSG makes agentic systems ready for the environments where trust, evidence and performance are the product.":{"ja":"OpenCSGは、信頼・証拠・性能が価値となる環境でエージェントシステムを実運用可能にします。","ko":"OpenCSG는 신뢰, 증거, 성능이 제품의 핵심인 환경에서 에이전트 시스템을 운영 가능하게 만듭니다.","ar":"تجعل OpenCSG أنظمة الوكلاء جاهزة للبيئات التي تكون فيها الثقة والأدلة والأداء جوهر المنتج.","ru":"OpenCSG готовит агентные системы к средам, где доверие, доказательства и производительность являются продуктом.","fr":"OpenCSG rend les systèmes agentiques prêts pour les environnements où la confiance, les preuves et la performance sont le produit.","de":"OpenCSG macht agentische Systeme bereit für Umgebungen, in denen Vertrauen, Nachweise und Leistung das Produkt sind.","es":"OpenCSG prepara sistemas agénticos para entornos donde la confianza, la evidencia y el rendimiento son el producto.","pt":"A OpenCSG prepara sistemas agentivos para ambientes onde confiança, evidência e desempenho são o próprio produto."}
     ,"Singapore · Global · Open source":{"ja":"シンガポール · グローバル · オープンソース","ko":"싱가포르 · 글로벌 · 오픈소스","ar":"سنغافورة · عالمي · مصدر مفتوح","ru":"Сингапур · Глобальный · Открытый исходный код","fr":"Singapour · Mondial · Open source","de":"Singapur · Global · Open Source","es":"Singapur · Global · Código abierto","pt":"Singapura · Global · Open source"}
+    ,"Four products, one clear path: from personal data to ecosystem scale":{"ja":"4つのコア製品、個人データからエコシステム規模化までの明確な道筋","ko":"4가지 핵심 제품, 개인 데이터에서 생태계 확장까지의 명확한 경로","ar":"أربعة منتجات أساسية ومسار واضح: من البيانات الشخصية إلى التوسع في المنظومة","ru":"Четыре ключевых продукта и ясный путь: от личных данных к масштабу экосистемы","fr":"Quatre produits clés, un parcours clair : des données personnelles à l’échelle de l’écosystème","de":"Vier Kernprodukte, ein klarer Weg: von persönlichen Daten zur Skalierung im Ökosystem","es":"Cuatro productos clave, un camino claro: de los datos personales a la escala del ecosistema","pt":"Quatro produtos essenciais, um caminho claro: de dados pessoais à escala do ecossistema"}
+    ,"Each product delivers the input for the next.":{"ja":"各製品の成果が、次の段階へのインプットになります。","ko":"각 제품의 산출물이 다음 단계의 입력이 됩니다.","ar":"كل منتج يقدّم مدخلات المرحلة التالية.","ru":"Результат каждого продукта становится входом для следующего.","fr":"Chaque produit fournit l’apport de l’étape suivante.","de":"Jedes Produkt liefert den Input für den nächsten Schritt.","es":"Cada producto aporta la entrada para el siguiente.","pt":"Cada produto fornece a entrada para o seguinte。"}
+    ,"Personal workspace for local data and knowledge.":{"ja":"ローカルデータと知識のための個人ワークスペース。","ko":"로컬 데이터와 지식을 위한 개인 워크스페이스.","ar":"مساحة عمل شخصية للبيانات والمعرفة المحلية.","ru":"Персональное рабочее пространство для локальных данных и знаний.","fr":"Un espace de travail personnel pour les données et les connaissances locales.","de":"Ein persönlicher Arbeitsbereich für lokale Daten und Wissen.","es":"Un espacio de trabajo personal para datos y conocimiento locales.","pt":"Um espaço de trabalho pessoal para dados e conhecimento locais."}
+    ,"Data & knowledge":{"ja":"データと知識","ko":"데이터와 지식","ar":"البيانات والمعرفة","ru":"Данные и знания","fr":"Données et connaissances","de":"Daten und Wissen","es":"Datos y conocimiento","pt":"Dados e conhecimento"}
+    ,"Turn real-work feedback into better agents.":{"ja":"実務のフィードバックを、より優れたエージェントへ変える。","ko":"실제 업무 피드백을 더 나은 에이전트로 전환합니다.","ar":"حوّل ملاحظات العمل الفعلية إلى وكلاء أفضل.","ru":"Превращайте обратную связь из реальной работы в более совершенных агентов.","fr":"Transformer les retours du travail réel en meilleurs agents.","de":"Feedback aus der realen Arbeit in bessere Agenten überführen.","es":"Convertir la retroalimentación del trabajo real en mejores agentes.","pt":"Transformar o feedback do trabalho real em agentes melhores."}
+    ,"Feedback & agents":{"ja":"フィードバックとエージェント","ko":"피드백과 에이전트","ar":"التغذية الراجعة والوكلاء","ru":"Обратная связь и агенты","fr":"Retours et agents","de":"Feedback und Agenten","es":"Retroalimentación y agentes","pt":"Feedback e agentes"}
+    ,"Governed, reusable organizational AI assets.":{"ja":"ガバナンスされ、再利用可能な組織のAI資産。","ko":"거버넌스가 적용된 재사용 가능한 조직 AI 자산.","ar":"أصول ذكاء اصطناعي مؤسسية محكومة وقابلة لإعادة الاستخدام.","ru":"Управляемые и повторно используемые организационные ИИ-активы.","fr":"Des actifs IA organisationnels gouvernés et réutilisables.","de":"Gesteuerte, wiederverwendbare KI-Assets der Organisation.","es":"Activos de IA organizacionales gobernados y reutilizables.","pt":"Ativos de IA organizacionais governados e reutilizáveis."}
+    ,"Governed assets":{"ja":"ガバナンスされた資産","ko":"거버넌스 자산","ar":"أصول خاضعة للحوكمة","ru":"Управляемые активы","fr":"Actifs gouvernés","de":"Gesteuerte Assets","es":"Activos gobernados","pt":"Ativos governados"}
+    ,"Collaborate and commercialize across the ecosystem.":{"ja":"エコシステム全体で協業し、商業化する。","ko":"생태계 전반에서 협업하고 상용화합니다.","ar":"التعاون وتحقيق القيمة التجارية عبر المنظومة.","ru":"Сотрудничать и монетизировать в рамках экосистемы.","fr":"Collaborer et commercialiser à l’échelle de l’écosystème.","de":"Im gesamten Ökosystem zusammenarbeiten und kommerzialisieren.","es":"Colaborar y comercializar en todo el ecosistema.","pt":"Colaborar e comercializar em todo o ecossistema."}
   }
 }

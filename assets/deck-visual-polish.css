@@ -416,10 +416,50 @@ body.stacked-stage .nav{
   top:204px;
   z-index:0;
 }
-#slide-40 .closing-left :is(.label,h2,.closing-lead,.closing-pillars,.closing-contact){
+#slide-40 .closing-left :is(.label,h2,.closing-lead,.closing-pillars,.closing-partnership-intro,.closing-partnership-grid,.closing-contact){
   position:relative;
   z-index:1;
 }
+
+#slide-40 .closing-partnership-intro{
+  margin:26px 0 14px;
+  color:#17695F;
+  font-size:18px;
+  font-weight:750;
+  line-height:1.25;
+}
+
+#slide-40 .closing-partnership-grid{
+  width:760px;
+  border-top:1px solid #C6DAD6;
+}
+
+#slide-40 .closing-partnership-grid article{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:18px;
+  padding:13px 0;
+  border-bottom:1px solid #DCE7E4;
+}
+
+#slide-40 .closing-partnership-grid h3{
+  margin:0;
+  color:#173B36;
+  font-size:13px;
+  font-weight:850;
+  letter-spacing:.08em;
+  line-height:1.35;
+  text-transform:uppercase;
+}
+
+#slide-40 .closing-partnership-grid p{
+  margin:0;
+  color:#526A65;
+  font-size:13px;
+  line-height:1.42;
+}
+
+#slide-40 .closing-contact{ margin-top:22px!important; }
 #slide-40 .closing-ai-ghost{
   right:22px;
   top:70px;

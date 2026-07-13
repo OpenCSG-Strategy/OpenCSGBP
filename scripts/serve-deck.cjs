@@ -12,7 +12,7 @@ const pdfCacheDir = path.join(exportDir, 'pdf-cache');
 const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || '127.0.0.1';
 const defaultWatermark = process.env.DECK_WATERMARK_TEXT || '';
-const pdfCacheVersion = '20260707-single-custom-watermark-v1';
+const pdfCacheVersion = '20260713-source-aware-v1';
 const supportedLanguages = new Set(['zh', 'en', 'ja', 'ko', 'ar', 'ru', 'fr', 'de', 'es', 'pt']);
 const supportedRatios = new Set(['16:9', '4:3', 'a4-landscape', 'a4-portrait', 'letter-landscape']);
 const supportedFormats = new Set(['pdf', 'pptx']);
@@ -183,6 +183,7 @@ function contentDisposition(disposition, filename) {
 }
 
 function cacheKeyForPdf(options) {
+  const sourceRevision = deckSourceRevision();
   return createHash('sha256')
     .update(JSON.stringify({
       lang: options.lang,
@@ -190,10 +191,39 @@ function cacheKeyForPdf(options) {
       scope: options.scope,
       sections: options.sections || allSections,
       watermarkText: options.watermarkText || '',
-      pdfCacheVersion
+      pdfCacheVersion,
+      sourceRevision
     }))
     .digest('hex')
     .slice(0, 24);
+}
+
+// A PDF preview must reflect the active branch and local working tree, not a
+// same-option PDF generated before a slide was hidden or redesigned.  Keep the
+// cache efficient by hashing source metadata rather than the (often large)
+// image files themselves.
+function deckSourceRevision() {
+  const hash = createHash('sha256');
+  const files = [];
+  const walk = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      if (entry.name.startsWith('.')) continue;
+      const absolute = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        walk(absolute);
+      } else if (/\.(?:css|html|js|json|svg|png|jpe?g|webp)$/i.test(entry.name)) {
+        files.push(absolute);
+      }
+    }
+  };
+
+  files.push(path.join(root, 'index.html'));
+  walk(path.join(root, 'assets'));
+  files.sort().forEach((absolute) => {
+    const stat = fs.statSync(absolute);
+    hash.update(`${path.relative(root, absolute)}:${stat.size}:${stat.mtimeMs}\n`);
+  });
+  return hash.digest('hex').slice(0, 16);
 }
 
 function defaultViewPdfOptions(lang, watermarkText = defaultWatermark) {

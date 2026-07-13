@@ -586,7 +586,7 @@
   <link rel="stylesheet" href="assets/deck-cover.css?v=20260710brand2">
   <link rel="stylesheet" href="assets/deck-slide-05-07.css?v=20260707a">
   <link rel="stylesheet" href="assets/deck-slide-08.css?v=20260707a">
-  <link rel="stylesheet" href="assets/deck-bp-humanize.css?v=20260710design2">
+  <link rel="stylesheet" href="assets/deck-bp-humanize.css?v=20260713s08scale">
   <link rel="stylesheet" href="assets/deck-community-links.css?v=20260710a">
 
   <style id="slide-12-opencore-story-restore">
@@ -2317,7 +2317,40 @@
       background: #F7FAF9 !important;
       box-shadow: none !important;
     }
+
   }
+</style>
+
+<style id="slide-08-scale-pass">
+  /* Scale the four-product proof and its hand-offs as one readable system. */
+  #slide-08 .p8-story { top: 162px !important; height: 650px !important; }
+  #slide-08 .p8-map { top: 62px !important; height: 480px !important; }
+  #slide-08 .p8-node,
+  #slide-08 .p8-node-01,
+  #slide-08 .p8-node-02,
+  #slide-08 .p8-node-03,
+  #slide-08 .p8-node-04 { min-height: 480px !important; height: 480px !important; }
+  #slide-08 .p8-node figure { flex-basis: 170px !important; height: 170px !important; }
+  #slide-08 .p8-proof-copy { padding: 18px 20px !important; }
+  #slide-08 .p8-proof-copy em { font-size: 10px !important; }
+  #slide-08 .p8-node h3 { margin-top: 12px !important; font-size: 28px !important; }
+  #slide-08 .p8-node p,
+  .lang-en #slide-08 .p8-node p,
+  html[lang="en"] #slide-08 .p8-node p { margin-top: 11px !important; font-size: 12.5px !important; line-height: 1.38 !important; }
+  #slide-08 .p8-node ul { margin-top: 14px !important; gap: 8px !important; }
+  #slide-08 .p8-node li { padding: 7px 10px !important; font-size: 9.5px !important; }
+  #slide-08 .p8-progress {
+    top: 548px !important;
+    min-height: 132px !important;
+    padding: 12px 16px !important;
+    border: 1px solid #CFE3DE !important;
+    background: #F3F9F7 !important;
+    box-shadow: 0 5px 14px rgba(23, 63, 57, .06) !important;
+  }
+  #slide-08 .p8-progress article { padding: 14px 12px 0 !important; }
+  #slide-08 .p8-progress small { font-size: 10.5px !important; }
+  #slide-08 .p8-progress b { margin-top: 14px !important; font-size: 16px !important; }
+  #slide-08 .p8-progress span { margin-top: 8px !important; font-size: 11px !important; line-height: 1.35 !important; }
 </style>
 
 <style id="slide-partners-customers-grid">
@@ -3245,8 +3278,14 @@
     <div class="cover-title">
       <div class="label" data-en="OPENCSG · AGENTIC-AI">OPENCSG · AGENTIC-AI</div>
       <h1>OpenCSG</h1>
-      <h2><span data-en="Agentic-AI — controlled, auditable agents operating in production.">Agentic-AI —— 受控、可审计、运行于生产环境的智能体。</span></h2>
-      <div class="cover-sovereignty-mark"><span data-en="OPEN SOURCE · GLOBAL BY DESIGN">开放源代码 · 全球化设计</span><b data-en="Open Source. Real Value. Real Impact.">开源。真实价值。真实影响力。</b></div>
+      <h2 class="cover-positioning">
+        <span data-en="Sovereign Infrastructure.">主权基础设施。</span>
+      </h2>
+    </div>
+    <div class="cover-meta">
+      <span data-en="Open Ecosystem.">开放生态。</span>
+      <span data-en="Governed Agentic AI.">受治理的 Agentic AI。</span>
+      <span data-en="Trusted Impact.">可信影响力。</span>
     </div>
     <div class="cover-visual">
       <img src="assets/sovereign-ai-cover-v3.png" alt="AI 主权开放基础设施：连接城市、企业与个人智能节点">
@@ -3434,7 +3473,7 @@
         <p data-en="We bring models, data, agents and enterprise operations into one portable, auditable lifecycle — helping organizations move from experimentation to reliable AI systems without locking into a single model, cloud or hardware vendor.">我们把模型、数据、Agent 与企业运营连接成一套可移植、可审计的生产闭环，帮助组织从试验走向可靠的 AI 系统，同时避免绑定单一模型、云或硬件供应商。</p>
         <div class="sg-company-pillars"><article><b data-en="OPEN BY DEFAULT">开放为先</b><span data-en="Open-source assets and developer distribution">开源资产与开发者分发</span></article><article><b data-en="PORTABLE BY DESIGN">可移植设计</b><span data-en="Cloud, private, edge and air-gapped">云端、私有、边缘与隔离环境</span></article><article><b data-en="AUDITABLE IN PRODUCTION">生产可审计</b><span data-en="Policy, evidence and continuous improvement">策略、证据与持续改进</span></article></div>
         <div class="sg-company-metrics"><div><b>3.5M+</b><span data-en="Community users">社区用户</span></div><div><b>200K+</b><span data-en="Models &amp; AI assets">模型与 AI 资产</span></div><div><b>100+</b><span data-en="Enterprise clients">企业客户</span></div><div><b>30+</b><span data-en="Countries and regions">国家与地区</span></div></div>
-        <div class="sg-company-customers"><small data-en="SELECTED GLOBAL ECOSYSTEM">全球生态精选</small><div class="sg-company-customers-grid"><img src="assets/partners/bilibili.svg" alt="Bilibili"><img src="assets/partners/mihoyo.svg" alt="miHoYo"><img src="assets/partners/shopee.svg" alt="Shopee"><img src="assets/partners/china-mobile.svg" alt="China Mobile"><img src="assets/partners/catl.svg" alt="CATL"><img src="assets/partners/caict.svg" alt="MIIT / CAICT"><img src="assets/partners/calb.png" alt="CALB"></div></div>
+        <div class="sg-company-customers"><small data-en="SELECTED GLOBAL ECOSYSTEM">全球生态精选</small><div class="sg-company-customers-grid"><img src="assets/partners/shopee.svg" alt="Shopee"><img src="assets/partners/bilibili.svg" alt="Bilibili"><img src="assets/partners/mihoyo.svg" alt="miHoYo"><img src="assets/partners/china-mobile.svg" alt="China Mobile"><img src="assets/partners/catl.svg" alt="CATL"><img src="assets/partners/caict.svg" alt="MIIT / CAICT"><img src="assets/partners/calb.png" alt="CALB"></div></div>
         <div class="sg-company-extension"><span class="sg-company-tag" data-en="Open-source distribution">OPEN-SOURCE DISTRIBUTION</span><span class="sg-company-tag" data-en="Enterprise governance">ENTERPRISE GOVERNANCE</span><span class="sg-company-tag" data-en="Regional AI platforms">REGIONAL AI PLATFORMS</span><span class="sg-company-tag" data-en="OpenCore monetization">OPENCORE MONETIZATION</span><span class="sg-company-tag" data-en="AUDITABLE IN PRODUCTION">AUDITABLE IN PRODUCTION</span></div>
       </div>
       <div class="sg-company-proof-stack"><div class="sg-github-card"><img src="assets/github-open-source-proof.png" alt="OpenCSG GitHub open-source community and repositories"><div class="sg-github-copy"><small data-en="OPEN-SOURCE PROOF">开源证据</small><strong data-en="A living developer community around OpenCSG and CSGHub.">围绕 OpenCSG 与 CSGHub 的真实开发者社区。</strong><span data-en="Open repositories, developer tooling and community-led iteration turn open source into a production advantage.">Open repositories, developer tooling and community-led iteration turn open source into a production advantage.</span></div></div><div class="sg-imda-card"><img src="assets/honor-04.png" alt="IMDA SPARK programme recognition"><div class="sg-imda-copy"><small data-en="SINGAPORE · INTERNATIONAL VALIDATION">新加坡 · 国际化验证</small><strong data-en="Selected for the IMDA SPARK programme">入选 IMDA SPARK 项目</strong><p data-en="A Singapore launchpad for open, trusted and production-ready AI infrastructure.">以新加坡为起点，面向全球建设开放、可信、可进入生产的 AI 基础设施。</p></div></div></div>
@@ -3508,6 +3547,8 @@
             <div class="supporting-customers">
               <div class="supporting-label"><b data-en="Additional representative customers and ecosystem partners">其他代表性客户与生态伙伴</b><span data-en="Selected">部分展示</span></div>
               <div class="customer-wordmarks logo-only">
+                <div class="text-logo customer-shopee"><b>Shopee</b><span>SEA E-COMMERCE</span></div>
+                <div><img src="assets/partners/microsoft.svg" alt="微软"></div>
                 <div><img src="assets/partners/cambricon.svg" alt="寒武纪"></div>
                 <div><img src="assets/partners/metax.svg" alt="沐曦"></div>
                 <div><img src="assets/partners/faw.svg" alt="中国一汽"></div>
@@ -3515,10 +3556,8 @@
                 <div><img src="assets/partners/inspur.svg" alt="浪潮"></div>
                 <div><img src="assets/partners/sany.svg" alt="三一"></div>
                 <div><img src="assets/partners/china-telecom.svg" alt="中国电信"></div>
-                <div><img src="assets/partners/microsoft.svg" alt="微软"></div>
                 <div><img src="assets/partners/chinbohai.svg" alt="渤海银行"></div>
                 <div class="text-logo customer-bilibili"><b data-en="Bilibili">B 站</b><span>BILIBILI</span></div>
-                <div class="text-logo customer-shopee"><b>Shopee</b><span>SEA E-COMMERCE</span></div>
                 <div><b data-en="Hong Kong Cyberport">香港数码港</b><span>CYBERPORT</span></div>
               </div>
             </div>
@@ -3639,216 +3678,23 @@
   <div class="slide-wrap" data-section="product"><section class="slide light" data-layout="L08" id="slide-08">
     <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
     <div class="section"><span class="section-zh" data-en="Unified Product System　">统一产品体系　</span><span style="font-size:13px;color:#697472;font-weight:400">Unified Product System</span></div>
-    <h2 class="title" data-en="Personal and organizational OPCs share one growth path from local data to ecosystem monetization">个人 OPC 与组织型 OPC，共享一条从本地数据到产业变现的成长路径</h2>
-    <p class="p8-lead" data-en="Every OPC starts with CSGLite data accumulation, advances through CSGClaw agent and small-model iteration, upgrades into server-hosted organizational assets, and scales through AgenticHub collaboration and commercialization.">所有主体都先以 CSGLite 积累高质量数据，再用 CSGClaw 尝试智能体并迭代小模型；升级为组织型 OPC 后托管企业 AI 资产，最终通过 AgenticHub 协作共创并实现产业商业化。</p>
+    <h2 class="title" data-en="Four products, one clear path: from personal data to ecosystem scale">四个核心产品，一条清晰路径：从个人数据到生态规模化</h2>
+    <p class="p8-lead" data-en="Each product delivers the input for the next.">每个产品的产出，都是下一阶段的输入。</p>
     <div class="p8-story">
-      <div class="p8-sequence" aria-label="OpenCSG OPC growth path">
-        <div data-evolution-step="1"><em>01</em><span><b data-en="Shared data starting point">共同数据起点</b><small data-en="CSGLite · HIGH-QUALITY DATA">CSGLite · 高质量数据</small></span></div>
-        <div data-evolution-step="2"><em>02</em><span><b data-en="Agent intelligence iteration">智能体迭代</b><small data-en="CSGCLAW · AGENTS + SMALL MODELS">CSGClaw · Agent + 小模型</small></span></div>
-        <div data-evolution-step="3"><em>03</em><span><b data-en="Organizational OPC upgrade">组织型 OPC 升级</b><small data-en="CSGHUB · SERVER-HOSTED ASSETS">CSGHub · 服务端资产托管</small></span></div>
-        <div data-evolution-step="4"><em>04</em><span><b data-en="Ecosystem commercialization">生态商业化</b><small data-en="AGENTICHUB · COLLABORATE + CO-CREATE">AgenticHub · 协作共创</small></span></div>
-      </div>
       <div class="p8-map">
-        <aside class="p8-lane p8-lane-org"><small>START</small><b data-en="Shared starting point">共同起点</b><span data-en="Every OPC starts here">所有 OPC 从这里开始</span></aside>
-        <article class="p8-node p8-node-02" data-evolution-product="1" tabindex="0">
-          <div class="p8-node-copy"><div class="p8-node-kicker"><em>01</em><span>PERSONAL RUNTIME</span></div><h3>CSGLite</h3><p data-en="A personal AI workspace for running local foundation models, managing knowledge and tools, and accumulating high-quality data through real work.">个人 AI 工作空间：本地运行基础模型，管理知识与工具，在真实任务中积累高质量数据。</p><ul class="p8-detail"><li data-en="Run local foundation models and inference services">本地运行基础模型与推理服务</li><li data-en="Local inference, prompt templates and knowledge management">本地推理、Prompt 模板与知识管理</li><li data-en="Feedback optimization, debugging tools and lightweight deployment">反馈优化、调试工具与轻量部署</li><li data-en="WebIDE, agent development, testing and Docker support">WebIDE、Agent 开发测试与 Docker 支持</li></ul><div class="p8-tags"><span data-en="Local models">本地模型</span><span data-en="Knowledge management">知识管理</span><span data-en="Data accumulation">数据沉淀</span></div><a class="product-jump" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" data-en="Product page ↗">产品页 ↗</a></div><figure><a class="product-link-screen" href="https://opencsg.com/docs/csghub/101/function/csghub-lite/intro" target="_blank" rel="noopener" aria-label="CSGHub Lite 产品页"><img src="assets/product-lite.jpg" alt="CSGHub Lite 产品界面"></a></figure>
-        </article>
-        <div class="p8-evolve-item p8-evolve-gap" data-evolve="1">
-          <div class="p8-evolve-arrow"><i></i><b data-en="Why upgrade">为何升级</b></div>
-          <div class="p8-evolve-copy">
-            <b data-en="Data becomes learning fuel">数据成为学习燃料</b>
-            <span data-en="Real-task feedback drives continuous agent and small-model iteration.">真实任务反馈，驱动 Agent 与小模型持续迭代</span>
-          </div>
-        </div>
-        <article class="p8-node p8-node-03" data-evolution-product="2" tabindex="0">
-          <div class="p8-node-copy"><div class="p8-node-kicker"><em>02</em><span>AGENT ITERATION</span></div><h3>CSGClaw</h3><p data-en="A multi-agent collaboration platform for task orchestration, workflow automation and real feedback-driven iteration of agents and small models.">多 Agent 协同平台：编排任务、自动化 Workflow，并用真实反馈持续迭代 Agent 与小模型。</p><ul class="p8-detail"><li data-en="Task orchestration and workflow automation">任务编排与 Workflow 自动化</li><li data-en="Intelligent collaboration and team knowledge sharing">智能协作与团队知识共享</li><li data-en="Agent lifecycle management and secure collaboration">Agent 生命周期管理与安全协同</li><li data-en="Enterprise IM integration, monitoring and optimization">企业 IM 接入、监控与优化</li></ul><div class="p8-tags"><span data-en="Task orchestration">任务编排</span><span data-en="Multi-agent">多 Agent</span><span data-en="Small-model iteration">小模型迭代</span></div><a class="product-jump" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" data-en="Product page ↗">产品页 ↗</a></div><figure><a class="product-link-screen csgclaw-early" href="https://opencsg.com/docs/agentichub/101/csgclaw/intro" target="_blank" rel="noopener" aria-label="CSGClaw 多 Agent 协同产品页"><img src="assets/product-claw.png" alt="CSGClaw 多 Agent 协同界面"></a></figure>
-        </article>
-        <div class="p8-evolve-item p8-evolve-gap" data-evolve="2">
-          <div class="p8-evolve-arrow"><i></i><b data-en="Why upgrade">为何升级</b></div>
-          <div class="p8-evolve-copy">
-            <b data-en="Validated capabilities become organizational assets">验证能力变成组织资产</b>
-            <span data-en="Server hosting adds permissions, versions, auditability and reuse.">服务端托管，形成权限、版本、审计与复用能力</span>
-          </div>
-        </div>
-        <article class="p8-node p8-node-01" data-evolution-product="3" tabindex="0">
-          <div class="p8-node-copy"><div class="p8-node-kicker"><em>03</em><span>ORGANIZATIONAL ASSETS</span></div><h3>CSGHub</h3><p data-en="An enterprise AI asset lifecycle platform that hosts validated capabilities on the server and turns them into governed organizational OPC assets.">企业 AI 资产全生命周期平台：将验证后的能力托管到服务端，沉淀为可治理、可复用的组织型 OPC 资产。</p><ul class="p8-detail"><li data-en="Prompt, model, dataset, code and agent asset management">Prompt、模型、数据集、代码与 Agent 统一管理</li><li data-en="Versioning, lineage, sharing, License and integrity checks">版本、血缘、共享、License 与完整性校验</li><li data-en="Asset publishing, distribution, evaluation, training and serving">资产发布、分发、评测、训练与服务托管</li><li data-en="Visibility, audit logging, permissions and organizational governance">可见性、审计日志、权限与组织治理</li></ul><div class="p8-tags"><span data-en="Asset lifecycle">资产全生命周期</span><span data-en="Hosted governance">服务端治理</span><span data-en="Enterprise AI assets">企业 AI 资产</span></div><a class="product-jump" href="https://opencsg.com/csghub" target="_blank" rel="noopener" data-en="Product page ↗">产品页 ↗</a></div><figure><a class="product-link-screen csghub-early" href="https://opencsg.com/csghub" target="_blank" rel="noopener" aria-label="CSGHub 企业 AI 资产产品页"><img src="assets/product-csghub.png" alt="CSGHub 产品界面"></a></figure>
-        </article>
-        <div class="p8-evolve-item p8-evolve-gap" data-evolve="3">
-          <div class="p8-evolve-arrow"><i></i><b data-en="Why upgrade">为何升级</b></div>
-          <div class="p8-evolve-copy">
-            <b data-en="Organizational assets enter a collaboration network">组织资产进入协作网络</b>
-            <span data-en="Cross-organization co-creation connects industry ecosystems and commercial scale.">跨组织协作共创，连接产业生态与规模化商业变现</span>
-          </div>
-        </div>
-        <article class="p8-node p8-node-04" data-evolution-product="4" tabindex="0">
-          <div class="p8-node-copy"><div class="p8-node-kicker"><em>04</em><span>ECOSYSTEM &amp; SCALE</span></div><h3>AgenticHub</h3><p data-en="An enterprise agent platform for design, development, collaboration, evaluation and operations—connecting organizational OPCs to industry and ecosystem monetization.">企业 Agent 平台：覆盖设计、开发、协作、评测与运营，让组织型 OPC 融入产业生态并形成商业变现。</p><ul class="p8-detail"><li data-en="Intelligent agent design, development tools and multi-agent orchestration">智能体设计、开发工具与多 Agent 编排</li><li data-en="Workflow collaboration and team knowledge sharing">Workflow 协作与团队知识共享</li><li data-en="Simulation, evaluation, secure testing and release gates">模拟、评测、安全测试与发布门禁</li><li data-en="Permissions, operational monitoring, diagnostics and analytics">权限、安全、运行监控与诊断分析</li></ul><div class="p8-tags"><span data-en="Agent development">Agent 开发</span><span data-en="Collaboration &amp; workflow">协作与 Workflow</span><span data-en="Commercial scale">商业变现</span></div><a class="product-jump" href="https://opencsg.com/products/agentichub" target="_blank" rel="noopener" data-en="Product page ↗">产品页 ↗</a></div><figure><a class="product-link-screen" href="https://opencsg.com/products/agentichub" target="_blank" rel="noopener" aria-label="AgenticHub 企业 Agent 平台产品页"><img src="assets/product-agentichub.png" alt="AgenticHub 产品界面"></a></figure>
-        </article>
-        <aside class="p8-lane p8-lane-opc"><small>SCALE</small><b data-en="Industry monetization">产业变现</b><span data-en="Organizational OPC ecosystem">组织型 OPC 生态</span></aside>
+        <article class="p8-node p8-node-02"><figure><img src="assets/product-lite.jpg" alt="CSGLite 产品界面"></figure><div class="p8-proof-copy"><em>01 · PERSONAL RUNTIME</em><h3>CSGLite</h3><p data-en="Personal workspace for local data and knowledge.">个人工作空间，沉淀本地数据与知识。</p><ul><li data-en="Local models">本地模型</li><li data-en="Knowledge management">知识管理</li></ul></div></article>
+        <article class="p8-node p8-node-03"><figure><img src="assets/product-claw.png" alt="CSGClaw 产品界面"></figure><div class="p8-proof-copy"><em>02 · AGENT ITERATION</em><h3>CSGClaw</h3><p data-en="Turn real-work feedback into better agents.">将真实工作反馈转化为更好的 Agent。</p><ul><li data-en="Task orchestration">任务编排</li><li data-en="Multi-agent">多 Agent</li></ul></div></article>
+        <section class="p8-iteration" aria-label="Product iteration relationship"><small>ITERATION RELATION</small><div class="p8-iteration-flow"><span>DATA &amp; KNOWLEDGE</span><i>→</i><span>AGENTS &amp; FEEDBACK</span><i>→</i><span>GOVERNED ASSETS</span><i>→</i><span>ECOSYSTEM SCALE</span></div><p>Each product’s output becomes the next product’s input.</p><b>↺ CONTINUOUS LEARNING LOOP</b></section>
+        <article class="p8-node p8-node-01"><figure><img src="assets/product-csghub.png" alt="CSGHub 产品界面"></figure><div class="p8-proof-copy"><em>03 · ORGANIZATIONAL ASSETS</em><h3>CSGHub</h3><p data-en="Governed, reusable organizational AI assets.">可治理、可复用的组织 AI 资产。</p><ul><li data-en="Asset lifecycle">资产全生命周期</li><li data-en="Hosted governance">服务端治理</li></ul></div></article>
+        <article class="p8-node p8-node-04"><figure><img src="assets/product-agentichub.png" alt="AgenticHub 产品界面"></figure><div class="p8-proof-copy"><em>04 · ECOSYSTEM SCALE</em><h3>AgenticHub</h3><p data-en="Collaborate and commercialize across the ecosystem.">跨生态协作与商业化。</p><ul><li data-en="Agent development">Agent 开发</li><li data-en="Collaboration &amp; workflow">协作与 Workflow</li></ul></div></article>
       </div>
-      <div class="p8-foundation"><p data-en="The path is progressive and cyclical: ecosystem feedback returns to CSGLite data, CSGClaw agents and organizational assets, strengthening the next round of growth.">这不是一次性漏斗，而是递进飞轮：生态反馈持续回流到 CSGLite 数据、CSGClaw 智能体与组织资产，推动下一轮增长。</p><div class="p8-foundation-tags"><span data-en="Previous output → next input">前一步产出 → 后一步输入</span><span data-en="Individual OPC → organizational OPC">个人 OPC → 组织型 OPC</span></div></div>
+      <div class="p8-progress" aria-label="Three product evolution hand-offs">
+        <article><div><small>01 → 02</small><i></i></div><b data-en="Data becomes learning fuel">数据成为学习燃料</b><span data-en="Real-task feedback drives continuous agent and small-model iteration.">真实任务反馈，驱动 Agent 与小模型持续迭代。</span></article>
+        <article><div><small>02 → 03</small><i></i></div><b data-en="Validated capabilities become organizational assets">验证能力变成组织资产</b><span data-en="Server hosting adds permissions, versions, auditability and reuse.">服务端托管，形成权限、版本、审计与复用能力。</span></article>
+        <article><div><small>03 → 04</small><i></i></div><b data-en="Organizational assets enter a collaboration network">组织资产进入协作网络</b><span data-en="Cross-organization co-creation connects industry ecosystems and commercial scale.">跨组织协作共创，连接产业生态与规模化商业变现。</span></article>
+      </div>
     </div>
     <div class="foot"><span data-en="CSGLite → CSGClaw → CSGHub → AgenticHub: data accumulation → intelligence iteration → organizational assets → ecosystem monetization.">CSGLite → CSGClaw → CSGHub → AgenticHub：数据积累 → 智能迭代 → 组织资产 → 生态变现。</span><span>08</span></div>
-  </section></div>
-
-  <div class="slide-wrap" data-section="main"><section class="slide light" data-layout="L10" id="slide-09">
-    <img class="brand" src="assets/logo-opencsg.png" alt="OpenCSG"><div class="topline"></div>
-    <div class="section"><span class="section-zh" data-en="Full-stack Architecture　">全栈技术架构　</span><span style="font-size:13px;color:#697472;font-weight:400">Full-stack Architecture</span></div>
-    <h2 class="title" data-en="One platform manages AI assets, compute, agents and production operations">一套平台统一管理 AI 资产、算力、Agent 与生产运行</h2>
-    <div class="arch9-tabs" role="tablist" aria-label="Architecture views">
-      <button type="button" data-arch-view="production" data-en="INDUSTRY PRODUCTION LOOP">行业生产闭环</button>
-      <button type="button" class="active" data-arch-view="platform" data-en="FULL PLATFORM STACK">平台全栈架构</button>
-    </div>
-
-    <div class="edge-production-view arch9-view" data-arch-panel="production">
-      <section class="edge-studio">
-        <small data-en="BUSINESS & CONTENT INPUT">业务与内容输入</small>
-        <b data-en="Industry data">行业数据</b>
-        <span data-en="Documents · images · video · device signals">文档 · 图像 · 视频 · 设备信号</span>
-        <i aria-hidden="true">→</i>
-      </section>
-
-      <section class="edge-terminal-layer">
-        <header>
-          <div><small data-en="MULTI-TERMINAL APPLICATION LAYER">多终端应用层</small><b data-en="One content and agent system serves every interaction surface">一套内容与 Agent 系统，服务所有交互终端</b></div>
-          <span>OpenCSG · AGENTICOPS</span>
-        </header>
-        <div class="edge-device-grid">
-          <article><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12"/><path d="M8 21h8M10 17v4m4-4v4"/></svg><b data-en="Smart cockpit">智能座舱</b><span>HMI</span></article>
-          <article><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h8M8 11h8M8 15h5"/></svg><b data-en="Vehicle display">车载屏幕</b><span>DISPLAY</span></article>
-          <article><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20"/><path d="M10 5h4M11 19h2"/></svg><b data-en="Mobile terminal">移动终端</b><span>MOBILE</span></article>
-          <article><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="10"/><path d="M9 2h6v4M9 20h6M8 16v4m8-4v4M9 10h.1M15 10h.1M10 13h4"/></svg><b data-en="Robot terminal">机器人终端</b><span>ROBOT</span></article>
-          <article><svg viewBox="0 0 24 24"><path d="M3 9h18l-2 8h-5l-2-4-2 4H5zM8 9l1-3h6l1 3"/></svg><b>AR / VR</b><span>SPATIAL</span></article>
-          <article><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4zM2 20h20M8 9h8M8 13h5"/></svg><b data-en="Engineering workstation">工业工作站</b><span>WORKSTATION</span></article>
-          <article><svg viewBox="0 0 24 24"><path d="M3 4h18v14H3zM7 8h3v6H7zm7-2h3v8h-3zM8 21h8"/></svg><b data-en="Operations screen">运营大屏</b><span>CONTROL ROOM</span></article>
-        </div>
-        <div class="edge-delivery-band">
-          <span data-en="Content publishing">内容发布</span><i>→</i><span data-en="Agent services">Agent 服务</span><i>→</i><span data-en="Real-time interaction">实时交互</span><i>→</i><span data-en="Usage feedback">使用反馈</span>
-        </div>
-      </section>
-
-      <section class="edge-control-plane">
-        <b>AGENTICOPS CONTROL PLANE</b>
-        <span data-en="Multi-model routing">多模型路由</span>
-        <span data-en="Agent workflows">Agent 工作流</span>
-        <span data-en="Multimodal generation">多模态生成</span>
-        <span data-en="Version & release">版本与发布</span>
-        <span data-en="Safety & observability">安全与可观测</span>
-      </section>
-
-      <section class="edge-production-data">
-        <small data-en="PRODUCTION DATA">生产数据</small>
-        <div class="edge-data-icon"><span></span><span></span><span></span></div>
-        <b data-en="Feedback becomes an enterprise data asset">运行反馈沉淀为企业数据资产</b>
-        <p data-en="Images · video · point clouds · sensor signals · user interaction">图像 · 视频 · 点云 · 传感器 · 用户交互</p>
-      </section>
-
-      <section class="edge-dataflow">
-        <header><b data-en="IoT data services · DataFlow">IoT 数据业务体系 · DataFlow</b><span data-en="A continuous data flywheel from production back to models and agents">从生产现场持续回流到模型与 Agent 的数据飞轮</span></header>
-        <div class="edge-pipeline">
-          <article><span>01</span><b data-en="Collection">数据采集</b></article><i>→</i>
-          <article><span>02</span><b data-en="Clean">清洗治理</b></article><i>→</i>
-          <article><span>03</span><b data-en="Label">标注加工</b></article><i>→</i>
-          <article><span>04</span><b data-en="Evaluate">质量评测</b></article><i>→</i>
-          <article><span>05</span><b data-en="Publish">版本发布</b></article>
-        </div>
-        <div class="edge-return"><span data-en="Private data remains in-domain">私域数据不出域</span><span data-en="High-quality datasets accumulate continuously">高质量数据集持续沉淀</span><span data-en="Agents improve with every operation">Agent 随运行持续进化</span></div>
-      </section>
-
-      <section class="edge-corepro">
-        <header><b>CorePro</b><span data-en="Heterogeneous runtime">异构运行时</span></header>
-        <div><span>PyTorch</span><span>ONNX</span><span>TensorRT</span></div>
-        <p data-en="Cloud · local · edge · air-gapped">云端 · 本地 · 边缘 · 隔离环境</p>
-        <strong data-en="No single-chip lock-in">不绑定单一芯片</strong>
-      </section>
-    </div>
-
-    <div class="arch9 arch9-view active" data-arch-panel="platform">
-      <div class="a9-scene">
-        <div class="a9-side" data-en="SCENARIOS">场景</div>
-        <div class="a9-scene-track">
-          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3M9 9h6v6H9z"/></svg><span data-en="Electronics">电子信息</span></div>
-          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="13"/><path d="M7 21h10M9 18v3m6-3v3M7 9h10"/></svg><span data-en="Media & Entertainment">传媒娱乐</span></div>
-          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg><span data-en="Healthcare">医疗健康</span></div>
-          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6zM8 8a4 4 0 0 1 8 0M8 13h8"/></svg><span data-en="Retail & Commerce">零售电商</span></div>
-          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7a4 4 0 0 1 4 4v10H8a4 4 0 0 0-4 2zM20 5h-5a4 4 0 0 0-4 4v10h5a4 4 0 0 1 4 2z"/></svg><span data-en="Government & Education">政企教育</span></div>
-          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l4-3 4 3 4-3 4 3v12zM7 12h2m2 0h2m2 0h2M7 16h2m2 0h2m2 0h2"/></svg><span data-en="Energy & Power">能源电力</span></div>
-          <div class="a9-scene-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="16" rx="2"/><path d="M8 7h8M8 11h8M8 19l-2 3m10-3 2 3M8 15h.1M16 15h.1"/></svg><span data-en="Rail Transit">轨道交通</span></div>
-        </div>
-      </div>
-
-      <div class="a9-matrix">
-        <div class="a9-side a9-side-vertical" data-en="PRODUCT MATRIX">产品矩阵</div>
-        <div class="a9-core">
-          <div class="a9-agent-products">
-            <section class="a9-product a9-ship">
-              <h3 data-en="AgenticHub · Dev">AgenticHub · Dev</h3>
-              <div class="a9-chip-stack"><span>CodeSouler</span><span>WebIDE</span></div>
-            </section>
-            <section class="a9-product a9-claw">
-              <h3>CSGClaw</h3>
-              <div class="a9-chip-grid cols-2"><span data-en="Agent collaboration">Agent 协作</span><span data-en="IM management">IM 管理</span><span>Sandbox</span><span>Multi Runtime</span></div>
-            </section>
-            <section class="a9-product a9-agenthub">
-              <h3>AgenticHub</h3>
-              <div class="a9-chip-grid cols-6">
-                <span data-en="Agent assistant">Agentic 小助手</span><span data-en="Task scheduling">任务调度</span><span>CSGClaw</span><span>CodeAgent</span><span data-en="Templates">模板</span><span data-en="Tools">工具</span>
-                <span data-en="Skills">Skill 技能</span><span data-en="Task planning">任务规划</span><span data-en="Scheduled tasks">定时任务</span><span>Workflow</span><span data-en="Knowledge base">知识库</span><span data-en="Prompts">提示词</span>
-              </div>
-            </section>
-          </div>
-
-          <div class="a9-build-caption" data-en="Continuously build, package and release agents">持续构建、打包与发布智能体</div>
-          <div class="a9-lifecycle">
-            <span class="a9-infinity">∞</span>
-            <span>Prompt</span><span>Code</span><span>Build</span><span>Test</span><span>Release</span><span>Deploy</span><span>Operate</span><span>Retrain</span>
-          </div>
-
-          <div class="a9-runtime-products">
-            <section class="a9-product a9-lite">
-              <h3>CSGHub-Lite</h3>
-              <div class="a9-feature-groups cols-2">
-                <div class="a9-feature-group"><b data-en="INTERACTION">交互方式</b><div><span data-en="CLI">CLI 命令行</span><span data-en="GUI">GUI 图形界面</span><span data-en="AI Apps">AI 应用</span><span>REST API</span></div></div>
-                <div class="a9-feature-group"><b data-en="LIGHTWEIGHT MODEL SERVICE">Lite 轻量模型服务</b><div><span data-en="One-click inference">一键推理实例</span><span data-en="Private deployment">私有化部署</span><span data-en="Native search">原生搜索</span><span data-en="Resume transfer">断点续传</span><span data-en="Image build">镜像构建</span><span data-en="Multi-device">多端部署</span></div></div>
-              </div>
-            </section>
-            <section class="a9-product a9-hub">
-              <h3>CSGHub</h3>
-              <div class="a9-feature-groups cols-3">
-                <div class="a9-feature-group"><b data-en="SPACES">应用空间</b><div><span data-en="Auto package">自动打包</span><span data-en="Online runtime">在线运行</span><span data-en="Log analysis">日志分析</span><span data-en="Evaluation">评测测试</span></div></div>
-                <div class="a9-feature-group"><b data-en="MODEL SERVICES">模型服务</b><div><span data-en="Fine-tuning">一键微调</span><span data-en="Inference">一键推理</span><span data-en="Evaluation">模型评测</span><span data-en="Multi-model">多模型适配</span><span data-en="Jupyter Instance">Jupyter 实例</span><span>MCP Host</span></div></div>
-                <div class="a9-feature-group"><b>DataFlow</b><div><span data-en="Collection">数据采集</span><span data-en="Conversion">格式转换</span><span data-en="Processing">数据处理</span><span data-en="Algorithm templates">算法模板</span><span data-en="Labelling">数据标注</span><span data-en="Toolbox">工具库</span></div></div>
-              </div>
-            </section>
-          </div>
-          <div class="a9-asset-flow a9-asset-flow-left" aria-hidden="true"><span data-en="Asset feed · Lite">资产供给 · Lite</span><i></i></div>
-          <div class="a9-asset-flow a9-asset-flow-right" aria-hidden="true"><span data-en="Asset feed · CSGHub">资产供给 · CSGHub</span><i></i></div>
-
-          <section class="a9-assets">
-            <h3>AssetsHub</h3>
-            <div class="a9-asset-grid">
-              <div><b data-en="MODELS">模型</b><span data-en="Search / sort">搜索 / 排序</span></div>
-              <div><b data-en="DATASETS">数据集</b><span data-en="Upload / download">上传 / 下载</span></div>
-              <div><b data-en="PROMPTS">提示词</b><span data-en="Filter">筛选</span></div>
-              <div><b>MCP</b><span data-en="Preview">预览</span></div>
-              <div><b data-en="LINEAGE">血缘关系</b><span data-en="Storage">存储</span></div>
-              <div><b data-en="ASSET LINKS">资产关联</b><span data-en="Multi-source sync">多源同步</span></div>
-            </div>
-          </section>
-
-          <div class="a9-foundation">
-            <section><h3 data-en="USER MANAGEMENT">用户管理</h3><div><span data-en="Self-managed accounts">自建账户</span><span data-en="Multi-tenant">多租户</span><span data-en="SSO federation">SSO 多点</span></div></section>
-            <section><h3 data-en="PLATFORM CAPABILITIES">平台能力</h3><div><span data-en="Workflow engine">工作流引擎</span><span data-en="Compute scheduling">算力调度</span><span data-en="Task scheduling">任务调度</span><span data-en="Version control">版本控制</span><span data-en="Data security">数据安全</span><span data-en="Open SDK">开放 SDK</span></div></section>
-            <section><h3 data-en="OPERATIONS">运维运营</h3><div><span data-en="Metering & billing">计量计费</span><span data-en="Operational analytics">运营分析</span><span data-en="Monitoring">运维监控</span><span data-en="Log management">日志管理</span></div></section>
-          </div>
-        </div>
-      </div>
-
-      <div class="a9-deploy">
-        <div class="a9-side" data-en="Deployment environments">部署环境</div>
-        <div class="a9-deploy-track"><span data-en="OpenCSG Online Community">OpenCSG 线上社区</span><span data-en="Public Cloud (ESC)">公有云（ESC）</span><span data-en="Hybrid Cloud">混合云</span><span data-en="On-premises Private Deployment">本地私有化部署</span></div>
-      </div>
-    </div>
-    <div class="foot"><span data-en="One stack · Platform foundation and production architecture · Full AgenticOps lifecycle">一套技术栈 · 平台底座与生产架构双视图 · 完整 AgenticOps 生命周期</span><span>09</span></div>
   </section></div>
 
   <div class="slide-wrap short-hidden" data-section="main"><section class="slide light" data-layout="L04" id="slide-10">
@@ -3953,23 +3799,6 @@
     <div class="section"><span class="section-zh" data-en="OpenCore Business Model　">OpenCore 商业模式　</span><span style="font-size:13px;color:#697472;font-weight:400">OpenCore Business Model</span></div>
     <h2 class="title" data-en="Open adoption builds the funnel; production governance and service assurance create recurring revenue">开源核心建立采用，企业治理与服务保障形成持续收入</h2>
     <div class="open12 open12-reframed">
-      <section class="oc12-edition-story">
-        <header><small>ONE CORE · FOUR DELIVERY FORMS</small><h3 data-en="One product core, four delivery forms">一套产品内核，四种交付形态</h3><p data-en="Local, community, enterprise and SaaS editions split adoption, governance and service assurance into clear commercial boundaries.">本地、社区、商业与云服务分层承接采用、治理与服务保障，形成清晰商业边界。</p></header>
-        <div class="oc12-editions">
-              <article class="community">
-                <div class="oc12-edition-title"><span>01</span><div><small>ADOPTION · OPEN ENTRY</small><b>CSGLite / CE</b></div></div>
-                <p data-en="Personal local use and community self-hosting make the product easy to adopt, validate and extend.">个人本地使用与社区自托管降低采用门槛，支持验证、二次开发与口碑扩散。</p>
-                <ul><li data-en="Local assets and model runtime">本地资产与模型运行</li><li data-en="AI asset and model services">AI 资产与模型服务</li><li data-en="Data processing and evaluation">数据处理、评测与推理</li><li data-en="Open-source trust and community funnel">开源信任与社区漏斗</li></ul>
-              </article>
-              <div class="oc12-upgrade"><i>→</i><b data-en="Commercial upgrade">商业升级</b><span data-en="Same assets, stronger governance and service assurance">资产不迁移，治理与服务增强</span></div>
-              <article class="enterprise">
-                <div class="oc12-edition-title"><span>02</span><div><small>PAID · PRODUCTION READY</small><b>EE / SaaS</b></div></div>
-                <p data-en="Enterprise and SaaS packages turn production-grade compute, governance, compliance and support into recurring revenue.">商业版与云服务把生产级算力、治理、合规与服务保障转化为持续收入。</p>
-                <ul><li data-en="Heterogeneous compute and xNet acceleration">异构算力与 xNet 加速</li><li data-en="Enterprise gateway and agent runtime">企业级网关与 Agent 运行时</li><li data-en="SSO / LDAP / RBAC / audit">SSO / LDAP / RBAC / 审计</li><li data-en="SLA, platform assurance and 24×7 support">SLA、平台保障与 7×24 支持</li></ul>
-              </article>
-        </div>
-        <div class="oc12-shared"><b data-en="Shared product foundation">共享产品底座</b><span data-en="Asset graph">资产图谱</span><span data-en="Version &amp; lineage">版本与血缘</span><span>AgenticOps</span><span data-en="Open APIs">开放 API</span><span data-en="Self-hosting">自主部署</span></div>
-      </section>
       <section class="oc12-benchmarks oc12-capability-panel">
         <header><div><small>OPENCSG OPENCORE MODEL</small><h3 data-en="Capability boundaries define monetization">核心能力边界决定商业化</h3></div><p data-en="CSGLite and CE create adoption; EE and SaaS package production-grade compute, governance, security and service assurance.">CSGLite 与 CE 负责开放采用，EE 与 SaaS 承接生产级算力、治理、安全与服务保障。</p></header>
         <div class="oc12-capability-table" aria-label="OpenCSG OpenCore 核心能力对比">
@@ -3987,11 +3816,11 @@
           <div><span data-en="Support and SLA">商业支持与 SLA</span><em class="no">×</em><em data-en="Community">社区支持</em><em class="yes">7×24</em><em class="yes">✓</em></div>
         </div>
       </section>
-      <section class="oc12-boundary">
-        <div class="oc12-boundary-head"><b data-en="Delivery form">交付形态</b><span>CSGLite</span><span>CE</span><span>EE</span><span>SaaS</span></div>
-        <div><b data-en="Adoption entry">采用入口</b><span>OPC / 超级个体</span><span data-en="Personal / small-team validation">个人 / 小团队验证</span><span data-en="Mid-large enterprises and platforms">中大型企业 / 平台运营商</span><span data-en="Fast validation and lightweight deployment">快速验证 / 轻量部署</span></div>
-        <div><b data-en="Commercial boundary">商业边界</b><span data-en="Local use">本地使用</span><span data-en="Open-source trust">开源信任</span><span data-en="Enterprise governance and reliability">企业治理与可靠性</span><span data-en="Managed operations and platform assurance">托管运营与平台保障</span></div>
-        <div><b data-en="Revenue logic">收入逻辑</b><span data-en="Personal activation">个人激活</span><span data-en="Community funnel">社区漏斗</span><span>License / SLA / 交付</span><span data-en="Subscription and usage">订阅与用量</span></div>
+      <section class="oc12-linear" aria-label="OpenCore commercial progression">
+        <article><em>01</em><b>CSGLite</b><span data-en="Open product entry">开放产品入口</span></article><i>→</i>
+        <article><em>02</em><b>CE</b><span data-en="Community adoption">社区采用</span></article><i>→</i>
+        <article><em>03</em><b>EE</b><span data-en="Production upgrade">生产级升级</span></article><i>→</i>
+        <article><em>04</em><b>SaaS</b><span data-en="Recurring revenue">持续收入</span></article>
       </section>
     </div>
     <div class="foot"><span data-en="OpenCSG OpenCore: open adoption, paid production governance and managed service assurance">OpenCSG OpenCore：开放采用，生产级治理与托管服务付费</span><span>12</span></div>
@@ -4205,13 +4034,13 @@
       <section class="p15c-group">
         <header class="p15c-group-head"><b data-en="National &amp; industry infrastructure">国家级与产业基础设施</b></header>
         <div class="p15c-group-body">
+      <div class="p15c-cell" title="Shopee"><img src="assets/partners/shopee.svg" alt="Shopee"></div>
+      <div class="p15c-cell" title="Microsoft 微软"><img src="assets/partners/microsoft.svg" alt="Microsoft 微软"></div>
+      <div class="p15c-cell" title="AWS 亚马逊云科技"><img src="assets/partners/aws.svg" alt="AWS 亚马逊云科技"></div>
       <a class="p15c-cell" href="https://aihub.caict.ac.cn/" data-community-key="caict" title="工信部 · 中国信通院社区"><img src="assets/partners/caict.svg" alt="CAICT 中国信通院"></a>
       <div class="p15c-cell" title="China Mobile 中国移动"><img src="assets/partners/china-mobile.svg" alt="中国移动"></div>
       <div class="p15c-cell" title="China Unicom 中国联通"><img src="assets/partners/china-unicom.svg" alt="中国联通"></div>
       <div class="p15c-cell" title="China Telecom 中国电信"><img src="assets/partners/china-telecom.svg" alt="中国电信"></div>
-      <!-- Row 2 · Finance & tech infrastructure -->
-      <div class="p15c-cell" title="Microsoft 微软"><img src="assets/partners/microsoft.svg" alt="Microsoft 微软"></div>
-      <div class="p15c-cell" title="AWS 亚马逊云科技"><img src="assets/partners/aws.svg" alt="AWS 亚马逊云科技"></div>
       <div class="p15c-cell" title="Cambricon 寒武纪"><img src="assets/partners/cambricon.svg" alt="Cambricon 寒武纪"></div>
       <!-- Row 3 · State-owned electronics, energy, semiconductor -->
       <div class="p15c-cell" title="Lenovo 联想"><img src="assets/partners/lenovo.svg" alt="Lenovo 联想"></div>
@@ -4232,7 +4061,6 @@
       <div class="p15c-cell" title="KubeSphere"><img src="assets/partners/kubesphere.svg" alt="KubeSphere"></div>
       <div class="p15c-cell" title="Datawhale"><img src="assets/partners/datawhale.svg" alt="Datawhale"></div>
       <div class="p15c-cell" title="哔哩哔哩 Bilibili"><img src="assets/partners/bilibili.svg" alt="哔哩哔哩 Bilibili"></div>
-      <div class="p15c-cell" title="Shopee"><img src="assets/partners/shopee.svg" alt="Shopee"></div>
       <div class="p15c-cell" title="米哈游 miHoYo"><img src="assets/partners/mihoyo.svg" alt="米哈游 miHoYo"></div>
       <div class="p15c-cell" title="宁德时代 CATL"><img src="assets/partners/catl.svg" alt="宁德时代 CATL"></div>
       <div class="p15c-cell" title="中航锂电 CALB"><img src="assets/partners/calb.png" alt="中航锂电 CALB"></div>
@@ -4362,6 +4190,19 @@
   <script src="assets/deck-bp-humanize.js?v=20260710community1"></script>
   <script src="assets/deck-slide-03.js?v=20260710pain"></script>
   <script>window.OpenCSGCommunity?.apply(document);</script>
+  <script>
+    // Keep the established slide IDs for their scoped styles while presenting
+    // the company overview before the AgenticOps methodology.
+    (() => {
+      const companyWrap = document.querySelector('#slide-05')?.closest('.slide-wrap');
+      const agenticOpsWrap = document.querySelector('#slide-04')?.closest('.slide-wrap');
+      if (!companyWrap || !agenticOpsWrap) return;
+
+      agenticOpsWrap.parentNode.insertBefore(companyWrap, agenticOpsWrap);
+      companyWrap.querySelector('.foot span:last-child').textContent = '04';
+      agenticOpsWrap.querySelector('.foot span:last-child').textContent = '05';
+    })();
+  </script>
   <script src="assets/deck-i18n.js?v=20260706i18n"></script>
   <script src="assets/deck-en-extra.js?v=20260706i18n"></script>
   <script>
@@ -4448,7 +4289,7 @@
       "公司标签":"Company tags","产品、市场与商业模式的事实摘要":"A compact factual summary of product, market and business model",
       "开源 AgenticOps":"Open-source AgenticOps","企业私有化":"Enterprise private deployment","多模型治理":"Multi-model governance",
       "Agent 生命周期":"Agent lifecycle","区域 AI 平台":"Regional AI platforms","OpenCore":"OpenCore","全球开发者生态":"Global developer ecosystem",
-      "20 万+":"200K+","社区用户":"Community users","模型资产":"Model assets","国家与地区":"Countries & regions",
+      "20 万+":"200K+","社区用户":"Community users","模型资产":"Model assets","国家与地区":"Countries and regions",
       "开源分发":"Open-source distribution","企业治理":"Enterprise governance","个人 OPC":"Personal OPC","OpenCore 商业化":"OpenCore monetization",
       "开源、企业、OPC 是一条主线，不是三条割裂业务":"Open source, enterprise and OPC are one roadmap—not three businesses",
       "资产、运行、治理与运营作为一套系统交付":"Asset, runtime, governance and operations are delivered as one system",
@@ -4507,7 +4348,6 @@
       "多 Agent 协同执行":"Multi-agent collaborative execution","Manager–Worker 协作":"Manager–Worker collaboration","任务拆解、沙箱与确认":"Task decomposition, sandboxing and approval","Agent / Skill 执行网络":"Agent / Skill execution network",
       "统一用户与身份":"Unified users & identity","统一资产协议":"Unified asset protocol","统一模型与网关":"Unified models & gateway","统一观测与评测":"Unified observability & evaluation","统一安全与审计":"Unified security & audit","开放 API / MCP / SDK":"Open API / MCP / SDK",
       "不是四条产品线，而是同一 AgenticOps 系统的两个版本":"Not four product lines—two editions of one AgenticOps system",
-      "全栈技术架构":"Full-stack Architecture","开放、可插拔、可演进：从基础设施到 Agent 运行与治理":"Open, pluggable and evolvable—from infrastructure to agent runtime and governance",
       "用户场景":"User scenarios","个人知识工作者":"Knowledge workers","开发团队":"Developer teams","企业组织":"Enterprises","科研机构":"Research institutions","区域 AI 平台":"Regional AI platforms",
       "产品版本":"Product editions","组织型 AgenticOps":"Organizational AgenticOps","个人 OPC AgenticOps":"Personal OPC AgenticOps","生命周期":"Lifecycle",
       "治理控制":"Governance controls","部署环境":"Deployment environments","个人设备":"Personal devices","边缘节点":"Edge nodes","私有数据中心":"Private data centers","混合云":"Hybrid cloud","公有云":"Public cloud","多芯片 / 多模型":"Multi-chip / multi-model",
@@ -4670,6 +4510,20 @@
     Object.assign(EN,window.OPENCSG_EN_EXTRA||{});
     window.OPENCSG_EN=EN;
     const wraps=[...document.querySelectorAll('.slide-wrap:not(.short-hidden):not([data-section="appendix"]), .slide-wrap[data-section="appendix"]:has(#slide-40)')];
+    // The presentation is a curated subset of the full deck. Keep its printed
+    // page labels tied to the actual navigation/export order, rather than to
+    // legacy slide IDs or their original positions in the long-form deck.
+    function syncVisiblePageNumbers(){
+      wraps.forEach((wrap,index)=>{
+        const page=String(index+1).padStart(2,'0');
+        wrap.dataset.pageNumber=page;
+        const footerNumber=wrap.querySelector('.foot > span:last-child:not(.foot-meta)');
+        if(footerNumber) footerNumber.textContent=page;
+        const closingNumber=wrap.querySelector('.closing-page');
+        if(closingNumber) closingNumber.textContent=page;
+      });
+    }
+    syncVisiblePageNumbers();
     const counter=document.getElementById('counter');
     const zhBtn=document.getElementById('langZh'),enBtn=document.getElementById('langEn');
     let overview=false,currentLang='zh',touchY=0;
@@ -5413,14 +5267,6 @@
         const tier=button.dataset.pricingTab;
         document.querySelectorAll('[data-pricing-tab]').forEach(el=>el.classList.toggle('active',el===button));
         document.querySelectorAll('[data-pricing-panel]').forEach(el=>el.classList.toggle('active',el.dataset.pricingPanel===tier));
-        window.refreshMobileReaders?.();
-      });
-    });
-    document.querySelectorAll('[data-arch-view]').forEach(button=>{
-      button.addEventListener('click',()=>{
-        const view=button.dataset.archView;
-        document.querySelectorAll('[data-arch-view]').forEach(el=>el.classList.toggle('active',el===button));
-        document.querySelectorAll('[data-arch-panel]').forEach(el=>el.classList.toggle('active',el.dataset.archPanel===view));
         window.refreshMobileReaders?.();
       });
     });

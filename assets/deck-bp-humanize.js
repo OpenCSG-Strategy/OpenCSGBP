@@ -15,17 +15,6 @@
     el.setAttribute("data-en", en);
   };
 
-  const setPlatformDefault = () => {
-    const slide = document.querySelector("#slide-09");
-    if (!slide) return;
-    slide.querySelectorAll("[data-arch-view]").forEach(button => {
-      button.classList.toggle("active", button.dataset.archView === "platform");
-    });
-    slide.querySelectorAll("[data-arch-panel]").forEach(panel => {
-      panel.classList.toggle("active", panel.dataset.archPanel === "platform");
-    });
-  };
-
   const replaceMarketVisual = () => {
     const fig = document.querySelector("#slide-10 .m10-hero-visual");
     if (!fig) return;
@@ -124,43 +113,6 @@
           <span data-en="EU Data Act strengthens user rights over connected-device data access and sharing.">EU Data Act：强化用户对联网设备数据的访问、使用与授权分享权利。</span>
         </div>
       </aside>`;
-  };
-
-  const refineSlide12 = () => {
-    const open = document.querySelector("#slide-12 .open12");
-    if (!open || open.querySelector(".oc12-flywheel")) return;
-    open.insertAdjacentHTML("afterbegin", `
-      <section class="oc12-flywheel">
-        <article class="oc12-model-summary">
-          <small>HOW OPENCORE WORKS</small>
-          <b data-en="Open adoption, paid production boundaries">开放采用，生产边界付费</b>
-          <p data-en="Keep the core open for distribution and trust. Monetize the production boundary: governance, scale, security, SLA and managed operations.">核心能力保持开放，获得分发与信任；生产边界向企业收费，承接治理、规模化、安全、SLA 与托管运营。</p>
-        </article>
-        <div class="oc12-model-flow">
-          <span><em>01</em><strong data-en="Open product entry">开放产品入口</strong><small data-en="Repo, core features and public releases">Repo、核心功能与版本公开</small></span>
-          <i>→</i>
-          <span><em>02</em><strong data-en="Community adoption">社区采用</strong><small data-en="Assets and trust accumulate">资产沉淀与信任扩散</small></span>
-          <i>→</i>
-          <span><em>03</em><strong data-en="Production upgrade">企业生产增强</strong><small data-en="Compute, security and governance">算力、安全与组织治理</small></span>
-          <i>→</i>
-          <span><em>04</em><strong data-en="Recurring revenue">持续收入</strong><small data-en="License, SaaS and support services">License、SaaS 与支持服务</small></span>
-        </div>
-        <aside class="oc12-precedents" aria-label="OpenCore precedent examples">
-          <small data-en="STAR CASES · PROVEN OPENCORE PATHS">明星案例 · 已验证路径</small>
-          <div>
-            <span><b>GitLab</b><em data-en="Open DevOps core → enterprise governance">开放 DevOps 核心 → 企业治理</em></span>
-            <span><b>MongoDB</b><em data-en="Open database → Atlas cloud service">开放数据库 → Atlas 云服务</em></span>
-            <span><b>Elastic</b><em data-en="Open search → cloud &amp; security">开放搜索 → 云与安全</em></span>
-            <span><b>Grafana</b><em data-en="Open observability → enterprise stack">开放可观测 → 企业套件</em></span>
-            <span><b>Confluent</b><em data-en="Open Kafka → managed streaming">开放 Kafka → 托管流式服务</em></span>
-            <span><b>HashiCorp</b><em data-en="Open infra tools → team governance">开放基础设施 → 团队治理</em></span>
-          </div>
-        </aside>
-      </section>`);
-    // The current OpenCore layout already contains the flywheel, edition story,
-    // capability matrix and delivery boundary. The former detail-grid was an
-    // obsolete fallback; its styles are intentionally no longer loaded, so
-    // injecting it here makes the slide flow out of the 900px canvas.
   };
 
   const refineSlide20 = () => {
@@ -794,10 +746,8 @@
     });
   };
 
-  setPlatformDefault();
   replaceMarketVisual();
   refineSlide11();
-  refineSlide12();
   refineSlide20();
   refineSlide21();
   refineSlide23();

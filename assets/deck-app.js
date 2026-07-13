@@ -81,7 +81,7 @@
       "公司标签":"Company tags","产品、市场与商业模式的事实摘要":"A compact factual summary of product, market and business model",
       "开源 AgenticOps":"Open-source AgenticOps","企业私有化":"Enterprise private deployment","多模型治理":"Multi-model governance",
       "Agent 生命周期":"Agent lifecycle","区域 AI 平台":"Regional AI platforms","OpenCore":"OpenCore","全球开发者生态":"Global developer ecosystem",
-      "20 万+":"200K+","社区用户":"Community users","模型资产":"Model assets","国家与地区":"Countries & regions",
+      "20 万+":"200K+","社区用户":"Community users","模型资产":"Model assets","国家与地区":"Countries and regions",
       "开源分发":"Open-source distribution","企业治理":"Enterprise governance","个人 OPC":"Personal OPC","OpenCore 商业化":"OpenCore monetization",
       "开源、企业、OPC 是一条主线，不是三条割裂业务":"Open source, enterprise and OPC are one roadmap—not three businesses",
       "资产、运行、治理与运营作为一套系统交付":"Asset, runtime, governance and operations are delivered as one system",
@@ -140,7 +140,6 @@
       "多 Agent 协同执行":"Multi-agent collaborative execution","Manager–Worker 协作":"Manager–Worker collaboration","任务拆解、沙箱与确认":"Task decomposition, sandboxing and approval","Agent / Skill 执行网络":"Agent / Skill execution network",
       "统一用户与身份":"Unified users & identity","统一资产协议":"Unified asset protocol","统一模型与网关":"Unified models & gateway","统一观测与评测":"Unified observability & evaluation","统一安全与审计":"Unified security & audit","开放 API / MCP / SDK":"Open API / MCP / SDK",
       "不是四条产品线，而是同一 AgenticOps 系统的两个版本":"Not four product lines—two editions of one AgenticOps system",
-      "全栈技术架构":"Full-stack Architecture","开放、可插拔、可演进：从基础设施到 Agent 运行与治理":"Open, pluggable and evolvable—from infrastructure to agent runtime and governance",
       "用户场景":"User scenarios","个人知识工作者":"Knowledge workers","开发团队":"Developer teams","企业组织":"Enterprises","科研机构":"Research institutions","区域 AI 平台":"Regional AI platforms",
       "产品版本":"Product editions","组织型 AgenticOps":"Organizational AgenticOps","个人 OPC AgenticOps":"Personal OPC AgenticOps","生命周期":"Lifecycle",
       "治理控制":"Governance controls","部署环境":"Deployment environments","个人设备":"Personal devices","边缘节点":"Edge nodes","私有数据中心":"Private data centers","混合云":"Hybrid cloud","公有云":"Public cloud","多芯片 / 多模型":"Multi-chip / multi-model",
@@ -1049,14 +1048,6 @@
         window.refreshMobileReaders?.();
       });
     });
-    document.querySelectorAll('[data-arch-view]').forEach(button=>{
-      button.addEventListener('click',()=>{
-        const view=button.dataset.archView;
-        document.querySelectorAll('[data-arch-view]').forEach(el=>el.classList.toggle('active',el===button));
-        document.querySelectorAll('[data-arch-panel]').forEach(el=>el.classList.toggle('active',el.dataset.archPanel===view));
-        window.refreshMobileReaders?.();
-      });
-    });
     addEventListener('keydown',e=>{
       if(e.target&&['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))return;
       const idx=currentIndex();
@@ -1067,4 +1058,3 @@
       if(e.key==='Escape'&&document.body.classList.contains('pseudo-fullscreen')){document.body.classList.remove('pseudo-fullscreen');fit()}
     });
     setLang(new URLSearchParams(location.search).get('lang')||'zh');fit();updateCounter();
-

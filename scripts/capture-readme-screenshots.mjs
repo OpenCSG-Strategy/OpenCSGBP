@@ -12,7 +12,7 @@ const assetsDir = join(rootDir, 'docs', 'assets');
 const baseUrl = process.env.DECK_BASE_URL || 'http://127.0.0.1:4173';
 const viewport = { width: 1600, height: 900 };
 const targets = [
-  ['cover', 1], ['agentic-ops', 4], ['community', 6], ['case-study', 7],
+  ['cover', 1], ['agentic-ops', 5], ['community', 6], ['case-study', 7],
   ['platform', 9], ['market', 10], ['business', 12], ['team', 14],
   ['revenue', 15], ['product-lineup', 25], ['appendix', 32], ['closing', 38]
 ];

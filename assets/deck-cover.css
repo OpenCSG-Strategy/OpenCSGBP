@@ -34,6 +34,15 @@
   font-weight:600;
 }
 
+#slide-01 .cover-positioning{
+  display:grid;
+  gap:6px;
+}
+
+#slide-01 .cover-positioning span{
+  display:block;
+}
+
 #slide-01 .cover-sovereignty-mark{
   display:grid;
   grid-template-columns:150px minmax(0,1fr);

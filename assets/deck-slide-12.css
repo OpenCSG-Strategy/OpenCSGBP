@@ -501,3 +501,97 @@
   color: #174F48 !important;
   font-weight: 600 !important;
 }
+
+/* ---- Focused OpenCore comparison: capability table + commercial path */
+#slide-12 .open12.open12-reframed {
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: 88px minmax(0, 1fr) 94px !important;
+  gap: 18px !important;
+}
+
+#slide-12 .open12-reframed .oc12-benchmarks {
+  grid-column: 1 / -1 !important;
+  grid-row: 2 !important;
+  border: 1px solid #C9DEDA !important;
+  border-top: 4px solid #23877B !important;
+  box-shadow: 0 12px 28px rgba(23, 63, 57, .10) !important;
+}
+
+#slide-12 .open12-reframed .oc12-benchmarks > header {
+  display: grid !important;
+  grid-template-columns: 330px minmax(0, 1fr) !important;
+  align-items: center !important;
+  padding: 16px 22px !important;
+  background: #F2F8F6 !important;
+}
+
+#slide-12 .open12-reframed .oc12-benchmarks header h3 { margin: 3px 0 0 !important; font-size: 22px !important; }
+#slide-12 .open12-reframed .oc12-benchmarks header p { padding-left: 24px !important; border-left: 1px solid #C8DDD8 !important; font-size: 11px !important; line-height: 1.38 !important; }
+#slide-12 .open12-reframed .oc12-benchmarks header small { font-size: 9px !important; }
+
+#slide-12 .open12-reframed .oc12-capability-table > div,
+#slide-12 .open12-reframed .oc12-capability-table .cap-head {
+  grid-template-columns: 230px repeat(4, minmax(0, 1fr)) !important;
+}
+
+#slide-12 .open12-reframed .oc12-capability-table > div > span:first-child { padding: 0 16px !important; font-size: 11px !important; }
+#slide-12 .open12-reframed .oc12-capability-table > div > *:not(:first-child) { font-size: 11px !important; }
+#slide-12 .open12-reframed .oc12-capability-table .cap-head > * { min-height: 34px !important; font-size: 11px !important; }
+
+#slide-12 .open12-reframed .oc12-linear {
+  grid-column: 1 / -1 !important;
+  grid-row: 3 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 54px 1fr 54px 1fr 54px 1fr !important;
+  align-items: center !important;
+  padding: 13px 24px !important;
+  border: 1px solid #C9DEDA !important;
+  background: linear-gradient(90deg, #FFFFFF 0%, #F1F9F7 100%) !important;
+  box-shadow: 0 10px 24px rgba(23, 63, 57, .08) !important;
+}
+
+#slide-12 .oc12-linear article { display: flex !important; align-items: center !important; gap: 12px !important; min-width: 0 !important; }
+#slide-12 .oc12-linear article em { display: flex !important; align-items: center !important; justify-content: center !important; width: 29px !important; height: 29px !important; flex: 0 0 29px !important; border-radius: 50% !important; background: #23877B !important; color: #FFFFFF !important; font-size: 10px !important; font-style: normal !important; font-weight: 800 !important; }
+#slide-12 .oc12-linear article b { color: #173F39 !important; font-size: 16px !important; }
+#slide-12 .oc12-linear article span { margin-left: auto !important; color: #60746F !important; font-size: 11px !important; line-height: 1.25 !important; text-align: right !important; }
+#slide-12 .oc12-linear > i { color: #23877B !important; font-size: 24px !important; font-style: normal !important; text-align: center !important; }
+
+/* Give the narrative rail enough room to read as a distinct first layer. */
+#slide-12 .open12.open12-reframed {
+  top: 192px !important;
+  grid-template-rows: 126px minmax(0, 1fr) 80px !important;
+  row-gap: 18px !important;
+}
+
+#slide-12 .open12.open12-reframed .oc12-flywheel {
+  grid-template-columns: 300px minmax(0, 1fr) 350px !important;
+  min-height: 126px !important;
+  box-shadow: 0 9px 22px rgba(24, 73, 65, .09) !important;
+}
+
+#slide-12 .open12.open12-reframed .oc12-model-summary { padding: 14px 18px !important; }
+#slide-12 .open12.open12-reframed .oc12-model-summary b { font-size: 18px !important; line-height: 1.12 !important; }
+#slide-12 .open12.open12-reframed .oc12-model-summary p { margin-top: 6px !important; font-size: 9.5px !important; line-height: 1.33 !important; }
+#slide-12 .open12.open12-reframed .oc12-model-flow { padding: 14px 10px !important; }
+#slide-12 .open12.open12-reframed .oc12-model-flow > span { padding: 8px 8px !important; }
+#slide-12 .open12.open12-reframed .oc12-model-flow strong { font-size: 10px !important; }
+#slide-12 .open12.open12-reframed .oc12-model-flow small { font-size: 7.5px !important; line-height: 1.15 !important; }
+#slide-12 .open12.open12-reframed .oc12-precedents { padding: 13px 15px !important; gap: 6px !important; }
+#slide-12 .open12.open12-reframed .oc12-precedents > div { gap: 2px 9px !important; }
+#slide-12 .open12.open12-reframed .oc12-precedents b { font-size: 11px !important; }
+#slide-12 .open12.open12-reframed .oc12-precedents em { font-size: 7.2px !important; line-height: 1.15 !important; }
+
+/* Keep the OpenCore slide intentionally simple: comparison first, path second. */
+#slide-12 .open12.open12-reframed {
+  top: 192px !important;
+  grid-template-rows: minmax(0, 1fr) 80px !important;
+  row-gap: 18px !important;
+}
+
+#slide-12 .open12-reframed .oc12-benchmarks {
+  grid-row: 1 !important;
+}
+
+#slide-12 .open12-reframed .oc12-linear {
+  grid-row: 2 !important;
+}
