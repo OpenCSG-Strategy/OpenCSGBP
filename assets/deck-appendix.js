@@ -785,7 +785,6 @@
             </span>
           </button>
         </span>
-        <span class="foot-meta">INVESTOR PRESENTATION · 2026</span>
       </div>
     </section></div>`
   ];
