@@ -647,7 +647,7 @@
     }
 
     async function requestExport(payload,disposition='attachment'){
-      const response=await fetch('/api/export',{
+      const response=await fetch(exportApiUrl('/api/export'),{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({...payload,disposition})
@@ -679,8 +679,25 @@
         activePdfPreviewUrl='';
       }
     }
+    function openPdfPreview(url){
+      const dialog=document.getElementById('pdfPreviewDialog');
+      const frame=document.getElementById('pdfPreviewFrame');
+      const download=document.getElementById('pdfPreviewDownload');
+      if(!dialog||!frame) return false;
+      frame.src=url;
+      if(download) download.href=url;
+      if(!dialog.open) dialog.showModal();
+      return true;
+    }
     function quickPdfPayload(){
       const lang=EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh';
+      const watermarkText=currentPdfWatermarkText();
+      // Watermark is opt-in. If the toolbar input is empty (the new default
+      // for fresh visits and for users who cleared localStorage), the PDF
+      // ships clean. Older builds used to force watermarkEnabled:true and
+      // would silently leak the legacy CONFIDENTIAL string.
+      const watermarkEnabled=Boolean(watermarkText);
+      const filenameSuffix=watermarkEnabled?'_Watermark':'';
       return {
         lang,
         ratio:'16:9',
@@ -691,19 +708,25 @@
         pageFrom:null,
         pageTo:null,
         pageList:null,
-        watermarkEnabled:true,
-        watermarkText:currentPdfWatermarkText(),
-        filename:`OpenCSG_Investor_Deck_2026_${lang.toUpperCase()}_16x9_Full_Watermark.pdf`
+        watermarkEnabled,
+        watermarkText,
+        filename:`OpenCSG_Investor_Deck_2026_${lang.toUpperCase()}_16x9_Full${filenameSuffix}.pdf`
       };
     }
     function storedPdfWatermarkText(){
       try{
         const stored=localStorage.getItem(PDF_WATERMARK_STORAGE_KEY)||DEFAULT_PDF_WATERMARK_TEXT;
-        if(stored===LEGACY_PDF_WATERMARK_TEXT){
+        const trimmed=String(stored||'').trim();
+        // Watermark is opt-in. Wipe any pre-existing value (including the
+        // legacy CONFIDENTIAL string and any custom string users typed in
+        // older builds) so every fresh session starts clean. Power users
+        // who still want a watermark can retype it in the toolbar — we'll
+        // re-save the new value on the next input event.
+        if(trimmed){
           localStorage.removeItem(PDF_WATERMARK_STORAGE_KEY);
           return DEFAULT_PDF_WATERMARK_TEXT;
         }
-        return stored;
+        return DEFAULT_PDF_WATERMARK_TEXT;
       }
       catch(_){return DEFAULT_PDF_WATERMARK_TEXT}
     }
@@ -740,6 +763,9 @@
     }
     function pdfBaseUrl(){
       return /^https?:$/.test(location.protocol) ? location.origin : 'http://127.0.0.1:4173';
+    }
+    function exportApiUrl(path){
+      return new URL(path,pdfBaseUrl()).href;
     }
     function pdfUrl(kind='view'){
       const lang=EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh';
@@ -1007,8 +1033,7 @@
       pdfWarmState='opening';
       updatePdfButtonState();
       showPdfLoading('opening');
-      const opened=window.open(url,'_blank','noopener');
-      if(!opened) location.href=url;
+      if(!openPdfPreview(url)) location.assign(url);
       setTimeout(()=>{
         pdfWarmState='ready';
         updatePdfButtonState();
@@ -1021,6 +1046,48 @@
     document.getElementById('pdfPreviewBtn').addEventListener('click',previewPdf);
     initPdfWatermarkInput();
     setTimeout(warmPdf,1200);
+
+    async function downloadPptx(){
+      if(pdfWarmState==='github-pages'){
+        showExportNotice(__t('PPTX export is not available on GitHub Pages. Please run npm run serve locally and use http://127.0.0.1:4173.','GitHub Pages 上无法导出 PPTX。请在本地运行 npm run serve，访问 http://127.0.0.1:4173 使用导出功能。'),true);
+        return;
+      }
+      const button=document.getElementById('pptxDownloadBtn');
+      const originalLabel=button?.textContent;
+      if(button){
+        button.disabled=true;
+        button.textContent=__t('GENERATING…','正在生成…');
+      }
+      showExportNotice(__t('GENERATING…','正在生成…'));
+      try{
+        const watermarkText=currentPdfWatermarkText();
+        const payload={
+          lang:EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh',
+          ratio:'16:9',
+          scope:'full',
+          format:'pptx',
+          currentPage:currentIndex()+1,
+          sections:[...SECTION_PRESETS.full],
+          pageFrom:null,
+          pageTo:null,
+          pageList:null,
+          watermarkEnabled:Boolean(watermarkText),
+          watermarkText,
+          filename:`OpenCSG_Investor_Deck_2026_${(EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh').toUpperCase()}_16x9_Full${watermarkText?'_Watermark':''}.pptx`
+        };
+        const {blob,filename}=await requestExport(payload,'attachment');
+        triggerBlobDownload(blob,filename);
+        showExportNotice(`${filename}${__t(' is ready.',' 已生成并开始下载。')}`);
+      }catch(error){
+        showExportNotice(error.message||String(error),true);
+      }finally{
+        if(button){
+          button.disabled=false;
+          button.textContent=originalLabel||button.textContent;
+        }
+      }
+    }
+    document.getElementById('pptxDownloadBtn')?.addEventListener('click',downloadPptx);
     document.getElementById('pdfPreviewClose').addEventListener('click',()=>{
       document.getElementById('pdfPreviewDialog').close();
     });
@@ -1067,4 +1134,3 @@
       if(e.key==='Escape'&&document.body.classList.contains('pseudo-fullscreen')){document.body.classList.remove('pseudo-fullscreen');fit()}
     });
     setLang(new URLSearchParams(location.search).get('lang')||'zh');fit();updateCounter();
-

@@ -214,9 +214,18 @@ function buildPrintStyle({ width, height, designW, designH }) {
 async function exportDeck(browser, options) {
   const ratio = RATIOS[options.ratio] || RATIOS['16:9'];
   const { width, height, designW, designH } = ratio;
-  // We always render at the *design* resolution so the slide canvas is 1:1
-  // and never sub-pixel. The output PDF still uses the requested ratio.
-  const page = await browser.newPage({ viewport: { width: designW, height: designH } });
+  // Render the slide canvas at the *design* resolution so layout is 1:1 and
+  // never sub-pixel. We then bump deviceScaleFactor (default 2) so the
+  // resulting PNG snapshot is 2x the design size in each axis — the PDF
+  // page still reports the requested width/height in PDF points, but every
+  // pixel is rendered with twice as much detail. This is the simplest way
+  // to ship a sharper PDF without changing the design canvas or adding a
+  // second render pass. Set --scale=1 to opt out (smaller file, softer text).
+  const renderScale = Math.max(1, Math.min(4, Number(options.scale) || 2));
+  const page = await browser.newPage({
+    viewport: { width: designW, height: designH },
+    deviceScaleFactor: renderScale
+  });
 
   const params = new URLSearchParams();
   params.set('lang', options.lang);
@@ -396,6 +405,7 @@ async function exportDeck(browser, options) {
     from: args.from || '',
     to: args.to || '',
     watermark: typeof args.watermark === 'string' ? args.watermark : '',
+    scale: args.scale || '',
     out: args.out || '',
     headless: args.headless === undefined ? true : args.headless !== 'false'
   };

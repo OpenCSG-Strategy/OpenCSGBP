@@ -146,6 +146,9 @@
 #slide-16 .p15-mix{
   padding:14px 16px 12px!important
 }
+#slide-16 .p15-mix{
+  align-self:start!important
+}
 
 /* ---------- 16. Generic card grids — soften internal gaps ---------- */
 .honor-grid{gap:11px!important}

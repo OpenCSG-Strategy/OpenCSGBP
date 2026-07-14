@@ -10,6 +10,7 @@
     "fullscreen": "全屏",
     "previewPdf": "查看 PDF",
     "downloadPdf": "下载 PDF",
+    "downloadPptx": "下载 PPTX",
     "exportOptions": "导出选项"
   },
   "nav": {
@@ -1673,20 +1674,6 @@
     "Industry Pain Points": "行业痛点",
     "Sovereign AI Control Layer": "主权 AI 控制层",
     "Full-stack Architecture": "全栈技术架构",
-    "Deployment environments": "部署环境",
-    "Investment Thesis　": "投资论点",
-    "Paradigm Evolution　": "范式演进",
-    "Company Overview　": "公司概览",
-    "Honors & Recognition　": "荣誉与认可",
-    "AI Sovereignty & Product System　": "AI 主权与产品体系",
-    "Unified Product System　": "统一产品体系",
-    "Full-stack Architecture　": "全栈技术架构",
-    "Market Opportunity　": "市场机会",
-    "Personal AI / OPC Market　": "个人 AI / OPC 市场",
-    " (+23% YoY), with more than one new developer joining every second.": "（+23% YoY），每秒新增 1+ 开发者。",
-    "OpenCore Business Model　": "OpenCore 商业模式",
-    "Competitive Landscape　": "竞争格局与能力矩阵",
-    "Founder & Team　": "创始人 & 团队",
-    "Partners & Customers　": "合作伙伴与客户"
+    "Deployment environments": "部署环境"
   }
 }

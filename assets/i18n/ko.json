@@ -10,6 +10,7 @@
     "fullscreen": "전체 화면",
     "previewPdf": "PDF 미리보기",
     "downloadPdf": "PDF 다운로드",
+    "downloadPptx": "PPTX 다운로드",
     "exportOptions": "내보내기 옵션"
   },
   "nav": {

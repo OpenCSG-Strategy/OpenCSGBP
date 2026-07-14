@@ -10,6 +10,7 @@
     "fullscreen": "フルスクリーン",
     "previewPdf": "PDFをプレビュー",
     "downloadPdf": "PDFをダウンロード",
+    "downloadPptx": "PPTXをダウンロード",
     "exportOptions": "書き出し設定"
   },
   "nav": {

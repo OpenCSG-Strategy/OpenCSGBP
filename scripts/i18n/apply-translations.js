@@ -10,6 +10,11 @@ const LANG_DIR = path.join(ROOT, 'assets/i18n');
 const PACK_PATH = path.join(__dirname, 'translation-pack.json');
 const pack = JSON.parse(fs.readFileSync(PACK_PATH, 'utf8'));
 const TRANSLATIONS = pack.TRANSLATIONS;
+const sourceKeys = new Set();
+for (const code of ['zh', 'en']) {
+  const source = JSON.parse(fs.readFileSync(path.join(LANG_DIR, `${code}.json`), 'utf8'));
+  Object.keys(source.phrases || {}).forEach(key => sourceKeys.add(key));
+}
 
 const LANGS_8 = ['ja','ko','ar','ru','fr','de','es','pt'];
 
@@ -20,6 +25,7 @@ LANGS_8.forEach(code => {
   json.phrases = json.phrases || {};
   let added = 0;
   Object.entries(TRANSLATIONS).forEach(([enKey, perLang]) => {
+    if (!sourceKeys.has(enKey)) return;
     const val = perLang[code];
     if (val && !json.phrases[enKey]){
       json.phrases[enKey] = val;

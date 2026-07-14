@@ -10,6 +10,7 @@
     "fullscreen": "FULLSCREEN",
     "previewPdf": "VIEW PDF",
     "downloadPdf": "DOWNLOAD PDF",
+    "downloadPptx": "DOWNLOAD PPTX",
     "exportOptions": "EXPORT OPTIONS"
   },
   "nav": {
@@ -1691,20 +1692,6 @@
     "Industry Pain Points": "Industry Pain Points",
     "Sovereign AI Control Layer": "Sovereign AI Control Layer",
     "Full-stack Architecture": "Full-stack Architecture",
-    "Deployment environments": "Deployment environments",
-    "Investment Thesis　": "Investment Thesis　",
-    "Paradigm Evolution　": "Paradigm Evolution　",
-    "Company Overview　": "Company Overview　",
-    "Honors & Recognition　": "Honors & Recognition　",
-    "AI Sovereignty & Product System　": "AI Sovereignty & Product System　",
-    "Unified Product System　": "Unified Product System　",
-    "Full-stack Architecture　": "Full-stack Architecture　",
-    "Market Opportunity　": "Market Opportunity　",
-    "Personal AI / OPC Market　": "Personal AI / OPC Market　",
-    " (+23% YoY), with more than one new developer joining every second.": " (+23% YoY), with more than one new developer joining every second.",
-    "OpenCore Business Model　": "OpenCore Business Model　",
-    "Competitive Landscape　": "Competitive Landscape　",
-    "Founder & Team　": "Founder & Team　",
-    "Partners & Customers　": "Partners & Customers　"
+    "Deployment environments": "Deployment environments"
   }
 }

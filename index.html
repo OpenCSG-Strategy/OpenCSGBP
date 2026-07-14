@@ -3093,6 +3093,7 @@
       <input type="text" id="pdfWatermarkInput" value="" placeholder="20260504" aria-label="PDF 水印文字">
     </label>
     <button type="button" id="pdfPreviewBtn" data-i18n="toolbar.previewPdf">查看 PDF</button>
+    <button type="button" id="pptxDownloadBtn" data-i18n="toolbar.downloadPptx">下载 PPTX</button>
     <span id="pdfStatus" class="pdf-status" aria-live="polite"></span>
   </div>
   <dialog id="pdfPreviewDialog" class="pdf-preview-dialog" aria-labelledby="pdfPreviewTitle">
@@ -4942,7 +4943,7 @@
     }
 
     async function requestExport(payload,disposition='attachment'){
-      const response=await fetch('/api/export',{
+      const response=await fetch(exportApiUrl('/api/export'),{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({...payload,disposition})
@@ -4973,6 +4974,16 @@
         URL.revokeObjectURL(activePdfPreviewUrl);
         activePdfPreviewUrl='';
       }
+    }
+    function openPdfPreview(url){
+      const dialog=document.getElementById('pdfPreviewDialog');
+      const frame=document.getElementById('pdfPreviewFrame');
+      const download=document.getElementById('pdfPreviewDownload');
+      if(!dialog||!frame) return false;
+      frame.src=url;
+      if(download) download.href=url;
+      if(!dialog.open) dialog.showModal();
+      return true;
     }
     function quickPdfPayload(){
       const lang=EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh';
@@ -5035,6 +5046,9 @@
     }
     function pdfBaseUrl(){
       return /^https?:$/.test(location.protocol) ? location.origin : 'http://127.0.0.1:4173';
+    }
+    function exportApiUrl(path){
+      return new URL(path,pdfBaseUrl()).href;
     }
     function pdfUrl(kind='view'){
       const lang=EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh';
@@ -5302,8 +5316,7 @@
       pdfWarmState='opening';
       updatePdfButtonState();
       showPdfLoading('opening');
-      const opened=window.open(url,'_blank','noopener');
-      if(!opened) location.href=url;
+      if(!openPdfPreview(url)) location.assign(url);
       setTimeout(()=>{
         pdfWarmState='ready';
         updatePdfButtonState();
@@ -5316,6 +5329,33 @@
     document.getElementById('pdfPreviewBtn').addEventListener('click',previewPdf);
     initPdfWatermarkInput();
     setTimeout(warmPdf,1200);
+    async function downloadPptx(){
+      if(pdfWarmState==='github-pages'){
+        showExportNotice(__t('PPTX export is not available on GitHub Pages. Please run npm run serve locally and use http://127.0.0.1:4173.','GitHub Pages 上无法导出 PPTX。请在本地运行 npm run serve，访问 http://127.0.0.1:4173 使用导出功能。'),true);
+        return;
+      }
+      const button=document.getElementById('pptxDownloadBtn');
+      const originalLabel=button?.textContent;
+      if(button){button.disabled=true;button.textContent=__t('GENERATING…','正在生成…')}
+      showExportNotice(__t('GENERATING…','正在生成…'));
+      try{
+        const watermarkText=currentPdfWatermarkText();
+        const lang=EXPORT_LANGUAGE_LABELS[currentLang]?currentLang:'zh';
+        const {blob,filename}=await requestExport({
+          lang,ratio:'16:9',scope:'full',format:'pptx',currentPage:currentIndex()+1,
+          sections:[...SECTION_PRESETS.full],pageFrom:null,pageTo:null,pageList:null,
+          watermarkEnabled:Boolean(watermarkText),watermarkText,
+          filename:`OpenCSG_Investor_Deck_2026_${lang.toUpperCase()}_16x9_Full${watermarkText?'_Watermark':''}.pptx`
+        },'attachment');
+        triggerBlobDownload(blob,filename);
+        showExportNotice(`${filename}${__t(' is ready.',' 已生成并开始下载。')}`);
+      }catch(error){
+        showExportNotice(error.message||String(error),true);
+      }finally{
+        if(button){button.disabled=false;button.textContent=originalLabel||button.textContent}
+      }
+    }
+    document.getElementById('pptxDownloadBtn')?.addEventListener('click',downloadPptx);
     document.getElementById('pdfPreviewClose').addEventListener('click',()=>{
       document.getElementById('pdfPreviewDialog').close();
     });

@@ -12,7 +12,7 @@ const pdfCacheDir = path.join(exportDir, 'pdf-cache');
 const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || '127.0.0.1';
 const defaultWatermark = process.env.DECK_WATERMARK_TEXT || '';
-const pdfCacheVersion = '20260707-single-custom-watermark-v1';
+const pdfCacheVersion = '20260714-no-default-watermark-v2';
 const supportedLanguages = new Set(['zh', 'en', 'ja', 'ko', 'ar', 'ru', 'fr', 'de', 'es', 'pt']);
 const supportedRatios = new Set(['16:9', '4:3', 'a4-landscape', 'a4-portrait', 'letter-landscape']);
 const supportedFormats = new Set(['pdf', 'pptx']);
@@ -44,7 +44,8 @@ function sendJson(response, status, body) {
   response.writeHead(status, {
     'Content-Type': 'application/json; charset=utf-8',
     'Content-Length': data.length,
-    'Cache-Control': 'no-store'
+    'Cache-Control': 'no-store',
+    'Access-Control-Allow-Origin': '*'
   });
   response.end(data);
 }
@@ -197,6 +198,7 @@ function cacheKeyForPdf(options) {
 }
 
 function defaultViewPdfOptions(lang, watermarkText = defaultWatermark) {
+  const watermarkTag = watermarkText ? '_Watermark' : '';
   return validateExport({
     lang,
     ratio: '16:9',
@@ -209,7 +211,7 @@ function defaultViewPdfOptions(lang, watermarkText = defaultWatermark) {
     pageList: null,
     watermarkEnabled: Boolean(watermarkText),
     watermarkText,
-    filename: `OpenCSG_Investor_Deck_2026_${String(lang).toUpperCase()}_16x9_Full_Watermark.pdf`,
+    filename: `OpenCSG_Investor_Deck_2026_${String(lang).toUpperCase()}_16x9_Full${watermarkTag}.pdf`,
     disposition: 'inline'
   });
 }
@@ -311,7 +313,9 @@ async function streamExport(options, response) {
       'Content-Length': stat.size,
       'Content-Disposition': contentDisposition(options.disposition, filename),
       'Cache-Control': 'no-store',
-      'X-Export-Filename': filename
+      'X-Export-Filename': filename,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Expose-Headers': 'X-Export-Filename'
     });
     const stream = fs.createReadStream(absoluteOutput);
     stream.pipe(response);
@@ -409,7 +413,9 @@ async function handleViewPdf(url, response) {
     'Content-Disposition': contentDisposition('inline', result.filename),
     'Cache-Control': 'no-store',
     'X-Export-Filename': result.filename,
-    'X-Export-Cache': result.cached ? 'HIT' : 'MISS'
+    'X-Export-Cache': result.cached ? 'HIT' : 'MISS',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Expose-Headers': 'X-Export-Filename, X-Export-Cache'
   });
   fs.createReadStream(result.absoluteOutput).pipe(response);
 }
@@ -448,6 +454,16 @@ function serveStatic(request, response, pathname) {
 
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host || `${host}:${port}`}`);
+  if (request.method === 'OPTIONS' && url.pathname.startsWith('/api/')) {
+    response.writeHead(204, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Max-Age': '600'
+    });
+    response.end();
+    return;
+  }
   if (request.method === 'POST' && url.pathname === '/api/export') {
     await handleExport(request, response);
     return;

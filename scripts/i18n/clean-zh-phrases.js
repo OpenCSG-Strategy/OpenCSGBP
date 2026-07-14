@@ -195,8 +195,18 @@ for (const [k, inners] of pairs){
   }
 }
 
-// 5b2) 同步补 en.json：en 的 value 永远是英文（key 自身）
-//      （不补 8 国，8 国翻译由 translation-pack.json + apply 流程走）
+// 5b2) EN 字典里的英文 source 也必须回填 zh.json；这些 key 可能仅来自
+//       动态 EN 映射，不会出现在带 data-en 的 HTML 节点中。
+let addedFromEnDict = 0;
+for (const [en, zhValue] of en2zh){
+  if (zh.phrases[en] === undefined){
+    zh.phrases[en] = zhValue;
+    addedFromEnDict++;
+  }
+}
+
+// 5b3) 同步补 en.json：en 的 value 永远是英文（key 自身）
+//       （不补 8 国，8 国翻译由 translation-pack.json + apply 流程走）
 let addedToEn = 0;
 for (const k of allDataEnKeys){
   if (packs.en.phrases[k] === undefined){
@@ -243,6 +253,7 @@ console.log('===== zh.json phrases 清理报告 v2 =====\n');
 console.log(`从 HTML/JS inner text 填:  ${filledFromHtml}`);
 console.log(`从 EN 字典反查填:          ${filledFromEn}`);
 console.log(`补缺失 key (HTML/JS):     ${addedFromHtml}`);
+console.log(`补缺失 key (EN 字典):     ${addedFromEnDict}`);
 console.log(`补 en.json 缺 key:        ${addedToEn}`);
 console.log(`删 zh.json 死 key:         ${removedFromZh}`);
 console.log(`删 en.json 死 key:         ${removedFromEn}`);
